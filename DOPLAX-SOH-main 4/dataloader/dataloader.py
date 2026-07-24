@@ -59,6 +59,11 @@ class DF():
 
         df = self.delete_3_sigma(df)
 
+        has_knee_distance = 'knee_point_distance' in df.columns
+        knee_distance = None
+        if has_knee_distance:
+            knee_distance = df['knee_point_distance'].values.copy()
+
         if self.args.data != 'NASA' and nominal_capacity is not None:
             df['capacity'] = df['capacity'] / nominal_capacity
         
@@ -68,7 +73,11 @@ class DF():
         elif self.normalization_method == 'z-score':
             f_df = (f_df - f_df.mean())/f_df.std()
 
+        f_df = f_df.fillna(0.0)
         df.iloc[:, :-1] = f_df
+
+        if has_knee_distance:
+            df['knee_point_distance'] = knee_distance
 
         return df
 
@@ -84,23 +93,37 @@ class DF():
         df = self.read_one_csv(path,nominal_capacity)
         x = df.iloc[:, :-1].values
         y = df.iloc[:, -1].values
+        
+        has_knee_distance = 'knee_point_distance' in df.columns
+        kd = None
+        if has_knee_distance:
+            kd = df['knee_point_distance'].values
+        
         x1 = x[:-1]
         x2 = x[1:]
         y1 = y[:-1]
         y2 = y[1:]
+        
+        if has_knee_distance:
+            kd1 = kd[:-1]
+            kd2 = kd[1:]
+            return (x1,y1,kd1),(x2,y2,kd2)
         return (x1,y1),(x2,y2)
 
 
     def load_all_battery(self, path_list:list=None, nominal_capacity:float=None, specific_path:str=None):
         '''
-        Read multiple csv files, divide the data into X and Y, and then package it into a dataloader
+        Read multiple csv files, divide the data into X and Y, and then package it into a dataloader.
+        If knee_point_distance is present in the CSV, it is collected and returned
+        inside each TensorDataset as an extra target tensor.
         :param path_list: list of file paths
         :param nominal_capacity: nominal capacity, used to calculate SOH
-        :param batch_size: batch size
-        :return: Dataloader
+        :return: Dataloader dict
         '''
         if self.args.data != 'NASA':
             X1, X2, Y1, Y2 = [], [], [], []
+            KD1, KD2 = [], []
+            has_knee_distance = False
     
             if self.args.run_mode == 'LAX':
                 pass
@@ -111,13 +134,19 @@ class DF():
                     write_to_file(save_name, str(path_list))
     
             for path in path_list:
-            # for i, path in enumerate(path_list):
-                (x1, y1), (x2, y2) = self.load_one_battery(path, nominal_capacity)
-                # (x1, y1), (x2, y2) = self.load_one_battery(path, i, nominal_capacity)
+                result = self.load_one_battery(path, nominal_capacity)
+                if len(result[0]) == 3:
+                    (x1, y1, kd1), (x2, y2, kd2) = result
+                    has_knee_distance = True
+                else:
+                    (x1, y1), (x2, y2) = result
                 X1.append(x1)
                 X2.append(x2)
                 Y1.append(y1)
                 Y2.append(y2)
+                if has_knee_distance:
+                    KD1.append(kd1)
+                    KD2.append(kd2)
     
             X1 = np.concatenate(X1, axis=0)
             X2 = np.concatenate(X2, axis=0)
@@ -129,43 +158,79 @@ class DF():
             tensor_Y1 = torch.from_numpy(Y1).float().view(-1,1)
             tensor_Y2 = torch.from_numpy(Y2).float().view(-1,1)
     
+            if has_knee_distance:
+                KD1 = np.concatenate(KD1, axis=0)
+                KD2 = np.concatenate(KD2, axis=0)
+                tensor_KD1 = torch.from_numpy(KD1).float().view(-1,1)
+                tensor_KD2 = torch.from_numpy(KD2).float().view(-1,1)
+    
             drop_last = False 
     
+            def _make_loaders(tx1, tx2, ty1, ty2, tkd1=None, tkd2=None):
+                if tkd1 is not None:
+                    ds = TensorDataset(tx1, tx2, ty1, ty2, tkd1, tkd2)
+                else:
+                    ds = TensorDataset(tx1, tx2, ty1, ty2)
+                return ds
+    
             # Condition 1
-            # 1.1 
+            # 1.1
             split = int(tensor_X1.shape[0] * 0.8)
             train_X1, test_X1 = tensor_X1[:split], tensor_X1[split:]
             train_X2, test_X2 = tensor_X2[:split], tensor_X2[split:]
             train_Y1, test_Y1 = tensor_Y1[:split], tensor_Y1[split:]
             train_Y2, test_Y2 = tensor_Y2[:split], tensor_Y2[split:]
-            # 1.2 
-            train_X1, valid_X1, train_X2, valid_X2, train_Y1, valid_Y1, train_Y2, valid_Y2 = \
-                train_test_split(train_X1, train_X2, train_Y1, train_Y2, test_size=0.2, random_state=420)
+            if has_knee_distance:
+                train_KD1, test_KD1 = tensor_KD1[:split], tensor_KD1[split:]
+                train_KD2, test_KD2 = tensor_KD2[:split], tensor_KD2[split:]
+            # 1.2
+            if has_knee_distance:
+                train_X1, valid_X1, train_X2, valid_X2, train_Y1, valid_Y1, train_Y2, valid_Y2, train_KD1, valid_KD1, train_KD2, valid_KD2 = \
+                    train_test_split(train_X1, train_X2, train_Y1, train_Y2, train_KD1, train_KD2, test_size=0.2, random_state=420)
+            else:
+                train_X1, valid_X1, train_X2, valid_X2, train_Y1, valid_Y1, train_Y2, valid_Y2 = \
+                    train_test_split(train_X1, train_X2, train_Y1, train_Y2, test_size=0.2, random_state=420)
     
-            train_loader = DataLoader(TensorDataset(train_X1, train_X2, train_Y1, train_Y2),
+            train_loader = DataLoader(_make_loaders(train_X1, train_X2, train_Y1, train_Y2,
+                                                    train_KD1 if has_knee_distance else None,
+                                                    train_KD2 if has_knee_distance else None),
                                       batch_size=self.args.batch_size,
                                       shuffle=True)
-            valid_loader = DataLoader(TensorDataset(valid_X1, valid_X2, valid_Y1, valid_Y2),
+            valid_loader = DataLoader(_make_loaders(valid_X1, valid_X2, valid_Y1, valid_Y2,
+                                                    valid_KD1 if has_knee_distance else None,
+                                                    valid_KD2 if has_knee_distance else None),
                                       batch_size=self.args.batch_size,
                                       shuffle=True)
-            test_loader = DataLoader(TensorDataset(test_X1, test_X2, test_Y1, test_Y2),
+            test_loader = DataLoader(_make_loaders(test_X1, test_X2, test_Y1, test_Y2,
+                                                   test_KD1 if has_knee_distance else None,
+                                                   test_KD2 if has_knee_distance else None),
                                      batch_size=self.args.batch_size,
                                      shuffle=False)
     
             # Condition 2
-            train_X1, valid_X1, train_X2, valid_X2, train_Y1, valid_Y1, train_Y2, valid_Y2 = \
-                train_test_split(tensor_X1, tensor_X2, tensor_Y1, tensor_Y2, test_size=0.2, random_state=420)
-            train_loader_2 = DataLoader(TensorDataset(train_X1, train_X2, train_Y1, train_Y2),
+            if has_knee_distance:
+                train_X1, valid_X1, train_X2, valid_X2, train_Y1, valid_Y1, train_Y2, valid_Y2, train_KD1, valid_KD1, train_KD2, valid_KD2 = \
+                    train_test_split(tensor_X1, tensor_X2, tensor_Y1, tensor_Y2, tensor_KD1, tensor_KD2, test_size=0.2, random_state=420)
+            else:
+                train_X1, valid_X1, train_X2, valid_X2, train_Y1, valid_Y1, train_Y2, valid_Y2 = \
+                    train_test_split(tensor_X1, tensor_X2, tensor_Y1, tensor_Y2, test_size=0.2, random_state=420)
+            train_loader_2 = DataLoader(_make_loaders(train_X1, train_X2, train_Y1, train_Y2,
+                                                      train_KD1 if has_knee_distance else None,
+                                                      train_KD2 if has_knee_distance else None),
                                       batch_size=self.args.batch_size,
                                       drop_last=drop_last,
                                       shuffle=True)
-            valid_loader_2 = DataLoader(TensorDataset(valid_X1, valid_X2, valid_Y1, valid_Y2),
+            valid_loader_2 = DataLoader(_make_loaders(valid_X1, valid_X2, valid_Y1, valid_Y2,
+                                                      valid_KD1 if has_knee_distance else None,
+                                                      valid_KD2 if has_knee_distance else None),
                                       batch_size=self.args.batch_size,
                                       drop_last=drop_last,
                                       shuffle=True)
     
             # Condition 3
-            test_loader_3 = DataLoader(TensorDataset(tensor_X1, tensor_X2, tensor_Y1, tensor_Y2),
+            test_loader_3 = DataLoader(_make_loaders(tensor_X1, tensor_X2, tensor_Y1, tensor_Y2,
+                                                     tensor_KD1 if has_knee_distance else None,
+                                                     tensor_KD2 if has_knee_distance else None),
                                      batch_size=self.args.batch_size,
                                      drop_last=drop_last,
                                      shuffle=False)

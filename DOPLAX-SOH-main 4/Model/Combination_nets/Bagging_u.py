@@ -8,6 +8,7 @@ from Model.Auxiliary_nets.Solution_u import Solution_u
 from Model.Auxiliary_nets.MLP import MLP
 from Model.PI_nets import DeepOPINN 
 from Model.PI_nets.LAX import OptimizationNetwork 
+from knee_point_detection import knee_aware_branch_weights
 import deepxde as dde
 import os 
 import warnings 
@@ -330,12 +331,24 @@ class Model(DeepOPINN.Model):
         setattr(self.args, 'run_for_LAX', False)
 
         with torch.no_grad():
-            for iter, (x1, _, y1, _) in enumerate(testloader):
+            for iter, batch in enumerate(testloader):
+                if len(batch) == 6:
+                    x1, _, y1, _, kd1, _ = batch
+                    has_kd = True
+                else:
+                    x1, _, y1, _ = batch
+                    kd1 = None
+                    has_kd = False
                 x1 = x1.to(device)
                 xt1 = self.extract_features(x1)
                 _, u_pinn = self.predict(xt1)
                 u_lax = self.LAX_model(x=x1[:,:-1], t=x1[:,-1], epoch=epoch)
-                u1 = self.bagging_NN(torch.cat([u_pinn, u_lax], dim=1))
+                if has_kd:
+                    kd1_dev = kd1.to(device)
+                    w_lax, w_pinn = knee_aware_branch_weights(kd1_dev)
+                    u1 = w_lax * u_lax + w_pinn * u_pinn
+                else:
+                    u1 = self.bagging_NN(torch.cat([u_pinn, u_lax], dim=1))
                 true_label.append(y1)
                 pred_label.append(u1.cpu().detach().numpy())
         pred_label = np.concatenate(pred_label, axis=0)
@@ -352,12 +365,24 @@ class Model(DeepOPINN.Model):
         current = self.args.run_for_LAX
         setattr(self.args, 'run_for_LAX', False)
         with torch.no_grad():
-            for iter, (x1, _, y1, _) in enumerate(validloader):
+            for iter, batch in enumerate(validloader):
+                if len(batch) == 6:
+                    x1, _, y1, _, kd1, _ = batch
+                    has_kd = True
+                else:
+                    x1, _, y1, _ = batch
+                    kd1 = None
+                    has_kd = False
                 x1 = x1.to(device)
                 xt1 = self.extract_features(x1)
                 _, u_pinn = self.predict(xt1)
                 u_lax = self.LAX_model(x=x1[:,:-1], t=x1[:,-1], epoch=epoch)
-                u1 = self.bagging_NN(torch.cat([u_pinn, u_lax], dim=1))
+                if has_kd:
+                    kd1_dev = kd1.to(device)
+                    w_lax, w_pinn = knee_aware_branch_weights(kd1_dev)
+                    u1 = w_lax * u_lax + w_pinn * u_pinn
+                else:
+                    u1 = self.bagging_NN(torch.cat([u_pinn, u_lax], dim=1))
                 true_label.append(y1)
                 pred_label.append(u1.cpu().detach().numpy())
         pred_label = np.concatenate(pred_label,axis=0)
@@ -411,7 +436,14 @@ class Model(DeepOPINN.Model):
         loss_bagging_monotone_meter = AverageMeter()
 
 
-        for iter, (x1, x2, y1, y2) in enumerate(dataloader):
+        for iter, batch in enumerate(dataloader):
+            if len(batch) == 6:
+                x1, x2, y1, y2, kd1, kd2 = batch
+                has_kd = True
+            else:
+                x1, x2, y1, y2 = batch
+                kd1 = kd2 = None
+                has_kd = False
             x1, x2, y1, y2 = x1.to(device), x2.to(device), y1.to(device), y2.to(device)
             
             if self.extractor_deepopinn is None:
@@ -432,8 +464,16 @@ class Model(DeepOPINN.Model):
             u1_lax = self.forward_LAX(x1, epoch=epoch)
             u2_lax = self.forward_LAX(x2, epoch=epoch)
 
-            Bag_u1 = self.forward_bagging_NN(u1, u1_lax)
-            Bag_u2 = self.forward_bagging_NN(u2, u2_lax)
+            if has_kd:
+                kd1_dev = kd1.to(device)
+                kd2_dev = kd2.to(device)
+                w_lax1, w_pinn1 = knee_aware_branch_weights(kd1_dev)
+                w_lax2, w_pinn2 = knee_aware_branch_weights(kd2_dev)
+                Bag_u1 = w_lax1 * u1_lax + w_pinn1 * u1
+                Bag_u2 = w_lax2 * u2_lax + w_pinn2 * u2
+            else:
+                Bag_u1 = self.forward_bagging_NN(u1, u1_lax)
+                Bag_u2 = self.forward_bagging_NN(u2, u2_lax)
 
             # loss_data_Bagging
             loss_data_bagging = 0.5*self.loss_func(Bag_u1, y1) + 0.5*self.loss_func(Bag_u2, y2)

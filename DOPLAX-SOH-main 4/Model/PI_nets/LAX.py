@@ -54,7 +54,7 @@ class EarlyStopper:
             "val_loss": val_loss,
         },  self.ckpt_path)
             # --------------------------------------------------------
-            print(f" New best ⟹ saved to {self.ckpt_path}")
+            print(f" New best => saved to {self.ckpt_path}")
         else:
             self.counter += 1
             if self.counter >= self.patience:
@@ -694,7 +694,11 @@ def run_epoch(model, opt_net, opt_F, args, batch_name, experiment_id, epoch=0, p
             growth_period=100  
         )
         
-    for iter, (x1, x2, y1, y2) in enumerate(dataloader):
+    for iter, batch in enumerate(dataloader):
+        if len(batch) == 6:
+            x1, x2, y1, y2 = batch[0], batch[1], batch[2], batch[3]
+        else:
+            x1, x2, y1, y2 = batch
         x1, y1 = x1.to(device), y1.to(device)
         x2, y2 = x2.to(device), y2.to(device)
         
@@ -948,7 +952,11 @@ def run_training_and_evaluation(args, dataloader, batch_name, experiment_id, ret
     sum_squared = 0.0
     n_samples = 0
 
-    for x1, x2, _, _ in dataloader['train']:
+    for batch in dataloader['train']:
+        if len(batch) == 6:
+            x1, x2 = batch[0], batch[1]
+        else:
+            x1, x2 = batch[0], batch[1]
         y_dim = x_dim = x1.shape[1] - 1
         x2 = x2[:, :x_dim]
         x1 = x1[:, :x_dim]
@@ -1122,7 +1130,11 @@ def evaluate_on_set(model, test_dataloader, args, experiment_folder_path,phase ,
     mae_loss_fn = nn.L1Loss(reduction='sum')
     
     # with torch.no_grad():
-    for x1, x2, y1_true, y2_true in test_dataloader:
+    for batch in test_dataloader:
+        if len(batch) == 6:
+            x1, x2, y1_true, y2_true = batch[0], batch[1], batch[2], batch[3]
+        else:
+            x1, x2, y1_true, y2_true = batch
         x1, y1_true = x1.to(device), y1_true.to(device)
         
         x1, x2 = x1[:, :-1], x2[:, :-1]
