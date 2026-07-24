@@ -1,0 +1,21 @@
+============================================================
+LAX Training Run — MIT
+============================================================
+Dataset:       MIT
+Batch:         one_batch
+g_dim:         16
+Epochs (net):  350
+Batch size:    526
+Device:        cuda
+Results path:  G:\ISDS\Knee-Aware-DOPLAX\DOPLAX-SOH-main 4\outputs\MIT
+
+--- Test Metrics ---
+             MSE: 0.00006278
+            RMSE: 0.00792307
+            MAPE: 0.00593270
+             MAE: 0.00563124
+            DUAL: 0.00026179
+             PDE: 61.17364502
+       PEARSON_R: 0.96192145
+      FINAL_LOSS: 0.00001316
+============================================================

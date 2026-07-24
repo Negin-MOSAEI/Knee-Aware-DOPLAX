@@ -1,0 +1,21 @@
+============================================================
+LAX Training Run — TJU
+============================================================
+Dataset:       TJU
+Batch:         NCM_NCA
+g_dim:         16
+Epochs (net):  350
+Batch size:    526
+Device:        cuda
+Results path:  G:\ISDS\Knee-Aware-DOPLAX\DOPLAX-SOH-main 4\outputs\TJU
+
+--- Test Metrics ---
+             MSE: 0.00019211
+            RMSE: 0.01386043
+            MAPE: 0.01285012
+             MAE: 0.00956839
+            DUAL: 0.00010929
+             PDE: 68.32967377
+       PEARSON_R: 0.98898506
+      FINAL_LOSS: 0.00001511
+============================================================

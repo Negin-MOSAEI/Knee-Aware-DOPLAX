@@ -1,0 +1,21 @@
+============================================================
+LAX Training Run — HUST
+============================================================
+Dataset:       HUST
+Batch:         one_batch
+g_dim:         16
+Epochs (net):  350
+Batch size:    526
+Device:        cuda
+Results path:  G:\ISDS\Knee-Aware-DOPLAX\DOPLAX-SOH-main 4\outputs\HUST
+
+--- Test Metrics ---
+             MSE: 0.00051078
+            RMSE: 0.02260035
+            MAPE: 0.01544136
+             MAE: 0.01440410
+            DUAL: 0.00002733
+             PDE: 56.55255127
+       PEARSON_R: 0.95683527
+      FINAL_LOSS: 0.00001205
+============================================================
