@@ -9,10 +9,10 @@ Device:        cuda
 Results path:  G:\ISDS\Knee-Aware-DOPLAX\DOPLAX-SOH-main 4\outputs
 
 --- Test Metrics ---
-     MSE: 0.00229152
-    RMSE: 0.04786980
-    MAPE: 0.02687724
-     MAE: 0.02309705
-    DUAL: 0.03551728
-     PDE: 74.42095184
+     MSE: 0.00141063
+    RMSE: 0.03755837
+    MAPE: 0.02366518
+     MAE: 0.02067079
+    DUAL: 0.01703068
+     PDE: 21.67479324
 ============================================================

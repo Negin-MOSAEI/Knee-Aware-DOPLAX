@@ -9,6 +9,7 @@ from Model.utils.util import get_val_metrics_in_each_logfile
 from hyperparameter_optimization import run_optuna
 from Model.PI_nets.LAX import run_training_and_evaluation, save_LAX_results
 from Investigating_Losses import InvestigatingLosses
+import pandas as pd
 import warnings
 warnings.filterwarnings('ignore')
 # Get the current time
@@ -18,7 +19,7 @@ os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
 
 
-def main(run_info:dict, run_for_DeepOPINN:bool, run_for_LAX:bool, finetuning_mode:bool, path_to_weights:str, run_name:str=None, data_path="data/Full"):
+def main(run_info:dict, run_for_DeepOPINN:bool, run_for_LAX:bool, finetuning_mode:bool, path_to_weights:str, run_name:str=None, data_path="data/Processed"):
     if type(run_info['run_for_a_model_explicitly']) != bool:
         raise ValueError("run_for_a_model_explicitly must be either True or False")
         
@@ -92,8 +93,12 @@ def main(run_info:dict, run_for_DeepOPINN:bool, run_for_LAX:bool, finetuning_mod
 
     setattr(args, 'data', 'XJTU')
     # batchs = ['2C', '3C', 'R2.5', 'R3', 'RW', 'satellite']
-    batchs = ['2C', '3C']
+    batchs = ['2C']
     n_batches = len(batchs)
+
+    sample_csv = pd.read_csv(os.path.join(data_path, 'XJTU data', '2C_battery-1.csv'))
+    n_features = sample_csv.shape[1] - 1
+    args.g_dim_LAX_XJTU = n_features
 
     investigating_losses = InvestigatingLosses(
         dataset_name=args.data, 
@@ -327,7 +332,7 @@ def main(run_info:dict, run_for_DeepOPINN:bool, run_for_LAX:bool, finetuning_mod
 
 def small_sample(run_info:bool, run_for_DeepOPINN:bool, run_for_LAX:bool,
                  finetuning_mode:bool, train_with_target_cells:bool,
-                 path_to_weights:str, run_name:str=None, data_path="data/Full"):
+                 path_to_weights:str, run_name:str=None, data_path="data/Processed"):
     if type(run_info['run_for_a_model_explicitly']) != bool:
         raise ValueError("run_for_a_model_explicitly must be either True or False")
         
@@ -402,7 +407,7 @@ def small_sample(run_info:bool, run_for_DeepOPINN:bool, run_for_LAX:bool,
         batchs = ['2C'] 
     else:
         num_of_batteries = [1, 2, 3, 4]
-        batchs = ['2C', '3C', 'R2.5', 'R3', 'RW', 'satellite']
+        batchs = ['2C']
         
     n_batches = len(batchs)
         
@@ -633,7 +638,7 @@ if __name__ == '__main__':
     # If you want to train the PINN, DeepOPINN, or LAX model explicitly, You should assign True to run_for_a_model_explicitly and the name of your desired model to model_name, otherwise False to run_for_a_model_explicitly
     run_info = {
         'run_for_a_model_explicitly': True, # True, False
-        'model_name': 'FormerPINN' # DeepONet, "PINNsFormer", "DONG", "PINN", "DeepOPINN", "DOPFormer", "LAX", "Bagging_u", "LAX_predictor", "DeepOLAX", "DOPDeepOLAX", "FormerPINN"
+        'model_name': 'LAX' # DeepONet, "PINNsFormer", "DONG", "PINN", "DeepOPINN", "DOPFormer", "LAX", "Bagging_u", "LAX_predictor", "DeepOLAX", "DOPDeepOLAX", "FormerPINN"
     }
     # If you want to freeze the LAX model during the training of the DOPLAX module, You should assign False to run_for_LAX otherwise True
     run_for_LAX = False # True:unfreeze, False:freeze, None:random initial weights
@@ -643,8 +648,8 @@ if __name__ == '__main__':
     finetuning_mode = False # True, False
 
     path_to_weights = 'pretrained_models' # str
-    run_name = "FormerPINN" # DOP_unfreeze_LAX_freeze # both_freeze # str, None
-    data_path = "data/Full" # "Full", "AK" (Average Kernel), "OFS" (Online Fourier Selective)
+    run_name = "LAX_KneeAware" # DOP_unfreeze_LAX_freeze # both_freeze # str, None
+    data_path = "data/Processed" # "Full", "AK" (Average Kernel), "OFS" (Online Fourier Selective)
     n_experiments = 1
 
     

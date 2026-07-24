@@ -200,7 +200,7 @@ class DF():
                                                     valid_KD1 if has_knee_distance else None,
                                                     valid_KD2 if has_knee_distance else None),
                                       batch_size=self.args.batch_size,
-                                      shuffle=True)
+                                      shuffle=False)
             test_loader = DataLoader(_make_loaders(test_X1, test_X2, test_Y1, test_Y2,
                                                    test_KD1 if has_knee_distance else None,
                                                    test_KD2 if has_knee_distance else None),

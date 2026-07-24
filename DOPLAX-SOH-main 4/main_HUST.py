@@ -10,6 +10,7 @@ from hyperparameter_optimization import run_optuna
 from Model.PI_nets.LAX import run_training_and_evaluation, save_LAX_results
 from Investigating_Losses import InvestigatingLosses
 import warnings
+import pandas as pd
 warnings.filterwarnings('ignore')
 # Get the current time
 from datetime import datetime
@@ -17,7 +18,7 @@ current_time = datetime.now().strftime("%d-%B-%H-%M-%S")
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
 
-def main(run_info:dict, run_for_DeepOPINN:bool, run_for_LAX:bool, finetuning_mode:bool, path_to_weights:str, run_name:str=None, data_path='data/Full'):
+def main(run_info:dict, run_for_DeepOPINN:bool, run_for_LAX:bool, finetuning_mode:bool, path_to_weights:str, run_name:str=None, data_path="data/Processed"):
     if type(run_info['run_for_a_model_explicitly']) != bool:
         raise ValueError("run_for_a_model_explicitly must be either True or False")
         
@@ -86,6 +87,12 @@ def main(run_info:dict, run_for_DeepOPINN:bool, run_for_LAX:bool, finetuning_mod
 
     setattr(args, 'data', 'HUST')
     setattr(args, 'batch', 'one_batch')
+
+    import glob as _glob
+    _sample_files = _glob.glob(os.path.join(data_path, 'HUST data', '*.csv'))
+    if _sample_files:
+        _sample_csv = pd.read_csv(_sample_files[0])
+        args.g_dim_LAX_HUST = _sample_csv.shape[1] - 1
 
     investigating_losses = InvestigatingLosses(
         dataset_name=args.data, 
@@ -288,7 +295,7 @@ def main(run_info:dict, run_for_DeepOPINN:bool, run_for_LAX:bool, finetuning_mod
         print(f"Saved {args.data}_validation_losses.xlsx in the path {val_loss_path}")
 
 
-def small_sample(run_info:bool, run_for_DeepOPINN:bool, run_for_LAX:bool, finetuning_mode:bool, train_with_target_cells:bool, path_to_weights:str, run_name:str=None, data_path='data/Full'):
+def small_sample(run_info:bool, run_for_DeepOPINN:bool, run_for_LAX:bool, finetuning_mode:bool, train_with_target_cells:bool, path_to_weights:str, run_name:str=None, data_path="data/Processed"):
     if type(run_info['run_for_a_model_explicitly']) != bool:
         raise ValueError("run_for_a_model_explicitly must be either True or False")
         
@@ -563,16 +570,16 @@ def small_sample(run_info:bool, run_for_DeepOPINN:bool, run_for_LAX:bool, finetu
 
 
 if __name__ == '__main__':
-    run_main = False # True, False
+    run_main = True # True, False
     run_optimization = False # True, False
     
-    run_samll_sample = True # True, False
+    run_samll_sample = False # True, False
     train_with_target_cells = True # True, False
 
     # If you want to train the PINN, DeepOPINN, or LAX model explicitly, You should assign True to run_for_a_model_explicitly and the name of your desired model to model_name, otherwise False to run_for_a_model_explicitly
     run_info = {
-        'run_for_a_model_explicitly': False, # True, False
-        'model_name': 'Bagging_u' # DeepONet, "PINNsFormer", "DONG", "PINN", "DeepOPINN", "DOPFormer", "LAX", "Bagging_u", "LAX_predictor", "DeepOLAX", "DOPDeepOLAX"
+        'run_for_a_model_explicitly': True, # True, False
+        'model_name': 'LAX' # DeepONet, "PINNsFormer", "DONG", "PINN", "DeepOPINN", "DOPFormer", "LAX", "Bagging_u", "LAX_predictor", "DeepOLAX", "DOPDeepOLAX"
     }
     # If you want to freeze the LAX model during the training of the DOPLAX module, You should assign False to run_for_LAX otherwise True
     run_for_LAX = False # True:unfreeze, False:freeze, None:random initial weights
@@ -582,9 +589,9 @@ if __name__ == '__main__':
     finetuning_mode = False # True, False
 
     path_to_weights = 'pretrained_models' # str
-    run_name = "Combination/Bagging_u/small-samples_both_freeze_sumproduct_Phi" # DOP_unfreeze_LAX_freeze # both_freeze # str, None
-    data_path = "data/Full" # "Full", "AK" (Average Kernel), "OFS" (Online Fourier Selective)
-    n_experiments = 10
+    run_name = "LAX_KneeAware" # DOP_unfreeze_LAX_freeze # both_freeze # str, None
+    data_path = "data/Processed" # "Full", "AK" (Average Kernel), "OFS" (Online Fourier Selective)
+    n_experiments = 1
     
 
     if run_main:
