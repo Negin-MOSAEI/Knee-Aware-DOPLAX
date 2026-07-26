@@ -8,7 +8,6 @@ from Model.Auxiliary_nets.Solution_u import Solution_u
 from Model.Auxiliary_nets.MLP import MLP
 from Model.PI_nets import DeepOPINN 
 from Model.PI_nets.LAX import OptimizationNetwork 
-from knee_point_detection import knee_aware_branch_weights
 import deepxde as dde
 import os 
 import warnings 
@@ -18,7 +17,7 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 
 class MLP_Bagging_NN(nn.Module):
-    def __init__(self, input_dim=17, output_dim=1, hidden_dim=[50], dropout=0.2):
+    def __init__(self, input_dim=3, output_dim=1, hidden_dim=[50], dropout=0.2):
         super(MLP_Bagging_NN, self).__init__()
 
         self.input_dim = input_dim
@@ -239,7 +238,7 @@ class Model(DeepOPINN.Model):
                                hidden_dim=hidden_dim_F, 
                                dropout=self.args.dropout).to(device)
 
-        self.bagging_NN = MLP_Bagging_NN(input_dim=2, output_dim=1,
+        self.bagging_NN = MLP_Bagging_NN(input_dim=3, output_dim=1,
                                          hidden_dim=self.args.bag_hidden_dim,  
                                          dropout=self.args.dropout).to(device)
 
@@ -308,7 +307,8 @@ class Model(DeepOPINN.Model):
         checkpoint['model_state']['y'] = checkpoint['model_state']['y'][0].unsqueeze(0).repeat(self.args.batch_size, 1)
 
         sum_, n_samples= 0.0, 0.0 
-        for x1, x2, _, _ in trainloader:
+        for batch in trainloader:
+            x1, x2 = batch[0], batch[1]
             x1, x2 = x1[:, :16], x2[:, :16] 
             sum_ += x2.sum(dim=0)
             n_samples += x2.size(0) 
@@ -318,7 +318,7 @@ class Model(DeepOPINN.Model):
         if self.args.trained_by_y_opt_LAX:
             checkpoint['model_state']['y'] = nn.Parameter(fixed_ys, requires_grad= self.args.trained_by_y_opt_LAX).to(device=device)
 
-        self.LAX_model.load_state_dict(checkpoint["model_state"])
+        self.LAX_model.load_state_dict(checkpoint["model_state"], strict=False)
         for param in self.LAX_model.parameters():
             param.requires_grad = not freeze
         
@@ -343,12 +343,8 @@ class Model(DeepOPINN.Model):
                 xt1 = self.extract_features(x1)
                 _, u_pinn = self.predict(xt1)
                 u_lax = self.LAX_model(x=x1[:,:-1], t=x1[:,-1], epoch=epoch)
-                if has_kd:
-                    kd1_dev = kd1.to(device)
-                    w_lax, w_pinn = knee_aware_branch_weights(kd1_dev)
-                    u1 = w_lax * u_lax + w_pinn * u_pinn
-                else:
-                    u1 = self.bagging_NN(torch.cat([u_pinn, u_lax], dim=1))
+                kd1_dev = kd1.to(device) if has_kd else torch.zeros(u_pinn.shape[0], 1, device=device)
+                u1 = self.bagging_NN(torch.cat([u_pinn, u_lax, kd1_dev], dim=1))
                 true_label.append(y1)
                 pred_label.append(u1.cpu().detach().numpy())
         pred_label = np.concatenate(pred_label, axis=0)
@@ -377,12 +373,8 @@ class Model(DeepOPINN.Model):
                 xt1 = self.extract_features(x1)
                 _, u_pinn = self.predict(xt1)
                 u_lax = self.LAX_model(x=x1[:,:-1], t=x1[:,-1], epoch=epoch)
-                if has_kd:
-                    kd1_dev = kd1.to(device)
-                    w_lax, w_pinn = knee_aware_branch_weights(kd1_dev)
-                    u1 = w_lax * u_lax + w_pinn * u_pinn
-                else:
-                    u1 = self.bagging_NN(torch.cat([u_pinn, u_lax], dim=1))
+                kd1_dev = kd1.to(device) if has_kd else torch.zeros(u_pinn.shape[0], 1, device=device)
+                u1 = self.bagging_NN(torch.cat([u_pinn, u_lax, kd1_dev], dim=1))
                 true_label.append(y1)
                 pred_label.append(u1.cpu().detach().numpy())
         pred_label = np.concatenate(pred_label,axis=0)
@@ -400,7 +392,8 @@ class Model(DeepOPINN.Model):
         sum_squared = 0.0
         n_samples = 0
         
-        for x1, x2, _, _ in trainloader:
+        for batch in trainloader:
+            x1, x2 = batch[0], batch[1]
             x2 = x2[:, :16]
             x1 = x1[:, :16]
             sum_ += x2.sum(dim=0)  # sum across the batch (dim=0), result shape: [num_features]
@@ -419,8 +412,8 @@ class Model(DeepOPINN.Model):
         return model
 
 
-    def forward_bagging_NN(self, U1, U2):
-        bnn = self.bagging_NN(torch.cat([U1, U2], dim=1))
+    def forward_bagging_NN(self, U1, U2, kd):
+        bnn = self.bagging_NN(torch.cat([U1, U2, kd], dim=1))
         return bnn
 
 
@@ -464,16 +457,10 @@ class Model(DeepOPINN.Model):
             u1_lax = self.forward_LAX(x1, epoch=epoch)
             u2_lax = self.forward_LAX(x2, epoch=epoch)
 
-            if has_kd:
-                kd1_dev = kd1.to(device)
-                kd2_dev = kd2.to(device)
-                w_lax1, w_pinn1 = knee_aware_branch_weights(kd1_dev)
-                w_lax2, w_pinn2 = knee_aware_branch_weights(kd2_dev)
-                Bag_u1 = w_lax1 * u1_lax + w_pinn1 * u1
-                Bag_u2 = w_lax2 * u2_lax + w_pinn2 * u2
-            else:
-                Bag_u1 = self.forward_bagging_NN(u1, u1_lax)
-                Bag_u2 = self.forward_bagging_NN(u2, u2_lax)
+            kd1_dev = kd1.to(device) if has_kd else torch.zeros(u1.shape[0], 1, device=device)
+            kd2_dev = kd2.to(device) if has_kd else torch.zeros(u2.shape[0], 1, device=device)
+            Bag_u1 = self.forward_bagging_NN(u1, u1_lax, kd1_dev)
+            Bag_u2 = self.forward_bagging_NN(u2, u2_lax, kd2_dev)
 
             # loss_data_Bagging
             loss_data_bagging = 0.5*self.loss_func(Bag_u1, y1) + 0.5*self.loss_func(Bag_u2, y2)
@@ -582,6 +569,8 @@ class Model(DeepOPINN.Model):
 
             if self.args.early_stop is not None and early_stop > self.args.early_stop//4:
                 if self.test_metrics_history['RMSE'][-1] > 0.50 or self.test_metrics_history['MAPE'][-1] > 0.50:
+                    if hasattr(self, 'best_model') and self.best_model is not None:
+                        self._save_model()
                     self._clear_logger()
                     return 'invalid', (self.test_metrics_history['RMSE'][-1], self.test_metrics_history['MAPE'][-1])
                     

@@ -52,6 +52,8 @@ class DF():
         :param file_name: str
         :return: DataFrame
         '''
+        from knee_point_detection import KneePointDetector
+
         df = pd.read_csv(file_name)
 
         if self.args.data != 'NASA':
@@ -63,6 +65,15 @@ class DF():
         knee_distance = None
         if has_knee_distance:
             knee_distance = df['knee_point_distance'].values.copy()
+        elif 'capacity' in df.columns:
+            cap = df['capacity'].values.astype(float)
+            nom = nominal_capacity if nominal_capacity is not None else (cap[0] if len(cap) > 0 and cap[0] > 0 else 1.0)
+            soh = cap / nom
+            detector = KneePointDetector(n_percent=2.0)
+            knee_distance = detector.compute_knee_distances(soh)
+            cap_col_idx = df.columns.get_loc('capacity')
+            df.insert(cap_col_idx, 'knee_point_distance', knee_distance)
+            has_knee_distance = True
 
         if self.args.data != 'NASA' and nominal_capacity is not None:
             df['capacity'] = df['capacity'] / nominal_capacity
@@ -91,13 +102,16 @@ class DF():
         :return:
         '''
         df = self.read_one_csv(path,nominal_capacity)
-        x = df.iloc[:, :-1].values
-        y = df.iloc[:, -1].values
-        
+
         has_knee_distance = 'knee_point_distance' in df.columns
         kd = None
         if has_knee_distance:
             kd = df['knee_point_distance'].values
+            feat_cols = [c for c in df.columns if c not in ['capacity', 'knee_point_distance']]
+            x = df[feat_cols].values
+        else:
+            x = df.iloc[:, :-1].values
+        y = df['capacity'].values
         
         x1 = x[:-1]
         x2 = x[1:]

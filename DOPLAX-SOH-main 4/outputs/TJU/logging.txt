@@ -10,12 +10,12 @@ Device:        cuda
 Results path:  G:\ISDS\Knee-Aware-DOPLAX\DOPLAX-SOH-main 4\outputs\TJU
 
 --- Test Metrics ---
-             MSE: 0.00019211
-            RMSE: 0.01386043
-            MAPE: 0.01285012
-             MAE: 0.00956839
-            DUAL: 0.00010929
-             PDE: 68.32967377
-       PEARSON_R: 0.98898506
-      FINAL_LOSS: 0.00001511
+             MSE: 0.00017189
+            RMSE: 0.01311054
+            MAPE: 0.01217024
+             MAE: 0.00906353
+            DUAL: 0.00007934
+             PDE: 175.52290344
+       PEARSON_R: 0.98992193
+      FINAL_LOSS: 0.00001411
 ============================================================

@@ -9,7 +9,6 @@ from Model.Auxiliary_nets.MLP import MLP
 from Model.PI_nets import DeepOPINN 
 from Model.Combination_nets import DeepOLAX
 from Model.PI_nets.LAX import OptimizationNetwork 
-from knee_point_detection import knee_aware_branch_weights
 import os 
 import warnings 
 warnings.filterwarnings('ignore') 
@@ -19,7 +18,7 @@ import deepxde as dde
 
 
 class MLP_Bagging_NN(nn.Module):
-    def __init__(self, input_dim=17, output_dim=1, hidden_dim=[50], dropout=0.2):
+    def __init__(self, input_dim=3, output_dim=1, hidden_dim=[50], dropout=0.2):
         super(MLP_Bagging_NN, self).__init__()
 
         self.input_dim = input_dim
@@ -189,7 +188,7 @@ class Model(DeepOLAX.Model):
                                hidden_dim=hidden_dim_F, 
                                dropout=self.args.dropout).to(device)
 
-        self.bagging_NN = MLP_Bagging_NN(input_dim=2, output_dim=1,
+        self.bagging_NN = MLP_Bagging_NN(input_dim=3, output_dim=1,
                                          hidden_dim=self.args.bag_hidden_dim,  
                                          dropout=self.args.dropout).to(device)
 
@@ -251,12 +250,8 @@ class Model(DeepOLAX.Model):
                 _, u_pinn = self.deepopinn.predict(xt1, solution_u=self.solution_u)
                 xt1 = self.extract_features(x1, extractor=self.extractor_deepolax)
                 u_lax = self.LAX_model(x=xt1[:,:-1], t=xt1[:,-1], epoch=epoch)
-                if has_kd:
-                    kd1_dev = kd1.to(device)
-                    w_lax, w_pinn = knee_aware_branch_weights(kd1_dev)
-                    u1 = w_lax * u_lax + w_pinn * u_pinn
-                else:
-                    u1 = self.bagging_NN(torch.cat([u_pinn, u_lax], dim=1))
+                kd1_dev = kd1.to(device) if has_kd else torch.zeros(u_pinn.shape[0], 1, device=device)
+                u1 = self.bagging_NN(torch.cat([u_pinn, u_lax, kd1_dev], dim=1))
                 true_label.append(y1)
                 pred_label.append(u1.cpu().detach().numpy())
         pred_label = np.concatenate(pred_label, axis=0)
@@ -286,12 +281,8 @@ class Model(DeepOLAX.Model):
                 _, u_pinn = self.deepopinn.predict(xt1, solution_u=self.solution_u)
                 xt1 = self.extract_features(x1, extractor=self.extractor_deepolax)
                 u_lax = self.LAX_model(x=xt1[:,:-1], t=xt1[:,-1], epoch=epoch)
-                if has_kd:
-                    kd1_dev = kd1.to(device)
-                    w_lax, w_pinn = knee_aware_branch_weights(kd1_dev)
-                    u1 = w_lax * u_lax + w_pinn * u_pinn
-                else:
-                    u1 = self.bagging_NN(torch.cat([u_pinn, u_lax], dim=1))
+                kd1_dev = kd1.to(device) if has_kd else torch.zeros(u_pinn.shape[0], 1, device=device)
+                u1 = self.bagging_NN(torch.cat([u_pinn, u_lax, kd1_dev], dim=1))
                 true_label.append(y1)
                 pred_label.append(u1.cpu().detach().numpy())
         pred_label = np.concatenate(pred_label,axis=0)
@@ -332,8 +323,8 @@ class Model(DeepOLAX.Model):
             param.requires_grad = not freeze
 
 
-    def forward_bagging_NN(self, U1, U2):
-        bnn = self.bagging_NN(torch.cat([U1, U2], dim=1))
+    def forward_bagging_NN(self, U1, U2, kd):
+        bnn = self.bagging_NN(torch.cat([U1, U2, kd], dim=1))
         return bnn
 
 
@@ -378,16 +369,10 @@ class Model(DeepOLAX.Model):
             u1_lax = self.forward_DeepOLAX(x1, epoch=epoch)
             u2_lax = self.forward_DeepOLAX(x2, epoch=epoch)
 
-            if has_kd:
-                kd1_dev = kd1.to(device)
-                kd2_dev = kd2.to(device)
-                w_lax1, w_pinn1 = knee_aware_branch_weights(kd1_dev)
-                w_lax2, w_pinn2 = knee_aware_branch_weights(kd2_dev)
-                Bag_u1 = w_lax1 * u1_lax + w_pinn1 * u1
-                Bag_u2 = w_lax2 * u2_lax + w_pinn2 * u2
-            else:
-                Bag_u1 = self.forward_bagging_NN(u1, u1_lax)
-                Bag_u2 = self.forward_bagging_NN(u2, u2_lax)
+            kd1_dev = kd1.to(device) if has_kd else torch.zeros(u1.shape[0], 1, device=device)
+            kd2_dev = kd2.to(device) if has_kd else torch.zeros(u2.shape[0], 1, device=device)
+            Bag_u1 = self.forward_bagging_NN(u1, u1_lax, kd1_dev)
+            Bag_u2 = self.forward_bagging_NN(u2, u2_lax, kd2_dev)
 
             # loss_data_Bagging
             loss_data_bagging = 0.5*self.loss_func(Bag_u1, y1) + 0.5*self.loss_func(Bag_u2, y2)

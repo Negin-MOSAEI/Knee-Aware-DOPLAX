@@ -211,7 +211,11 @@ class Model(nn.Module):
         pred_label = []
 
         with torch.no_grad():
-            for iter, (x1, _, y1, _) in enumerate(testloader):
+            for iter, batch in enumerate(testloader):
+                if len(batch) == 6:
+                    x1, _, y1, _, _, _ = batch
+                else:
+                    x1, _, y1, _ = batch
                 x1 = x1.to(device)
                 xt1 = self.extract_features(x1)
                 _, u1 = self.predict(xt1)
@@ -240,7 +244,11 @@ class Model(nn.Module):
             loss3_meter = AverageMeter()
             # to compute losses requiring gradients, like PDE, we should use torch.enable_grad instead of torch.no_grad 
             with torch.enable_grad():
-                for iter, (x1, x2, y1, y2) in enumerate(validloader):
+                for iter, batch in enumerate(validloader):
+                    if len(batch) == 6:
+                        x1, x2, y1, y2, _, _ = batch
+                    else:
+                        x1, x2, y1, y2 = batch
                     x1, x2, y1, y2 = x1.to(device), x2.to(device), y1.to(device), y2.to(device)
                     do_validation(x1, y1)
                     
@@ -266,7 +274,11 @@ class Model(nn.Module):
                         
         else:
             with torch.no_grad():
-                for iter, (x1, _, y1, _) in enumerate(validloader):
+                for iter, batch in enumerate(validloader):
+                    if len(batch) == 6:
+                        x1, _, y1, _, _, _ = batch
+                    else:
+                        x1, _, y1, _ = batch
                     x1 = x1.to(device)
                     do_validation(x1, y1)
                     
@@ -320,7 +332,11 @@ class Model(nn.Module):
         loss3_meter = AverageMeter()
 
         # breakpoint()
-        for iter, (x1, x2, y1, y2) in enumerate(dataloader):
+        for iter, batch in enumerate(dataloader):
+            if len(batch) == 6:
+                x1, x2, y1, y2, _, _ = batch
+            else:
+                x1, x2, y1, y2 = batch
             x1, x2, y1, y2 = x1.to(device), x2.to(device), y1.to(device), y2.to(device)
 
             if self.extractor_deepopinn is None:
@@ -474,11 +490,11 @@ class Model(nn.Module):
                 break
 
         self._save_loss_history_plot()
+        self._save_model()
         if self.args.run_optuna or self.args.run_samll_sample:
             pass
         else:
             self._save_differences_plot(y_true_path=y_true_path, y_pred_path=y_pred_path)
-        self._save_model()
         self._clear_logger()
         return 'valid', None
 
@@ -538,14 +554,17 @@ class Model(nn.Module):
  
     def _save_differences_plot(self, y_true_path, y_pred_path):
         
-        if "XJTU" in y_true_path or "TJU" in y_true_path:
-            parts = os.path.normpath(y_true_path).split(os.sep)
-            batch_num, exp_num = parts[-3], parts[-2]
-
-            batch_num, exp_num = int(batch_num.split('-')[0]), int(exp_num.split('Experiment')[1])
-        else:
-            batch_num, exp_num = "one_batch", y_true_path.split('/')[-2]
-            exp_num = int(exp_num.split('Experiment')[1])
+        try:
+            if "XJTU" in y_true_path or "TJU" in y_true_path:
+                parts = os.path.normpath(y_true_path).split(os.sep)
+                batch_num, exp_num = parts[-3], parts[-2]
+                batch_num, exp_num = int(batch_num.split('-')[0]), int(exp_num.split('Experiment')[1])
+            else:
+                batch_num = "one_batch"
+                exp_num = int(os.path.normpath(y_true_path).split(os.sep)[-2].split('Experiment')[1])
+        except (ValueError, IndexError):
+            batch_num = "one_batch"
+            exp_num = 1
             
         if "XJTU" in y_true_path:
             dataset_name = "XJTU"

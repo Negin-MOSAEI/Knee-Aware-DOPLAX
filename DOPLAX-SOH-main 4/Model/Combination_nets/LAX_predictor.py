@@ -225,7 +225,8 @@ class Model(nn.Module):
         sum_squared = 0.0
         n_samples = 0
         
-        for x1, x2, _, _ in trainloader:
+        for batch in trainloader:
+            x1, x2 = batch[0], batch[1]
             x2 = x2[:, :16]
             x1 = x1[:, :16]
             sum_ += x2.sum(dim=0)  # sum across the batch (dim=0), result shape: [num_features]
@@ -253,7 +254,8 @@ class Model(nn.Module):
         checkpoint['model_state']['y'] = checkpoint['model_state']['y'][0].unsqueeze(0).repeat(self.args.batch_size, 1)
 
         sum_, n_samples= 0.0, 0.0 
-        for x1, x2, _, _ in trainloader:
+        for batch in trainloader:
+            x1, x2 = batch[0], batch[1]
             x1, x2 = x1[:, :16], x2[:, :16] 
             sum_ += x2.sum(dim=0)
             n_samples += x2.size(0) 
