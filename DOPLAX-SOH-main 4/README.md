@@ -1,5 +1,5 @@
 
-<h1 align="center">DOPLAX: Unified Physics-Informed Framework via Operator Learning and Hopf–Lax Solver for Battery Health Estimation</h1>
+<h1 align="center">Knee-Aware DOPLAX: Unified Physics-Informed Framework via Operator Learning and Hopf–Lax Solver for Battery Health Estimation</h1>
 
 <p align="center">
   <a href="https://pytorch.org/"><img src="https://img.shields.io/badge/PyTorch-2.0+-ee4c2c?logo=pytorch&logoColor=white" alt="PyTorch"></a>
@@ -21,7 +21,8 @@
 - [Dataset Preparation](#-dataset-preparation)
 - [Training Models](#-training-models)
 - [Inference](#-inference)
-- [Visualization](#-Visualization)
+- [Visualization](#-visualization)
+- [Knee Point Detection](#-knee-point-detection)
 - [Loss Functions](#-loss-functions)
 - [References](#-references)
 
@@ -29,13 +30,13 @@
 
 ## 🔬 Overview
 
-**DOPLAX** is a physics-integrated framework for accurate State-of-Health (SOH) estimation of lithium-ion batteries. It addresses the challenges of nonlinear degradation and dataset shift across cycling protocols by unifying two physics-informed approaches:
+**Knee-Aware DOPLAX** is a physics-integrated framework for accurate State-of-Health (SOH) estimation of lithium-ion batteries. It addresses the challenges of nonlinear degradation and dataset shift across cycling protocols by unifying three physics-informed approaches:
 
 1. **DeepOPINN**: A DeepONet-backboned Physics-Informed Neural Network (PINN) enforcing PDE residuals for operator-level feature extraction.
 2. **LAX Network**: A novel solver-style network derived from the Hopf–Lax representation of Hamilton–Jacobi (HJ) equations with learned Hamiltonian and dual-convexity regularization.
-3. **Bagging Fusion Module**: A learned fusion mechanism that optimally combines predictions from both pathways
+3. **Knee-Aware Bagging Fusion Module**: A learned fusion mechanism that optimally combines predictions from both pathways with knee-point distance awareness for degradation-state-aware SOH estimation.
 
-
+**Key Innovation**: The inclusion of knee-point distance as a third input to the fusion MLP gives the model awareness of where the battery sits relative to its degradation knee point — the inflection where capacity fade accelerates.
 
 **Comprehensive Evaluation**: Validated on four public benchmarks (XJTU, TJU, MIT, HUST).
 
@@ -49,15 +50,38 @@
   <img src="./figures/DOPLAX_refined_v5.2_art.svg" alt="DOPLAX Architecture" width="90%"/>
 </p>
 
+### Knee-Aware DOPLAX Pipeline
 
-
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    Knee-Aware DOPLAX                         │
+├─────────────────────────────────────────────────────────────┤
+│                                                              │
+│  Raw Features (x) ──┬──→ DeepONet (extractor + Solution_u)  │
+│                      │           ↓                           │
+│                      │       u_pinn                          │
+│                      │           ↓                           │
+│  Raw Features (x) ───┼──→ LAX (OptimizationNetwork)         │
+│  Time (t) ───────────┘           ↓                           │
+│                            u_lax                             │
+│                      ↓           ↓                           │
+│  Knee Distance ──────┼───────────┼─────────────────────────  │
+│  (kd)                ↓           ↓                           │
+│              ┌─────────────────────────┐                     │
+│              │  MLP_Bagging_NN([3→1])  │                     │
+│              │  Input: [u_pinn, u_lax,  │                     │
+│              │          knee_distance]  │                     │
+│              └────────────┬────────────┘                     │
+│                           ↓                                  │
+│                    Final SOH Prediction                       │
+└─────────────────────────────────────────────────────────────┘
+```
 
 ### Two-Phase Training Strategy
 
 <p align="center">
   <img src="./figures/DOPLAX_refined_v5.2_strategy.svg" alt="Two-Phase Training Architecture" width="90%"/>
 </p>
-
 
 
 
@@ -134,22 +158,27 @@ https://github.com/wang-fujin/PINN4SOH?tab=readme-ov-file#4--additional-informat
 
 ```
 data/
-└── Full/
+├── Full/
+│   ├── XJTU data/
+│   │   ├── 2C_battery-1.csv
+│   │   ├── 2C_battery-2.csv
+│   │   └── ...
+│   ├── TJU data/
+│   │   ├── NCA/
+│   │   ├── NCM/
+│   │   └── NCM_NCA/
+│   ├── MIT data/
+│   │   ├── 2017-05-12/
+│   │   ├── 2017-06-30/
+│   │   └── 2018-04-12/
+│   └── HUST data/
+│       ├── 1-1.csv
+│       └── ...
+└── Processed/
     ├── XJTU data/
-    │   ├── 2C_battery-1.csv
-    │   ├── 2C_battery-2.csv
-    │   └── ...
     ├── TJU data/
-    │   ├── NCA/
-    │   ├── NCM/
-    │   └── NCM_NCA/
     ├── MIT data/
-    │   ├── 2017-05-12/
-    │   ├── 2017-06-30/
-    │   └── 2018-04-12/
     └── HUST data/
-        ├── 1-1.csv
-        └── ...
 ```
 
 ### Batch Information
@@ -218,7 +247,7 @@ run_info = {
 }
 ```
 
-#### DOPLAX (Combined)
+#### Knee-Aware DOPLAX (Combined)
 
 ```python
 run_info = {
@@ -227,7 +256,8 @@ run_info = {
 }
 ```
 
-### STEP3: Runing the desired main file
+### STEP3: Running the desired main file
+
 You can run the scripts using the default settings, or you can run them with your own parameter values:
 ```python
 # Train on XJTU dataset
@@ -243,17 +273,107 @@ python ./main_MIT.py
 python ./main_HUST.py
 ```
 
+### STEP4: Training Bagging MLP (Knee-Aware Fusion)
+
+After training DeepOPINN and LAX individually, train the Bagging MLP fusion module:
+
+```bash
+# Train all models across all datasets
+python run_all_bagging.py
+```
+
+This script:
+1. Trains DeepOPINN for all 4 datasets (skips if checkpoint exists)
+2. Trains LAX for all 4 datasets (skips if checkpoint exists)
+3. Trains Bagging MLP for all 4 datasets (skips if checkpoint exists)
+
+**Key Bagging MLP Parameters:**
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `bag_hidden_dim` | Hidden layer dimensions for MLP | `[10, 10]` (HUST: `[50, 50]`) |
+| `bagging_NN_lr` | Learning rate for Bagging MLP | Dataset-specific |
+| `mono_bag` | Monotonicity loss weight | Dataset-specific |
+
+---
+
 ## 🚀 Inference
 To run inference with the models, first download the pretrained weights from [Zenodo](https://doi.org/10.5281/zenodo.17883282), then load them using the provided load_model method in each module provided for each model.
 
 ---
 
-### Visualization
+## 📈 Visualization
+
+### Generating Knee-Aware DOPLAX Plots
+
+Generate comprehensive plots showing all three sub-model predictions:
+
+```bash
+python plot_all_datasets.py
+```
+
+This generates 17 plots in `outputs/plots/`:
+
+| Plot | Description |
+|------|-------------|
+| `kneaware_capacity_per_battery_{ds}.png` (×4) | Per-battery capacity curves: True vs DeepOPINN vs LAX vs Knee-Aware DOPLAX |
+| `kneaware_scatter_per_battery_{ds}.png` (×4) | Per-battery scatter: 3 columns (DeepOPINN, LAX, Knee-Aware DOPLAX) |
+| `kneaware_combined_overview.png` | 2×2 grid: best battery from each dataset, all 3 models overlaid |
+| `kneaware_predicted_vs_actual_all.png` | 3×4 grid: all batteries overlaid per dataset per model |
+| `kneaware_model_comparison_bars.png` | Cross-dataset RMSE/MAE/MAPE/R bar charts for all 3 models |
+| `kneaware_metrics_table.png` | Color-coded metrics table figure |
+| `kneaware_metrics_summary.csv` | Raw metrics data |
+| `training_loss_{ds}.png` (×4) | Training/validation loss curves |
+
+### Sample Results
 
 <p align="center">
   <img src="./figures/f_comparison_plots.svg" alt="SOH Degradation Curves" width="90%"/>
 </p>
 *SOH degradation curves comparing PINN (left) and DOPLAX (right) across four datasets.*
+
+---
+
+## 🔍 Knee Point Detection
+
+The knee point is the inflection in capacity degradation where fade accelerates. Knee-Aware DOPLAX uses this as a feature input.
+
+### Knee Point Distance Formula
+
+```python
+knee_point_distance[i] = (knee_index - i) / knee_index   # if i < knee_index
+                         0                                  # if i >= knee_index
+```
+
+- **1.0** at cycle 0 (far from knee)
+- **0.0** at/after the knee point
+- Linearly decreasing between them
+
+### Knee Point Detection Algorithm
+
+1. Fit linear regression to the first `le` cycles (linear region)
+2. Extrapolate that line across all cycles
+3. Compute residuals: `|actual - fitted|`
+4. Knee point = first cycle where `residuals >= (n_percent/100) × fitted`
+
+### Optimizing n_percent
+
+The threshold `n_percent` is optimized via grid search:
+
+```python
+from knee_point_detection import optimize_n_percent
+
+optimal_n = optimize_n_percent(all_soh_trajectories)
+```
+
+**Scoring function** (lower = better):
+```
+score = (1 - R²_before) + R²_after + |1 - slope_ratio|
+```
+
+- `(1 - R²_before)`: penalizes poor linear fit before knee
+- `R²_after`: penalizes good linear fit after knee
+- `|1 - slope_ratio|`: penalizes weak slope change
 
 ---
 
@@ -272,6 +392,16 @@ $$
 $$
 \mathcal{L}_{LAX} = \mathcal{L}_{Data} + \beta \mathcal{L}_{Mono} + \gamma \mathcal{L}_{Dual}
 $$
+
+### Bagging MLP Loss
+
+$$
+\mathcal{L}_{Bag} = \mathcal{L}_{Data}^{bag} + \mu \mathcal{L}_{Mono}^{bag}
+$$
+
+Where:
+- $\mathcal{L}_{Data}^{bag}$: MSE between Bagging MLP prediction and true capacity
+- $\mathcal{L}_{Mono}^{bag}$: Monotonicity constraint on Bagging MLP predictions
 
 ### Individual Components
 
@@ -295,6 +425,70 @@ $$
 \mathcal{L}_{Dual} = \|\Phi^* - (\Phi^*)^{**}\|
 $$
 
+---
+
+## 📊 Metrics Summary
+
+### Knee-Aware DOPLAX Performance (All 4 Datasets)
+
+| Dataset | Model | RMSE | MAE | MAPE | Pearson R |
+|---------|-------|------|-----|------|-----------|
+| XJTU | DeepOPINN | 0.0153 | 0.0110 | 1.20% | 0.9146 |
+| XJTU | LAX | 0.0202 | 0.0164 | 1.76% | 0.8779 |
+| XJTU | **Knee-Aware DOPLAX** | **0.0169** | **0.0129** | **1.40%** | **0.9195** |
+| TJU | DeepOPINN | 0.0085 | 0.0065 | 0.87% | 0.9970 |
+| TJU | LAX | 0.0559 | 0.0494 | 6.43% | 0.9555 |
+| TJU | **Knee-Aware DOPLAX** | **0.0062** | **0.0049** | **0.63%** | **0.9981** |
+| MIT | DeepOPINN | 0.0081 | 0.0058 | 0.61% | 0.9624 |
+| MIT | LAX | 0.0111 | 0.0081 | 0.85% | 0.9338 |
+| MIT | **Knee-Aware DOPLAX** | **0.0078** | **0.0056** | **0.59%** | **0.9638** |
+| HUST | DeepOPINN | 0.0093 | 0.0073 | 0.75% | 0.9937 |
+| HUST | LAX | 0.0546 | 0.0346 | 3.74% | 0.7085 |
+| HUST | **Knee-Aware DOPLAX** | **0.0087** | **0.0069** | **0.70%** | **0.9937** |
+
+---
+
+## 📁 Project Structure
+
+```
+DOPLAX-SOH-main 4/
+├── Model/
+│   ├── PI_nets/
+│   │   ├── DeepOPINN.py          # DeepOPINN model
+│   │   └── LAX.py                # LAX OptimizationNetwork
+│   ├── Auxiliary_nets/
+│   │   ├── Solution_u.py         # Solution_u network
+│   │   └── MLP.py                # Base MLP
+│   └── Combination_nets/
+│       └── Bagging_u.py          # MLP_Bagging_NN (Knee-Aware fusion)
+├── dataloader/
+│   ├── dataloader.py             # Data loading with knee_point_distance
+│   └── data_helper.py            # Train/test splits
+├── utils/
+│   └── arguments.py              # Hyperparameter definitions
+├── knee_point_detection.py       # KneePointDetector & optimize_n_percent
+├── run_all_bagging.py            # Unified training orchestrator
+├── run_all_datasets.py           # LAX training orchestrator
+├── plot_all_datasets.py          # Knee-Aware DOPLAX plotting
+├── main_XJTU.py                  # XJTU dataset main
+├── main_TJU.py                   # TJU dataset main
+├── main_MIT.py                   # MIT dataset main
+├── main_HUST.py                  # HUST dataset main
+├── data/
+│   └── Processed/                # Preprocessed CSV files
+└── outputs/
+    ├── plots/                    # Generated plots
+    ├── XJTU/
+    │   ├── Bagging/best_model.pth
+    │   ├── DeepOPINN/best_model.pth
+    │   └── best_weights.pth      # LAX weights
+    ├── TJU/
+    ├── MIT/
+    └── HUST/
+```
+
+---
+
 ## 📖 References
 
 Key references used in this work:
@@ -303,4 +497,3 @@ Key references used in this work:
 2. **PINN**: Raissi, M., Perdikaris, P., & Karniadakis, G. E. (2019). Physics-informed neural networks.
 3. **Hamilton-Jacobi**: Darbon, J., & Meng, T. (2020). Neural network architectures for viscosity solutions.
 4. **Battery PINN**: Wang, F., et al. (2024). Physics-informed neural network for lithium-ion battery degradation.
-
