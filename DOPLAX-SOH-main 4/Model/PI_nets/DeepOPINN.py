@@ -1,3 +1,5 @@
+import os
+os.environ['DDE_BACKEND'] = 'pytorch'
 import torch
 import torch.nn as nn
 import numpy as np
@@ -211,17 +213,16 @@ class Model(nn.Module):
         pred_label = []
 
         with torch.no_grad():
-            for iter, (x1, _, y1, _) in enumerate(testloader):
+            for iter, (x1, _, y1) in enumerate(testloader):
                 x1 = x1.to(device)
                 xt1 = self.extract_features(x1)
                 _, u1 = self.predict(xt1)
-                true_label.append(y1)
+                true_label.append(y1.cpu().detach().numpy())
                 pred_label.append(u1.cpu().detach().numpy())
         pred_label = np.concatenate(pred_label, axis=0)
         true_label = np.concatenate(true_label, axis=0)
 
         return true_label,pred_label
-
 
     def Valid(self, epoch, validloader, log_losses:bool=False):
         self.eval()
@@ -240,20 +241,24 @@ class Model(nn.Module):
             loss3_meter = AverageMeter()
             # to compute losses requiring gradients, like PDE, we should use torch.enable_grad instead of torch.no_grad 
             with torch.enable_grad():
-                for iter, (x1, x2, y1, y2) in enumerate(validloader):
-                    x1, x2, y1, y2 = x1.to(device), x2.to(device), y1.to(device), y2.to(device)
-                    do_validation(x1, y1)
+                for iter, (x1, target_kpd, target_soh) in enumerate(validloader):
+                    x1, target_kpd, target_soh = x1.to(device), target_kpd.to(device), target_soh.to(device)
+                    do_validation(x1, target_soh)
                     
                     u1, f1 = self.forward_deepopinn(x1)
-                    u2, f2 = self.forward_deepopinn(x2)
                     
+                    # Knee-Aware weighting
+                    weight = self.relu(-target_kpd)
+
                     # data loss
-                    loss1 = 0.5*self.loss_func(u1, y1) + 0.5*self.loss_func(u2, y2)
+                    loss1 = (torch.pow(u1 - target_soh, 2) * weight).mean()
                     # PDE loss
                     f_target = torch.zeros_like(f1)
-                    loss2 = 0.5*self.loss_func(f1, f_target) + 0.5*self.loss_func(f2, f_target)
-                    # physics loss  u2-u1<0, considering capacity regeneration
-                    loss3 = self.relu(torch.mul(u2-u1, y1-y2)).sum()
+                    loss2 = (torch.pow(f1 - f_target, 2) * weight).mean()
+                    
+                    # Original physics loss (u2-u1 < 0) was for paired data. 
+                    # We can use the weight sum as loss3 to monitor knee mask activation
+                    loss3 = weight.sum()
 
                     loss1_meter.update(loss1.item())
                     loss2_meter.update(loss2.item())
@@ -266,7 +271,7 @@ class Model(nn.Module):
                         
         else:
             with torch.no_grad():
-                for iter, (x1, _, y1, _) in enumerate(validloader):
+                for iter, (x1, _, y1) in enumerate(validloader):
                     x1 = x1.to(device)
                     do_validation(x1, y1)
                     
@@ -276,7 +281,7 @@ class Model(nn.Module):
         if log_losses:
             return mse.item(), loss1_meter.avg, loss2_meter.avg, loss3_meter.avg
         else:
-            mse.item(), None, None, None
+            return mse.item(), None, None, None
 
 
     def forward_deepopinn(self, xt, m=None, extractor=None, solution_u=None, dynamical_F=None):
@@ -320,8 +325,8 @@ class Model(nn.Module):
         loss3_meter = AverageMeter()
 
         # breakpoint()
-        for iter, (x1, x2, y1, y2) in enumerate(dataloader):
-            x1, x2, y1, y2 = x1.to(device), x2.to(device), y1.to(device), y2.to(device)
+        for iter, (x1, target_kpd, target_soh) in enumerate(dataloader):
+            x1, target_kpd, target_soh = x1.to(device), target_kpd.to(device), target_soh.to(device)
 
             if self.extractor_deepopinn is None:
                 self.m = x1.shape[1]
@@ -362,20 +367,22 @@ class Model(nn.Module):
                 )
                 
             u1, f1 = self.forward_deepopinn(x1)
-            u2, f2 = self.forward_deepopinn(x2)
             
+            # Knee-Aware weighting
+            weight = self.relu(-target_kpd)
+
             # data loss
-            loss1 = 0.5*self.loss_func(u1, y1) + 0.5*self.loss_func(u2, y2)
+            loss1 = (torch.pow(u1 - target_soh, 2) * weight).mean()
 
             # PDE loss
             f_target = torch.zeros_like(f1)
-            loss2 = 0.5*self.loss_func(f1, f_target) + 0.5*self.loss_func(f2, f_target)
+            loss2 = (torch.pow(f1 - f_target, 2) * weight).mean()
 
-            # physics loss  u2-u1<0, considering capacity regeneration
-            loss3 = self.relu(torch.mul(u2-u1, y1-y2)).sum()
+            # physics loss (monitor masking activation instead of u2-u1)
+            loss3 = weight.sum()
 
             # total loss
-            loss = loss1 + self.args.alpha*loss2 + self.args.beta*loss3
+            loss = loss1 + self.args.alpha*loss2
 
             # Backward pass with separate optimizers
             self.optimizer_extractor.zero_grad()

@@ -353,3 +353,91 @@ class NASAdata(DF):
         :return: dict
         '''
         return self.load_all_battery(specific_path=specific_path)
+
+import math
+from utils.math_utils import calculate_kpd, tst_cold_start_kpd
+import json
+
+class BatteryCycleDataset(torch.utils.data.Dataset):
+    def __init__(self, data_root, dataset_name, battery_ids, window_size=40, capacity_column_index=0, num_features=3, initial_knee_points=None):
+        self.data_root = data_root
+        self.dataset_name = dataset_name
+        self.battery_ids = battery_ids
+        self.window_size = window_size
+        self.capacity_column_index = capacity_column_index
+        self.num_features = num_features
+        self.initial_knee_points = initial_knee_points or {}
+        
+        self.samples = []
+        
+        # Determine actual absolute data_dir based on dataset_name
+        self.data_dir = os.path.join(self.data_root, f"{self.dataset_name} data")
+        self._load_and_process_data()
+
+    def _calculate_soh(self, raw_data_matrix):
+        """Dynamic SOH calculation: SOH = Capacity_current / Capacity_initial"""
+        capacity = raw_data_matrix[:, self.capacity_column_index]
+        initial_capacity = capacity[0]
+        if initial_capacity == 0:
+            initial_capacity = 1e-6 # prevent division by zero
+        soh = capacity / initial_capacity
+        return soh
+        
+    def _load_and_process_data(self):
+        for bat_id in self.battery_ids:
+            # We already have relative path stored as bat_id
+            file_path = os.path.join(self.data_dir, f"{bat_id}.csv")
+            if not os.path.exists(file_path):
+                raise FileNotFoundError(f"CRITICAL: Real data file not found at -> {file_path}")
+                
+            try:
+                df = pd.read_csv(file_path)
+                
+                # Replace inf and -inf
+                df = df.replace([np.inf, -np.inf], np.nan)
+                df = df.dropna()
+                df = df.reset_index(drop=True)
+                
+                raw_data_matrix = df.values
+                soh = self._calculate_soh(raw_data_matrix)
+                
+                num_cycles = raw_data_matrix.shape[0]
+                
+                # Get knee point cycle for this battery, fallback to 100 if missing
+                # bat_id could be nested like "default/Bat_008" or "1-1", so we need to match appropriately
+                bat_key = bat_id.split('/')[-1]
+                if self.dataset_name in self.initial_knee_points and bat_key in self.initial_knee_points[self.dataset_name]:
+                    knee_point_cycle = self.initial_knee_points[self.dataset_name][bat_key]
+                else:
+                    knee_point_cycle = 100
+                
+                for i in range(num_cycles):
+                    current_cycle = i + 1
+                    
+                    if current_cycle < self.window_size:
+                        # Cold start: Pad with initial cycle
+                        pad_len = self.window_size - current_cycle
+                        pad = np.tile(raw_data_matrix[0, :self.num_features], (pad_len, 1))
+                        window_data = np.vstack([pad, raw_data_matrix[:current_cycle, :self.num_features]])
+                        kpd = tst_cold_start_kpd(current_cycle)
+                    else:
+                        window_data = raw_data_matrix[current_cycle - self.window_size:current_cycle, :self.num_features]
+                        kpd = calculate_kpd(current_cycle, knee_point_cycle)
+                        
+                    target_soh = soh[i]
+                    self.samples.append((window_data, kpd, target_soh))
+                    
+            except Exception as e:
+                print(f"Error loading {file_path}: {e}")
+
+    def __len__(self):
+        return len(self.samples)
+
+    def __getitem__(self, idx):
+        features, target_kpd, target_soh = self.samples[idx]
+        return torch.tensor(features, dtype=torch.float32), torch.tensor([target_kpd], dtype=torch.float32), torch.tensor([target_soh], dtype=torch.float32)
+
+def get_dataloader(data_root, dataset_name, battery_ids, batch_size, shuffle=True, capacity_column_index=0, initial_knee_points=None, window_size=40):
+    dataset = BatteryCycleDataset(data_root, dataset_name, battery_ids, window_size=window_size, capacity_column_index=capacity_column_index, initial_knee_points=initial_knee_points)
+    generator = torch.Generator(device='cuda' if torch.cuda.is_available() else 'cpu')
+    return DataLoader(dataset, batch_size=batch_size, shuffle=shuffle, num_workers=0, generator=generator)
