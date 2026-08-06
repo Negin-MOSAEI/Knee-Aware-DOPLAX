@@ -1,0 +1,6672 @@
+
+ train loss mse on epoch 1 :  0.974669
+
+ train loss rmse on epoch 1 :  0.987253
+
+ train loss mape on epoch 1 :  1.047138
+
+ train loss mae on epoch 1 :  0.986107
+
+ train loss pde on epoch 1 :  0.191517
+
+ train loss dual consistency on epoch 1 :  0.00000000
+
+ valid loss mse on epoch 1 :  0.973510
+
+ valid loss rmse on epoch 1 :  0.986666
+
+ valid loss mape on epoch 1 :  1.047321
+
+ valid loss mae on epoch 1 :  0.985510
+
+ valid loss pde on epoch 1 :  0.127415
+
+ valid loss dual consistency on epoch 1 :  0.00000000
+
+ train loss mse on epoch 2 :  0.847032
+
+ train loss rmse on epoch 2 :  0.920343
+
+ train loss mape on epoch 2 :  0.975567
+
+ train loss mae on epoch 2 :  0.918710
+
+ train loss pde on epoch 2 :  0.190667
+
+ train loss dual consistency on epoch 2 :  0.00000000
+
+ valid loss mse on epoch 2 :  0.749896
+
+ valid loss rmse on epoch 2 :  0.865965
+
+ valid loss mape on epoch 2 :  0.919135
+
+ valid loss mae on epoch 2 :  0.864877
+
+ valid loss pde on epoch 2 :  0.128424
+
+ valid loss dual consistency on epoch 2 :  0.00000000
+
+ train loss mse on epoch 3 :  0.590648
+
+ train loss rmse on epoch 3 :  0.768536
+
+ train loss mape on epoch 3 :  0.811458
+
+ train loss mae on epoch 3 :  0.764494
+
+ train loss pde on epoch 3 :  0.189716
+
+ train loss dual consistency on epoch 3 :  0.00000000
+
+ valid loss mse on epoch 3 :  0.396761
+
+ valid loss rmse on epoch 3 :  0.629890
+
+ valid loss mape on epoch 3 :  0.667324
+
+ valid loss mae on epoch 3 :  0.628430
+
+ valid loss pde on epoch 3 :  0.130855
+
+ valid loss dual consistency on epoch 3 :  0.00000000
+
+ train loss mse on epoch 4 :  0.134791
+
+ train loss rmse on epoch 4 :  0.367139
+
+ train loss mape on epoch 4 :  0.322200
+
+ train loss mae on epoch 4 :  0.303979
+
+ train loss pde on epoch 4 :  0.194907
+
+ train loss dual consistency on epoch 4 :  0.00000000
+
+ valid loss mse on epoch 4 :  0.020347
+
+ valid loss rmse on epoch 4 :  0.142641
+
+ valid loss mape on epoch 4 :  0.147137
+
+ valid loss mae on epoch 4 :  0.135967
+
+ valid loss pde on epoch 4 :  0.136971
+
+ valid loss dual consistency on epoch 4 :  0.00000000
+
+ train loss mse on epoch 5 :  0.008535
+
+ train loss rmse on epoch 5 :  0.092385
+
+ train loss mape on epoch 5 :  0.082188
+
+ train loss mae on epoch 5 :  0.076703
+
+ train loss pde on epoch 5 :  0.202741
+
+ train loss dual consistency on epoch 5 :  0.00000000
+
+ valid loss mse on epoch 5 :  0.002893
+
+ valid loss rmse on epoch 5 :  0.053785
+
+ valid loss mape on epoch 5 :  0.049934
+
+ valid loss mae on epoch 5 :  0.047369
+
+ valid loss pde on epoch 5 :  0.137312
+
+ valid loss dual consistency on epoch 5 :  0.00000000
+
+ train loss mse on epoch 6 :  0.002009
+
+ train loss rmse on epoch 6 :  0.044821
+
+ train loss mape on epoch 6 :  0.037592
+
+ train loss mae on epoch 6 :  0.034514
+
+ train loss pde on epoch 6 :  0.202095
+
+ train loss dual consistency on epoch 6 :  0.00000000
+
+ valid loss mse on epoch 6 :  0.001639
+
+ valid loss rmse on epoch 6 :  0.040486
+
+ valid loss mape on epoch 6 :  0.036154
+
+ valid loss mae on epoch 6 :  0.033838
+
+ valid loss pde on epoch 6 :  0.137476
+
+ valid loss dual consistency on epoch 6 :  0.00000000
+
+ train loss mse on epoch 7 :  0.000775
+
+ train loss rmse on epoch 7 :  0.027831
+
+ train loss mape on epoch 7 :  0.023249
+
+ train loss mae on epoch 7 :  0.021677
+
+ train loss pde on epoch 7 :  0.207636
+
+ train loss dual consistency on epoch 7 :  0.00000000
+
+ valid loss mse on epoch 7 :  0.000480
+
+ valid loss rmse on epoch 7 :  0.021897
+
+ valid loss mape on epoch 7 :  0.018092
+
+ valid loss mae on epoch 7 :  0.016721
+
+ valid loss pde on epoch 7 :  0.145323
+
+ valid loss dual consistency on epoch 7 :  0.00000000
+
+ train loss mse on epoch 8 :  0.000384
+
+ train loss rmse on epoch 8 :  0.019602
+
+ train loss mape on epoch 8 :  0.016551
+
+ train loss mae on epoch 8 :  0.015411
+
+ train loss pde on epoch 8 :  0.210021
+
+ train loss dual consistency on epoch 8 :  0.00000000
+
+ valid loss mse on epoch 8 :  0.000297
+
+ valid loss rmse on epoch 8 :  0.017243
+
+ valid loss mape on epoch 8 :  0.014246
+
+ valid loss mae on epoch 8 :  0.013249
+
+ valid loss pde on epoch 8 :  0.143243
+
+ valid loss dual consistency on epoch 8 :  0.00000000
+
+ train loss mse on epoch 9 :  0.000260
+
+ train loss rmse on epoch 9 :  0.016137
+
+ train loss mape on epoch 9 :  0.013264
+
+ train loss mae on epoch 9 :  0.012308
+
+ train loss pde on epoch 9 :  0.208135
+
+ train loss dual consistency on epoch 9 :  0.00000000
+
+ valid loss mse on epoch 9 :  0.000261
+
+ valid loss rmse on epoch 9 :  0.016167
+
+ valid loss mape on epoch 9 :  0.013024
+
+ valid loss mae on epoch 9 :  0.011987
+
+ valid loss pde on epoch 9 :  0.142324
+
+ valid loss dual consistency on epoch 9 :  0.00000000
+
+ train loss mse on epoch 10 :  0.000223
+
+ train loss rmse on epoch 10 :  0.014950
+
+ train loss mape on epoch 10 :  0.012184
+
+ train loss mae on epoch 10 :  0.011308
+
+ train loss pde on epoch 10 :  0.208221
+
+ train loss dual consistency on epoch 10 :  0.00000000
+
+ valid loss mse on epoch 10 :  0.000218
+
+ valid loss rmse on epoch 10 :  0.014749
+
+ valid loss mape on epoch 10 :  0.011910
+
+ valid loss mae on epoch 10 :  0.011061
+
+ valid loss pde on epoch 10 :  0.142794
+
+ valid loss dual consistency on epoch 10 :  0.00000000
+
+ train loss mse on epoch 11 :  0.000200
+
+ train loss rmse on epoch 11 :  0.014147
+
+ train loss mape on epoch 11 :  0.011492
+
+ train loss mae on epoch 11 :  0.010665
+
+ train loss pde on epoch 11 :  0.205528
+
+ train loss dual consistency on epoch 11 :  0.00000000
+
+ valid loss mse on epoch 11 :  0.000208
+
+ valid loss rmse on epoch 11 :  0.014411
+
+ valid loss mape on epoch 11 :  0.011494
+
+ valid loss mae on epoch 11 :  0.010576
+
+ valid loss pde on epoch 11 :  0.141333
+
+ valid loss dual consistency on epoch 11 :  0.00000000
+
+ train loss mse on epoch 12 :  0.000188
+
+ train loss rmse on epoch 12 :  0.013717
+
+ train loss mape on epoch 12 :  0.010970
+
+ train loss mae on epoch 12 :  0.010172
+
+ train loss pde on epoch 12 :  0.207784
+
+ train loss dual consistency on epoch 12 :  0.00000000
+
+ valid loss mse on epoch 12 :  0.000177
+
+ valid loss rmse on epoch 12 :  0.013287
+
+ valid loss mape on epoch 12 :  0.010457
+
+ valid loss mae on epoch 12 :  0.009670
+
+ valid loss pde on epoch 12 :  0.141842
+
+ valid loss dual consistency on epoch 12 :  0.00000000
+
+ train loss mse on epoch 13 :  0.000170
+
+ train loss rmse on epoch 13 :  0.013048
+
+ train loss mape on epoch 13 :  0.010327
+
+ train loss mae on epoch 13 :  0.009567
+
+ train loss pde on epoch 13 :  0.207600
+
+ train loss dual consistency on epoch 13 :  0.00000000
+
+ valid loss mse on epoch 13 :  0.000163
+
+ valid loss rmse on epoch 13 :  0.012757
+
+ valid loss mape on epoch 13 :  0.009877
+
+ valid loss mae on epoch 13 :  0.009128
+
+ valid loss pde on epoch 13 :  0.141720
+
+ valid loss dual consistency on epoch 13 :  0.00000000
+
+ train loss mse on epoch 14 :  0.000155
+
+ train loss rmse on epoch 14 :  0.012451
+
+ train loss mape on epoch 14 :  0.009726
+
+ train loss mae on epoch 14 :  0.009007
+
+ train loss pde on epoch 14 :  0.208482
+
+ train loss dual consistency on epoch 14 :  0.00000000
+
+ valid loss mse on epoch 14 :  0.000161
+
+ valid loss rmse on epoch 14 :  0.012704
+
+ valid loss mape on epoch 14 :  0.009849
+
+ valid loss mae on epoch 14 :  0.009127
+
+ valid loss pde on epoch 14 :  0.141315
+
+ valid loss dual consistency on epoch 14 :  0.00000000
+
+ train loss mse on epoch 15 :  0.000156
+
+ train loss rmse on epoch 15 :  0.012503
+
+ train loss mape on epoch 15 :  0.009707
+
+ train loss mae on epoch 15 :  0.008978
+
+ train loss pde on epoch 15 :  0.208909
+
+ train loss dual consistency on epoch 15 :  0.00000000
+
+ valid loss mse on epoch 15 :  0.000159
+
+ valid loss rmse on epoch 15 :  0.012625
+
+ valid loss mape on epoch 15 :  0.009648
+
+ valid loss mae on epoch 15 :  0.008936
+
+ valid loss pde on epoch 15 :  0.143723
+
+ valid loss dual consistency on epoch 15 :  0.00000000
+
+ train loss mse on epoch 16 :  0.000160
+
+ train loss rmse on epoch 16 :  0.012651
+
+ train loss mape on epoch 16 :  0.009854
+
+ train loss mae on epoch 16 :  0.009114
+
+ train loss pde on epoch 16 :  0.209016
+
+ train loss dual consistency on epoch 16 :  0.00000000
+
+ valid loss mse on epoch 16 :  0.000160
+
+ valid loss rmse on epoch 16 :  0.012640
+
+ valid loss mape on epoch 16 :  0.009763
+
+ valid loss mae on epoch 16 :  0.008976
+
+ valid loss pde on epoch 16 :  0.142899
+
+ valid loss dual consistency on epoch 16 :  0.00000000
+
+ train loss mse on epoch 17 :  0.000144
+
+ train loss rmse on epoch 17 :  0.011995
+
+ train loss mape on epoch 17 :  0.009338
+
+ train loss mae on epoch 17 :  0.008647
+
+ train loss pde on epoch 17 :  0.208551
+
+ train loss dual consistency on epoch 17 :  0.00000000
+
+ valid loss mse on epoch 17 :  0.000159
+
+ valid loss rmse on epoch 17 :  0.012627
+
+ valid loss mape on epoch 17 :  0.009793
+
+ valid loss mae on epoch 17 :  0.008990
+
+ valid loss pde on epoch 17 :  0.142796
+
+ valid loss dual consistency on epoch 17 :  0.00000000
+
+ train loss mse on epoch 18 :  0.000137
+
+ train loss rmse on epoch 18 :  0.011696
+
+ train loss mape on epoch 18 :  0.009084
+
+ train loss mae on epoch 18 :  0.008405
+
+ train loss pde on epoch 18 :  0.210830
+
+ train loss dual consistency on epoch 18 :  0.00000000
+
+ valid loss mse on epoch 18 :  0.000142
+
+ valid loss rmse on epoch 18 :  0.011905
+
+ valid loss mape on epoch 18 :  0.009358
+
+ valid loss mae on epoch 18 :  0.008643
+
+ valid loss pde on epoch 18 :  0.142713
+
+ valid loss dual consistency on epoch 18 :  0.00000000
+
+ train loss mse on epoch 19 :  0.000134
+
+ train loss rmse on epoch 19 :  0.011577
+
+ train loss mape on epoch 19 :  0.009014
+
+ train loss mae on epoch 19 :  0.008340
+
+ train loss pde on epoch 19 :  0.210321
+
+ train loss dual consistency on epoch 19 :  0.00000000
+
+ valid loss mse on epoch 19 :  0.000165
+
+ valid loss rmse on epoch 19 :  0.012854
+
+ valid loss mape on epoch 19 :  0.009944
+
+ valid loss mae on epoch 19 :  0.009252
+
+ valid loss pde on epoch 19 :  0.141589
+
+ valid loss dual consistency on epoch 19 :  0.00000000
+
+ train loss mse on epoch 20 :  0.000137
+
+ train loss rmse on epoch 20 :  0.011721
+
+ train loss mape on epoch 20 :  0.009075
+
+ train loss mae on epoch 20 :  0.008393
+
+ train loss pde on epoch 20 :  0.208128
+
+ train loss dual consistency on epoch 20 :  0.00000000
+
+ valid loss mse on epoch 20 :  0.000129
+
+ valid loss rmse on epoch 20 :  0.011344
+
+ valid loss mape on epoch 20 :  0.008632
+
+ valid loss mae on epoch 20 :  0.007970
+
+ valid loss pde on epoch 20 :  0.142005
+
+ valid loss dual consistency on epoch 20 :  0.00000000
+
+ train loss mse on epoch 21 :  0.000136
+
+ train loss rmse on epoch 21 :  0.011669
+
+ train loss mape on epoch 21 :  0.009065
+
+ train loss mae on epoch 21 :  0.008391
+
+ train loss pde on epoch 21 :  0.205296
+
+ train loss dual consistency on epoch 21 :  0.00000000
+
+ valid loss mse on epoch 21 :  0.000145
+
+ valid loss rmse on epoch 21 :  0.012056
+
+ valid loss mape on epoch 21 :  0.009401
+
+ valid loss mae on epoch 21 :  0.008638
+
+ valid loss pde on epoch 21 :  0.143289
+
+ valid loss dual consistency on epoch 21 :  0.00000000
+
+ train loss mse on epoch 22 :  0.000126
+
+ train loss rmse on epoch 22 :  0.011218
+
+ train loss mape on epoch 22 :  0.008735
+
+ train loss mae on epoch 22 :  0.008084
+
+ train loss pde on epoch 22 :  0.206785
+
+ train loss dual consistency on epoch 22 :  0.00000000
+
+ valid loss mse on epoch 22 :  0.000130
+
+ valid loss rmse on epoch 22 :  0.011412
+
+ valid loss mape on epoch 22 :  0.008631
+
+ valid loss mae on epoch 22 :  0.008010
+
+ valid loss pde on epoch 22 :  0.143830
+
+ valid loss dual consistency on epoch 22 :  0.00000000
+
+ train loss mse on epoch 23 :  0.000124
+
+ train loss rmse on epoch 23 :  0.011122
+
+ train loss mape on epoch 23 :  0.008626
+
+ train loss mae on epoch 23 :  0.007987
+
+ train loss pde on epoch 23 :  0.205316
+
+ train loss dual consistency on epoch 23 :  0.00000000
+
+ valid loss mse on epoch 23 :  0.000122
+
+ valid loss rmse on epoch 23 :  0.011037
+
+ valid loss mape on epoch 23 :  0.008425
+
+ valid loss mae on epoch 23 :  0.007801
+
+ valid loss pde on epoch 23 :  0.144070
+
+ valid loss dual consistency on epoch 23 :  0.00000000
+
+ train loss mse on epoch 24 :  0.000122
+
+ train loss rmse on epoch 24 :  0.011025
+
+ train loss mape on epoch 24 :  0.008552
+
+ train loss mae on epoch 24 :  0.007912
+
+ train loss pde on epoch 24 :  0.206917
+
+ train loss dual consistency on epoch 24 :  0.00000000
+
+ valid loss mse on epoch 24 :  0.000143
+
+ valid loss rmse on epoch 24 :  0.011942
+
+ valid loss mape on epoch 24 :  0.009077
+
+ valid loss mae on epoch 24 :  0.008425
+
+ valid loss pde on epoch 24 :  0.142466
+
+ valid loss dual consistency on epoch 24 :  0.00000000
+
+ train loss mse on epoch 25 :  0.000122
+
+ train loss rmse on epoch 25 :  0.011049
+
+ train loss mape on epoch 25 :  0.008591
+
+ train loss mae on epoch 25 :  0.007954
+
+ train loss pde on epoch 25 :  0.205644
+
+ train loss dual consistency on epoch 25 :  0.00000000
+
+ valid loss mse on epoch 25 :  0.000116
+
+ valid loss rmse on epoch 25 :  0.010773
+
+ valid loss mape on epoch 25 :  0.008197
+
+ valid loss mae on epoch 25 :  0.007594
+
+ valid loss pde on epoch 25 :  0.140262
+
+ valid loss dual consistency on epoch 25 :  0.00000000
+
+ train loss mse on epoch 26 :  0.000113
+
+ train loss rmse on epoch 26 :  0.010611
+
+ train loss mape on epoch 26 :  0.008211
+
+ train loss mae on epoch 26 :  0.007602
+
+ train loss pde on epoch 26 :  0.207102
+
+ train loss dual consistency on epoch 26 :  0.00000000
+
+ valid loss mse on epoch 26 :  0.000121
+
+ valid loss rmse on epoch 26 :  0.010982
+
+ valid loss mape on epoch 26 :  0.008348
+
+ valid loss mae on epoch 26 :  0.007732
+
+ valid loss pde on epoch 26 :  0.142107
+
+ valid loss dual consistency on epoch 26 :  0.00000000
+
+ train loss mse on epoch 27 :  0.000135
+
+ train loss rmse on epoch 27 :  0.011621
+
+ train loss mape on epoch 27 :  0.009119
+
+ train loss mae on epoch 27 :  0.008438
+
+ train loss pde on epoch 27 :  0.206929
+
+ train loss dual consistency on epoch 27 :  0.00000000
+
+ valid loss mse on epoch 27 :  0.000144
+
+ valid loss rmse on epoch 27 :  0.012005
+
+ valid loss mape on epoch 27 :  0.009034
+
+ valid loss mae on epoch 27 :  0.008293
+
+ valid loss pde on epoch 27 :  0.141608
+
+ valid loss dual consistency on epoch 27 :  0.00000000
+
+ train loss mse on epoch 28 :  0.000114
+
+ train loss rmse on epoch 28 :  0.010688
+
+ train loss mape on epoch 28 :  0.008314
+
+ train loss mae on epoch 28 :  0.007704
+
+ train loss pde on epoch 28 :  0.206706
+
+ train loss dual consistency on epoch 28 :  0.00000000
+
+ valid loss mse on epoch 28 :  0.000129
+
+ valid loss rmse on epoch 28 :  0.011336
+
+ valid loss mape on epoch 28 :  0.008738
+
+ valid loss mae on epoch 28 :  0.008129
+
+ valid loss pde on epoch 28 :  0.140326
+
+ valid loss dual consistency on epoch 28 :  0.00000000
+
+ train loss mse on epoch 29 :  0.000114
+
+ train loss rmse on epoch 29 :  0.010659
+
+ train loss mape on epoch 29 :  0.008295
+
+ train loss mae on epoch 29 :  0.007686
+
+ train loss pde on epoch 29 :  0.209098
+
+ train loss dual consistency on epoch 29 :  0.00000000
+
+ valid loss mse on epoch 29 :  0.000111
+
+ valid loss rmse on epoch 29 :  0.010522
+
+ valid loss mape on epoch 29 :  0.008037
+
+ valid loss mae on epoch 29 :  0.007429
+
+ valid loss pde on epoch 29 :  0.141067
+
+ valid loss dual consistency on epoch 29 :  0.00000000
+
+ train loss mse on epoch 30 :  0.000113
+
+ train loss rmse on epoch 30 :  0.010652
+
+ train loss mape on epoch 30 :  0.008309
+
+ train loss mae on epoch 30 :  0.007694
+
+ train loss pde on epoch 30 :  0.205324
+
+ train loss dual consistency on epoch 30 :  0.00000000
+
+ valid loss mse on epoch 30 :  0.000113
+
+ valid loss rmse on epoch 30 :  0.010640
+
+ valid loss mape on epoch 30 :  0.008063
+
+ valid loss mae on epoch 30 :  0.007461
+
+ valid loss pde on epoch 30 :  0.138111
+
+ valid loss dual consistency on epoch 30 :  0.00000000
+
+ train loss mse on epoch 31 :  0.000130
+
+ train loss rmse on epoch 31 :  0.011417
+
+ train loss mape on epoch 31 :  0.009038
+
+ train loss mae on epoch 31 :  0.008365
+
+ train loss pde on epoch 31 :  0.203668
+
+ train loss dual consistency on epoch 31 :  0.00000000
+
+ valid loss mse on epoch 31 :  0.000127
+
+ valid loss rmse on epoch 31 :  0.011250
+
+ valid loss mape on epoch 31 :  0.008513
+
+ valid loss mae on epoch 31 :  0.007904
+
+ valid loss pde on epoch 31 :  0.140454
+
+ valid loss dual consistency on epoch 31 :  0.00000000
+
+ train loss mse on epoch 32 :  0.000118
+
+ train loss rmse on epoch 32 :  0.010871
+
+ train loss mape on epoch 32 :  0.008499
+
+ train loss mae on epoch 32 :  0.007872
+
+ train loss pde on epoch 32 :  0.205586
+
+ train loss dual consistency on epoch 32 :  0.00000000
+
+ valid loss mse on epoch 32 :  0.000110
+
+ valid loss rmse on epoch 32 :  0.010480
+
+ valid loss mape on epoch 32 :  0.007924
+
+ valid loss mae on epoch 32 :  0.007349
+
+ valid loss pde on epoch 32 :  0.141340
+
+ valid loss dual consistency on epoch 32 :  0.00000000
+
+ train loss mse on epoch 33 :  0.000108
+
+ train loss rmse on epoch 33 :  0.010376
+
+ train loss mape on epoch 33 :  0.008082
+
+ train loss mae on epoch 33 :  0.007489
+
+ train loss pde on epoch 33 :  0.204115
+
+ train loss dual consistency on epoch 33 :  0.00000000
+
+ valid loss mse on epoch 33 :  0.000118
+
+ valid loss rmse on epoch 33 :  0.010866
+
+ valid loss mape on epoch 33 :  0.008224
+
+ valid loss mae on epoch 33 :  0.007579
+
+ valid loss pde on epoch 33 :  0.139707
+
+ valid loss dual consistency on epoch 33 :  0.00000000
+
+ train loss mse on epoch 34 :  0.000101
+
+ train loss rmse on epoch 34 :  0.010030
+
+ train loss mape on epoch 34 :  0.007779
+
+ train loss mae on epoch 34 :  0.007208
+
+ train loss pde on epoch 34 :  0.204540
+
+ train loss dual consistency on epoch 34 :  0.00000000
+
+ valid loss mse on epoch 34 :  0.000168
+
+ valid loss rmse on epoch 34 :  0.012960
+
+ valid loss mape on epoch 34 :  0.009862
+
+ valid loss mae on epoch 34 :  0.009032
+
+ valid loss pde on epoch 34 :  0.136901
+
+ valid loss dual consistency on epoch 34 :  0.00000000
+
+ train loss mse on epoch 35 :  0.000117
+
+ train loss rmse on epoch 35 :  0.010816
+
+ train loss mape on epoch 35 :  0.008422
+
+ train loss mae on epoch 35 :  0.007807
+
+ train loss pde on epoch 35 :  0.204694
+
+ train loss dual consistency on epoch 35 :  0.00000000
+
+ valid loss mse on epoch 35 :  0.000131
+
+ valid loss rmse on epoch 35 :  0.011448
+
+ valid loss mape on epoch 35 :  0.008940
+
+ valid loss mae on epoch 35 :  0.008210
+
+ valid loss pde on epoch 35 :  0.137996
+
+ valid loss dual consistency on epoch 35 :  0.00000000
+
+ train loss mse on epoch 36 :  0.000129
+
+ train loss rmse on epoch 36 :  0.011354
+
+ train loss mape on epoch 36 :  0.009007
+
+ train loss mae on epoch 36 :  0.008336
+
+ train loss pde on epoch 36 :  0.208813
+
+ train loss dual consistency on epoch 36 :  0.00000000
+
+ valid loss mse on epoch 36 :  0.000129
+
+ valid loss rmse on epoch 36 :  0.011340
+
+ valid loss mape on epoch 36 :  0.008621
+
+ valid loss mae on epoch 36 :  0.007888
+
+ valid loss pde on epoch 36 :  0.138060
+
+ valid loss dual consistency on epoch 36 :  0.00000000
+
+ train loss mse on epoch 37 :  0.000116
+
+ train loss rmse on epoch 37 :  0.010780
+
+ train loss mape on epoch 37 :  0.008404
+
+ train loss mae on epoch 37 :  0.007787
+
+ train loss pde on epoch 37 :  0.203829
+
+ train loss dual consistency on epoch 37 :  0.00000000
+
+ valid loss mse on epoch 37 :  0.000105
+
+ valid loss rmse on epoch 37 :  0.010248
+
+ valid loss mape on epoch 37 :  0.007638
+
+ valid loss mae on epoch 37 :  0.007086
+
+ valid loss pde on epoch 37 :  0.140135
+
+ valid loss dual consistency on epoch 37 :  0.00000000
+
+ train loss mse on epoch 38 :  0.000100
+
+ train loss rmse on epoch 38 :  0.009987
+
+ train loss mape on epoch 38 :  0.007737
+
+ train loss mae on epoch 38 :  0.007168
+
+ train loss pde on epoch 38 :  0.204832
+
+ train loss dual consistency on epoch 38 :  0.00000000
+
+ valid loss mse on epoch 38 :  0.000133
+
+ valid loss rmse on epoch 38 :  0.011522
+
+ valid loss mape on epoch 38 :  0.009390
+
+ valid loss mae on epoch 38 :  0.008777
+
+ valid loss pde on epoch 38 :  0.139902
+
+ valid loss dual consistency on epoch 38 :  0.00000000
+
+ train loss mse on epoch 39 :  0.000101
+
+ train loss rmse on epoch 39 :  0.010058
+
+ train loss mape on epoch 39 :  0.007883
+
+ train loss mae on epoch 39 :  0.007308
+
+ train loss pde on epoch 39 :  0.201878
+
+ train loss dual consistency on epoch 39 :  0.00000000
+
+ valid loss mse on epoch 39 :  0.000113
+
+ valid loss rmse on epoch 39 :  0.010638
+
+ valid loss mape on epoch 39 :  0.007798
+
+ valid loss mae on epoch 39 :  0.007214
+
+ valid loss pde on epoch 39 :  0.141281
+
+ valid loss dual consistency on epoch 39 :  0.00000000
+
+ train loss mse on epoch 40 :  0.000105
+
+ train loss rmse on epoch 40 :  0.010234
+
+ train loss mape on epoch 40 :  0.007940
+
+ train loss mae on epoch 40 :  0.007353
+
+ train loss pde on epoch 40 :  0.204698
+
+ train loss dual consistency on epoch 40 :  0.00000000
+
+ valid loss mse on epoch 40 :  0.000116
+
+ valid loss rmse on epoch 40 :  0.010776
+
+ valid loss mape on epoch 40 :  0.008528
+
+ valid loss mae on epoch 40 :  0.007863
+
+ valid loss pde on epoch 40 :  0.136999
+
+ valid loss dual consistency on epoch 40 :  0.00000000
+
+ train loss mse on epoch 41 :  0.000109
+
+ train loss rmse on epoch 41 :  0.010423
+
+ train loss mape on epoch 41 :  0.008221
+
+ train loss mae on epoch 41 :  0.007618
+
+ train loss pde on epoch 41 :  0.203147
+
+ train loss dual consistency on epoch 41 :  0.00000000
+
+ valid loss mse on epoch 41 :  0.000156
+
+ valid loss rmse on epoch 41 :  0.012507
+
+ valid loss mape on epoch 41 :  0.010738
+
+ valid loss mae on epoch 41 :  0.009963
+
+ valid loss pde on epoch 41 :  0.137661
+
+ valid loss dual consistency on epoch 41 :  0.00000000
+
+ train loss mse on epoch 42 :  0.000097
+
+ train loss rmse on epoch 42 :  0.009850
+
+ train loss mape on epoch 42 :  0.007757
+
+ train loss mae on epoch 42 :  0.007196
+
+ train loss pde on epoch 42 :  0.203940
+
+ train loss dual consistency on epoch 42 :  0.00000000
+
+ valid loss mse on epoch 42 :  0.000094
+
+ valid loss rmse on epoch 42 :  0.009718
+
+ valid loss mape on epoch 42 :  0.007443
+
+ valid loss mae on epoch 42 :  0.006900
+
+ valid loss pde on epoch 42 :  0.139313
+
+ valid loss dual consistency on epoch 42 :  0.00000000
+
+ train loss mse on epoch 43 :  0.000093
+
+ train loss rmse on epoch 43 :  0.009638
+
+ train loss mape on epoch 43 :  0.007506
+
+ train loss mae on epoch 43 :  0.006956
+
+ train loss pde on epoch 43 :  0.206176
+
+ train loss dual consistency on epoch 43 :  0.00000000
+
+ valid loss mse on epoch 43 :  0.000100
+
+ valid loss rmse on epoch 43 :  0.009996
+
+ valid loss mape on epoch 43 :  0.007650
+
+ valid loss mae on epoch 43 :  0.007074
+
+ valid loss pde on epoch 43 :  0.139428
+
+ valid loss dual consistency on epoch 43 :  0.00000000
+
+ train loss mse on epoch 44 :  0.000107
+
+ train loss rmse on epoch 44 :  0.010327
+
+ train loss mape on epoch 44 :  0.008117
+
+ train loss mae on epoch 44 :  0.007528
+
+ train loss pde on epoch 44 :  0.202852
+
+ train loss dual consistency on epoch 44 :  0.00000000
+
+ valid loss mse on epoch 44 :  0.000092
+
+ valid loss rmse on epoch 44 :  0.009610
+
+ valid loss mape on epoch 44 :  0.007337
+
+ valid loss mae on epoch 44 :  0.006789
+
+ valid loss pde on epoch 44 :  0.140592
+
+ valid loss dual consistency on epoch 44 :  0.00000000
+
+ train loss mse on epoch 45 :  0.000139
+
+ train loss rmse on epoch 45 :  0.011798
+
+ train loss mape on epoch 45 :  0.009628
+
+ train loss mae on epoch 45 :  0.008926
+
+ train loss pde on epoch 45 :  0.205632
+
+ train loss dual consistency on epoch 45 :  0.00000000
+
+ valid loss mse on epoch 45 :  0.000144
+
+ valid loss rmse on epoch 45 :  0.011980
+
+ valid loss mape on epoch 45 :  0.009029
+
+ valid loss mae on epoch 45 :  0.008339
+
+ valid loss pde on epoch 45 :  0.139831
+
+ valid loss dual consistency on epoch 45 :  0.00000000
+
+ train loss mse on epoch 46 :  0.000105
+
+ train loss rmse on epoch 46 :  0.010258
+
+ train loss mape on epoch 46 :  0.008102
+
+ train loss mae on epoch 46 :  0.007517
+
+ train loss pde on epoch 46 :  0.205580
+
+ train loss dual consistency on epoch 46 :  0.00000000
+
+ valid loss mse on epoch 46 :  0.000101
+
+ valid loss rmse on epoch 46 :  0.010057
+
+ valid loss mape on epoch 46 :  0.007748
+
+ valid loss mae on epoch 46 :  0.007170
+
+ valid loss pde on epoch 46 :  0.142210
+
+ valid loss dual consistency on epoch 46 :  0.00000000
+
+ train loss mse on epoch 47 :  0.000095
+
+ train loss rmse on epoch 47 :  0.009749
+
+ train loss mape on epoch 47 :  0.007607
+
+ train loss mae on epoch 47 :  0.007058
+
+ train loss pde on epoch 47 :  0.208596
+
+ train loss dual consistency on epoch 47 :  0.00000000
+
+ valid loss mse on epoch 47 :  0.000114
+
+ valid loss rmse on epoch 47 :  0.010688
+
+ valid loss mape on epoch 47 :  0.008384
+
+ valid loss mae on epoch 47 :  0.007711
+
+ valid loss pde on epoch 47 :  0.138915
+
+ valid loss dual consistency on epoch 47 :  0.00000000
+
+ train loss mse on epoch 48 :  0.000097
+
+ train loss rmse on epoch 48 :  0.009845
+
+ train loss mape on epoch 48 :  0.007826
+
+ train loss mae on epoch 48 :  0.007264
+
+ train loss pde on epoch 48 :  0.202637
+
+ train loss dual consistency on epoch 48 :  0.00000000
+
+ valid loss mse on epoch 48 :  0.000130
+
+ valid loss rmse on epoch 48 :  0.011384
+
+ valid loss mape on epoch 48 :  0.008674
+
+ valid loss mae on epoch 48 :  0.008043
+
+ valid loss pde on epoch 48 :  0.142526
+
+ valid loss dual consistency on epoch 48 :  0.00000000
+
+ train loss mse on epoch 49 :  0.000109
+
+ train loss rmse on epoch 49 :  0.010435
+
+ train loss mape on epoch 49 :  0.008450
+
+ train loss mae on epoch 49 :  0.007841
+
+ train loss pde on epoch 49 :  0.206324
+
+ train loss dual consistency on epoch 49 :  0.00000000
+
+ valid loss mse on epoch 49 :  0.000120
+
+ valid loss rmse on epoch 49 :  0.010936
+
+ valid loss mape on epoch 49 :  0.008068
+
+ valid loss mae on epoch 49 :  0.007461
+
+ valid loss pde on epoch 49 :  0.143549
+
+ valid loss dual consistency on epoch 49 :  0.00000000
+
+ train loss mse on epoch 50 :  0.000093
+
+ train loss rmse on epoch 50 :  0.009639
+
+ train loss mape on epoch 50 :  0.007648
+
+ train loss mae on epoch 50 :  0.007101
+
+ train loss pde on epoch 50 :  0.203478
+
+ train loss dual consistency on epoch 50 :  0.00000000
+
+ valid loss mse on epoch 50 :  0.000081
+
+ valid loss rmse on epoch 50 :  0.009021
+
+ valid loss mape on epoch 50 :  0.006861
+
+ valid loss mae on epoch 50 :  0.006363
+
+ valid loss pde on epoch 50 :  0.141289
+
+ valid loss dual consistency on epoch 50 :  0.00000000
+
+ train loss mse on epoch 51 :  0.000088
+
+ train loss rmse on epoch 51 :  0.009377
+
+ train loss mape on epoch 51 :  0.007352
+
+ train loss mae on epoch 51 :  0.006819
+
+ train loss pde on epoch 51 :  0.204994
+
+ train loss dual consistency on epoch 51 :  0.00000000
+
+ valid loss mse on epoch 51 :  0.000088
+
+ valid loss rmse on epoch 51 :  0.009378
+
+ valid loss mape on epoch 51 :  0.007113
+
+ valid loss mae on epoch 51 :  0.006609
+
+ valid loss pde on epoch 51 :  0.139661
+
+ valid loss dual consistency on epoch 51 :  0.00000000
+
+ train loss mse on epoch 52 :  0.000079
+
+ train loss rmse on epoch 52 :  0.008899
+
+ train loss mape on epoch 52 :  0.006946
+
+ train loss mae on epoch 52 :  0.006449
+
+ train loss pde on epoch 52 :  0.204851
+
+ train loss dual consistency on epoch 52 :  0.00000000
+
+ valid loss mse on epoch 52 :  0.000089
+
+ valid loss rmse on epoch 52 :  0.009425
+
+ valid loss mape on epoch 52 :  0.007273
+
+ valid loss mae on epoch 52 :  0.006743
+
+ valid loss pde on epoch 52 :  0.138892
+
+ valid loss dual consistency on epoch 52 :  0.00000000
+
+ train loss mse on epoch 53 :  0.000093
+
+ train loss rmse on epoch 53 :  0.009654
+
+ train loss mape on epoch 53 :  0.007711
+
+ train loss mae on epoch 53 :  0.007157
+
+ train loss pde on epoch 53 :  0.204540
+
+ train loss dual consistency on epoch 53 :  0.00000000
+
+ valid loss mse on epoch 53 :  0.000133
+
+ valid loss rmse on epoch 53 :  0.011532
+
+ valid loss mape on epoch 53 :  0.008960
+
+ valid loss mae on epoch 53 :  0.008361
+
+ valid loss pde on epoch 53 :  0.139042
+
+ valid loss dual consistency on epoch 53 :  0.00000000
+
+ train loss mse on epoch 54 :  0.000115
+
+ train loss rmse on epoch 54 :  0.010714
+
+ train loss mape on epoch 54 :  0.008700
+
+ train loss mae on epoch 54 :  0.008082
+
+ train loss pde on epoch 54 :  0.206003
+
+ train loss dual consistency on epoch 54 :  0.00000000
+
+ valid loss mse on epoch 54 :  0.000136
+
+ valid loss rmse on epoch 54 :  0.011670
+
+ valid loss mape on epoch 54 :  0.009745
+
+ valid loss mae on epoch 54 :  0.009004
+
+ valid loss pde on epoch 54 :  0.140049
+
+ valid loss dual consistency on epoch 54 :  0.00000000
+
+ train loss mse on epoch 55 :  0.000092
+
+ train loss rmse on epoch 55 :  0.009578
+
+ train loss mape on epoch 55 :  0.007590
+
+ train loss mae on epoch 55 :  0.007042
+
+ train loss pde on epoch 55 :  0.208016
+
+ train loss dual consistency on epoch 55 :  0.00000000
+
+ valid loss mse on epoch 55 :  0.000099
+
+ valid loss rmse on epoch 55 :  0.009955
+
+ valid loss mape on epoch 55 :  0.007568
+
+ valid loss mae on epoch 55 :  0.007035
+
+ valid loss pde on epoch 55 :  0.140582
+
+ valid loss dual consistency on epoch 55 :  0.00000000
+
+ train loss mse on epoch 56 :  0.000100
+
+ train loss rmse on epoch 56 :  0.009988
+
+ train loss mape on epoch 56 :  0.008075
+
+ train loss mae on epoch 56 :  0.007504
+
+ train loss pde on epoch 56 :  0.210011
+
+ train loss dual consistency on epoch 56 :  0.00000000
+
+ valid loss mse on epoch 56 :  0.000110
+
+ valid loss rmse on epoch 56 :  0.010498
+
+ valid loss mape on epoch 56 :  0.008238
+
+ valid loss mae on epoch 56 :  0.007691
+
+ valid loss pde on epoch 56 :  0.141347
+
+ valid loss dual consistency on epoch 56 :  0.00000000
+
+ train loss mse on epoch 57 :  0.000092
+
+ train loss rmse on epoch 57 :  0.009611
+
+ train loss mape on epoch 57 :  0.007760
+
+ train loss mae on epoch 57 :  0.007211
+
+ train loss pde on epoch 57 :  0.208398
+
+ train loss dual consistency on epoch 57 :  0.00000000
+
+ valid loss mse on epoch 57 :  0.000113
+
+ valid loss rmse on epoch 57 :  0.010651
+
+ valid loss mape on epoch 57 :  0.008794
+
+ valid loss mae on epoch 57 :  0.008221
+
+ valid loss pde on epoch 57 :  0.142115
+
+ valid loss dual consistency on epoch 57 :  0.00000000
+
+ train loss mse on epoch 58 :  0.000105
+
+ train loss rmse on epoch 58 :  0.010269
+
+ train loss mape on epoch 58 :  0.008239
+
+ train loss mae on epoch 58 :  0.007649
+
+ train loss pde on epoch 58 :  0.205893
+
+ train loss dual consistency on epoch 58 :  0.00000000
+
+ valid loss mse on epoch 58 :  0.000167
+
+ valid loss rmse on epoch 58 :  0.012938
+
+ valid loss mape on epoch 58 :  0.010886
+
+ valid loss mae on epoch 58 :  0.010010
+
+ valid loss pde on epoch 58 :  0.141595
+
+ valid loss dual consistency on epoch 58 :  0.00000000
+
+ train loss mse on epoch 59 :  0.000154
+
+ train loss rmse on epoch 59 :  0.012417
+
+ train loss mape on epoch 59 :  0.010419
+
+ train loss mae on epoch 59 :  0.009687
+
+ train loss pde on epoch 59 :  0.208681
+
+ train loss dual consistency on epoch 59 :  0.00000000
+
+ valid loss mse on epoch 59 :  0.000113
+
+ valid loss rmse on epoch 59 :  0.010619
+
+ valid loss mape on epoch 59 :  0.008436
+
+ valid loss mae on epoch 59 :  0.007867
+
+ valid loss pde on epoch 59 :  0.142428
+
+ valid loss dual consistency on epoch 59 :  0.00000000
+
+ train loss mse on epoch 60 :  0.000092
+
+ train loss rmse on epoch 60 :  0.009617
+
+ train loss mape on epoch 60 :  0.007604
+
+ train loss mae on epoch 60 :  0.007059
+
+ train loss pde on epoch 60 :  0.207851
+
+ train loss dual consistency on epoch 60 :  0.00000000
+
+ valid loss mse on epoch 60 :  0.000140
+
+ valid loss rmse on epoch 60 :  0.011850
+
+ valid loss mape on epoch 60 :  0.009982
+
+ valid loss mae on epoch 60 :  0.009370
+
+ valid loss pde on epoch 60 :  0.144604
+
+ valid loss dual consistency on epoch 60 :  0.00000000
+
+ train loss mse on epoch 61 :  0.000084
+
+ train loss rmse on epoch 61 :  0.009166
+
+ train loss mape on epoch 61 :  0.007254
+
+ train loss mae on epoch 61 :  0.006737
+
+ train loss pde on epoch 61 :  0.207574
+
+ train loss dual consistency on epoch 61 :  0.00000000
+
+ valid loss mse on epoch 61 :  0.000080
+
+ valid loss rmse on epoch 61 :  0.008972
+
+ valid loss mape on epoch 61 :  0.006713
+
+ valid loss mae on epoch 61 :  0.006202
+
+ valid loss pde on epoch 61 :  0.143667
+
+ valid loss dual consistency on epoch 61 :  0.00000000
+
+ train loss mse on epoch 62 :  0.000090
+
+ train loss rmse on epoch 62 :  0.009508
+
+ train loss mape on epoch 62 :  0.007631
+
+ train loss mae on epoch 62 :  0.007086
+
+ train loss pde on epoch 62 :  0.207733
+
+ train loss dual consistency on epoch 62 :  0.00000000
+
+ valid loss mse on epoch 62 :  0.000144
+
+ valid loss rmse on epoch 62 :  0.012001
+
+ valid loss mape on epoch 62 :  0.009862
+
+ valid loss mae on epoch 62 :  0.009153
+
+ valid loss pde on epoch 62 :  0.144893
+
+ valid loss dual consistency on epoch 62 :  0.00000000
+
+ train loss mse on epoch 63 :  0.000092
+
+ train loss rmse on epoch 63 :  0.009588
+
+ train loss mape on epoch 63 :  0.007685
+
+ train loss mae on epoch 63 :  0.007142
+
+ train loss pde on epoch 63 :  0.210428
+
+ train loss dual consistency on epoch 63 :  0.00000000
+
+ valid loss mse on epoch 63 :  0.000090
+
+ valid loss rmse on epoch 63 :  0.009478
+
+ valid loss mape on epoch 63 :  0.007024
+
+ valid loss mae on epoch 63 :  0.006502
+
+ valid loss pde on epoch 63 :  0.141863
+
+ valid loss dual consistency on epoch 63 :  0.00000000
+
+ train loss mse on epoch 64 :  0.000348
+
+ train loss rmse on epoch 64 :  0.018667
+
+ train loss mape on epoch 64 :  0.015656
+
+ train loss mae on epoch 64 :  0.014602
+
+ train loss pde on epoch 64 :  0.208175
+
+ train loss dual consistency on epoch 64 :  0.00000000
+
+ valid loss mse on epoch 64 :  0.000165
+
+ valid loss rmse on epoch 64 :  0.012849
+
+ valid loss mape on epoch 64 :  0.009894
+
+ valid loss mae on epoch 64 :  0.009063
+
+ valid loss pde on epoch 64 :  0.142056
+
+ valid loss dual consistency on epoch 64 :  0.00000000
+
+ train loss mse on epoch 65 :  0.000202
+
+ train loss rmse on epoch 65 :  0.014214
+
+ train loss mape on epoch 65 :  0.012176
+
+ train loss mae on epoch 65 :  0.011338
+
+ train loss pde on epoch 65 :  0.209313
+
+ train loss dual consistency on epoch 65 :  0.00000000
+
+ valid loss mse on epoch 65 :  0.000343
+
+ valid loss rmse on epoch 65 :  0.018518
+
+ valid loss mape on epoch 65 :  0.017063
+
+ valid loss mae on epoch 65 :  0.015932
+
+ valid loss pde on epoch 65 :  0.145145
+
+ valid loss dual consistency on epoch 65 :  0.00000000
+
+ train loss mse on epoch 66 :  0.000119
+
+ train loss rmse on epoch 66 :  0.010890
+
+ train loss mape on epoch 66 :  0.008888
+
+ train loss mae on epoch 66 :  0.008275
+
+ train loss pde on epoch 66 :  0.209389
+
+ train loss dual consistency on epoch 66 :  0.00000000
+
+ valid loss mse on epoch 66 :  0.000088
+
+ valid loss rmse on epoch 66 :  0.009397
+
+ valid loss mape on epoch 66 :  0.007018
+
+ valid loss mae on epoch 66 :  0.006471
+
+ valid loss pde on epoch 66 :  0.143274
+
+ valid loss dual consistency on epoch 66 :  0.00000000
+
+ train loss mse on epoch 67 :  0.000085
+
+ train loss rmse on epoch 67 :  0.009235
+
+ train loss mape on epoch 67 :  0.007424
+
+ train loss mae on epoch 67 :  0.006905
+
+ train loss pde on epoch 67 :  0.213054
+
+ train loss dual consistency on epoch 67 :  0.00000000
+
+ valid loss mse on epoch 67 :  0.000079
+
+ valid loss rmse on epoch 67 :  0.008912
+
+ valid loss mape on epoch 67 :  0.006779
+
+ valid loss mae on epoch 67 :  0.006314
+
+ valid loss pde on epoch 67 :  0.142246
+
+ valid loss dual consistency on epoch 67 :  0.00000000
+
+ train loss mse on epoch 68 :  0.000079
+
+ train loss rmse on epoch 68 :  0.008904
+
+ train loss mape on epoch 68 :  0.007072
+
+ train loss mae on epoch 68 :  0.006576
+
+ train loss pde on epoch 68 :  0.210036
+
+ train loss dual consistency on epoch 68 :  0.00000000
+
+ valid loss mse on epoch 68 :  0.000093
+
+ valid loss rmse on epoch 68 :  0.009667
+
+ valid loss mape on epoch 68 :  0.007985
+
+ valid loss mae on epoch 68 :  0.007427
+
+ valid loss pde on epoch 68 :  0.143681
+
+ valid loss dual consistency on epoch 68 :  0.00000000
+
+ train loss mse on epoch 69 :  0.000196
+
+ train loss rmse on epoch 69 :  0.014004
+
+ train loss mape on epoch 69 :  0.011958
+
+ train loss mae on epoch 69 :  0.011154
+
+ train loss pde on epoch 69 :  0.210483
+
+ train loss dual consistency on epoch 69 :  0.00000000
+
+ valid loss mse on epoch 69 :  0.000097
+
+ valid loss rmse on epoch 69 :  0.009831
+
+ valid loss mape on epoch 69 :  0.007343
+
+ valid loss mae on epoch 69 :  0.006808
+
+ valid loss pde on epoch 69 :  0.144369
+
+ valid loss dual consistency on epoch 69 :  0.00000000
+
+ train loss mse on epoch 70 :  0.000186
+
+ train loss rmse on epoch 70 :  0.013654
+
+ train loss mape on epoch 70 :  0.011590
+
+ train loss mae on epoch 70 :  0.010806
+
+ train loss pde on epoch 70 :  0.210052
+
+ train loss dual consistency on epoch 70 :  0.00000000
+
+ valid loss mse on epoch 70 :  0.000102
+
+ valid loss rmse on epoch 70 :  0.010080
+
+ valid loss mape on epoch 70 :  0.008093
+
+ valid loss mae on epoch 70 :  0.007592
+
+ valid loss pde on epoch 70 :  0.146391
+
+ valid loss dual consistency on epoch 70 :  0.00000000
+
+ train loss mse on epoch 71 :  0.000085
+
+ train loss rmse on epoch 71 :  0.009198
+
+ train loss mape on epoch 71 :  0.007334
+
+ train loss mae on epoch 71 :  0.006824
+
+ train loss pde on epoch 71 :  0.207410
+
+ train loss dual consistency on epoch 71 :  0.00000000
+
+ valid loss mse on epoch 71 :  0.000078
+
+ valid loss rmse on epoch 71 :  0.008839
+
+ valid loss mape on epoch 71 :  0.006758
+
+ valid loss mae on epoch 71 :  0.006238
+
+ valid loss pde on epoch 71 :  0.144784
+
+ valid loss dual consistency on epoch 71 :  0.00000000
+
+ train loss mse on epoch 72 :  0.000079
+
+ train loss rmse on epoch 72 :  0.008889
+
+ train loss mape on epoch 72 :  0.007164
+
+ train loss mae on epoch 72 :  0.006670
+
+ train loss pde on epoch 72 :  0.207315
+
+ train loss dual consistency on epoch 72 :  0.00000000
+
+ valid loss mse on epoch 72 :  0.000133
+
+ valid loss rmse on epoch 72 :  0.011527
+
+ valid loss mape on epoch 72 :  0.010117
+
+ valid loss mae on epoch 72 :  0.009405
+
+ valid loss pde on epoch 72 :  0.144925
+
+ valid loss dual consistency on epoch 72 :  0.00000000
+
+ train loss mse on epoch 73 :  0.000180
+
+ train loss rmse on epoch 73 :  0.013429
+
+ train loss mape on epoch 73 :  0.011774
+
+ train loss mae on epoch 73 :  0.010985
+
+ train loss pde on epoch 73 :  0.207958
+
+ train loss dual consistency on epoch 73 :  0.00000000
+
+ valid loss mse on epoch 73 :  0.000167
+
+ valid loss rmse on epoch 73 :  0.012942
+
+ valid loss mape on epoch 73 :  0.011159
+
+ valid loss mae on epoch 73 :  0.010449
+
+ valid loss pde on epoch 73 :  0.145757
+
+ valid loss dual consistency on epoch 73 :  0.00000000
+
+ train loss mse on epoch 74 :  0.000165
+
+ train loss rmse on epoch 74 :  0.012847
+
+ train loss mape on epoch 74 :  0.010759
+
+ train loss mae on epoch 74 :  0.010038
+
+ train loss pde on epoch 74 :  0.209893
+
+ train loss dual consistency on epoch 74 :  0.00000000
+
+ valid loss mse on epoch 74 :  0.000079
+
+ valid loss rmse on epoch 74 :  0.008878
+
+ valid loss mape on epoch 74 :  0.006828
+
+ valid loss mae on epoch 74 :  0.006327
+
+ valid loss pde on epoch 74 :  0.143507
+
+ valid loss dual consistency on epoch 74 :  0.00000000
+
+ train loss mse on epoch 75 :  0.000068
+
+ train loss rmse on epoch 75 :  0.008234
+
+ train loss mape on epoch 75 :  0.006484
+
+ train loss mae on epoch 75 :  0.006030
+
+ train loss pde on epoch 75 :  0.210255
+
+ train loss dual consistency on epoch 75 :  0.00000000
+
+ valid loss mse on epoch 75 :  0.000078
+
+ valid loss rmse on epoch 75 :  0.008858
+
+ valid loss mape on epoch 75 :  0.006563
+
+ valid loss mae on epoch 75 :  0.006096
+
+ valid loss pde on epoch 75 :  0.145854
+
+ valid loss dual consistency on epoch 75 :  0.00000000
+
+ train loss mse on epoch 76 :  0.000171
+
+ train loss rmse on epoch 76 :  0.013062
+
+ train loss mape on epoch 76 :  0.010949
+
+ train loss mae on epoch 76 :  0.010212
+
+ train loss pde on epoch 76 :  0.209829
+
+ train loss dual consistency on epoch 76 :  0.00000000
+
+ valid loss mse on epoch 76 :  0.000438
+
+ valid loss rmse on epoch 76 :  0.020918
+
+ valid loss mape on epoch 76 :  0.020247
+
+ valid loss mae on epoch 76 :  0.018749
+
+ valid loss pde on epoch 76 :  0.142692
+
+ valid loss dual consistency on epoch 76 :  0.00000000
+
+ train loss mse on epoch 77 :  0.000231
+
+ train loss rmse on epoch 77 :  0.015206
+
+ train loss mape on epoch 77 :  0.012995
+
+ train loss mae on epoch 77 :  0.012134
+
+ train loss pde on epoch 77 :  0.207619
+
+ train loss dual consistency on epoch 77 :  0.00000000
+
+ valid loss mse on epoch 77 :  0.000236
+
+ valid loss rmse on epoch 77 :  0.015376
+
+ valid loss mape on epoch 77 :  0.014000
+
+ valid loss mae on epoch 77 :  0.013132
+
+ valid loss pde on epoch 77 :  0.143826
+
+ valid loss dual consistency on epoch 77 :  0.00000000
+
+ train loss mse on epoch 78 :  0.000176
+
+ train loss rmse on epoch 78 :  0.013254
+
+ train loss mape on epoch 78 :  0.011293
+
+ train loss mae on epoch 78 :  0.010553
+
+ train loss pde on epoch 78 :  0.209451
+
+ train loss dual consistency on epoch 78 :  0.00000000
+
+ valid loss mse on epoch 78 :  0.000083
+
+ valid loss rmse on epoch 78 :  0.009113
+
+ valid loss mape on epoch 78 :  0.006924
+
+ valid loss mae on epoch 78 :  0.006388
+
+ valid loss pde on epoch 78 :  0.140513
+
+ valid loss dual consistency on epoch 78 :  0.00000000
+
+ train loss mse on epoch 79 :  0.000076
+
+ train loss rmse on epoch 79 :  0.008721
+
+ train loss mape on epoch 79 :  0.007041
+
+ train loss mae on epoch 79 :  0.006558
+
+ train loss pde on epoch 79 :  0.210368
+
+ train loss dual consistency on epoch 79 :  0.00000000
+
+ valid loss mse on epoch 79 :  0.000089
+
+ valid loss rmse on epoch 79 :  0.009456
+
+ valid loss mape on epoch 79 :  0.007503
+
+ valid loss mae on epoch 79 :  0.007018
+
+ valid loss pde on epoch 79 :  0.142061
+
+ valid loss dual consistency on epoch 79 :  0.00000000
+
+ train loss mse on epoch 80 :  0.000091
+
+ train loss rmse on epoch 80 :  0.009557
+
+ train loss mape on epoch 80 :  0.007869
+
+ train loss mae on epoch 80 :  0.007341
+
+ train loss pde on epoch 80 :  0.208678
+
+ train loss dual consistency on epoch 80 :  0.00000000
+
+ valid loss mse on epoch 80 :  0.000071
+
+ valid loss rmse on epoch 80 :  0.008401
+
+ valid loss mape on epoch 80 :  0.006284
+
+ valid loss mae on epoch 80 :  0.005838
+
+ valid loss pde on epoch 80 :  0.146634
+
+ valid loss dual consistency on epoch 80 :  0.00000000
+
+ train loss mse on epoch 81 :  0.000336
+
+ train loss rmse on epoch 81 :  0.018341
+
+ train loss mape on epoch 81 :  0.016183
+
+ train loss mae on epoch 81 :  0.015137
+
+ train loss pde on epoch 81 :  0.211718
+
+ train loss dual consistency on epoch 81 :  0.00000000
+
+ valid loss mse on epoch 81 :  0.000319
+
+ valid loss rmse on epoch 81 :  0.017850
+
+ valid loss mape on epoch 81 :  0.016675
+
+ valid loss mae on epoch 81 :  0.015428
+
+ valid loss pde on epoch 81 :  0.145141
+
+ valid loss dual consistency on epoch 81 :  0.00000000
+
+ train loss mse on epoch 82 :  0.000119
+
+ train loss rmse on epoch 82 :  0.010905
+
+ train loss mape on epoch 82 :  0.008952
+
+ train loss mae on epoch 82 :  0.008352
+
+ train loss pde on epoch 82 :  0.209663
+
+ train loss dual consistency on epoch 82 :  0.00000000
+
+ valid loss mse on epoch 82 :  0.000081
+
+ valid loss rmse on epoch 82 :  0.009005
+
+ valid loss mape on epoch 82 :  0.006752
+
+ valid loss mae on epoch 82 :  0.006269
+
+ valid loss pde on epoch 82 :  0.144209
+
+ valid loss dual consistency on epoch 82 :  0.00000000
+
+ train loss mse on epoch 83 :  0.000300
+
+ train loss rmse on epoch 83 :  0.017321
+
+ train loss mape on epoch 83 :  0.015100
+
+ train loss mae on epoch 83 :  0.014130
+
+ train loss pde on epoch 83 :  0.211338
+
+ train loss dual consistency on epoch 83 :  0.00000000
+
+ valid loss mse on epoch 83 :  0.000264
+
+ valid loss rmse on epoch 83 :  0.016237
+
+ valid loss mape on epoch 83 :  0.014370
+
+ valid loss mae on epoch 83 :  0.013497
+
+ valid loss pde on epoch 83 :  0.146885
+
+ valid loss dual consistency on epoch 83 :  0.00000000
+
+ train loss mse on epoch 84 :  0.000098
+
+ train loss rmse on epoch 84 :  0.009892
+
+ train loss mape on epoch 84 :  0.007754
+
+ train loss mae on epoch 84 :  0.007221
+
+ train loss pde on epoch 84 :  0.212828
+
+ train loss dual consistency on epoch 84 :  0.00000000
+
+ valid loss mse on epoch 84 :  0.000081
+
+ valid loss rmse on epoch 84 :  0.008996
+
+ valid loss mape on epoch 84 :  0.006647
+
+ valid loss mae on epoch 84 :  0.006182
+
+ valid loss pde on epoch 84 :  0.143984
+
+ valid loss dual consistency on epoch 84 :  0.00000000
+
+ train loss mse on epoch 85 :  0.000069
+
+ train loss rmse on epoch 85 :  0.008317
+
+ train loss mape on epoch 85 :  0.006576
+
+ train loss mae on epoch 85 :  0.006120
+
+ train loss pde on epoch 85 :  0.210083
+
+ train loss dual consistency on epoch 85 :  0.00000000
+
+ valid loss mse on epoch 85 :  0.000162
+
+ valid loss rmse on epoch 85 :  0.012723
+
+ valid loss mape on epoch 85 :  0.011520
+
+ valid loss mae on epoch 85 :  0.010725
+
+ valid loss pde on epoch 85 :  0.144799
+
+ valid loss dual consistency on epoch 85 :  0.00000000
+
+ train loss mse on epoch 86 :  0.000369
+
+ train loss rmse on epoch 86 :  0.019210
+
+ train loss mape on epoch 86 :  0.017187
+
+ train loss mae on epoch 86 :  0.016081
+
+ train loss pde on epoch 86 :  0.213099
+
+ train loss dual consistency on epoch 86 :  0.00000000
+
+ valid loss mse on epoch 86 :  0.000262
+
+ valid loss rmse on epoch 86 :  0.016201
+
+ valid loss mape on epoch 86 :  0.015048
+
+ valid loss mae on epoch 86 :  0.014023
+
+ valid loss pde on epoch 86 :  0.147713
+
+ valid loss dual consistency on epoch 86 :  0.00000000
+
+ train loss mse on epoch 87 :  0.000111
+
+ train loss rmse on epoch 87 :  0.010520
+
+ train loss mape on epoch 87 :  0.008506
+
+ train loss mae on epoch 87 :  0.007929
+
+ train loss pde on epoch 87 :  0.210456
+
+ train loss dual consistency on epoch 87 :  0.00000000
+
+ valid loss mse on epoch 87 :  0.000097
+
+ valid loss rmse on epoch 87 :  0.009855
+
+ valid loss mape on epoch 87 :  0.007892
+
+ valid loss mae on epoch 87 :  0.007365
+
+ valid loss pde on epoch 87 :  0.147159
+
+ valid loss dual consistency on epoch 87 :  0.00000000
+
+ train loss mse on epoch 88 :  0.000068
+
+ train loss rmse on epoch 88 :  0.008257
+
+ train loss mape on epoch 88 :  0.006502
+
+ train loss mae on epoch 88 :  0.006051
+
+ train loss pde on epoch 88 :  0.211753
+
+ train loss dual consistency on epoch 88 :  0.00000000
+
+ valid loss mse on epoch 88 :  0.000105
+
+ valid loss rmse on epoch 88 :  0.010248
+
+ valid loss mape on epoch 88 :  0.008717
+
+ valid loss mae on epoch 88 :  0.008098
+
+ valid loss pde on epoch 88 :  0.146092
+
+ valid loss dual consistency on epoch 88 :  0.00000000
+
+ train loss mse on epoch 89 :  0.000094
+
+ train loss rmse on epoch 89 :  0.009683
+
+ train loss mape on epoch 89 :  0.007977
+
+ train loss mae on epoch 89 :  0.007445
+
+ train loss pde on epoch 89 :  0.213760
+
+ train loss dual consistency on epoch 89 :  0.00000000
+
+ valid loss mse on epoch 89 :  0.000065
+
+ valid loss rmse on epoch 89 :  0.008058
+
+ valid loss mape on epoch 89 :  0.005937
+
+ valid loss mae on epoch 89 :  0.005516
+
+ valid loss pde on epoch 89 :  0.144115
+
+ valid loss dual consistency on epoch 89 :  0.00000000
+
+ train loss mse on epoch 90 :  0.000114
+
+ train loss rmse on epoch 90 :  0.010661
+
+ train loss mape on epoch 90 :  0.008956
+
+ train loss mae on epoch 90 :  0.008358
+
+ train loss pde on epoch 90 :  0.213315
+
+ train loss dual consistency on epoch 90 :  0.00000000
+
+ valid loss mse on epoch 90 :  0.000149
+
+ valid loss rmse on epoch 90 :  0.012211
+
+ valid loss mape on epoch 90 :  0.010502
+
+ valid loss mae on epoch 90 :  0.009832
+
+ valid loss pde on epoch 90 :  0.146656
+
+ valid loss dual consistency on epoch 90 :  0.00000000
+
+ train loss mse on epoch 91 :  0.000320
+
+ train loss rmse on epoch 91 :  0.017902
+
+ train loss mape on epoch 91 :  0.015492
+
+ train loss mae on epoch 91 :  0.014493
+
+ train loss pde on epoch 91 :  0.214111
+
+ train loss dual consistency on epoch 91 :  0.00000000
+
+ valid loss mse on epoch 91 :  0.000096
+
+ valid loss rmse on epoch 91 :  0.009812
+
+ valid loss mape on epoch 91 :  0.007843
+
+ valid loss mae on epoch 91 :  0.007290
+
+ valid loss pde on epoch 91 :  0.147893
+
+ valid loss dual consistency on epoch 91 :  0.00000000
+
+ train loss mse on epoch 92 :  0.000084
+
+ train loss rmse on epoch 92 :  0.009179
+
+ train loss mape on epoch 92 :  0.007368
+
+ train loss mae on epoch 92 :  0.006856
+
+ train loss pde on epoch 92 :  0.211849
+
+ train loss dual consistency on epoch 92 :  0.00000000
+
+ valid loss mse on epoch 92 :  0.000273
+
+ valid loss rmse on epoch 92 :  0.016523
+
+ valid loss mape on epoch 92 :  0.015792
+
+ valid loss mae on epoch 92 :  0.014838
+
+ valid loss pde on epoch 92 :  0.148369
+
+ valid loss dual consistency on epoch 92 :  0.00000000
+
+ train loss mse on epoch 93 :  0.000256
+
+ train loss rmse on epoch 93 :  0.016015
+
+ train loss mape on epoch 93 :  0.014349
+
+ train loss mae on epoch 93 :  0.013435
+
+ train loss pde on epoch 93 :  0.212191
+
+ train loss dual consistency on epoch 93 :  0.00000000
+
+ valid loss mse on epoch 93 :  0.000273
+
+ valid loss rmse on epoch 93 :  0.016512
+
+ valid loss mape on epoch 93 :  0.015579
+
+ valid loss mae on epoch 93 :  0.014633
+
+ valid loss pde on epoch 93 :  0.145882
+
+ valid loss dual consistency on epoch 93 :  0.00000000
+
+ train loss mse on epoch 94 :  0.000110
+
+ train loss rmse on epoch 94 :  0.010492
+
+ train loss mape on epoch 94 :  0.008652
+
+ train loss mae on epoch 94 :  0.008080
+
+ train loss pde on epoch 94 :  0.211889
+
+ train loss dual consistency on epoch 94 :  0.00000000
+
+ valid loss mse on epoch 94 :  0.000069
+
+ valid loss rmse on epoch 94 :  0.008292
+
+ valid loss mape on epoch 94 :  0.006205
+
+ valid loss mae on epoch 94 :  0.005766
+
+ valid loss pde on epoch 94 :  0.145363
+
+ valid loss dual consistency on epoch 94 :  0.00000000
+
+ train loss mse on epoch 95 :  0.000082
+
+ train loss rmse on epoch 95 :  0.009057
+
+ train loss mape on epoch 95 :  0.007447
+
+ train loss mae on epoch 95 :  0.006949
+
+ train loss pde on epoch 95 :  0.210799
+
+ train loss dual consistency on epoch 95 :  0.00000000
+
+ valid loss mse on epoch 95 :  0.000098
+
+ valid loss rmse on epoch 95 :  0.009905
+
+ valid loss mape on epoch 95 :  0.008238
+
+ valid loss mae on epoch 95 :  0.007735
+
+ valid loss pde on epoch 95 :  0.144817
+
+ valid loss dual consistency on epoch 95 :  0.00000000
+
+ train loss mse on epoch 96 :  0.000058
+
+ train loss rmse on epoch 96 :  0.007621
+
+ train loss mape on epoch 96 :  0.006021
+
+ train loss mae on epoch 96 :  0.005611
+
+ train loss pde on epoch 96 :  0.213110
+
+ train loss dual consistency on epoch 96 :  0.00000000
+
+ valid loss mse on epoch 96 :  0.000068
+
+ valid loss rmse on epoch 96 :  0.008230
+
+ valid loss mape on epoch 96 :  0.006289
+
+ valid loss mae on epoch 96 :  0.005832
+
+ valid loss pde on epoch 96 :  0.144385
+
+ valid loss dual consistency on epoch 96 :  0.00000000
+
+ train loss mse on epoch 97 :  0.000191
+
+ train loss rmse on epoch 97 :  0.013832
+
+ train loss mape on epoch 97 :  0.011942
+
+ train loss mae on epoch 97 :  0.011174
+
+ train loss pde on epoch 97 :  0.211342
+
+ train loss dual consistency on epoch 97 :  0.00000000
+
+ valid loss mse on epoch 97 :  0.000351
+
+ valid loss rmse on epoch 97 :  0.018727
+
+ valid loss mape on epoch 97 :  0.017918
+
+ valid loss mae on epoch 97 :  0.016829
+
+ valid loss pde on epoch 97 :  0.142209
+
+ valid loss dual consistency on epoch 97 :  0.00000000
+
+ train loss mse on epoch 98 :  0.000155
+
+ train loss rmse on epoch 98 :  0.012436
+
+ train loss mape on epoch 98 :  0.010123
+
+ train loss mae on epoch 98 :  0.009458
+
+ train loss pde on epoch 98 :  0.214025
+
+ train loss dual consistency on epoch 98 :  0.00000000
+
+ valid loss mse on epoch 98 :  0.000084
+
+ valid loss rmse on epoch 98 :  0.009143
+
+ valid loss mape on epoch 98 :  0.007220
+
+ valid loss mae on epoch 98 :  0.006664
+
+ valid loss pde on epoch 98 :  0.146018
+
+ valid loss dual consistency on epoch 98 :  0.00000000
+
+ train loss mse on epoch 99 :  0.000103
+
+ train loss rmse on epoch 99 :  0.010142
+
+ train loss mape on epoch 99 :  0.008519
+
+ train loss mae on epoch 99 :  0.007960
+
+ train loss pde on epoch 99 :  0.211773
+
+ train loss dual consistency on epoch 99 :  0.00000000
+
+ valid loss mse on epoch 99 :  0.000087
+
+ valid loss rmse on epoch 99 :  0.009316
+
+ valid loss mape on epoch 99 :  0.007382
+
+ valid loss mae on epoch 99 :  0.006888
+
+ valid loss pde on epoch 99 :  0.146153
+
+ valid loss dual consistency on epoch 99 :  0.00000000
+
+ train loss mse on epoch 100 :  0.000215
+
+ train loss rmse on epoch 100 :  0.014653
+
+ train loss mape on epoch 100 :  0.012550
+
+ train loss mae on epoch 100 :  0.011747
+
+ train loss pde on epoch 100 :  0.212921
+
+ train loss dual consistency on epoch 100 :  0.00000000
+
+ valid loss mse on epoch 100 :  0.000091
+
+ valid loss rmse on epoch 100 :  0.009543
+
+ valid loss mape on epoch 100 :  0.007054
+
+ valid loss mae on epoch 100 :  0.006537
+
+ valid loss pde on epoch 100 :  0.146764
+
+ valid loss dual consistency on epoch 100 :  0.00000000
+
+ train loss mse on epoch 101 :  0.000092
+
+ train loss rmse on epoch 101 :  0.009582
+
+ train loss mape on epoch 101 :  0.007936
+
+ train loss mae on epoch 101 :  0.007410
+
+ train loss pde on epoch 101 :  0.210544
+
+ train loss dual consistency on epoch 101 :  0.00000000
+
+ valid loss mse on epoch 101 :  0.000062
+
+ valid loss rmse on epoch 101 :  0.007870
+
+ valid loss mape on epoch 101 :  0.005725
+
+ valid loss mae on epoch 101 :  0.005308
+
+ valid loss pde on epoch 101 :  0.145283
+
+ valid loss dual consistency on epoch 101 :  0.00000000
+
+ train loss mse on epoch 102 :  0.000064
+
+ train loss rmse on epoch 102 :  0.008025
+
+ train loss mape on epoch 102 :  0.006515
+
+ train loss mae on epoch 102 :  0.006079
+
+ train loss pde on epoch 102 :  0.213466
+
+ train loss dual consistency on epoch 102 :  0.00000000
+
+ valid loss mse on epoch 102 :  0.000060
+
+ valid loss rmse on epoch 102 :  0.007769
+
+ valid loss mape on epoch 102 :  0.005646
+
+ valid loss mae on epoch 102 :  0.005223
+
+ valid loss pde on epoch 102 :  0.143983
+
+ valid loss dual consistency on epoch 102 :  0.00000000
+
+ train loss mse on epoch 103 :  0.000099
+
+ train loss rmse on epoch 103 :  0.009925
+
+ train loss mape on epoch 103 :  0.008238
+
+ train loss mae on epoch 103 :  0.007702
+
+ train loss pde on epoch 103 :  0.214021
+
+ train loss dual consistency on epoch 103 :  0.00000000
+
+ valid loss mse on epoch 103 :  0.000075
+
+ valid loss rmse on epoch 103 :  0.008659
+
+ valid loss mape on epoch 103 :  0.006544
+
+ valid loss mae on epoch 103 :  0.006128
+
+ valid loss pde on epoch 103 :  0.147958
+
+ valid loss dual consistency on epoch 103 :  0.00000000
+
+ train loss mse on epoch 104 :  0.000078
+
+ train loss rmse on epoch 104 :  0.008825
+
+ train loss mape on epoch 104 :  0.007296
+
+ train loss mae on epoch 104 :  0.006813
+
+ train loss pde on epoch 104 :  0.209539
+
+ train loss dual consistency on epoch 104 :  0.00000000
+
+ valid loss mse on epoch 104 :  0.000186
+
+ valid loss rmse on epoch 104 :  0.013646
+
+ valid loss mape on epoch 104 :  0.012655
+
+ valid loss mae on epoch 104 :  0.011819
+
+ valid loss pde on epoch 104 :  0.146318
+
+ valid loss dual consistency on epoch 104 :  0.00000000
+
+ train loss mse on epoch 105 :  0.000133
+
+ train loss rmse on epoch 105 :  0.011532
+
+ train loss mape on epoch 105 :  0.010098
+
+ train loss mae on epoch 105 :  0.009442
+
+ train loss pde on epoch 105 :  0.209896
+
+ train loss dual consistency on epoch 105 :  0.00000000
+
+ valid loss mse on epoch 105 :  0.000086
+
+ valid loss rmse on epoch 105 :  0.009280
+
+ valid loss mape on epoch 105 :  0.007625
+
+ valid loss mae on epoch 105 :  0.007073
+
+ valid loss pde on epoch 105 :  0.145415
+
+ valid loss dual consistency on epoch 105 :  0.00000000
+
+ train loss mse on epoch 106 :  0.000076
+
+ train loss rmse on epoch 106 :  0.008695
+
+ train loss mape on epoch 106 :  0.007006
+
+ train loss mae on epoch 106 :  0.006525
+
+ train loss pde on epoch 106 :  0.212130
+
+ train loss dual consistency on epoch 106 :  0.00000000
+
+ valid loss mse on epoch 106 :  0.000074
+
+ valid loss rmse on epoch 106 :  0.008606
+
+ valid loss mape on epoch 106 :  0.006351
+
+ valid loss mae on epoch 106 :  0.005875
+
+ valid loss pde on epoch 106 :  0.147371
+
+ valid loss dual consistency on epoch 106 :  0.00000000
+
+ train loss mse on epoch 107 :  0.000094
+
+ train loss rmse on epoch 107 :  0.009683
+
+ train loss mape on epoch 107 :  0.007798
+
+ train loss mae on epoch 107 :  0.007279
+
+ train loss pde on epoch 107 :  0.212096
+
+ train loss dual consistency on epoch 107 :  0.00000000
+
+ valid loss mse on epoch 107 :  0.000079
+
+ valid loss rmse on epoch 107 :  0.008908
+
+ valid loss mape on epoch 107 :  0.006658
+
+ valid loss mae on epoch 107 :  0.006180
+
+ valid loss pde on epoch 107 :  0.146453
+
+ valid loss dual consistency on epoch 107 :  0.00000000
+
+ train loss mse on epoch 108 :  0.000067
+
+ train loss rmse on epoch 108 :  0.008206
+
+ train loss mape on epoch 108 :  0.006572
+
+ train loss mae on epoch 108 :  0.006123
+
+ train loss pde on epoch 108 :  0.209798
+
+ train loss dual consistency on epoch 108 :  0.00000000
+
+ valid loss mse on epoch 108 :  0.000071
+
+ valid loss rmse on epoch 108 :  0.008436
+
+ valid loss mape on epoch 108 :  0.006541
+
+ valid loss mae on epoch 108 :  0.006082
+
+ valid loss pde on epoch 108 :  0.146109
+
+ valid loss dual consistency on epoch 108 :  0.00000000
+
+ train loss mse on epoch 109 :  0.000066
+
+ train loss rmse on epoch 109 :  0.008118
+
+ train loss mape on epoch 109 :  0.006557
+
+ train loss mae on epoch 109 :  0.006115
+
+ train loss pde on epoch 109 :  0.214661
+
+ train loss dual consistency on epoch 109 :  0.00000000
+
+ valid loss mse on epoch 109 :  0.000109
+
+ valid loss rmse on epoch 109 :  0.010455
+
+ valid loss mape on epoch 109 :  0.008867
+
+ valid loss mae on epoch 109 :  0.008319
+
+ valid loss pde on epoch 109 :  0.146270
+
+ valid loss dual consistency on epoch 109 :  0.00000000
+
+ train loss mse on epoch 110 :  0.000080
+
+ train loss rmse on epoch 110 :  0.008951
+
+ train loss mape on epoch 110 :  0.007470
+
+ train loss mae on epoch 110 :  0.006977
+
+ train loss pde on epoch 110 :  0.211312
+
+ train loss dual consistency on epoch 110 :  0.00000000
+
+ valid loss mse on epoch 110 :  0.000059
+
+ valid loss rmse on epoch 110 :  0.007662
+
+ valid loss mape on epoch 110 :  0.005846
+
+ valid loss mae on epoch 110 :  0.005400
+
+ valid loss pde on epoch 110 :  0.142349
+
+ valid loss dual consistency on epoch 110 :  0.00000000
+
+ train loss mse on epoch 111 :  0.000117
+
+ train loss rmse on epoch 111 :  0.010811
+
+ train loss mape on epoch 111 :  0.009275
+
+ train loss mae on epoch 111 :  0.008673
+
+ train loss pde on epoch 111 :  0.212327
+
+ train loss dual consistency on epoch 111 :  0.00000000
+
+ valid loss mse on epoch 111 :  0.000099
+
+ valid loss rmse on epoch 111 :  0.009948
+
+ valid loss mape on epoch 111 :  0.008471
+
+ valid loss mae on epoch 111 :  0.007877
+
+ valid loss pde on epoch 111 :  0.142162
+
+ valid loss dual consistency on epoch 111 :  0.00000000
+
+ train loss mse on epoch 112 :  0.000060
+
+ train loss rmse on epoch 112 :  0.007721
+
+ train loss mape on epoch 112 :  0.006184
+
+ train loss mae on epoch 112 :  0.005761
+
+ train loss pde on epoch 112 :  0.211494
+
+ train loss dual consistency on epoch 112 :  0.00000000
+
+ valid loss mse on epoch 112 :  0.000126
+
+ valid loss rmse on epoch 112 :  0.011204
+
+ valid loss mape on epoch 112 :  0.009429
+
+ valid loss mae on epoch 112 :  0.008801
+
+ valid loss pde on epoch 112 :  0.147317
+
+ valid loss dual consistency on epoch 112 :  0.00000000
+
+ train loss mse on epoch 113 :  0.000092
+
+ train loss rmse on epoch 113 :  0.009615
+
+ train loss mape on epoch 113 :  0.008100
+
+ train loss mae on epoch 113 :  0.007558
+
+ train loss pde on epoch 113 :  0.212830
+
+ train loss dual consistency on epoch 113 :  0.00000000
+
+ valid loss mse on epoch 113 :  0.000058
+
+ valid loss rmse on epoch 113 :  0.007588
+
+ valid loss mape on epoch 113 :  0.005585
+
+ valid loss mae on epoch 113 :  0.005192
+
+ valid loss pde on epoch 113 :  0.146483
+
+ valid loss dual consistency on epoch 113 :  0.00000000
+
+ train loss mse on epoch 114 :  0.000079
+
+ train loss rmse on epoch 114 :  0.008891
+
+ train loss mape on epoch 114 :  0.007327
+
+ train loss mae on epoch 114 :  0.006839
+
+ train loss pde on epoch 114 :  0.214042
+
+ train loss dual consistency on epoch 114 :  0.00000000
+
+ valid loss mse on epoch 114 :  0.000133
+
+ valid loss rmse on epoch 114 :  0.011537
+
+ valid loss mape on epoch 114 :  0.010250
+
+ valid loss mae on epoch 114 :  0.009555
+
+ valid loss pde on epoch 114 :  0.146733
+
+ valid loss dual consistency on epoch 114 :  0.00000000
+
+ train loss mse on epoch 115 :  0.000085
+
+ train loss rmse on epoch 115 :  0.009226
+
+ train loss mape on epoch 115 :  0.007829
+
+ train loss mae on epoch 115 :  0.007319
+
+ train loss pde on epoch 115 :  0.211586
+
+ train loss dual consistency on epoch 115 :  0.00000000
+
+ valid loss mse on epoch 115 :  0.000060
+
+ valid loss rmse on epoch 115 :  0.007748
+
+ valid loss mape on epoch 115 :  0.005698
+
+ valid loss mae on epoch 115 :  0.005317
+
+ valid loss pde on epoch 115 :  0.144566
+
+ valid loss dual consistency on epoch 115 :  0.00000000
+
+ train loss mse on epoch 116 :  0.000070
+
+ train loss rmse on epoch 116 :  0.008388
+
+ train loss mape on epoch 116 :  0.007000
+
+ train loss mae on epoch 116 :  0.006543
+
+ train loss pde on epoch 116 :  0.210358
+
+ train loss dual consistency on epoch 116 :  0.00000000
+
+ valid loss mse on epoch 116 :  0.000116
+
+ valid loss rmse on epoch 116 :  0.010772
+
+ valid loss mape on epoch 116 :  0.009246
+
+ valid loss mae on epoch 116 :  0.008638
+
+ valid loss pde on epoch 116 :  0.145993
+
+ valid loss dual consistency on epoch 116 :  0.00000000
+
+ train loss mse on epoch 117 :  0.000068
+
+ train loss rmse on epoch 117 :  0.008247
+
+ train loss mape on epoch 117 :  0.006765
+
+ train loss mae on epoch 117 :  0.006318
+
+ train loss pde on epoch 117 :  0.212623
+
+ train loss dual consistency on epoch 117 :  0.00000000
+
+ valid loss mse on epoch 117 :  0.000081
+
+ valid loss rmse on epoch 117 :  0.009000
+
+ valid loss mape on epoch 117 :  0.007028
+
+ valid loss mae on epoch 117 :  0.006544
+
+ valid loss pde on epoch 117 :  0.146236
+
+ valid loss dual consistency on epoch 117 :  0.00000000
+
+ train loss mse on epoch 118 :  0.000081
+
+ train loss rmse on epoch 118 :  0.008997
+
+ train loss mape on epoch 118 :  0.007518
+
+ train loss mae on epoch 118 :  0.007023
+
+ train loss pde on epoch 118 :  0.210766
+
+ train loss dual consistency on epoch 118 :  0.00000000
+
+ valid loss mse on epoch 118 :  0.000084
+
+ valid loss rmse on epoch 118 :  0.009165
+
+ valid loss mape on epoch 118 :  0.007071
+
+ valid loss mae on epoch 118 :  0.006604
+
+ valid loss pde on epoch 118 :  0.144023
+
+ valid loss dual consistency on epoch 118 :  0.00000000
+
+ train loss mse on epoch 119 :  0.000133
+
+ train loss rmse on epoch 119 :  0.011544
+
+ train loss mape on epoch 119 :  0.009850
+
+ train loss mae on epoch 119 :  0.009214
+
+ train loss pde on epoch 119 :  0.212653
+
+ train loss dual consistency on epoch 119 :  0.00000000
+
+ valid loss mse on epoch 119 :  0.000074
+
+ valid loss rmse on epoch 119 :  0.008587
+
+ valid loss mape on epoch 119 :  0.006703
+
+ valid loss mae on epoch 119 :  0.006253
+
+ valid loss pde on epoch 119 :  0.146219
+
+ valid loss dual consistency on epoch 119 :  0.00000000
+
+ train loss mse on epoch 120 :  0.000056
+
+ train loss rmse on epoch 120 :  0.007473
+
+ train loss mape on epoch 120 :  0.005842
+
+ train loss mae on epoch 120 :  0.005440
+
+ train loss pde on epoch 120 :  0.211486
+
+ train loss dual consistency on epoch 120 :  0.00000000
+
+ valid loss mse on epoch 120 :  0.000078
+
+ valid loss rmse on epoch 120 :  0.008838
+
+ valid loss mape on epoch 120 :  0.006870
+
+ valid loss mae on epoch 120 :  0.006404
+
+ valid loss pde on epoch 120 :  0.148936
+
+ valid loss dual consistency on epoch 120 :  0.00000000
+
+ train loss mse on epoch 121 :  0.000057
+
+ train loss rmse on epoch 121 :  0.007550
+
+ train loss mape on epoch 121 :  0.006055
+
+ train loss mae on epoch 121 :  0.005641
+
+ train loss pde on epoch 121 :  0.211689
+
+ train loss dual consistency on epoch 121 :  0.00000000
+
+ valid loss mse on epoch 121 :  0.000055
+
+ valid loss rmse on epoch 121 :  0.007408
+
+ valid loss mape on epoch 121 :  0.005446
+
+ valid loss mae on epoch 121 :  0.005048
+
+ valid loss pde on epoch 121 :  0.146747
+
+ valid loss dual consistency on epoch 121 :  0.00000000
+
+ train loss mse on epoch 122 :  0.000050
+
+ train loss rmse on epoch 122 :  0.007036
+
+ train loss mape on epoch 122 :  0.005565
+
+ train loss mae on epoch 122 :  0.005186
+
+ train loss pde on epoch 122 :  0.212100
+
+ train loss dual consistency on epoch 122 :  0.00000000
+
+ valid loss mse on epoch 122 :  0.000052
+
+ valid loss rmse on epoch 122 :  0.007235
+
+ valid loss mape on epoch 122 :  0.005341
+
+ valid loss mae on epoch 122 :  0.004975
+
+ valid loss pde on epoch 122 :  0.145048
+
+ valid loss dual consistency on epoch 122 :  0.00000000
+
+ train loss mse on epoch 123 :  0.000061
+
+ train loss rmse on epoch 123 :  0.007814
+
+ train loss mape on epoch 123 :  0.006396
+
+ train loss mae on epoch 123 :  0.005974
+
+ train loss pde on epoch 123 :  0.211865
+
+ train loss dual consistency on epoch 123 :  0.00000000
+
+ valid loss mse on epoch 123 :  0.000063
+
+ valid loss rmse on epoch 123 :  0.007957
+
+ valid loss mape on epoch 123 :  0.006191
+
+ valid loss mae on epoch 123 :  0.005728
+
+ valid loss pde on epoch 123 :  0.144869
+
+ valid loss dual consistency on epoch 123 :  0.00000000
+
+ train loss mse on epoch 124 :  0.000078
+
+ train loss rmse on epoch 124 :  0.008827
+
+ train loss mape on epoch 124 :  0.007163
+
+ train loss mae on epoch 124 :  0.006689
+
+ train loss pde on epoch 124 :  0.212939
+
+ train loss dual consistency on epoch 124 :  0.00000000
+
+ valid loss mse on epoch 124 :  0.000076
+
+ valid loss rmse on epoch 124 :  0.008705
+
+ valid loss mape on epoch 124 :  0.006626
+
+ valid loss mae on epoch 124 :  0.006150
+
+ valid loss pde on epoch 124 :  0.148318
+
+ valid loss dual consistency on epoch 124 :  0.00000000
+
+ train loss mse on epoch 125 :  0.000140
+
+ train loss rmse on epoch 125 :  0.011846
+
+ train loss mape on epoch 125 :  0.010266
+
+ train loss mae on epoch 125 :  0.009609
+
+ train loss pde on epoch 125 :  0.212326
+
+ train loss dual consistency on epoch 125 :  0.00000000
+
+ valid loss mse on epoch 125 :  0.000062
+
+ valid loss rmse on epoch 125 :  0.007864
+
+ valid loss mape on epoch 125 :  0.005763
+
+ valid loss mae on epoch 125 :  0.005354
+
+ valid loss pde on epoch 125 :  0.145735
+
+ valid loss dual consistency on epoch 125 :  0.00000000
+
+ train loss mse on epoch 126 :  0.000066
+
+ train loss rmse on epoch 126 :  0.008144
+
+ train loss mape on epoch 126 :  0.006625
+
+ train loss mae on epoch 126 :  0.006182
+
+ train loss pde on epoch 126 :  0.212714
+
+ train loss dual consistency on epoch 126 :  0.00000000
+
+ valid loss mse on epoch 126 :  0.000054
+
+ valid loss rmse on epoch 126 :  0.007335
+
+ valid loss mape on epoch 126 :  0.005656
+
+ valid loss mae on epoch 126 :  0.005255
+
+ valid loss pde on epoch 126 :  0.145237
+
+ valid loss dual consistency on epoch 126 :  0.00000000
+
+ train loss mse on epoch 127 :  0.000050
+
+ train loss rmse on epoch 127 :  0.007065
+
+ train loss mape on epoch 127 :  0.005531
+
+ train loss mae on epoch 127 :  0.005155
+
+ train loss pde on epoch 127 :  0.213749
+
+ train loss dual consistency on epoch 127 :  0.00000000
+
+ valid loss mse on epoch 127 :  0.000061
+
+ valid loss rmse on epoch 127 :  0.007806
+
+ valid loss mape on epoch 127 :  0.005592
+
+ valid loss mae on epoch 127 :  0.005199
+
+ valid loss pde on epoch 127 :  0.147064
+
+ valid loss dual consistency on epoch 127 :  0.00000000
+
+ train loss mse on epoch 128 :  0.000071
+
+ train loss rmse on epoch 128 :  0.008396
+
+ train loss mape on epoch 128 :  0.006893
+
+ train loss mae on epoch 128 :  0.006437
+
+ train loss pde on epoch 128 :  0.214510
+
+ train loss dual consistency on epoch 128 :  0.00000000
+
+ valid loss mse on epoch 128 :  0.000077
+
+ valid loss rmse on epoch 128 :  0.008750
+
+ valid loss mape on epoch 128 :  0.006954
+
+ valid loss mae on epoch 128 :  0.006500
+
+ valid loss pde on epoch 128 :  0.145531
+
+ valid loss dual consistency on epoch 128 :  0.00000000
+
+ train loss mse on epoch 129 :  0.000074
+
+ train loss rmse on epoch 129 :  0.008609
+
+ train loss mape on epoch 129 :  0.007212
+
+ train loss mae on epoch 129 :  0.006734
+
+ train loss pde on epoch 129 :  0.214367
+
+ train loss dual consistency on epoch 129 :  0.00000000
+
+ valid loss mse on epoch 129 :  0.000117
+
+ valid loss rmse on epoch 129 :  0.010810
+
+ valid loss mape on epoch 129 :  0.009622
+
+ valid loss mae on epoch 129 :  0.008968
+
+ valid loss pde on epoch 129 :  0.148047
+
+ valid loss dual consistency on epoch 129 :  0.00000000
+
+ train loss mse on epoch 130 :  0.000070
+
+ train loss rmse on epoch 130 :  0.008339
+
+ train loss mape on epoch 130 :  0.007025
+
+ train loss mae on epoch 130 :  0.006566
+
+ train loss pde on epoch 130 :  0.213237
+
+ train loss dual consistency on epoch 130 :  0.00000000
+
+ valid loss mse on epoch 130 :  0.000066
+
+ valid loss rmse on epoch 130 :  0.008116
+
+ valid loss mape on epoch 130 :  0.006246
+
+ valid loss mae on epoch 130 :  0.005836
+
+ valid loss pde on epoch 130 :  0.147833
+
+ valid loss dual consistency on epoch 130 :  0.00000000
+
+ train loss mse on epoch 131 :  0.000070
+
+ train loss rmse on epoch 131 :  0.008362
+
+ train loss mape on epoch 131 :  0.007038
+
+ train loss mae on epoch 131 :  0.006577
+
+ train loss pde on epoch 131 :  0.211723
+
+ train loss dual consistency on epoch 131 :  0.00000000
+
+ valid loss mse on epoch 131 :  0.000100
+
+ valid loss rmse on epoch 131 :  0.010007
+
+ valid loss mape on epoch 131 :  0.008032
+
+ valid loss mae on epoch 131 :  0.007530
+
+ valid loss pde on epoch 131 :  0.145331
+
+ valid loss dual consistency on epoch 131 :  0.00000000
+
+ train loss mse on epoch 132 :  0.000060
+
+ train loss rmse on epoch 132 :  0.007748
+
+ train loss mape on epoch 132 :  0.006381
+
+ train loss mae on epoch 132 :  0.005960
+
+ train loss pde on epoch 132 :  0.214929
+
+ train loss dual consistency on epoch 132 :  0.00000000
+
+ valid loss mse on epoch 132 :  0.000056
+
+ valid loss rmse on epoch 132 :  0.007481
+
+ valid loss mape on epoch 132 :  0.005920
+
+ valid loss mae on epoch 132 :  0.005502
+
+ valid loss pde on epoch 132 :  0.146773
+
+ valid loss dual consistency on epoch 132 :  0.00000000
+
+ train loss mse on epoch 133 :  0.000041
+
+ train loss rmse on epoch 133 :  0.006369
+
+ train loss mape on epoch 133 :  0.004998
+
+ train loss mae on epoch 133 :  0.004664
+
+ train loss pde on epoch 133 :  0.215188
+
+ train loss dual consistency on epoch 133 :  0.00000000
+
+ valid loss mse on epoch 133 :  0.000054
+
+ valid loss rmse on epoch 133 :  0.007375
+
+ valid loss mape on epoch 133 :  0.005707
+
+ valid loss mae on epoch 133 :  0.005283
+
+ valid loss pde on epoch 133 :  0.145622
+
+ valid loss dual consistency on epoch 133 :  0.00000000
+
+ train loss mse on epoch 134 :  0.000041
+
+ train loss rmse on epoch 134 :  0.006373
+
+ train loss mape on epoch 134 :  0.005061
+
+ train loss mae on epoch 134 :  0.004722
+
+ train loss pde on epoch 134 :  0.211825
+
+ train loss dual consistency on epoch 134 :  0.00000000
+
+ valid loss mse on epoch 134 :  0.000044
+
+ valid loss rmse on epoch 134 :  0.006661
+
+ valid loss mape on epoch 134 :  0.004958
+
+ valid loss mae on epoch 134 :  0.004624
+
+ valid loss pde on epoch 134 :  0.146413
+
+ valid loss dual consistency on epoch 134 :  0.00000000
+
+ train loss mse on epoch 135 :  0.000040
+
+ train loss rmse on epoch 135 :  0.006291
+
+ train loss mape on epoch 135 :  0.004966
+
+ train loss mae on epoch 135 :  0.004629
+
+ train loss pde on epoch 135 :  0.212980
+
+ train loss dual consistency on epoch 135 :  0.00000000
+
+ valid loss mse on epoch 135 :  0.000066
+
+ valid loss rmse on epoch 135 :  0.008155
+
+ valid loss mape on epoch 135 :  0.006557
+
+ valid loss mae on epoch 135 :  0.006155
+
+ valid loss pde on epoch 135 :  0.146306
+
+ valid loss dual consistency on epoch 135 :  0.00000000
+
+ train loss mse on epoch 136 :  0.000050
+
+ train loss rmse on epoch 136 :  0.007090
+
+ train loss mape on epoch 136 :  0.005737
+
+ train loss mae on epoch 136 :  0.005357
+
+ train loss pde on epoch 136 :  0.214396
+
+ train loss dual consistency on epoch 136 :  0.00000000
+
+ valid loss mse on epoch 136 :  0.000050
+
+ valid loss rmse on epoch 136 :  0.007057
+
+ valid loss mape on epoch 136 :  0.005212
+
+ valid loss mae on epoch 136 :  0.004846
+
+ valid loss pde on epoch 136 :  0.144897
+
+ valid loss dual consistency on epoch 136 :  0.00000000
+
+ train loss mse on epoch 137 :  0.000041
+
+ train loss rmse on epoch 137 :  0.006414
+
+ train loss mape on epoch 137 :  0.004970
+
+ train loss mae on epoch 137 :  0.004629
+
+ train loss pde on epoch 137 :  0.211485
+
+ train loss dual consistency on epoch 137 :  0.00000000
+
+ valid loss mse on epoch 137 :  0.000063
+
+ valid loss rmse on epoch 137 :  0.007944
+
+ valid loss mape on epoch 137 :  0.005984
+
+ valid loss mae on epoch 137 :  0.005502
+
+ valid loss pde on epoch 137 :  0.146875
+
+ valid loss dual consistency on epoch 137 :  0.00000000
+
+ train loss mse on epoch 138 :  0.000052
+
+ train loss rmse on epoch 138 :  0.007191
+
+ train loss mape on epoch 138 :  0.005821
+
+ train loss mae on epoch 138 :  0.005428
+
+ train loss pde on epoch 138 :  0.212639
+
+ train loss dual consistency on epoch 138 :  0.00000000
+
+ valid loss mse on epoch 138 :  0.000046
+
+ valid loss rmse on epoch 138 :  0.006810
+
+ valid loss mape on epoch 138 :  0.005220
+
+ valid loss mae on epoch 138 :  0.004860
+
+ valid loss pde on epoch 138 :  0.146601
+
+ valid loss dual consistency on epoch 138 :  0.00000000
+
+ train loss mse on epoch 139 :  0.000053
+
+ train loss rmse on epoch 139 :  0.007297
+
+ train loss mape on epoch 139 :  0.005989
+
+ train loss mae on epoch 139 :  0.005594
+
+ train loss pde on epoch 139 :  0.210719
+
+ train loss dual consistency on epoch 139 :  0.00000000
+
+ valid loss mse on epoch 139 :  0.000060
+
+ valid loss rmse on epoch 139 :  0.007766
+
+ valid loss mape on epoch 139 :  0.005776
+
+ valid loss mae on epoch 139 :  0.005351
+
+ valid loss pde on epoch 139 :  0.145880
+
+ valid loss dual consistency on epoch 139 :  0.00000000
+
+ train loss mse on epoch 140 :  0.000041
+
+ train loss rmse on epoch 140 :  0.006382
+
+ train loss mape on epoch 140 :  0.004974
+
+ train loss mae on epoch 140 :  0.004634
+
+ train loss pde on epoch 140 :  0.214310
+
+ train loss dual consistency on epoch 140 :  0.00000000
+
+ valid loss mse on epoch 140 :  0.000057
+
+ valid loss rmse on epoch 140 :  0.007565
+
+ valid loss mape on epoch 140 :  0.005461
+
+ valid loss mae on epoch 140 :  0.005067
+
+ valid loss pde on epoch 140 :  0.144725
+
+ valid loss dual consistency on epoch 140 :  0.00000000
+
+ train loss mse on epoch 141 :  0.000053
+
+ train loss rmse on epoch 141 :  0.007305
+
+ train loss mape on epoch 141 :  0.005846
+
+ train loss mae on epoch 141 :  0.005455
+
+ train loss pde on epoch 141 :  0.213194
+
+ train loss dual consistency on epoch 141 :  0.00000000
+
+ valid loss mse on epoch 141 :  0.000076
+
+ valid loss rmse on epoch 141 :  0.008725
+
+ valid loss mape on epoch 141 :  0.007430
+
+ valid loss mae on epoch 141 :  0.006903
+
+ valid loss pde on epoch 141 :  0.145310
+
+ valid loss dual consistency on epoch 141 :  0.00000000
+
+ train loss mse on epoch 142 :  0.000046
+
+ train loss rmse on epoch 142 :  0.006757
+
+ train loss mape on epoch 142 :  0.005419
+
+ train loss mae on epoch 142 :  0.005048
+
+ train loss pde on epoch 142 :  0.214513
+
+ train loss dual consistency on epoch 142 :  0.00000000
+
+ valid loss mse on epoch 142 :  0.000053
+
+ valid loss rmse on epoch 142 :  0.007299
+
+ valid loss mape on epoch 142 :  0.005577
+
+ valid loss mae on epoch 142 :  0.005162
+
+ valid loss pde on epoch 142 :  0.145825
+
+ valid loss dual consistency on epoch 142 :  0.00000000
+
+ train loss mse on epoch 143 :  0.000047
+
+ train loss rmse on epoch 143 :  0.006848
+
+ train loss mape on epoch 143 :  0.005594
+
+ train loss mae on epoch 143 :  0.005222
+
+ train loss pde on epoch 143 :  0.212159
+
+ train loss dual consistency on epoch 143 :  0.00000000
+
+ valid loss mse on epoch 143 :  0.000057
+
+ valid loss rmse on epoch 143 :  0.007526
+
+ valid loss mape on epoch 143 :  0.005874
+
+ valid loss mae on epoch 143 :  0.005507
+
+ valid loss pde on epoch 143 :  0.144124
+
+ valid loss dual consistency on epoch 143 :  0.00000000
+
+ train loss mse on epoch 144 :  0.000042
+
+ train loss rmse on epoch 144 :  0.006506
+
+ train loss mape on epoch 144 :  0.005207
+
+ train loss mae on epoch 144 :  0.004859
+
+ train loss pde on epoch 144 :  0.213576
+
+ train loss dual consistency on epoch 144 :  0.00000000
+
+ valid loss mse on epoch 144 :  0.000046
+
+ valid loss rmse on epoch 144 :  0.006802
+
+ valid loss mape on epoch 144 :  0.004915
+
+ valid loss mae on epoch 144 :  0.004575
+
+ valid loss pde on epoch 144 :  0.146952
+
+ valid loss dual consistency on epoch 144 :  0.00000000
+
+ train loss mse on epoch 145 :  0.000037
+
+ train loss rmse on epoch 145 :  0.006104
+
+ train loss mape on epoch 145 :  0.004771
+
+ train loss mae on epoch 145 :  0.004448
+
+ train loss pde on epoch 145 :  0.210135
+
+ train loss dual consistency on epoch 145 :  0.00000000
+
+ valid loss mse on epoch 145 :  0.000057
+
+ valid loss rmse on epoch 145 :  0.007567
+
+ valid loss mape on epoch 145 :  0.005689
+
+ valid loss mae on epoch 145 :  0.005303
+
+ valid loss pde on epoch 145 :  0.145329
+
+ valid loss dual consistency on epoch 145 :  0.00000000
+
+ train loss mse on epoch 146 :  0.000045
+
+ train loss rmse on epoch 146 :  0.006685
+
+ train loss mape on epoch 146 :  0.005359
+
+ train loss mae on epoch 146 :  0.004991
+
+ train loss pde on epoch 146 :  0.212436
+
+ train loss dual consistency on epoch 146 :  0.00000000
+
+ valid loss mse on epoch 146 :  0.000049
+
+ valid loss rmse on epoch 146 :  0.006976
+
+ valid loss mape on epoch 146 :  0.005096
+
+ valid loss mae on epoch 146 :  0.004720
+
+ valid loss pde on epoch 146 :  0.147473
+
+ valid loss dual consistency on epoch 146 :  0.00000000
+
+ train loss mse on epoch 147 :  0.000037
+
+ train loss rmse on epoch 147 :  0.006061
+
+ train loss mape on epoch 147 :  0.004757
+
+ train loss mae on epoch 147 :  0.004433
+
+ train loss pde on epoch 147 :  0.215134
+
+ train loss dual consistency on epoch 147 :  0.00000000
+
+ valid loss mse on epoch 147 :  0.000060
+
+ valid loss rmse on epoch 147 :  0.007745
+
+ valid loss mape on epoch 147 :  0.006182
+
+ valid loss mae on epoch 147 :  0.005749
+
+ valid loss pde on epoch 147 :  0.146546
+
+ valid loss dual consistency on epoch 147 :  0.00000000
+
+ train loss mse on epoch 148 :  0.000035
+
+ train loss rmse on epoch 148 :  0.005922
+
+ train loss mape on epoch 148 :  0.004664
+
+ train loss mae on epoch 148 :  0.004350
+
+ train loss pde on epoch 148 :  0.213252
+
+ train loss dual consistency on epoch 148 :  0.00000000
+
+ valid loss mse on epoch 148 :  0.000047
+
+ valid loss rmse on epoch 148 :  0.006838
+
+ valid loss mape on epoch 148 :  0.005442
+
+ valid loss mae on epoch 148 :  0.005083
+
+ valid loss pde on epoch 148 :  0.144877
+
+ valid loss dual consistency on epoch 148 :  0.00000000
+
+ train loss mse on epoch 149 :  0.000062
+
+ train loss rmse on epoch 149 :  0.007893
+
+ train loss mape on epoch 149 :  0.006463
+
+ train loss mae on epoch 149 :  0.006030
+
+ train loss pde on epoch 149 :  0.213679
+
+ train loss dual consistency on epoch 149 :  0.00000000
+
+ valid loss mse on epoch 149 :  0.000047
+
+ valid loss rmse on epoch 149 :  0.006865
+
+ valid loss mape on epoch 149 :  0.005079
+
+ valid loss mae on epoch 149 :  0.004709
+
+ valid loss pde on epoch 149 :  0.145727
+
+ valid loss dual consistency on epoch 149 :  0.00000000
+
+ train loss mse on epoch 150 :  0.000037
+
+ train loss rmse on epoch 150 :  0.006067
+
+ train loss mape on epoch 150 :  0.004737
+
+ train loss mae on epoch 150 :  0.004413
+
+ train loss pde on epoch 150 :  0.214063
+
+ train loss dual consistency on epoch 150 :  0.00000000
+
+ valid loss mse on epoch 150 :  0.000056
+
+ valid loss rmse on epoch 150 :  0.007496
+
+ valid loss mape on epoch 150 :  0.006231
+
+ valid loss mae on epoch 150 :  0.005761
+
+ valid loss pde on epoch 150 :  0.146943
+
+ valid loss dual consistency on epoch 150 :  0.00000000
+
+ train loss mse on epoch 151 :  0.000036
+
+ train loss rmse on epoch 151 :  0.005995
+
+ train loss mape on epoch 151 :  0.004785
+
+ train loss mae on epoch 151 :  0.004460
+
+ train loss pde on epoch 151 :  0.212496
+
+ train loss dual consistency on epoch 151 :  0.00000000
+
+ valid loss mse on epoch 151 :  0.000044
+
+ valid loss rmse on epoch 151 :  0.006654
+
+ valid loss mape on epoch 151 :  0.005122
+
+ valid loss mae on epoch 151 :  0.004743
+
+ valid loss pde on epoch 151 :  0.146118
+
+ valid loss dual consistency on epoch 151 :  0.00000000
+
+ train loss mse on epoch 152 :  0.000038
+
+ train loss rmse on epoch 152 :  0.006142
+
+ train loss mape on epoch 152 :  0.004803
+
+ train loss mae on epoch 152 :  0.004474
+
+ train loss pde on epoch 152 :  0.213073
+
+ train loss dual consistency on epoch 152 :  0.00000000
+
+ valid loss mse on epoch 152 :  0.000166
+
+ valid loss rmse on epoch 152 :  0.012897
+
+ valid loss mape on epoch 152 :  0.012265
+
+ valid loss mae on epoch 152 :  0.011534
+
+ valid loss pde on epoch 152 :  0.145290
+
+ valid loss dual consistency on epoch 152 :  0.00000000
+
+ train loss mse on epoch 153 :  0.000053
+
+ train loss rmse on epoch 153 :  0.007290
+
+ train loss mape on epoch 153 :  0.006008
+
+ train loss mae on epoch 153 :  0.005620
+
+ train loss pde on epoch 153 :  0.214879
+
+ train loss dual consistency on epoch 153 :  0.00000000
+
+ valid loss mse on epoch 153 :  0.000046
+
+ valid loss rmse on epoch 153 :  0.006774
+
+ valid loss mape on epoch 153 :  0.005413
+
+ valid loss mae on epoch 153 :  0.005045
+
+ valid loss pde on epoch 153 :  0.146146
+
+ valid loss dual consistency on epoch 153 :  0.00000000
+
+ train loss mse on epoch 154 :  0.000034
+
+ train loss rmse on epoch 154 :  0.005810
+
+ train loss mape on epoch 154 :  0.004571
+
+ train loss mae on epoch 154 :  0.004263
+
+ train loss pde on epoch 154 :  0.212690
+
+ train loss dual consistency on epoch 154 :  0.00000000
+
+ valid loss mse on epoch 154 :  0.000041
+
+ valid loss rmse on epoch 154 :  0.006441
+
+ valid loss mape on epoch 154 :  0.004670
+
+ valid loss mae on epoch 154 :  0.004332
+
+ valid loss pde on epoch 154 :  0.146623
+
+ valid loss dual consistency on epoch 154 :  0.00000000
+
+ train loss mse on epoch 155 :  0.000032
+
+ train loss rmse on epoch 155 :  0.005638
+
+ train loss mape on epoch 155 :  0.004411
+
+ train loss mae on epoch 155 :  0.004112
+
+ train loss pde on epoch 155 :  0.212467
+
+ train loss dual consistency on epoch 155 :  0.00000000
+
+ valid loss mse on epoch 155 :  0.000044
+
+ valid loss rmse on epoch 155 :  0.006665
+
+ valid loss mape on epoch 155 :  0.004955
+
+ valid loss mae on epoch 155 :  0.004609
+
+ valid loss pde on epoch 155 :  0.147518
+
+ valid loss dual consistency on epoch 155 :  0.00000000
+
+ train loss mse on epoch 156 :  0.000035
+
+ train loss rmse on epoch 156 :  0.005902
+
+ train loss mape on epoch 156 :  0.004735
+
+ train loss mae on epoch 156 :  0.004425
+
+ train loss pde on epoch 156 :  0.213280
+
+ train loss dual consistency on epoch 156 :  0.00000000
+
+ valid loss mse on epoch 156 :  0.000041
+
+ valid loss rmse on epoch 156 :  0.006418
+
+ valid loss mape on epoch 156 :  0.004870
+
+ valid loss mae on epoch 156 :  0.004525
+
+ valid loss pde on epoch 156 :  0.146508
+
+ valid loss dual consistency on epoch 156 :  0.00000000
+
+ train loss mse on epoch 157 :  0.000033
+
+ train loss rmse on epoch 157 :  0.005740
+
+ train loss mape on epoch 157 :  0.004543
+
+ train loss mae on epoch 157 :  0.004238
+
+ train loss pde on epoch 157 :  0.215591
+
+ train loss dual consistency on epoch 157 :  0.00000000
+
+ valid loss mse on epoch 157 :  0.000039
+
+ valid loss rmse on epoch 157 :  0.006211
+
+ valid loss mape on epoch 157 :  0.004623
+
+ valid loss mae on epoch 157 :  0.004283
+
+ valid loss pde on epoch 157 :  0.147670
+
+ valid loss dual consistency on epoch 157 :  0.00000000
+
+ train loss mse on epoch 158 :  0.000030
+
+ train loss rmse on epoch 158 :  0.005469
+
+ train loss mape on epoch 158 :  0.004307
+
+ train loss mae on epoch 158 :  0.004017
+
+ train loss pde on epoch 158 :  0.213577
+
+ train loss dual consistency on epoch 158 :  0.00000000
+
+ valid loss mse on epoch 158 :  0.000036
+
+ valid loss rmse on epoch 158 :  0.006004
+
+ valid loss mape on epoch 158 :  0.004333
+
+ valid loss mae on epoch 158 :  0.004034
+
+ valid loss pde on epoch 158 :  0.144530
+
+ valid loss dual consistency on epoch 158 :  0.00000000
+
+ train loss mse on epoch 159 :  0.000034
+
+ train loss rmse on epoch 159 :  0.005800
+
+ train loss mape on epoch 159 :  0.004647
+
+ train loss mae on epoch 159 :  0.004337
+
+ train loss pde on epoch 159 :  0.213497
+
+ train loss dual consistency on epoch 159 :  0.00000000
+
+ valid loss mse on epoch 159 :  0.000038
+
+ valid loss rmse on epoch 159 :  0.006160
+
+ valid loss mape on epoch 159 :  0.004747
+
+ valid loss mae on epoch 159 :  0.004407
+
+ valid loss pde on epoch 159 :  0.148294
+
+ valid loss dual consistency on epoch 159 :  0.00000000
+
+ train loss mse on epoch 160 :  0.000033
+
+ train loss rmse on epoch 160 :  0.005726
+
+ train loss mape on epoch 160 :  0.004620
+
+ train loss mae on epoch 160 :  0.004314
+
+ train loss pde on epoch 160 :  0.213390
+
+ train loss dual consistency on epoch 160 :  0.00000000
+
+ valid loss mse on epoch 160 :  0.000042
+
+ valid loss rmse on epoch 160 :  0.006449
+
+ valid loss mape on epoch 160 :  0.004840
+
+ valid loss mae on epoch 160 :  0.004479
+
+ valid loss pde on epoch 160 :  0.147339
+
+ valid loss dual consistency on epoch 160 :  0.00000000
+
+ train loss mse on epoch 161 :  0.000038
+
+ train loss rmse on epoch 161 :  0.006138
+
+ train loss mape on epoch 161 :  0.004956
+
+ train loss mae on epoch 161 :  0.004624
+
+ train loss pde on epoch 161 :  0.215017
+
+ train loss dual consistency on epoch 161 :  0.00000000
+
+ valid loss mse on epoch 161 :  0.000076
+
+ valid loss rmse on epoch 161 :  0.008723
+
+ valid loss mape on epoch 161 :  0.007770
+
+ valid loss mae on epoch 161 :  0.007222
+
+ valid loss pde on epoch 161 :  0.147878
+
+ valid loss dual consistency on epoch 161 :  0.00000000
+
+ train loss mse on epoch 162 :  0.000034
+
+ train loss rmse on epoch 162 :  0.005812
+
+ train loss mape on epoch 162 :  0.004636
+
+ train loss mae on epoch 162 :  0.004324
+
+ train loss pde on epoch 162 :  0.213946
+
+ train loss dual consistency on epoch 162 :  0.00000000
+
+ valid loss mse on epoch 162 :  0.000040
+
+ valid loss rmse on epoch 162 :  0.006355
+
+ valid loss mape on epoch 162 :  0.004694
+
+ valid loss mae on epoch 162 :  0.004366
+
+ valid loss pde on epoch 162 :  0.146039
+
+ valid loss dual consistency on epoch 162 :  0.00000000
+
+ train loss mse on epoch 163 :  0.000031
+
+ train loss rmse on epoch 163 :  0.005566
+
+ train loss mape on epoch 163 :  0.004384
+
+ train loss mae on epoch 163 :  0.004088
+
+ train loss pde on epoch 163 :  0.215371
+
+ train loss dual consistency on epoch 163 :  0.00000000
+
+ valid loss mse on epoch 163 :  0.000053
+
+ valid loss rmse on epoch 163 :  0.007295
+
+ valid loss mape on epoch 163 :  0.006051
+
+ valid loss mae on epoch 163 :  0.005669
+
+ valid loss pde on epoch 163 :  0.148296
+
+ valid loss dual consistency on epoch 163 :  0.00000000
+
+ train loss mse on epoch 164 :  0.000033
+
+ train loss rmse on epoch 164 :  0.005787
+
+ train loss mape on epoch 164 :  0.004609
+
+ train loss mae on epoch 164 :  0.004303
+
+ train loss pde on epoch 164 :  0.215472
+
+ train loss dual consistency on epoch 164 :  0.00000000
+
+ valid loss mse on epoch 164 :  0.000040
+
+ valid loss rmse on epoch 164 :  0.006359
+
+ valid loss mape on epoch 164 :  0.004669
+
+ valid loss mae on epoch 164 :  0.004359
+
+ valid loss pde on epoch 164 :  0.147748
+
+ valid loss dual consistency on epoch 164 :  0.00000000
+
+ train loss mse on epoch 165 :  0.000031
+
+ train loss rmse on epoch 165 :  0.005594
+
+ train loss mape on epoch 165 :  0.004362
+
+ train loss mae on epoch 165 :  0.004065
+
+ train loss pde on epoch 165 :  0.215672
+
+ train loss dual consistency on epoch 165 :  0.00000000
+
+ valid loss mse on epoch 165 :  0.000043
+
+ valid loss rmse on epoch 165 :  0.006532
+
+ valid loss mape on epoch 165 :  0.004760
+
+ valid loss mae on epoch 165 :  0.004427
+
+ valid loss pde on epoch 165 :  0.149509
+
+ valid loss dual consistency on epoch 165 :  0.00000000
+
+ train loss mse on epoch 166 :  0.000031
+
+ train loss rmse on epoch 166 :  0.005555
+
+ train loss mape on epoch 166 :  0.004367
+
+ train loss mae on epoch 166 :  0.004074
+
+ train loss pde on epoch 166 :  0.211545
+
+ train loss dual consistency on epoch 166 :  0.00000000
+
+ valid loss mse on epoch 166 :  0.000042
+
+ valid loss rmse on epoch 166 :  0.006445
+
+ valid loss mape on epoch 166 :  0.004464
+
+ valid loss mae on epoch 166 :  0.004155
+
+ valid loss pde on epoch 166 :  0.147230
+
+ valid loss dual consistency on epoch 166 :  0.00000000
+
+ train loss mse on epoch 167 :  0.000035
+
+ train loss rmse on epoch 167 :  0.005895
+
+ train loss mape on epoch 167 :  0.004581
+
+ train loss mae on epoch 167 :  0.004265
+
+ train loss pde on epoch 167 :  0.214731
+
+ train loss dual consistency on epoch 167 :  0.00000000
+
+ valid loss mse on epoch 167 :  0.000082
+
+ valid loss rmse on epoch 167 :  0.009068
+
+ valid loss mape on epoch 167 :  0.007907
+
+ valid loss mae on epoch 167 :  0.007327
+
+ valid loss pde on epoch 167 :  0.147646
+
+ valid loss dual consistency on epoch 167 :  0.00000000
+
+ train loss mse on epoch 168 :  0.000039
+
+ train loss rmse on epoch 168 :  0.006252
+
+ train loss mape on epoch 168 :  0.005063
+
+ train loss mae on epoch 168 :  0.004720
+
+ train loss pde on epoch 168 :  0.213728
+
+ train loss dual consistency on epoch 168 :  0.00000000
+
+ valid loss mse on epoch 168 :  0.000039
+
+ valid loss rmse on epoch 168 :  0.006230
+
+ valid loss mape on epoch 168 :  0.004494
+
+ valid loss mae on epoch 168 :  0.004178
+
+ valid loss pde on epoch 168 :  0.146457
+
+ valid loss dual consistency on epoch 168 :  0.00000000
+
+ train loss mse on epoch 169 :  0.000040
+
+ train loss rmse on epoch 169 :  0.006342
+
+ train loss mape on epoch 169 :  0.005223
+
+ train loss mae on epoch 169 :  0.004880
+
+ train loss pde on epoch 169 :  0.212033
+
+ train loss dual consistency on epoch 169 :  0.00000000
+
+ valid loss mse on epoch 169 :  0.000047
+
+ valid loss rmse on epoch 169 :  0.006819
+
+ valid loss mape on epoch 169 :  0.005089
+
+ valid loss mae on epoch 169 :  0.004749
+
+ valid loss pde on epoch 169 :  0.145796
+
+ valid loss dual consistency on epoch 169 :  0.00000000
+
+ train loss mse on epoch 170 :  0.000030
+
+ train loss rmse on epoch 170 :  0.005485
+
+ train loss mape on epoch 170 :  0.004329
+
+ train loss mae on epoch 170 :  0.004041
+
+ train loss pde on epoch 170 :  0.214626
+
+ train loss dual consistency on epoch 170 :  0.00000000
+
+ valid loss mse on epoch 170 :  0.000035
+
+ valid loss rmse on epoch 170 :  0.005925
+
+ valid loss mape on epoch 170 :  0.004449
+
+ valid loss mae on epoch 170 :  0.004142
+
+ valid loss pde on epoch 170 :  0.150474
+
+ valid loss dual consistency on epoch 170 :  0.00000000
+
+ train loss mse on epoch 171 :  0.000028
+
+ train loss rmse on epoch 171 :  0.005301
+
+ train loss mape on epoch 171 :  0.004188
+
+ train loss mae on epoch 171 :  0.003911
+
+ train loss pde on epoch 171 :  0.214684
+
+ train loss dual consistency on epoch 171 :  0.00000000
+
+ valid loss mse on epoch 171 :  0.000038
+
+ valid loss rmse on epoch 171 :  0.006141
+
+ valid loss mape on epoch 171 :  0.004402
+
+ valid loss mae on epoch 171 :  0.004094
+
+ valid loss pde on epoch 171 :  0.145698
+
+ valid loss dual consistency on epoch 171 :  0.00000000
+
+ train loss mse on epoch 172 :  0.000029
+
+ train loss rmse on epoch 172 :  0.005424
+
+ train loss mape on epoch 172 :  0.004260
+
+ train loss mae on epoch 172 :  0.003974
+
+ train loss pde on epoch 172 :  0.216344
+
+ train loss dual consistency on epoch 172 :  0.00000000
+
+ valid loss mse on epoch 172 :  0.000040
+
+ valid loss rmse on epoch 172 :  0.006308
+
+ valid loss mape on epoch 172 :  0.004610
+
+ valid loss mae on epoch 172 :  0.004293
+
+ valid loss pde on epoch 172 :  0.146969
+
+ valid loss dual consistency on epoch 172 :  0.00000000
+
+ train loss mse on epoch 173 :  0.000031
+
+ train loss rmse on epoch 173 :  0.005595
+
+ train loss mape on epoch 173 :  0.004400
+
+ train loss mae on epoch 173 :  0.004098
+
+ train loss pde on epoch 173 :  0.215633
+
+ train loss dual consistency on epoch 173 :  0.00000000
+
+ valid loss mse on epoch 173 :  0.000045
+
+ valid loss rmse on epoch 173 :  0.006691
+
+ valid loss mape on epoch 173 :  0.004942
+
+ valid loss mae on epoch 173 :  0.004577
+
+ valid loss pde on epoch 173 :  0.147534
+
+ valid loss dual consistency on epoch 173 :  0.00000000
+
+ train loss mse on epoch 174 :  0.000035
+
+ train loss rmse on epoch 174 :  0.005915
+
+ train loss mape on epoch 174 :  0.004804
+
+ train loss mae on epoch 174 :  0.004488
+
+ train loss pde on epoch 174 :  0.212319
+
+ train loss dual consistency on epoch 174 :  0.00000000
+
+ valid loss mse on epoch 174 :  0.000034
+
+ valid loss rmse on epoch 174 :  0.005854
+
+ valid loss mape on epoch 174 :  0.004359
+
+ valid loss mae on epoch 174 :  0.004052
+
+ valid loss pde on epoch 174 :  0.148330
+
+ valid loss dual consistency on epoch 174 :  0.00000000
+
+ train loss mse on epoch 175 :  0.000026
+
+ train loss rmse on epoch 175 :  0.005146
+
+ train loss mape on epoch 175 :  0.004025
+
+ train loss mae on epoch 175 :  0.003757
+
+ train loss pde on epoch 175 :  0.215306
+
+ train loss dual consistency on epoch 175 :  0.00000000
+
+ valid loss mse on epoch 175 :  0.000036
+
+ valid loss rmse on epoch 175 :  0.006018
+
+ valid loss mape on epoch 175 :  0.004546
+
+ valid loss mae on epoch 175 :  0.004241
+
+ valid loss pde on epoch 175 :  0.147974
+
+ valid loss dual consistency on epoch 175 :  0.00000000
+
+ train loss mse on epoch 176 :  0.000029
+
+ train loss rmse on epoch 176 :  0.005363
+
+ train loss mape on epoch 176 :  0.004218
+
+ train loss mae on epoch 176 :  0.003937
+
+ train loss pde on epoch 176 :  0.215611
+
+ train loss dual consistency on epoch 176 :  0.00000000
+
+ valid loss mse on epoch 176 :  0.000035
+
+ valid loss rmse on epoch 176 :  0.005934
+
+ valid loss mape on epoch 176 :  0.004466
+
+ valid loss mae on epoch 176 :  0.004144
+
+ valid loss pde on epoch 176 :  0.147394
+
+ valid loss dual consistency on epoch 176 :  0.00000000
+
+ train loss mse on epoch 177 :  0.000027
+
+ train loss rmse on epoch 177 :  0.005232
+
+ train loss mape on epoch 177 :  0.004125
+
+ train loss mae on epoch 177 :  0.003847
+
+ train loss pde on epoch 177 :  0.216208
+
+ train loss dual consistency on epoch 177 :  0.00000000
+
+ valid loss mse on epoch 177 :  0.000042
+
+ valid loss rmse on epoch 177 :  0.006468
+
+ valid loss mape on epoch 177 :  0.004857
+
+ valid loss mae on epoch 177 :  0.004514
+
+ valid loss pde on epoch 177 :  0.146532
+
+ valid loss dual consistency on epoch 177 :  0.00000000
+
+ train loss mse on epoch 178 :  0.000026
+
+ train loss rmse on epoch 178 :  0.005110
+
+ train loss mape on epoch 178 :  0.003981
+
+ train loss mae on epoch 178 :  0.003713
+
+ train loss pde on epoch 178 :  0.216106
+
+ train loss dual consistency on epoch 178 :  0.00000000
+
+ valid loss mse on epoch 178 :  0.000033
+
+ valid loss rmse on epoch 178 :  0.005701
+
+ valid loss mape on epoch 178 :  0.004247
+
+ valid loss mae on epoch 178 :  0.003943
+
+ valid loss pde on epoch 178 :  0.148194
+
+ valid loss dual consistency on epoch 178 :  0.00000000
+
+ train loss mse on epoch 179 :  0.000024
+
+ train loss rmse on epoch 179 :  0.004933
+
+ train loss mape on epoch 179 :  0.003848
+
+ train loss mae on epoch 179 :  0.003589
+
+ train loss pde on epoch 179 :  0.217409
+
+ train loss dual consistency on epoch 179 :  0.00000000
+
+ valid loss mse on epoch 179 :  0.000034
+
+ valid loss rmse on epoch 179 :  0.005849
+
+ valid loss mape on epoch 179 :  0.004310
+
+ valid loss mae on epoch 179 :  0.004004
+
+ valid loss pde on epoch 179 :  0.147043
+
+ valid loss dual consistency on epoch 179 :  0.00000000
+
+ train loss mse on epoch 180 :  0.000028
+
+ train loss rmse on epoch 180 :  0.005306
+
+ train loss mape on epoch 180 :  0.004157
+
+ train loss mae on epoch 180 :  0.003874
+
+ train loss pde on epoch 180 :  0.213805
+
+ train loss dual consistency on epoch 180 :  0.00000000
+
+ valid loss mse on epoch 180 :  0.000046
+
+ valid loss rmse on epoch 180 :  0.006785
+
+ valid loss mape on epoch 180 :  0.005360
+
+ valid loss mae on epoch 180 :  0.004985
+
+ valid loss pde on epoch 180 :  0.148241
+
+ valid loss dual consistency on epoch 180 :  0.00000000
+
+ train loss mse on epoch 181 :  0.000026
+
+ train loss rmse on epoch 181 :  0.005126
+
+ train loss mape on epoch 181 :  0.004057
+
+ train loss mae on epoch 181 :  0.003787
+
+ train loss pde on epoch 181 :  0.215308
+
+ train loss dual consistency on epoch 181 :  0.00000000
+
+ valid loss mse on epoch 181 :  0.000034
+
+ valid loss rmse on epoch 181 :  0.005799
+
+ valid loss mape on epoch 181 :  0.004291
+
+ valid loss mae on epoch 181 :  0.003991
+
+ valid loss pde on epoch 181 :  0.149719
+
+ valid loss dual consistency on epoch 181 :  0.00000000
+
+ train loss mse on epoch 182 :  0.000026
+
+ train loss rmse on epoch 182 :  0.005121
+
+ train loss mape on epoch 182 :  0.004067
+
+ train loss mae on epoch 182 :  0.003795
+
+ train loss pde on epoch 182 :  0.217876
+
+ train loss dual consistency on epoch 182 :  0.00000000
+
+ valid loss mse on epoch 182 :  0.000041
+
+ valid loss rmse on epoch 182 :  0.006368
+
+ valid loss mape on epoch 182 :  0.005019
+
+ valid loss mae on epoch 182 :  0.004658
+
+ valid loss pde on epoch 182 :  0.147045
+
+ valid loss dual consistency on epoch 182 :  0.00000000
+
+ train loss mse on epoch 183 :  0.000026
+
+ train loss rmse on epoch 183 :  0.005136
+
+ train loss mape on epoch 183 :  0.004121
+
+ train loss mae on epoch 183 :  0.003850
+
+ train loss pde on epoch 183 :  0.216397
+
+ train loss dual consistency on epoch 183 :  0.00000000
+
+ valid loss mse on epoch 183 :  0.000029
+
+ valid loss rmse on epoch 183 :  0.005411
+
+ valid loss mape on epoch 183 :  0.004071
+
+ valid loss mae on epoch 183 :  0.003784
+
+ valid loss pde on epoch 183 :  0.150305
+
+ valid loss dual consistency on epoch 183 :  0.00000000
+
+ train loss mse on epoch 184 :  0.000022
+
+ train loss rmse on epoch 184 :  0.004722
+
+ train loss mape on epoch 184 :  0.003679
+
+ train loss mae on epoch 184 :  0.003436
+
+ train loss pde on epoch 184 :  0.217913
+
+ train loss dual consistency on epoch 184 :  0.00000000
+
+ valid loss mse on epoch 184 :  0.000034
+
+ valid loss rmse on epoch 184 :  0.005822
+
+ valid loss mape on epoch 184 :  0.004261
+
+ valid loss mae on epoch 184 :  0.003958
+
+ valid loss pde on epoch 184 :  0.147645
+
+ valid loss dual consistency on epoch 184 :  0.00000000
+
+ train loss mse on epoch 185 :  0.000022
+
+ train loss rmse on epoch 185 :  0.004670
+
+ train loss mape on epoch 185 :  0.003656
+
+ train loss mae on epoch 185 :  0.003414
+
+ train loss pde on epoch 185 :  0.215169
+
+ train loss dual consistency on epoch 185 :  0.00000000
+
+ valid loss mse on epoch 185 :  0.000033
+
+ valid loss rmse on epoch 185 :  0.005706
+
+ valid loss mape on epoch 185 :  0.004349
+
+ valid loss mae on epoch 185 :  0.004046
+
+ valid loss pde on epoch 185 :  0.148827
+
+ valid loss dual consistency on epoch 185 :  0.00000000
+
+ train loss mse on epoch 186 :  0.000023
+
+ train loss rmse on epoch 186 :  0.004755
+
+ train loss mape on epoch 186 :  0.003735
+
+ train loss mae on epoch 186 :  0.003489
+
+ train loss pde on epoch 186 :  0.214958
+
+ train loss dual consistency on epoch 186 :  0.00000000
+
+ valid loss mse on epoch 186 :  0.000032
+
+ valid loss rmse on epoch 186 :  0.005661
+
+ valid loss mape on epoch 186 :  0.004399
+
+ valid loss mae on epoch 186 :  0.004089
+
+ valid loss pde on epoch 186 :  0.147990
+
+ valid loss dual consistency on epoch 186 :  0.00000000
+
+ train loss mse on epoch 187 :  0.000022
+
+ train loss rmse on epoch 187 :  0.004723
+
+ train loss mape on epoch 187 :  0.003714
+
+ train loss mae on epoch 187 :  0.003470
+
+ train loss pde on epoch 187 :  0.216456
+
+ train loss dual consistency on epoch 187 :  0.00000000
+
+ valid loss mse on epoch 187 :  0.000035
+
+ valid loss rmse on epoch 187 :  0.005911
+
+ valid loss mape on epoch 187 :  0.004478
+
+ valid loss mae on epoch 187 :  0.004184
+
+ valid loss pde on epoch 187 :  0.148674
+
+ valid loss dual consistency on epoch 187 :  0.00000000
+
+ train loss mse on epoch 188 :  0.000022
+
+ train loss rmse on epoch 188 :  0.004668
+
+ train loss mape on epoch 188 :  0.003650
+
+ train loss mae on epoch 188 :  0.003410
+
+ train loss pde on epoch 188 :  0.218182
+
+ train loss dual consistency on epoch 188 :  0.00000000
+
+ valid loss mse on epoch 188 :  0.000030
+
+ valid loss rmse on epoch 188 :  0.005457
+
+ valid loss mape on epoch 188 :  0.003992
+
+ valid loss mae on epoch 188 :  0.003719
+
+ valid loss pde on epoch 188 :  0.147947
+
+ valid loss dual consistency on epoch 188 :  0.00000000
+
+ train loss mse on epoch 189 :  0.000021
+
+ train loss rmse on epoch 189 :  0.004612
+
+ train loss mape on epoch 189 :  0.003628
+
+ train loss mae on epoch 189 :  0.003392
+
+ train loss pde on epoch 189 :  0.215849
+
+ train loss dual consistency on epoch 189 :  0.00000000
+
+ valid loss mse on epoch 189 :  0.000033
+
+ valid loss rmse on epoch 189 :  0.005770
+
+ valid loss mape on epoch 189 :  0.004104
+
+ valid loss mae on epoch 189 :  0.003821
+
+ valid loss pde on epoch 189 :  0.148543
+
+ valid loss dual consistency on epoch 189 :  0.00000000
+
+ train loss mse on epoch 190 :  0.000022
+
+ train loss rmse on epoch 190 :  0.004670
+
+ train loss mape on epoch 190 :  0.003667
+
+ train loss mae on epoch 190 :  0.003430
+
+ train loss pde on epoch 190 :  0.215620
+
+ train loss dual consistency on epoch 190 :  0.00000000
+
+ valid loss mse on epoch 190 :  0.000029
+
+ valid loss rmse on epoch 190 :  0.005403
+
+ valid loss mape on epoch 190 :  0.003938
+
+ valid loss mae on epoch 190 :  0.003668
+
+ valid loss pde on epoch 190 :  0.147915
+
+ valid loss dual consistency on epoch 190 :  0.00000000
+
+ train loss mse on epoch 191 :  0.000021
+
+ train loss rmse on epoch 191 :  0.004573
+
+ train loss mape on epoch 191 :  0.003572
+
+ train loss mae on epoch 191 :  0.003339
+
+ train loss pde on epoch 191 :  0.215248
+
+ train loss dual consistency on epoch 191 :  0.00000000
+
+ valid loss mse on epoch 191 :  0.000029
+
+ valid loss rmse on epoch 191 :  0.005353
+
+ valid loss mape on epoch 191 :  0.003879
+
+ valid loss mae on epoch 191 :  0.003609
+
+ valid loss pde on epoch 191 :  0.149507
+
+ valid loss dual consistency on epoch 191 :  0.00000000
+
+ train loss mse on epoch 192 :  0.000022
+
+ train loss rmse on epoch 192 :  0.004720
+
+ train loss mape on epoch 192 :  0.003730
+
+ train loss mae on epoch 192 :  0.003487
+
+ train loss pde on epoch 192 :  0.219888
+
+ train loss dual consistency on epoch 192 :  0.00000000
+
+ valid loss mse on epoch 192 :  0.000030
+
+ valid loss rmse on epoch 192 :  0.005433
+
+ valid loss mape on epoch 192 :  0.004088
+
+ valid loss mae on epoch 192 :  0.003802
+
+ valid loss pde on epoch 192 :  0.149871
+
+ valid loss dual consistency on epoch 192 :  0.00000000
+
+ train loss mse on epoch 193 :  0.000021
+
+ train loss rmse on epoch 193 :  0.004610
+
+ train loss mape on epoch 193 :  0.003594
+
+ train loss mae on epoch 193 :  0.003360
+
+ train loss pde on epoch 193 :  0.215223
+
+ train loss dual consistency on epoch 193 :  0.00000000
+
+ valid loss mse on epoch 193 :  0.000030
+
+ valid loss rmse on epoch 193 :  0.005452
+
+ valid loss mape on epoch 193 :  0.004099
+
+ valid loss mae on epoch 193 :  0.003820
+
+ valid loss pde on epoch 193 :  0.148459
+
+ valid loss dual consistency on epoch 193 :  0.00000000
+
+ train loss mse on epoch 194 :  0.000021
+
+ train loss rmse on epoch 194 :  0.004550
+
+ train loss mape on epoch 194 :  0.003554
+
+ train loss mae on epoch 194 :  0.003320
+
+ train loss pde on epoch 194 :  0.217170
+
+ train loss dual consistency on epoch 194 :  0.00000000
+
+ valid loss mse on epoch 194 :  0.000030
+
+ valid loss rmse on epoch 194 :  0.005463
+
+ valid loss mape on epoch 194 :  0.004097
+
+ valid loss mae on epoch 194 :  0.003800
+
+ valid loss pde on epoch 194 :  0.148454
+
+ valid loss dual consistency on epoch 194 :  0.00000000
+
+ train loss mse on epoch 195 :  0.000020
+
+ train loss rmse on epoch 195 :  0.004520
+
+ train loss mape on epoch 195 :  0.003523
+
+ train loss mae on epoch 195 :  0.003293
+
+ train loss pde on epoch 195 :  0.216713
+
+ train loss dual consistency on epoch 195 :  0.00000000
+
+ valid loss mse on epoch 195 :  0.000030
+
+ valid loss rmse on epoch 195 :  0.005517
+
+ valid loss mape on epoch 195 :  0.004033
+
+ valid loss mae on epoch 195 :  0.003749
+
+ valid loss pde on epoch 195 :  0.149771
+
+ valid loss dual consistency on epoch 195 :  0.00000000
+
+ train loss mse on epoch 196 :  0.000020
+
+ train loss rmse on epoch 196 :  0.004527
+
+ train loss mape on epoch 196 :  0.003513
+
+ train loss mae on epoch 196 :  0.003285
+
+ train loss pde on epoch 196 :  0.215900
+
+ train loss dual consistency on epoch 196 :  0.00000000
+
+ valid loss mse on epoch 196 :  0.000029
+
+ valid loss rmse on epoch 196 :  0.005347
+
+ valid loss mape on epoch 196 :  0.003945
+
+ valid loss mae on epoch 196 :  0.003666
+
+ valid loss pde on epoch 196 :  0.149454
+
+ valid loss dual consistency on epoch 196 :  0.00000000
+
+ train loss mse on epoch 197 :  0.000020
+
+ train loss rmse on epoch 197 :  0.004424
+
+ train loss mape on epoch 197 :  0.003455
+
+ train loss mae on epoch 197 :  0.003230
+
+ train loss pde on epoch 197 :  0.217332
+
+ train loss dual consistency on epoch 197 :  0.00000000
+
+ valid loss mse on epoch 197 :  0.000027
+
+ valid loss rmse on epoch 197 :  0.005223
+
+ valid loss mape on epoch 197 :  0.003911
+
+ valid loss mae on epoch 197 :  0.003638
+
+ valid loss pde on epoch 197 :  0.149060
+
+ valid loss dual consistency on epoch 197 :  0.00000000
+
+ train loss mse on epoch 198 :  0.000020
+
+ train loss rmse on epoch 198 :  0.004437
+
+ train loss mape on epoch 198 :  0.003475
+
+ train loss mae on epoch 198 :  0.003250
+
+ train loss pde on epoch 198 :  0.216552
+
+ train loss dual consistency on epoch 198 :  0.00000000
+
+ valid loss mse on epoch 198 :  0.000030
+
+ valid loss rmse on epoch 198 :  0.005501
+
+ valid loss mape on epoch 198 :  0.004293
+
+ valid loss mae on epoch 198 :  0.003994
+
+ valid loss pde on epoch 198 :  0.149284
+
+ valid loss dual consistency on epoch 198 :  0.00000000
+
+ train loss mse on epoch 199 :  0.000020
+
+ train loss rmse on epoch 199 :  0.004454
+
+ train loss mape on epoch 199 :  0.003515
+
+ train loss mae on epoch 199 :  0.003288
+
+ train loss pde on epoch 199 :  0.216363
+
+ train loss dual consistency on epoch 199 :  0.00000000
+
+ valid loss mse on epoch 199 :  0.000028
+
+ valid loss rmse on epoch 199 :  0.005280
+
+ valid loss mape on epoch 199 :  0.003841
+
+ valid loss mae on epoch 199 :  0.003578
+
+ valid loss pde on epoch 199 :  0.147510
+
+ valid loss dual consistency on epoch 199 :  0.00000000
+
+ train loss mse on epoch 200 :  0.000019
+
+ train loss rmse on epoch 200 :  0.004319
+
+ train loss mape on epoch 200 :  0.003357
+
+ train loss mae on epoch 200 :  0.003141
+
+ train loss pde on epoch 200 :  0.216738
+
+ train loss dual consistency on epoch 200 :  0.00000000
+
+ valid loss mse on epoch 200 :  0.000029
+
+ valid loss rmse on epoch 200 :  0.005348
+
+ valid loss mape on epoch 200 :  0.003980
+
+ valid loss mae on epoch 200 :  0.003706
+
+ valid loss pde on epoch 200 :  0.150384
+
+ valid loss dual consistency on epoch 200 :  0.00000000
+
+ train loss mse on epoch 201 :  0.000019
+
+ train loss rmse on epoch 201 :  0.004374
+
+ train loss mape on epoch 201 :  0.003428
+
+ train loss mae on epoch 201 :  0.003205
+
+ train loss pde on epoch 201 :  0.218169
+
+ train loss dual consistency on epoch 201 :  0.00000000
+
+ valid loss mse on epoch 201 :  0.000033
+
+ valid loss rmse on epoch 201 :  0.005746
+
+ valid loss mape on epoch 201 :  0.004428
+
+ valid loss mae on epoch 201 :  0.004135
+
+ valid loss pde on epoch 201 :  0.148628
+
+ valid loss dual consistency on epoch 201 :  0.00000000
+
+ train loss mse on epoch 202 :  0.000020
+
+ train loss rmse on epoch 202 :  0.004425
+
+ train loss mape on epoch 202 :  0.003497
+
+ train loss mae on epoch 202 :  0.003273
+
+ train loss pde on epoch 202 :  0.213639
+
+ train loss dual consistency on epoch 202 :  0.00000000
+
+ valid loss mse on epoch 202 :  0.000026
+
+ valid loss rmse on epoch 202 :  0.005131
+
+ valid loss mape on epoch 202 :  0.003709
+
+ valid loss mae on epoch 202 :  0.003453
+
+ valid loss pde on epoch 202 :  0.148997
+
+ valid loss dual consistency on epoch 202 :  0.00000000
+
+ train loss mse on epoch 203 :  0.000018
+
+ train loss rmse on epoch 203 :  0.004277
+
+ train loss mape on epoch 203 :  0.003344
+
+ train loss mae on epoch 203 :  0.003129
+
+ train loss pde on epoch 203 :  0.218892
+
+ train loss dual consistency on epoch 203 :  0.00000000
+
+ valid loss mse on epoch 203 :  0.000029
+
+ valid loss rmse on epoch 203 :  0.005346
+
+ valid loss mape on epoch 203 :  0.003891
+
+ valid loss mae on epoch 203 :  0.003620
+
+ valid loss pde on epoch 203 :  0.149170
+
+ valid loss dual consistency on epoch 203 :  0.00000000
+
+ train loss mse on epoch 204 :  0.000019
+
+ train loss rmse on epoch 204 :  0.004331
+
+ train loss mape on epoch 204 :  0.003394
+
+ train loss mae on epoch 204 :  0.003177
+
+ train loss pde on epoch 204 :  0.216186
+
+ train loss dual consistency on epoch 204 :  0.00000000
+
+ valid loss mse on epoch 204 :  0.000027
+
+ valid loss rmse on epoch 204 :  0.005184
+
+ valid loss mape on epoch 204 :  0.003809
+
+ valid loss mae on epoch 204 :  0.003548
+
+ valid loss pde on epoch 204 :  0.149158
+
+ valid loss dual consistency on epoch 204 :  0.00000000
+
+ train loss mse on epoch 205 :  0.000019
+
+ train loss rmse on epoch 205 :  0.004302
+
+ train loss mape on epoch 205 :  0.003386
+
+ train loss mae on epoch 205 :  0.003169
+
+ train loss pde on epoch 205 :  0.215917
+
+ train loss dual consistency on epoch 205 :  0.00000000
+
+ valid loss mse on epoch 205 :  0.000027
+
+ valid loss rmse on epoch 205 :  0.005189
+
+ valid loss mape on epoch 205 :  0.003852
+
+ valid loss mae on epoch 205 :  0.003587
+
+ valid loss pde on epoch 205 :  0.149464
+
+ valid loss dual consistency on epoch 205 :  0.00000000
+
+ train loss mse on epoch 206 :  0.000017
+
+ train loss rmse on epoch 206 :  0.004165
+
+ train loss mape on epoch 206 :  0.003257
+
+ train loss mae on epoch 206 :  0.003050
+
+ train loss pde on epoch 206 :  0.213595
+
+ train loss dual consistency on epoch 206 :  0.00000000
+
+ valid loss mse on epoch 206 :  0.000028
+
+ valid loss rmse on epoch 206 :  0.005269
+
+ valid loss mape on epoch 206 :  0.003962
+
+ valid loss mae on epoch 206 :  0.003688
+
+ valid loss pde on epoch 206 :  0.151450
+
+ valid loss dual consistency on epoch 206 :  0.00000000
+
+ train loss mse on epoch 207 :  0.000018
+
+ train loss rmse on epoch 207 :  0.004208
+
+ train loss mape on epoch 207 :  0.003294
+
+ train loss mae on epoch 207 :  0.003083
+
+ train loss pde on epoch 207 :  0.216903
+
+ train loss dual consistency on epoch 207 :  0.00000000
+
+ valid loss mse on epoch 207 :  0.000027
+
+ valid loss rmse on epoch 207 :  0.005168
+
+ valid loss mape on epoch 207 :  0.003793
+
+ valid loss mae on epoch 207 :  0.003531
+
+ valid loss pde on epoch 207 :  0.151491
+
+ valid loss dual consistency on epoch 207 :  0.00000000
+
+ train loss mse on epoch 208 :  0.000018
+
+ train loss rmse on epoch 208 :  0.004202
+
+ train loss mape on epoch 208 :  0.003288
+
+ train loss mae on epoch 208 :  0.003076
+
+ train loss pde on epoch 208 :  0.217622
+
+ train loss dual consistency on epoch 208 :  0.00000000
+
+ valid loss mse on epoch 208 :  0.000026
+
+ valid loss rmse on epoch 208 :  0.005125
+
+ valid loss mape on epoch 208 :  0.003722
+
+ valid loss mae on epoch 208 :  0.003467
+
+ valid loss pde on epoch 208 :  0.149418
+
+ valid loss dual consistency on epoch 208 :  0.00000000
+
+ train loss mse on epoch 209 :  0.000018
+
+ train loss rmse on epoch 209 :  0.004209
+
+ train loss mape on epoch 209 :  0.003292
+
+ train loss mae on epoch 209 :  0.003080
+
+ train loss pde on epoch 209 :  0.220512
+
+ train loss dual consistency on epoch 209 :  0.00000000
+
+ valid loss mse on epoch 209 :  0.000026
+
+ valid loss rmse on epoch 209 :  0.005117
+
+ valid loss mape on epoch 209 :  0.003813
+
+ valid loss mae on epoch 209 :  0.003547
+
+ valid loss pde on epoch 209 :  0.149631
+
+ valid loss dual consistency on epoch 209 :  0.00000000
+
+ train loss mse on epoch 210 :  0.000018
+
+ train loss rmse on epoch 210 :  0.004275
+
+ train loss mape on epoch 210 :  0.003362
+
+ train loss mae on epoch 210 :  0.003145
+
+ train loss pde on epoch 210 :  0.218265
+
+ train loss dual consistency on epoch 210 :  0.00000000
+
+ valid loss mse on epoch 210 :  0.000026
+
+ valid loss rmse on epoch 210 :  0.005106
+
+ valid loss mape on epoch 210 :  0.003753
+
+ valid loss mae on epoch 210 :  0.003490
+
+ valid loss pde on epoch 210 :  0.150336
+
+ valid loss dual consistency on epoch 210 :  0.00000000
+
+ train loss mse on epoch 211 :  0.000017
+
+ train loss rmse on epoch 211 :  0.004115
+
+ train loss mape on epoch 211 :  0.003212
+
+ train loss mae on epoch 211 :  0.003007
+
+ train loss pde on epoch 211 :  0.217098
+
+ train loss dual consistency on epoch 211 :  0.00000000
+
+ valid loss mse on epoch 211 :  0.000027
+
+ valid loss rmse on epoch 211 :  0.005199
+
+ valid loss mape on epoch 211 :  0.003759
+
+ valid loss mae on epoch 211 :  0.003497
+
+ valid loss pde on epoch 211 :  0.150035
+
+ valid loss dual consistency on epoch 211 :  0.00000000
+
+ train loss mse on epoch 212 :  0.000017
+
+ train loss rmse on epoch 212 :  0.004071
+
+ train loss mape on epoch 212 :  0.003163
+
+ train loss mae on epoch 212 :  0.002963
+
+ train loss pde on epoch 212 :  0.217765
+
+ train loss dual consistency on epoch 212 :  0.00000000
+
+ valid loss mse on epoch 212 :  0.000025
+
+ valid loss rmse on epoch 212 :  0.005043
+
+ valid loss mape on epoch 212 :  0.003709
+
+ valid loss mae on epoch 212 :  0.003454
+
+ valid loss pde on epoch 212 :  0.150852
+
+ valid loss dual consistency on epoch 212 :  0.00000000
+
+ train loss mse on epoch 213 :  0.000016
+
+ train loss rmse on epoch 213 :  0.004058
+
+ train loss mape on epoch 213 :  0.003165
+
+ train loss mae on epoch 213 :  0.002965
+
+ train loss pde on epoch 213 :  0.220523
+
+ train loss dual consistency on epoch 213 :  0.00000000
+
+ valid loss mse on epoch 213 :  0.000027
+
+ valid loss rmse on epoch 213 :  0.005223
+
+ valid loss mape on epoch 213 :  0.003858
+
+ valid loss mae on epoch 213 :  0.003588
+
+ valid loss pde on epoch 213 :  0.148652
+
+ valid loss dual consistency on epoch 213 :  0.00000000
+
+ train loss mse on epoch 214 :  0.000017
+
+ train loss rmse on epoch 214 :  0.004097
+
+ train loss mape on epoch 214 :  0.003218
+
+ train loss mae on epoch 214 :  0.003015
+
+ train loss pde on epoch 214 :  0.215877
+
+ train loss dual consistency on epoch 214 :  0.00000000
+
+ valid loss mse on epoch 214 :  0.000026
+
+ valid loss rmse on epoch 214 :  0.005093
+
+ valid loss mape on epoch 214 :  0.003698
+
+ valid loss mae on epoch 214 :  0.003440
+
+ valid loss pde on epoch 214 :  0.148448
+
+ valid loss dual consistency on epoch 214 :  0.00000000
+
+ train loss mse on epoch 215 :  0.000016
+
+ train loss rmse on epoch 215 :  0.004002
+
+ train loss mape on epoch 215 :  0.003116
+
+ train loss mae on epoch 215 :  0.002920
+
+ train loss pde on epoch 215 :  0.220253
+
+ train loss dual consistency on epoch 215 :  0.00000000
+
+ valid loss mse on epoch 215 :  0.000026
+
+ valid loss rmse on epoch 215 :  0.005070
+
+ valid loss mape on epoch 215 :  0.003632
+
+ valid loss mae on epoch 215 :  0.003382
+
+ valid loss pde on epoch 215 :  0.149464
+
+ valid loss dual consistency on epoch 215 :  0.00000000
+
+ train loss mse on epoch 216 :  0.000016
+
+ train loss rmse on epoch 216 :  0.003995
+
+ train loss mape on epoch 216 :  0.003108
+
+ train loss mae on epoch 216 :  0.002911
+
+ train loss pde on epoch 216 :  0.217799
+
+ train loss dual consistency on epoch 216 :  0.00000000
+
+ valid loss mse on epoch 216 :  0.000025
+
+ valid loss rmse on epoch 216 :  0.004970
+
+ valid loss mape on epoch 216 :  0.003647
+
+ valid loss mae on epoch 216 :  0.003397
+
+ valid loss pde on epoch 216 :  0.148341
+
+ valid loss dual consistency on epoch 216 :  0.00000000
+
+ train loss mse on epoch 217 :  0.000016
+
+ train loss rmse on epoch 217 :  0.004004
+
+ train loss mape on epoch 217 :  0.003123
+
+ train loss mae on epoch 217 :  0.002925
+
+ train loss pde on epoch 217 :  0.215977
+
+ train loss dual consistency on epoch 217 :  0.00000000
+
+ valid loss mse on epoch 217 :  0.000026
+
+ valid loss rmse on epoch 217 :  0.005112
+
+ valid loss mape on epoch 217 :  0.003643
+
+ valid loss mae on epoch 217 :  0.003391
+
+ valid loss pde on epoch 217 :  0.151088
+
+ valid loss dual consistency on epoch 217 :  0.00000000
+
+ train loss mse on epoch 218 :  0.000016
+
+ train loss rmse on epoch 218 :  0.003984
+
+ train loss mape on epoch 218 :  0.003110
+
+ train loss mae on epoch 218 :  0.002913
+
+ train loss pde on epoch 218 :  0.219317
+
+ train loss dual consistency on epoch 218 :  0.00000000
+
+ valid loss mse on epoch 218 :  0.000025
+
+ valid loss rmse on epoch 218 :  0.004972
+
+ valid loss mape on epoch 218 :  0.003592
+
+ valid loss mae on epoch 218 :  0.003346
+
+ valid loss pde on epoch 218 :  0.148720
+
+ valid loss dual consistency on epoch 218 :  0.00000000
+
+ train loss mse on epoch 219 :  0.000016
+
+ train loss rmse on epoch 219 :  0.003963
+
+ train loss mape on epoch 219 :  0.003090
+
+ train loss mae on epoch 219 :  0.002896
+
+ train loss pde on epoch 219 :  0.217597
+
+ train loss dual consistency on epoch 219 :  0.00000000
+
+ valid loss mse on epoch 219 :  0.000025
+
+ valid loss rmse on epoch 219 :  0.005000
+
+ valid loss mape on epoch 219 :  0.003733
+
+ valid loss mae on epoch 219 :  0.003468
+
+ valid loss pde on epoch 219 :  0.150249
+
+ valid loss dual consistency on epoch 219 :  0.00000000
+
+ train loss mse on epoch 220 :  0.000016
+
+ train loss rmse on epoch 220 :  0.003959
+
+ train loss mape on epoch 220 :  0.003090
+
+ train loss mae on epoch 220 :  0.002896
+
+ train loss pde on epoch 220 :  0.218296
+
+ train loss dual consistency on epoch 220 :  0.00000000
+
+ valid loss mse on epoch 220 :  0.000024
+
+ valid loss rmse on epoch 220 :  0.004924
+
+ valid loss mape on epoch 220 :  0.003632
+
+ valid loss mae on epoch 220 :  0.003384
+
+ valid loss pde on epoch 220 :  0.150285
+
+ valid loss dual consistency on epoch 220 :  0.00000000
+
+ train loss mse on epoch 221 :  0.000015
+
+ train loss rmse on epoch 221 :  0.003905
+
+ train loss mape on epoch 221 :  0.003038
+
+ train loss mae on epoch 221 :  0.002848
+
+ train loss pde on epoch 221 :  0.215067
+
+ train loss dual consistency on epoch 221 :  0.00000000
+
+ valid loss mse on epoch 221 :  0.000024
+
+ valid loss rmse on epoch 221 :  0.004936
+
+ valid loss mape on epoch 221 :  0.003591
+
+ valid loss mae on epoch 221 :  0.003340
+
+ valid loss pde on epoch 221 :  0.147598
+
+ valid loss dual consistency on epoch 221 :  0.00000000
+
+ train loss mse on epoch 222 :  0.000015
+
+ train loss rmse on epoch 222 :  0.003898
+
+ train loss mape on epoch 222 :  0.003045
+
+ train loss mae on epoch 222 :  0.002854
+
+ train loss pde on epoch 222 :  0.216065
+
+ train loss dual consistency on epoch 222 :  0.00000000
+
+ valid loss mse on epoch 222 :  0.000024
+
+ valid loss rmse on epoch 222 :  0.004924
+
+ valid loss mape on epoch 222 :  0.003571
+
+ valid loss mae on epoch 222 :  0.003322
+
+ valid loss pde on epoch 222 :  0.149545
+
+ valid loss dual consistency on epoch 222 :  0.00000000
+
+ train loss mse on epoch 223 :  0.000015
+
+ train loss rmse on epoch 223 :  0.003862
+
+ train loss mape on epoch 223 :  0.003006
+
+ train loss mae on epoch 223 :  0.002819
+
+ train loss pde on epoch 223 :  0.218530
+
+ train loss dual consistency on epoch 223 :  0.00000000
+
+ valid loss mse on epoch 223 :  0.000025
+
+ valid loss rmse on epoch 223 :  0.005022
+
+ valid loss mape on epoch 223 :  0.003643
+
+ valid loss mae on epoch 223 :  0.003389
+
+ valid loss pde on epoch 223 :  0.149164
+
+ valid loss dual consistency on epoch 223 :  0.00000000
+
+ train loss mse on epoch 224 :  0.000015
+
+ train loss rmse on epoch 224 :  0.003846
+
+ train loss mape on epoch 224 :  0.002986
+
+ train loss mae on epoch 224 :  0.002800
+
+ train loss pde on epoch 224 :  0.219291
+
+ train loss dual consistency on epoch 224 :  0.00000000
+
+ valid loss mse on epoch 224 :  0.000024
+
+ valid loss rmse on epoch 224 :  0.004896
+
+ valid loss mape on epoch 224 :  0.003588
+
+ valid loss mae on epoch 224 :  0.003339
+
+ valid loss pde on epoch 224 :  0.149211
+
+ valid loss dual consistency on epoch 224 :  0.00000000
+
+ train loss mse on epoch 225 :  0.000015
+
+ train loss rmse on epoch 225 :  0.003838
+
+ train loss mape on epoch 225 :  0.002987
+
+ train loss mae on epoch 225 :  0.002801
+
+ train loss pde on epoch 225 :  0.217449
+
+ train loss dual consistency on epoch 225 :  0.00000000
+
+ valid loss mse on epoch 225 :  0.000024
+
+ valid loss rmse on epoch 225 :  0.004947
+
+ valid loss mape on epoch 225 :  0.003628
+
+ valid loss mae on epoch 225 :  0.003380
+
+ valid loss pde on epoch 225 :  0.148569
+
+ valid loss dual consistency on epoch 225 :  0.00000000
+
+ train loss mse on epoch 226 :  0.000015
+
+ train loss rmse on epoch 226 :  0.003839
+
+ train loss mape on epoch 226 :  0.002986
+
+ train loss mae on epoch 226 :  0.002800
+
+ train loss pde on epoch 226 :  0.218163
+
+ train loss dual consistency on epoch 226 :  0.00000000
+
+ valid loss mse on epoch 226 :  0.000025
+
+ valid loss rmse on epoch 226 :  0.005002
+
+ valid loss mape on epoch 226 :  0.003591
+
+ valid loss mae on epoch 226 :  0.003340
+
+ valid loss pde on epoch 226 :  0.151626
+
+ valid loss dual consistency on epoch 226 :  0.00000000
+
+ train loss mse on epoch 227 :  0.000015
+
+ train loss rmse on epoch 227 :  0.003829
+
+ train loss mape on epoch 227 :  0.002985
+
+ train loss mae on epoch 227 :  0.002799
+
+ train loss pde on epoch 227 :  0.215655
+
+ train loss dual consistency on epoch 227 :  0.00000000
+
+ valid loss mse on epoch 227 :  0.000024
+
+ valid loss rmse on epoch 227 :  0.004907
+
+ valid loss mape on epoch 227 :  0.003581
+
+ valid loss mae on epoch 227 :  0.003338
+
+ valid loss pde on epoch 227 :  0.151036
+
+ valid loss dual consistency on epoch 227 :  0.00000000
+
+ train loss mse on epoch 228 :  0.000015
+
+ train loss rmse on epoch 228 :  0.003811
+
+ train loss mape on epoch 228 :  0.002967
+
+ train loss mae on epoch 228 :  0.002783
+
+ train loss pde on epoch 228 :  0.220468
+
+ train loss dual consistency on epoch 228 :  0.00000000
+
+ valid loss mse on epoch 228 :  0.000023
+
+ valid loss rmse on epoch 228 :  0.004846
+
+ valid loss mape on epoch 228 :  0.003525
+
+ valid loss mae on epoch 228 :  0.003285
+
+ valid loss pde on epoch 228 :  0.148679
+
+ valid loss dual consistency on epoch 228 :  0.00000000
+
+ train loss mse on epoch 229 :  0.000014
+
+ train loss rmse on epoch 229 :  0.003805
+
+ train loss mape on epoch 229 :  0.002963
+
+ train loss mae on epoch 229 :  0.002778
+
+ train loss pde on epoch 229 :  0.218676
+
+ train loss dual consistency on epoch 229 :  0.00000000
+
+ valid loss mse on epoch 229 :  0.000024
+
+ valid loss rmse on epoch 229 :  0.004849
+
+ valid loss mape on epoch 229 :  0.003515
+
+ valid loss mae on epoch 229 :  0.003274
+
+ valid loss pde on epoch 229 :  0.151177
+
+ valid loss dual consistency on epoch 229 :  0.00000000
+
+ train loss mse on epoch 230 :  0.000014
+
+ train loss rmse on epoch 230 :  0.003795
+
+ train loss mape on epoch 230 :  0.002949
+
+ train loss mae on epoch 230 :  0.002765
+
+ train loss pde on epoch 230 :  0.221179
+
+ train loss dual consistency on epoch 230 :  0.00000000
+
+ valid loss mse on epoch 230 :  0.000025
+
+ valid loss rmse on epoch 230 :  0.004988
+
+ valid loss mape on epoch 230 :  0.003591
+
+ valid loss mae on epoch 230 :  0.003343
+
+ valid loss pde on epoch 230 :  0.150835
+
+ valid loss dual consistency on epoch 230 :  0.00000000
+
+ train loss mse on epoch 231 :  0.000014
+
+ train loss rmse on epoch 231 :  0.003792
+
+ train loss mape on epoch 231 :  0.002946
+
+ train loss mae on epoch 231 :  0.002762
+
+ train loss pde on epoch 231 :  0.217866
+
+ train loss dual consistency on epoch 231 :  0.00000000
+
+ valid loss mse on epoch 231 :  0.000023
+
+ valid loss rmse on epoch 231 :  0.004830
+
+ valid loss mape on epoch 231 :  0.003524
+
+ valid loss mae on epoch 231 :  0.003283
+
+ valid loss pde on epoch 231 :  0.149030
+
+ valid loss dual consistency on epoch 231 :  0.00000000
+
+ train loss mse on epoch 232 :  0.000014
+
+ train loss rmse on epoch 232 :  0.003770
+
+ train loss mape on epoch 232 :  0.002933
+
+ train loss mae on epoch 232 :  0.002752
+
+ train loss pde on epoch 232 :  0.220142
+
+ train loss dual consistency on epoch 232 :  0.00000000
+
+ valid loss mse on epoch 232 :  0.000023
+
+ valid loss rmse on epoch 232 :  0.004831
+
+ valid loss mape on epoch 232 :  0.003527
+
+ valid loss mae on epoch 232 :  0.003288
+
+ valid loss pde on epoch 232 :  0.149300
+
+ valid loss dual consistency on epoch 232 :  0.00000000
+
+ train loss mse on epoch 233 :  0.000014
+
+ train loss rmse on epoch 233 :  0.003760
+
+ train loss mape on epoch 233 :  0.002920
+
+ train loss mae on epoch 233 :  0.002739
+
+ train loss pde on epoch 233 :  0.218939
+
+ train loss dual consistency on epoch 233 :  0.00000000
+
+ valid loss mse on epoch 233 :  0.000024
+
+ valid loss rmse on epoch 233 :  0.004877
+
+ valid loss mape on epoch 233 :  0.003526
+
+ valid loss mae on epoch 233 :  0.003282
+
+ valid loss pde on epoch 233 :  0.151058
+
+ valid loss dual consistency on epoch 233 :  0.00000000
+
+ train loss mse on epoch 234 :  0.000014
+
+ train loss rmse on epoch 234 :  0.003764
+
+ train loss mape on epoch 234 :  0.002924
+
+ train loss mae on epoch 234 :  0.002744
+
+ train loss pde on epoch 234 :  0.218397
+
+ train loss dual consistency on epoch 234 :  0.00000000
+
+ valid loss mse on epoch 234 :  0.000023
+
+ valid loss rmse on epoch 234 :  0.004843
+
+ valid loss mape on epoch 234 :  0.003538
+
+ valid loss mae on epoch 234 :  0.003292
+
+ valid loss pde on epoch 234 :  0.148997
+
+ valid loss dual consistency on epoch 234 :  0.00000000
+
+ train loss mse on epoch 235 :  0.000014
+
+ train loss rmse on epoch 235 :  0.003761
+
+ train loss mape on epoch 235 :  0.002916
+
+ train loss mae on epoch 235 :  0.002736
+
+ train loss pde on epoch 235 :  0.221304
+
+ train loss dual consistency on epoch 235 :  0.00000000
+
+ valid loss mse on epoch 235 :  0.000025
+
+ valid loss rmse on epoch 235 :  0.004973
+
+ valid loss mape on epoch 235 :  0.003600
+
+ valid loss mae on epoch 235 :  0.003347
+
+ valid loss pde on epoch 235 :  0.147951
+
+ valid loss dual consistency on epoch 235 :  0.00000000
+
+ train loss mse on epoch 236 :  0.000014
+
+ train loss rmse on epoch 236 :  0.003738
+
+ train loss mape on epoch 236 :  0.002905
+
+ train loss mae on epoch 236 :  0.002726
+
+ train loss pde on epoch 236 :  0.217254
+
+ train loss dual consistency on epoch 236 :  0.00000000
+
+ valid loss mse on epoch 236 :  0.000024
+
+ valid loss rmse on epoch 236 :  0.004888
+
+ valid loss mape on epoch 236 :  0.003543
+
+ valid loss mae on epoch 236 :  0.003302
+
+ valid loss pde on epoch 236 :  0.151662
+
+ valid loss dual consistency on epoch 236 :  0.00000000
+
+ train loss mse on epoch 237 :  0.000014
+
+ train loss rmse on epoch 237 :  0.003728
+
+ train loss mape on epoch 237 :  0.002896
+
+ train loss mae on epoch 237 :  0.002717
+
+ train loss pde on epoch 237 :  0.217728
+
+ train loss dual consistency on epoch 237 :  0.00000000
+
+ valid loss mse on epoch 237 :  0.000024
+
+ valid loss rmse on epoch 237 :  0.004923
+
+ valid loss mape on epoch 237 :  0.003550
+
+ valid loss mae on epoch 237 :  0.003304
+
+ valid loss pde on epoch 237 :  0.150903
+
+ valid loss dual consistency on epoch 237 :  0.00000000
+
+ train loss mse on epoch 238 :  0.000014
+
+ train loss rmse on epoch 238 :  0.003735
+
+ train loss mape on epoch 238 :  0.002899
+
+ train loss mae on epoch 238 :  0.002720
+
+ train loss pde on epoch 238 :  0.220941
+
+ train loss dual consistency on epoch 238 :  0.00000000
+
+ valid loss mse on epoch 238 :  0.000024
+
+ valid loss rmse on epoch 238 :  0.004862
+
+ valid loss mape on epoch 238 :  0.003520
+
+ valid loss mae on epoch 238 :  0.003277
+
+ valid loss pde on epoch 238 :  0.150381
+
+ valid loss dual consistency on epoch 238 :  0.00000000
+
+ train loss mse on epoch 239 :  0.000014
+
+ train loss rmse on epoch 239 :  0.003718
+
+ train loss mape on epoch 239 :  0.002886
+
+ train loss mae on epoch 239 :  0.002708
+
+ train loss pde on epoch 239 :  0.218783
+
+ train loss dual consistency on epoch 239 :  0.00000000
+
+ valid loss mse on epoch 239 :  0.000023
+
+ valid loss rmse on epoch 239 :  0.004814
+
+ valid loss mape on epoch 239 :  0.003508
+
+ valid loss mae on epoch 239 :  0.003267
+
+ valid loss pde on epoch 239 :  0.149616
+
+ valid loss dual consistency on epoch 239 :  0.00000000
+
+ train loss mse on epoch 240 :  0.000014
+
+ train loss rmse on epoch 240 :  0.003727
+
+ train loss mape on epoch 240 :  0.002894
+
+ train loss mae on epoch 240 :  0.002716
+
+ train loss pde on epoch 240 :  0.219075
+
+ train loss dual consistency on epoch 240 :  0.00000000
+
+ valid loss mse on epoch 240 :  0.000024
+
+ valid loss rmse on epoch 240 :  0.004863
+
+ valid loss mape on epoch 240 :  0.003546
+
+ valid loss mae on epoch 240 :  0.003297
+
+ valid loss pde on epoch 240 :  0.150746
+
+ valid loss dual consistency on epoch 240 :  0.00000000
+
+ train loss mse on epoch 241 :  0.000014
+
+ train loss rmse on epoch 241 :  0.003712
+
+ train loss mape on epoch 241 :  0.002882
+
+ train loss mae on epoch 241 :  0.002705
+
+ train loss pde on epoch 241 :  0.217967
+
+ train loss dual consistency on epoch 241 :  0.00000000
+
+ valid loss mse on epoch 241 :  0.000024
+
+ valid loss rmse on epoch 241 :  0.004900
+
+ valid loss mape on epoch 241 :  0.003544
+
+ valid loss mae on epoch 241 :  0.003297
+
+ valid loss pde on epoch 241 :  0.150493
+
+ valid loss dual consistency on epoch 241 :  0.00000000
+
+ train loss mse on epoch 242 :  0.000014
+
+ train loss rmse on epoch 242 :  0.003711
+
+ train loss mape on epoch 242 :  0.002878
+
+ train loss mae on epoch 242 :  0.002701
+
+ train loss pde on epoch 242 :  0.219063
+
+ train loss dual consistency on epoch 242 :  0.00000000
+
+ valid loss mse on epoch 242 :  0.000023
+
+ valid loss rmse on epoch 242 :  0.004794
+
+ valid loss mape on epoch 242 :  0.003497
+
+ valid loss mae on epoch 242 :  0.003259
+
+ valid loss pde on epoch 242 :  0.149590
+
+ valid loss dual consistency on epoch 242 :  0.00000000
+
+ train loss mse on epoch 243 :  0.000014
+
+ train loss rmse on epoch 243 :  0.003708
+
+ train loss mape on epoch 243 :  0.002881
+
+ train loss mae on epoch 243 :  0.002703
+
+ train loss pde on epoch 243 :  0.220671
+
+ train loss dual consistency on epoch 243 :  0.00000000
+
+ valid loss mse on epoch 243 :  0.000024
+
+ valid loss rmse on epoch 243 :  0.004879
+
+ valid loss mape on epoch 243 :  0.003508
+
+ valid loss mae on epoch 243 :  0.003267
+
+ valid loss pde on epoch 243 :  0.147903
+
+ valid loss dual consistency on epoch 243 :  0.00000000
+
+ train loss mse on epoch 244 :  0.000014
+
+ train loss rmse on epoch 244 :  0.003701
+
+ train loss mape on epoch 244 :  0.002876
+
+ train loss mae on epoch 244 :  0.002698
+
+ train loss pde on epoch 244 :  0.217398
+
+ train loss dual consistency on epoch 244 :  0.00000000
+
+ valid loss mse on epoch 244 :  0.000023
+
+ valid loss rmse on epoch 244 :  0.004802
+
+ valid loss mape on epoch 244 :  0.003497
+
+ valid loss mae on epoch 244 :  0.003259
+
+ valid loss pde on epoch 244 :  0.150678
+
+ valid loss dual consistency on epoch 244 :  0.00000000
+
+ train loss mse on epoch 245 :  0.000014
+
+ train loss rmse on epoch 245 :  0.003702
+
+ train loss mape on epoch 245 :  0.002872
+
+ train loss mae on epoch 245 :  0.002695
+
+ train loss pde on epoch 245 :  0.216552
+
+ train loss dual consistency on epoch 245 :  0.00000000
+
+ valid loss mse on epoch 245 :  0.000023
+
+ valid loss rmse on epoch 245 :  0.004829
+
+ valid loss mape on epoch 245 :  0.003507
+
+ valid loss mae on epoch 245 :  0.003267
+
+ valid loss pde on epoch 245 :  0.149631
+
+ valid loss dual consistency on epoch 245 :  0.00000000
+
+ train loss mse on epoch 246 :  0.000014
+
+ train loss rmse on epoch 246 :  0.003709
+
+ train loss mape on epoch 246 :  0.002874
+
+ train loss mae on epoch 246 :  0.002697
+
+ train loss pde on epoch 246 :  0.219635
+
+ train loss dual consistency on epoch 246 :  0.00000000
+
+ valid loss mse on epoch 246 :  0.000023
+
+ valid loss rmse on epoch 246 :  0.004843
+
+ valid loss mape on epoch 246 :  0.003501
+
+ valid loss mae on epoch 246 :  0.003261
+
+ valid loss pde on epoch 246 :  0.150944
+
+ valid loss dual consistency on epoch 246 :  0.00000000
+
+ train loss mse on epoch 247 :  0.000014
+
+ train loss rmse on epoch 247 :  0.003694
+
+ train loss mape on epoch 247 :  0.002867
+
+ train loss mae on epoch 247 :  0.002691
+
+ train loss pde on epoch 247 :  0.218734
+
+ train loss dual consistency on epoch 247 :  0.00000000
+
+ valid loss mse on epoch 247 :  0.000023
+
+ valid loss rmse on epoch 247 :  0.004784
+
+ valid loss mape on epoch 247 :  0.003482
+
+ valid loss mae on epoch 247 :  0.003241
+
+ valid loss pde on epoch 247 :  0.150743
+
+ valid loss dual consistency on epoch 247 :  0.00000000
+
+ train loss mse on epoch 248 :  0.000014
+
+ train loss rmse on epoch 248 :  0.003693
+
+ train loss mape on epoch 248 :  0.002865
+
+ train loss mae on epoch 248 :  0.002689
+
+ train loss pde on epoch 248 :  0.218071
+
+ train loss dual consistency on epoch 248 :  0.00000000
+
+ valid loss mse on epoch 248 :  0.000023
+
+ valid loss rmse on epoch 248 :  0.004797
+
+ valid loss mape on epoch 248 :  0.003496
+
+ valid loss mae on epoch 248 :  0.003255
+
+ valid loss pde on epoch 248 :  0.150726
+
+ valid loss dual consistency on epoch 248 :  0.00000000
+
+ train loss mse on epoch 249 :  0.000014
+
+ train loss rmse on epoch 249 :  0.003697
+
+ train loss mape on epoch 249 :  0.002871
+
+ train loss mae on epoch 249 :  0.002695
+
+ train loss pde on epoch 249 :  0.219664
+
+ train loss dual consistency on epoch 249 :  0.00000000
+
+ valid loss mse on epoch 249 :  0.000023
+
+ valid loss rmse on epoch 249 :  0.004757
+
+ valid loss mape on epoch 249 :  0.003463
+
+ valid loss mae on epoch 249 :  0.003224
+
+ valid loss pde on epoch 249 :  0.150293
+
+ valid loss dual consistency on epoch 249 :  0.00000000
+
+ train loss mse on epoch 250 :  0.000014
+
+ train loss rmse on epoch 250 :  0.003708
+
+ train loss mape on epoch 250 :  0.002871
+
+ train loss mae on epoch 250 :  0.002695
+
+ train loss pde on epoch 250 :  0.217616
+
+ train loss dual consistency on epoch 250 :  0.00000000
+
+ valid loss mse on epoch 250 :  0.000023
+
+ valid loss rmse on epoch 250 :  0.004792
+
+ valid loss mape on epoch 250 :  0.003494
+
+ valid loss mae on epoch 250 :  0.003251
+
+ valid loss pde on epoch 250 :  0.150471
+
+ valid loss dual consistency on epoch 250 :  0.00000000
+
+ train loss mse on epoch 251 :  0.621276
+
+ train loss rmse on epoch 251 :  0.788211
+
+ train loss mape on epoch 251 :  0.483589
+
+ train loss mae on epoch 251 :  0.453620
+
+ train loss pde on epoch 251 :  0.208885
+
+ train loss dual consistency on epoch 251 :  0.00000000
+
+ valid loss mse on epoch 251 :  0.021661
+
+ valid loss rmse on epoch 251 :  0.147178
+
+ valid loss mape on epoch 251 :  0.152131
+
+ valid loss mae on epoch 251 :  0.140773
+
+ valid loss pde on epoch 251 :  0.134103
+
+ valid loss dual consistency on epoch 251 :  0.00000000
+
+ train loss mse on epoch 252 :  0.154300
+
+ train loss rmse on epoch 252 :  0.392811
+
+ train loss mape on epoch 252 :  0.195551
+
+ train loss mae on epoch 252 :  0.183228
+
+ train loss pde on epoch 252 :  0.200793
+
+ train loss dual consistency on epoch 252 :  0.00000000
+
+ valid loss mse on epoch 252 :  0.017084
+
+ valid loss rmse on epoch 252 :  0.130706
+
+ valid loss mape on epoch 252 :  0.133568
+
+ valid loss mae on epoch 252 :  0.123191
+
+ valid loss pde on epoch 252 :  0.137197
+
+ valid loss dual consistency on epoch 252 :  0.00000000
+
+ train loss mse on epoch 253 :  0.004759
+
+ train loss rmse on epoch 253 :  0.068985
+
+ train loss mape on epoch 253 :  0.061503
+
+ train loss mae on epoch 253 :  0.057697
+
+ train loss pde on epoch 253 :  0.200525
+
+ train loss dual consistency on epoch 253 :  0.00000000
+
+ valid loss mse on epoch 253 :  0.001906
+
+ valid loss rmse on epoch 253 :  0.043663
+
+ valid loss mape on epoch 253 :  0.036750
+
+ valid loss mae on epoch 253 :  0.033650
+
+ valid loss pde on epoch 253 :  0.136577
+
+ valid loss dual consistency on epoch 253 :  0.00000000
+
+ train loss mse on epoch 254 :  0.002048
+
+ train loss rmse on epoch 254 :  0.045253
+
+ train loss mape on epoch 254 :  0.037404
+
+ train loss mae on epoch 254 :  0.034125
+
+ train loss pde on epoch 254 :  0.202510
+
+ train loss dual consistency on epoch 254 :  0.00000000
+
+ valid loss mse on epoch 254 :  0.001935
+
+ valid loss rmse on epoch 254 :  0.043984
+
+ valid loss mape on epoch 254 :  0.038770
+
+ valid loss mae on epoch 254 :  0.036021
+
+ valid loss pde on epoch 254 :  0.137664
+
+ valid loss dual consistency on epoch 254 :  0.00000000
+
+ train loss mse on epoch 255 :  0.001857
+
+ train loss rmse on epoch 255 :  0.043096
+
+ train loss mape on epoch 255 :  0.036743
+
+ train loss mae on epoch 255 :  0.033861
+
+ train loss pde on epoch 255 :  0.199810
+
+ train loss dual consistency on epoch 255 :  0.00000000
+
+ valid loss mse on epoch 255 :  0.001847
+
+ valid loss rmse on epoch 255 :  0.042978
+
+ valid loss mape on epoch 255 :  0.036274
+
+ valid loss mae on epoch 255 :  0.033278
+
+ valid loss pde on epoch 255 :  0.136294
+
+ valid loss dual consistency on epoch 255 :  0.00000000
+
+ train loss mse on epoch 256 :  0.001830
+
+ train loss rmse on epoch 256 :  0.042776
+
+ train loss mape on epoch 256 :  0.036262
+
+ train loss mae on epoch 256 :  0.033381
+
+ train loss pde on epoch 256 :  0.200625
+
+ train loss dual consistency on epoch 256 :  0.00000000
+
+ valid loss mse on epoch 256 :  0.001876
+
+ valid loss rmse on epoch 256 :  0.043309
+
+ valid loss mape on epoch 256 :  0.036860
+
+ valid loss mae on epoch 256 :  0.033873
+
+ valid loss pde on epoch 256 :  0.137276
+
+ valid loss dual consistency on epoch 256 :  0.00000000
+
+ train loss mse on epoch 257 :  0.001834
+
+ train loss rmse on epoch 257 :  0.042831
+
+ train loss mape on epoch 257 :  0.036268
+
+ train loss mae on epoch 257 :  0.033369
+
+ train loss pde on epoch 257 :  0.202950
+
+ train loss dual consistency on epoch 257 :  0.00000000
+
+ valid loss mse on epoch 257 :  0.001882
+
+ valid loss rmse on epoch 257 :  0.043384
+
+ valid loss mape on epoch 257 :  0.036919
+
+ valid loss mae on epoch 257 :  0.033920
+
+ valid loss pde on epoch 257 :  0.136950
+
+ valid loss dual consistency on epoch 257 :  0.00000000
+
+ train loss mse on epoch 258 :  0.001832
+
+ train loss rmse on epoch 258 :  0.042805
+
+ train loss mape on epoch 258 :  0.036311
+
+ train loss mae on epoch 258 :  0.033427
+
+ train loss pde on epoch 258 :  0.201798
+
+ train loss dual consistency on epoch 258 :  0.00000000
+
+ valid loss mse on epoch 258 :  0.001880
+
+ valid loss rmse on epoch 258 :  0.043357
+
+ valid loss mape on epoch 258 :  0.036841
+
+ valid loss mae on epoch 258 :  0.033837
+
+ valid loss pde on epoch 258 :  0.137276
+
+ valid loss dual consistency on epoch 258 :  0.00000000
+
+ train loss mse on epoch 259 :  0.001831
+
+ train loss rmse on epoch 259 :  0.042790
+
+ train loss mape on epoch 259 :  0.036288
+
+ train loss mae on epoch 259 :  0.033405
+
+ train loss pde on epoch 259 :  0.202990
+
+ train loss dual consistency on epoch 259 :  0.00000000
+
+ valid loss mse on epoch 259 :  0.001902
+
+ valid loss rmse on epoch 259 :  0.043616
+
+ valid loss mape on epoch 259 :  0.037128
+
+ valid loss mae on epoch 259 :  0.034087
+
+ valid loss pde on epoch 259 :  0.138702
+
+ valid loss dual consistency on epoch 259 :  0.00000000
+
+ train loss mse on epoch 260 :  0.001834
+
+ train loss rmse on epoch 260 :  0.042830
+
+ train loss mape on epoch 260 :  0.036258
+
+ train loss mae on epoch 260 :  0.033357
+
+ train loss pde on epoch 260 :  0.201753
+
+ train loss dual consistency on epoch 260 :  0.00000000
+
+ valid loss mse on epoch 260 :  0.001895
+
+ valid loss rmse on epoch 260 :  0.043535
+
+ valid loss mape on epoch 260 :  0.037149
+
+ valid loss mae on epoch 260 :  0.034136
+
+ valid loss pde on epoch 260 :  0.136736
+
+ valid loss dual consistency on epoch 260 :  0.00000000
+
+ train loss mse on epoch 261 :  0.001845
+
+ train loss rmse on epoch 261 :  0.042952
+
+ train loss mape on epoch 261 :  0.036381
+
+ train loss mae on epoch 261 :  0.033467
+
+ train loss pde on epoch 261 :  0.201860
+
+ train loss dual consistency on epoch 261 :  0.00000000
+
+ valid loss mse on epoch 261 :  0.001845
+
+ valid loss rmse on epoch 261 :  0.042948
+
+ valid loss mape on epoch 261 :  0.036423
+
+ valid loss mae on epoch 261 :  0.033492
+
+ valid loss pde on epoch 261 :  0.135711
+
+ valid loss dual consistency on epoch 261 :  0.00000000
+
+ train loss mse on epoch 262 :  0.001840
+
+ train loss rmse on epoch 262 :  0.042899
+
+ train loss mape on epoch 262 :  0.036378
+
+ train loss mae on epoch 262 :  0.033480
+
+ train loss pde on epoch 262 :  0.202554
+
+ train loss dual consistency on epoch 262 :  0.00000000
+
+ valid loss mse on epoch 262 :  0.001831
+
+ valid loss rmse on epoch 262 :  0.042795
+
+ valid loss mape on epoch 262 :  0.036453
+
+ valid loss mae on epoch 262 :  0.033561
+
+ valid loss pde on epoch 262 :  0.135209
+
+ valid loss dual consistency on epoch 262 :  0.00000000
+
+ train loss mse on epoch 263 :  0.001841
+
+ train loss rmse on epoch 263 :  0.042901
+
+ train loss mape on epoch 263 :  0.036362
+
+ train loss mae on epoch 263 :  0.033459
+
+ train loss pde on epoch 263 :  0.200645
+
+ train loss dual consistency on epoch 263 :  0.00000000
+
+ valid loss mse on epoch 263 :  0.001868
+
+ valid loss rmse on epoch 263 :  0.043222
+
+ valid loss mape on epoch 263 :  0.036801
+
+ valid loss mae on epoch 263 :  0.033847
+
+ valid loss pde on epoch 263 :  0.137361
+
+ valid loss dual consistency on epoch 263 :  0.00000000
+
+ train loss mse on epoch 264 :  0.001841
+
+ train loss rmse on epoch 264 :  0.042905
+
+ train loss mape on epoch 264 :  0.036355
+
+ train loss mae on epoch 264 :  0.033448
+
+ train loss pde on epoch 264 :  0.203901
+
+ train loss dual consistency on epoch 264 :  0.00000000
+
+ valid loss mse on epoch 264 :  0.001885
+
+ valid loss rmse on epoch 264 :  0.043420
+
+ valid loss mape on epoch 264 :  0.036921
+
+ valid loss mae on epoch 264 :  0.033912
+
+ valid loss pde on epoch 264 :  0.136286
+
+ valid loss dual consistency on epoch 264 :  0.00000000
+
+ train loss mse on epoch 265 :  0.001840
+
+ train loss rmse on epoch 265 :  0.042900
+
+ train loss mape on epoch 265 :  0.036391
+
+ train loss mae on epoch 265 :  0.033494
+
+ train loss pde on epoch 265 :  0.200414
+
+ train loss dual consistency on epoch 265 :  0.00000000
+
+ valid loss mse on epoch 265 :  0.001883
+
+ valid loss rmse on epoch 265 :  0.043394
+
+ valid loss mape on epoch 265 :  0.036900
+
+ valid loss mae on epoch 265 :  0.033893
+
+ valid loss pde on epoch 265 :  0.135563
+
+ valid loss dual consistency on epoch 265 :  0.00000000
+
+ train loss mse on epoch 266 :  0.001835
+
+ train loss rmse on epoch 266 :  0.042842
+
+ train loss mape on epoch 266 :  0.036368
+
+ train loss mae on epoch 266 :  0.033486
+
+ train loss pde on epoch 266 :  0.202990
+
+ train loss dual consistency on epoch 266 :  0.00000000
+
+ valid loss mse on epoch 266 :  0.001862
+
+ valid loss rmse on epoch 266 :  0.043154
+
+ valid loss mape on epoch 266 :  0.036679
+
+ valid loss mae on epoch 266 :  0.033708
+
+ valid loss pde on epoch 266 :  0.136133
+
+ valid loss dual consistency on epoch 266 :  0.00000000
+
+ train loss mse on epoch 267 :  0.001835
+
+ train loss rmse on epoch 267 :  0.042838
+
+ train loss mape on epoch 267 :  0.036304
+
+ train loss mae on epoch 267 :  0.033406
+
+ train loss pde on epoch 267 :  0.200923
+
+ train loss dual consistency on epoch 267 :  0.00000000
+
+ valid loss mse on epoch 267 :  0.001864
+
+ valid loss rmse on epoch 267 :  0.043175
+
+ valid loss mape on epoch 267 :  0.036829
+
+ valid loss mae on epoch 267 :  0.033862
+
+ valid loss pde on epoch 267 :  0.136603
+
+ valid loss dual consistency on epoch 267 :  0.00000000
+
+ train loss mse on epoch 268 :  0.001834
+
+ train loss rmse on epoch 268 :  0.042821
+
+ train loss mape on epoch 268 :  0.036295
+
+ train loss mae on epoch 268 :  0.033405
+
+ train loss pde on epoch 268 :  0.201989
+
+ train loss dual consistency on epoch 268 :  0.00000000
+
+ valid loss mse on epoch 268 :  0.001896
+
+ valid loss rmse on epoch 268 :  0.043541
+
+ valid loss mape on epoch 268 :  0.037010
+
+ valid loss mae on epoch 268 :  0.033954
+
+ valid loss pde on epoch 268 :  0.136765
+
+ valid loss dual consistency on epoch 268 :  0.00000000
+
+ train loss mse on epoch 269 :  0.001841
+
+ train loss rmse on epoch 269 :  0.042908
+
+ train loss mape on epoch 269 :  0.036301
+
+ train loss mae on epoch 269 :  0.033386
+
+ train loss pde on epoch 269 :  0.201346
+
+ train loss dual consistency on epoch 269 :  0.00000000
+
+ valid loss mse on epoch 269 :  0.001871
+
+ valid loss rmse on epoch 269 :  0.043252
+
+ valid loss mape on epoch 269 :  0.036796
+
+ valid loss mae on epoch 269 :  0.033837
+
+ valid loss pde on epoch 269 :  0.135829
+
+ valid loss dual consistency on epoch 269 :  0.00000000
+
+ train loss mse on epoch 270 :  0.001831
+
+ train loss rmse on epoch 270 :  0.042792
+
+ train loss mape on epoch 270 :  0.036334
+
+ train loss mae on epoch 270 :  0.033456
+
+ train loss pde on epoch 270 :  0.201893
+
+ train loss dual consistency on epoch 270 :  0.00000000
+
+ valid loss mse on epoch 270 :  0.001870
+
+ valid loss rmse on epoch 270 :  0.043242
+
+ valid loss mape on epoch 270 :  0.036607
+
+ valid loss mae on epoch 270 :  0.033615
+
+ valid loss pde on epoch 270 :  0.137237
+
+ valid loss dual consistency on epoch 270 :  0.00000000
+
+ train loss mse on epoch 271 :  0.001843
+
+ train loss rmse on epoch 271 :  0.042924
+
+ train loss mape on epoch 271 :  0.036384
+
+ train loss mae on epoch 271 :  0.033476
+
+ train loss pde on epoch 271 :  0.203308
+
+ train loss dual consistency on epoch 271 :  0.00000000
+
+ valid loss mse on epoch 271 :  0.001883
+
+ valid loss rmse on epoch 271 :  0.043394
+
+ valid loss mape on epoch 271 :  0.036841
+
+ valid loss mae on epoch 271 :  0.033832
+
+ valid loss pde on epoch 271 :  0.136427
+
+ valid loss dual consistency on epoch 271 :  0.00000000
+
+ train loss mse on epoch 272 :  0.001832
+
+ train loss rmse on epoch 272 :  0.042800
+
+ train loss mape on epoch 272 :  0.036276
+
+ train loss mae on epoch 272 :  0.033388
+
+ train loss pde on epoch 272 :  0.202136
+
+ train loss dual consistency on epoch 272 :  0.00000000
+
+ valid loss mse on epoch 272 :  0.001862
+
+ valid loss rmse on epoch 272 :  0.043154
+
+ valid loss mape on epoch 272 :  0.036805
+
+ valid loss mae on epoch 272 :  0.033835
+
+ valid loss pde on epoch 272 :  0.136871
+
+ valid loss dual consistency on epoch 272 :  0.00000000
+
+ train loss mse on epoch 273 :  0.001837
+
+ train loss rmse on epoch 273 :  0.042860
+
+ train loss mape on epoch 273 :  0.036313
+
+ train loss mae on epoch 273 :  0.033419
+
+ train loss pde on epoch 273 :  0.200692
+
+ train loss dual consistency on epoch 273 :  0.00000000
+
+ valid loss mse on epoch 273 :  0.001838
+
+ valid loss rmse on epoch 273 :  0.042867
+
+ valid loss mape on epoch 273 :  0.036328
+
+ valid loss mae on epoch 273 :  0.033426
+
+ valid loss pde on epoch 273 :  0.136373
+
+ valid loss dual consistency on epoch 273 :  0.00000000
+
+ train loss mse on epoch 274 :  0.001839
+
+ train loss rmse on epoch 274 :  0.042887
+
+ train loss mape on epoch 274 :  0.036356
+
+ train loss mae on epoch 274 :  0.033455
+
+ train loss pde on epoch 274 :  0.202514
+
+ train loss dual consistency on epoch 274 :  0.00000000
+
+ valid loss mse on epoch 274 :  0.001859
+
+ valid loss rmse on epoch 274 :  0.043112
+
+ valid loss mape on epoch 274 :  0.036713
+
+ valid loss mae on epoch 274 :  0.033750
+
+ valid loss pde on epoch 274 :  0.139064
+
+ valid loss dual consistency on epoch 274 :  0.00000000
+
+ train loss mse on epoch 275 :  0.001833
+
+ train loss rmse on epoch 275 :  0.042810
+
+ train loss mape on epoch 275 :  0.036305
+
+ train loss mae on epoch 275 :  0.033422
+
+ train loss pde on epoch 275 :  0.202181
+
+ train loss dual consistency on epoch 275 :  0.00000000
+
+ valid loss mse on epoch 275 :  0.001897
+
+ valid loss rmse on epoch 275 :  0.043554
+
+ valid loss mape on epoch 275 :  0.036982
+
+ valid loss mae on epoch 275 :  0.033951
+
+ valid loss pde on epoch 275 :  0.138368
+
+ valid loss dual consistency on epoch 275 :  0.00000000
+
+ train loss mse on epoch 276 :  0.001836
+
+ train loss rmse on epoch 276 :  0.042847
+
+ train loss mape on epoch 276 :  0.036276
+
+ train loss mae on epoch 276 :  0.033367
+
+ train loss pde on epoch 276 :  0.201017
+
+ train loss dual consistency on epoch 276 :  0.00000000
+
+ valid loss mse on epoch 276 :  0.001894
+
+ valid loss rmse on epoch 276 :  0.043524
+
+ valid loss mape on epoch 276 :  0.037083
+
+ valid loss mae on epoch 276 :  0.034081
+
+ valid loss pde on epoch 276 :  0.138041
+
+ valid loss dual consistency on epoch 276 :  0.00000000
+
+ train loss mse on epoch 277 :  0.001830
+
+ train loss rmse on epoch 277 :  0.042782
+
+ train loss mape on epoch 277 :  0.036307
+
+ train loss mae on epoch 277 :  0.033432
+
+ train loss pde on epoch 277 :  0.201016
+
+ train loss dual consistency on epoch 277 :  0.00000000
+
+ valid loss mse on epoch 277 :  0.001864
+
+ valid loss rmse on epoch 277 :  0.043174
+
+ valid loss mape on epoch 277 :  0.036589
+
+ valid loss mae on epoch 277 :  0.033622
+
+ valid loss pde on epoch 277 :  0.134847
+
+ valid loss dual consistency on epoch 277 :  0.00000000
+
+ train loss mse on epoch 278 :  0.001841
+
+ train loss rmse on epoch 278 :  0.042905
+
+ train loss mape on epoch 278 :  0.036357
+
+ train loss mae on epoch 278 :  0.033450
+
+ train loss pde on epoch 278 :  0.200559
+
+ train loss dual consistency on epoch 278 :  0.00000000
+
+ valid loss mse on epoch 278 :  0.001909
+
+ valid loss rmse on epoch 278 :  0.043690
+
+ valid loss mape on epoch 278 :  0.036945
+
+ valid loss mae on epoch 278 :  0.033876
+
+ valid loss pde on epoch 278 :  0.137265
+
+ valid loss dual consistency on epoch 278 :  0.00000000

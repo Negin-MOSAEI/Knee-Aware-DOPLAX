@@ -29,8 +29,8 @@ class Model(nn.Module):
         if self.args is None:
             return 
         
-        # Create CUDA generator for DataLoaders
-        self.generator = torch.Generator(device=device)
+        # Create CPU generator for DataLoaders (avoid device conflict with set_default_device)
+        self.generator = torch.Generator(device='cpu')
         if args.save_folder is not None and not os.path.exists(args.save_folder):
             os.makedirs(args.save_folder)
         self.log_dir = args.log_dir if args.save_folder is None else os.path.join(args.save_folder, args.log_dir)
@@ -419,7 +419,7 @@ class Model(nn.Module):
 
 
     def Train(self, trainloader, validloader=None, testloader=None):
-        # Recreate dataloaders with CUDA-safe sampler
+        torch.set_default_device('cpu')
         if hasattr(trainloader, 'sampler') and hasattr(trainloader.sampler, 'generator'):
             trainloader.sampler.generator = self.generator
 

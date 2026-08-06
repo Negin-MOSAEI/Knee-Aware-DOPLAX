@@ -10,12 +10,12 @@ Device:        cuda
 Results path:  G:\ISDS\Knee-Aware-DOPLAX\DOPLAX-SOH-main 4\outputs\MIT
 
 --- Test Metrics ---
-             MSE: 0.00007767
-            RMSE: 0.00881319
-            MAPE: 0.00612748
-             MAE: 0.00579718
-            DUAL: 0.00030947
-             PDE: 71.40142059
-       PEARSON_R: 0.95273507
-      FINAL_LOSS: 0.00001432
+             MSE: 0.00007496
+            RMSE: 0.00865823
+            MAPE: 0.00592179
+             MAE: 0.00560247
+            DUAL: 0.00025757
+             PDE: 87.52146149
+       PEARSON_R: 0.95449477
+      FINAL_LOSS: 0.00001463
 ============================================================

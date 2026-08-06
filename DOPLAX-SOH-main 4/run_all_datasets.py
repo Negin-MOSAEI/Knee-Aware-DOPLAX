@@ -44,14 +44,14 @@ OUTPUTS_ROOT = Path("outputs").resolve()
 DATASETS = {
     "XJTU": {
         "data": "XJTU",
-        "batch": "3C",
+        "batch": "All",
         "g_dim_attr": "g_dim_LAX_XJTU",
         "loader": load_XJTU_data,
         "data_path": "data/Processed",
     },
     "TJU": {
         "data": "TJU",
-        "batch": "NCM_NCA",
+        "batch": "All",
         "g_dim_attr": "g_dim_LAX_TJU",
         "loader": load_TJU_data,
         "data_path": "data/Processed",

@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import mean_squared_error
+from sklearn.isotonic import IsotonicRegression
 from scipy.signal import savgol_filter
 import os
 
@@ -46,15 +47,20 @@ def postprocess_capacity(y_pred,
                          hampel_window=21,
                          savgol_window=101,
                          polyorder=3,
-                         monotonic=True,
+                         isotonic=True,
                          clip=None):
     """
-    Hampel de-spike + Savitzky-Golay smoothing + optional monotonic constraint.
-    Now supports values > 1.0: no hard upper clip by default.
+    Hampel de-spike → Isotonic Regression → Savitzky-Golay smoothing.
+
+    Order matters: isotonic enforces monotonic degradation (piecewise constant),
+    then SavGol smooths the staircase artifacts into a clean curve.
+
+    isotonic : bool, default=True
+        If True, applies IsotonicRegression(increasing=False) per segment
+        to enforce non-increasing (monotonic degradation) constraint.
+
     If clip is not None, it should be a tuple (low, high) to clip final output.
     """
-    from sklearn.isotonic import IsotonicRegression
-
     y_pred = np.asarray(y_pred, dtype=float)
     seg_bounds = find_segments(y_pred, jump_thresh)
     y_out = np.zeros_like(y_pred)
@@ -65,22 +71,24 @@ def postprocess_capacity(y_pred,
         # 1) de-spike
         seg = hampel_filter(seg, window=hampel_window)
 
-        # 2) smooth
-        w = min(savgol_window, (len(seg)//2)*2 - 1)  # largest odd <= seg_len-1
-        if w >= 5:
-            seg = savgol_filter(seg, window_length=w, polyorder=min(polyorder, w-1))
+        # 2) isotonic regression → enforce monotonic non-increasing
+        if isotonic and len(seg) > 2:
+            seg = IsotonicRegression(increasing=False).fit_transform(
+                np.arange(len(seg)), seg
+            )
 
-        # 3) optional monotonic decreasing (allow >1 by not setting y_max)
-        if monotonic and len(seg) > 1:
-            ir = IsotonicRegression(increasing=False, y_min=0.0, y_max=None)
-            seg = ir.fit_transform(np.arange(len(seg)), seg)
+        # 3) smooth → removes staircase artifacts from isotonic
+        w = min(savgol_window, (len(seg)//2)*2 - 1)
+        if w >= 5:
+            if w % 2 == 0:
+                w -= 1
+            seg = savgol_filter(seg, window_length=w, polyorder=min(polyorder, w-1))
 
         y_out[s:e] = seg
 
     if clip is not None:
         lo, hi = clip
         return np.clip(y_out, lo, hi)
-    # Default: no upper cap → supports normalized SOH > 1
     return y_out
 
 # ==== 2. Function to Process a Single CSV File and Return Metrics ====
@@ -168,7 +176,7 @@ def process_csv_file(csv_file_path):
             jump_thresh=0.02,
             hampel_window=100,
             savgol_window=50,
-            polyorder=2,
+            polyorder=3,
             monotonic=False,
             clip=None,  # keep unbounded; change to (0.0, 1.2) if you want a soft cap
         )

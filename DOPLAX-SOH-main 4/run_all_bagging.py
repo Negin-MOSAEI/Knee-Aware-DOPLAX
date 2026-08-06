@@ -69,13 +69,13 @@ def resolve_lax_args(args):
 DATASETS = {
     "XJTU": {
         "data": "XJTU",
-        "batch": "2C",
+        "batch": "All",
         "loader": load_XJTU_data,
         "data_path": "data/Processed",
     },
     "TJU": {
         "data": "TJU",
-        "batch": "NCM_NCA",
+        "batch": "All",
         "loader": load_TJU_data,
         "data_path": "data/Processed",
     },
@@ -208,7 +208,7 @@ def train_bagging(dataset_name):
     if dataset_name == "HUST":
         args.bagging_NN_lr_HUST = 0.02
         args.mono_bag_HUST = 0.1
-        args.bag_hidden_dim_HUST = [50, 50]
+        args.bag_hidden_dim_HUST = [100, 100]
 
     resolve_lax_args(args)
 

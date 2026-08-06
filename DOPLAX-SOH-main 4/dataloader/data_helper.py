@@ -24,7 +24,7 @@ def load_XJTU_data(args, small_sample=None, data_path='data/Full'):
                     else:
                         train_list.append(os.path.join(root, file))
         else:
-            if args.batch in file:
+            if args.batch == 'All' or args.batch in file:
                 if '4' in file or '8' in file:
                     test_list.append(os.path.join(root, file))
                 else:
@@ -53,24 +53,30 @@ def load_TJU_data(args, small_sample=None, data_path='data/Full'):
 
     # The numbers whose units digit is 5 or 9 are test set, and the others are training set
     mod = [(5,9),(4,8),(5,9)]
-    batchs = os.listdir(root)
+    batchs = sorted(os.listdir(root))
     TJU_batches = {
         'NCA': 0,
         'NCM': 1, 
         'NCM_NCA': 2 
     }
-    batch_id = TJU_batches[args.batch]
-    batch = batchs[batch_id]
-    batch_root = os.path.join(root, batch)
-    files = os.listdir(batch_root)
-    for i,f in enumerate(files):
-        id = i + 1
-        if id % 10 == mod[batch_id][0] or id % 10 == mod[batch_id][1]:
-            test_list.append(os.path.join(batch_root, f))
-            # breakpoint()
-            print(f)
-        else:
-            train_list.append(os.path.join(batch_root, f))
+    
+    if args.batch == 'All':
+        batch_ids = [0, 1, 2]
+    else:
+        batch_ids = [TJU_batches[args.batch]]
+        
+    for batch_id in batch_ids:
+        batch = batchs[batch_id]
+        batch_root = os.path.join(root, batch)
+        files = os.listdir(batch_root)
+        for i,f in enumerate(files):
+            id = i + 1
+            if id % 10 == mod[batch_id][0] or id % 10 == mod[batch_id][1]:
+                test_list.append(os.path.join(batch_root, f))
+                # breakpoint()
+                print(f)
+            else:
+                train_list.append(os.path.join(batch_root, f))
     if small_sample is not None:
         train_list = train_list[:small_sample]
     train_loader = data.read_all(specific_path_list=train_list)

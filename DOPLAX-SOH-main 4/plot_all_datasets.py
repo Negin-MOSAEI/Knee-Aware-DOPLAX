@@ -105,16 +105,18 @@ def get_test_file_list(dataset_name):
     root = "data/Processed/" + cfg["data"] + " data"
 
     if dataset_name == "XJTU":
-        files = sorted([f for f in os.listdir(root) if f.endswith('.csv') and cfg["batch"] in f])
+        files = sorted([f for f in os.listdir(root) if f.endswith('.csv') and (cfg["batch"] == 'All' or cfg["batch"] in f)])
         return [os.path.join(root, f) for f in files if '4' in f or '8' in f]
 
     elif dataset_name == "TJU":
-        batch_root = os.path.join(root, "Dataset_3_NCM_NCA_battery")
-        files = sorted(os.listdir(batch_root))
+        folders = ["Dataset_1_NCA_battery", "Dataset_2_NCM_battery", "Dataset_3_NCM_NCA_battery"] if cfg["batch"] == 'All' else ["Dataset_3_NCM_NCA_battery"]
         test_list = []
-        for i, f in enumerate(files):
-            if (i + 1) % 10 == 5 or (i + 1) % 10 == 9:
-                test_list.append(os.path.join(batch_root, f))
+        for folder in folders:
+            batch_root = os.path.join(root, folder)
+            files = sorted(os.listdir(batch_root))
+            for i, f in enumerate(files):
+                if (i + 1) % 10 == 5 or (i + 1) % 10 == 9:
+                    test_list.append(os.path.join(batch_root, f))
         return test_list
 
     elif dataset_name == "MIT":
@@ -163,7 +165,7 @@ def load_bagging_args(dataset_name):
     args.dropout = getattr(args, f"dropout_{ds}")
     args.bag_hidden_dim = getattr(args, f"bag_hidden_dim_{ds}")
     if ds == "HUST":
-        args.bag_hidden_dim = [50, 50]
+        args.bag_hidden_dim = [100, 100]
 
     g_dim = detect_g_dim("data/Processed", dataset_name)
     args.g_dim_LAX_XJTU = g_dim
@@ -388,7 +390,7 @@ def plot_per_battery_scatter(dataset_name, battery_results):
         return
 
     model_keys = [("DeepOPINN", "y_pinn"), ("LAX", "y_lax"), ("Knee-Aware DOPLAX", "y_pred")]
-    fig, axes = plt.subplots(n, 3, figsize=(18, 4.5 * n), squeeze=False)
+    fig, axes = plt.subplots(n, 3, figsize=(18, 3.5 * n), squeeze=False)
     fig.suptitle(f"{dataset_name} — Predicted vs Actual (All Sub-Models)",
                  fontsize=16, fontweight="bold", y=1.005)
 
@@ -416,7 +418,7 @@ def plot_per_battery_scatter(dataset_name, battery_results):
 
     plt.tight_layout()
     plt.savefig(PLOTS_DIR / f"kneaware_scatter_per_battery_{dataset_name}.png",
-                dpi=200, bbox_inches="tight")
+                dpi=100, bbox_inches="tight")
     plt.close()
     print(f"  Saved kneaware_scatter_per_battery_{dataset_name}.png ({n} batteries)")
 

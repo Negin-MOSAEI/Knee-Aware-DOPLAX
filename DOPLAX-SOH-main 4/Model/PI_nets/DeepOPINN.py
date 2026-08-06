@@ -476,8 +476,11 @@ class Model(nn.Module):
                 if self.args.save_folder is not None:
                     y_true_path = os.path.join(self.args.save_folder, 'true_label.npy')
                     y_pred_path = os.path.join(self.args.save_folder, 'pred_label.npy')
-                    np.save(y_true_path, true_label)
-                    np.save(y_pred_path, pred_label)
+                    try:
+                        np.save(y_true_path, true_label)
+                        np.save(y_pred_path, pred_label)
+                    except Exception as e:
+                        print(f"Failed to save labels: {e}")
 
             if self.args.early_stop is not None and early_stop > self.args.early_stop//4:
                 if self.test_metrics_history['RMSE'][-1] > 0.50 or self.test_metrics_history['MAPE'][-1] > 0.50:

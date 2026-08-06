@@ -33,7 +33,7 @@ class MLP_Bagging_NN(nn.Module):
                 self.layers.append(nn.Tanh())
             elif i == self.layers_num - 1:
                 self.layers.append(nn.Linear(hidden_dim[i-1], output_dim))
-                self.layers.append(nn.ReLU())
+                self.layers.append(nn.Identity())
             else:
                 self.layers.append(nn.Linear(hidden_dim[i-1], hidden_dim[i]))
                 self.layers.append(nn.Tanh())
@@ -41,9 +41,12 @@ class MLP_Bagging_NN(nn.Module):
         self._init()
 
     def _init(self):
-        for layer in self.net:
+        for i, layer in enumerate(self.net):
             if isinstance(layer,nn.Linear):
                 nn.init.xavier_normal_(layer.weight)
+                nn.init.constant_(layer.bias, 0.0)
+                if i == len(self.net) - 2:
+                    nn.init.constant_(layer.bias, 1.0)
 
 
     def forward(self,x):
@@ -56,8 +59,8 @@ class Model(DeepOPINN.Model):
     def __init__(self, args):
         super(Model, self).__init__(args=None, save_args=False)
         self.args = args
-        # Create CUDA generator for DataLoaders
-        self.generator = torch.Generator(device=device)
+        # Create CPU generator for DataLoaders (avoid device conflict with set_default_device)
+        self.generator = torch.Generator(device='cpu')
         if args.save_folder is not None and not os.path.exists(args.save_folder):
             os.makedirs(args.save_folder)
         self.log_dir = args.log_dir if args.save_folder is None else os.path.join(args.save_folder, args.log_dir)
@@ -392,6 +395,7 @@ class Model(DeepOPINN.Model):
         sum_squared = 0.0
         n_samples = 0
         
+        torch.set_default_device('cpu')
         for batch in trainloader:
             x1, x2 = batch[0], batch[1]
             x2 = x2[:, :16]
@@ -490,6 +494,8 @@ class Model(DeepOPINN.Model):
 
 
     def Train(self, trainloader, validloader=None, testloader=None):
+        # Set CPU default device for safe DataLoader iteration (deepxde sets CUDA default)
+        torch.set_default_device('cpu')
         # Recreate dataloaders with CUDA-safe sampler
         if hasattr(trainloader, 'sampler') and hasattr(trainloader.sampler, 'generator'):
             trainloader.sampler.generator = self.generator
@@ -564,8 +570,11 @@ class Model(DeepOPINN.Model):
                 if self.args.save_folder is not None:
                     y_true_path = os.path.join(self.args.save_folder, 'true_label.npy')
                     y_pred_path = os.path.join(self.args.save_folder, 'pred_label.npy')
-                    np.save(y_true_path, true_label)
-                    np.save(y_pred_path, pred_label)
+                    try:
+                        np.save(y_true_path, true_label)
+                        np.save(y_pred_path, pred_label)
+                    except Exception as e:
+                        print(f"Failed to save labels: {e}")
 
             if self.args.early_stop is not None and early_stop > self.args.early_stop//4:
                 if self.test_metrics_history['RMSE'][-1] > 0.50 or self.test_metrics_history['MAPE'][-1] > 0.50:

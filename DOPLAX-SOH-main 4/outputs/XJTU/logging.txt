@@ -2,7 +2,7 @@
 LAX Training Run — XJTU
 ============================================================
 Dataset:       XJTU
-Batch:         3C
+Batch:         All
 g_dim:         16
 Epochs (net):  350
 Batch size:    526
@@ -10,12 +10,12 @@ Device:        cuda
 Results path:  G:\ISDS\Knee-Aware-DOPLAX\DOPLAX-SOH-main 4\outputs\XJTU
 
 --- Test Metrics ---
-             MSE: 0.00020128
-            RMSE: 0.01418729
-            MAPE: 0.01313952
-             MAE: 0.01220276
-            DUAL: 0.00760958
-             PDE: 36.24894714
-       PEARSON_R: 0.91771704
-      FINAL_LOSS: 0.00001202
+             MSE: 0.00016447
+            RMSE: 0.01282457
+            MAPE: 0.00980327
+             MAE: 0.00904709
+            DUAL: 0.00111379
+             PDE: 70.19260406
+       PEARSON_R: 0.95352054
+      FINAL_LOSS: 0.00002348
 ============================================================
