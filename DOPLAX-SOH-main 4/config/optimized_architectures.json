@@ -1,0 +1,114 @@
+{
+    "HUST": {
+        "default": {
+            "TST": {
+                "d_model": 128,
+                "num_layers": 3,
+                "nhead": 2,
+                "dropout": 0.19774921471330323
+            },
+            "DeepOPINN": {
+                "F_hidden_dim": 40,
+                "F_layers_num": 2,
+                "dropout": 0.16314651102712957
+            }
+        }
+    },
+    "MIT": {
+        "2017-05-12": {
+            "TST": {
+                "d_model": 64,
+                "num_layers": 1,
+                "nhead": 8,
+                "dropout": 0.14555954331803955
+            },
+            "DeepOPINN": {
+                "F_hidden_dim": 60,
+                "F_layers_num": 3,
+                "dropout": 0.26295095999736384
+            }
+        },
+        "2017-06-30": {
+            "TST": {
+                "d_model": 64,
+                "num_layers": 2,
+                "nhead": 8,
+                "dropout": 0.1869189224936088
+            },
+            "DeepOPINN": {
+                "F_hidden_dim": 40,
+                "F_layers_num": 2,
+                "dropout": 0.39989486589438583
+            }
+        },
+        "2018-04-12": {
+            "TST": {
+                "d_model": 64,
+                "num_layers": 3,
+                "nhead": 2,
+                "dropout": 0.13131795558626913
+            },
+            "DeepOPINN": {
+                "F_hidden_dim": 40,
+                "F_layers_num": 2,
+                "dropout": 0.2565693244688039
+            }
+        }
+    },
+    "TJU": {
+        "Dataset_1_NCA_battery": {
+            "TST": {
+                "d_model": 64,
+                "num_layers": 3,
+                "nhead": 8,
+                "dropout": 0.11086155775744366
+            },
+            "DeepOPINN": {
+                "F_hidden_dim": 20,
+                "F_layers_num": 4,
+                "dropout": 0.27018566165774716
+            }
+        },
+        "Dataset_2_NCM_battery": {
+            "TST": {
+                "d_model": 128,
+                "num_layers": 1,
+                "nhead": 8,
+                "dropout": 0.3416787545762765
+            },
+            "DeepOPINN": {
+                "F_hidden_dim": 40,
+                "F_layers_num": 4,
+                "dropout": 0.25393244416341154
+            }
+        },
+        "Dataset_3_NCM_NCA_battery": {
+            "TST": {
+                "d_model": 128,
+                "num_layers": 2,
+                "nhead": 8,
+                "dropout": 0.12292935594481494
+            },
+            "DeepOPINN": {
+                "F_hidden_dim": 60,
+                "F_layers_num": 4,
+                "dropout": 0.1759486625449707
+            }
+        }
+    },
+    "XJTU": {
+        "default": {
+            "TST": {
+                "d_model": 64,
+                "num_layers": 1,
+                "nhead": 2,
+                "dropout": 0.23968688023826146
+            },
+            "DeepOPINN": {
+                "F_hidden_dim": 20,
+                "F_layers_num": 2,
+                "dropout": 0.43580462918009066
+            }
+        }
+    }
+}

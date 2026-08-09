@@ -83,7 +83,13 @@ def run_phase1(project_root: str, num_epochs: int = 5, batch_size: int = 32):
             kpi_tracker.start(num_batteries=len(train_bats), total_cycles=len(dataset_obj))
             
             # Initialize Model
-            model = TimeSeriesTransformer(num_features=actual_num_features).to(device)
+            from utils.hpo_utils import get_model_params
+            best_params = get_model_params(project_root, dataset, batch, "TST")
+            if best_params:
+                print(f"Using optimized TST architecture: {best_params}")
+                model = TimeSeriesTransformer(num_features=actual_num_features, **best_params).to(device)
+            else:
+                model = TimeSeriesTransformer(num_features=actual_num_features).to(device)
             criterion = nn.MSELoss()
             optimizer = optim.Adam(model.parameters(), lr=1e-3)
             
@@ -98,6 +104,8 @@ def run_phase1(project_root: str, num_epochs: int = 5, batch_size: int = 32):
                     optimizer.zero_grad()
                     outputs = model(features)
                     
+                    outputs = outputs.view(-1, 1)
+                    target_kpd = target_kpd.view(-1, 1)
                     loss = criterion(outputs, target_kpd)
                     loss.backward()
                     optimizer.step()

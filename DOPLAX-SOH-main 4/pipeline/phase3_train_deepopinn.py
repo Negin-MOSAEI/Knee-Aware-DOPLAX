@@ -23,6 +23,20 @@ class ArgsMock:
         self.save_folder = None
         self.log_dir = "logs"
         self.data = "XJTU"
+        
+        # Base attributes
+        self.lr = 1e-3
+        self.warmup_lr = 1e-3
+        self.lr_F = 1e-3
+        self.final_lr = 1e-4
+        self.F_hidden_dim = 64
+        self.F_layers_num = 3
+        self.dropout = 0.1
+        self.alpha = 0.5
+        self.beta = 0.5
+        self.warmup_epochs = 1
+        
+        # XJTU
         self.lr_XJTU = 1e-3
         self.warmup_lr_XJTU = 1e-3
         self.lr_F_XJTU = 1e-3
@@ -33,6 +47,43 @@ class ArgsMock:
         self.alpha_XJTU = 0.5
         self.beta_XJTU = 0.5
         self.warmup_epochs_XJTU = 1
+        
+        # TJU
+        self.lr_TJU = 1e-3
+        self.warmup_lr_TJU = 1e-3
+        self.lr_F_TJU = 1e-3
+        self.final_lr_TJU = 1e-4
+        self.F_hidden_dim_TJU = 64
+        self.F_layers_num_TJU = 3
+        self.dropout_TJU = 0.1
+        self.alpha_TJU = 0.5
+        self.beta_TJU = 0.5
+        self.warmup_epochs_TJU = 1
+        
+        # MIT
+        self.lr_MIT = 1e-3
+        self.warmup_lr_MIT = 1e-3
+        self.lr_F_MIT = 1e-3
+        self.final_lr_MIT = 1e-4
+        self.F_hidden_dim_MIT = 64
+        self.F_layers_num_MIT = 3
+        self.dropout_MIT = 0.1
+        self.alpha_MIT = 0.5
+        self.beta_MIT = 0.5
+        self.warmup_epochs_MIT = 1
+        
+        # HUST
+        self.lr_HUST = 1e-3
+        self.warmup_lr_HUST = 1e-3
+        self.lr_F_HUST = 1e-3
+        self.final_lr_HUST = 1e-4
+        self.F_hidden_dim_HUST = 64
+        self.F_layers_num_HUST = 3
+        self.dropout_HUST = 0.1
+        self.alpha_HUST = 0.5
+        self.beta_HUST = 0.5
+        self.warmup_epochs_HUST = 1
+        
         self.dim_x = 1
         self.epochs = 5
         self.batch_size = 64
@@ -70,7 +121,7 @@ class DeepOpinnDataset(Dataset):
         # return in format expected by DeepOPINN.py: (x1, target_kpd, target_soh)
         # DeepOPINN expects features to be 2D matrix or flattened
         # But we pass features as-is
-        features_flat = features.view(-1)
+        features_flat = features.reshape(-1)
         return features_flat, inferred_kpd, true_soh
 
 def run_phase3(project_root: str, num_epochs: int = 5, batch_size: int = 64):
@@ -116,7 +167,15 @@ def run_phase3(project_root: str, num_epochs: int = 5, batch_size: int = 64):
             kpi_tracker = KPITracker()
             kpi_tracker.start(num_batteries=len(train_bats), total_cycles=len(dataset_obj))
             
-            model = DeepOpinn(args, save_args=False).to(device)
+            # Initialize Model
+            args = ArgsMock()
+            from utils.hpo_utils import get_model_params
+            best_params = get_model_params(project_root, dataset, batch, "DeepOPINN")
+            if best_params:
+                print(f"Using optimized DeepOPINN architecture: {best_params}")
+                model = DeepOpinn(args, save_args=False, **best_params).to(device)
+            else:
+                model = DeepOpinn(args, save_args=False).to(device)
             
             for epoch in range(num_epochs):
                 model.train_one_epoch(epoch, dataloader)

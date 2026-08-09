@@ -32,7 +32,11 @@ def discover_datasets_and_batches(data_root: str):
                     if len(parts) > 1:
                         batch = parts[0]
                     else:
-                        batch = "default"
+                        filename = parts[0]
+                        if "_battery" in filename:
+                            batch = filename.split('_battery')[0]
+                        else:
+                            batch = "default"
                         
                     if batch not in datasets_dict[dataset]:
                         datasets_dict[dataset].append(batch)

@@ -8,8 +8,8 @@ from pipeline import (
     phase1_train_tst,
     phase2_infer_kpd,
     phase3_train_deepopinn,
-    phase4_train_mlp,
-    phase5_train_kpis,
+    phase4_train_lax,
+    phase5_train_fusion,
     phase6_final_soh,
     phase7_infer_kpis
 )
@@ -26,7 +26,7 @@ def run_all_phases():
     print("-"*50)
     
     # Phase 1
-    phase1_train_tst.run_phase1(project_root)
+    phase1_train_tst.run_phase1(project_root, num_epochs=1)
     print("-"*50)
     
     # Phase 2
@@ -34,15 +34,14 @@ def run_all_phases():
     print("-"*50)
     
     # Phase 3
-    phase3_train_deepopinn.run_phase3(project_root)
+    phase3_train_deepopinn.run_phase3(project_root, num_epochs=1)
     print("-"*50)
     
     # Phase 4
-    phase4_train_mlp.run_phase4(project_root)
-    print("-"*50)
+    phase4_train_lax.run_phase4(project_root, num_epochs=1)
     
     # Phase 5
-    phase5_train_kpis.run_phase5(project_root)
+    phase5_train_fusion.run_phase5(project_root, num_epochs=1)
     print("-"*50)
     
     # Phase 6
@@ -56,3 +55,4 @@ def run_all_phases():
 
 if __name__ == "__main__":
     run_all_phases()
+

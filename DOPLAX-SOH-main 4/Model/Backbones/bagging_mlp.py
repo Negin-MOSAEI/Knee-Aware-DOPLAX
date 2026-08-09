@@ -25,7 +25,7 @@ class BaggingMLP(nn.Module):
         super(BaggingMLP, self).__init__()
         self.models = nn.ModuleList([MLP(input_dim, hidden_dim, num_layers) for _ in range(num_models)])
 
-    def forward(self, x):
+    def forward(self, x, return_std=False):
         # x shape: [batch_size, window_size, num_features]
         # Flatten for MLP: [batch_size, window_size * num_features]
         x_flat = x.view(x.size(0), -1)
@@ -37,4 +37,9 @@ class BaggingMLP(nn.Module):
         # Stack and average predictions
         stacked = torch.stack(predictions, dim=1)
         mean_pred = torch.mean(stacked, dim=1)
+        
+        if return_std:
+            std_pred = torch.std(stacked, dim=1)
+            return mean_pred, std_pred
+            
         return mean_pred

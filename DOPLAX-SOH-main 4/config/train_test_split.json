@@ -380,65 +380,95 @@
         }
     },
     "XJTU": {
-        "default": {
+        "2C": {
             "train": [
-                "Sim_satellite_battery-5",
-                "R2.5_battery-1",
-                "3C_battery-8",
-                "R3_battery-7",
-                "3C_battery-11",
-                "R2.5_battery-4",
-                "3C_battery-5",
-                "3C_battery-13",
-                "R3_battery-5",
-                "R3_battery-1",
-                "Sim_satellite_battery-3",
-                "2C_battery-2",
-                "R3_battery-8",
-                "R2.5_battery-5",
-                "3C_battery-9",
-                "2C_battery-4",
-                "RW_battery-5",
-                "RW_battery-8",
-                "R3_battery-3",
-                "Sim_satellite_battery-7",
-                "R2.5_battery-2",
-                "3C_battery-4",
-                "3C_battery-15",
-                "2C_battery-6",
-                "3C_battery-10",
-                "R2.5_battery-8",
-                "2C_battery-8",
-                "2C_battery-3",
-                "R2.5_battery-6",
-                "3C_battery-12",
-                "RW_battery-2",
-                "Sim_satellite_battery-2",
-                "Sim_satellite_battery-4",
-                "R3_battery-2",
-                "3C_battery-14",
-                "R3_battery-4",
-                "Sim_satellite_battery-1",
-                "2C_battery-7",
-                "R3_battery-6",
-                "RW_battery-1",
-                "RW_battery-6",
                 "2C_battery-1",
                 "2C_battery-5",
-                "Sim_satellite_battery-6"
+                "2C_battery-8",
+                "2C_battery-7",
+                "2C_battery-4",
+                "2C_battery-3"
             ],
             "test": [
-                "R2.5_battery-7",
-                "3C_battery-6",
-                "RW_battery-3",
-                "Sim_satellite_battery-8",
-                "3C_battery-1",
-                "R2.5_battery-3",
+                "2C_battery-2",
+                "2C_battery-6"
+            ]
+        },
+        "3C": {
+            "train": [
+                "3C_battery-12",
+                "3C_battery-8",
+                "3C_battery-5",
+                "3C_battery-11",
+                "3C_battery-15",
+                "3C_battery-4",
+                "3C_battery-13",
                 "3C_battery-3",
-                "3C_battery-2",
+                "3C_battery-6",
+                "3C_battery-9",
+                "3C_battery-1",
+                "3C_battery-10"
+            ],
+            "test": [
                 "3C_battery-7",
+                "3C_battery-14",
+                "3C_battery-2"
+            ]
+        },
+        "R2.5": {
+            "train": [
+                "R2.5_battery-1",
+                "R2.5_battery-5",
+                "R2.5_battery-4",
+                "R2.5_battery-7",
+                "R2.5_battery-6",
+                "R2.5_battery-3"
+            ],
+            "test": [
+                "R2.5_battery-8",
+                "R2.5_battery-2"
+            ]
+        },
+        "R3": {
+            "train": [
+                "R3_battery-7",
+                "R3_battery-2",
+                "R3_battery-4",
+                "R3_battery-8",
+                "R3_battery-3",
+                "R3_battery-5"
+            ],
+            "test": [
+                "R3_battery-6",
+                "R3_battery-1"
+            ]
+        },
+        "RW": {
+            "train": [
                 "RW_battery-7",
-                "RW_battery-4"
+                "RW_battery-3",
+                "RW_battery-4",
+                "RW_battery-8",
+                "RW_battery-5",
+                "RW_battery-6"
+            ],
+            "test": [
+                "RW_battery-1",
+                "RW_battery-2"
+            ]
+        },
+        "Sim_satellite": {
+            "train": [
+                "Sim_satellite_battery-1",
+                "Sim_satellite_battery-5",
+                "Sim_satellite_battery-8",
+                "Sim_satellite_battery-7",
+                "Sim_satellite_battery-2",
+                "Sim_satellite_battery-3"
+            ],
+            "test": [
+                "Sim_satellite_battery-6",
+                "Sim_satellite_battery-4"
             ]
         }
     }

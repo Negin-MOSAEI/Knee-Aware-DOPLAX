@@ -80,14 +80,19 @@ def run_phase2(project_root: str):
                 continue
                 
             # Peek into the first battery's dataset to dynamically find num_features
-            peek_dataset = BatteryCycleDataset([all_bats[0]], {all_bats[0]: 0}, dataset, project_root)
+            peek_dataset = BatteryCycleDataset(battery_ids=[all_bats[0]], initial_knee_points={all_bats[0]: 0}, dataset_name=dataset, data_root=os.path.join(project_root, 'data', 'Processed'))
             if len(peek_dataset) == 0:
                 print(f"Warning: No data to peek num_features for {dataset}-{batch}. Skipping.")
                 continue
             features_sample, _, _ = peek_dataset[0]
             actual_num_features = features_sample.shape[-1]
             
-            model = TimeSeriesTransformer(num_features=actual_num_features).to(device)
+            from utils.hpo_utils import get_model_params
+            best_params = get_model_params(project_root, dataset, batch, "TST")
+            if best_params:
+                model = TimeSeriesTransformer(num_features=actual_num_features, **best_params).to(device)
+            else:
+                model = TimeSeriesTransformer(num_features=actual_num_features).to(device)
             model.load_state_dict(torch.load(model_path, map_location=device, weights_only=True))
             
             batch_kpd_dir = os.path.join(kpd_out_dir, dataset, batch)

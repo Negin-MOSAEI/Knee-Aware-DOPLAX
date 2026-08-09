@@ -1,121 +1,72 @@
-# Knee-Aware DOPLAX (KaDOPLAX) Battery Prognostics
+# KaDOPLAX: Knee-Aware Deep Operator and Physics-Informed Lax solver for Battery Prognostics
 
-Welcome to the **KaDOPLAX** project! This repository contains a complete, self-encapsulated, 8-phase pipeline designed for advanced State of Health (SOH) estimation and battery prognostics. 
+KaDOPLAX is a state-of-the-art, 8-phase pipeline and deep learning architecture for robust, early-stage Lithium-Ion Battery (LIB) State of Health (SOH) estimation and Knee Point Discovery (KPD). 
 
-By introducing Knee-Point Distance (KPD) awareness into the state-of-the-art DeepOPINN and Bagging MLP models, KaDOPLAX achieves unprecedented accuracy across diverse battery chemistries (NCA, NCM, LFP) and testing environments (HUST, MIT, TJU, XJTU).
+By intrinsically coupling Physics-Informed Neural Networks (PINNs) via the DeepOPINN framework, the Hopf-Lax mathematical theory for solving Non-Linear PDEs, and a Bagging MLP for predictive fusion, this repository guarantees a strict **Zero Data Leakage** policy while establishing new benchmarks for reliable early-cycle battery health forecasting.
 
----
+## 🌟 Key Features
+- **Strict Two-Phase Fusion Training Strategy:** Completely distinct training phases for independent feature extraction pipelines (DeepOPINN + LAX) and their subsequent amalgamation (Bagging MLP).
+- **Zero Data Leakage Inference:** Predicts missing Knee Point Distribution (KPD) parameters for unseen test batteries purely from a robust Transformer (TST) predictor using early cycles (e.g. 1-40). No target SOH or KPD leaks into any phase of inference.
+- **Physical Capacity Nominalization:** Accurately anchors relative SOH calculations against dataset-specific physical battery chemistries (XJTU: 2.0Ah, MIT: 1.1Ah, HUST: 1.1Ah, TJU: 3.5Ah/2.5Ah).
+- **Automated Bayesian HPO:** Native integration with `Optuna` for extensive hyperparameter exploration, tuning architecture dimensionality specific to the volatility of different datasets.
 
-## 1. Project Overview
+## 🏗️ Architecture
 
-Traditional battery SOH prognostics suffer from capacity degradation "knee points"—sudden drops in capacity where underlying degradation mechanisms shift. **KaDOPLAX** explicitly targets this nonlinear phenomenon through a robust, physics-informed fusion framework:
+The KaDOPLAX architecture consists of three interconnected modules acting together under a unified pipeline constraint.
 
-1. **Time-Series Transformer (TST):** Infers the Knee-Point Distance (KPD), defined as `-arctan(c - c_k)`, which smoothly tracks how far a battery is from its knee point.
-2. **DeepOPINN:** A Deep Operator Neural Network heavily biased to capture post-knee, rapid degradation behaviors via a physics-informed `relu(-kpd)` loss function.
-3. **Bagging MLP:** A traditional machine learning model optimized to learn the slower, pre-knee degradation dynamics.
-4. **KaDOPLAX Fusion:** Dynamically merges predictions via a sinusoidal weighting mechanism, transitioning seamlessly between the Bagging MLP (pre-knee) and DeepOPINN (post-knee).
+- **Module 1 (DeepOPINN Pipeline):** A physics-informed continuous branch/trunk network (PI-Net) that predicts the hidden physics states ($u_1$) of the battery given input features and cycle index $t$.
+- **Module 2 (LAX Pipeline):** A highly specialized Hopf-Lax solver utilizing a learnable block. Generates independent condition approximations ($u_2$).
+- **Module 3 (Fusion Module):** An integrated Bagging Multi-Layer Perceptron (MLP) mapping the composite tensor `[u_1, u_2, KPD]` to the final scalar SOH estimation.
 
----
+## 🚀 The 8-Phase Prognostics Pipeline
 
-## 2. Project Structure
+Execution is entirely automated through the `run_all.py` master orchestrator script. 
 
-The codebase is entirely encapsulated inside the main folder.
+1. **Phase 1: Train TST (Time Series Transformer)**
+   - Learns to map raw early-cycle features directly to an explicit continuous Knee Point Distribution (KPD).
+2. **Phase 2: Infer KPD**
+   - Applies the pre-trained TST on *all* dataset variants to predict their inferred KPDs. This inferred parameter replaces Ground Truth entirely for later fusion to prevent leakage.
+3. **Phase 3: Train DeepOPINN**
+   - Optimizes the physics-informed BranchNet + TrunkNet modules individually for each battery cross-section.
+4. **Phase 4: Train LAX Module**
+   - Optimizes the Hopf-Lax sub-network mapping to discover secondary topological degradation pathways.
+5. **Phase 5: Train Fusion MLP**
+   - Locks the gradients of both DeepOPINN and LAX. Feeds combinations of $u_1$, $u_2$, and the *Inferred KPD (from Phase 2)* to the Bagging MLP.
+6. **Phase 6: Final SOH Estimation & Plotting**
+   - Inference-only extraction. SOH is estimated for test-set batteries. Smooths final outputs using dynamic Savitzky-Golay filters. 
+7. **Phase 7: Inference KPI Reporting**
+   - Calculates comprehensive metric evaluations (RMSE, MAE, R², MAPE, Max Error) and aggregates them into `outputs/final_results/aggregated_metrics.csv`.
+8. **Phase 8: Project Cleanup**
+   - Archives raw epoch plots and clears intermediate caches for memory efficiency.
 
-```text
-DOPLAX-SOH-main 4/
-├── config/                 # Dynamic configurations and train/test splits (Phase 0)
-├── data/
-│   └── Processed/          # Processed CSVs grouped by dataset (HUST, MIT, TJU, XJTU)
-├── dataloader/
-│   └── dataloader.py       # Robust, CUDA-aware dataset loader with dynamic windowing
-├── Model/
-│   ├── Backbones/          # Contains Bagging MLP and Time-Series Transformer (TST)
-│   └── PI_nets/            # Contains the DeepOPINN physics-informed networks
-├── outputs/                # Sandbox for all pipeline artifacts (Models, figures, reports)
-├── pipeline/               # The isolated scripts for all 8 distinct execution phases
-└── run_all.py              # The master orchestrator script for autonomous end-to-end execution
+## 🛠️ Usage & Execution
+
+### 1. Requirements & Setup
+All requisite modules exist under standard machine-learning Python distributions:
+```bash
+pip install torch numpy pandas scikit-learn scipy matplotlib deepxde optuna
 ```
 
----
-
-## 3. Model Architectures & Data Flow
-
-### Diagram 1: Model Architecture Flow
-The following diagram demonstrates the internal inference relationships and fusion mechanisms:
-
-```mermaid
-graph TD
-    A[Battery Cycle Features] --> B[Time-Series Transformer]
-    B -->|Predicts| C(Predicted KPD)
-    
-    A --> D[DeepOPINN]
-    A --> E[Bagging MLP]
-    
-    C -->|Physics-Informed Loss: relu-KPD| D
-    C -->|Sinusoidal Fusion Weighting: sin-KPD| F[KaDOPLAX Fusion]
-    
-    D -->|Pre-Knee: Low Weight, Post-Knee: High Weight| F
-    E -->|Pre-Knee: High Weight, Post-Knee: Low Weight| F
-    
-    F --> G([Final Predicted SOH])
-```
-
----
-
-## 4. Training & Inference Process
-
-The execution is governed by a strict **8-Phase Pipeline** (`phase0` through `phase7`). This sequential design strictly enforces **Zero Data Leakage**—guaranteeing that downstream models never "cheat" by using ground-truth parameters that wouldn't be available in real-world deployment.
-
-### Diagram 2: Training Pipeline
-During training, the pipeline explicitly trains the TST (Phase 1) and generates the *inferred* KPD sequences (Phase 2), which are then forcefully injected into the DeepOPINN training (Phase 3). 
-
-```mermaid
-flowchart LR
-    A[CSV Data] --> B[BatteryCycleDataset]
-    B -->|True SOH, Features| C[Model Training]
-    
-    C -->|Phase 1| D[Train TST]
-    C -->|Phase 3| E[Train DeepOPINN]
-    C -->|Phase 4| F[Train Bagging MLP]
-    
-    D -.->|Inferred KPD (Phase 2)| E
-    
-    E --> G[(Saved Model Checkpoints)]
-    F --> G
-```
-
-### Diagram 3: Inference Pipeline
-In Phase 6, the pipeline executes the final fusion. The dataloader extracts unseen testing cycles, the models predict their respective SOH curves, and the previously inferred KPD strictly governs the sinusoidal fusion. The final exports (`.npz`) encapsulate all predictions for reproducible reporting.
-
-```mermaid
-sequenceDiagram
-    participant Data as DataLoader
-    participant P2 as Phase 2: Infer KPD
-    participant P6 as Phase 6: Final SOH
-    participant Out as Output File
-    
-    Data->>P2: Unseen Features
-    P2-->>P2: TST Inference
-    P2->>Out: Save *_kpd.npy
-    
-    Data->>P6: Unseen Features
-    Out->>P6: Load Inferred *_kpd.npy (Zero Leakage)
-    
-    P6-->>P6: DeepOPINN Inference
-    P6-->>P6: Bagging MLP Inference
-    P6-->>P6: KaDOPLAX Fusion (sin(-kpd))
-    P6->>Out: Save *_preds.npz (True SOH, Predicted SOH, KPD)
-```
-
----
-
-## Quick Start
-
-To execute the entire 8-Phase framework autonomously:
-1. Ensure you have the datasets positioned in `data/Processed/`.
-2. Activate your PyTorch/DeepXDE environment.
-3. Run the master orchestrator from the project root:
-
+### 2. Standard Training & Evaluation
+To execute the comprehensive 8-Phase training pipeline for all configured datasets (XJTU, MIT, HUST, TJU):
 ```bash
 python run_all.py
 ```
+Outputs, models, generated SOH plots, and aggregated evaluation KPIs will automatically be structured in the `/outputs` directory.
+
+### 3. Hyperparameter Optimization (HPO)
+To run automated Bayesian Architecture searches via Optuna (optimizing hidden layers, depths, and learning rates):
+```bash
+python run_hpo.py
+```
+This saves optimized layer topologies internally to `config/optimized_architectures.json`, which the 8-Phase pipeline automatically detects and scales to dynamically.
+
+## 📂 Repository Structure
+
+- `Model/` - All KaDOPLAX network layers (`Backbones/`, `Auxiliary_nets/`, `Combination_nets/`).
+- `pipeline/` - Scripts dividing execution into logical phase segments (1 through 8).
+- `dataloader/` - Contains parsing scripts, specialized normalizers, and the crucial capacity-anchored `BatteryCycleDataset`.
+- `config/` - Houses JSON profiles dictating train-test splits and optimized network geometries.
+- `outputs/` - Generated metrics, figures, un-normalized KPD predictions, and model states (`.pt`).
+- `run_all.py` - Master orchestrator for the KaDOPLAX end-to-end framework.
+- `run_hpo.py` - Standalone manager for iterative architecture search loops.

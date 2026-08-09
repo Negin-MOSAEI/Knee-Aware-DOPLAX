@@ -24,9 +24,11 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 
 class Model(nn.Module):
-    def __init__(self, args, save_args=True):
+    def __init__(self, args, save_args=True, **kwargs):
         super(Model, self).__init__()
         self.args = args
+        for k, v in kwargs.items():
+            setattr(self.args, k, v)
         
         # Create CUDA generator for DataLoaders
         self.generator = torch.Generator(device=device)
@@ -317,6 +319,39 @@ class Model(nn.Module):
         return u, f
 
 
+    def initialize_networks(self, m):
+        if self.extractor_deepopinn is not None: return
+        self.m = m
+        layer_sizes_branch = [self.m] + [self.args.F_hidden_dim] * (self.args.F_layers_num - 1)
+        layer_sizes_trunk = [self.args.dim_x] + [self.args.F_hidden_dim] * (self.args.F_layers_num - 1)
+        self.extractor_deepopinn = dde.nn.DeepONetCartesianProd(
+            layer_sizes_branch=layer_sizes_branch, 
+            layer_sizes_trunk=layer_sizes_trunk,
+            activation="relu",
+            kernel_initializer="Glorot normal"
+        ).to(device)
+        self.optimizer_extractor = torch.optim.Adam(self.extractor_deepopinn.parameters(), lr=self.args.warmup_lr * 0.1)
+        self.solution_u = Solution_u(
+            input_dim=self.m,
+            layers_num=self.args.F_layers_num,
+            hidden_dim=60,
+            dropout=self.args.dropout
+        ).to(device)
+        self.optimizer_solution = torch.optim.Adam(params=self.solution_u.parameters(), lr=self.args.warmup_lr)
+        input_dim = (self.m-1)*2+(3)
+        if self.args.F_hidden_dim <= 20:
+            hidden_dim_F = self.args.F_hidden_dim
+        else:
+            hidden_dim_F = self.args.F_hidden_dim * 2
+        self.dynamical_F_deepopinn = MLP(
+            input_dim=input_dim,
+            output_dim=1,
+            layers_num=self.args.F_layers_num,
+            hidden_dim=hidden_dim_F,
+            dropout=self.args.dropout
+        ).to(device)
+        self.optimizer_F = torch.optim.Adam(params=self.dynamical_F_deepopinn.parameters(), lr=self.args.lr_F)
+
     def train_one_epoch(self, epoch, dataloader):
         self.train()
 
@@ -329,33 +364,7 @@ class Model(nn.Module):
             x1, target_kpd, target_soh = x1.to(device), target_kpd.to(device), target_soh.to(device)
 
             if self.extractor_deepopinn is None:
-                self.m = x1.shape[1]
-                layer_sizes_branch = [self.m] + [self.args.F_hidden_dim] * (self.args.F_layers_num - 1)
-                layer_sizes_trunk = [self.args.dim_x] + [self.args.F_hidden_dim] * (self.args.F_layers_num - 1)
-                self.extractor_deepopinn = dde.nn.DeepONetCartesianProd(
-                    layer_sizes_branch=layer_sizes_branch, 
-            	    layer_sizes_trunk=layer_sizes_trunk,
-            	    activation="relu",
-            	    kernel_initializer="Glorot normal"
-            	).to(device)
-                self.optimizer_extractor = torch.optim.Adam(self.extractor_deepopinn.parameters(), lr=self.args.warmup_lr * 0.1)
-                self.solution_u = Solution_u(
-                    input_dim=self.m,
-                    layers_num=self.args.F_layers_num,
-                    hidden_dim=60,
-                    dropout=self.args.dropout
-                ).to(device)
-                self.optimizer_solution = torch.optim.Adam(params=self.solution_u.parameters(), lr=self.args.warmup_lr)
-                input_dim = (self.m-1)*2+(3)
-                if self.args.F_hidden_dim <= 20:
-                    hidden_dim_F = self.args.F_hidden_dim
-                else:
-                    hidden_dim_F = self.args.F_hidden_dim*2
-                self.dynamical_F_deepopinn = MLP(input_dim=input_dim,output_dim=1,
-                                       layers_num=self.args.F_layers_num, 
-                                       hidden_dim=hidden_dim_F,
-                                       dropout=self.args.dropout).to(device)
-                self.optimizer_F = torch.optim.Adam(self.dynamical_F_deepopinn.parameters(), lr=self.args.lr_F)
+                self.initialize_networks(x1.shape[1])
 
                 self.scheduler = LR_Scheduler(
                     optimizer=self.optimizer_solution, 
@@ -367,6 +376,10 @@ class Model(nn.Module):
                 )
                 
             u1, f1 = self.forward_deepopinn(x1)
+            
+            u1 = u1.view(-1, 1)
+            target_soh = target_soh.view(-1, 1)
+            target_kpd = target_kpd.view(-1, 1)
             
             # Knee-Aware weighting
             weight = self.relu(-target_kpd)

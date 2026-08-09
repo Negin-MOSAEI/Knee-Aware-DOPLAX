@@ -374,13 +374,30 @@ class BatteryCycleDataset(torch.utils.data.Dataset):
         self.data_dir = os.path.join(self.data_root, f"{self.dataset_name} data")
         self._load_and_process_data()
 
-    def _calculate_soh(self, raw_data_matrix):
-        """Dynamic SOH calculation: SOH = Capacity_current / Capacity_initial"""
-        capacity = raw_data_matrix[:, self.capacity_column_index]
-        initial_capacity = capacity[0]
-        if initial_capacity == 0:
-            initial_capacity = 1e-6 # prevent division by zero
-        soh = capacity / initial_capacity
+    def _calculate_soh(self, raw_data_matrix, bat_id):
+        # Calculate SOH as capacity / initial capacity
+        # Assume capacity is the last column
+        capacity = raw_data_matrix[:, -1]
+        
+        # Determine nominal capacity
+        if self.dataset_name == 'XJTU':
+            nominal_capacity = 2.0
+        elif self.dataset_name == 'MIT':
+            nominal_capacity = 1.1
+        elif self.dataset_name == 'HUST':
+            nominal_capacity = 1.1
+        elif self.dataset_name == 'TJU':
+            if 'NCM_NCA' in bat_id:
+                nominal_capacity = 2.5
+            elif 'NCA' in bat_id or 'NCM' in bat_id:
+                nominal_capacity = 3.5
+            else:
+                nominal_capacity = 3.5 # Fallback for TJU
+        else:
+            # Fallback for unknown datasets
+            nominal_capacity = capacity[0] if capacity[0] != 0 else 1e-6
+            
+        soh = capacity / nominal_capacity
         return soh
         
     def _load_and_process_data(self):
@@ -399,7 +416,7 @@ class BatteryCycleDataset(torch.utils.data.Dataset):
                 df = df.reset_index(drop=True)
                 
                 raw_data_matrix = df.values
-                soh = self._calculate_soh(raw_data_matrix)
+                soh = self._calculate_soh(raw_data_matrix, bat_id)
                 
                 num_cycles = raw_data_matrix.shape[0]
                 

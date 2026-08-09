@@ -19,7 +19,7 @@ def run_phase7(project_root: str):
     print("Starting Phase 7: Inference KPI Reporting...")
     
     config_dir = os.path.join(project_root, 'config')
-    preds_dir = os.path.join(project_root, 'outputs', 'predictions')
+    preds_dir = os.path.join(project_root, 'outputs', 'final_results')
     reports_dir = os.path.join(project_root, 'outputs', 'reports', 'inference_kpis')
     
     with open(os.path.join(config_dir, 'train_test_split.json'), 'r') as f:
@@ -35,15 +35,15 @@ def run_phase7(project_root: str):
             test_bats = train_test_split[dataset][batch]['test']
             
             for bat_id in test_bats:
-                pred_file = os.path.join(preds_dir, dataset, batch, f"{bat_id.replace('/', '_')}_preds.npz")
+                pred_file = os.path.join(preds_dir, dataset, batch, f"{bat_id.replace('/', '_')}_results.npz")
                 if not os.path.exists(pred_file):
                     continue
                     
                 data = np.load(pred_file)
                 true_soh = data['true_soh']
                 
-                for method in ['lax', 'deepopinn', 'kadoplax', 'post_kadoplax']:
-                    pred_soh = data[method]
+                for method, key in [('KaDOPLAX', 'predicted_soh'), ('Post_KaDOPLAX', 'post_processed_soh')]:
+                    pred_soh = data[key]
                     rmse = calculate_rmse(true_soh, pred_soh)
                     mae = calculate_mae(true_soh, pred_soh)
                     mape = calculate_mape(true_soh, pred_soh)
