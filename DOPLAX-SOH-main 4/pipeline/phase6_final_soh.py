@@ -3,6 +3,24 @@ import json
 import torch
 import numpy as np
 import matplotlib.pyplot as plt
+
+import matplotlib as mpl
+mpl.rcParams.update({
+    "font.family": "Times New Roman",
+    "font.size": 18,
+    "axes.titlesize": 18,
+    "axes.labelsize": 18,
+    "xtick.labelsize": 18,
+    "ytick.labelsize": 18,
+    "legend.fontsize": 18,
+    "figure.dpi": 300,
+    "savefig.dpi": 300,
+    "axes.linewidth": 0.8,
+    "lines.linewidth": 2,
+    "figure.autolayout": True,
+})
+
+import sys
 from scipy.signal import savgol_filter
 
 from Model.Combination_nets.KaDOPLAX import KaDOPLAX
@@ -23,6 +41,10 @@ def run_phase6(project_root: str):
     figures_dir = os.path.join(project_root, 'outputs', 'figures', 'final_soh')
     results_out_dir = os.path.join(project_root, 'outputs', 'final_results')
     os.makedirs(results_out_dir, exist_ok=True)
+    
+    if project_root not in sys.path:
+        sys.path.append(project_root)
+    from post_proc import postprocess_capacity
     
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
@@ -50,7 +72,7 @@ def run_phase6(project_root: str):
             # Load KaDOPLAX
             try:
                 # 1. DeepOPINN
-                args_do = ArgsMock()
+                args_do = ArgsMock(project_root)
                 from utils.hpo_utils import get_model_params
                 best_params_do = get_model_params(project_root, dataset, batch, "DeepOPINN")
                 if best_params_do:
@@ -87,9 +109,9 @@ def run_phase6(project_root: str):
                 # 3. Fusion MLP
                 best_params_mlp = get_model_params(project_root, dataset, batch, "FusionMLP")
                 if best_params_mlp:
-                    bagging_mlp = BaggingMLP(num_models=5, input_dim=3, **best_params_mlp).to(device)
+                    bagging_mlp = BaggingMLP(input_dim=3, **best_params_mlp).to(device)
                 else:
-                    bagging_mlp = BaggingMLP(num_models=5, input_dim=3, hidden_dim=64, num_layers=3).to(device)
+                    bagging_mlp = BaggingMLP(input_dim=3, hidden_dim=64, num_layers=3).to(device)
                 
                 model = KaDOPLAX(deepopinn, lax, bagging_mlp).to(device)
                 kadoplax_state_dict = torch.load(os.path.join(models_dir, f'kadoplax_{dataset}_{batch}.pt'), map_location=device, weights_only=True)
@@ -142,12 +164,16 @@ def run_phase6(project_root: str):
                     u_2_out = u_2_tensor.cpu().detach().numpy().flatten()
                     std_pred = std_pred_tensor.cpu().detach().numpy().flatten()
                     
-                    # Post-processing (Savitzky-Golay filter)
-                    window_length = min(51, valid_len if valid_len % 2 != 0 else valid_len - 1)
-                    if window_length > 3:
-                        post_kadoplax_soh = savgol_filter(kadoplax_soh, window_length, 3)
-                    else:
-                        post_kadoplax_soh = kadoplax_soh
+                    # Post-processing (Advanced Filter)
+                    post_kadoplax_soh = postprocess_capacity(
+                        kadoplax_soh,
+                        jump_thresh=0.02,
+                        hampel_window=100,
+                        savgol_window=50,
+                        polyorder=2,
+                        monotonic=False,
+                        clip=None
+                    )
                         
                     # Save explicitly as requested
                     save_path_npz = os.path.join(batch_results_dir, f"{bat_id.replace('/', '_')}_results.npz")
@@ -157,44 +183,6 @@ def run_phase6(project_root: str):
                     split_label = "[TRAIN]" if is_train else "[TEST]"
                     cycles = np.arange(1, valid_len + 1)
                     bg_color = '#eaffea' if is_train else '#ffeaea'
-
-                    # Plot A: Comprehensive KPD vs SOH Trajectory
-                    bat_key = bat_id.split('/')[-1]
-                    if dataset in initial_knee_points and batch in initial_knee_points[dataset] and bat_key in initial_knee_points[dataset][batch]:
-                        true_knee = initial_knee_points[dataset][batch][bat_key]
-                    else:
-                        true_knee = 100
-                        
-                    true_kpd_seq = []
-                    for c in cycles:
-                        if c < dataset_obj.window_size:
-                            true_kpd_seq.append(1.5) # cold start
-                        else:
-                            true_kpd_seq.append(-np.arctan(c - true_knee))
-                            
-                    fig_kpd, ax_kpd = plt.subplots(figsize=(10, 5))
-                    ax_kpd.set_facecolor(bg_color)
-                    
-                    ax2 = ax_kpd.twinx()
-                    
-                    line1 = ax_kpd.plot(cycles, true_soh[:valid_len], color='black', linewidth=2, linestyle='--', label='Ground Truth SOH')
-                    line2 = ax2.plot(cycles, true_kpd_seq[:valid_len], color='green', linewidth=2, label='True KPD')
-                    line3 = ax2.plot(cycles, kpd_seq[:valid_len], color='red', linewidth=1.5, linestyle=':', label='Predicted KPD (TST)')
-                    
-                    ax_kpd.set_xlabel('Cycle', fontsize=12)
-                    ax_kpd.set_ylabel('State of Health (SOH)', color='black', fontsize=12)
-                    ax2.set_ylabel('Knee Point Distance (KPD)', color='red', fontsize=12)
-                    
-                    plt.title(f'Plot A: KPD vs SOH Trajectory {split_label} - {dataset} ({batch}) - {bat_id}', fontsize=14, fontweight='bold')
-                    
-                    lines = line1 + line2 + line3
-                    labels = [l.get_label() for l in lines]
-                    ax_kpd.legend(lines, labels, loc='best', fontsize=10)
-                    
-                    ax_kpd.grid(True, linestyle=':', alpha=0.6)
-                    plt.tight_layout()
-                    plt.savefig(os.path.join(batch_fig_dir, f"{bat_id.replace('/', '_')}_Plot_A_KPD.png"), dpi=150, bbox_inches='tight')
-                    plt.close(fig_kpd)
 
                     # Plot B: Comprehensive SOH Comparison
                     fig_soh, ax_soh = plt.subplots(figsize=(14, 8))
@@ -215,10 +203,10 @@ def run_phase6(project_root: str):
                     ax_soh.plot(cycles, post_kadoplax_soh, label='Post-Processed KaDOPLAX', color='green', linewidth=2.5)
                     
                     plt.title(f'Plot B: Comprehensive SOH Comparison {split_label}\n{dataset} ({batch}) - {bat_id}', fontsize=16, fontweight='bold')
-                    plt.xlabel('Cycle', fontsize=14)
-                    plt.ylabel('State of Health (SOH)', fontsize=14)
-                    plt.grid(True, linestyle=':', alpha=0.6)
-                    plt.legend(loc='best', fontsize=12)
+                    ax_soh.set_xlabel('Cycle', fontsize=14, fontweight='bold')
+                    ax_soh.set_ylabel('State of Health (SOH)', fontsize=14, fontweight='bold')
+                    ax_soh.tick_params(axis='both', which='major', labelsize=12)
+                    ax_soh.legend(loc='best', fontsize=12)
                     
                     plt.tight_layout()
                     plt.savefig(os.path.join(batch_fig_dir, f"{bat_id.replace('/', '_')}_Plot_B_SOH.png"), dpi=150, bbox_inches='tight')

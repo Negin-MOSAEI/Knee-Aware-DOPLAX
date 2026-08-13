@@ -9,6 +9,23 @@ from Model.Auxiliary_nets.MLP import MLP
 from Model.utils.lr_schedulers import LR_Scheduler
 from Model.utils.activation_functions import Sin
 import matplotlib.pyplot as plt
+
+import matplotlib as mpl
+mpl.rcParams.update({
+    "font.family": "Times New Roman",
+    "font.size": 18,
+    "axes.titlesize": 18,
+    "axes.labelsize": 18,
+    "xtick.labelsize": 18,
+    "ytick.labelsize": 18,
+    "legend.fontsize": 18,
+    "figure.dpi": 300,
+    "savefig.dpi": 300,
+    "axes.linewidth": 0.8,
+    "lines.linewidth": 2,
+    "figure.autolayout": True,
+})
+
 import seaborn as sns
 sns.set_style('darkgrid')
 import os

@@ -1,4 +1,21 @@
 import matplotlib.pyplot as plt
+
+import matplotlib as mpl
+mpl.rcParams.update({
+    "font.family": "Times New Roman",
+    "font.size": 18,
+    "axes.titlesize": 18,
+    "axes.labelsize": 18,
+    "xtick.labelsize": 18,
+    "ytick.labelsize": 18,
+    "legend.fontsize": 18,
+    "figure.dpi": 300,
+    "savefig.dpi": 300,
+    "axes.linewidth": 0.8,
+    "lines.linewidth": 2,
+    "figure.autolayout": True,
+})
+
 import os
 from typing import List
 
@@ -69,3 +86,34 @@ def plot_soh_with_knee(
     save_path = os.path.join(save_dir, f"{battery_id}_soh_knee.png")
     plt.savefig(save_path)
     plt.close()
+
+import pandas as pd
+
+def plot_learning_curve(train_losses, val_losses, model_name, dataset, batch, save_dir):
+    os.makedirs(save_dir, exist_ok=True)
+    
+    epochs = range(1, len(train_losses) + 1)
+    
+    plt.figure(figsize=(10, 6))
+    plt.plot(epochs, train_losses, 'b-', label='Training Loss')
+    if val_losses and len(val_losses) == len(train_losses):
+        plt.plot(epochs, val_losses, 'r-', label='Validation Loss')
+        
+    plt.title(f'Learning Curve: {model_name} ({dataset} - {batch})')
+    plt.xlabel('Epochs')
+    plt.ylabel('Loss')
+    plt.grid(True)
+    plt.legend()
+    
+    save_path = os.path.join(save_dir, f"{model_name}_{dataset}_{batch}_learning_curve.png")
+    plt.savefig(save_path)
+    plt.close()
+
+def save_loss_history(train_losses, val_losses, model_name, dataset, batch, save_dir):
+    os.makedirs(save_dir, exist_ok=True)
+    df = pd.DataFrame({'Epoch': range(1, len(train_losses) + 1), 'Train_Loss': train_losses})
+    if val_losses and len(val_losses) == len(train_losses):
+        df['Val_Loss'] = val_losses
+        
+    save_path = os.path.join(save_dir, f"{model_name}_{dataset}_{batch}_loss_history.csv")
+    df.to_csv(save_path, index=False)

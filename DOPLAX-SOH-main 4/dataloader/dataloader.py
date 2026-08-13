@@ -436,7 +436,7 @@ class BatteryCycleDataset(torch.utils.data.Dataset):
                         pad_len = self.window_size - current_cycle
                         pad = np.tile(raw_data_matrix[0, :self.num_features], (pad_len, 1))
                         window_data = np.vstack([pad, raw_data_matrix[:current_cycle, :self.num_features]])
-                        kpd = tst_cold_start_kpd(current_cycle)
+                        kpd = tst_cold_start_kpd(current_cycle, knee_point_cycle)
                     else:
                         window_data = raw_data_matrix[current_cycle - self.window_size:current_cycle, :self.num_features]
                         kpd = calculate_kpd(current_cycle, knee_point_cycle)

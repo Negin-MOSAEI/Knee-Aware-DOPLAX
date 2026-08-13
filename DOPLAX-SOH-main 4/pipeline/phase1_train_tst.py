@@ -54,6 +54,9 @@ def run_phase1(project_root: str, num_epochs: int = 5, batch_size: int = 32):
             
             # Retrieve train batteries and knee points for this specific batch
             train_bats = train_test_split[dataset][batch]['train']
+            val_bats = train_test_split[dataset][batch].get('val', [])
+            if not val_bats:
+                val_bats = train_test_split[dataset][batch]['test']
             knee_points_batch = initial_knee_points[dataset][batch]
             
             # Initialize KPI Tracker
@@ -67,6 +70,16 @@ def run_phase1(project_root: str, num_epochs: int = 5, batch_size: int = 32):
                 data_root=os.path.join(project_root, 'data', 'Processed'),
                 batch_size=batch_size,
                 shuffle=True,
+                window_size=40
+            )
+            
+            val_dataloader = get_dataloader(
+                battery_ids=val_bats,
+                initial_knee_points=knee_points_batch,
+                dataset_name=dataset,
+                data_root=os.path.join(project_root, 'data', 'Processed'),
+                batch_size=batch_size,
+                shuffle=False,
                 window_size=40
             )
             
@@ -93,9 +106,16 @@ def run_phase1(project_root: str, num_epochs: int = 5, batch_size: int = 32):
             criterion = nn.MSELoss()
             optimizer = optim.Adam(model.parameters(), lr=1e-3)
             
+            from utils.plot_utils import plot_learning_curve, save_loss_history
+            
             # Training loop
-            model.train()
+            train_losses = []
+            val_losses = []
+            best_val_loss = float('inf')
+            best_model_state = None
+            
             for epoch in range(num_epochs):
+                model.train()
                 epoch_loss = 0.0
                 for features, target_kpd, _ in dataloader:
                     features = features.to(device)
@@ -115,11 +135,40 @@ def run_phase1(project_root: str, num_epochs: int = 5, batch_size: int = 32):
                     # Update RAM usage tracking periodically
                     kpi_tracker.update_ram()
                     
-                print(f"Epoch [{epoch+1}/{num_epochs}], Loss: {epoch_loss/len(dataloader):.4f}")
+                avg_loss = epoch_loss/len(dataloader)
+                train_losses.append(avg_loss)
+                
+                # Validation loop
+                model.eval()
+                val_loss = 0.0
+                with torch.no_grad():
+                    for features, target_kpd, _ in val_dataloader:
+                        features = features.to(device)
+                        target_kpd = target_kpd.to(device).view(-1, 1)
+                        outputs = model(features).view(-1, 1)
+                        loss = criterion(outputs, target_kpd)
+                        val_loss += loss.item()
+                        
+                avg_val_loss = val_loss / max(1, len(val_dataloader))
+                val_losses.append(avg_val_loss)
+                
+                print(f"Epoch [{epoch+1}/{num_epochs}], Train Loss: {avg_loss:.4f}, Val Loss: {avg_val_loss:.4f}")
+                
+                if avg_val_loss < best_val_loss:
+                    best_val_loss = avg_val_loss
+                    best_model_state = {k: v.cpu().clone() for k, v in model.state_dict().items()}
+                    
+            if best_model_state is not None:
+                model.load_state_dict(best_model_state)
             
             # Stop KPI tracking
             kpi_metrics = kpi_tracker.stop()
             kpi_report[dataset][batch] = kpi_metrics
+            
+            # Save learning curves
+            learning_curve_dir = os.path.join(project_root, 'experiments', 'tst_experiments')
+            plot_learning_curve(train_losses, val_losses, "TST", dataset, batch, os.path.join(project_root, 'outputs', 'figures', 'learning_curves'))
+            save_loss_history(train_losses, val_losses, "TST", dataset, batch, learning_curve_dir)
             
             # Save Model Weights
             model_save_path = os.path.join(models_dir, f'tst_{dataset}_{batch}.pt')

@@ -19,8 +19,9 @@ DATASETS = {
 }
 
 class ArgsMock:
-    def __init__(self):
-        self.save_folder = None
+    def __init__(self, project_root):
+        self.save_folder = os.path.join(project_root, 'experiments', 'deepopinn_experiments')
+        os.makedirs(self.save_folder, exist_ok=True)
         self.log_dir = "logs"
         self.data = "XJTU"
         
@@ -143,7 +144,7 @@ def run_phase3(project_root: str, num_epochs: int = 5, batch_size: int = 64):
         
     kpi_report = {}
     
-    args = ArgsMock()
+    args = ArgsMock(project_root)
     args.epochs = num_epochs
     args.batch_size = batch_size
     
@@ -153,9 +154,14 @@ def run_phase3(project_root: str, num_epochs: int = 5, batch_size: int = 64):
             print(f"\n--- Training DeepOpinn for {dataset} - {batch} ---")
             
             train_bats = train_test_split[dataset][batch]['train']
+            val_bats = train_test_split[dataset][batch].get('val', [])
+            if not val_bats:
+                val_bats = train_test_split[dataset][batch]['test']
+                
             batch_kpd_dir = os.path.join(kpd_out_dir, dataset, batch)
             
             dataset_obj = DeepOpinnDataset(train_bats, batch_kpd_dir, dataset, project_root)
+            val_dataset_obj = DeepOpinnDataset(val_bats, batch_kpd_dir, dataset, project_root)
             
             if len(dataset_obj) == 0:
                 print("No data found for this batch. Skipping.")
@@ -163,12 +169,13 @@ def run_phase3(project_root: str, num_epochs: int = 5, batch_size: int = 64):
                 
             generator = torch.Generator(device='cuda' if torch.cuda.is_available() else 'cpu')
             dataloader = DataLoader(dataset_obj, batch_size=batch_size, shuffle=True, generator=generator)
+            val_dataloader = DataLoader(val_dataset_obj, batch_size=batch_size, shuffle=False)
             
             kpi_tracker = KPITracker()
             kpi_tracker.start(num_batteries=len(train_bats), total_cycles=len(dataset_obj))
             
             # Initialize Model
-            args = ArgsMock()
+            args = ArgsMock(project_root)
             from utils.hpo_utils import get_model_params
             best_params = get_model_params(project_root, dataset, batch, "DeepOPINN")
             if best_params:
@@ -177,12 +184,41 @@ def run_phase3(project_root: str, num_epochs: int = 5, batch_size: int = 64):
             else:
                 model = DeepOpinn(args, save_args=False).to(device)
             
+            from utils.plot_utils import plot_learning_curve, save_loss_history
+            
+            train_losses = []
+            val_losses = []
+            best_val_loss = float('inf')
+            best_model_state = None
+            
             for epoch in range(num_epochs):
-                model.train_one_epoch(epoch, dataloader)
+                loss1, loss2, loss3 = model.train_one_epoch(epoch, dataloader)
+                total_loss = loss1 + model.args.alpha * loss2 + model.args.beta * loss3
+                train_losses.append(total_loss)
+                
+                valid_mse, vloss1, vloss2, vloss3 = model.Valid(epoch, val_dataloader, log_losses=True)
+                if vloss1 is None: 
+                    val_total = valid_mse # Fallback
+                else:
+                    val_total = vloss1 + model.args.alpha * vloss2 + model.args.beta * vloss3
+                val_losses.append(val_total)
+                
                 kpi_tracker.update_ram()
+                print(f"Epoch [{epoch+1}/{num_epochs}], Train Loss: {total_loss:.6f}, Val Loss: {val_total:.6f}")
+                
+                if val_total < best_val_loss:
+                    best_val_loss = val_total
+                    best_model_state = {k: v.cpu().clone() for k, v in model.state_dict().items()}
+                    
+            if best_model_state is not None:
+                model.load_state_dict(best_model_state)
                 
             metrics = kpi_tracker.stop()
             kpi_report[dataset][batch] = metrics
+            
+            learning_curve_dir = os.path.join(project_root, 'experiments', 'deepopinn_experiments')
+            plot_learning_curve(train_losses, val_losses, "DeepOPINN", dataset, batch, os.path.join(project_root, 'outputs', 'figures', 'learning_curves'))
+            save_loss_history(train_losses, val_losses, "DeepOPINN", dataset, batch, learning_curve_dir)
             
             model_save_path = os.path.join(models_dir, f'deepopinn_{dataset}_{batch}.pt')
             torch.save(model.state_dict(), model_save_path)

@@ -31,9 +31,23 @@ class LaxDataset(Dataset):
             raw_data_matrix = df.values
             
             # SOH
-            capacity = raw_data_matrix[:, 0]
-            initial_capacity = capacity[0] if capacity[0] != 0 else 1e-6
-            soh = capacity / initial_capacity
+            capacity = raw_data_matrix[:, -1]
+            if dataset_name == 'XJTU':
+                nominal_capacity = 2.0
+            elif dataset_name == 'MIT':
+                nominal_capacity = 1.1
+            elif dataset_name == 'HUST':
+                nominal_capacity = 1.1
+            elif dataset_name == 'TJU':
+                if 'NCM_NCA' in bat_id:
+                    nominal_capacity = 2.5
+                elif 'NCA' in bat_id or 'NCM' in bat_id:
+                    nominal_capacity = 3.5
+                else:
+                    nominal_capacity = 3.5
+            else:
+                nominal_capacity = capacity[0] if capacity[0] != 0 else 1e-6
+            soh = capacity / nominal_capacity
             
             # For LAX, x requires features and cycle time t
             num_cycles = raw_data_matrix.shape[0]
@@ -60,7 +74,8 @@ class LaxDataset(Dataset):
 
 class ArgsMockLax:
     def __init__(self, project_root):
-        self.results_path = os.path.join(project_root, 'outputs')
+        self.results_path = os.path.join(project_root, 'experiments', 'lax_experiments')
+        os.makedirs(self.results_path, exist_ok=True)
         self.log_dir = "logs"
         self.beta_LAX = 1.0
         self.time_block_LAX = "theta"
@@ -104,27 +119,37 @@ def run_phase4(project_root: str, num_epochs: int = 5, batch_size: int = 64):
     
     config_dir = os.path.join(project_root, 'config')
     models_dir = os.path.join(project_root, 'outputs', 'models')
+    reports_dir = os.path.join(project_root, 'outputs', 'reports')
     os.makedirs(models_dir, exist_ok=True)
+    os.makedirs(reports_dir, exist_ok=True)
     
     with open(os.path.join(config_dir, 'train_test_split.json'), 'r') as f:
         train_test_split = json.load(f)
         
-    args = ArgsMockLax(project_root)
+    kpi_report = {}
     
     for dataset, batches in train_test_split.items():
+        kpi_report[dataset] = {}
         for batch in batches:
             print(f"\n--- Training LAX for {dataset} - {batch} ---")
             
+            args = ArgsMockLax(project_root)
+            
             train_bats = train_test_split[dataset][batch]['train']
+            val_bats = train_test_split[dataset][batch].get('val', [])
+            if not val_bats:
+                val_bats = train_test_split[dataset][batch]['test']
             
             dataset_obj = LaxDataset(train_bats, dataset, project_root)
+            val_dataset_obj = LaxDataset(val_bats, dataset, project_root)
             
             if len(dataset_obj) == 0:
                 print("No data found for this batch. Skipping.")
                 continue
                 
-            generator = torch.Generator(device='cuda' if torch.cuda.is_available() else 'cpu')
+            generator = torch.Generator(device='cpu')
             dataloader = DataLoader(dataset_obj, batch_size=batch_size, shuffle=True, generator=generator)
+            val_dataloader = DataLoader(val_dataset_obj, batch_size=batch_size, shuffle=False)
             
             kpi_tracker = KPITracker()
             kpi_tracker.start(num_batteries=len(train_bats), total_cycles=len(dataset_obj))
@@ -148,15 +173,42 @@ def run_phase4(project_root: str, num_epochs: int = 5, batch_size: int = 64):
             opt_net = torch.optim.Adam(model.parameters(), lr=1e-3)
             model.current_lr_y = 1e-3
             
+            from utils.plot_utils import plot_learning_curve, save_loss_history
+            train_losses = []
+            val_losses = []
+            best_val_loss = float('inf')
+            best_model_state = None
+            
             for epoch in range(num_epochs):
-                run_epoch(model, opt_net, opt_net, args, batch, dataset, epoch=epoch, phase="train", dataloader=dataloader)
+                losses = run_epoch(model, opt_net, opt_net, args, batch, dataset, epoch=epoch, phase="train", dataloader=dataloader)
+                train_losses.append(losses[0]) # MSE loss
+                
+                val_losses_tuple = run_epoch(model, opt_net, opt_net, args, batch, dataset, epoch=epoch, phase="val", dataloader=val_dataloader)
+                val_losses.append(val_losses_tuple[0])
+                
                 kpi_tracker.update_ram()
                 
-            kpi_tracker.stop()
+                if val_losses_tuple[0] < best_val_loss:
+                    best_val_loss = val_losses_tuple[0]
+                    best_model_state = {k: v.cpu().clone() for k, v in model.state_dict().items()}
+                    
+            if best_model_state is not None:
+                model.load_state_dict(best_model_state)
+                
+            metrics = kpi_tracker.stop()
+            kpi_report[dataset][batch] = metrics
+            
+            learning_curve_dir = os.path.join(project_root, 'experiments', 'lax_experiments')
+            plot_learning_curve(train_losses, val_losses, "LAX", dataset, batch, os.path.join(project_root, 'outputs', 'figures', 'learning_curves'))
+            save_loss_history(train_losses, val_losses, "LAX", dataset, batch, learning_curve_dir)
             
             model_save_path = os.path.join(models_dir, f'lax_{dataset}_{batch}.pt')
             torch.save(model.state_dict(), model_save_path)
             print(f"Saved LAX model to {model_save_path}")
+
+    with open(os.path.join(reports_dir, 'lax_training_kpis.json'), 'w') as f:
+        json.dump(kpi_report, f, indent=4)
+    print("\nPhase 4 completed successfully.")
 
 if __name__ == "__main__":
     run_phase4(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))

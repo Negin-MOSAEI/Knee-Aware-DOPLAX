@@ -3,6 +3,23 @@ import json
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+
+import matplotlib as mpl
+mpl.rcParams.update({
+    "font.family": "Times New Roman",
+    "font.size": 18,
+    "axes.titlesize": 18,
+    "axes.labelsize": 18,
+    "xtick.labelsize": 18,
+    "ytick.labelsize": 18,
+    "legend.fontsize": 18,
+    "figure.dpi": 300,
+    "savefig.dpi": 300,
+    "axes.linewidth": 0.8,
+    "lines.linewidth": 2,
+    "figure.autolayout": True,
+})
+
 import seaborn as sns
 
 from utils.metrics import calculate_rmse, calculate_mae, calculate_mape
@@ -42,7 +59,7 @@ def run_phase7(project_root: str):
                 data = np.load(pred_file)
                 true_soh = data['true_soh']
                 
-                for method, key in [('KaDOPLAX', 'predicted_soh'), ('Post_KaDOPLAX', 'post_processed_soh')]:
+                for method, key in [('DeepOPINN (u_1)', 'u_1'), ('LAX (u_2)', 'u_2'), ('KaDOPLAX', 'predicted_soh'), ('Post_KaDOPLAX', 'post_processed_soh')]:
                     pred_soh = data[key]
                     rmse = calculate_rmse(true_soh, pred_soh)
                     mae = calculate_mae(true_soh, pred_soh)
@@ -85,7 +102,21 @@ def run_phase7(project_root: str):
         plt.savefig(os.path.join(reports_dir, f'test_{metric.lower()}_comparison.png'), dpi=300)
         plt.close()
 
-    print("Phase 7 completed successfully. KPIs saved.")
+    # Generate and save Dataset Level Inference KPIs table
+    dataset_kpi = df.groupby(['Dataset', 'Method'])[['RMSE', 'MAE', 'MAPE']].mean().reset_index()
+    dataset_kpi.to_csv(os.path.join(reports_dir, 'dataset_level_kpis.csv'), index=False)
+    with open(os.path.join(reports_dir, 'dataset_level_kpis.md'), 'w') as f:
+        f.write("# Dataset Level Inference KPIs\n\n")
+        f.write(dataset_kpi.to_markdown(index=False))
+        
+    # Generate and save Batch Level Inference KPIs table
+    batch_kpi = df.groupby(['Dataset', 'Batch', 'Method'])[['RMSE', 'MAE', 'MAPE']].mean().reset_index()
+    batch_kpi.to_csv(os.path.join(reports_dir, 'batch_level_kpis.csv'), index=False)
+    with open(os.path.join(reports_dir, 'batch_level_kpis.md'), 'w') as f:
+        f.write("# Batch Level Inference KPIs\n\n")
+        f.write(batch_kpi.to_markdown(index=False))
+
+    print("Phase 7 completed successfully. KPIs and tables saved.")
 
 if __name__ == "__main__":
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))

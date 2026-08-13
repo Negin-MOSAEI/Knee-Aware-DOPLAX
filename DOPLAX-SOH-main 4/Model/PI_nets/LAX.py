@@ -6,7 +6,24 @@ import math
 import os 
 from pathlib import Path 
 from copy import deepcopy 
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
+
+import matplotlib as mpl
+mpl.rcParams.update({
+    "font.family": "Times New Roman",
+    "font.size": 18,
+    "axes.titlesize": 18,
+    "axes.labelsize": 18,
+    "xtick.labelsize": 18,
+    "ytick.labelsize": 18,
+    "legend.fontsize": 18,
+    "figure.dpi": 300,
+    "savefig.dpi": 300,
+    "axes.linewidth": 0.8,
+    "lines.linewidth": 2,
+    "figure.autolayout": True,
+})
+ 
 import numpy as np 
 from tqdm.auto import tqdm                                                            
 import pandas as pd 
@@ -264,9 +281,9 @@ class OptimizationNetwork(nn.Module):
         for k, v in kwargs.items():
             setattr(self.args, k, v)
             
-        self.random_seed = random.randint(1, 10000) # this line of code is just for keep the y input identical when we aren't on y_opt step.
-        self.X_mean = x_sts[0].to(device=device).to(torch.float32) 
-        self.X_std = x_sts[1].to(device=device).to(torch.float32) 
+        self.random_seed = random.randint(1, 10000)
+        self.register_buffer('X_mean', x_sts[0].to(device=device).to(torch.float32))
+        self.register_buffer('X_std', x_sts[1].to(device=device).to(torch.float32))
         self.x_dim = x_dim 
         self.y_dim = y_dim 
         self.d_in = x_dim + y_dim
@@ -379,12 +396,13 @@ class OptimizationNetwork(nn.Module):
         else:
             raise ValueError(f"Unknown center_block!!!")
 
+        num_s_layers = len(self.args.inside_S_MLP_layers)
         self.s_MLP = self.build_mlp(
             input_dim=input_dim_s,
             layer_dims=self.args.inside_S_MLP_layers,
             output_dim=self.args.dim_output_LAX,
-            activations=['silu', 'silu', 'silu'],
-            use_layernorm=[True, False, False]
+            activations=['silu'] * num_s_layers,
+            use_layernorm=([True] + [False] * (num_s_layers - 1)) if num_s_layers > 0 else []
         )
         self.s_Transformer = TransformerBlock(2, 1)
         self.betan = self.build_mlp(

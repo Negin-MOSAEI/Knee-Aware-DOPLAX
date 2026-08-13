@@ -54,7 +54,9 @@
                 "4-7",
                 "9-4",
                 "8-2",
-                "3-4",
+                "3-4"
+            ],
+            "val": [
                 "4-4",
                 "5-6",
                 "5-3",
@@ -62,13 +64,13 @@
                 "10-5",
                 "9-6",
                 "1-2",
-                "4-8"
-            ],
-            "test": [
+                "4-8",
                 "4-2",
                 "9-8",
                 "3-5",
-                "8-8",
+                "8-8"
+            ],
+            "test": [
                 "9-7",
                 "1-5",
                 "7-2",
@@ -118,16 +120,18 @@
                 "2017-05-12/2017-05-12_battery-41",
                 "2017-05-12/2017-05-12_battery-46",
                 "2017-05-12/2017-05-12_battery-33",
-                "2017-05-12/2017-05-12_battery-28",
+                "2017-05-12/2017-05-12_battery-28"
+            ],
+            "val": [
                 "2017-05-12/2017-05-12_battery-22",
                 "2017-05-12/2017-05-12_battery-8",
                 "2017-05-12/2017-05-12_battery-31",
-                "2017-05-12/2017-05-12_battery-36"
-            ],
-            "test": [
+                "2017-05-12/2017-05-12_battery-36",
                 "2017-05-12/2017-05-12_battery-45",
                 "2017-05-12/2017-05-12_battery-23",
-                "2017-05-12/2017-05-12_battery-40",
+                "2017-05-12/2017-05-12_battery-40"
+            ],
+            "test": [
                 "2017-05-12/2017-05-12_battery-19",
                 "2017-05-12/2017-05-12_battery-44",
                 "2017-05-12/2017-05-12_battery-13",
@@ -168,15 +172,17 @@
                 "2017-06-30/2017-06-30_battery-28",
                 "2017-06-30/2017-06-30_battery-7",
                 "2017-06-30/2017-06-30_battery-27",
-                "2017-06-30/2017-06-30_battery-25",
+                "2017-06-30/2017-06-30_battery-25"
+            ],
+            "val": [
                 "2017-06-30/2017-06-30_battery-3",
                 "2017-06-30/2017-06-30_battery-6",
                 "2017-06-30/2017-06-30_battery-34",
-                "2017-06-30/2017-06-30_battery-14"
+                "2017-06-30/2017-06-30_battery-14",
+                "2017-06-30/2017-06-30_battery-37",
+                "2017-06-30/2017-06-30_battery-21"
             ],
             "test": [
-                "2017-06-30/2017-06-30_battery-37",
-                "2017-06-30/2017-06-30_battery-21",
                 "2017-06-30/2017-06-30_battery-20",
                 "2017-06-30/2017-06-30_battery-19",
                 "2017-06-30/2017-06-30_battery-13",
@@ -212,14 +218,16 @@
                 "2018-04-12/2018-04-12_battery-38",
                 "2018-04-12/2018-04-12_battery-10",
                 "2018-04-12/2018-04-12_battery-18",
-                "2018-04-12/2018-04-12_battery-2",
+                "2018-04-12/2018-04-12_battery-2"
+            ],
+            "val": [
                 "2018-04-12/2018-04-12_battery-4",
                 "2018-04-12/2018-04-12_battery-40",
-                "2018-04-12/2018-04-12_battery-22"
+                "2018-04-12/2018-04-12_battery-22",
+                "2018-04-12/2018-04-12_battery-12",
+                "2018-04-12/2018-04-12_battery-46"
             ],
             "test": [
-                "2018-04-12/2018-04-12_battery-12",
-                "2018-04-12/2018-04-12_battery-46",
                 "2018-04-12/2018-04-12_battery-27",
                 "2018-04-12/2018-04-12_battery-34",
                 "2018-04-12/2018-04-12_battery-1",
@@ -277,19 +285,21 @@
                 "Dataset_1_NCA_battery/CY25-1_1-#7",
                 "Dataset_1_NCA_battery/CY45-05_1-#17",
                 "Dataset_1_NCA_battery/CY45-05_1-#3",
-                "Dataset_1_NCA_battery/CY25-025_1-#3",
+                "Dataset_1_NCA_battery/CY25-025_1-#3"
+            ],
+            "val": [
                 "Dataset_1_NCA_battery/CY45-05_1-#21",
                 "Dataset_1_NCA_battery/CY45-05_1-#23",
                 "Dataset_1_NCA_battery/CY25-025_1-#4",
                 "Dataset_1_NCA_battery/CY45-05_1-#11",
                 "Dataset_1_NCA_battery/CY45-05_1-#16",
-                "Dataset_1_NCA_battery/CY45-05_1-#4"
-            ],
-            "test": [
+                "Dataset_1_NCA_battery/CY45-05_1-#4",
                 "Dataset_1_NCA_battery/CY25-025_1-#1",
                 "Dataset_1_NCA_battery/CY45-05_1-#25",
                 "Dataset_1_NCA_battery/CY45-05_1-#8",
-                "Dataset_1_NCA_battery/CY45-05_1-#5",
+                "Dataset_1_NCA_battery/CY45-05_1-#5"
+            ],
+            "test": [
                 "Dataset_1_NCA_battery/CY35-05_1-#1",
                 "Dataset_1_NCA_battery/CY35-05_1-#3",
                 "Dataset_1_NCA_battery/CY25-025_1-#2",
@@ -341,17 +351,19 @@
                 "Dataset_2_NCM_battery/CY25-05_1-#5",
                 "Dataset_2_NCM_battery/CY45-05_1-#11",
                 "Dataset_2_NCM_battery/CY25-05_1-#3",
-                "Dataset_2_NCM_battery/CY45-05_1-#20",
+                "Dataset_2_NCM_battery/CY45-05_1-#20"
+            ],
+            "val": [
                 "Dataset_2_NCM_battery/CY45-05_1-#6",
                 "Dataset_2_NCM_battery/CY35-05_1-#2",
                 "Dataset_2_NCM_battery/CY45-05_1-#28",
                 "Dataset_2_NCM_battery/CY45-05_1-#9",
                 "Dataset_2_NCM_battery/CY35-05_1-#3",
-                "Dataset_2_NCM_battery/CY25-05_1-#21"
+                "Dataset_2_NCM_battery/CY25-05_1-#21",
+                "Dataset_2_NCM_battery/CY45-05_1-#12",
+                "Dataset_2_NCM_battery/CY45-05_1-#13"
             ],
             "test": [
-                "Dataset_2_NCM_battery/CY45-05_1-#12",
-                "Dataset_2_NCM_battery/CY45-05_1-#13",
                 "Dataset_2_NCM_battery/CY35-05_1-#4",
                 "Dataset_2_NCM_battery/CY25-05_1-#19",
                 "Dataset_2_NCM_battery/CY25-05_1-#23",
@@ -370,7 +382,9 @@
                 "Dataset_3_NCM_NCA_battery/CY25-05_4-#3",
                 "Dataset_3_NCM_NCA_battery/CY25-05_1-#3",
                 "Dataset_3_NCM_NCA_battery/CY25-05_4-#2",
-                "Dataset_3_NCM_NCA_battery/CY25-05_2-#2",
+                "Dataset_3_NCM_NCA_battery/CY25-05_2-#2"
+            ],
+            "val": [
                 "Dataset_3_NCM_NCA_battery/CY25-05_2-#3"
             ],
             "test": [
@@ -386,7 +400,9 @@
                 "2C_battery-5",
                 "2C_battery-8",
                 "2C_battery-7",
-                "2C_battery-4",
+                "2C_battery-4"
+            ],
+            "val": [
                 "2C_battery-3"
             ],
             "test": [
@@ -405,7 +421,9 @@
                 "3C_battery-13",
                 "3C_battery-3",
                 "3C_battery-6",
-                "3C_battery-9",
+                "3C_battery-9"
+            ],
+            "val": [
                 "3C_battery-1",
                 "3C_battery-10"
             ],
@@ -421,7 +439,9 @@
                 "R2.5_battery-5",
                 "R2.5_battery-4",
                 "R2.5_battery-7",
-                "R2.5_battery-6",
+                "R2.5_battery-6"
+            ],
+            "val": [
                 "R2.5_battery-3"
             ],
             "test": [
@@ -435,7 +455,9 @@
                 "R3_battery-2",
                 "R3_battery-4",
                 "R3_battery-8",
-                "R3_battery-3",
+                "R3_battery-3"
+            ],
+            "val": [
                 "R3_battery-5"
             ],
             "test": [
@@ -449,7 +471,9 @@
                 "RW_battery-3",
                 "RW_battery-4",
                 "RW_battery-8",
-                "RW_battery-5",
+                "RW_battery-5"
+            ],
+            "val": [
                 "RW_battery-6"
             ],
             "test": [
@@ -463,7 +487,9 @@
                 "Sim_satellite_battery-5",
                 "Sim_satellite_battery-8",
                 "Sim_satellite_battery-7",
-                "Sim_satellite_battery-2",
+                "Sim_satellite_battery-2"
+            ],
+            "val": [
                 "Sim_satellite_battery-3"
             ],
             "test": [

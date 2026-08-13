@@ -76,15 +76,23 @@ def run_phase0(project_root: str):
             print(f"Processing {dataset} - {batch}...")
             battery_ids = battery_files[dataset][batch]
             random.shuffle(battery_ids)
-            split_idx = int(len(battery_ids) * 0.8)
-            train_bats = battery_ids[:split_idx]
-            test_bats = battery_ids[split_idx:]
+            train_idx = int(len(battery_ids) * 0.70)
+            val_idx = int(len(battery_ids) * 0.85)
+            train_bats = battery_ids[:train_idx]
+            val_bats = battery_ids[train_idx:val_idx]
+            test_bats = battery_ids[val_idx:]
             
-            if not train_bats and test_bats:
-                train_bats = test_bats # fallback if too few files
+            # Fallback if too few files to split cleanly
+            if not train_bats and battery_ids:
+                train_bats = battery_ids
+            if not val_bats and battery_ids:
+                val_bats = train_bats
+            if not test_bats and battery_ids:
+                test_bats = val_bats
                 
             train_test_split[dataset][batch] = {
                 'train': train_bats,
+                'val': val_bats,
                 'test': test_bats
             }
             initial_knee_points[dataset][batch] = {}

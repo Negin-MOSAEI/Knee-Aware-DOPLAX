@@ -13,7 +13,22 @@ from pipeline import (
     phase6_final_soh,
     phase7_infer_kpis
 )
+import matplotlib as mpl
 
+mpl.rcParams.update({
+    "font.family": "Times New Roman",
+    "font.size": 18,
+    "axes.titlesize": 18,
+    "axes.labelsize": 18,
+    "xtick.labelsize": 18,
+    "ytick.labelsize": 18,
+    "legend.fontsize": 18,
+    "figure.dpi": 300,
+    "savefig.dpi": 300,
+    "axes.linewidth": 0.8,
+    "lines.linewidth": 2,
+    "figure.autolayout": True,
+})
 def run_all_phases():
     project_root = os.path.abspath(os.path.dirname(__file__))
     
@@ -21,12 +36,12 @@ def run_all_phases():
     print("BATTERY PROGNOSTICS 8-PHASE PIPELINE")
     print("="*50)
     
-    # Phase 0
-    phase0_init.run_phase0(project_root)
-    print("-"*50)
+    # # Phase 0
+    # phase0_init.run_phase0(project_root)
+    # print("-"*50)
     
     # Phase 1
-    phase1_train_tst.run_phase1(project_root, num_epochs=1)
+    phase1_train_tst.run_phase1(project_root, num_epochs=200)
     print("-"*50)
     
     # Phase 2
@@ -34,14 +49,14 @@ def run_all_phases():
     print("-"*50)
     
     # Phase 3
-    phase3_train_deepopinn.run_phase3(project_root, num_epochs=1)
+    phase3_train_deepopinn.run_phase3(project_root, num_epochs=200)
     print("-"*50)
     
     # Phase 4
-    phase4_train_lax.run_phase4(project_root, num_epochs=1)
+    phase4_train_lax.run_phase4(project_root, num_epochs=200)
     
     # Phase 5
-    phase5_train_fusion.run_phase5(project_root, num_epochs=1)
+    phase5_train_fusion.run_phase5(project_root, num_epochs=200)
     print("-"*50)
     
     # Phase 6

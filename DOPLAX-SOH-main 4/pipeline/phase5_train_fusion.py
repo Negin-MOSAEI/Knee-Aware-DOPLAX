@@ -15,6 +15,7 @@ from pipeline.phase3_train_deepopinn import ArgsMock
 from pipeline.phase4_train_lax import ArgsMockLax
 from utils.kpi_tracker import KPITracker
 from dataloader.dataloader import BatteryCycleDataset
+from utils.plot_utils import plot_learning_curve, save_loss_history
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -58,6 +59,7 @@ def run_phase5(project_root: str, num_epochs: int = 5, batch_size: int = 64):
     kpd_out_dir = os.path.join(project_root, 'outputs', 'kpd_predictions')
     models_dir = os.path.join(project_root, 'outputs', 'models')
     os.makedirs(models_dir, exist_ok=True)
+    kpi_report = {}
     
     with open(os.path.join(config_dir, 'train_test_split.json'), 'r') as f:
         train_test_split = json.load(f)
@@ -67,8 +69,12 @@ def run_phase5(project_root: str, num_epochs: int = 5, batch_size: int = 64):
             print(f"\n--- Training Fusion MLP for {dataset} - {batch} ---")
             
             train_bats = train_test_split[dataset][batch]['train']
+            val_bats = train_test_split[dataset][batch].get('val', [])
+            if not val_bats:
+                val_bats = train_test_split[dataset][batch]['test']
             
             dataset_obj = FusionDataset(train_bats, os.path.join(kpd_out_dir, dataset, batch), dataset, project_root)
+            val_dataset_obj = FusionDataset(val_bats, os.path.join(kpd_out_dir, dataset, batch), dataset, project_root)
             
             if len(dataset_obj) == 0:
                 print("No data found for this batch. Skipping.")
@@ -76,12 +82,13 @@ def run_phase5(project_root: str, num_epochs: int = 5, batch_size: int = 64):
                 
             generator = torch.Generator(device='cuda' if torch.cuda.is_available() else 'cpu')
             dataloader = DataLoader(dataset_obj, batch_size=batch_size, shuffle=True, generator=generator)
+            val_dataloader = DataLoader(val_dataset_obj, batch_size=batch_size, shuffle=False)
             
             kpi_tracker = KPITracker()
             kpi_tracker.start(num_batteries=len(train_bats), total_cycles=len(dataset_obj))
             
             # Load DeepOPINN
-            args_do = ArgsMock()
+            args_do = ArgsMock(project_root)
             from utils.hpo_utils import get_model_params
             best_params_do = get_model_params(project_root, dataset, batch, "DeepOPINN")
             if best_params_do:
@@ -124,9 +131,9 @@ def run_phase5(project_root: str, num_epochs: int = 5, batch_size: int = 64):
             best_params = get_model_params(project_root, dataset, batch, "FusionMLP")
             if best_params:
                 print(f"Using optimized FusionMLP architecture: {best_params}")
-                bagging_mlp = BaggingMLP(num_models=5, input_dim=3, **best_params).to(device)
+                bagging_mlp = BaggingMLP(input_dim=3, **best_params).to(device)
             else:
-                bagging_mlp = BaggingMLP(num_models=5, input_dim=3, hidden_dim=64, num_layers=3).to(device)
+                bagging_mlp = BaggingMLP(input_dim=3, hidden_dim=64, num_layers=3).to(device)
             
             # KaDOPLAX handles freezing DeepOPINN and LAX internally
             model = KaDOPLAX(deepopinn, lax, bagging_mlp).to(device)
@@ -135,36 +142,71 @@ def run_phase5(project_root: str, num_epochs: int = 5, batch_size: int = 64):
             criterion = nn.MSELoss()
             
             model.train()
+            train_losses = []
+            val_losses = []
+            best_val_loss = float('inf')
+            best_model_state = None
+            
             for epoch in range(num_epochs):
-                total_loss = 0.0
+                model.train()
+                total_loss = 0
                 for features, kpd, cycle_t, target_soh in dataloader:
-                    features = features.to(device)
-                    kpd = kpd.to(device)
-                    cycle_t = cycle_t.to(device)
-                    target_soh = target_soh.to(device)
+                    features, kpd, cycle_t, target_soh = features.to(device), kpd.to(device), cycle_t.to(device), target_soh.to(device)
                     
                     optimizer.zero_grad()
-                    # Forward pass
-                    # The fusion logic inside KaDOPLAX expects features, kpd, cycle_t, epoch
-                    pred_soh = model(features, kpd, cycle_t, epoch=1000) # Use 1000 to enable optimization of LAX
+                    outputs = model(features, kpd, cycle_t, epoch=1000)
                     
-                    pred_soh = pred_soh.view(-1, 1)
-                    target_soh = target_soh.view(-1, 1)
-                    
-                    loss = criterion(pred_soh, target_soh)
+                    loss = criterion(outputs.view(-1), target_soh.view(-1))
                     loss.backward()
                     optimizer.step()
                     
                     total_loss += loss.item()
+                    
+                    kpi_tracker.update_ram()
+                    
+                avg_loss = total_loss/len(dataloader)
+                train_losses.append(avg_loss)
                 
-                print(f"Epoch {epoch+1}/{num_epochs}, Loss: {total_loss/len(dataloader):.6f}")
-                kpi_tracker.update_ram()
+                # Validation loop
+                model.eval()
+                val_loss = 0.0
+                with torch.no_grad():
+                    for features, kpd, cycle_t, target_soh in val_dataloader:
+                        features, kpd, cycle_t, target_soh = features.to(device), kpd.to(device), cycle_t.to(device), target_soh.to(device)
+                        outputs = model(features, kpd, cycle_t, epoch=1000)
+                        loss = criterion(outputs.view(-1), target_soh.view(-1))
+                        val_loss += loss.item()
+                avg_val_loss = val_loss / max(1, len(val_dataloader))
+                val_losses.append(avg_val_loss)
                 
-            kpi_tracker.stop()
+                print(f"Epoch [{epoch+1}/{num_epochs}], Train Loss: {avg_loss:.4f}, Val Loss: {avg_val_loss:.4f}")
+                
+                if avg_val_loss < best_val_loss:
+                    best_val_loss = avg_val_loss
+                    best_model_state = {k: v.cpu().clone() for k, v in model.state_dict().items()}
+                    
+            if best_model_state is not None:
+                model.load_state_dict(best_model_state)
+                
+            metrics = kpi_tracker.stop()
+            if dataset not in kpi_report:
+                kpi_report[dataset] = {}
+            kpi_report[dataset][batch] = metrics
+            
+            learning_curve_dir = os.path.join(project_root, 'experiments', 'fusion_experiments')
+            plot_learning_curve(train_losses, val_losses, "FusionMLP", dataset, batch, os.path.join(project_root, 'outputs', 'figures', 'learning_curves'))
+            save_loss_history(train_losses, val_losses, "FusionMLP", dataset, batch, learning_curve_dir)
             
             model_save_path = os.path.join(models_dir, f'kadoplax_{dataset}_{batch}.pt')
             torch.save(model.state_dict(), model_save_path)
             print(f"Saved KaDOPLAX model to {model_save_path}")
+
+    # Save KPI report
+    reports_dir = os.path.join(project_root, 'outputs', 'reports')
+    os.makedirs(reports_dir, exist_ok=True)
+    with open(os.path.join(reports_dir, 'fusion_training_kpis.json'), 'w') as f:
+        json.dump(kpi_report, f, indent=4)
+    print("Phase 5 completed successfully.")
 
 if __name__ == "__main__":
     run_phase5(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
