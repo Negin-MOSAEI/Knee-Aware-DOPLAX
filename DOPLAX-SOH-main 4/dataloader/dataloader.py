@@ -422,9 +422,18 @@ class BatteryCycleDataset(torch.utils.data.Dataset):
                 
                 # Get knee point cycle for this battery, fallback to 100 if missing
                 # bat_id could be nested like "default/Bat_008" or "1-1", so we need to match appropriately
+                def find_knee(d, key):
+                    if isinstance(d, dict):
+                        if key in d: return d[key]
+                        for k, v in d.items():
+                            res = find_knee(v, key)
+                            if res is not None: return res
+                    return None
+                    
                 bat_key = bat_id.split('/')[-1]
-                if self.dataset_name in self.initial_knee_points and bat_key in self.initial_knee_points[self.dataset_name]:
-                    knee_point_cycle = self.initial_knee_points[self.dataset_name][bat_key]
+                found_knee = find_knee(self.initial_knee_points, bat_key)
+                if found_knee is not None:
+                    knee_point_cycle = found_knee
                 else:
                     knee_point_cycle = 100
                 
@@ -456,5 +465,9 @@ class BatteryCycleDataset(torch.utils.data.Dataset):
 
 def get_dataloader(data_root, dataset_name, battery_ids, batch_size, shuffle=True, capacity_column_index=0, initial_knee_points=None, window_size=40):
     dataset = BatteryCycleDataset(data_root, dataset_name, battery_ids, window_size=window_size, capacity_column_index=capacity_column_index, initial_knee_points=initial_knee_points)
-    generator = torch.Generator(device='cuda' if torch.cuda.is_available() else 'cpu')
+    
+    # RandomSampler expects the generator device to match the default tensor device
+    current_default_device = torch.tensor(0).device.type
+    generator = torch.Generator(device=current_default_device)
+    
     return DataLoader(dataset, batch_size=batch_size, shuffle=shuffle, num_workers=0, generator=generator)

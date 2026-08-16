@@ -98,20 +98,26 @@ def run_phase2(project_root: str):
             if not all_bats:
                 continue
                 
-            # Peek into the first battery's dataset to dynamically find num_features
-            peek_dataset = BatteryCycleDataset(battery_ids=[all_bats[0]], initial_knee_points=initial_knee_points, dataset_name=dataset, data_root=os.path.join(project_root, 'data', 'Processed'))
-            if len(peek_dataset) == 0:
-                print(f"Warning: No data to peek num_features for {dataset}-{batch}. Skipping.")
+            # Create a dataset for train_bats to calculate standardization statistics
+            train_dataset = BatteryCycleDataset(battery_ids=train_bats, initial_knee_points=initial_knee_points, dataset_name=dataset, data_root=os.path.join(project_root, 'data', 'Processed'))
+            if len(train_dataset) == 0:
+                print(f"Warning: No training data to compute standardization stats for {dataset}-{batch}. Skipping.")
                 continue
-            features_sample, _, _ = peek_dataset[0]
+            
+            all_x_tst = np.concatenate([s[0] for s in train_dataset.samples], axis=0)
+            X_mean_tst = torch.tensor(np.mean(all_x_tst, axis=0), dtype=torch.float32).to(device)
+            X_std_tst = torch.tensor(np.std(all_x_tst, axis=0), dtype=torch.float32).to(device)
+            x_sts_tst = [X_mean_tst, X_std_tst]
+
+            features_sample, _, _ = train_dataset[0]
             actual_num_features = features_sample.shape[-1]
             
             from utils.hpo_utils import get_model_params
             best_params = get_model_params(project_root, dataset, batch, "TST")
             if best_params:
-                model = TimeSeriesTransformer(num_features=actual_num_features, **best_params).to(device)
+                model = TimeSeriesTransformer(num_features=actual_num_features, x_sts=x_sts_tst, **best_params).to(device)
             else:
-                model = TimeSeriesTransformer(num_features=actual_num_features).to(device)
+                model = TimeSeriesTransformer(num_features=actual_num_features, x_sts=x_sts_tst).to(device)
             model.load_state_dict(torch.load(model_path, map_location=device, weights_only=True))
             
             batch_kpd_dir = os.path.join(kpd_out_dir, dataset, batch)

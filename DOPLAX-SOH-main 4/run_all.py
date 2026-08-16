@@ -41,30 +41,30 @@ def run_all_phases():
     # print("-"*50)
     
     # Phase 1
-    phase1_train_tst.run_phase1(project_root, num_epochs=200)
+    phase1_train_tst.run_phase1(project_root, num_epochs=10)
     print("-"*50)
     
     # Phase 2
     phase2_infer_kpd.run_phase2(project_root)
     print("-"*50)
     
-    # Phase 3
-    phase3_train_deepopinn.run_phase3(project_root, num_epochs=200)
-    print("-"*50)
+    # # Phase 3
+    # phase3_train_deepopinn.run_phase3(project_root, num_epochs=20)
+    # print("-"*50)
     
-    # Phase 4
-    phase4_train_lax.run_phase4(project_root, num_epochs=200)
+    # # Phase 4
+    # phase4_train_lax.run_phase4(project_root, num_epochs=20)
     
-    # Phase 5
-    phase5_train_fusion.run_phase5(project_root, num_epochs=200)
-    print("-"*50)
+    # # Phase 5
+    # phase5_train_fusion.run_phase5(project_root, num_epochs=20)
+    # print("-"*50)
     
-    # Phase 6
-    phase6_final_soh.run_phase6(project_root)
-    print("-"*50)
+    # # Phase 6
+    # phase6_final_soh.run_phase6(project_root)
+    # print("-"*50)
     
-    # Phase 7
-    phase7_infer_kpis.run_phase7(project_root)
+    # # Phase 7
+    # phase7_infer_kpis.run_phase7(project_root)
     print("="*50)
     print("PIPELINE COMPLETED SUCCESSFULLY!")
 

@@ -15,50 +15,89 @@ import numpy as np
 import torch.utils.data as data
 
 # A very fast objective function wrapper to evaluate architectures
-def optimize_tst(trial, dataloader, device):
-    d_model = trial.suggest_categorical('d_model', [8, 16, 32, 64, 128, 256, 512, 1024])
-    num_layers = trial.suggest_int('num_layers', 1, 12)
-    nhead = trial.suggest_categorical('nhead', [1, 2, 4, 8, 16, 32])
+def optimize_tst(trial, dataloader, device, x_sts=None):
+    d_model = trial.suggest_categorical('d_model', [8, 16, 32, 64, 96, 128, 192, 256, 384, 512, 768, 1024, 2048])
+    num_layers = trial.suggest_int('num_layers', 1, 24)
+    nhead = trial.suggest_categorical('nhead', [1, 2, 4, 8, 16, 32, 64])
     
     if d_model % nhead != 0:
         raise optuna.exceptions.TrialPruned()
         
-    dropout = trial.suggest_float('dropout', 0.0, 0.8)
+    dropout = trial.suggest_float('dropout', 0.0, 0.9)
+    lr = trial.suggest_float('lr', 1e-6, 1e-2, log=True)
+    batch_size = trial.suggest_categorical('batch_size', [16, 32, 64, 128, 256])
     
-    model = TimeSeriesTransformer(num_features=3, d_model=d_model, nhead=nhead, num_layers=num_layers, dropout=dropout).to(device)
-    optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
+    model = TimeSeriesTransformer(num_features=3, d_model=d_model, nhead=nhead, num_layers=num_layers, dropout=dropout, x_sts=x_sts).to(device)
+    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
     criterion = nn.MSELoss()
+    
+    import random
+    
+    # Randomly sample to simulate 5 random batches
+    all_samples = dataloader.dataset.samples
+    sample_indices = random.sample(range(len(all_samples)), min(batch_size * 5, len(all_samples)))
     
     # Train for a few batches to evaluate
     model.train()
-    for batch_idx, (features, target_kpd, _) in enumerate(dataloader):
-        features = features.to(device)
-        target_kpd = target_kpd.to(device)
+    loss_sum = 0
+    batches = 0
+    
+    for i in range(0, len(sample_indices), batch_size):
+        batch_indices = sample_indices[i:i+batch_size]
+        features_list = []
+        kpd_list = []
+        for idx in batch_indices:
+            f, k, _ = all_samples[idx]
+            features_list.append(f)
+            kpd_list.append([k])
+            
+        features = torch.tensor(np.array(features_list), dtype=torch.float32).to(device)
+        target_kpd = torch.tensor(np.array(kpd_list), dtype=torch.float32).to(device)
+        
         optimizer.zero_grad()
         outputs = model(features)
         loss = criterion(outputs.squeeze(), target_kpd.squeeze())
         loss.backward()
         optimizer.step()
-        if batch_idx > 5:
-            break
-            
-    return loss.item()
+        
+        loss_sum += loss.item()
+        batches += 1
+        
+    return loss_sum / max(1, batches)
 
 def optimize_deepopinn(trial, dataloader, device, project_root):
-    F_hidden_dim = trial.suggest_categorical('F_hidden_dim', [8, 16, 32, 64, 128, 256, 512])
-    F_layers_num = trial.suggest_int('F_layers_num', 2, 12)
-    dropout = trial.suggest_float('dropout', 0.0, 0.8)
+    F_hidden_dim = trial.suggest_categorical('F_hidden_dim', [8, 16, 32, 64, 96, 128, 192, 256, 384, 512, 768, 1024, 2048])
+    F_layers_num = trial.suggest_int('F_layers_num', 2, 24)
+    dropout = trial.suggest_float('dropout', 0.0, 0.9)
+    batch_size = trial.suggest_categorical('batch_size', [16, 32, 64, 128, 256])
     
     args = ArgsMock(project_root)
     model = DeepOPINN(args, save_args=False, F_hidden_dim=F_hidden_dim, F_layers_num=F_layers_num, dropout=dropout).to(device)
     
     model.train()
     total_loss = 0
-    for iter, (x1, target_kpd, target_soh) in enumerate(dataloader):
-        x1, target_kpd, target_soh = x1.to(device), target_kpd.to(device), target_soh.to(device)
-
+    batches = 0
+    
+    import random
+    all_samples = dataloader.dataset.samples
+    sample_indices = random.sample(range(len(all_samples)), min(batch_size * 5, len(all_samples)))
+    
+    for i in range(0, len(sample_indices), batch_size):
+        batch_indices = sample_indices[i:i+batch_size]
+        features_list = []
+        kpd_list = []
+        soh_list = []
+        for idx in batch_indices:
+            f, k, s = all_samples[idx]
+            features_list.append(f)
+            kpd_list.append([k])
+            soh_list.append([s])
+            
+        x1 = torch.tensor(np.array(features_list), dtype=torch.float32).to(device)
+        target_kpd = torch.tensor(np.array(kpd_list), dtype=torch.float32).to(device)
+        target_soh = torch.tensor(np.array(soh_list), dtype=torch.float32).to(device)
+        
         if model.extractor_deepopinn is None:
-            # Flatten x1 to match DeepOPINN dataset structure
             x1_flat = x1.view(x1.shape[0], -1)
             model.initialize_networks(x1_flat.shape[1])
             
@@ -79,23 +118,40 @@ def optimize_deepopinn(trial, dataloader, device, project_root):
         model.optimizer_F.step()
         
         total_loss += loss.item()
-        if iter > 2:
-            break
+        batches += 1
             
-    return total_loss
+    return total_loss / max(1, batches)
 
 def optimize_fusion(trial, dataloader, device):
-    hidden_dim = trial.suggest_categorical('hidden_dim', [8, 16, 32, 64, 128, 256, 512, 1024])
-    num_layers = trial.suggest_int('num_layers', 1, 12)
-    num_models = trial.suggest_int('num_models', 2, 30)
+    hidden_dim = trial.suggest_categorical('hidden_dim', [8, 16, 32, 64, 96, 128, 192, 256, 384, 512, 768, 1024, 2048])
+    num_layers = trial.suggest_int('num_layers', 1, 24)
+    num_models = trial.suggest_int('num_models', 2, 100)
+    lr = trial.suggest_float('lr', 1e-6, 1e-1, log=True)
+    batch_size = trial.suggest_categorical('batch_size', [16, 32, 64, 128, 256])
     
     model = BaggingMLP(num_models=num_models, input_dim=3, hidden_dim=hidden_dim, num_layers=num_layers).to(device)
-    optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
+    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
     criterion = nn.MSELoss()
     
     model.train()
-    for batch_idx, (features, target_kpd, target_soh) in enumerate(dataloader):
-        features, target_kpd, target_soh = features.to(device), target_kpd.to(device), target_soh.to(device)
+    loss_sum = 0
+    batches = 0
+    
+    import random
+    all_samples = dataloader.dataset.samples
+    sample_indices = random.sample(range(len(all_samples)), min(batch_size * 5, len(all_samples)))
+    
+    for i in range(0, len(sample_indices), batch_size):
+        batch_indices = sample_indices[i:i+batch_size]
+        features_list = []
+        soh_list = []
+        for idx in batch_indices:
+            f, k, s = all_samples[idx]
+            features_list.append(f)
+            soh_list.append([s])
+            
+        features = torch.tensor(np.array(features_list), dtype=torch.float32).to(device)
+        target_soh = torch.tensor(np.array(soh_list), dtype=torch.float32).to(device)
         
         optimizer.zero_grad()
         dummy_input = torch.randn(features.size(0), 3).to(device)
@@ -103,34 +159,56 @@ def optimize_fusion(trial, dataloader, device):
         loss = criterion(outputs.view(-1), target_soh.view(-1))
         loss.backward()
         optimizer.step()
-        if batch_idx > 2:
-            break
+        
+        loss_sum += loss.item()
+        batches += 1
             
-    return loss.item()
+    return loss_sum / max(1, batches)
 
 def optimize_lax(trial, dataloader, device, project_root, x_sts, x_dim, y_dim):
-    h_dim_LAX = trial.suggest_categorical('h_dim_LAX', [8, 16, 32, 64, 128, 256, 512])
+    h_dim_LAX = trial.suggest_categorical('h_dim_LAX', [8, 16, 32, 64, 96, 128, 192, 256, 384, 512, 768, 1024, 2048])
     
-    layer_options = [[16], [32], [64], [128], [256],
-                     [16, 16], [32, 32], [64, 64], [128, 128], [256, 256],
-                     [16, 16, 16], [32, 32, 32], [64, 64, 64], [128, 128, 128], [256, 256, 256],
-                     [32, 64, 32], [64, 128, 64], [128, 256, 128]]
+    layer_options = [[16], [32], [64], [128], [256], [512], [1024],
+                     [16, 16], [32, 32], [64, 64], [128, 128], [256, 256], [512, 512], [1024, 1024],
+                     [16, 16, 16], [32, 32, 32], [64, 64, 64], [128, 128, 128], [256, 256, 256], [512, 512, 512],
+                     [16, 16, 16, 16], [32, 32, 32, 32], [64, 64, 64, 64], [128, 128, 128, 128], [256, 256, 256, 256],
+                     [16, 32, 16], [32, 64, 32], [64, 128, 64], [128, 256, 128], [256, 512, 256], [512, 1024, 512],
+                     [16, 32, 64, 32, 16], [32, 64, 128, 64, 32], [64, 128, 256, 128, 64], [128, 256, 512, 256, 128]]
     inside_S_MLP_layers = trial.suggest_categorical('inside_S_MLP_layers', layer_options)
+    lr = trial.suggest_float('lr', 1e-6, 1e-1, log=True)
+    batch_size = trial.suggest_categorical('batch_size', [16, 32, 64, 128, 256])
     
     args = ArgsMockLax(project_root)
     model = LAXModel(x_sts, args, x_dim, y_dim, 
                      h_dim_LAX=h_dim_LAX, 
                      inside_S_MLP_layers=inside_S_MLP_layers).to(device)
                      
-    opt_net = torch.optim.Adam(model.parameters(), lr=1e-3)
-    opt_F = torch.optim.Adam(model.dynamical_F.parameters(), lr=1e-3)
-    model.current_lr_y = 1e-3
+    opt_net = torch.optim.Adam(model.parameters(), lr=lr)
+    opt_F = torch.optim.Adam(model.dynamical_F.parameters(), lr=lr)
+    model.current_lr_y = lr
     
     criterion = nn.MSELoss()
     total_loss = 0
-    for iter, (x1, x2, y1, y2) in enumerate(dataloader):
-        x1, y1 = x1.to(device), y1.to(device)
-        x2, y2 = x2.to(device), y2.to(device)
+    batches = 0
+    
+    import random
+    all_samples = dataloader.dataset.samples
+    sample_indices = random.sample(range(len(all_samples)), min(batch_size * 5, len(all_samples)))
+    
+    for i in range(0, len(sample_indices), batch_size):
+        batch_indices = sample_indices[i:i+batch_size]
+        x1_list, x2_list, y1_list, y2_list = [], [], [], []
+        for idx in batch_indices:
+            x1_s, x2_s, y1_s, y2_s = all_samples[idx]
+            x1_list.append(x1_s)
+            x2_list.append(x2_s)
+            y1_list.append(y1_s)
+            y2_list.append(y2_s)
+            
+        x1 = torch.tensor(np.array(x1_list), dtype=torch.float32).to(device)
+        x2 = torch.tensor(np.array(x2_list), dtype=torch.float32).to(device)
+        y1 = torch.tensor(np.array(y1_list), dtype=torch.float32).to(device)
+        y2 = torch.tensor(np.array(y2_list), dtype=torch.float32).to(device)
         
         x1, x2 = x1[:, :-1], x2[:, :-1]
         t1, t2 = x1[:, -1],  x2[:, -1]
@@ -147,10 +225,9 @@ def optimize_lax(trial, dataloader, device, project_root, x_sts, x_dim, y_dim):
         opt_F.step()
         
         total_loss += loss.item()
-        if iter > 2:
-            break
-            
-    return total_loss
+        batches += 1
+        
+    return total_loss / max(1, batches)
 
 def run_hpo_pipeline(project_root):
     print("="*50)
@@ -181,35 +258,40 @@ def run_hpo_pipeline(project_root):
             # Recreate dataloader without shuffle to prevent PyTorch generator device mismatch errors
             dataloader = data.DataLoader(dataloader.dataset, batch_size=64, shuffle=False)
             
+            # Extract x_sts for TST
+            all_x_tst = np.concatenate([s[0] for s in dataloader.dataset.samples], axis=0)
+            X_mean_tst = torch.tensor(np.mean(all_x_tst, axis=0), dtype=torch.float32).to(device)
+            X_std_tst = torch.tensor(np.std(all_x_tst, axis=0), dtype=torch.float32).to(device)
+            x_sts_tst = [X_mean_tst, X_std_tst]
+            
             # 1. Optimize TST
             study_tst = optuna.create_study(direction='minimize')
-            study_tst.optimize(lambda trial: optimize_tst(trial, dataloader, device), n_trials=200)
+            study_tst.optimize(lambda trial: optimize_tst(trial, dataloader, device, x_sts_tst), n_trials=1000)
             save_optimized_architecture(project_root, dataset, batch, "TST", study_tst.best_params)
             
             # 2. Optimize DeepOPINN
             study_deepopinn = optuna.create_study(direction='minimize')
-            study_deepopinn.optimize(lambda trial: optimize_deepopinn(trial, dataloader, device, project_root), n_trials=200)
+            study_deepopinn.optimize(lambda trial: optimize_deepopinn(trial, dataloader, device, project_root), n_trials=1000)
             save_optimized_architecture(project_root, dataset, batch, "DeepOPINN", study_deepopinn.best_params)
             
-            # 3. Optimize Fusion MLP
+            # 3. Optimize FusionMLP
             study_fusion = optuna.create_study(direction='minimize')
-            study_fusion.optimize(lambda trial: optimize_fusion(trial, dataloader, device), n_trials=200)
+            study_fusion.optimize(lambda trial: optimize_fusion(trial, dataloader, device), n_trials=1000)
             save_optimized_architecture(project_root, dataset, batch, "FusionMLP", study_fusion.best_params)
             
             # 4. Optimize LAX
             lax_dataset_obj = LaxDataset(train_bats, dataset, project_root)
             if len(lax_dataset_obj) > 0:
                 lax_dataloader = data.DataLoader(lax_dataset_obj, batch_size=64, shuffle=False)
+                x_dim = 3
+                y_dim = 3
+                all_x_lax = np.array([s[0] for s in lax_dataloader.dataset.samples])
+                X_mean_lax = torch.tensor(np.mean(all_x_lax[:, :-1], axis=0), dtype=torch.float32).to(device)
+                X_std_lax = torch.tensor(np.std(all_x_lax[:, :-1], axis=0), dtype=torch.float32).to(device)
+                x_sts_lax = [X_mean_lax, X_std_lax]
                 
-                all_x = np.array([s[0] for s in lax_dataset_obj.samples])
-                X_mean = torch.tensor(np.mean(all_x[:, :-1], axis=0), dtype=torch.float32).to(device)
-                X_std = torch.tensor(np.std(all_x[:, :-1], axis=0), dtype=torch.float32).to(device)
-                x_sts = [X_mean, X_std]
-                x_dim = all_x.shape[1] - 1
-                y_dim = x_dim
-
                 study_lax = optuna.create_study(direction='minimize')
-                study_lax.optimize(lambda trial: optimize_lax(trial, lax_dataloader, device, project_root, x_sts, x_dim, y_dim), n_trials=200)
+                study_lax.optimize(lambda trial: optimize_lax(trial, lax_dataloader, device, project_root, x_sts_lax, x_dim, y_dim), n_trials=1000)
                 save_optimized_architecture(project_root, dataset, batch, "LAX", study_lax.best_params)
 
             

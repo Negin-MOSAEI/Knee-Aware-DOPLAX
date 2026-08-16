@@ -3,10 +3,12 @@ import json
 import torch
 import torch.nn as nn
 import torch.optim as optim
+import numpy as np
 from typing import Dict, Any
 
 from dataloader.dataloader import get_dataloader
 from Model.Backbones.tst import TimeSeriesTransformer
+from Model.utils.lr_schedulers import cosine_annealing
 from utils.kpi_tracker import KPITracker
 
 # Datasets and Batches definition
@@ -97,14 +99,19 @@ def run_phase1(project_root: str, num_epochs: int = 5, batch_size: int = 32):
             
             # Initialize Model
             from utils.hpo_utils import get_model_params
+            all_x_tst = np.concatenate([s[0] for s in dataloader.dataset.samples], axis=0)
+            X_mean_tst = torch.tensor(np.mean(all_x_tst, axis=0), dtype=torch.float32).to(device)
+            X_std_tst = torch.tensor(np.std(all_x_tst, axis=0), dtype=torch.float32).to(device)
+            x_sts_tst = [X_mean_tst, X_std_tst]
+
             best_params = get_model_params(project_root, dataset, batch, "TST")
             if best_params:
                 print(f"Using optimized TST architecture: {best_params}")
-                model = TimeSeriesTransformer(num_features=actual_num_features, **best_params).to(device)
+                model = TimeSeriesTransformer(num_features=actual_num_features, x_sts=x_sts_tst, **best_params).to(device)
             else:
-                model = TimeSeriesTransformer(num_features=actual_num_features).to(device)
+                model = TimeSeriesTransformer(num_features=actual_num_features, x_sts=x_sts_tst).to(device)
             criterion = nn.MSELoss()
-            optimizer = optim.Adam(model.parameters(), lr=1e-3)
+            optimizer = optim.Adam(model.parameters(), lr=1e-4)
             
             from utils.plot_utils import plot_learning_curve, save_loss_history
             
@@ -115,9 +122,20 @@ def run_phase1(project_root: str, num_epochs: int = 5, batch_size: int = 32):
             best_model_state = None
             
             for epoch in range(num_epochs):
+                # Update learning rate dynamically
+                current_lr = cosine_annealing(
+                    epoch=epoch,
+                    warmup_epochs=max(1, num_epochs // 5),
+                    restart_period=max(1, num_epochs),
+                    min_lr=1e-6,
+                    initial_lr=1e-4
+                )
+                for param_group in optimizer.param_groups:
+                    param_group['lr'] = current_lr
+
                 model.train()
                 epoch_loss = 0.0
-                for features, target_kpd, _ in dataloader:
+                for batch_idx, (features, target_kpd, _) in enumerate(dataloader):
                     features = features.to(device)
                     target_kpd = target_kpd.to(device)
                     
@@ -129,6 +147,10 @@ def run_phase1(project_root: str, num_epochs: int = 5, batch_size: int = 32):
                     loss = criterion(outputs, target_kpd)
                     loss.backward()
                     optimizer.step()
+                    
+                    if batch_idx == 0:
+                        print(f"Batch 0 predictions (first 5): {outputs.squeeze()[:5].detach().cpu().numpy()}")
+                        print(f"Batch 0 targets (first 5): {target_kpd.squeeze()[:5].detach().cpu().numpy()}")
                     
                     epoch_loss += loss.item()
                     
