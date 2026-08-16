@@ -359,7 +359,7 @@ from utils.math_utils import calculate_kpd, tst_cold_start_kpd
 import json
 
 class BatteryCycleDataset(torch.utils.data.Dataset):
-    def __init__(self, data_root, dataset_name, battery_ids, window_size=40, capacity_column_index=0, num_features=3, initial_knee_points=None):
+    def __init__(self, data_root, dataset_name, battery_ids, window_size=40, capacity_column_index=0, num_features=None, initial_knee_points=None):
         self.data_root = data_root
         self.dataset_name = dataset_name
         self.battery_ids = battery_ids
@@ -419,6 +419,7 @@ class BatteryCycleDataset(torch.utils.data.Dataset):
                 soh = self._calculate_soh(raw_data_matrix, bat_id)
                 
                 num_cycles = raw_data_matrix.shape[0]
+                current_num_features = self.num_features if self.num_features is not None else raw_data_matrix.shape[1] - 1
                 
                 # Get knee point cycle for this battery, fallback to 100 if missing
                 # bat_id could be nested like "default/Bat_008" or "1-1", so we need to match appropriately
@@ -443,11 +444,11 @@ class BatteryCycleDataset(torch.utils.data.Dataset):
                     if current_cycle < self.window_size:
                         # Cold start: Pad with initial cycle
                         pad_len = self.window_size - current_cycle
-                        pad = np.tile(raw_data_matrix[0, :self.num_features], (pad_len, 1))
-                        window_data = np.vstack([pad, raw_data_matrix[:current_cycle, :self.num_features]])
+                        pad = np.tile(raw_data_matrix[0, :current_num_features], (pad_len, 1))
+                        window_data = np.vstack([pad, raw_data_matrix[:current_cycle, :current_num_features]])
                         kpd = tst_cold_start_kpd(current_cycle, knee_point_cycle)
                     else:
-                        window_data = raw_data_matrix[current_cycle - self.window_size:current_cycle, :self.num_features]
+                        window_data = raw_data_matrix[current_cycle - self.window_size:current_cycle, :current_num_features]
                         kpd = calculate_kpd(current_cycle, knee_point_cycle)
                         
                     target_soh = soh[i]
@@ -463,8 +464,8 @@ class BatteryCycleDataset(torch.utils.data.Dataset):
         features, target_kpd, target_soh = self.samples[idx]
         return torch.tensor(features, dtype=torch.float32), torch.tensor([target_kpd], dtype=torch.float32), torch.tensor([target_soh], dtype=torch.float32)
 
-def get_dataloader(data_root, dataset_name, battery_ids, batch_size, shuffle=True, capacity_column_index=0, initial_knee_points=None, window_size=40):
-    dataset = BatteryCycleDataset(data_root, dataset_name, battery_ids, window_size=window_size, capacity_column_index=capacity_column_index, initial_knee_points=initial_knee_points)
+def get_dataloader(data_root, dataset_name, battery_ids, batch_size, shuffle=True, capacity_column_index=0, initial_knee_points=None, window_size=40, num_features=None):
+    dataset = BatteryCycleDataset(data_root, dataset_name, battery_ids, window_size=window_size, capacity_column_index=capacity_column_index, num_features=num_features, initial_knee_points=initial_knee_points)
     
     # RandomSampler expects the generator device to match the default tensor device
     current_default_device = torch.tensor(0).device.type
