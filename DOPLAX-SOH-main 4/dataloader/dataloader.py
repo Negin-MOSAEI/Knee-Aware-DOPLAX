@@ -359,7 +359,7 @@ from utils.math_utils import calculate_kpd, tst_cold_start_kpd
 import json
 
 class BatteryCycleDataset(torch.utils.data.Dataset):
-    def __init__(self, data_root, dataset_name, battery_ids, window_size=40, capacity_column_index=0, num_features=None, initial_knee_points=None):
+    def __init__(self, data_root, dataset_name, battery_ids, window_size=10, capacity_column_index=0, num_features=None, initial_knee_points=None):
         self.data_root = data_root
         self.dataset_name = dataset_name
         self.battery_ids = battery_ids
@@ -464,7 +464,7 @@ class BatteryCycleDataset(torch.utils.data.Dataset):
         features, target_kpd, target_soh = self.samples[idx]
         return torch.tensor(features, dtype=torch.float32), torch.tensor([target_kpd], dtype=torch.float32), torch.tensor([target_soh], dtype=torch.float32)
 
-def get_dataloader(data_root, dataset_name, battery_ids, batch_size, shuffle=True, capacity_column_index=0, initial_knee_points=None, window_size=40, num_features=None):
+def get_dataloader(data_root, dataset_name, battery_ids, batch_size, shuffle=True, capacity_column_index=0, initial_knee_points=None, window_size=10, num_features=None):
     dataset = BatteryCycleDataset(data_root, dataset_name, battery_ids, window_size=window_size, capacity_column_index=capacity_column_index, num_features=num_features, initial_knee_points=initial_knee_points)
     
     # RandomSampler expects the generator device to match the default tensor device

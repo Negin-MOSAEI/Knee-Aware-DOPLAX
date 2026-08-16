@@ -64,7 +64,7 @@ def run_phase1(project_root: str, num_epochs: int = 5, batch_size: int = 32):
             # Initialize KPI Tracker
             kpi_tracker = KPITracker()
             
-            # Initialize DataLoader (window_size=40, num_features=3)
+            # Initialize DataLoader (window_size=10, num_features=3)
             dataloader = get_dataloader(
                 battery_ids=train_bats,
                 initial_knee_points=knee_points_batch,
@@ -72,7 +72,7 @@ def run_phase1(project_root: str, num_epochs: int = 5, batch_size: int = 32):
                 data_root=os.path.join(project_root, 'data', 'Processed'),
                 batch_size=batch_size,
                 shuffle=True,
-                window_size=40
+                window_size=10
             )
             
             val_dataloader = get_dataloader(
@@ -82,7 +82,7 @@ def run_phase1(project_root: str, num_epochs: int = 5, batch_size: int = 32):
                 data_root=os.path.join(project_root, 'data', 'Processed'),
                 batch_size=batch_size,
                 shuffle=False,
-                window_size=40
+                window_size=10
             )
             
             # Calculate total cycles for KPI

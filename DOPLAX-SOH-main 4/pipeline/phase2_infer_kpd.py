@@ -25,11 +25,11 @@ mpl.rcParams.update({
     "figure.autolayout": True,
 })
 
-def infer_kpd_for_battery(model: torch.nn.Module, battery_id: str, dataset_name: str, project_root: str, device: torch.device, initial_knee_points: dict, window_size: int = 40, knee_point_cycle: int = 100) -> tuple:
+def infer_kpd_for_battery(model: torch.nn.Module, battery_id: str, dataset_name: str, project_root: str, device: torch.device, initial_knee_points: dict, window_size: int = 10, knee_point_cycle: int = 100) -> tuple:
     """
     Infers the full KPD sequence for a single battery.
-    Uses cold start logic for cycles 1 to 39.
-    Uses the trained TST model for cycles >= 40.
+    Uses cold start logic for cycles 1 to 9.
+    Uses the trained TST model for cycles >= 10.
     """
     dataset = BatteryCycleDataset(
         battery_ids=[battery_id],
@@ -148,7 +148,7 @@ def run_phase2(project_root: str):
                     true_knee = 100
                     
                 true_kpd_seq = []
-                window_size = 40
+                window_size = 10
                 for c in cycles:
                     if c < window_size:
                         true_kpd_seq.append(tst_cold_start_kpd(c)) 
