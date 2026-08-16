@@ -49,14 +49,14 @@ def run_all_phases():
     print("-"*50)
     
     # Phase 3
-    phase3_train_deepopinn.run_phase3(project_root, num_epochs=20)
+    phase3_train_deepopinn.run_phase3(project_root, num_epochs=10)
     print("-"*50)
     
     # Phase 4
-    phase4_train_lax.run_phase4(project_root, num_epochs=20)
+    phase4_train_lax.run_phase4(project_root, num_epochs=10)
     
     # Phase 5
-    phase5_train_fusion.run_phase5(project_root, num_epochs=20)
+    phase5_train_fusion.run_phase5(project_root, num_epochs=10)
     print("-"*50)
     
     # Phase 6
