@@ -15,7 +15,7 @@ import numpy as np
 import torch.utils.data as data
 
 # A very fast objective function wrapper to evaluate architectures
-def optimize_tst(trial, dataloader, device, x_sts=None):
+def optimize_tst(trial, dataloader, device, x_sts=None, num_features=3):
     d_model = trial.suggest_categorical('d_model', [8, 16, 32, 64, 96, 128, 192, 256, 384, 512, 768, 1024, 2048])
     num_layers = trial.suggest_int('num_layers', 1, 24)
     nhead = trial.suggest_categorical('nhead', [1, 2, 4, 8, 16, 32, 64])
@@ -27,7 +27,7 @@ def optimize_tst(trial, dataloader, device, x_sts=None):
     lr = trial.suggest_float('lr', 1e-6, 1e-2, log=True)
     batch_size = trial.suggest_categorical('batch_size', [16, 32, 64, 128, 256])
     
-    model = TimeSeriesTransformer(num_features=3, d_model=d_model, nhead=nhead, num_layers=num_layers, dropout=dropout, x_sts=x_sts).to(device)
+    model = TimeSeriesTransformer(num_features=num_features, d_model=d_model, nhead=nhead, num_layers=num_layers, dropout=dropout, x_sts=x_sts).to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
     criterion = nn.MSELoss()
     
@@ -263,10 +263,11 @@ def run_hpo_pipeline(project_root):
             X_mean_tst = torch.tensor(np.mean(all_x_tst, axis=0), dtype=torch.float32).to(device)
             X_std_tst = torch.tensor(np.std(all_x_tst, axis=0), dtype=torch.float32).to(device)
             x_sts_tst = [X_mean_tst, X_std_tst]
+            actual_num_features = all_x_tst.shape[-1]
             
             # 1. Optimize TST
             study_tst = optuna.create_study(direction='minimize')
-            study_tst.optimize(lambda trial: optimize_tst(trial, dataloader, device, x_sts_tst), n_trials=1000)
+            study_tst.optimize(lambda trial: optimize_tst(trial, dataloader, device, x_sts_tst, actual_num_features), n_trials=1000)
             save_optimized_architecture(project_root, dataset, batch, "TST", study_tst.best_params)
             
             # 2. Optimize DeepOPINN
@@ -283,9 +284,10 @@ def run_hpo_pipeline(project_root):
             lax_dataset_obj = LaxDataset(train_bats, dataset, project_root)
             if len(lax_dataset_obj) > 0:
                 lax_dataloader = data.DataLoader(lax_dataset_obj, batch_size=64, shuffle=False)
-                x_dim = 3
-                y_dim = 3
                 all_x_lax = np.array([s[0] for s in lax_dataloader.dataset.samples])
+                x_dim = all_x_lax.shape[1] - 1
+                y_dim = x_dim
+                
                 X_mean_lax = torch.tensor(np.mean(all_x_lax[:, :-1], axis=0), dtype=torch.float32).to(device)
                 X_std_lax = torch.tensor(np.std(all_x_lax[:, :-1], axis=0), dtype=torch.float32).to(device)
                 x_sts_lax = [X_mean_lax, X_std_lax]
