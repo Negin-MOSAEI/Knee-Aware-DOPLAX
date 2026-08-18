@@ -17,7 +17,7 @@ def tst_cold_start_kpd(current_cycle: int, knee_point_cycle: int = 10000000) -> 
         return calculate_kpd(current_cycle, knee_point_cycle)
         
     start_val = np.pi / 2
-    end_val = np.pi / 2 - 0.2
+    end_val = np.pi / 2 - 0.1
     
     # Linear interpolation over 39 steps (cycle 1 to 39)
     # Cycle 1 -> fraction = 0 -> start_val
