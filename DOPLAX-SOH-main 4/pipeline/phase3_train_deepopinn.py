@@ -167,17 +167,22 @@ def run_phase3(project_root: str, num_epochs: int = 5, batch_size: int = 64):
                 print("No data found for this batch. Skipping.")
                 continue
                 
+            from utils.hpo_utils import get_model_params
+            best_params = get_model_params(project_root, dataset, batch, "DeepOPINN")
+            
+            current_batch_size = batch_size
+            if best_params:
+                current_batch_size = best_params.get('batch_size', current_batch_size)
+                
             generator = torch.Generator(device='cuda' if torch.cuda.is_available() else 'cpu')
-            dataloader = DataLoader(dataset_obj, batch_size=batch_size, shuffle=True, generator=generator)
-            val_dataloader = DataLoader(val_dataset_obj, batch_size=batch_size, shuffle=False)
+            dataloader = DataLoader(dataset_obj, batch_size=current_batch_size, shuffle=True, generator=generator)
+            val_dataloader = DataLoader(val_dataset_obj, batch_size=current_batch_size, shuffle=False)
             
             kpi_tracker = KPITracker()
             kpi_tracker.start(num_batteries=len(train_bats), total_cycles=len(dataset_obj))
             
             # Initialize Model
             args = ArgsMock(project_root)
-            from utils.hpo_utils import get_model_params
-            best_params = get_model_params(project_root, dataset, batch, "DeepOPINN")
             if best_params:
                 print(f"Using optimized DeepOPINN architecture: {best_params}")
                 model = DeepOpinn(args, save_args=False, **best_params).to(device)

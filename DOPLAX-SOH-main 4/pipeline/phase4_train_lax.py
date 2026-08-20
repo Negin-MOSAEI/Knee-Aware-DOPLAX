@@ -147,9 +147,20 @@ def run_phase4(project_root: str, num_epochs: int = 5, batch_size: int = 64):
                 print("No data found for this batch. Skipping.")
                 continue
                 
+            from utils.hpo_utils import get_model_params
+            best_params = get_model_params(project_root, dataset, batch, "LAX")
+            
+            current_batch_size = batch_size
+            current_lr = 1e-3
+            model_params = {}
+            if best_params:
+                current_batch_size = best_params.get('batch_size', current_batch_size)
+                current_lr = best_params.get('lr', current_lr)
+                model_params = {k: v for k, v in best_params.items() if k not in ['batch_size', 'lr']}
+                
             generator = torch.Generator(device='cpu')
-            dataloader = DataLoader(dataset_obj, batch_size=batch_size, shuffle=True, generator=generator)
-            val_dataloader = DataLoader(val_dataset_obj, batch_size=batch_size, shuffle=False)
+            dataloader = DataLoader(dataset_obj, batch_size=current_batch_size, shuffle=True, generator=generator)
+            val_dataloader = DataLoader(val_dataset_obj, batch_size=current_batch_size, shuffle=False)
             
             kpi_tracker = KPITracker()
             kpi_tracker.start(num_batteries=len(train_bats), total_cycles=len(dataset_obj))
@@ -162,16 +173,14 @@ def run_phase4(project_root: str, num_epochs: int = 5, batch_size: int = 64):
             x_dim = all_x.shape[1] - 1
             y_dim = x_dim
             
-            from utils.hpo_utils import get_model_params
-            best_params = get_model_params(project_root, dataset, batch, "LAX")
             if best_params:
                 print(f"Using optimized LAX architecture: {best_params}")
-                model = OptimizationNetwork(x_sts, args, x_dim, y_dim, **best_params).to(device)
+                model = OptimizationNetwork(x_sts, args, x_dim, y_dim, **model_params).to(device)
             else:
                 model = OptimizationNetwork(x_sts, args, x_dim, y_dim).to(device)
             # Dummy optimizer for passing to run_epoch
-            opt_net = torch.optim.Adam(model.parameters(), lr=1e-3)
-            model.current_lr_y = 1e-3
+            opt_net = torch.optim.Adam(model.parameters(), lr=current_lr)
+            model.current_lr_y = current_lr
             
             from utils.plot_utils import plot_learning_curve, save_loss_history
             train_losses = []

@@ -129,16 +129,28 @@ def run_phase5(project_root: str, num_epochs: int = 5, batch_size: int = 64):
             # Initialize Fusion MLP with input_dim=3 (u_1, u_2, KPD)
             from utils.hpo_utils import get_model_params
             best_params = get_model_params(project_root, dataset, batch, "FusionMLP")
+            
+            current_batch_size = batch_size
+            current_lr = 1e-3
+            model_params = {}
             if best_params:
                 print(f"Using optimized FusionMLP architecture: {best_params}")
-                bagging_mlp = BaggingMLP(input_dim=3, **best_params).to(device)
+                current_batch_size = best_params.get('batch_size', current_batch_size)
+                current_lr = best_params.get('lr', current_lr)
+                model_params = {k: v for k, v in best_params.items() if k not in ['batch_size', 'lr']}
+                bagging_mlp = BaggingMLP(input_dim=3, **model_params).to(device)
             else:
                 bagging_mlp = BaggingMLP(input_dim=3, hidden_dim=64, num_layers=3).to(device)
+            
+            # Recreate DataLoader with HPO batch_size
+            generator = torch.Generator(device='cuda' if torch.cuda.is_available() else 'cpu')
+            dataloader = DataLoader(dataset_obj, batch_size=current_batch_size, shuffle=True, generator=generator)
+            val_dataloader = DataLoader(val_dataset_obj, batch_size=current_batch_size, shuffle=False)
             
             # KaDOPLAX handles freezing DeepOPINN and LAX internally
             model = KaDOPLAX(deepopinn, lax, bagging_mlp).to(device)
             
-            optimizer = optim.Adam(model.fusion_mlp.parameters(), lr=1e-3)
+            optimizer = optim.Adam(model.fusion_mlp.parameters(), lr=current_lr)
             criterion = nn.MSELoss()
             
             model.train()

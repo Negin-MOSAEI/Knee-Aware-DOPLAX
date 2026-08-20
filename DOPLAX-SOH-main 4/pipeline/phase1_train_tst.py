@@ -64,13 +64,26 @@ def run_phase1(project_root: str, num_epochs: int = 5, batch_size: int = 32):
             # Initialize KPI Tracker
             kpi_tracker = KPITracker()
             
+            # Check for HPO parameters
+            from utils.hpo_utils import get_model_params
+            best_params = get_model_params(project_root, dataset, batch, "TST")
+            
+            current_batch_size = batch_size
+            current_lr = 1e-4
+            model_params = {}
+            if best_params:
+                print(f"Using optimized TST hyperparameters: {best_params}")
+                current_batch_size = best_params.get('batch_size', current_batch_size)
+                current_lr = best_params.get('lr', current_lr)
+                model_params = {k: v for k, v in best_params.items() if k not in ['batch_size', 'lr']}
+            
             # Initialize DataLoader (window_size=40, num_features=3)
             dataloader = get_dataloader(
                 battery_ids=train_bats,
                 initial_knee_points=knee_points_batch,
                 dataset_name=dataset,
                 data_root=os.path.join(project_root, 'data', 'Processed'),
-                batch_size=batch_size,
+                batch_size=current_batch_size,
                 shuffle=True,
                 window_size=40
             )
@@ -80,7 +93,7 @@ def run_phase1(project_root: str, num_epochs: int = 5, batch_size: int = 32):
                 initial_knee_points=knee_points_batch,
                 dataset_name=dataset,
                 data_root=os.path.join(project_root, 'data', 'Processed'),
-                batch_size=batch_size,
+                batch_size=current_batch_size,
                 shuffle=False,
                 window_size=40
             )
@@ -98,20 +111,14 @@ def run_phase1(project_root: str, num_epochs: int = 5, batch_size: int = 32):
             kpi_tracker.start(num_batteries=len(train_bats), total_cycles=len(dataset_obj))
             
             # Initialize Model
-            from utils.hpo_utils import get_model_params
             all_x_tst = np.concatenate([s[0] for s in dataloader.dataset.samples], axis=0)
             X_mean_tst = torch.tensor(np.mean(all_x_tst, axis=0), dtype=torch.float32).to(device)
             X_std_tst = torch.tensor(np.std(all_x_tst, axis=0), dtype=torch.float32).to(device)
             x_sts_tst = [X_mean_tst, X_std_tst]
 
-            best_params = get_model_params(project_root, dataset, batch, "TST")
-            if best_params:
-                print(f"Using optimized TST architecture: {best_params}")
-                model = TimeSeriesTransformer(num_features=actual_num_features, x_sts=x_sts_tst, **best_params).to(device)
-            else:
-                model = TimeSeriesTransformer(num_features=actual_num_features, x_sts=x_sts_tst).to(device)
+            model = TimeSeriesTransformer(num_features=actual_num_features, x_sts=x_sts_tst, **model_params).to(device)
             criterion = nn.MSELoss()
-            optimizer = optim.Adam(model.parameters(), lr=1e-4)
+            optimizer = optim.Adam(model.parameters(), lr=current_lr)
             
             from utils.plot_utils import plot_learning_curve, save_loss_history
             
@@ -123,15 +130,15 @@ def run_phase1(project_root: str, num_epochs: int = 5, batch_size: int = 32):
             
             for epoch in range(num_epochs):
                 # Update learning rate dynamically
-                current_lr = cosine_annealing(
+                curr_epoch_lr = cosine_annealing(
                     epoch=epoch,
                     warmup_epochs=max(1, num_epochs // 5),
                     restart_period=max(1, num_epochs),
                     min_lr=1e-6,
-                    initial_lr=1e-4
+                    initial_lr=current_lr
                 )
                 for param_group in optimizer.param_groups:
-                    param_group['lr'] = current_lr
+                    param_group['lr'] = curr_epoch_lr
 
                 model.train()
                 epoch_loss = 0.0
