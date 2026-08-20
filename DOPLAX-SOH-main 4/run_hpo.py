@@ -25,7 +25,7 @@ def optimize_tst(trial, dataloader, device, x_sts=None, num_features=3):
         
     dropout = trial.suggest_float('dropout', 0.0, 0.9)
     lr = trial.suggest_float('lr', 1e-6, 1e-2, log=True)
-    batch_size = trial.suggest_categorical('batch_size', [16, 32, 64, 128, 256])
+    batch_size = 64
     
     model = TimeSeriesTransformer(num_features=num_features, d_model=d_model, nhead=nhead, num_layers=num_layers, dropout=dropout, x_sts=x_sts).to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
@@ -42,34 +42,43 @@ def optimize_tst(trial, dataloader, device, x_sts=None, num_features=3):
     loss_sum = 0
     batches = 0
     
-    for i in range(0, len(sample_indices), batch_size):
-        batch_indices = sample_indices[i:i+batch_size]
-        features_list = []
-        kpd_list = []
-        for idx in batch_indices:
-            f, k, _ = all_samples[idx]
-            features_list.append(f)
-            kpd_list.append([k])
+    try:
+        for i in range(0, len(sample_indices), batch_size):
+            batch_indices = sample_indices[i:i+batch_size]
+            features_list = []
+            kpd_list = []
+            for idx in batch_indices:
+                f, k, _ = all_samples[idx]
+                features_list.append(f)
+                kpd_list.append([k])
+                
+            features = torch.tensor(np.array(features_list), dtype=torch.float32).to(device)
+            target_kpd = torch.tensor(np.array(kpd_list), dtype=torch.float32).to(device)
             
-        features = torch.tensor(np.array(features_list), dtype=torch.float32).to(device)
-        target_kpd = torch.tensor(np.array(kpd_list), dtype=torch.float32).to(device)
-        
-        optimizer.zero_grad()
-        outputs = model(features)
-        loss = criterion(outputs.squeeze(), target_kpd.squeeze())
-        loss.backward()
-        optimizer.step()
-        
-        loss_sum += loss.item()
-        batches += 1
-        
-    return loss_sum / max(1, batches)
+            optimizer.zero_grad()
+            outputs = model(features)
+            loss = criterion(outputs.squeeze(), target_kpd.squeeze())
+            loss.backward()
+            optimizer.step()
+            
+            loss_sum += loss.item()
+            batches += 1
+            
+        return loss_sum / max(1, batches)
+    except RuntimeError as e:
+        if "out of memory" in str(e):
+            print("CUDA Out of Memory in optimize_tst. Pruning trial.")
+            torch.cuda.empty_cache()
+            raise optuna.exceptions.TrialPruned()
+        raise e
+    finally:
+        torch.cuda.empty_cache()
 
 def optimize_deepopinn(trial, dataloader, device, project_root):
     F_hidden_dim = trial.suggest_categorical('F_hidden_dim', [8, 16, 32, 64, 96, 128, 192, 256, 384, 512, 768, 1024, 2048])
     F_layers_num = trial.suggest_int('F_layers_num', 2, 24)
     dropout = trial.suggest_float('dropout', 0.0, 0.9)
-    batch_size = trial.suggest_categorical('batch_size', [16, 32, 64, 128, 256])
+    batch_size = 64
     
     args = ArgsMock(project_root)
     model = DeepOPINN(args, save_args=False, F_hidden_dim=F_hidden_dim, F_layers_num=F_layers_num, dropout=dropout).to(device)
@@ -82,52 +91,61 @@ def optimize_deepopinn(trial, dataloader, device, project_root):
     all_samples = dataloader.dataset.samples
     sample_indices = random.sample(range(len(all_samples)), min(batch_size * 5, len(all_samples)))
     
-    for i in range(0, len(sample_indices), batch_size):
-        batch_indices = sample_indices[i:i+batch_size]
-        features_list = []
-        kpd_list = []
-        soh_list = []
-        for idx in batch_indices:
-            f, k, s = all_samples[idx]
-            features_list.append(f)
-            kpd_list.append([k])
-            soh_list.append([s])
+    try:
+        for i in range(0, len(sample_indices), batch_size):
+            batch_indices = sample_indices[i:i+batch_size]
+            features_list = []
+            kpd_list = []
+            soh_list = []
+            for idx in batch_indices:
+                f, k, s = all_samples[idx]
+                features_list.append(f)
+                kpd_list.append([k])
+                soh_list.append([s])
+                
+            x1 = torch.tensor(np.array(features_list), dtype=torch.float32).to(device)
+            target_kpd = torch.tensor(np.array(kpd_list), dtype=torch.float32).to(device)
+            target_soh = torch.tensor(np.array(soh_list), dtype=torch.float32).to(device)
             
-        x1 = torch.tensor(np.array(features_list), dtype=torch.float32).to(device)
-        target_kpd = torch.tensor(np.array(kpd_list), dtype=torch.float32).to(device)
-        target_soh = torch.tensor(np.array(soh_list), dtype=torch.float32).to(device)
-        
-        if model.extractor_deepopinn is None:
+            if model.extractor_deepopinn is None:
+                x1_flat = x1.view(x1.shape[0], -1)
+                model.initialize_networks(x1_flat.shape[1])
+                
             x1_flat = x1.view(x1.shape[0], -1)
-            model.initialize_networks(x1_flat.shape[1])
+            u1, f1 = model.forward_deepopinn(x1_flat)
+            weight = model.relu(-target_kpd)
+            loss1 = (torch.pow(u1 - target_soh, 2) * weight).mean()
+            f_target = torch.zeros_like(f1)
+            loss2 = (torch.pow(f1 - f_target, 2) * weight).mean()
+            loss = loss1 + model.args.alpha*loss2
             
-        x1_flat = x1.view(x1.shape[0], -1)
-        u1, f1 = model.forward_deepopinn(x1_flat)
-        weight = model.relu(-target_kpd)
-        loss1 = (torch.pow(u1 - target_soh, 2) * weight).mean()
-        f_target = torch.zeros_like(f1)
-        loss2 = (torch.pow(f1 - f_target, 2) * weight).mean()
-        loss = loss1 + model.args.alpha*loss2
-        
-        model.optimizer_extractor.zero_grad()
-        model.optimizer_solution.zero_grad()
-        model.optimizer_F.zero_grad()
-        loss.backward()
-        model.optimizer_extractor.step()
-        model.optimizer_solution.step()
-        model.optimizer_F.step()
-        
-        total_loss += loss.item()
-        batches += 1
+            model.optimizer_extractor.zero_grad()
+            model.optimizer_solution.zero_grad()
+            model.optimizer_F.zero_grad()
+            loss.backward()
+            model.optimizer_extractor.step()
+            model.optimizer_solution.step()
+            model.optimizer_F.step()
             
-    return total_loss / max(1, batches)
+            total_loss += loss.item()
+            batches += 1
+                
+        return total_loss / max(1, batches)
+    except RuntimeError as e:
+        if "out of memory" in str(e):
+            print("CUDA Out of Memory in optimize_deepopinn. Pruning trial.")
+            torch.cuda.empty_cache()
+            raise optuna.exceptions.TrialPruned()
+        raise e
+    finally:
+        torch.cuda.empty_cache()
 
 def optimize_fusion(trial, dataloader, device):
     hidden_dim = trial.suggest_categorical('hidden_dim', [8, 16, 32, 64, 96, 128, 192, 256, 384, 512, 768, 1024, 2048])
     num_layers = trial.suggest_int('num_layers', 1, 24)
     num_models = trial.suggest_int('num_models', 2, 100)
     lr = trial.suggest_float('lr', 1e-6, 1e-1, log=True)
-    batch_size = trial.suggest_categorical('batch_size', [16, 32, 64, 128, 256])
+    batch_size = 64
     
     model = BaggingMLP(num_models=num_models, input_dim=3, hidden_dim=hidden_dim, num_layers=num_layers).to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
@@ -141,29 +159,38 @@ def optimize_fusion(trial, dataloader, device):
     all_samples = dataloader.dataset.samples
     sample_indices = random.sample(range(len(all_samples)), min(batch_size * 5, len(all_samples)))
     
-    for i in range(0, len(sample_indices), batch_size):
-        batch_indices = sample_indices[i:i+batch_size]
-        features_list = []
-        soh_list = []
-        for idx in batch_indices:
-            f, k, s = all_samples[idx]
-            features_list.append(f)
-            soh_list.append([s])
+    try:
+        for i in range(0, len(sample_indices), batch_size):
+            batch_indices = sample_indices[i:i+batch_size]
+            features_list = []
+            soh_list = []
+            for idx in batch_indices:
+                f, k, s = all_samples[idx]
+                features_list.append(f)
+                soh_list.append([s])
+                
+            features = torch.tensor(np.array(features_list), dtype=torch.float32).to(device)
+            target_soh = torch.tensor(np.array(soh_list), dtype=torch.float32).to(device)
             
-        features = torch.tensor(np.array(features_list), dtype=torch.float32).to(device)
-        target_soh = torch.tensor(np.array(soh_list), dtype=torch.float32).to(device)
-        
-        optimizer.zero_grad()
-        dummy_input = torch.randn(features.size(0), 3).to(device)
-        outputs = model(dummy_input)
-        loss = criterion(outputs.view(-1), target_soh.view(-1))
-        loss.backward()
-        optimizer.step()
-        
-        loss_sum += loss.item()
-        batches += 1
+            optimizer.zero_grad()
+            dummy_input = torch.randn(features.size(0), 3).to(device)
+            outputs = model(dummy_input)
+            loss = criterion(outputs.view(-1), target_soh.view(-1))
+            loss.backward()
+            optimizer.step()
             
-    return loss_sum / max(1, batches)
+            loss_sum += loss.item()
+            batches += 1
+                
+        return loss_sum / max(1, batches)
+    except RuntimeError as e:
+        if "out of memory" in str(e):
+            print("CUDA Out of Memory in optimize_fusion. Pruning trial.")
+            torch.cuda.empty_cache()
+            raise optuna.exceptions.TrialPruned()
+        raise e
+    finally:
+        torch.cuda.empty_cache()
 
 def optimize_lax(trial, dataloader, device, project_root, x_sts, x_dim, y_dim):
     h_dim_LAX = trial.suggest_categorical('h_dim_LAX', [8, 16, 32, 64, 96, 128, 192, 256, 384, 512, 768, 1024, 2048])
@@ -176,7 +203,7 @@ def optimize_lax(trial, dataloader, device, project_root, x_sts, x_dim, y_dim):
                      [16, 32, 64, 32, 16], [32, 64, 128, 64, 32], [64, 128, 256, 128, 64], [128, 256, 512, 256, 128]]
     inside_S_MLP_layers = trial.suggest_categorical('inside_S_MLP_layers', layer_options)
     lr = trial.suggest_float('lr', 1e-6, 1e-1, log=True)
-    batch_size = trial.suggest_categorical('batch_size', [16, 32, 64, 128, 256])
+    batch_size = 64
     
     args = ArgsMockLax(project_root)
     model = LAXModel(x_sts, args, x_dim, y_dim, 
@@ -195,39 +222,48 @@ def optimize_lax(trial, dataloader, device, project_root, x_sts, x_dim, y_dim):
     all_samples = dataloader.dataset.samples
     sample_indices = random.sample(range(len(all_samples)), min(batch_size * 5, len(all_samples)))
     
-    for i in range(0, len(sample_indices), batch_size):
-        batch_indices = sample_indices[i:i+batch_size]
-        x1_list, x2_list, y1_list, y2_list = [], [], [], []
-        for idx in batch_indices:
-            x1_s, x2_s, y1_s, y2_s = all_samples[idx]
-            x1_list.append(x1_s)
-            x2_list.append(x2_s)
-            y1_list.append(y1_s)
-            y2_list.append(y2_s)
+    try:
+        for i in range(0, len(sample_indices), batch_size):
+            batch_indices = sample_indices[i:i+batch_size]
+            x1_list, x2_list, y1_list, y2_list = [], [], [], []
+            for idx in batch_indices:
+                x1_s, x2_s, y1_s, y2_s = all_samples[idx]
+                x1_list.append(x1_s)
+                x2_list.append(x2_s)
+                y1_list.append(y1_s)
+                y2_list.append(y2_s)
+                
+            x1 = torch.tensor(np.array(x1_list), dtype=torch.float32).to(device)
+            x2 = torch.tensor(np.array(x2_list), dtype=torch.float32).to(device)
+            y1 = torch.tensor(np.array(y1_list), dtype=torch.float32).to(device)
+            y2 = torch.tensor(np.array(y2_list), dtype=torch.float32).to(device)
             
-        x1 = torch.tensor(np.array(x1_list), dtype=torch.float32).to(device)
-        x2 = torch.tensor(np.array(x2_list), dtype=torch.float32).to(device)
-        y1 = torch.tensor(np.array(y1_list), dtype=torch.float32).to(device)
-        y2 = torch.tensor(np.array(y2_list), dtype=torch.float32).to(device)
-        
-        x1, x2 = x1[:, :-1], x2[:, :-1]
-        t1, t2 = x1[:, -1],  x2[:, -1]
-        
-        out_1 = model(x=x1, t=t1, epoch=0, return_f=False)
-        out_2 = model(x=x2, t=t2, epoch=0, return_f=False)
-        
-        loss = 0.5 * criterion(out_1.view(-1), y1.view(-1)) + 0.5 * criterion(out_2.view(-1), y2.view(-1))
-        
-        opt_net.zero_grad()
-        opt_F.zero_grad()
-        loss.backward()
-        opt_net.step()
-        opt_F.step()
-        
-        total_loss += loss.item()
-        batches += 1
-        
-    return total_loss / max(1, batches)
+            x1, x2 = x1[:, :-1], x2[:, :-1]
+            t1, t2 = x1[:, -1],  x2[:, -1]
+            
+            out_1 = model(x=x1, t=t1, epoch=0, return_f=False)
+            out_2 = model(x=x2, t=t2, epoch=0, return_f=False)
+            
+            loss = 0.5 * criterion(out_1.view(-1), y1.view(-1)) + 0.5 * criterion(out_2.view(-1), y2.view(-1))
+            
+            opt_net.zero_grad()
+            opt_F.zero_grad()
+            loss.backward()
+            opt_net.step()
+            opt_F.step()
+            
+            total_loss += loss.item()
+            batches += 1
+            
+        return total_loss / max(1, batches)
+    except RuntimeError as e:
+        if "out of memory" in str(e):
+            print("CUDA Out of Memory in optimize_lax. Pruning trial.")
+            torch.cuda.empty_cache()
+            raise optuna.exceptions.TrialPruned()
+        raise e
+    finally:
+        torch.cuda.empty_cache()
 
 def run_hpo_pipeline(project_root):
     print("="*50)
