@@ -467,8 +467,4 @@ class BatteryCycleDataset(torch.utils.data.Dataset):
 def get_dataloader(data_root, dataset_name, battery_ids, batch_size, shuffle=True, capacity_column_index=0, initial_knee_points=None, window_size=40, num_features=None):
     dataset = BatteryCycleDataset(data_root, dataset_name, battery_ids, window_size=window_size, capacity_column_index=capacity_column_index, num_features=num_features, initial_knee_points=initial_knee_points)
     
-    # RandomSampler expects the generator device to match the default tensor device
-    current_default_device = torch.tensor(0).device.type
-    generator = torch.Generator(device=current_default_device)
-    
-    return DataLoader(dataset, batch_size=batch_size, shuffle=shuffle, num_workers=0, generator=generator)
+    return DataLoader(dataset, batch_size=batch_size, shuffle=shuffle, num_workers=0)

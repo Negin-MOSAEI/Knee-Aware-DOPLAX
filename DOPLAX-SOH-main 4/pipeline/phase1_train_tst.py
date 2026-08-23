@@ -7,7 +7,7 @@ import numpy as np
 from typing import Dict, Any
 
 from dataloader.dataloader import get_dataloader
-from Model.Backbones.tst import TimeSeriesTransformer
+from Model.Backbones.tcn import KneeTCN
 from Model.utils.lr_schedulers import cosine_annealing
 from utils.kpi_tracker import KPITracker
 
@@ -21,14 +21,14 @@ DATASETS = {
 
 def run_phase1(project_root: str, num_epochs: int = 5, batch_size: int = 32):
     """
-    Executes Phase 1: Train the Time-Series Transformer (TST) on Train batteries.
+    Executes Phase 1: Train the KneeTCN for Knee-Point Estimation on Train batteries.
     
     Args:
         project_root (str): Root directory of the project.
         num_epochs (int): Number of training epochs per batch.
         batch_size (int): Batch size for DataLoader.
     """
-    print("Starting Phase 1: Training the Time-Series Transformer (TST)...")
+    print("Starting Phase 1: Training the KneeTCN for Knee-Point Estimation...")
     
     config_dir = os.path.join(project_root, 'config')
     models_dir = os.path.join(project_root, 'outputs', 'models')
@@ -52,7 +52,7 @@ def run_phase1(project_root: str, num_epochs: int = 5, batch_size: int = 32):
     for dataset, batches in train_test_split.items():
         kpi_report[dataset] = {}
         for batch in batches:
-            print(f"\n--- Training TST for {dataset} - {batch} ---")
+            print(f"\n--- Training KneeTCN for {dataset} - {batch} ---")
             
             # Retrieve train batteries and knee points for this specific batch
             train_bats = train_test_split[dataset][batch]['train']
@@ -104,12 +104,12 @@ def run_phase1(project_root: str, num_epochs: int = 5, batch_size: int = 32):
             X_std_tst = torch.tensor(np.std(all_x_tst, axis=0), dtype=torch.float32).to(device)
             x_sts_tst = [X_mean_tst, X_std_tst]
 
-            best_params = get_model_params(project_root, dataset, batch, "TST")
+            best_params = get_model_params(project_root, dataset, batch, "KneeTCN")
             if best_params:
-                print(f"Using optimized TST architecture: {best_params}")
-                model = TimeSeriesTransformer(num_features=actual_num_features, x_sts=x_sts_tst, **best_params).to(device)
+                print(f"Using optimized KneeTCN architecture: {best_params}")
+                model = KneeTCN(num_features=actual_num_features, x_sts=x_sts_tst, **best_params).to(device)
             else:
-                model = TimeSeriesTransformer(num_features=actual_num_features, x_sts=x_sts_tst).to(device)
+                model = KneeTCN(num_features=actual_num_features, x_sts=x_sts_tst).to(device)
             criterion = nn.MSELoss()
             optimizer = optim.Adam(model.parameters(), lr=1e-4)
             
@@ -188,12 +188,12 @@ def run_phase1(project_root: str, num_epochs: int = 5, batch_size: int = 32):
             kpi_report[dataset][batch] = kpi_metrics
             
             # Save learning curves
-            learning_curve_dir = os.path.join(project_root, 'experiments', 'tst_experiments')
-            plot_learning_curve(train_losses, val_losses, "TST", dataset, batch, os.path.join(project_root, 'outputs', 'figures', 'learning_curves'))
-            save_loss_history(train_losses, val_losses, "TST", dataset, batch, learning_curve_dir)
+            learning_curve_dir = os.path.join(project_root, 'experiments', 'tcn_experiments')
+            plot_learning_curve(train_losses, val_losses, "KneeTCN", dataset, batch, os.path.join(project_root, 'outputs', 'figures', 'learning_curves'))
+            save_loss_history(train_losses, val_losses, "KneeTCN", dataset, batch, learning_curve_dir)
             
             # Save Model Weights
-            model_save_path = os.path.join(models_dir, f'tst_{dataset}_{batch}.pt')
+            model_save_path = os.path.join(models_dir, f'tcn_{dataset}_{batch}.pt')
             torch.save(model.state_dict(), model_save_path)
             print(f"Model saved to {model_save_path}")
             print(f"KPIs: {kpi_metrics}")

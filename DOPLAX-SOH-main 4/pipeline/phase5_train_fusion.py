@@ -2,6 +2,7 @@ import os
 import json
 import torch
 import numpy as np
+import pandas as pd
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import Dataset, DataLoader
@@ -32,12 +33,19 @@ class FusionDataset(Dataset):
         )
         
         all_kpd = []
+        data_dir = os.path.join(project_root, 'data', 'Processed', f'{dataset_name} data')
         for bat_id in battery_ids:
+            csv_path = os.path.join(data_dir, f'{bat_id}.csv')
+            num_cycles = len(pd.read_csv(csv_path)) if os.path.exists(csv_path) else 800
             kpd_path = os.path.join(kpd_dir, f"{bat_id.replace('/', '_')}_kpd.npy")
             if os.path.exists(kpd_path):
                 kpd_seq = np.load(kpd_path)
             else:
-                kpd_seq = np.zeros(800, dtype=np.float32)
+                kpd_seq = np.zeros(num_cycles, dtype=np.float32)
+            if len(kpd_seq) < num_cycles:
+                kpd_seq = np.pad(kpd_seq, (0, num_cycles - len(kpd_seq)), mode='edge')
+            elif len(kpd_seq) > num_cycles:
+                kpd_seq = kpd_seq[:num_cycles]
             all_kpd.extend(kpd_seq)
             
         self.inferred_kpds = np.array(all_kpd)
@@ -51,7 +59,7 @@ class FusionDataset(Dataset):
         cycle_t = torch.tensor([idx + self.base_dataset.window_size], dtype=torch.float32)
         return torch.tensor(features, dtype=torch.float32), inferred_kpd, cycle_t, torch.tensor([true_soh], dtype=torch.float32)
 
-def run_phase5(project_root: str, num_epochs: int = 5, batch_size: int = 64):
+def run_phase5(project_root: str, num_epochs: int = 5, batch_size: int = 64, resume: bool = True):
     """Executes Phase 5: Train Fusion MLP (BaggingMLP) model."""
     print("Starting Phase 5: Training Fusion (Bagging MLP)...")
     
@@ -66,6 +74,12 @@ def run_phase5(project_root: str, num_epochs: int = 5, batch_size: int = 64):
         
     for dataset, batches in train_test_split.items():
         for batch in batches:
+            # Resume support: skip fusion models that are already trained
+            kadoplax_save_path = os.path.join(models_dir, f'kadoplax_{dataset}_{batch}.pt')
+            if resume and os.path.exists(kadoplax_save_path):
+                print(f"\n--- Skipping {dataset} - {batch} (already trained: {os.path.basename(kadoplax_save_path)}) ---")
+                continue
+
             print(f"\n--- Training Fusion MLP for {dataset} - {batch} ---")
             
             train_bats = train_test_split[dataset][batch]['train']
@@ -80,8 +94,7 @@ def run_phase5(project_root: str, num_epochs: int = 5, batch_size: int = 64):
                 print("No data found for this batch. Skipping.")
                 continue
                 
-            generator = torch.Generator(device='cuda' if torch.cuda.is_available() else 'cpu')
-            dataloader = DataLoader(dataset_obj, batch_size=batch_size, shuffle=True, generator=generator)
+            dataloader = DataLoader(dataset_obj, batch_size=batch_size, shuffle=True)
             val_dataloader = DataLoader(val_dataset_obj, batch_size=batch_size, shuffle=False)
             
             kpi_tracker = KPITracker()
@@ -107,7 +120,7 @@ def run_phase5(project_root: str, num_epochs: int = 5, batch_size: int = 64):
                 deepopinn.load_state_dict(torch.load(do_path, map_location=device, weights_only=True))
             
             args_lax = ArgsMockLax(project_root)
-            lax_num_features = dataset_obj.base_dataset.num_features
+            lax_num_features = args_lax.dim_in_LAX
             X_mean = torch.zeros(lax_num_features, dtype=torch.float32).to(device)
             X_std = torch.ones(lax_num_features, dtype=torch.float32).to(device)
             x_sts = [X_mean, X_std]
@@ -124,7 +137,11 @@ def run_phase5(project_root: str, num_epochs: int = 5, batch_size: int = 64):
                 state_dict = torch.load(lax_path, map_location=device, weights_only=True)
                 if 'y' in state_dict:
                     del state_dict['y']
-                lax.load_state_dict(state_dict, strict=False)
+                try:
+                    lax.load_state_dict(state_dict, strict=False)
+                except RuntimeError as e:
+                    print(f"  Warning: Cannot load old LAX weights (architecture mismatch): {e}")
+                    print(f"  Training LAX from scratch.")
             
             # Initialize Fusion MLP with input_dim=3 (u_1, u_2, KPD)
             from utils.hpo_utils import get_model_params

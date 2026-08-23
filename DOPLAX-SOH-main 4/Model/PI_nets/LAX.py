@@ -302,6 +302,9 @@ class OptimizationNetwork(nn.Module):
         self.h_dim = args.h_dim_LAX
         self.run_for_LAX = args.run_for_LAX
         self.opt_y_flag = False
+        # Pure-inference mode: when True, the inner optimize_y loop is bypassed
+        # entirely (used by KaDOPLAX fusion where LAX weights are frozen).
+        self.inference_mode = False
         self.args = args 
         self.epoch_y = args.epoch_y_LAX
         self.s_LAX = args.s_LAX
@@ -610,7 +613,11 @@ class OptimizationNetwork(nn.Module):
         x_u = x.to(device).float()
         t_u = t.to(device).view(-1).float()
 
-        if self.run_for_LAX:
+        if self.inference_mode:
+            # Pure inference: skip the inner optimization loop, use fixed ys.
+            fixed_ys = self.X_mean.unsqueeze(0).repeat(x.shape[0], 1)
+            self.y = nn.Parameter(fixed_ys, requires_grad=False)
+        elif self.run_for_LAX:
             if epoch >= self.epoch_th:
                 out_y = self.optimize_y(x_u, t_u, steps=self.epoch_y, lr=self.current_lr_y)
                 self.opt_y_flag = True

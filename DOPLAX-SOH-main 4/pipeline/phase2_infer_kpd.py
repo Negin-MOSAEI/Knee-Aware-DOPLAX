@@ -6,7 +6,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from typing import Dict, List, Any
 
-from Model.Backbones.tst import TimeSeriesTransformer
+from Model.Backbones.tcn import KneeTCN
 from utils.math_utils import tst_cold_start_kpd, calculate_kpd
 from dataloader.dataloader import BatteryCycleDataset
 import matplotlib as mpl
@@ -29,7 +29,7 @@ def infer_kpd_for_battery(model: torch.nn.Module, battery_id: str, dataset_name:
     """
     Infers the full KPD sequence for a single battery.
     Uses cold start logic for cycles 1 to 39.
-    Uses the trained TST model for cycles >= 40.
+    Uses the trained KneeTCN model for cycles >= 40.
     """
     dataset = BatteryCycleDataset(
         battery_ids=[battery_id],
@@ -64,7 +64,7 @@ def infer_kpd_for_battery(model: torch.nn.Module, battery_id: str, dataset_name:
 
 def run_phase2(project_root: str):
     """Executes Phase 2: KPD Inference for all batteries."""
-    print("Starting Phase 2: KPD Inference...")
+    print("Starting Phase 2: KneeTCN KPD Inference...")
     
     config_dir = os.path.join(project_root, 'config')
     models_dir = os.path.join(project_root, 'outputs', 'models')
@@ -86,9 +86,9 @@ def run_phase2(project_root: str):
         for batch in batches:
             print(f"Inferring KPD for {dataset} - {batch}...")
             
-            model_path = os.path.join(models_dir, f'tst_{dataset}_{batch}.pt')
+            model_path = os.path.join(models_dir, f'tcn_{dataset}_{batch}.pt')
             if not os.path.exists(model_path):
-                print(f"Warning: Model {model_path} not found. Skipping.")
+                print(f"Warning: KneeTCN model {model_path} not found. Skipping.")
                 continue
                 
             train_bats = train_test_split[dataset][batch]['train']
@@ -113,11 +113,11 @@ def run_phase2(project_root: str):
             actual_num_features = features_sample.shape[-1]
             
             from utils.hpo_utils import get_model_params
-            best_params = get_model_params(project_root, dataset, batch, "TST")
+            best_params = get_model_params(project_root, dataset, batch, "KneeTCN")
             if best_params:
-                model = TimeSeriesTransformer(num_features=actual_num_features, x_sts=x_sts_tst, **best_params).to(device)
+                model = KneeTCN(num_features=actual_num_features, x_sts=x_sts_tst, **best_params).to(device)
             else:
-                model = TimeSeriesTransformer(num_features=actual_num_features, x_sts=x_sts_tst).to(device)
+                model = KneeTCN(num_features=actual_num_features, x_sts=x_sts_tst).to(device)
             model.load_state_dict(torch.load(model_path, map_location=device, weights_only=True))
             
             batch_kpd_dir = os.path.join(kpd_out_dir, dataset, batch)

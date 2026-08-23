@@ -17,6 +17,10 @@ class KaDOPLAX(nn.Module):
         for param in self.lax.parameters():
             param.requires_grad = False
 
+        # Both models are fully trained: run LAX in pure-inference mode during
+        # fusion, bypassing its inner optimize_y loop (5 gradient steps per call).
+        self.lax.inference_mode = True
+
     def forward(self, features, kpd, cycle_t, epoch=None, return_all=False):
         """
         features: [batch_size, window_size, num_features]
@@ -44,7 +48,7 @@ class KaDOPLAX(nn.Module):
                 u_1 = u_1_tuple[0] if isinstance(u_1_tuple, tuple) else u_1_tuple
             
             # LAX
-            last_x = features[:, -1, :] # The last cycle features in the window (batch_size, 3)
+            last_x = features[:, -1, :3] # The last cycle's first 3 features (voltage, current, temp)
             try:
                 if epoch is not None:
                     u_2 = self.lax(x=last_x, t=cycle_t, epoch=epoch, return_f=False)

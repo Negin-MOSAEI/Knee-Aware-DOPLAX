@@ -147,8 +147,7 @@ def run_phase4(project_root: str, num_epochs: int = 5, batch_size: int = 64):
                 print("No data found for this batch. Skipping.")
                 continue
                 
-            generator = torch.Generator(device='cpu')
-            dataloader = DataLoader(dataset_obj, batch_size=batch_size, shuffle=True, generator=generator)
+            dataloader = DataLoader(dataset_obj, batch_size=batch_size, shuffle=True)
             val_dataloader = DataLoader(val_dataset_obj, batch_size=batch_size, shuffle=False)
             
             kpi_tracker = KPITracker()

@@ -2,6 +2,7 @@ import os
 import json
 import torch
 import numpy as np
+import pandas as pd
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import Dataset, DataLoader
@@ -100,14 +101,21 @@ class DeepOpinnDataset(Dataset):
             battery_ids=battery_ids,
             capacity_column_index=0
         )
-        
+
         all_kpd = []
+        data_dir = os.path.join(project_root, 'data', 'Processed', f'{dataset_name} data')
         for bat_id in battery_ids:
+            csv_path = os.path.join(data_dir, f'{bat_id}.csv')
+            num_cycles = len(pd.read_csv(csv_path)) if os.path.exists(csv_path) else 800
             kpd_path = os.path.join(kpd_dir, f"{bat_id.replace('/', '_')}_kpd.npy")
             if os.path.exists(kpd_path):
                 kpd_seq = np.load(kpd_path)
             else:
-                kpd_seq = np.zeros(800, dtype=np.float32)
+                kpd_seq = np.zeros(num_cycles, dtype=np.float32)
+            if len(kpd_seq) < num_cycles:
+                kpd_seq = np.pad(kpd_seq, (0, num_cycles - len(kpd_seq)), mode='edge')
+            elif len(kpd_seq) > num_cycles:
+                kpd_seq = kpd_seq[:num_cycles]
             all_kpd.extend(kpd_seq)
             
         self.inferred_kpds = all_kpd
@@ -167,8 +175,7 @@ def run_phase3(project_root: str, num_epochs: int = 5, batch_size: int = 64):
                 print("No data found for this batch. Skipping.")
                 continue
                 
-            generator = torch.Generator(device='cuda' if torch.cuda.is_available() else 'cpu')
-            dataloader = DataLoader(dataset_obj, batch_size=batch_size, shuffle=True, generator=generator)
+            dataloader = DataLoader(dataset_obj, batch_size=batch_size, shuffle=True)
             val_dataloader = DataLoader(val_dataset_obj, batch_size=batch_size, shuffle=False)
             
             kpi_tracker = KPITracker()
