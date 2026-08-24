@@ -15,15 +15,15 @@ class KaDOPLAX(nn.Module):
         # only for backward compatibility with existing call sites/checkpoints.
         # self.fusion_mlp = bagging_mlp
 
-        # Static learnable expert weights (equal contribution at init)
-        self.w_deepopinn = nn.Parameter(torch.tensor(0.5))
-        self.w_lax = nn.Parameter(torch.tensor(0.5))
-
-        # Dynamic per-sample gating network over concatenated expert outputs
+        # Residual gated MoE: a small gating MLP maps the two expert
+        # predictions to a stable per-sample convex combination. No static
+        # learnable weights are used, so gating cannot conflict with fixed
+        # mixing coefficients and drift away from the expert outputs.
         self.moe_gate = nn.Sequential(
-            nn.Linear(2, 16),
+            nn.Linear(2, 32),
             nn.ReLU(),
-            nn.Linear(16, 2),
+            nn.Dropout(0.1),
+            nn.Linear(32, 2),
             nn.Softmax(dim=1)
         )
 
@@ -89,18 +89,12 @@ class KaDOPLAX(nn.Module):
         if u_2.dim() == 1:
             u_2 = u_2.unsqueeze(1)
 
-        # ---- MoE adaptive fusion ----
-        # Dynamic gate weights from the two expert predictions
-        gate_input = torch.cat([u_1, u_2], dim=1)      # [B, 2]
-        gate_weights = self.moe_gate(gate_input)       # [B, 2]
-        weight_d = gate_weights[:, 0]                  # [B] DeepOPINN gate
-        weight_l = gate_weights[:, 1]                  # [B] LAX gate
-
-        # Hybrid weighting: static scalar + dynamic per-sample gate,
-        # renormalized to keep a convex combination (preserves SOH scale).
-        w_d = (self.w_deepopinn + weight_d).unsqueeze(1)   # [B, 1]
-        w_l = (self.w_lax + weight_l).unsqueeze(1)         # [B, 1]
-        final_out = (w_d * u_1 + w_l * u_2) / (w_d + w_l + 1e-8)
+        # ---- Residual gated MoE fusion ----
+        # Stable convex combination of the two expert outputs: the gate sees
+        # both predictions and outputs softmax-normalized weights, so the
+        # blended output always stays within the experts' prediction range.
+        weights = self.moe_gate(torch.cat([u_1, u_2], dim=-1))  # [B, 2]
+        final_out = weights[:, 0:1] * u_1 + weights[:, 1:2] * u_2
 
         if return_all:
             # Zero-width sigma placeholder keeps the legacy 4-tuple API

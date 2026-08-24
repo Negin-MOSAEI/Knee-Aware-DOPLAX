@@ -155,9 +155,15 @@ def run_phase5(project_root: str, num_epochs: int = 5, batch_size: int = 64, res
             # KaDOPLAX handles freezing DeepOPINN and LAX internally
             model = KaDOPLAX(deepopinn, lax, bagging_mlp).to(device)
             
-            # Train only the MoE fusion head (w_deepopinn, w_lax, moe_gate);
-            # expert backbones are frozen inside KaDOPLAX.
-            optimizer = optim.Adam([p for p in model.parameters() if p.requires_grad], lr=1e-3)
+            # Train only the MoE fusion head (moe_gate); expert backbones are
+            # frozen inside KaDOPLAX. A small LR with AdamW + weight decay
+            # makes the gate gently learn to correct the base models instead
+            # of overwriting them.
+            optimizer = optim.AdamW(
+                [p for p in model.parameters() if p.requires_grad],
+                lr=1e-4,
+                weight_decay=1e-2
+            )
             criterion = nn.HuberLoss(delta=0.1)
             
             model.train()
