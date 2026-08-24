@@ -60,8 +60,8 @@ class FusionDataset(Dataset):
         return torch.tensor(features, dtype=torch.float32), inferred_kpd, cycle_t, torch.tensor([true_soh], dtype=torch.float32)
 
 def run_phase5(project_root: str, num_epochs: int = 5, batch_size: int = 64, resume: bool = True):
-    """Executes Phase 5: Train Fusion MLP (BaggingMLP) model."""
-    print("Starting Phase 5: Training Fusion (Bagging MLP)...")
+    """Executes Phase 5: Train MoE Fusion (KaDOPLAX gating head) model."""
+    print("Starting Phase 5: Training Fusion (MoE adaptive gating)...")
     
     config_dir = os.path.join(project_root, 'config')
     kpd_out_dir = os.path.join(project_root, 'outputs', 'kpd_predictions')
@@ -155,8 +155,10 @@ def run_phase5(project_root: str, num_epochs: int = 5, batch_size: int = 64, res
             # KaDOPLAX handles freezing DeepOPINN and LAX internally
             model = KaDOPLAX(deepopinn, lax, bagging_mlp).to(device)
             
-            optimizer = optim.Adam(model.fusion_mlp.parameters(), lr=1e-3)
-            criterion = nn.MSELoss()
+            # Train only the MoE fusion head (w_deepopinn, w_lax, moe_gate);
+            # expert backbones are frozen inside KaDOPLAX.
+            optimizer = optim.Adam([p for p in model.parameters() if p.requires_grad], lr=1e-3)
+            criterion = nn.HuberLoss(delta=0.1)
             
             model.train()
             train_losses = []

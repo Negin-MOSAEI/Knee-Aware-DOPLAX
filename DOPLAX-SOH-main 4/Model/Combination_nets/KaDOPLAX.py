@@ -5,12 +5,28 @@ from Model.PI_nets.DeepOPINN import Model as DeepOPINN
 from Model.PI_nets.LAX import OptimizationNetwork as LAXModel
 
 class KaDOPLAX(nn.Module):
-    def __init__(self, deepopinn_model, lax_model, bagging_mlp):
+    def __init__(self, deepopinn_model, lax_model, bagging_mlp=None):
         super(KaDOPLAX, self).__init__()
         self.deepopinn = deepopinn_model
         self.lax = lax_model
-        self.fusion_mlp = bagging_mlp
-        
+
+        # ---- Mixture-of-Experts (MoE) fusion head ----
+        # Legacy BaggingMLP block retired: the constructor argument is kept
+        # only for backward compatibility with existing call sites/checkpoints.
+        # self.fusion_mlp = bagging_mlp
+
+        # Static learnable expert weights (equal contribution at init)
+        self.w_deepopinn = nn.Parameter(torch.tensor(0.5))
+        self.w_lax = nn.Parameter(torch.tensor(0.5))
+
+        # Dynamic per-sample gating network over concatenated expert outputs
+        self.moe_gate = nn.Sequential(
+            nn.Linear(2, 16),
+            nn.ReLU(),
+            nn.Linear(16, 2),
+            nn.Softmax(dim=1)
+        )
+
         # Freeze the pre-trained DeepOPINN and LAX models
         for param in self.deepopinn.parameters():
             param.requires_grad = False
@@ -61,18 +77,35 @@ class KaDOPLAX(nn.Module):
             if isinstance(u_2, tuple):
                 u_2 = u_2[0]
                 
-        # Ensure correct shapes
+        # Ensure correct shapes: experts must be [batch_size, 1] for the gate
         if u_1.dim() > 2:
             u_1 = u_1.view(batch_size, -1)
         if u_2.dim() > 2:
             u_2 = u_2.view(batch_size, -1)
         if kpd.dim() > 2:
             kpd = kpd.view(batch_size, -1)
-            
-        fusion_input = torch.cat([u_1, u_2, kpd], dim=1)
-        
+        if u_1.dim() == 1:
+            u_1 = u_1.unsqueeze(1)
+        if u_2.dim() == 1:
+            u_2 = u_2.unsqueeze(1)
+
+        # ---- MoE adaptive fusion ----
+        # Dynamic gate weights from the two expert predictions
+        gate_input = torch.cat([u_1, u_2], dim=1)      # [B, 2]
+        gate_weights = self.moe_gate(gate_input)       # [B, 2]
+        weight_d = gate_weights[:, 0]                  # [B] DeepOPINN gate
+        weight_l = gate_weights[:, 1]                  # [B] LAX gate
+
+        # Hybrid weighting: static scalar + dynamic per-sample gate,
+        # renormalized to keep a convex combination (preserves SOH scale).
+        w_d = (self.w_deepopinn + weight_d).unsqueeze(1)   # [B, 1]
+        w_l = (self.w_lax + weight_l).unsqueeze(1)         # [B, 1]
+        final_out = (w_d * u_1 + w_l * u_2) / (w_d + w_l + 1e-8)
+
         if return_all:
-            mean_pred, std_pred = self.fusion_mlp(fusion_input, return_std=True)
-            return mean_pred, u_1, u_2, std_pred
+            # Zero-width sigma placeholder keeps the legacy 4-tuple API
+            # (former BaggingMLP return_std=True contract) intact.
+            std_pred = torch.zeros_like(final_out)
+            return final_out, u_1, u_2, std_pred
         else:
-            return self.fusion_mlp(fusion_input, return_std=False)
+            return final_out
