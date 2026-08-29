@@ -275,9 +275,15 @@ class Model(nn.Module):
                     f_target = torch.zeros_like(f1)
                     loss2 = (torch.pow(f1 - f_target, 2) * weight).mean()
                     
-                    # Original physics loss (u2-u1 < 0) was for paired data. 
-                    # We can use the weight sum as loss3 to monitor knee mask activation
-                    loss3 = weight.sum()
+                    # Physics / Monotonicity Loss (Option 1: Direct non-increasing penalty over sequence dimension N-1)
+                    if u1.dim() >= 2 and u1.shape[1] > 1:
+                        diff_pred = u1[:, 1:] - u1[:, :-1]
+                        loss3 = torch.mean(self.relu(diff_pred))
+                    elif u1.dim() == 1 and u1.shape[0] > 1:
+                        diff_pred = u1[1:] - u1[:-1]
+                        loss3 = torch.mean(self.relu(diff_pred))
+                    else:
+                        loss3 = weight.sum()
 
                     loss1_meter.update(loss1.item())
                     loss2_meter.update(loss2.item())
@@ -401,8 +407,15 @@ class Model(nn.Module):
             f_target = torch.zeros_like(f1)
             loss2 = (torch.pow(f1 - f_target, 2) * weight).mean()
 
-            # physics loss (monitor masking activation instead of u2-u1)
-            loss3 = weight.sum()
+            # Physics / Monotonicity Loss (Option 1: Direct non-increasing penalty over sequence dimension N-1)
+            if u1.dim() >= 2 and u1.shape[1] > 1:
+                diff_pred = u1[:, 1:] - u1[:, :-1]
+                loss3 = torch.mean(self.relu(diff_pred))
+            elif u1.dim() == 1 and u1.shape[0] > 1:
+                diff_pred = u1[1:] - u1[:-1]
+                loss3 = torch.mean(self.relu(diff_pred))
+            else:
+                loss3 = weight.sum()
 
             # total loss
             loss = loss1 + self.args.alpha*loss2

@@ -786,8 +786,10 @@ def run_epoch(model, opt_net, opt_F, args, batch_name, experiment_id, epoch=0, p
         # print(used_beta)
         if phase=='train':
             relu = nn.ReLU()
-            # physics loss  u2-u1<0, considering capacity regeneration(monotonic loss)
-            loss_mono = relu(torch.mul(out_2 - out_1,y1.squeeze() - y2.squeeze())).sum()
+            # Corrected Monotonicity Loss (Option 1: Direct non-increasing penalty over sequence length N-1)
+            # diff_pred = out_2 - out_1. Penalizes any positive predicted capacity change (diff_pred > 0).
+            diff_pred = out_2 - out_1
+            loss_mono = torch.mean(relu(diff_pred))
             # total loss
             loss = (args.zeta_LAX * ((loss_data_mse)) 
                     + args.betha_LAX * loss_mono + 
