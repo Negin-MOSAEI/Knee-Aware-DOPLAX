@@ -383,14 +383,7 @@ class Model(nn.Module):
             if self.extractor_deepopinn is None:
                 self.initialize_networks(x1.shape[1])
 
-                self.scheduler = LR_Scheduler(
-                    optimizer=self.optimizer_solution, 
-                    warmup_epochs=self.args.warmup_epochs,
-                    warmup_lr=self.args.warmup_lr,
-                    num_epochs=self.args.epochs,
-                    base_lr=self.args.lr,
-                    final_lr=self.args.final_lr
-                )
+                self.scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(self.optimizer_solution, T_max=self.args.epochs)
                 
             u1, f1 = self.forward_deepopinn(x1)
             

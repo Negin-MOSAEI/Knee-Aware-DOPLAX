@@ -15,7 +15,7 @@ os.environ["CUDA_VISIBLE_DEVICES"] = ""
 os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
 os.environ["DDE_BACKEND"] = "pytorch"
 
-project_root = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'DOPLAX-SOH-main 4')
 sys.path.insert(0, project_root)
 
 import pipeline.phase3_train_deepopinn as phase3
@@ -39,24 +39,20 @@ def _cpu_randperm(*args, **kwargs):
 
 _torch.randperm = _cpu_randperm
 
-NUM_EPOCHS = 10
+NUM_EPOCHS = 500
 
 
 def main():
-    print("=" * 60)
-    print(f"  DOPLAX Phases 3-7  |  epochs={NUM_EPOCHS}  |  device=cpu")
-    print("=" * 60)
-
-    print("\n>>> Phase 3: Training DeepOPINN ...")
-    phase3.run_phase3(project_root, num_epochs=NUM_EPOCHS)
-    print("-" * 60)
-
-    print("\n>>> Phase 4: Training LAX ...")
-    phase4.run_phase4(project_root, num_epochs=NUM_EPOCHS)
-    print("-" * 60)
-
-    print("\n>>> Phase 5: Training Fusion MLP ...")
-    phase5.run_phase5(project_root, num_epochs=NUM_EPOCHS)
+    print(f"Starting execution of Phases 3 to 7 with {NUM_EPOCHS} epochs...")
+    
+    # Phase 3
+    phase3.run_phase3(project_root, num_epochs=NUM_EPOCHS, resume=True)
+    
+    # Phase 4
+    phase4.run_phase4(project_root, num_epochs=NUM_EPOCHS, resume=True)
+    
+    # Phase 5
+    phase5.run_phase5(project_root, num_epochs=NUM_EPOCHS, resume=True)
     print("-" * 60)
 
     print("\n>>> Phase 6: Final SOH Estimation ...")

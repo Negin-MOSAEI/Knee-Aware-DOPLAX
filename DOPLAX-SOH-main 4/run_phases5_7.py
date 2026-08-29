@@ -39,7 +39,7 @@ def _cpu_randperm(*args, **kwargs):
 
 _torch.randperm = _cpu_randperm
 
-NUM_EPOCHS = 10
+NUM_EPOCHS = 500
 
 
 def main():

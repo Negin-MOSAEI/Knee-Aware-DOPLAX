@@ -39,7 +39,7 @@ def _cpu_randperm(*args, **kwargs):
 
 _torch.randperm = _cpu_randperm
 
-NUM_EPOCHS = 10
+NUM_EPOCHS = 500
 
 
 def main():
@@ -48,15 +48,15 @@ def main():
     print("=" * 60)
 
     print("\n>>> Phase 3: Training DeepOPINN ...")
-    phase3.run_phase3(project_root, num_epochs=NUM_EPOCHS)
+    phase3.run_phase3(project_root, num_epochs=NUM_EPOCHS, resume=True)
     print("-" * 60)
 
     print("\n>>> Phase 4: Training LAX ...")
-    phase4.run_phase4(project_root, num_epochs=NUM_EPOCHS)
+    phase4.run_phase4(project_root, num_epochs=NUM_EPOCHS, resume=True)
     print("-" * 60)
 
     print("\n>>> Phase 5: Training Fusion MLP ...")
-    phase5.run_phase5(project_root, num_epochs=NUM_EPOCHS)
+    phase5.run_phase5(project_root, num_epochs=NUM_EPOCHS, resume=True)
     print("-" * 60)
 
     print("\n>>> Phase 6: Final SOH Estimation ...")

@@ -113,7 +113,7 @@ class ArgsMockLax:
         self.schedule_beta = 0
         self.dual_LAX = 0
 
-def run_phase4(project_root: str, num_epochs: int = 5, batch_size: int = 64):
+def run_phase4(project_root: str, num_epochs: int = 5, batch_size: int = 64, resume: bool = True):
     """Executes Phase 4: Train LAX model on Train batteries."""
     print("Starting Phase 4: Training LAX...")
     
@@ -131,6 +131,11 @@ def run_phase4(project_root: str, num_epochs: int = 5, batch_size: int = 64):
     for dataset, batches in train_test_split.items():
         kpi_report[dataset] = {}
         for batch in batches:
+            model_save_path = os.path.join(models_dir, f'lax_{dataset}_{batch}.pt')
+            if resume and os.path.exists(model_save_path):
+                print(f"Model for {dataset} ({batch}) already exists, skipping...")
+                continue
+
             print(f"\n--- Training LAX for {dataset} - {batch} ---")
             
             args = ArgsMockLax(project_root)
@@ -168,8 +173,8 @@ def run_phase4(project_root: str, num_epochs: int = 5, batch_size: int = 64):
                 model = OptimizationNetwork(x_sts, args, x_dim, y_dim, **best_params).to(device)
             else:
                 model = OptimizationNetwork(x_sts, args, x_dim, y_dim).to(device)
-            # Dummy optimizer for passing to run_epoch
             opt_net = torch.optim.Adam(model.parameters(), lr=1e-3)
+            scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(opt_net, T_max=num_epochs)
             model.current_lr_y = 1e-3
             
             from utils.plot_utils import plot_learning_curve, save_loss_history
@@ -185,6 +190,7 @@ def run_phase4(project_root: str, num_epochs: int = 5, batch_size: int = 64):
                 val_losses_tuple = run_epoch(model, opt_net, opt_net, args, batch, dataset, epoch=epoch, phase="val", dataloader=val_dataloader)
                 val_losses.append(val_losses_tuple[0])
                 
+                scheduler.step()
                 kpi_tracker.update_ram()
                 
                 if val_losses_tuple[0] < best_val_loss:

@@ -133,7 +133,7 @@ class DeepOpinnDataset(Dataset):
         features_flat = features.reshape(-1)
         return features_flat, inferred_kpd, true_soh
 
-def run_phase3(project_root: str, num_epochs: int = 5, batch_size: int = 64):
+def run_phase3(project_root: str, num_epochs: int = 5, batch_size: int = 64, resume: bool = True):
     """Executes Phase 3: Train DeepOpinn model on Train batteries."""
     print("Starting Phase 3: Training DeepOpinn...")
     
@@ -155,10 +155,19 @@ def run_phase3(project_root: str, num_epochs: int = 5, batch_size: int = 64):
     args = ArgsMock(project_root)
     args.epochs = num_epochs
     args.batch_size = batch_size
+    args.lr = 1e-3
+    args.lr_F = 1e-3
+    args.warmup_lr = 1e-3
+    args.final_lr = 1e-4
     
     for dataset, batches in train_test_split.items():
         kpi_report[dataset] = {}
         for batch in batches:
+            model_save_path = os.path.join(models_dir, f'deepopinn_{dataset}_{batch}.pt')
+            if resume and os.path.exists(model_save_path):
+                print(f"Model for {dataset} ({batch}) already exists, skipping...")
+                continue
+
             print(f"\n--- Training DeepOpinn for {dataset} - {batch} ---")
             
             train_bats = train_test_split[dataset][batch]['train']

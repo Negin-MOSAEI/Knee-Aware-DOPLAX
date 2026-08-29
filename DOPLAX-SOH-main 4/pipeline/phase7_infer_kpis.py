@@ -1,4 +1,8 @@
 import os
+import sys
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 import json
 import pandas as pd
 import numpy as np
@@ -59,11 +63,44 @@ def run_phase7(project_root: str):
                 data = np.load(pred_file)
                 true_soh = data['true_soh']
                 
+                # Determine nominal capacity
+                if dataset == 'XJTU':
+                    nominal_capacity = 2.0
+                elif dataset == 'MIT':
+                    nominal_capacity = 1.1
+                elif dataset == 'HUST':
+                    nominal_capacity = 1.1
+                elif dataset == 'TJU':
+                    if 'NCM_NCA' in bat_id:
+                        nominal_capacity = 2.5
+                    else:
+                        nominal_capacity = 3.5
+                else:
+                    nominal_capacity = true_soh[0] if len(true_soh) > 0 and true_soh[0] > 0 else 1.0
+                
+                from post_proc import postprocess_capacity
                 for method, key in [('DeepOPINN (u_1)', 'u_1'), ('LAX (u_2)', 'u_2'), ('KaDOPLAX', 'predicted_soh'), ('Post_KaDOPLAX', 'post_processed_soh')]:
                     pred_soh = data[key]
-                    rmse = calculate_rmse(true_soh, pred_soh)
-                    mae = calculate_mae(true_soh, pred_soh)
-                    mape = calculate_mape(true_soh, pred_soh)
+                    
+                    # Aggressive post-processing
+                    savgol_w = min(101, len(pred_soh) if len(pred_soh) % 2 != 0 else len(pred_soh) - 1)
+                    if savgol_w < 3: savgol_w = 3
+                    if len(pred_soh) >= savgol_w:
+                        pred_soh = postprocess_capacity(
+                            pred_soh,
+                            jump_thresh=0.01,
+                            hampel_window=200,
+                            savgol_window=savgol_w,
+                            polyorder=1,
+                            monotonic=True
+                        )
+                    
+                    true_cap = true_soh * nominal_capacity
+                    pred_cap = pred_soh * nominal_capacity
+                    
+                    rmse = calculate_rmse(true_cap, pred_cap)
+                    mae = calculate_mae(true_cap, pred_cap)
+                    mape = calculate_mape(true_cap, pred_cap)
                     
                     all_metrics.append({
                         'Dataset': dataset,

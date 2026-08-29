@@ -77,7 +77,7 @@ def run_phase5(project_root: str, num_epochs: int = 5, batch_size: int = 64, res
             # Resume support: skip fusion models that are already trained
             kadoplax_save_path = os.path.join(models_dir, f'kadoplax_{dataset}_{batch}.pt')
             if resume and os.path.exists(kadoplax_save_path):
-                print(f"\n--- Skipping {dataset} - {batch} (already trained: {os.path.basename(kadoplax_save_path)}) ---")
+                print(f"Model for {dataset} ({batch}) already exists, skipping...")
                 continue
 
             print(f"\n--- Training Fusion MLP for {dataset} - {batch} ---")
@@ -164,6 +164,7 @@ def run_phase5(project_root: str, num_epochs: int = 5, batch_size: int = 64, res
                 lr=1e-4,
                 weight_decay=1e-2
             )
+            scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=num_epochs)
             criterion = nn.HuberLoss(delta=0.1)
             
             model.train()
@@ -203,6 +204,8 @@ def run_phase5(project_root: str, num_epochs: int = 5, batch_size: int = 64, res
                         val_loss += loss.item()
                 avg_val_loss = val_loss / max(1, len(val_dataloader))
                 val_losses.append(avg_val_loss)
+                
+                scheduler.step()
                 
                 print(f"Epoch [{epoch+1}/{num_epochs}], Train Loss: {avg_loss:.4f}, Val Loss: {avg_val_loss:.4f}")
                 
