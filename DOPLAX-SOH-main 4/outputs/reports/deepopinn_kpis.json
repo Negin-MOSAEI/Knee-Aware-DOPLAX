@@ -1,6 +1,101 @@
 {
-    "HUST": {},
-    "MIT": {},
-    "TJU": {},
-    "XJTU": {}
+    "HUST": {
+        "default": {
+            "training_time_seconds": 5672.177665948868,
+            "training_time_minutes": 94.53629443248113,
+            "peak_ram_mb": 598.640625,
+            "num_batteries": 53,
+            "total_cycles": 96760
+        }
+    },
+    "MIT": {
+        "2017-05-12": {
+            "training_time_seconds": 1388.8203921318054,
+            "training_time_minutes": 23.14700653553009,
+            "peak_ram_mb": 262.53125,
+            "num_batteries": 32,
+            "total_cycles": 28255
+        },
+        "2017-06-30": {
+            "training_time_seconds": 640.764554977417,
+            "training_time_minutes": 10.679409249623616,
+            "peak_ram_mb": 204.78125,
+            "num_batteries": 30,
+            "total_cycles": 12219
+        },
+        "2018-04-12": {
+            "training_time_seconds": 954.386323928833,
+            "training_time_minutes": 15.906438732147217,
+            "peak_ram_mb": 193.75,
+            "num_batteries": 25,
+            "total_cycles": 18203
+        }
+    },
+    "TJU": {
+        "Dataset_1_NCA_battery": {
+            "training_time_seconds": 771.6261739730835,
+            "training_time_minutes": 12.860436232884725,
+            "peak_ram_mb": 202.40625,
+            "num_batteries": 46,
+            "total_cycles": 13766
+        },
+        "Dataset_2_NCM_battery": {
+            "training_time_seconds": 976.8021259307861,
+            "training_time_minutes": 16.28003543217977,
+            "peak_ram_mb": 207.390625,
+            "num_batteries": 38,
+            "total_cycles": 17906
+        },
+        "Dataset_3_NCM_NCA_battery": {
+            "training_time_seconds": 274.6007659435272,
+            "training_time_minutes": 4.576679432392121,
+            "peak_ram_mb": 185.109375,
+            "num_batteries": 6,
+            "total_cycles": 5528
+        }
+    },
+    "XJTU": {
+        "2C": {
+            "training_time_seconds": 92.83691477775574,
+            "training_time_minutes": 1.5472819129625957,
+            "peak_ram_mb": 170.0,
+            "num_batteries": 5,
+            "total_cycles": 1856
+        },
+        "3C": {
+            "training_time_seconds": 117.10135102272034,
+            "training_time_minutes": 1.9516891837120056,
+            "peak_ram_mb": 185.9375,
+            "num_batteries": 10,
+            "total_cycles": 2352
+        },
+        "R2.5": {
+            "training_time_seconds": 143.48794412612915,
+            "training_time_minutes": 2.391465735435486,
+            "peak_ram_mb": 168.984375,
+            "num_batteries": 5,
+            "total_cycles": 2670
+        },
+        "R3": {
+            "training_time_seconds": 147.14652800559998,
+            "training_time_minutes": 2.452442133426666,
+            "peak_ram_mb": 173.140625,
+            "num_batteries": 5,
+            "total_cycles": 2750
+        },
+        "RW": {
+            "training_time_seconds": 48.3687629699707,
+            "training_time_minutes": 0.8061460494995117,
+            "peak_ram_mb": 171.171875,
+            "num_batteries": 5,
+            "total_cycles": 970
+        },
+        "Sim_satellite": {
+            "training_time_seconds": 199.78796076774597,
+            "training_time_minutes": 3.3297993461290996,
+            "peak_ram_mb": 188.859375,
+            "num_batteries": 5,
+            "total_cycles": 3987
+        }
+    }
 }
