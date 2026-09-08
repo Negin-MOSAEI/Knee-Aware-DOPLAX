@@ -180,9 +180,18 @@ def get_val_metrics_in_each_logfile(log_file_path):
         text = f.readlines()
         text = ''.join(text)
         
-    best_epoch_number = re.search(r"The best model created at epoch.*", text).group(0)
-    best_epoch_number = int(re.findall(r"The best model created at epoch (\d+)", best_epoch_number)[0])
-    best_epoch_line = re.search(r"\[Valid] epoch:{}.*".format(best_epoch_number), text).group(0)
+    best_epoch_match = re.search(r"The best model created at epoch.*", text)
+    if best_epoch_match:
+        best_epoch_number = best_epoch_match.group(0)
+        best_epoch_number = int(re.findall(r"The best model created at epoch (\d+)", best_epoch_number)[0])
+        best_epoch_line = re.search(r"\[Valid\] epoch:{}.*".format(best_epoch_number), text).group(0)
+    else:
+        valid_lines = re.findall(r"\[Valid\] epoch:\d+.*", text)
+        if valid_lines:
+            best_epoch_line = valid_lines[-1]
+        else:
+            return 0.0, 0.0
+            
     mse_val = float(re.findall(r"MSE: (\d+\.\d+e[+-]\d+|\d+\.\d+)", best_epoch_line)[0])
     rmse_val = math.sqrt(mse_val)
     return mse_val, rmse_val

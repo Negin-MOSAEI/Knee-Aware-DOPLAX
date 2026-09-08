@@ -54,7 +54,7 @@ class EarlyStopper:
             "val_loss": val_loss,
         },  self.ckpt_path)
             # --------------------------------------------------------
-            print(f" New best ⟹ saved to {self.ckpt_path}")
+            print(f" New best -> saved to {self.ckpt_path}")
         else:
             self.counter += 1
             if self.counter >= self.patience:
@@ -261,13 +261,14 @@ class OptimizationNetwork(nn.Module):
     def __init__(self, x_sts, args, x_dim, y_dim):
         super().__init__() 
         self.random_seed = random.randint(1, 10000) # this line of code is just for keep the y input identical when we aren't on y_opt step.
-        self.X_mean = x_sts[0].to(device=device).to(torch.float32) 
-        self.X_std = x_sts[1].to(device=device).to(torch.float32) 
+        self.X_mean = x_sts[0].to(device='cpu').to(device).to(torch.float32) 
+        self.X_std = x_sts[1].to(device='cpu').to(device).to(torch.float32) 
         self.x_dim = x_dim 
         self.y_dim = y_dim 
         self.d_in = x_dim + y_dim
         self.all_epoch = args.epochs                # TODO what's this argument? is it for combination? 
         self.epoch_th = args.epoch_th_LAX
+        self.current_lr_y = getattr(args, 'lr_y', 0.01)
         self.batch_size = args.batch_size
         self.theta = args.theta_LAX # it stores the weight of mape loss in the total loss
         self.zeta = args.zeta_LAX # it stores the weight of mse loss in the total loss
@@ -285,7 +286,7 @@ class OptimizationNetwork(nn.Module):
         self.epoch_y = args.epoch_y_LAX
         self.s_LAX = args.s_LAX 
         
-        self.y = nn.Parameter(torch.empty(args.batch_size, y_dim, device=device), requires_grad=False)
+        self.y = nn.Parameter(torch.empty(args.batch_size, y_dim, device='cpu').to(device), requires_grad=False)
         
         self.dynamical_F = MLP(input_dim=2 * x_dim + 3,output_dim=1,
                                layers_num=3,
@@ -408,13 +409,13 @@ class OptimizationNetwork(nn.Module):
         
         # Return zero if not enough samples
         if B < 2 or num_inner_samples <= 0:
-            return torch.tensor(0.0, device=device)
+            return torch.tensor(0.0, device='cpu').to(device)
         
         # Step 1: Sample v and q from the batch
-        indices_v = torch.randint(0, B, (num_inner_samples,), device=device)
+        indices_v = torch.randint(0, B, (num_inner_samples,), device='cpu').to(device)
         v_batch = p_batch[indices_v]  # [S, d]
         
-        indices_q = torch.randint(0, B, (num_inner_samples,), device=device)
+        indices_q = torch.randint(0, B, (num_inner_samples,), device='cpu').to(device)
         q_batch = p_batch[indices_q]  # [S, d]
 
 
@@ -466,11 +467,11 @@ class OptimizationNetwork(nn.Module):
 
         with torch.enable_grad():
             
-            gen = torch.Generator(device=device)
+            gen = torch.Generator(device='cpu')
             gen.seed()   #TODO : each time will give a deferent number ?
             noise = torch.randn(x.shape[0], y_dim, #TODO syntax
                                 generator=gen,
-                                device=device)
+                                device='cpu').to(device)
             y = noise * self.X_std + self.X_mean
 
             self.y = nn.Parameter(y)
@@ -590,7 +591,7 @@ class OptimizationNetwork(nn.Module):
 
         if self.run_for_LAX:
             if epoch >= self.epoch_th:
-                out_y = self.optimize_y(x_u, t_u, steps=self.epoch_y, lr= self.lr_y)
+                out_y = self.optimize_y(x_u.detach(), t_u.detach(), steps=self.epoch_y, lr=None)
                 self.opt_y_flag = True
             else:
                 self.opt_y_flag = False
@@ -606,7 +607,7 @@ class OptimizationNetwork(nn.Module):
                 self.y = nn.Parameter(fixed_ys, requires_grad=False)
                 
             if epoch >= self.epoch_th:
-                out_y = self.optimize_y(x_u, t_u, steps=self.epoch_y, lr= self.lr_y)
+                out_y = self.optimize_y(x_u.detach(), t_u.detach(), steps=self.epoch_y, lr=None)
                 for name, param in self.named_parameters():
                     param.requires_grad = False
                     

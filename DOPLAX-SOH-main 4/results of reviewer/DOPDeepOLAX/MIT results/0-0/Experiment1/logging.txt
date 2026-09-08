@@ -1,0 +1,429 @@
+data path:
+['data/Full/MIT data\\2017-05-12/2017-05-12_battery-18.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-1.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-32.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-4.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-3.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-24.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-14.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-21.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-12.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-2.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-9.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-29.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-37.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-27.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-39.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-30.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-43.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-38.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-35.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-26.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-15.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-11.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-17.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-20.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-42.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-34.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-16.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-10.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-41.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-46.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-33.csv', 'data/Full/MIT data\\2017-05-12/2017-05-12_battery-28.csv']
+data path:
+['data/Processed/MIT data\\2017-05-12/2017-05-12_battery-18.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-1.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-32.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-4.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-3.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-24.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-14.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-21.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-12.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-2.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-9.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-29.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-37.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-27.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-39.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-30.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-43.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-38.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-35.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-26.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-15.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-11.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-17.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-20.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-42.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-34.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-16.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-10.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-41.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-46.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-33.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-28.csv']
+data path:
+['data/Processed/MIT data\\2017-05-12/2017-05-12_battery-22.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-8.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-31.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-36.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-45.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-23.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-40.csv']
+data path:
+['data/Processed/MIT data\\2017-05-12/2017-05-12_battery-19.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-44.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-13.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-5.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-7.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-25.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-6.csv']
+data path:
+['data/Processed/MIT data\\2017-05-12/2017-05-12_battery-18.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-1.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-32.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-4.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-3.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-24.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-14.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-21.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-12.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-2.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-9.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-29.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-37.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-27.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-39.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-30.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-43.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-38.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-35.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-26.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-15.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-11.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-17.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-20.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-42.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-34.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-16.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-10.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-41.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-46.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-33.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-28.csv']
+data path:
+['data/Processed/MIT data\\2017-05-12/2017-05-12_battery-22.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-8.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-31.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-36.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-45.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-23.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-40.csv']
+data path:
+['data/Processed/MIT data\\2017-05-12/2017-05-12_battery-19.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-44.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-13.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-5.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-7.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-25.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-6.csv']
+2026-08-29 21:17 - function:Train - INFO - [Train] epoch:1, lr:0.006159, total loss:2.467829
+2026-08-29 21:17 - function:Train - INFO - [Valid] epoch:1, MSE: 2.4379587173461914
+2026-08-29 21:17 - function:Train - INFO - [Test] MSE: 2.45431399, MAE: 1.564733, MAPE: 140.570618, RMSE: 1.566625
+data path:
+['data/Processed/MIT data\\2017-05-12/2017-05-12_battery-18.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-1.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-32.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-4.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-3.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-24.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-14.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-21.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-12.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-2.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-9.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-29.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-37.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-27.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-39.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-30.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-43.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-38.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-35.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-26.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-15.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-11.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-17.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-20.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-42.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-34.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-16.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-10.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-41.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-46.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-33.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-28.csv']
+data path:
+['data/Processed/MIT data\\2017-05-12/2017-05-12_battery-22.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-8.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-31.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-36.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-45.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-23.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-40.csv']
+data path:
+['data/Processed/MIT data\\2017-05-12/2017-05-12_battery-19.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-44.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-13.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-5.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-7.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-25.csv', 'data/Processed/MIT data\\2017-05-12/2017-05-12_battery-6.csv']
+2026-08-29 21:17 - function:_save_args - INFO - Args:
+2026-08-29 21:17 - function:_save_args - INFO - Args:
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	data:MIT
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	data:MIT
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	batch:2017-05-12
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	batch:2017-05-12
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	normalization_method:min-max
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	normalization_method:min-max
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	batch_size_XJTU:128
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	batch_size_XJTU:128
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	batch_size_TJU:64
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	batch_size_TJU:64
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	batch_size_MIT:256
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	batch_size_MIT:256
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	batch_size_HUST:256
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	batch_size_HUST:256
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	split_mode:charge
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	split_mode:charge
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dtypes:['current', 'capacity']
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dtypes:['current', 'capacity']
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	F_layers_num_XJTU:5
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	F_layers_num_XJTU:5
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	F_layers_num_TJU:5
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	F_layers_num_TJU:5
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	F_layers_num_MIT:5
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	F_layers_num_MIT:5
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	F_layers_num_HUST:4
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	F_layers_num_HUST:4
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	F_hidden_dim_XJTU:80
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	F_hidden_dim_XJTU:80
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	F_hidden_dim_TJU:128
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	F_hidden_dim_TJU:128
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	F_hidden_dim_MIT:128
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	F_hidden_dim_MIT:128
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	F_hidden_dim_HUST:80
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	F_hidden_dim_HUST:80
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dropout_XJTU:0.1263514868613022
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dropout_XJTU:0.1263514868613022
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dropout_TJU:0.12374924038427233
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dropout_TJU:0.12374924038427233
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dropout_MIT:0.1235582146396002
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dropout_MIT:0.1235582146396002
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dropout_HUST:0.10014057317121909
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dropout_HUST:0.10014057317121909
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	bagging_NN_lr_XJTU:0.02
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	bagging_NN_lr_XJTU:0.02
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	bagging_NN_lr_TJU:0.006456520169381107
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	bagging_NN_lr_TJU:0.006456520169381107
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	bagging_NN_lr_MIT:0.006663648646643286
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	bagging_NN_lr_MIT:0.006663648646643286
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	bagging_NN_lr_HUST:0.00022334184499247844
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	bagging_NN_lr_HUST:0.00022334184499247844
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	bag_hidden_dim_XJTU:[10, 10]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	bag_hidden_dim_XJTU:[10, 10]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	bag_hidden_dim_TJU:[10, 10]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	bag_hidden_dim_TJU:[10, 10]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	bag_hidden_dim_MIT:[10, 10]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	bag_hidden_dim_MIT:[10, 10]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	bag_hidden_dim_HUST:[10, 10]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	bag_hidden_dim_HUST:[10, 10]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	mono_bag_XJTU:0.4
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	mono_bag_XJTU:0.4
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	mono_bag_TJU:0.01804601857570287
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	mono_bag_TJU:0.01804601857570287
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	mono_bag_MIT:0.014599210344919067
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	mono_bag_MIT:0.014599210344919067
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	mono_bag_HUST:0.9933428738041119
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	mono_bag_HUST:0.9933428738041119
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_net_LAX_XJTU:0.04
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_net_LAX_XJTU:0.04
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_net_LAX_TJU:0.024314095112883502
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_net_LAX_TJU:0.024314095112883502
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_net_LAX_MIT:0.011935902068420634
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_net_LAX_MIT:0.011935902068420634
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_net_LAX_HUST:0.014526149878088328
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_net_LAX_HUST:0.014526149878088328
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_y_LAX:0.08
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_y_LAX:0.08
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	epoch_y_LAX:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	epoch_y_LAX:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	epoch_th_LAX:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	epoch_th_LAX:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	warmup_epochs_net_LAX:100
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	warmup_epochs_net_LAX:100
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	warmup_epochs_y_LAX:100
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	warmup_epochs_y_LAX:100
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	restart_period_LAX:100
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	restart_period_LAX:100
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	min_lr_net_LAX:1e-05
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	min_lr_net_LAX:1e-05
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	min_lr_y_LAX:0.0001
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	min_lr_y_LAX:0.0001
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	F_hidden_dim_LAX:25
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	F_hidden_dim_LAX:25
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	theta_LAX_XJTU:0.0
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	theta_LAX_XJTU:0.0
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	theta_LAX_TJU:0.9290600824788182
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	theta_LAX_TJU:0.9290600824788182
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	theta_LAX_MIT:0.4808822091755273
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	theta_LAX_MIT:0.4808822091755273
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	theta_LAX_HUST:0.809772111877841
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	theta_LAX_HUST:0.809772111877841
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	zeta_LAX:1.0
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	zeta_LAX:1.0
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	kata_LAX:0.0
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	kata_LAX:0.0
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	betha_LAX_XJTU:0.0256
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	betha_LAX_XJTU:0.0256
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	betha_LAX_TJU:0.7447313058846572
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	betha_LAX_TJU:0.7447313058846572
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	betha_LAX_MIT:0.5927778785956674
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	betha_LAX_MIT:0.5927778785956674
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	betha_LAX_HUST:0.846945564070922
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	betha_LAX_HUST:0.846945564070922
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dual_LAX_XJTU:0.0
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dual_LAX_XJTU:0.0
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dual_LAX_TJU:0.008827241117241124
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dual_LAX_TJU:0.008827241117241124
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dual_LAX_MIT:0.0003537265723182956
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dual_LAX_MIT:0.0003537265723182956
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dual_LAX_HUST:0.570865721084567
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dual_LAX_HUST:0.570865721084567
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	h_dim_LAX_XJTU:49
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	h_dim_LAX_XJTU:49
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	h_dim_LAX_TJU:58
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	h_dim_LAX_TJU:58
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	h_dim_LAX_MIT:30
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	h_dim_LAX_MIT:30
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	h_dim_LAX_HUST:58
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	h_dim_LAX_HUST:58
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	run_for_LAX:False
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	run_for_LAX:False
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	trained_by_y_opt_LAX:False
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	trained_by_y_opt_LAX:False
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	flagsoori:None
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	flagsoori:None
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	beta_LAX_XJTU:0.0
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	beta_LAX_XJTU:0.0
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	beta_LAX_TJU:0.0
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	beta_LAX_TJU:0.0
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	beta_LAX_MIT:0.0
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	beta_LAX_MIT:0.0
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	beta_LAX_HUST:0.0
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	beta_LAX_HUST:0.0
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dynamical_F_LAX:True
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dynamical_F_LAX:True
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	distance_block_LAX_XJTU:MLP
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	distance_block_LAX_XJTU:MLP
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	distance_block_LAX_TJU:MLP
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	distance_block_LAX_TJU:MLP
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	distance_block_LAX_MIT:MLP
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	distance_block_LAX_MIT:MLP
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	distance_block_LAX_HUST:MLP
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	distance_block_LAX_HUST:MLP
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	center_block_LAX_XJTU:PhI
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	center_block_LAX_XJTU:PhI
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	center_block_LAX_TJU:PhI
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	center_block_LAX_TJU:PhI
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	center_block_LAX_MIT:PhI
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	center_block_LAX_MIT:PhI
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	center_block_LAX_HUST:PhI
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	center_block_LAX_HUST:PhI
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	time_block_LAX_XJTU:theta
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	time_block_LAX_XJTU:theta
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	time_block_LAX_TJU:theta
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	time_block_LAX_TJU:theta
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	time_block_LAX_MIT:theta
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	time_block_LAX_MIT:theta
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	time_block_LAX_HUST:theta
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	time_block_LAX_HUST:theta
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	s_LAX:MLP
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	s_LAX:MLP
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_h_star_layers_LAX_XJTU:[64, 32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_h_star_layers_LAX_XJTU:[64, 32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_phi_layers_LAX_XJTU:[64, 32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_phi_layers_LAX_XJTU:[64, 32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_g_layers_LAX_XJTU:[16]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_g_layers_LAX_XJTU:[16]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_S_MLP_layers_LAX_XJTU:[32, 16, 8]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_S_MLP_layers_LAX_XJTU:[32, 16, 8]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_betan_layers_LAX_XJTU:[16, 8]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_betan_layers_LAX_XJTU:[16, 8]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_distance_block_MLP_layers_LAX_XJTU:[64]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_distance_block_MLP_layers_LAX_XJTU:[64]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_theta_layers_LAX_XJTU:[32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_theta_layers_LAX_XJTU:[32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_multivar_theta_layers_LAX_XJTU:[32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_multivar_theta_layers_LAX_XJTU:[32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	g_dim_LAX_XJTU:16
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	g_dim_LAX_XJTU:16
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	g_out_LAX_XJTU:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	g_out_LAX_XJTU:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	h_out_LAX_XJTU:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	h_out_LAX_XJTU:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	phi_out_LAX_XJTU:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	phi_out_LAX_XJTU:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dim_output_LAX_XJTU:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dim_output_LAX_XJTU:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_h_star_layers_LAX_TJU:[64, 32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_h_star_layers_LAX_TJU:[64, 32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_phi_layers_LAX_TJU:[64, 32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_phi_layers_LAX_TJU:[64, 32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_g_layers_LAX_TJU:[16]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_g_layers_LAX_TJU:[16]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_S_MLP_layers_LAX_TJU:[32, 16, 8]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_S_MLP_layers_LAX_TJU:[32, 16, 8]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_betan_layers_LAX_TJU:[16, 8]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_betan_layers_LAX_TJU:[16, 8]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_distance_block_MLP_layers_LAX_TJU:[64]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_distance_block_MLP_layers_LAX_TJU:[64]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_theta_layers_LAX_TJU:[32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_theta_layers_LAX_TJU:[32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_multivar_theta_layers_LAX_TJU:[32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_multivar_theta_layers_LAX_TJU:[32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	g_dim_LAX_TJU:16
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	g_dim_LAX_TJU:16
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	g_out_LAX_TJU:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	g_out_LAX_TJU:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	h_out_LAX_TJU:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	h_out_LAX_TJU:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	phi_out_LAX_TJU:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	phi_out_LAX_TJU:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dim_output_LAX_TJU:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dim_output_LAX_TJU:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_h_star_layers_LAX_MIT:[64, 32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_h_star_layers_LAX_MIT:[64, 32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_phi_layers_LAX_MIT:[64, 32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_phi_layers_LAX_MIT:[64, 32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_g_layers_LAX_MIT:[16]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_g_layers_LAX_MIT:[16]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_S_MLP_layers_LAX_MIT:[32, 16, 8]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_S_MLP_layers_LAX_MIT:[32, 16, 8]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_betan_layers_LAX_MIT:[16, 8]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_betan_layers_LAX_MIT:[16, 8]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_distance_block_MLP_layers_LAX_MIT:[64]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_distance_block_MLP_layers_LAX_MIT:[64]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_theta_layers_LAX_MIT:[32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_theta_layers_LAX_MIT:[32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_multivar_theta_layers_LAX_MIT:[32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_multivar_theta_layers_LAX_MIT:[32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	g_dim_LAX_MIT:16
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	g_dim_LAX_MIT:16
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	g_out_LAX_MIT:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	g_out_LAX_MIT:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	h_out_LAX_MIT:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	h_out_LAX_MIT:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	phi_out_LAX_MIT:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	phi_out_LAX_MIT:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dim_output_LAX_MIT:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dim_output_LAX_MIT:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_h_star_layers_LAX_HUST:[64, 32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_h_star_layers_LAX_HUST:[64, 32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_phi_layers_LAX_HUST:[64, 32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_phi_layers_LAX_HUST:[64, 32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_g_layers_LAX_HUST:[16]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_g_layers_LAX_HUST:[16]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_S_MLP_layers_LAX_HUST:[32, 16, 8]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_S_MLP_layers_LAX_HUST:[32, 16, 8]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_betan_layers_LAX_HUST:[16, 8]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_betan_layers_LAX_HUST:[16, 8]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_distance_block_MLP_layers_LAX_HUST:[64]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_distance_block_MLP_layers_LAX_HUST:[64]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_theta_layers_LAX_HUST:[32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_theta_layers_LAX_HUST:[32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_multivar_theta_layers_LAX_HUST:[32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	inside_multivar_theta_layers_LAX_HUST:[32]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	g_dim_LAX_HUST:16
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	g_dim_LAX_HUST:16
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	g_out_LAX_HUST:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	g_out_LAX_HUST:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	h_out_LAX_HUST:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	h_out_LAX_HUST:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	phi_out_LAX_HUST:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	phi_out_LAX_HUST:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dim_output_LAX_HUST:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dim_output_LAX_HUST:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	epochs:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	epochs:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	early_stop:80
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	early_stop:80
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	warmup_epochs_XJTU:30
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	warmup_epochs_XJTU:30
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	warmup_epochs_TJU:50
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	warmup_epochs_TJU:50
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	warmup_epochs_MIT:50
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	warmup_epochs_MIT:50
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	warmup_epochs_HUST:30
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	warmup_epochs_HUST:30
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	warmup_lr_XJTU:0.006268229580119017
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	warmup_lr_XJTU:0.006268229580119017
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	warmup_lr_TJU:0.006456520169381107
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	warmup_lr_TJU:0.006456520169381107
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	warmup_lr_MIT:0.006158883939912325
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	warmup_lr_MIT:0.006158883939912325
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	warmup_lr_HUST:0.005237775841792184
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	warmup_lr_HUST:0.005237775841792184
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_XJTU:0.006252096490545448
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_XJTU:0.006252096490545448
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_TJU:0.001221299541334721
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_TJU:0.001221299541334721
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_MIT:0.00011720460436102193
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_MIT:0.00011720460436102193
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_HUST:0.0007215089581483758
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_HUST:0.0007215089581483758
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	final_lr_XJTU:1.5973286128658127e-06
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	final_lr_XJTU:1.5973286128658127e-06
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	final_lr_TJU:2.1099224334559236e-05
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	final_lr_TJU:2.1099224334559236e-05
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	final_lr_MIT:1.447250132592353e-06
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	final_lr_MIT:1.447250132592353e-06
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	final_lr_HUST:1.747286485446226e-05
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	final_lr_HUST:1.747286485446226e-05
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_F_XJTU:0.00881767573907948
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_F_XJTU:0.00881767573907948
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_F_TJU:0.0004916804735455082
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_F_TJU:0.0004916804735455082
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_F_MIT:2.181510135329394e-05
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_F_MIT:2.181510135329394e-05
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_F_HUST:4.8990846543190585e-05
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_F_HUST:4.8990846543190585e-05
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	m:500
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	m:500
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dim_x:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dim_x:1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	loss:MSE
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	loss:MSE
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	alpha_XJTU:0.11809194837918663
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	alpha_XJTU:0.11809194837918663
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	beta_XJTU:0.015956048434866418
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	beta_XJTU:0.015956048434866418
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	alpha_MIT:0.8843241457826115
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	alpha_MIT:0.8843241457826115
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	beta_MIT:0.02840429623105723
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	beta_MIT:0.02840429623105723
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	alpha_TJU:0.5999950741786956
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	alpha_TJU:0.5999950741786956
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	beta_TJU:0.01804601857570287
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	beta_TJU:0.01804601857570287
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	alpha_HUST:0.2795906470184894
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	alpha_HUST:0.2795906470184894
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	beta_HUST:0.1308092300047794
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	beta_HUST:0.1308092300047794
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	log_dir:logging.txt
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	log_dir:logging.txt
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	save_folder:results of reviewer/DOPDeepOLAX/MIT results/0-0/Experiment1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	save_folder:results of reviewer/DOPDeepOLAX/MIT results/0-0/Experiment1
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	run_for_DeepOPINN:False
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	run_for_DeepOPINN:False
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	batch_size:256
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	batch_size:256
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	DOP_weights:pretrained_models\DeepOPINN\DeepOPINN_model_MIT_2017-05-12.pth
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	DOP_weights:pretrained_models\DeepOPINN\DeepOPINN_model_MIT_2017-05-12.pth
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	LAX_weights:pretrained_models\DeepOLAX\DeepOLAX_model_MIT_2017-05-12.pth
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	LAX_weights:pretrained_models\DeepOLAX\DeepOLAX_model_MIT_2017-05-12.pth
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	run_mode:DOPDeepOLAX
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	run_mode:DOPDeepOLAX
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	run_optuna:False
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	run_optuna:False
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	run_samll_sample:False
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	run_samll_sample:False
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	root:data/Processed/MIT data
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	root:data/Processed/MIT data
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr:0.00011720460436102193
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr:0.00011720460436102193
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	warmup_lr:0.006158883939912325
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	warmup_lr:0.006158883939912325
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_F:2.181510135329394e-05
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_F:2.181510135329394e-05
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	final_lr:1.447250132592353e-06
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	final_lr:1.447250132592353e-06
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	F_hidden_dim:128
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	F_hidden_dim:128
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	F_layers_num:5
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	F_layers_num:5
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dropout:0.1235582146396002
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dropout:0.1235582146396002
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	alpha:0.8843241457826115
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	alpha:0.8843241457826115
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	beta:0.02840429623105723
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	beta:0.02840429623105723
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	beta_LAX:0.0
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	beta_LAX:0.0
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	warmup_epochs:50
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	warmup_epochs:50
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	betha_LAX:0.5927778785956674
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	betha_LAX:0.5927778785956674
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dual_LAX:0.0003537265723182956
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	dual_LAX:0.0003537265723182956
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	theta_LAX:0.4808822091755273
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	theta_LAX:0.4808822091755273
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_net:0.011935902068420634
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	lr_net:0.011935902068420634
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	h_dim_LAX:30
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	h_dim_LAX:30
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	center_block_LAX:PhI
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	center_block_LAX:PhI
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	distance_block_LAX:MLP
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	distance_block_LAX:MLP
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	time_block_LAX:theta
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	time_block_LAX:theta
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	bagging_NN_lr:0.006663648646643286
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	bagging_NN_lr:0.006663648646643286
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	bag_hidden_dim:[10, 10]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	bag_hidden_dim:[10, 10]
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	mono_bag:0.014599210344919067
+2026-08-29 21:17 - function:_save_args - CRITICAL - 	mono_bag:0.014599210344919067

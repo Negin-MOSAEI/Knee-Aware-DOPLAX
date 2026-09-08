@@ -4,6 +4,10 @@ import numpy as np
 from torch.autograd import grad
 from utils.util import get_logger, write_to_file, write_to_json
 import deepxde as dde
+import torch
+torch.set_default_device('cpu')
+torch.set_default_tensor_type(torch.FloatTensor)
+
 from Model.Backbones import Autoformer, CPMLP, DeepONet
 from Model.PI_nets.LAX import OptimizationNetwork 
 from Model.utils.util import find_input_dim_from_checkpoint, AverageMeter, eval_metrix
@@ -236,7 +240,8 @@ class Model(nn.Module):
         sum_squared = 0.0
         n_samples = 0
         
-        for x1, x2, _, _ in trainloader:
+        for batch in trainloader:
+            x1, x2 = batch[0], batch[1]
             x2 = x2[:, :x_dim]
             x1 = x1[:, :x_dim]
             sum_ += x2.sum(dim=0)  # sum across the batch (dim=0), result shape: [num_features]
@@ -245,11 +250,45 @@ class Model(nn.Module):
         X_mean = sum_ / n_samples
         X_std = torch.sqrt((sum_squared / n_samples) - (X_mean ** 2))
     
+        from utils.arguments import get_LAX_args
+        import sys
+        
+        # Temporary hack to parse get_LAX_args cleanly
+        lax_args = get_LAX_args()
+        for k, v in vars(self.args).items():
+            setattr(lax_args, k, v)
+        
+        # Apply dataset specific mapping
+        d = lax_args.data
+        lax_args.betha_LAX = getattr(lax_args, f'betha_LAX_{d}')
+        lax_args.dual_LAX = getattr(lax_args, f'dual_LAX_{d}')
+        lax_args.theta_LAX = getattr(lax_args, f'theta_LAX_{d}')
+        lax_args.lr_net = getattr(lax_args, f'lr_net_LAX_{d}')
+        lax_args.h_dim_LAX = getattr(lax_args, f'h_dim_LAX_{d}')
+        lax_args.beta_LAX = getattr(lax_args, f'beta_LAX_{d}')
+        lax_args.distance_block_LAX = getattr(lax_args, f'distance_block_LAX_{d}')
+        lax_args.time_block_LAX = getattr(lax_args, f'time_block_LAX_{d}')
+        lax_args.center_block_LAX = getattr(lax_args, f'center_block_LAX_{d}')
+        lax_args.inside_distance_block_MLP_layers = getattr(lax_args, f'inside_distance_block_MLP_layers_LAX_{d}')
+        lax_args.inside_theta_layers = getattr(lax_args, f'inside_theta_layers_LAX_{d}')
+        lax_args.inside_multivar_theta_layers = getattr(lax_args, f'inside_multivar_theta_layers_LAX_{d}')
+        lax_args.inside_h_star_layers = getattr(lax_args, f'inside_h_star_layers_LAX_{d}')
+        lax_args.inside_phi_layers = getattr(lax_args, f'inside_phi_layers_LAX_{d}')
+        lax_args.inside_g_layers = getattr(lax_args, f'inside_g_layers_LAX_{d}')
+        lax_args.inside_S_MLP_layers = getattr(lax_args, f'inside_S_MLP_layers_LAX_{d}')
+        lax_args.inside_betan_layers = getattr(lax_args, f'inside_betan_layers_LAX_{d}')
+        lax_args.g_dim = getattr(lax_args, f'g_dim_LAX_{d}')
+        lax_args.h_out_LAX = getattr(lax_args, f'H_out_LAX_{d}')
+        lax_args.g_out_LAX = getattr(lax_args, f'g_out_LAX_{d}')
+        lax_args.phi_out_LAX = getattr(lax_args, f'phi_out_LAX_{d}')
+        lax_args.dim_output_LAX = getattr(lax_args, f'dim_output_LAX_{d}')
+        lax_args.lr_F = getattr(lax_args, f'lr_F_{d}')
+              
         model = OptimizationNetwork(
             x_sts=(X_mean, X_std),
             y_dim=y_dim,
             x_dim=x_dim,
-            args=self.args
+            args=lax_args
         ).to(device)
     
         return model
@@ -264,7 +303,8 @@ class Model(nn.Module):
         checkpoint['model_state']['y'] = checkpoint['model_state']['y'][0].unsqueeze(0).repeat(self.args.batch_size, 1)
 
         sum_, n_samples= 0.0, 0.0 
-        for x1, x2, _, _ in trainloader:
+        for batch in trainloader:
+            x1, x2 = batch[0], batch[1]
             x1, x2 = x1[:, :16], x2[:, :16] 
             sum_ += x2.sum(dim=0)
             n_samples += x2.size(0) 
@@ -299,7 +339,8 @@ class Model(nn.Module):
         pred_label = []
 
         with torch.no_grad():
-            for iter, (x1, _, y1, _) in enumerate(testloader):
+            for iter, batch in enumerate(testloader):
+                x1, y1 = batch[0], batch[2]
                 x1 = x1.to(device)
                 xt1 = self.extract_features(x1)
                 u1 = self.predict(xt1, epoch=epoch)
@@ -317,7 +358,8 @@ class Model(nn.Module):
         pred_label = []
 
         with torch.no_grad():
-            for iter, (x1, _, y1, _) in enumerate(validloader):
+            for iter, batch in enumerate(validloader):
+                x1, y1 = batch[0], batch[2]
                 x1 = x1.to(device)
                 xt1 = self.extract_features(x1)
                 u1 = self.predict(xt1, epoch=epoch)
@@ -418,11 +460,9 @@ class Model(nn.Module):
 
     def Train(self, trainloader, validloader=None, testloader=None):
         # Recreate dataloaders with CUDA-safe sampler
-        if hasattr(trainloader, 'sampler') and hasattr(trainloader.sampler, 'generator'):
-            trainloader.sampler.generator = self.generator
+        
 
-        if hasattr(validloader, 'sampler') and hasattr(validloader.sampler, 'generator'):
-            validloader.sampler.generator = self.generator
+        
             
         self.LAX_model = self.get_LAX_model_instance(trainloader)
         if type(self.args.run_for_LAX) == bool:
@@ -566,7 +606,8 @@ class Model(nn.Module):
 
             batch_num, exp_num = int(batch_num.split('-')[0]), int(exp_num.split('Experiment')[1])
         else:
-            batch_num, exp_num = "one_batch", y_true_path.split('/')[-2]
+            batch_num = "one_batch"
+            exp_num = os.path.normpath(y_true_path).split(os.sep)[-2]
             exp_num = int(exp_num.split('Experiment')[1])
             
         if "XJTU" in y_true_path:

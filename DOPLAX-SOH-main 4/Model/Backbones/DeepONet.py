@@ -1,6 +1,10 @@
 import torch
 import torch.nn as nn
 import deepxde as dde
+import torch
+torch.set_default_device('cpu')
+torch.set_default_tensor_type(torch.FloatTensor)
+
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 

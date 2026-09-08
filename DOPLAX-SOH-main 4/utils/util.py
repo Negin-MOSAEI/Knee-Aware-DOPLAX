@@ -225,3 +225,18 @@ def match_dtype_with_dataset_dtype(split_mode, dtypes):
     return dtypes
     
 
+
+def augment_dataloader_with_kpd(dataloader, tcn_model, device='cuda'):
+    from torch.utils.data import TensorDataset, DataLoader
+    for split in ['train', 'valid', 'test', 'train_3', 'test_3']:
+        if split in dataloader:
+            loader = dataloader[split]
+            dataset = loader.dataset
+            X1, X2, Y1, Y2 = dataset.tensors
+            with torch.no_grad():
+                KPD1 = tcn_model.predict(X1.unsqueeze(0).to(device)).cpu().squeeze(0)
+                KPD2 = tcn_model.predict(X2.unsqueeze(0).to(device)).cpu().squeeze(0)
+            new_dataset = TensorDataset(X1, X2, Y1, Y2, KPD1, KPD2)
+            dataloader[split] = DataLoader(new_dataset, batch_size=loader.batch_size, shuffle=isinstance(loader.sampler, torch.utils.data.RandomSampler), drop_last=loader.drop_last, generator=None)
+    return dataloader
+

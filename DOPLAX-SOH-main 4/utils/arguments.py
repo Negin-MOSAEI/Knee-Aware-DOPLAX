@@ -22,7 +22,7 @@ def get_MLP_args(): # pinn set
 
     # scheduler related
     parser.add_argument('--epochs', type=int, default=200, help='epoch') # 200
-    parser.add_argument('--early_stop', type=int, default=20, help='early stop')
+    parser.add_argument('--early_stop', type=int, default=40, help='early stop')
     parser.add_argument('--warmup_epochs', type=int, default=30, help='warmup epoch')
     parser.add_argument('--warmup_lr', type=float, default=0.002, help='warmup lr')
     parser.add_argument('--lr', type=float, default=0.01, help='base lr')
@@ -74,7 +74,7 @@ def get_PINN_args(): # pinn set
 
     # scheduler related
     parser.add_argument('--epochs', type=int, default=200, help='epoch') # 200
-    parser.add_argument('--early_stop', type=int, default=20, help='early stop')
+    parser.add_argument('--early_stop', type=int, default=40, help='early stop')
     parser.add_argument('--warmup_epochs', type=int, default=30, help='warmup epoch')
     parser.add_argument('--warmup_lr', type=float, default=0.002, help='warmup lr')
     parser.add_argument('--lr', type=float, default=0.01, help='base lr')
@@ -134,8 +134,8 @@ def get_DeepONet_args(): # optuna2 set
     parser.add_argument('--dropout_HUST', type=float, default=0.10014057317121909, help='dropout')
     
     # scheduler related
-    parser.add_argument('--epochs', type=int, default=2000, help='epoch') # 2000, 200
-    parser.add_argument('--early_stop', type=int, default=80, help='early stop') # 80, 20
+    parser.add_argument('--epochs', type=int, default=400, help='epoch') # 2000, 200
+    parser.add_argument('--early_stop', type=int, default=160, help='early stop') # 80, 20
     parser.add_argument('--warmup_epochs_XJTU', type=int, default=30, help='warmup epoch')
     parser.add_argument('--warmup_epochs_TJU', type=int, default=50, help='warmup epoch')
     parser.add_argument('--warmup_epochs_MIT', type=int, default=50, help='warmup epoch')
@@ -230,7 +230,7 @@ def get_PINNsFormer_args(): # optuna2 set
     parser.add_argument('--transformer_dropout_HUST', type=float, default=0.2867026986359125, help='transformer_dropout')
     
     # scheduler related
-    parser.add_argument('--epochs', type=int, default=2000, help='epoch') # 2000, 200
+    parser.add_argument('--epochs', type=int, default=200, help='epoch') # 2000, 200
     parser.add_argument('--early_stop', type=int, default=80, help='early stop') # 80, 20
     parser.add_argument('--warmup_epochs_XJTU', type=int, default=30, help='warmup epoch')
     parser.add_argument('--warmup_epochs_TJU', type=int, default=50, help='warmup epoch')
@@ -305,7 +305,7 @@ def get_DONG_args(): # optuna2 set
     parser.add_argument('--dropout_HUST', type=float, default=0.10014057317121909, help='dropout')
     
     # scheduler related
-    parser.add_argument('--epochs', type=int, default=2000, help='epoch') # 2000, 200
+    parser.add_argument('--epochs', type=int, default=200, help='epoch') # 2000, 200
     parser.add_argument('--early_stop', type=int, default=80, help='early stop') # 80, 20
     parser.add_argument('--warmup_epochs_XJTU', type=int, default=30, help='warmup epoch')
     parser.add_argument('--warmup_epochs_TJU', type=int, default=50, help='warmup epoch')
@@ -371,7 +371,7 @@ def get_FormerPINN_args(): # optuna2 set
     parser.add_argument('--dropout', type=float, default=0.2, help='dropout')
 
     # scheduler related
-    parser.add_argument('--epochs', type=int, default=2000, help='epoch') # 200
+    parser.add_argument('--epochs', type=int, default=200, help='epoch') # 200
     parser.add_argument('--early_stop', type=int, default=80, help='early stop')
     parser.add_argument('--warmup_epochs', type=int, default=30, help='warmup epoch')
     parser.add_argument('--warmup_lr', type=float, default=0.002, help='warmup lr')
@@ -432,7 +432,7 @@ def get_DeepOPINN_args(): # optuna2 set
     parser.add_argument('--dropout_HUST', type=float, default=0.10014057317121909, help='dropout')
     
     # scheduler related
-    parser.add_argument('--epochs', type=int, default=2000, help='epoch') # 2000, 200
+    parser.add_argument('--epochs', type=int, default=200, help='epoch') # 2000, 200
     parser.add_argument('--early_stop', type=int, default=80, help='early stop') # 80, 20
     parser.add_argument('--warmup_epochs_XJTU', type=int, default=30, help='warmup epoch')
     parser.add_argument('--warmup_epochs_TJU', type=int, default=50, help='warmup epoch')
@@ -528,7 +528,7 @@ def get_DOPFormer_args(): # optuna2 set
     parser.add_argument('--transformer_dropout_HUST', type=float, default=0.2867026986359125, help='transformer_dropout')
     
     # scheduler related
-    parser.add_argument('--epochs', type=int, default=2000, help='epoch') # 2000, 200
+    parser.add_argument('--epochs', type=int, default=200, help='epoch') # 2000, 200
     parser.add_argument('--early_stop', type=int, default=80, help='early stop') # 80, 20
     parser.add_argument('--warmup_epochs_XJTU', type=int, default=30, help='warmup epoch')
     parser.add_argument('--warmup_epochs_TJU', type=int, default=50, help='warmup epoch')
@@ -666,7 +666,7 @@ def get_LAX_args():
     parser.add_argument('--inside_distance_block_MLP_layers_LAX_XJTU', type= int, nargs= '+', default=[64], help = 'List of number of neurons inside hidden layers of distance block MLP.')
     parser.add_argument('--inside_theta_layers_LAX_XJTU', type= int, nargs= '+', default=[32], help = 'List of number of neurons inside hidden layers of distance block MLP.')
     parser.add_argument('--inside_multivar_theta_layers_LAX_XJTU', type= int, nargs= '+', default=[32], help = 'List of number of neurons inside hidden layers of distance block MLP.')
-    parser.add_argument('--g_dim_LAX_XJTU', type= int, default=39, help= 'g input dimension') # 16, 39:NASA
+    parser.add_argument('--g_dim_LAX_XJTU', type= int, default=16, help= 'g input dimension') # 16, 39:NASA
     parser.add_argument('--g_out_LAX_XJTU', type= int, default=1, help= 'g output dimension')
     parser.add_argument('--H_out_LAX_XJTU', type= int, default=1, help= 'h output dimension')
     parser.add_argument('--phi_out_LAX_XJTU', type= int, default=1, help= 'phi output dimension')
@@ -680,7 +680,7 @@ def get_LAX_args():
     parser.add_argument('--inside_distance_block_MLP_layers_LAX_TJU', type= int, nargs= '+', default=[64], help = 'List of number of neurons inside hidden layers of distance block MLP.')
     parser.add_argument('--inside_theta_layers_LAX_TJU', type= int, nargs= '+', default=[32], help = 'List of number of neurons inside hidden layers of distance block MLP.')
     parser.add_argument('--inside_multivar_theta_layers_LAX_TJU', type= int, nargs= '+', default=[32], help = 'List of number of neurons inside hidden layers of distance block MLP.')
-    parser.add_argument('--g_dim_LAX_TJU', type= int, default=39, help= 'g input dimension') # 16, 39:NASA
+    parser.add_argument('--g_dim_LAX_TJU', type= int, default=16, help= 'g input dimension') # 16, 39:NASA
     parser.add_argument('--g_out_LAX_TJU', type= int, default=1, help= 'g output dimension')
     parser.add_argument('--H_out_LAX_TJU', type= int, default=1, help= 'h output dimension')
     parser.add_argument('--phi_out_LAX_TJU', type= int, default=1, help= 'phi output dimension')
@@ -694,7 +694,7 @@ def get_LAX_args():
     parser.add_argument('--inside_distance_block_MLP_layers_LAX_MIT', type= int, nargs= '+', default=[64], help = 'List of number of neurons inside hidden layers of distance block MLP.')
     parser.add_argument('--inside_theta_layers_LAX_MIT', type= int, nargs= '+', default=[32], help = 'List of number of neurons inside hidden layers of distance block MLP.')
     parser.add_argument('--inside_multivar_theta_layers_LAX_MIT', type= int, nargs= '+', default=[32], help = 'List of number of neurons inside hidden layers of distance block MLP.')
-    parser.add_argument('--g_dim_LAX_MIT', type= int, default=39, help= 'g input dimension') # 16, 39:NASA
+    parser.add_argument('--g_dim_LAX_MIT', type= int, default=16, help= 'g input dimension') # 16, 39:NASA
     parser.add_argument('--g_out_LAX_MIT', type= int, default=1, help= 'g output dimension')
     parser.add_argument('--H_out_LAX_MIT', type= int, default=1, help= 'h output dimension')
     parser.add_argument('--phi_out_LAX_MIT', type= int, default=1, help= 'phi output dimension')
@@ -709,7 +709,7 @@ def get_LAX_args():
     parser.add_argument('--inside_distance_block_MLP_layers_LAX_HUST', type= int, nargs= '+', default=[64], help = 'List of number of neurons inside hidden layers of distance block MLP.')
     parser.add_argument('--inside_theta_layers_LAX_HUST', type= int, nargs= '+', default=[32], help = 'List of number of neurons inside hidden layers of distance block MLP.')
     parser.add_argument('--inside_multivar_theta_layers_LAX_HUST', type= int, nargs= '+', default=[32], help = 'List of number of neurons inside hidden layers of distance block MLP.')
-    parser.add_argument('--g_dim_LAX_HUST', type= int, default=39, help= 'g input dimension') # 16, 39:NASA
+    parser.add_argument('--g_dim_LAX_HUST', type= int, default=16, help= 'g input dimension')
     parser.add_argument('--g_out_LAX_HUST', type= int, default=1, help= 'g output dimension')
     parser.add_argument('--H_out_LAX_HUST', type= int, default=1, help= 'h output dimension')
     parser.add_argument('--phi_out_LAX_HUST', type= int, default=1, help= 'phi output dimension')
@@ -733,10 +733,10 @@ def get_LAX_args():
     parser.add_argument('--lr_y', type=float, default=0.08, help='y learning rate')
 
     # scheduler related
-    parser.add_argument('--epochs', type=int, default=2000, help='number of epochs in the combination mode')
-    parser.add_argument('--epoch_net', type=int, default=350, help='number of net epoch')
-    parser.add_argument('--epoch_y_LAX', type=int, default=600, help='numbemr of y epoch')
-    parser.add_argument('--epoch_th_LAX', type=int, default=3000, help='number of epochs without y optimization')
+    parser.add_argument('--epochs', type=int, default=1, help='number of epochs in the combination mode')
+    parser.add_argument('--epoch_net', type=int, default=1, help='number of net epoch')
+    parser.add_argument('--epoch_y_LAX', type=int, default=10, help='numbemr of y epoch')
+    parser.add_argument('--epoch_th_LAX', type=int, default=1, help='number of epochs without y optimization')
 
     parser.add_argument('--patience', type=int, default=50, help='Early stopping patience')
     parser.add_argument('--min_delta', type=float, default= 1e-6, help='Early stopping min_delta')
@@ -826,8 +826,8 @@ def get_DOPDeepOLAX_args():
     parser.add_argument('--lr_net_LAX_HUST', type=float, default=0.014526149878088328, help='net learning rate')
     parser.add_argument('--lr_y_LAX', type=float, default=0.08, help='y learning rate')
 
-    parser.add_argument('--epoch_y_LAX', type=int, default=600, help='numbemr of y epoch')
-    parser.add_argument('--epoch_th_LAX', type=int, default=3000, help='number of epochs without y optimization')
+    parser.add_argument('--epoch_y_LAX', type=int, default=10, help='numbemr of y epoch')
+    parser.add_argument('--epoch_th_LAX', type=int, default=1, help='number of epochs without y optimization')
 
     parser.add_argument('--warmup_epochs_net_LAX', type=int, default=100, help='Number of warmup epochs of net')
     parser.add_argument('--warmup_epochs_y_LAX', type=int, default=100, help='Number of warmup epochs of y')
@@ -863,13 +863,13 @@ def get_DOPDeepOLAX_args():
     parser.add_argument('--beta_LAX_HUST', type=float, default= 0.0, help= 'it is the pde loss: loss = l_data + betha_lax * l_monoton + beta_lax * l_PDE')
     parser.add_argument('--dynamical_F_LAX', type=bool, default=True, help='this boolean specifies existence of Dynamical_F in our network.')
 
-    parser.add_argument('--distance_block_LAX_XJTU', type= str, default="SumProductNetwork",choices= ['SumProductNetwork', 'MLP', 'Transformer', 'Mahalanobis', 'Lp_norm'], 
+    parser.add_argument('--distance_block_LAX_XJTU', type= str, default="MLP",choices= ['SumProductNetwork', 'MLP', 'Transformer', 'Mahalanobis', 'Lp_norm'], 
                          help= 'choose one of these options for distance block: SumProductNetwork, MLP')
-    parser.add_argument('--distance_block_LAX_TJU', type= str, default="SumProductNetwork",choices= ['SumProductNetwork', 'MLP', 'Transformer', 'Mahalanobis', 'Lp_norm'], 
+    parser.add_argument('--distance_block_LAX_TJU', type= str, default="MLP",choices= ['SumProductNetwork', 'MLP', 'Transformer', 'Mahalanobis', 'Lp_norm'], 
                          help= 'choose one of these options for distance block: SumProductNetwork, MLP')
-    parser.add_argument('--distance_block_LAX_MIT', type= str, default="SumProductNetwork",choices= ['SumProductNetwork', 'MLP', 'Transformer', 'Mahalanobis', 'Lp_norm'], 
+    parser.add_argument('--distance_block_LAX_MIT', type= str, default="MLP",choices= ['SumProductNetwork', 'MLP', 'Transformer', 'Mahalanobis', 'Lp_norm'], 
                          help= 'choose one of these options for distance block: SumProductNetwork, MLP')
-    parser.add_argument('--distance_block_LAX_HUST', type= str, default="SumProductNetwork",choices= ['SumProductNetwork', 'MLP', 'Transformer', 'Mahalanobis', 'Lp_norm'], 
+    parser.add_argument('--distance_block_LAX_HUST', type= str, default="MLP",choices= ['SumProductNetwork', 'MLP', 'Transformer', 'Mahalanobis', 'Lp_norm'], 
                          help= 'choose one of these options for distance block: SumProductNetwork, MLP')
     
     parser.add_argument('--center_block_LAX_XJTU', type= str, default= 'PhI', choices=['H*', 'PhiIntegrator ', 'PhI'],
@@ -951,7 +951,7 @@ def get_DOPDeepOLAX_args():
     parser.add_argument('--dim_output_LAX_HUST', type = int, default = 1, help = 'dimension of whole LAX output')
 
     # scheduler related
-    parser.add_argument('--epochs', type=int, default=2000, help='epoch') # 2000, 200
+    parser.add_argument('--epochs', type=int, default=200, help='epoch') # 2000, 200
     parser.add_argument('--early_stop', type=int, default=80, help='early stop') # 80, 20
     parser.add_argument('--warmup_epochs_XJTU', type=int, default=30, help='warmup epoch')
     parser.add_argument('--warmup_epochs_TJU', type=int, default=50, help='warmup epoch')
@@ -1046,8 +1046,8 @@ def get_Bagging_u_args():
     parser.add_argument('--lr_net_LAX_HUST', type=float, default=0.014526149878088328, help='net learning rate')
     parser.add_argument('--lr_y_LAX', type=float, default=0.08, help='y learning rate')
 
-    parser.add_argument('--epoch_y_LAX', type=int, default=600, help='numbemr of y epoch')
-    parser.add_argument('--epoch_th_LAX', type=int, default=3000, help='number of epochs without y optimization')
+    parser.add_argument('--epoch_y_LAX', type=int, default=10, help='numbemr of y epoch')
+    parser.add_argument('--epoch_th_LAX', type=int, default=1, help='number of epochs without y optimization')
 
     parser.add_argument('--warmup_epochs_net_LAX', type=int, default=100, help='Number of warmup epochs of net')
     parser.add_argument('--warmup_epochs_y_LAX', type=int, default=100, help='Number of warmup epochs of y')
@@ -1083,13 +1083,13 @@ def get_Bagging_u_args():
     parser.add_argument('--beta_LAX_HUST', type=float, default= 0.0, help= 'it is the pde loss: loss = l_data + betha_lax * l_monoton + beta_lax * l_PDE')
     parser.add_argument('--dynamical_F_LAX', type=bool, default=True, help='this boolean specifies existence of Dynamical_F in our network.')
 
-    parser.add_argument('--distance_block_LAX_XJTU', type= str, default="SumProductNetwork",choices= ['SumProductNetwork', 'MLP', 'Transformer', 'Mahalanobis', 'Lp_norm'], 
+    parser.add_argument('--distance_block_LAX_XJTU', type= str, default="MLP",choices= ['SumProductNetwork', 'MLP', 'Transformer', 'Mahalanobis', 'Lp_norm'], 
                          help= 'choose one of these options for distance block: SumProductNetwork, MLP')
-    parser.add_argument('--distance_block_LAX_TJU', type= str, default="SumProductNetwork",choices= ['SumProductNetwork', 'MLP', 'Transformer', 'Mahalanobis', 'Lp_norm'], 
+    parser.add_argument('--distance_block_LAX_TJU', type= str, default="MLP",choices= ['SumProductNetwork', 'MLP', 'Transformer', 'Mahalanobis', 'Lp_norm'], 
                          help= 'choose one of these options for distance block: SumProductNetwork, MLP')
-    parser.add_argument('--distance_block_LAX_MIT', type= str, default="SumProductNetwork",choices= ['SumProductNetwork', 'MLP', 'Transformer', 'Mahalanobis', 'Lp_norm'], 
+    parser.add_argument('--distance_block_LAX_MIT', type= str, default="MLP",choices= ['SumProductNetwork', 'MLP', 'Transformer', 'Mahalanobis', 'Lp_norm'], 
                          help= 'choose one of these options for distance block: SumProductNetwork, MLP')
-    parser.add_argument('--distance_block_LAX_HUST', type= str, default="SumProductNetwork",choices= ['SumProductNetwork', 'MLP', 'Transformer', 'Mahalanobis', 'Lp_norm'], 
+    parser.add_argument('--distance_block_LAX_HUST', type= str, default="MLP",choices= ['SumProductNetwork', 'MLP', 'Transformer', 'Mahalanobis', 'Lp_norm'], 
                          help= 'choose one of these options for distance block: SumProductNetwork, MLP')
     
     parser.add_argument('--center_block_LAX_XJTU', type= str, default= 'PhI', choices=['H*', 'PhiIntegrator ', 'PhI'],
@@ -1170,7 +1170,7 @@ def get_Bagging_u_args():
     parser.add_argument('--phi_out_LAX_HUST', type= int, default=1, help= 'phi output dimension')
     parser.add_argument('--dim_output_LAX_HUST', type = int, default = 1, help = 'dimension of whole LAX output')
     # scheduler related
-    parser.add_argument('--epochs', type=int, default=2000, help='epoch') # 2000, 200
+    parser.add_argument('--epochs', type=int, default=200, help='epoch') # 2000, 200
     parser.add_argument('--early_stop', type=int, default=80, help='early stop') # 80, 20
     parser.add_argument('--warmup_epochs_XJTU', type=int, default=30, help='warmup epoch')
     parser.add_argument('--warmup_epochs_TJU', type=int, default=50, help='warmup epoch')
@@ -1253,8 +1253,8 @@ def get_LAX_predictor_args():
     parser.add_argument('--dynamical_F_LAX', type=bool, default=True, help='this boolean specifies existence of Dynamical_F in our network.')
     parser.add_argument('--F_hidden_dim_LAX', type=int, default=25, help='the hidden dim of F')
 
-    parser.add_argument('--epoch_y_LAX', type=int, default=600, help='numbemr of y epoch')
-    parser.add_argument('--epoch_th_LAX', type=int, default=3000, help='number of epochs without y optimization')
+    parser.add_argument('--epoch_y_LAX', type=int, default=10, help='numbemr of y epoch')
+    parser.add_argument('--epoch_th_LAX', type=int, default=1, help='number of epochs without y optimization')
 
     parser.add_argument('--warmup_epochs_net_LAX', type=int, default=100, help='Number of warmup epochs of net')
     parser.add_argument('--warmup_epochs_y_LAX', type=int, default=100, help='Number of warmup epochs of y')
@@ -1376,7 +1376,7 @@ def get_LAX_predictor_args():
     parser.add_argument('--dim_output_LAX_HUST', type = int, default = 1, help = 'dimension of whole LAX output')
 
     # scheduler related
-    parser.add_argument('--epochs', type=int, default=2000, help='epoch') # 2000, 200
+    parser.add_argument('--epochs', type=int, default=200, help='epoch') # 2000, 200
     parser.add_argument('--early_stop', type=int, default=80, help='early stop') # 80, 20
     parser.add_argument('--warmup_epochs_XJTU', type=int, default=30, help='warmup epoch')
     parser.add_argument('--warmup_epochs_TJU', type=int, default=50, help='warmup epoch')
@@ -1460,8 +1460,8 @@ def get_DeepOLAX_args():
     parser.add_argument('--lr_net_LAX_HUST', type=float, default=0.014526149878088328, help='net learning rate')
     parser.add_argument('--lr_y_LAX', type=float, default=0.08, help='y learning rate')
 
-    parser.add_argument('--epoch_y_LAX', type=int, default=600, help='numbemr of y epoch')
-    parser.add_argument('--epoch_th_LAX', type=int, default=3000, help='number of epochs without y optimization')
+    parser.add_argument('--epoch_y_LAX', type=int, default=10, help='numbemr of y epoch')
+    parser.add_argument('--epoch_th_LAX', type=int, default=1, help='number of epochs without y optimization')
 
     parser.add_argument('--warmup_epochs_net_LAX', type=int, default=100, help='Number of warmup epochs of net')
     parser.add_argument('--warmup_epochs_y_LAX', type=int, default=100, help='Number of warmup epochs of y')
@@ -1582,7 +1582,7 @@ def get_DeepOLAX_args():
     parser.add_argument('--phi_out_HUST', type= int, default=1, help= 'phi output dimension')
     parser.add_argument('--dim_output_LAX_HUST', type = int, default = 1, help = 'dimension of whole LAX output')
     # scheduler related
-    parser.add_argument('--epochs', type=int, default=2000, help='epoch') # 2000, 200
+    parser.add_argument('--epochs', type=int, default=200, help='epoch') # 2000, 200
     parser.add_argument('--early_stop', type=int, default=80, help='early stop') # 80, 20
     parser.add_argument('--warmup_epochs_XJTU', type=int, default=30, help='warmup epoch')
     parser.add_argument('--warmup_epochs_TJU', type=int, default=50, help='warmup epoch')
@@ -1691,7 +1691,7 @@ def get_finetuning_PINN_args():
 
     # scheduler related
     parser.add_argument('--epochs', type=int, default=200, help='epoch')
-    parser.add_argument('--early_stop', type=int, default=10, help='early stop')
+    parser.add_argument('--early_stop', type=int, default=40, help='early stop')
     parser.add_argument('--warmup_epochs', type=int, default=30, help='warmup epoch')
     parser.add_argument('--warmup_lr', type=float, default=0.002, help='warmup lr')
     parser.add_argument('--lr', type=float, default=0.01, help='base lr')
@@ -1769,7 +1769,7 @@ def get_finetuning_DeepOPINN_args():
     parser.add_argument('--dropout_HUST', type=float, default=0.10014057317121909, help='dropout')
     
     # scheduler related
-    parser.add_argument('--epochs', type=int, default=2000, help='epoch') # 2000, 200
+    parser.add_argument('--epochs', type=int, default=200, help='epoch') # 2000, 200
     parser.add_argument('--early_stop', type=int, default=40, help='early stop') # 80, 20
     parser.add_argument('--warmup_epochs_XJTU', type=int, default=30, help='warmup epoch')
     parser.add_argument('--warmup_epochs_TJU', type=int, default=50, help='warmup epoch')
@@ -1876,7 +1876,7 @@ def get_finetuning_DOPFormer_args():
     parser.add_argument('--transformer_dropout_HUST', type=float, default=0.2867026986359125, help='transformer_dropout')
     
     # scheduler related
-    parser.add_argument('--epochs', type=int, default=2000, help='epoch') # 2000, 200
+    parser.add_argument('--epochs', type=int, default=200, help='epoch') # 2000, 200
     parser.add_argument('--early_stop', type=int, default=40, help='early stop') # 80, 20
     parser.add_argument('--warmup_epochs_XJTU', type=int, default=30, help='warmup epoch')
     parser.add_argument('--warmup_epochs_TJU', type=int, default=50, help='warmup epoch')
@@ -1962,7 +1962,7 @@ def get_finetuning_DeepONet_args():
     parser.add_argument('--dropout_HUST', type=float, default=0.10014057317121909, help='dropout')
     
     # scheduler related
-    parser.add_argument('--epochs', type=int, default=2000, help='epoch') # 2000, 200
+    parser.add_argument('--epochs', type=int, default=200, help='epoch') # 2000, 200
     parser.add_argument('--early_stop', type=int, default=40, help='early stop') # 80, 20
     parser.add_argument('--warmup_epochs_XJTU', type=int, default=30, help='warmup epoch')
     parser.add_argument('--warmup_epochs_TJU', type=int, default=50, help='warmup epoch')
@@ -2069,8 +2069,8 @@ def get_finetuning_Bagging_u_args():
     parser.add_argument('--lr_net_LAX_HUST', type=float, default=0.014526149878088328, help='net learning rate')
     parser.add_argument('--lr_y_LAX', type=float, default=0.08, help='y learning rate')
 
-    parser.add_argument('--epoch_y_LAX', type=int, default=600, help='numbemr of y epoch')
-    parser.add_argument('--epoch_th_LAX', type=int, default=3000, help='number of epochs without y optimization')
+    parser.add_argument('--epoch_y_LAX', type=int, default=10, help='numbemr of y epoch')
+    parser.add_argument('--epoch_th_LAX', type=int, default=1, help='number of epochs without y optimization')
 
     parser.add_argument('--warmup_epochs_net_LAX', type=int, default=100, help='Number of warmup epochs of net')
     parser.add_argument('--warmup_epochs_y_LAX', type=int, default=100, help='Number of warmup epochs of y')
@@ -2193,7 +2193,7 @@ def get_finetuning_Bagging_u_args():
     parser.add_argument('--phi_out_LAX_HUST', type= int, default=1, help= 'phi output dimension')
     parser.add_argument('--dim_output_LAX_HUST', type = int, default = 1, help = 'dimension of whole LAX output')
     # scheduler related
-    parser.add_argument('--epochs', type=int, default=2000, help='epoch') # 2000, 200
+    parser.add_argument('--epochs', type=int, default=200, help='epoch') # 2000, 200
     parser.add_argument('--early_stop', type=int, default=40, help='early stop') # 80, 20
     parser.add_argument('--warmup_epochs_XJTU', type=int, default=30, help='warmup epoch')
     parser.add_argument('--warmup_epochs_TJU', type=int, default=50, help='warmup epoch')
@@ -2249,3 +2249,6 @@ def get_finetuning_Bagging_u_args():
     
     args = parser.parse_args()
     return args
+
+
+

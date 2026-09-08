@@ -1,45 +1,36 @@
 from dataloader.dataloader import XJTUdata, TJUdata, MITdata, HUSTdata, NASAdata
 from natsort import natsorted
 import os
+import json
 
-
+def _get_splits(dataset_name, batch_name):
+    with open('config/train_test_split.json', 'r') as f:
+        splits = json.load(f)
+    if dataset_name not in splits or batch_name not in splits[dataset_name]:
+        raise ValueError(f"Splits for {dataset_name} - {batch_name} not found in config.")
+    return splits[dataset_name][batch_name]
 
 def load_XJTU_data(args, small_sample=None, data_path='data/Full'):
+    print(f'DEBUG load_XJTU_data called with data_path={data_path}')
     root = data_path + '/XJTU data'
     args.root = root
     data = XJTUdata(root=root, args=args)
-    train_list = []
-    test_list = []
-    files = os.listdir(root)
-
-    if args.run_optuna:
-        batches = ['R2.5', 'R3', 'satellite'] # batch 3, 4, 6
-
-    for file in files:
-        if args.run_optuna:
-            for args.batch in batches:
-                if args.batch in file:
-                    if '4' in file or '8' in file:
-                        test_list.append(os.path.join(root, file))
-                    else:
-                        train_list.append(os.path.join(root, file))
-        else:
-            if args.batch in file:
-                if '4' in file or '8' in file:
-                    test_list.append(os.path.join(root, file))
-                else:
-                    train_list.append(os.path.join(root, file))
-                
+    
+    batch_name = 'Sim_satellite' if args.batch == 'satellite' else args.batch
+    splits = _get_splits('XJTU', batch_name)
+    train_list = [os.path.join(root, b + '.csv') for b in splits['train']]
+    val_list = [os.path.join(root, b + '.csv') for b in splits['val']]
+    test_list = [os.path.join(root, b + '.csv') for b in splits['test']]
+    
     if small_sample is not None:
         train_list = train_list[:small_sample]
 
-    if args.run_optuna:
-        args.batch = '_'.join(batches)
-
     train_loader = data.read_all(specific_path_list=train_list)
+    val_loader = data.read_all(specific_path_list=val_list)
     test_loader = data.read_all(specific_path_list=test_list)
-    dataloader = {'train': train_loader['train_2'],
-                  'valid': train_loader['valid_2'],
+    
+    dataloader = {'train': train_loader['train_3'],
+                  'valid': val_loader['test_3'],
                   'test': test_loader['test_3']}
     return dataloader
 
@@ -48,89 +39,75 @@ def load_TJU_data(args, small_sample=None, data_path='data/Full'):
     root = data_path + '/TJU data'
     args.root = root
     data = TJUdata(root=root, args=args)
-    train_list = []
-    test_list = []
-
-    # The numbers whose units digit is 5 or 9 are test set, and the others are training set
-    mod = [(5,9),(4,8),(5,9)]
-    batchs = os.listdir(root)
-    TJU_batches = {
-        'NCA': 0,
-        'NCM': 1, 
-        'NCM_NCA': 2 
+    
+    tju_map = {
+        'NCA': 'Dataset_1_NCA_battery',
+        'NCM': 'Dataset_2_NCM_battery',
+        'NCM_NCA': 'Dataset_3_NCM_NCA_battery'
     }
-    batch_id = TJU_batches[args.batch]
-    batch = batchs[batch_id]
-    batch_root = os.path.join(root, batch)
-    files = os.listdir(batch_root)
-    for i,f in enumerate(files):
-        id = i + 1
-        if id % 10 == mod[batch_id][0] or id % 10 == mod[batch_id][1]:
-            test_list.append(os.path.join(batch_root, f))
-            # breakpoint()
-            print(f)
-        else:
-            train_list.append(os.path.join(batch_root, f))
+    batch_name = tju_map.get(args.batch, args.batch)
+
+    splits = _get_splits('TJU', batch_name)
+    train_list = [os.path.join(root, b + '.csv') for b in splits['train']]
+    val_list = [os.path.join(root, b + '.csv') for b in splits['val']]
+    test_list = [os.path.join(root, b + '.csv') for b in splits['test']]
+
     if small_sample is not None:
         train_list = train_list[:small_sample]
+
     train_loader = data.read_all(specific_path_list=train_list)
+    val_loader = data.read_all(specific_path_list=val_list)
     test_loader = data.read_all(specific_path_list=test_list)
-    dataloader = {'train': train_loader['train_2'],
-                    'valid': train_loader['valid_2'],
-                    'test': test_loader['test_3']}
+    
+    dataloader = {'train': train_loader['train_3'],
+                  'valid': val_loader['test_3'],
+                  'test': test_loader['test_3']}
     return dataloader
 
 
 def load_MIT_data(args, small_sample=None, data_path='data/Full'):
     root = data_path + '/MIT data'
     args.root = root
-    train_list = []
-    test_list = []
+    data = MITdata(root=root, args=args)
     
-    for batch in ['2017-05-12','2017-06-30','2018-04-12']:
-        batch_root = os.path.join(root,batch)
-        files = os.listdir(batch_root)
-        for f in files:
-            id = int(f.split('-')[-1].split('.')[0])
-            if id % 5 == 0:
-                test_list.append(os.path.join(batch_root,f))
-            else:
-                train_list.append(os.path.join(batch_root,f))
+    splits = _get_splits('MIT', args.batch)
+    train_list = [os.path.join(root, b + '.csv') for b in splits['train']]
+    val_list = [os.path.join(root, b + '.csv') for b in splits['val']]
+    test_list = [os.path.join(root, b + '.csv') for b in splits['test']]
 
     if small_sample is not None:
-        train_list = train_list[:small_sample]    
-    data = MITdata(root=root, args=args)
-    trainloader = data.read_all(specific_path_list=train_list)
-    testloader = data.read_all(specific_path_list=test_list)
-    dataloader = {'train':trainloader['train_2'],'valid':trainloader['valid_2'],'test':testloader['test_3']}
+        train_list = train_list[:small_sample]
 
+    train_loader = data.read_all(specific_path_list=train_list)
+    val_loader = data.read_all(specific_path_list=val_list)
+    test_loader = data.read_all(specific_path_list=test_list)
+    
+    dataloader = {'train': train_loader['train_3'],
+                  'valid': val_loader['test_3'],
+                  'test': test_loader['test_3']}
     return dataloader
 
 
 def load_HUST_data(args, small_sample=None, data_path='data/Full'):
-    test_id = ['1-4','1-8','2-4','2-8',
-               '3-4','3-8','4-4','4-8',
-               '5-4','5-7','6-4','6-8',
-               '7-4','7-8','8-4','8-8',
-               '9-4','9-8','10-4','10-8']
     root = data_path + '/HUST data'
     args.root = root
     data = HUSTdata(root=root, args=args)
-    train_list = []
-    test_list = []
-    files = os.listdir(root)
-    for f in files:
-        if f[:-4] in test_id:
-            test_list.append(f'{root}/{f}')
-        else:
-            train_list.append(f'{root}/{f}')
+    
+    splits = _get_splits('HUST', args.batch)
+    train_list = [os.path.join(root, b + '.csv') for b in splits['train']]
+    val_list = [os.path.join(root, b + '.csv') for b in splits['val']]
+    test_list = [os.path.join(root, b + '.csv') for b in splits['test']]
+
     if small_sample is not None:
         train_list = train_list[:small_sample]
 
-    trainloader = data.read_all(specific_path_list=train_list)
-    testloader = data.read_all(specific_path_list=test_list)
-    dataloader = {'train':trainloader['train_2'],'valid':trainloader['valid_2'],'test':testloader['test_3']}
-
+    train_loader = data.read_all(specific_path_list=train_list)
+    val_loader = data.read_all(specific_path_list=val_list)
+    test_loader = data.read_all(specific_path_list=test_list)
+    
+    dataloader = {'train': train_loader['train_3'],
+                  'valid': val_loader['test_3'],
+                  'test': test_loader['test_3']}
     return dataloader
 
 

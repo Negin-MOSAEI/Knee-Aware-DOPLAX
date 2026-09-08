@@ -3,7 +3,7 @@ from dataloader.data_helper import load_TJU_data
 from dataloader.data_helper import load_MIT_data
 from dataloader.data_helper import load_HUST_data
 from Model.PI_nets import PINN, DeepOPINN, DOPFormer
-from Model.DD_nets import DeepONet
+# from Model.DD_nets import DeepONet
 from Model.Combination_nets import Bagging_u, LAX_predictor, DOPDeepOLAX
 from Model.PI_nets.LAX import run_training_and_evaluation
 from utils.util import write_to_file, write_to_json
@@ -398,9 +398,7 @@ def run_optuna(num_of_trials:int, run_info:dict, dataset_name:str, batch_name:st
     if dataset_name not in ['XJTU', 'TJU', 'MIT', 'HUST']:
         raise ValueError("Dataset name must be one of 'XJTU', 'TJU', 'MIT', 'HUST'")
     
-    if dataset_name in ['MIT', 'HUST'] and batch_name != 'one_batch':
-        raise ValueError("When dataset name is 'MIT' or 'HUST', batch name must be 'one_batch'")
-    
+    # MIT and HUST batch validations are handled via specific data helper logic
     if run_info['run_for_a_model_explicitly'] == False:
         if dataset_name == 'XJTU' and batch_name not in ['2C', '3C', 'R2.5', 'R3', 'RW', 'satellite']:
             raise ValueError("When dataset name is 'XJTU', batch name must be one of '2C', '3C', 'R2.5', 'R3', 'RW', 'satellite'")

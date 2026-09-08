@@ -9,6 +9,10 @@ from Model.Auxiliary_nets.MLP import MLP
 from Model.PI_nets import DeepOPINN 
 from Model.PI_nets.LAX import OptimizationNetwork 
 import deepxde as dde
+import torch
+torch.set_default_device('cpu')
+torch.set_default_tensor_type(torch.FloatTensor)
+
 import os 
 import warnings 
 warnings.filterwarnings('ignore') 
@@ -238,7 +242,7 @@ class Model(DeepOPINN.Model):
                                hidden_dim=hidden_dim_F, 
                                dropout=self.args.dropout).to(device)
 
-        self.bagging_NN = MLP_Bagging_NN(input_dim=2, output_dim=1,
+        self.bagging_NN = MLP_Bagging_NN(input_dim=3, output_dim=1,
                                          hidden_dim=self.args.bag_hidden_dim,  
                                          dropout=self.args.dropout).to(device)
 
@@ -307,7 +311,9 @@ class Model(DeepOPINN.Model):
         checkpoint['model_state']['y'] = checkpoint['model_state']['y'][0].unsqueeze(0).repeat(self.args.batch_size, 1)
 
         sum_, n_samples= 0.0, 0.0 
-        for x1, x2, _, _ in trainloader:
+        for batch in trainloader:
+            x1 = batch[0]
+            x2 = batch[1]
             x1, x2 = x1[:, :16], x2[:, :16] 
             sum_ += x2.sum(dim=0)
             n_samples += x2.size(0) 
@@ -330,12 +336,23 @@ class Model(DeepOPINN.Model):
         setattr(self.args, 'run_for_LAX', False)
 
         with torch.no_grad():
-            for iter, (x1, _, y1, _) in enumerate(testloader):
+            for iter, batch in enumerate(testloader):
+                if len(batch) == 6:
+                    x1, _, y1, _, kpd1, _ = batch
+                else:
+                    x1, _, y1, _ = batch
+                    kpd1 = None
+                    
                 x1 = x1.to(device)
                 xt1 = self.extract_features(x1)
                 _, u_pinn = self.predict(xt1)
                 u_lax = self.LAX_model(x=x1[:,:-1], t=x1[:,-1], epoch=epoch)
-                u1 = self.bagging_NN(torch.cat([u_pinn, u_lax], dim=1))
+                
+                if kpd1 is not None:
+                    u1 = self.bagging_NN(torch.cat([u_pinn, u_lax, kpd1.to(device)], dim=1))
+                else:
+                    u1 = self.bagging_NN(torch.cat([u_pinn, u_lax], dim=1))
+                    
                 true_label.append(y1)
                 pred_label.append(u1.cpu().detach().numpy())
         pred_label = np.concatenate(pred_label, axis=0)
@@ -352,12 +369,23 @@ class Model(DeepOPINN.Model):
         current = self.args.run_for_LAX
         setattr(self.args, 'run_for_LAX', False)
         with torch.no_grad():
-            for iter, (x1, _, y1, _) in enumerate(validloader):
+            for iter, batch in enumerate(validloader):
+                if len(batch) == 6:
+                    x1, _, y1, _, kpd1, _ = batch
+                else:
+                    x1, _, y1, _ = batch
+                    kpd1 = None
+                
                 x1 = x1.to(device)
                 xt1 = self.extract_features(x1)
                 _, u_pinn = self.predict(xt1)
                 u_lax = self.LAX_model(x=x1[:,:-1], t=x1[:,-1], epoch=epoch)
-                u1 = self.bagging_NN(torch.cat([u_pinn, u_lax], dim=1))
+                
+                if kpd1 is not None:
+                    u1 = self.bagging_NN(torch.cat([u_pinn, u_lax, kpd1.to(device)], dim=1))
+                else:
+                    u1 = self.bagging_NN(torch.cat([u_pinn, u_lax], dim=1))
+                    
                 true_label.append(y1)
                 pred_label.append(u1.cpu().detach().numpy())
         pred_label = np.concatenate(pred_label,axis=0)
@@ -375,7 +403,9 @@ class Model(DeepOPINN.Model):
         sum_squared = 0.0
         n_samples = 0
         
-        for x1, x2, _, _ in trainloader:
+        for batch in trainloader:
+            x1 = batch[0]
+            x2 = batch[1]
             x2 = x2[:, :16]
             x1 = x1[:, :16]
             sum_ += x2.sum(dim=0)  # sum across the batch (dim=0), result shape: [num_features]
@@ -394,8 +424,11 @@ class Model(DeepOPINN.Model):
         return model
 
 
-    def forward_bagging_NN(self, U1, U2):
-        bnn = self.bagging_NN(torch.cat([U1, U2], dim=1))
+    def forward_bagging_NN(self, U1, U2, kpd=None):
+        if kpd is not None:
+            bnn = self.bagging_NN(torch.cat([U1, U2, kpd], dim=1))
+        else:
+            bnn = self.bagging_NN(torch.cat([U1, U2], dim=1))
         return bnn
 
 
@@ -411,7 +444,12 @@ class Model(DeepOPINN.Model):
         loss_bagging_monotone_meter = AverageMeter()
 
 
-        for iter, (x1, x2, y1, y2) in enumerate(dataloader):
+        for iter, batch in enumerate(dataloader):
+            if len(batch) == 6:
+                x1, x2, y1, y2, kpd1, kpd2 = batch
+            else:
+                x1, x2, y1, y2 = batch
+                kpd1, kpd2 = None, None
             x1, x2, y1, y2 = x1.to(device), x2.to(device), y1.to(device), y2.to(device)
             
             if self.extractor_deepopinn is None:
@@ -432,8 +470,14 @@ class Model(DeepOPINN.Model):
             u1_lax = self.forward_LAX(x1, epoch=epoch)
             u2_lax = self.forward_LAX(x2, epoch=epoch)
 
-            Bag_u1 = self.forward_bagging_NN(u1, u1_lax)
-            Bag_u2 = self.forward_bagging_NN(u2, u2_lax)
+            if kpd1 is not None and kpd2 is not None:
+                kpd1 = kpd1.to(device)
+                kpd2 = kpd2.to(device)
+                Bag_u1 = self.forward_bagging_NN(u1, u1_lax, kpd1)
+                Bag_u2 = self.forward_bagging_NN(u2, u2_lax, kpd2)
+            else:
+                Bag_u1 = self.forward_bagging_NN(u1, u1_lax)
+                Bag_u2 = self.forward_bagging_NN(u2, u2_lax)
 
             # loss_data_Bagging
             loss_data_bagging = 0.5*self.loss_func(Bag_u1, y1) + 0.5*self.loss_func(Bag_u2, y2)
@@ -464,11 +508,9 @@ class Model(DeepOPINN.Model):
 
     def Train(self, trainloader, validloader=None, testloader=None):
         # Recreate dataloaders with CUDA-safe sampler
-        if hasattr(trainloader, 'sampler') and hasattr(trainloader.sampler, 'generator'):
-            trainloader.sampler.generator = self.generator
+        
 
-        if hasattr(validloader, 'sampler') and hasattr(validloader.sampler, 'generator'):
-            validloader.sampler.generator = self.generator
+        
             
         if type(self.args.run_for_DeepOPINN) == bool:
             self.load_DeepOPINN_model(model_path=self.args.DOP_weights, freeze=not self.args.run_for_DeepOPINN)

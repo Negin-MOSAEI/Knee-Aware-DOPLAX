@@ -1,0 +1,361 @@
+{
+    "HUST": {
+        "default": {
+            "TST": {
+                "d_model": 256,
+                "num_layers": 2,
+                "nhead": 2,
+                "dropout": 0.06047964050017366,
+                "lr": 0.0005135997328226176
+            },
+            "DeepOPINN": {
+                "F_hidden_dim": 64,
+                "F_layers_num": 4,
+                "dropout": 0.13778334616727003,
+                "lr": 0.00013719464832961267
+            },
+            "FusionMLP": {
+                "hidden_dim": 54,
+                "num_layers": 1,
+                "num_models": 2,
+                "lr": 7.857423877929488e-05
+            },
+            "LAX": {
+                "betha_LAX": 0.8461877859905913,
+                "dual_LAX": 0.339436313388678,
+                "lr_net_LAX": 0.01061760553890569,
+                "theta_LAX": 0.4644297068039287
+            }
+        }
+    },
+    "MIT": {
+        "2017-05-12": {
+            "TST": {
+                "d_model": 128,
+                "num_layers": 4,
+                "nhead": 2,
+                "dropout": 0.25275350308008326,
+                "lr": 0.0009835884355064554
+            },
+            "DeepOPINN": {
+                "F_hidden_dim": 64,
+                "F_layers_num": 5,
+                "dropout": 0.37625107062276886,
+                "lr": 0.007050300833936132
+            },
+            "FusionMLP": {
+                "hidden_dim": 99,
+                "num_layers": 2,
+                "num_models": 2,
+                "lr": 1.7406558206615573e-05
+            },
+            "LAX": {
+                "betha_LAX": 0.20633510765788138,
+                "dual_LAX": 1.1648213993426082,
+                "lr_net_LAX": 0.011670583768909795,
+                "theta_LAX": 0.317600744925174
+            }
+        },
+        "2017-06-30": {
+            "TST": {
+                "d_model": 512,
+                "num_layers": 4,
+                "nhead": 4,
+                "dropout": 0.2758453145485048,
+                "lr": 0.00014819031379546886
+            },
+            "DeepOPINN": {
+                "F_hidden_dim": 32,
+                "F_layers_num": 5,
+                "dropout": 0.14450560565393358,
+                "lr": 0.0038079336566219845
+            },
+            "FusionMLP": {
+                "hidden_dim": 1,
+                "num_layers": 3,
+                "num_models": 5,
+                "lr": 6.444217568063457e-05
+            },
+            "LAX": {
+                "betha_LAX": 0.7403194064998728,
+                "dual_LAX": 0.9548010241233328,
+                "lr_net_LAX": 0.01186569801538338,
+                "theta_LAX": 0.23598839340229527
+            }
+        },
+        "2018-04-12": {
+            "TST": {
+                "d_model": 128,
+                "num_layers": 5,
+                "nhead": 8,
+                "dropout": 0.3676779883996857,
+                "lr": 0.0006588091980299302
+            },
+            "DeepOPINN": {
+                "F_hidden_dim": 32,
+                "F_layers_num": 5,
+                "dropout": 0.21470204732874287,
+                "lr": 0.016986069495061963
+            },
+            "FusionMLP": {
+                "hidden_dim": 5,
+                "num_layers": 4,
+                "num_models": 2,
+                "lr": 0.00023635344959462327
+            },
+            "LAX": {
+                "betha_LAX": 0.5971407531446142,
+                "dual_LAX": 0.7075319044367153,
+                "lr_net_LAX": 0.010514107490708812,
+                "theta_LAX": 0.9419222615902112
+            }
+        }
+    },
+    "TJU": {
+        "Dataset_1_NCA_battery": {
+            "TST": {
+                "d_model": 256,
+                "num_layers": 3,
+                "nhead": 2,
+                "dropout": 0.14497892767877113,
+                "lr": 0.00047608042748754724
+            },
+            "DeepOPINN": {
+                "F_hidden_dim": 80,
+                "F_layers_num": 5,
+                "dropout": 0.13969339233303468,
+                "lr": 0.038501475300720844
+            },
+            "FusionMLP": {
+                "hidden_dim": 33,
+                "num_layers": 3,
+                "num_models": 9,
+                "lr": 0.009613322190751766
+            },
+            "LAX": {
+                "betha_LAX": 0.8901186805034593,
+                "dual_LAX": 0.7063921409955496,
+                "lr_net_LAX": 0.010064791377049354,
+                "theta_LAX": 0.5882759362078567
+            }
+        },
+        "Dataset_2_NCM_battery": {
+            "TST": {
+                "d_model": 512,
+                "num_layers": 4,
+                "nhead": 8,
+                "dropout": 0.4699468518344971,
+                "lr": 0.00014134821452822555
+            },
+            "DeepOPINN": {
+                "F_hidden_dim": 32,
+                "F_layers_num": 5,
+                "dropout": 0.12031606207929285,
+                "lr": 0.0022030911282687085
+            },
+            "FusionMLP": {
+                "hidden_dim": 101,
+                "num_layers": 3,
+                "num_models": 7,
+                "lr": 0.0035147851049679136
+            },
+            "LAX": {
+                "betha_LAX": 0.6658654838785804,
+                "dual_LAX": 0.9786003370667927,
+                "lr_net_LAX": 0.012350752364070272,
+                "theta_LAX": 0.6776719025147057
+            }
+        },
+        "Dataset_3_NCM_NCA_battery": {
+            "TST": {
+                "d_model": 64,
+                "num_layers": 4,
+                "nhead": 8,
+                "dropout": 0.14640065234372307,
+                "lr": 0.00821208065674232
+            },
+            "DeepOPINN": {
+                "F_hidden_dim": 32,
+                "F_layers_num": 5,
+                "dropout": 0.1379057999781852,
+                "lr": 0.0015400858336739038
+            },
+            "FusionMLP": {
+                "hidden_dim": 60,
+                "num_layers": 2,
+                "num_models": 3,
+                "lr": 0.009073596068413795
+            },
+            "LAX": {
+                "betha_LAX": 0.9842853780781271,
+                "dual_LAX": 0.8912257296190118,
+                "lr_net_LAX": 0.013406146738510927,
+                "theta_LAX": 0.9456932180239059
+            }
+        }
+    },
+    "XJTU": {
+        "2C": {
+            "TST": {
+                "d_model": 128,
+                "num_layers": 2,
+                "nhead": 8,
+                "dropout": 0.18786308154521206,
+                "lr": 0.002196022322716827
+            },
+            "DeepOPINN": {
+                "F_hidden_dim": 32,
+                "F_layers_num": 4,
+                "dropout": 0.10714380249955376,
+                "lr": 0.0006456367176421239
+            },
+            "FusionMLP": {
+                "hidden_dim": 94,
+                "num_layers": 1,
+                "num_models": 2,
+                "lr": 0.007015041128772095
+            },
+            "LAX": {
+                "betha_LAX": 0.908355497390192,
+                "dual_LAX": 1.006293978891493,
+                "lr_net_LAX": 0.011118867646376979,
+                "theta_LAX": 0.24685760617342473
+            }
+        },
+        "3C": {
+            "TST": {
+                "d_model": 128,
+                "num_layers": 3,
+                "nhead": 4,
+                "dropout": 0.043878263592499744,
+                "lr": 0.0011767657223137231
+            },
+            "DeepOPINN": {
+                "F_hidden_dim": 32,
+                "F_layers_num": 5,
+                "dropout": 0.1371382521190601,
+                "lr": 0.0009635804293555702
+            },
+            "FusionMLP": {
+                "hidden_dim": 57,
+                "num_layers": 3,
+                "num_models": 3,
+                "lr": 0.006062594094394529
+            },
+            "LAX": {
+                "betha_LAX": 0.03018815513353928,
+                "dual_LAX": 0.5639447469442688,
+                "lr_net_LAX": 0.011306742361504855,
+                "theta_LAX": 0.02290171780846181
+            }
+        },
+        "R2.5": {
+            "TST": {
+                "d_model": 128,
+                "num_layers": 5,
+                "nhead": 4,
+                "dropout": 0.3265194643825601,
+                "lr": 0.0010854949902529473
+            },
+            "DeepOPINN": {
+                "F_hidden_dim": 64,
+                "F_layers_num": 4,
+                "dropout": 0.10336048538869715,
+                "lr": 0.003044923155526807
+            },
+            "FusionMLP": {
+                "hidden_dim": 86,
+                "num_layers": 4,
+                "num_models": 2,
+                "lr": 0.007761156614121355
+            },
+            "LAX": {
+                "betha_LAX": 0.12918660454785993,
+                "dual_LAX": 0.14666441382729278,
+                "lr_net_LAX": 0.010122697303397325,
+                "theta_LAX": 0.23097342335945698
+            }
+        },
+        "R3": {
+            "TST": {
+                "d_model": 64,
+                "num_layers": 5,
+                "nhead": 4,
+                "dropout": 0.11168806157517763,
+                "lr": 0.002142700236830448
+            },
+            "DeepOPINN": {
+                "F_hidden_dim": 64,
+                "F_layers_num": 3,
+                "dropout": 0.13888043328491398,
+                "lr": 0.008413786997531777
+            },
+            "FusionMLP": {
+                "hidden_dim": 78,
+                "num_layers": 4,
+                "num_models": 8,
+                "lr": 0.009879139637540455
+            },
+            "LAX": {
+                "betha_LAX": 0.9471966164162063,
+                "dual_LAX": 0.23736230901157795,
+                "lr_net_LAX": 0.01238109759563279,
+                "theta_LAX": 0.4405117449924264
+            }
+        },
+        "RW": {
+            "TST": {
+                "d_model": 64,
+                "num_layers": 2,
+                "nhead": 4,
+                "dropout": 0.04520519070625741,
+                "lr": 0.0016381423568909322
+            },
+            "DeepOPINN": {
+                "F_hidden_dim": 32,
+                "F_layers_num": 5,
+                "dropout": 0.15611544313866876,
+                "lr": 0.0005800452260782714
+            },
+            "FusionMLP": {
+                "hidden_dim": 43,
+                "num_layers": 5,
+                "num_models": 3,
+                "lr": 0.0098159741919341
+            },
+            "LAX": {
+                "betha_LAX": 0.26558624632715777,
+                "dual_LAX": 0.10842873221803687,
+                "lr_net_LAX": 0.01551672382073567,
+                "theta_LAX": 0.9737053510982911
+            }
+        },
+        "Sim_satellite": {
+            "TST": {
+                "d_model": 256,
+                "num_layers": 1,
+                "nhead": 8,
+                "dropout": 0.05144683735730185,
+                "lr": 0.0011072668739825393
+            },
+            "DeepOPINN": {
+                "F_hidden_dim": 32,
+                "F_layers_num": 5,
+                "dropout": 0.10999989464066223,
+                "lr": 0.0009289805180938967
+            },
+            "FusionMLP": {
+                "hidden_dim": 97,
+                "num_layers": 2,
+                "num_models": 10,
+                "lr": 0.008555792584064912
+            },
+            "LAX": {
+                "betha_LAX": 0.7682265004596069,
+                "dual_LAX": 0.469853179205008,
+                "lr_net_LAX": 0.011376233015053566,
+                "theta_LAX": 0.257166946522691
+            }
+        }
+    }
+}

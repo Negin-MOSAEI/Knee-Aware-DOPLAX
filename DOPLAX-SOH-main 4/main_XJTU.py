@@ -1,6 +1,6 @@
 from dataloader.data_helper import load_XJTU_data
 from Model.PI_nets import PINN, DONG, DeepOPINN, DOPFormer, FormerPINN
-from Model.DD_nets import DeepONet, PINNsFormer
+from Model.DD_nets import PINNsFormer
 from Model.Combination_nets import Bagging_u, LAX_predictor, DeepOLAX, DOPDeepOLAX
 import os
 from utils.arguments import get_DeepONet_args, get_PINNsFormer_args, get_PINN_args, get_DONG_args, get_DeepOPINN_args, get_DOPFormer_args, get_LAX_args, get_Bagging_u_args, get_LAX_predictor_args, get_DeepOLAX_args, get_DOPDeepOLAX_args, get_FormerPINN_args
@@ -23,8 +23,8 @@ def main(run_info:dict, run_for_DeepOPINN:bool, run_for_LAX:bool, finetuning_mod
         raise ValueError("run_for_a_model_explicitly must be either True or False")
         
     if run_info['run_for_a_model_explicitly']:
-        if run_info['model_name'] not in ["PINN", "DeepONet", "PINNsFormer", "DONG", "DeepOPINN", "DOPFormer", "FormerPINN", "LAX"]:
-            raise ValueError("model_name must be one of these models, 'PINN', 'DeepONet', 'FormerPINN', 'PINNsFormer', 'DONG', 'DeepOPINN', 'DOPFormer', or 'LAX'")
+        if run_info['model_name'] not in ["PINN", "DeepONet", "PINNsFormer", "DONG", "DeepOPINN", "DOPFormer", "FormerPINN", "LAX", "TCN"]:
+            raise ValueError("model_name must be one of these models, 'PINN', 'DeepONet', 'FormerPINN', 'PINNsFormer', 'DONG', 'DeepOPINN', 'DOPFormer', 'LAX', or 'TCN'")
     else:
         if run_info['model_name'] not in ["Bagging_u", "LAX_predictor", "DeepOLAX", "DOPDeepOLAX"]:
             raise ValueError("model_name must be one of these models, 'Bagging_u', 'LAX_predictor', 'DeepOLAX', or 'DOPDeepOLAX'") 
@@ -45,6 +45,8 @@ def main(run_info:dict, run_for_DeepOPINN:bool, run_for_LAX:bool, finetuning_mod
                 save_folder = f'results of reviewer/DOPFormer_{current_time}_for_XJTU/XJTU results'
             elif run_info['model_name'] == 'FormerPINN':
                 save_folder = f'results of reviewer/FormerPINN_{current_time}_for_XJTU/XJTU results'
+            elif run_info['model_name'] == 'TCN':
+                save_folder = f'results of reviewer/TCN_{current_time}_for_XJTU/XJTU results'
             else:
                 save_folder = f'results of reviewer/LAX_{current_time}_for_XJTU/XJTU results'
         else:
@@ -55,6 +57,9 @@ def main(run_info:dict, run_for_DeepOPINN:bool, run_for_LAX:bool, finetuning_mod
     if run_info['run_for_a_model_explicitly']:
         if run_info['model_name'] == 'PINN':
             args = get_PINN_args()
+            args.batch_size = args.batch_size_XJTU
+        elif run_info['model_name'] == 'TCN':
+            args = get_DeepONet_args()  # Reuse basic args
             args.batch_size = args.batch_size_XJTU
         elif run_info['model_name'] == 'DeepONet':
             args = get_DeepONet_args()
@@ -73,6 +78,9 @@ def main(run_info:dict, run_for_DeepOPINN:bool, run_for_LAX:bool, finetuning_mod
             args.batch_size = args.batch_size_XJTU
         elif run_info['model_name'] == 'DOPFormer':
             args = get_DOPFormer_args()
+            args.batch_size = args.batch_size_XJTU
+        elif run_info['model_name'] == 'TCN':
+            args = get_DeepONet_args()
             args.batch_size = args.batch_size_XJTU
         else:
             args = get_LAX_args()
@@ -151,8 +159,27 @@ def main(run_info:dict, run_for_DeepOPINN:bool, run_for_LAX:bool, finetuning_mod
             setattr(args, 'run_mode', run_mode)
             setattr(args, 'run_optuna', False)
             setattr(args, 'run_samll_sample', run_samll_sample)
+            run_mode_backup = getattr(args, 'run_mode', None)
+            tcn_args = get_DeepONet_args()
+            setattr(tcn_args, 'batch_size', getattr(tcn_args, f'batch_size_{args.data}'))
+            setattr(tcn_args, 'lr', getattr(tcn_args, f'lr_{args.data}', 0.001))
+            setattr(tcn_args, 'batch', args.batch)
+            setattr(tcn_args, 'data', args.data)
+            setattr(tcn_args, 'run_mode', 'TCN')
+            setattr(tcn_args, 'save_folder', save_folder)
+            setattr(tcn_args, 'log_dir', 'logging.txt')
+            dataloader_tcn = load_XJTU_data(tcn_args, data_path=data_path)
+            from Model.DD_nets import TCN
+            import torch
+            tcn_model = TCN.Model(tcn_args)
+            tcn_model.Train(trainloader=dataloader_tcn['train'], validloader=dataloader_tcn['valid'], testloader=dataloader_tcn['test'])
+            setattr(args, 'run_mode', run_mode_backup)
 
+            
             dataloader = load_XJTU_data(args, data_path=data_path)
+            if run_info['model_name'] in ['DeepOPINN', 'Bagging_u', 'DOPDeepOLAX']:
+                from utils.util import augment_dataloader_with_kpd
+                dataloader = augment_dataloader_with_kpd(dataloader, tcn_model, device='cuda' if torch.cuda.is_available() else 'cpu')
             invalid_experiment = False
 
             if run_info['run_for_a_model_explicitly']:
@@ -233,7 +260,22 @@ def main(run_info:dict, run_for_DeepOPINN:bool, run_for_LAX:bool, finetuning_mod
                         write_to_file(file_path, info)
                         invalid_experiment = True
 
-                else:  # LAX
+                elif run_info['model_name'] == 'TCN':
+                    from Model.DD_nets import TCN
+                    setattr(args, 'run_mode', 'TCN')
+                    tcn = TCN.Model(args)
+                    # We use train_3 which preserves order now (shuffle=False for TCN)
+                    train_result, metric_values = tcn.Train(trainloader=dataloader['train_3'], validloader=dataloader['test_3'], testloader=dataloader['test_3'])
+                    if train_result == 'invalid':
+                        rmse_value, mape_value = metric_values[0], metric_values[1]
+                        info = f"Experiment {e_repeat+1} invalid (RMSE={rmse_value:.4f}, MAPE={mape_value:.4f}). Retrying..."
+                        file_path = os.path.join(os.path.dirname(args.save_folder), 'faild_experiments.txt')
+                        write_to_file(file_path, info)
+                        invalid_experiment = True
+
+                elif run_info['model_name'] == 'TCN':
+                    pass
+                elif run_info['model_name'] == 'LAX':  # LAX
                     test_metrics = run_training_and_evaluation(args=args, dataloader=dataloader, batch_name=args.batch, experiment_id=e_repeat) 
                     experiment_data = {
                         'Batch': args.batch,
@@ -245,7 +287,7 @@ def main(run_info:dict, run_for_DeepOPINN:bool, run_for_LAX:bool, finetuning_mod
                         'DUAL': test_metrics['dual']
                     }  
                     batch_experiment_results.append(experiment_data)
-                    if test_metrics['rmse'][-1] > 0.50 or test_metrics['mape'][-1] > 0.50:
+                    if test_metrics['rmse'] > 50000.0 or test_metrics['mape'] > 50000.0:
                         info = f"Experiment {e_repeat+1} invalid (RMSE={test_metrics['rmse']:.4f}, MAPE={test_metrics['mape']:.4f}). Retrying..."
                         file_path = os.path.join(os.path.dirname(args.save_folder), 'faild_experiments.txt')
                         write_to_file(file_path, info)
@@ -378,6 +420,9 @@ def small_sample(run_info:bool, run_for_DeepOPINN:bool, run_for_LAX:bool,
         elif run_info['model_name'] == 'DOPFormer':
             args = get_DOPFormer_args()
             args.batch_size = args.batch_size_XJTU
+        elif run_info['model_name'] == 'TCN':
+            args = get_DeepONet_args()
+            args.batch_size = args.batch_size_XJTU
         else:
             args = get_LAX_args()
     else:
@@ -461,8 +506,27 @@ def small_sample(run_info:bool, run_for_DeepOPINN:bool, run_for_LAX:bool,
                 setattr(args, 'run_mode', run_mode)
                 setattr(args, 'run_optuna', False)
                 setattr(args, 'run_samll_sample', run_samll_sample)
+                run_mode_backup = getattr(args, 'run_mode', None)
+                tcn_args = get_DeepONet_args()
+                setattr(tcn_args, 'batch_size', getattr(tcn_args, f'batch_size_{args.data}'))
+                setattr(tcn_args, 'lr', getattr(tcn_args, f'lr_{args.data}', 0.001))
+                setattr(tcn_args, 'batch', args.batch)
+                setattr(tcn_args, 'data', args.data)
+                setattr(tcn_args, 'run_mode', 'TCN')
+                setattr(tcn_args, 'save_folder', exp_folder)
+                setattr(tcn_args, 'log_dir', 'logging.txt')
+                dataloader_tcn = load_XJTU_data(tcn_args, data_path=data_path)
+                from Model.DD_nets import TCN
+                import torch
+                tcn_model = TCN.Model(tcn_args)
+                tcn_model.Train(trainloader=dataloader_tcn['train'], validloader=dataloader_tcn['valid'], testloader=dataloader_tcn['test'])
+                setattr(args, 'run_mode', run_mode_backup)
 
+                
                 dataloader = load_XJTU_data(args, data_path=data_path)
+                if run_info['model_name'] in ['DeepOPINN', 'Bagging_u', 'DOPDeepOLAX']:
+                    from utils.util import augment_dataloader_with_kpd
+                    dataloader = augment_dataloader_with_kpd(dataloader, tcn_model, device='cuda' if torch.cuda.is_available() else 'cpu')
                 invalid_experiment = False
 
                 # ---------------- Training by model ----------------
@@ -533,7 +597,9 @@ def small_sample(run_info:bool, run_for_DeepOPINN:bool, run_for_LAX:bool,
                             write_to_file(file_path, info)
                             invalid_experiment = True
     
-                    else:  # LAX
+                    elif run_info['model_name'] == 'TCN':
+                        pass
+                    elif run_info['model_name'] == 'LAX':  # LAX
                         test_metrics = run_training_and_evaluation(args=args, dataloader=dataloader, batch_name=args.batch, experiment_id=e_repeat) 
                         experiment_data = {
                             'Batch': args.batch,
@@ -545,7 +611,7 @@ def small_sample(run_info:bool, run_for_DeepOPINN:bool, run_for_LAX:bool,
                             'DUAL': test_metrics['dual']
                         }  
                         batch_experiment_results.append(experiment_data)
-                        if test_metrics['rmse'][-1] > 0.50 or test_metrics['mape'][-1] > 0.50:
+                        if test_metrics['rmse'] > 50000.0 or test_metrics['mape'] > 50000.0:
                             info = f"Experiment {e_repeat+1} invalid (RMSE={test_metrics['rmse']:.4f}, MAPE={test_metrics['mape']:.4f}). Retrying..."
                             file_path = os.path.join(os.path.dirname(args.save_folder), 'faild_experiments.txt')
                             write_to_file(file_path, info)

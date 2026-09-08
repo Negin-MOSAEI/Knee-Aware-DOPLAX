@@ -4,6 +4,10 @@ import numpy as np
 from torch.autograd import grad
 from utils.util import get_logger, write_to_file, write_to_json
 import deepxde as dde
+import torch
+torch.set_default_device('cpu')
+torch.set_default_tensor_type(torch.FloatTensor)
+
 from Model.Backbones import Autoformer, CPMLP, DeepONet
 from Model.utils.util import find_input_dim_from_checkpoint, AverageMeter, eval_metrix
 from Model.Auxiliary_nets.Solution_u import Solution_u
@@ -211,7 +215,8 @@ class Model(nn.Module):
         pred_label = []
 
         with torch.no_grad():
-            for iter, (x1, _, y1, _) in enumerate(testloader):
+            for iter, batch in enumerate(testloader):
+                x1, y1 = batch[0], batch[2]
                 x1 = x1.to(device)
                 xt1 = self.extract_features(x1)
                 _, u1 = self.predict(xt1)
@@ -240,7 +245,8 @@ class Model(nn.Module):
             loss3_meter = AverageMeter()
             # to compute losses requiring gradients, like PDE, we should use torch.enable_grad instead of torch.no_grad 
             with torch.enable_grad():
-                for iter, (x1, x2, y1, y2) in enumerate(validloader):
+                for iter, batch in enumerate(validloader):
+                    x1, x2, y1, y2 = batch[0], batch[1], batch[2], batch[3]
                     x1, x2, y1, y2 = x1.to(device), x2.to(device), y1.to(device), y2.to(device)
                     do_validation(x1, y1)
                     
@@ -266,7 +272,8 @@ class Model(nn.Module):
                         
         else:
             with torch.no_grad():
-                for iter, (x1, _, y1, _) in enumerate(validloader):
+                for iter, batch in enumerate(validloader):
+                    x1, y1 = batch[0], batch[2]
                     x1 = x1.to(device)
                     do_validation(x1, y1)
                     
@@ -320,7 +327,13 @@ class Model(nn.Module):
         loss3_meter = AverageMeter()
 
         # breakpoint()
-        for iter, (x1, x2, y1, y2) in enumerate(dataloader):
+        for iter, batch in enumerate(dataloader):
+            if len(batch) == 6:
+                x1, x2, y1, y2, kpd1, kpd2 = batch
+            else:
+                x1, x2, y1, y2 = batch
+                kpd1, kpd2 = None, None
+                
             x1, x2, y1, y2 = x1.to(device), x2.to(device), y1.to(device), y2.to(device)
 
             if self.extractor_deepopinn is None:
@@ -369,7 +382,14 @@ class Model(nn.Module):
 
             # PDE loss
             f_target = torch.zeros_like(f1)
-            loss2 = 0.5*self.loss_func(f1, f_target) + 0.5*self.loss_func(f2, f_target)
+            if kpd1 is not None and kpd2 is not None:
+                w1 = torch.clamp(kpd1, min=0.0).to(device)
+                w2 = torch.clamp(kpd2, min=0.0).to(device)
+                loss2_1 = torch.mean(w1 * (f1 - f_target)**2)
+                loss2_2 = torch.mean(w2 * (f2 - f_target)**2)
+                loss2 = 0.5 * loss2_1 + 0.5 * loss2_2
+            else:
+                loss2 = 0.5*self.loss_func(f1, f_target) + 0.5*self.loss_func(f2, f_target)
 
             # physics loss  u2-u1<0, considering capacity regeneration
             loss3 = self.relu(torch.mul(u2-u1, y1-y2)).sum()
@@ -403,11 +423,9 @@ class Model(nn.Module):
 
     def Train(self, trainloader, validloader=None, testloader=None):
         # Recreate dataloaders with CUDA-safe sampler
-        if hasattr(trainloader, 'sampler') and hasattr(trainloader.sampler, 'generator'):
-            trainloader.sampler.generator = self.generator
+        
 
-        if hasattr(validloader, 'sampler') and hasattr(validloader.sampler, 'generator'):
-            validloader.sampler.generator = self.generator
+        
             
         # min_valid_mse = 10
         min_valid_mse = np.inf
@@ -544,7 +562,8 @@ class Model(nn.Module):
 
             batch_num, exp_num = int(batch_num.split('-')[0]), int(exp_num.split('Experiment')[1])
         else:
-            batch_num, exp_num = "one_batch", y_true_path.split('/')[-2]
+            batch_num = "one_batch"
+            exp_num = os.path.normpath(y_true_path).split(os.sep)[-2]
             exp_num = int(exp_num.split('Experiment')[1])
             
         if "XJTU" in y_true_path:

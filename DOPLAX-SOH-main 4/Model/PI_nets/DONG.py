@@ -4,6 +4,10 @@ import numpy as np
 from torch.autograd import grad
 from utils.util import get_logger, write_to_file, write_to_json
 import deepxde as dde
+import torch
+torch.set_default_device('cpu')
+torch.set_default_tensor_type(torch.FloatTensor)
+
 from Model.Backbones import Autoformer, CPMLP, DeepONet
 from Model.utils.util import find_input_dim_from_checkpoint, AverageMeter, eval_metrix
 from Model.Auxiliary_nets.Solution_u import Solution_u
@@ -269,7 +273,8 @@ class Model(nn.Module):
         pred_label = []
 
         with torch.no_grad():
-            for iter, (x1, _, y1, _) in enumerate(testloader):
+            for iter, batch in enumerate(testloader):
+                x1, y1 = batch[0], batch[2]
                 x1 = x1.to(device)
                 _, u1 = self.predict(x1)
                 true_label.append(y1)
@@ -286,7 +291,8 @@ class Model(nn.Module):
         pred_label = []
 
         with torch.no_grad():
-            for iter, (x1, _, y1, _) in enumerate(validloader):
+            for iter, batch in enumerate(validloader):
+                x1, y1 = batch[0], batch[2]
                 x1 = x1.to(device)
                 _, u1 = self.predict(x1)
                 true_label.append(y1)
@@ -388,11 +394,9 @@ class Model(nn.Module):
 
 
     def Train(self, trainloader, validloader=None, testloader=None):
-        if hasattr(trainloader, 'sampler') and hasattr(trainloader.sampler, 'generator'):
-            trainloader.sampler.generator = self.generator
+        
 
-        if hasattr(validloader, 'sampler') and hasattr(validloader.sampler, 'generator'):
-            validloader.sampler.generator = self.generator
+        
             
         # min_valid_mse = 10
         min_valid_mse = np.inf
@@ -521,7 +525,8 @@ class Model(nn.Module):
 
             batch_num, exp_num = int(batch_num.split('-')[0]), int(exp_num.split('Experiment')[1])
         else:
-            batch_num, exp_num = "one_batch", y_true_path.split('/')[-2]
+            batch_num = "one_batch"
+            exp_num = os.path.normpath(y_true_path).split(os.sep)[-2]
             exp_num = int(exp_num.split('Experiment')[1])
             
         if "XJTU" in y_true_path:

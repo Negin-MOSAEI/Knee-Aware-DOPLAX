@@ -4,6 +4,10 @@ import numpy as np
 from torch.autograd import grad
 from utils.util import get_logger, write_to_file, write_to_json
 import deepxde as dde
+import torch
+torch.set_default_device('cpu')
+torch.set_default_tensor_type(torch.FloatTensor)
+
 from Model.Backbones import Autoformer, CPMLP, DeepONet
 from Model.PI_nets.LAX import OptimizationNetwork 
 from Model.utils.util import find_input_dim_from_checkpoint, AverageMeter, eval_metrix
@@ -225,7 +229,8 @@ class Model(nn.Module):
         sum_squared = 0.0
         n_samples = 0
         
-        for x1, x2, _, _ in trainloader:
+        for batch in trainloader:
+            x1, x2 = batch[0], batch[1]
             x2 = x2[:, :16]
             x1 = x1[:, :16]
             sum_ += x2.sum(dim=0)  # sum across the batch (dim=0), result shape: [num_features]
@@ -253,7 +258,8 @@ class Model(nn.Module):
         checkpoint['model_state']['y'] = checkpoint['model_state']['y'][0].unsqueeze(0).repeat(self.args.batch_size, 1)
 
         sum_, n_samples= 0.0, 0.0 
-        for x1, x2, _, _ in trainloader:
+        for batch in trainloader:
+            x1, x2 = batch[0], batch[1]
             x1, x2 = x1[:, :16], x2[:, :16] 
             sum_ += x2.sum(dim=0)
             n_samples += x2.size(0) 
@@ -287,7 +293,8 @@ class Model(nn.Module):
         pred_label = []
 
         with torch.no_grad():
-            for iter, (x1, _, y1, _) in enumerate(testloader):
+            for iter, batch in enumerate(testloader):
+                x1, y1 = batch[0], batch[2]
                 x1 = x1.to(device)
                 xt1 = self.extract_features(x1)
                 _, u1 = self.predict(xt1, epoch=epoch)
@@ -305,7 +312,8 @@ class Model(nn.Module):
         pred_label = []
 
         with torch.no_grad():
-            for iter, (x1, _, y1, _) in enumerate(validloader):
+            for iter, batch in enumerate(validloader):
+                x1, y1 = batch[0], batch[2]
                 x1 = x1.to(device)
                 xt1 = self.extract_features(x1)
                 _, u1 = self.predict(xt1, epoch=epoch)
@@ -423,11 +431,9 @@ class Model(nn.Module):
 
     def Train(self, trainloader, validloader=None, testloader=None):
         # Recreate dataloaders with CUDA-safe sampler
-        if hasattr(trainloader, 'sampler') and hasattr(trainloader.sampler, 'generator'):
-            trainloader.sampler.generator = self.generator
+        
 
-        if hasattr(validloader, 'sampler') and hasattr(validloader.sampler, 'generator'):
-            validloader.sampler.generator = self.generator
+        
             
         self.LAX_model = self.get_LAX_model_instance(trainloader)
         if type(self.args.run_for_LAX) == bool:
@@ -560,7 +566,8 @@ class Model(nn.Module):
 
             batch_num, exp_num = int(batch_num.split('-')[0]), int(exp_num.split('Experiment')[1])
         else:
-            batch_num, exp_num = "one_batch", y_true_path.split('/')[-2]
+            batch_num = "one_batch"
+            exp_num = os.path.normpath(y_true_path).split(os.sep)[-2]
             exp_num = int(exp_num.split('Experiment')[1])
             
         if "XJTU" in y_true_path:

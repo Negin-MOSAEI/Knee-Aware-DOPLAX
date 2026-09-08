@@ -11,6 +11,20 @@ warnings.filterwarnings('ignore')
 
 
 
+
+class BatteryDataset(torch.utils.data.Dataset):
+    def __init__(self, X1_list, X2_list, Y1_list, Y2_list):
+        self.X1_list = [torch.from_numpy(x).float() for x in X1_list]
+        self.X2_list = [torch.from_numpy(x).float() for x in X2_list]
+        self.Y1_list = [torch.from_numpy(y).float().view(-1, 1) for y in Y1_list]
+        self.Y2_list = [torch.from_numpy(y).float().view(-1, 1) for y in Y2_list]
+
+    def __len__(self):
+        return len(self.X1_list)
+
+    def __getitem__(self, i):
+        return self.X1_list[i], self.X2_list[i], self.Y1_list[i], self.Y2_list[i]
+
 class DF():
     def __init__(self, args):
         self.normalization = True
@@ -74,16 +88,38 @@ class DF():
 
 
     def load_one_battery(self, path, nominal_capacity=None):
-    # def load_one_battery(self, path, i, nominal_capacity=None):
-        '''
-        Read a csv file and divide the data into x and y
-        :param path:
-        :param nominal_capacity:
-        :return:
-        '''
         df = self.read_one_csv(path,nominal_capacity)
         x = df.iloc[:, :-1].values
-        y = df.iloc[:, -1].values
+        
+        if getattr(self.args, 'run_mode', None) == 'TCN':
+            import json
+            import os
+            with open('config/initial_knee_points.json', 'r') as f:
+                kp_data = json.load(f)
+                
+            dataset = self.args.data
+            basename = os.path.basename(path).replace('.csv', '')
+            
+            if dataset == 'TJU':
+                tju_map = {'NCA': 'Dataset_1_NCA_battery', 'NCM': 'Dataset_2_NCM_battery', 'NCM_NCA': 'Dataset_3_NCM_NCA_battery'}
+                b_name = tju_map.get(self.args.batch, self.args.batch)
+                battery_key = f"{b_name}/{basename}"
+            elif dataset == 'MIT':
+                b_name = self.args.batch
+                battery_key = f"{b_name}/{basename}"
+            elif dataset == 'XJTU':
+                b_name = 'Sim_satellite' if self.args.batch == 'satellite' else self.args.batch
+                battery_key = basename
+            else:
+                b_name = 'default'
+                battery_key = basename
+                
+            Ckp = kp_data[dataset][b_name][battery_key]
+            cycles = np.arange(1, df.shape[0] + 1)
+            y = -np.arctan(cycles - Ckp)
+        else:
+            y = df.iloc[:, -1].values
+            
         x1 = x[:-1]
         x2 = x[1:]
         y1 = y[:-1]
@@ -118,6 +154,14 @@ class DF():
                 X2.append(x2)
                 Y1.append(y1)
                 Y2.append(y2)
+
+            if getattr(self.args, 'run_mode', None) == 'TCN':
+                dataset = BatteryDataset(X1, X2, Y1, Y2)
+                loader_dict = {
+                    'train_3': DataLoader(dataset, batch_size=1, shuffle=True),
+                    'test_3': DataLoader(dataset, batch_size=1, shuffle=False)
+                }
+                return loader_dict
     
             X1 = np.concatenate(X1, axis=0)
             X2 = np.concatenate(X2, axis=0)
@@ -139,44 +183,50 @@ class DF():
             train_Y1, test_Y1 = tensor_Y1[:split], tensor_Y1[split:]
             train_Y2, test_Y2 = tensor_Y2[:split], tensor_Y2[split:]
             # 1.2 
+            shuffle_split = False if getattr(self.args, 'run_mode', None) == 'TCN' else True
             train_X1, valid_X1, train_X2, valid_X2, train_Y1, valid_Y1, train_Y2, valid_Y2 = \
-                train_test_split(train_X1, train_X2, train_Y1, train_Y2, test_size=0.2, random_state=420)
+                train_test_split(train_X1, train_X2, train_Y1, train_Y2, test_size=0.2, random_state=420, shuffle=shuffle_split)
     
             train_loader = DataLoader(TensorDataset(train_X1, train_X2, train_Y1, train_Y2),
                                       batch_size=self.args.batch_size,
-                                      shuffle=True)
+                                      shuffle=shuffle_split)
             valid_loader = DataLoader(TensorDataset(valid_X1, valid_X2, valid_Y1, valid_Y2),
                                       batch_size=self.args.batch_size,
-                                      shuffle=True)
+                                      shuffle=shuffle_split)
             test_loader = DataLoader(TensorDataset(test_X1, test_X2, test_Y1, test_Y2),
                                      batch_size=self.args.batch_size,
                                      shuffle=False)
     
             # Condition 2
             train_X1, valid_X1, train_X2, valid_X2, train_Y1, valid_Y1, train_Y2, valid_Y2 = \
-                train_test_split(tensor_X1, tensor_X2, tensor_Y1, tensor_Y2, test_size=0.2, random_state=420)
+                train_test_split(tensor_X1, tensor_X2, tensor_Y1, tensor_Y2, test_size=0.2, random_state=420, shuffle=shuffle_split)
             train_loader_2 = DataLoader(TensorDataset(train_X1, train_X2, train_Y1, train_Y2),
                                       batch_size=self.args.batch_size,
                                       drop_last=drop_last,
-                                      shuffle=True)
+                                      shuffle=shuffle_split)
             valid_loader_2 = DataLoader(TensorDataset(valid_X1, valid_X2, valid_Y1, valid_Y2),
                                       batch_size=self.args.batch_size,
                                       drop_last=drop_last,
-                                      shuffle=True)
+                                      shuffle=shuffle_split)
     
             # Condition 3
             test_loader_3 = DataLoader(TensorDataset(tensor_X1, tensor_X2, tensor_Y1, tensor_Y2),
                                      batch_size=self.args.batch_size,
                                      drop_last=drop_last,
                                      shuffle=False)
-    
+            train_loader_3 = DataLoader(TensorDataset(tensor_X1, tensor_X2, tensor_Y1, tensor_Y2),
+                                     batch_size=self.args.batch_size,
+                                     drop_last=drop_last,
+                                     shuffle=shuffle_split)
+
             loader = {
                 'train': train_loader, 
                 'valid': valid_loader, 
                 'test': test_loader,
                 'train_2': train_loader_2,
                 'valid_2': valid_loader_2,
-                'test_3': test_loader_3
+                'test_3': test_loader_3,
+                'train_3': train_loader_3
             }
             
         else:

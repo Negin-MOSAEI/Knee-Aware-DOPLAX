@@ -120,11 +120,12 @@ class InvestigatingLosses(object):
             try:
                 # Load data
                 if self.dataset_batches:
-                    actual_lable = np.load(os.path.join(self.root_path, self.batch, experiment, 'true_label.npy'))
-                    predicted_lable = np.load(os.path.join(self.root_path, self.batch, experiment, 'pred_label.npy'))
+                    actual_lable = np.load(glob.glob(os.path.join(self.root_path, '**', self.batch, experiment, 'true_label.npy'), recursive=True)[0])
+                    predicted_lable = np.load(glob.glob(os.path.join(self.root_path, '**', self.batch, experiment, 'pred_label.npy'), recursive=True)[0])
                 else:
-                    actual_lable = np.load(os.path.join(self.root_path, experiment, 'true_label.npy'))
-                    predicted_lable = np.load(os.path.join(self.root_path, experiment, 'pred_label.npy')) 
+                    import glob
+                    actual_lable = np.load(glob.glob(os.path.join(self.root_path, '**', experiment, 'true_label.npy'), recursive=True)[0])
+                    predicted_lable = np.load(glob.glob(os.path.join(self.root_path, '**', experiment, 'pred_label.npy'), recursive=True)[0]) 
                 
                 # Create DataFrame for actual and predicted values
                 if actual_lable.size == actual_lable.shape[0]:  # 1D case
