@@ -1,0 +1,33 @@
+2026-09-12 16:16:19,288 - INFO - ==================================================
+2026-09-12 16:16:19,289 - INFO - Starting LAX Solver Training for [MIT] - [2018-04-12]
+2026-09-12 16:16:19,289 - INFO - Device: cuda | Epochs: 2000 | LR: 0.011936 | Mono Weight: 0.59278 | Center: PhI
+2026-09-12 16:16:19,289 - INFO - ==================================================
+2026-09-12 16:16:19,778 - INFO - Data Splits: Train=25, Val=5, Test=6
+2026-09-12 16:16:20,145 - INFO - Epoch [   1/2000] LR: 0.001301 | Train Loss: 1.221074 (MSE: 0.77340, Mono: 0.00000) | Val MSE: 0.609272 (RMSE: 0.7806) [BEST]
+2026-09-12 16:16:20,536 - INFO - Epoch [   2/2000] LR: 0.001408 | Train Loss: 0.681130 (MSE: 0.38242, Mono: 0.00000) | Val MSE: 0.112997 (RMSE: 0.3362) [BEST]
+2026-09-12 16:16:20,916 - INFO - Epoch [   3/2000] LR: 0.001516 | Train Loss: 0.168170 (MSE: 0.06577, Mono: 0.00000) | Val MSE: 0.023797 (RMSE: 0.1543) [BEST]
+2026-09-12 16:16:21,284 - INFO - Epoch [   4/2000] LR: 0.001623 | Train Loss: 0.048494 (MSE: 0.01121, Mono: 0.00000) | Val MSE: 0.002672 (RMSE: 0.0517) [BEST]
+2026-09-12 16:16:21,641 - INFO - Epoch [   5/2000] LR: 0.001731 | Train Loss: 0.013497 (MSE: 0.00108, Mono: 0.00000) | Val MSE: 0.001179 (RMSE: 0.0343) [BEST]
+2026-09-12 16:16:22,014 - INFO - Epoch [   6/2000] LR: 0.001838 | Train Loss: 0.009038 (MSE: 0.00045, Mono: 0.00000) | Val MSE: 0.000215 (RMSE: 0.0147) [BEST]
+2026-09-12 16:16:22,747 - INFO - Epoch [   8/2000] LR: 0.002053 | Train Loss: 0.008431 (MSE: 0.00037, Mono: 0.00000) | Val MSE: 0.000195 (RMSE: 0.0140) [BEST]
+2026-09-12 16:16:23,617 - INFO - Epoch [  10/2000] LR: 0.002268 | Train Loss: 0.010074 (MSE: 0.00055, Mono: 0.00000) | Val MSE: 0.000841 (RMSE: 0.0290) 
+2026-09-12 16:16:25,716 - INFO - Epoch [  16/2000] LR: 0.002912 | Train Loss: 0.006822 (MSE: 0.00027, Mono: 0.00000) | Val MSE: 0.000166 (RMSE: 0.0129) [BEST]
+2026-09-12 16:16:27,179 - INFO - Epoch [  20/2000] LR: 0.003342 | Train Loss: 0.006949 (MSE: 0.00028, Mono: 0.00000) | Val MSE: 0.000271 (RMSE: 0.0165) 
+2026-09-12 16:16:30,832 - INFO - Epoch [  30/2000] LR: 0.004416 | Train Loss: 0.012373 (MSE: 0.00071, Mono: 0.00000) | Val MSE: 0.000360 (RMSE: 0.0190) 
+2026-09-12 16:16:31,215 - INFO - Epoch [  31/2000] LR: 0.004524 | Train Loss: 0.005835 (MSE: 0.00020, Mono: 0.00000) | Val MSE: 0.000095 (RMSE: 0.0098) [BEST]
+2026-09-12 16:16:32,335 - INFO - Epoch [  34/2000] LR: 0.004846 | Train Loss: 0.006726 (MSE: 0.00023, Mono: 0.00000) | Val MSE: 0.000084 (RMSE: 0.0091) [BEST]
+2026-09-12 16:16:32,704 - INFO - Epoch [  35/2000] LR: 0.004953 | Train Loss: 0.004938 (MSE: 0.00016, Mono: 0.00000) | Val MSE: 0.000080 (RMSE: 0.0089) [BEST]
+2026-09-12 16:16:34,589 - INFO - Epoch [  40/2000] LR: 0.005491 | Train Loss: 0.007446 (MSE: 0.00027, Mono: 0.00000) | Val MSE: 0.000468 (RMSE: 0.0216) 
+2026-09-12 16:16:38,446 - INFO - Epoch [  50/2000] LR: 0.006565 | Train Loss: 0.008828 (MSE: 0.00039, Mono: 0.00000) | Val MSE: 0.000508 (RMSE: 0.0225) 
+2026-09-12 16:16:42,305 - INFO - Epoch [  60/2000] LR: 0.007639 | Train Loss: 0.006172 (MSE: 0.00020, Mono: 0.00000) | Val MSE: 0.000255 (RMSE: 0.0160) 
+2026-09-12 16:16:46,036 - INFO - Epoch [  70/2000] LR: 0.008713 | Train Loss: 0.007951 (MSE: 0.00032, Mono: 0.00000) | Val MSE: 0.000132 (RMSE: 0.0115) 
+2026-09-12 16:16:49,751 - INFO - Epoch [  80/2000] LR: 0.009787 | Train Loss: 0.005956 (MSE: 0.00019, Mono: 0.00000) | Val MSE: 0.000105 (RMSE: 0.0102) 
+2026-09-12 16:16:51,587 - INFO - [*] Early stopping triggered at epoch 85. Best epoch was 35 with Val MSE: 0.000080
+2026-09-12 16:16:51,587 - INFO - Training completed in 31.80s. Loading best checkpoint from epoch 35 for final test evaluation...
+2026-09-12 16:16:51,631 - INFO - ==================================================
+2026-09-12 16:16:51,631 - INFO - Test Results for [MIT] - [2018-04-12] (Best Epoch 35):
+2026-09-12 16:16:51,631 - INFO -   Test RMSE: 0.007443
+2026-09-12 16:16:51,632 - INFO -   Test MAE:  0.006113
+2026-09-12 16:16:51,632 - INFO -   Test MAPE: 0.648621
+2026-09-12 16:16:51,632 - INFO -   Test MSE:  0.000055
+2026-09-12 16:16:51,632 - INFO - ==================================================

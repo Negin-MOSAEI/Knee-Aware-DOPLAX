@@ -1,0 +1,107 @@
+{
+    "dataset": "XJTU",
+    "batch": "2C",
+    "total_batteries": 8,
+    "test_kpd_RMSE": 0.3931571841239929,
+    "test_kpd_MAE": 0.11259827017784119,
+    "test_kpd_MSE": 0.15457256138324738,
+    "mean_knee_cycle_error": 2.25,
+    "battery_results": {
+        "2C_battery-1": {
+            "split": "train",
+            "cycles": 355,
+            "true_knee_cycle": 216,
+            "pred_knee_cycle": 216,
+            "knee_cycle_error": 0,
+            "kpd_RMSE": 0.04538879543542862,
+            "kpd_MAE": 0.03442858159542084,
+            "kpd_MSE": 0.0020601428113877773,
+            "csv_path": "predictions/TCN_KPD\\XJTU\\2C\\2C_battery-1_kpd.csv",
+            "npy_path": "predictions/TCN_KPD\\XJTU\\2C\\2C_battery-1_pred_kpd.npy"
+        },
+        "2C_battery-4": {
+            "split": "train",
+            "cycles": 355,
+            "true_knee_cycle": 212,
+            "pred_knee_cycle": 212,
+            "knee_cycle_error": 0,
+            "kpd_RMSE": 0.050021007657051086,
+            "kpd_MAE": 0.04264231398701668,
+            "kpd_MSE": 0.0025021012406796217,
+            "csv_path": "predictions/TCN_KPD\\XJTU\\2C\\2C_battery-4_kpd.csv",
+            "npy_path": "predictions/TCN_KPD\\XJTU\\2C\\2C_battery-4_pred_kpd.npy"
+        },
+        "2C_battery-5": {
+            "split": "train",
+            "cycles": 369,
+            "true_knee_cycle": 216,
+            "pred_knee_cycle": 216,
+            "knee_cycle_error": 0,
+            "kpd_RMSE": 0.03600721433758736,
+            "kpd_MAE": 0.02967023476958275,
+            "kpd_MSE": 0.001296519418247044,
+            "csv_path": "predictions/TCN_KPD\\XJTU\\2C\\2C_battery-5_kpd.csv",
+            "npy_path": "predictions/TCN_KPD\\XJTU\\2C\\2C_battery-5_pred_kpd.npy"
+        },
+        "2C_battery-7": {
+            "split": "train",
+            "cycles": 365,
+            "true_knee_cycle": 221,
+            "pred_knee_cycle": 221,
+            "knee_cycle_error": 0,
+            "kpd_RMSE": 0.052706602960824966,
+            "kpd_MAE": 0.04635860025882721,
+            "kpd_MSE": 0.0027779859956353903,
+            "csv_path": "predictions/TCN_KPD\\XJTU\\2C\\2C_battery-7_kpd.csv",
+            "npy_path": "predictions/TCN_KPD\\XJTU\\2C\\2C_battery-7_pred_kpd.npy"
+        },
+        "2C_battery-8": {
+            "split": "train",
+            "cycles": 379,
+            "true_knee_cycle": 219,
+            "pred_knee_cycle": 219,
+            "knee_cycle_error": 0,
+            "kpd_RMSE": 0.03499531373381615,
+            "kpd_MAE": 0.024557463824748993,
+            "kpd_MSE": 0.0012246720725670457,
+            "csv_path": "predictions/TCN_KPD\\XJTU\\2C\\2C_battery-8_kpd.csv",
+            "npy_path": "predictions/TCN_KPD\\XJTU\\2C\\2C_battery-8_pred_kpd.npy"
+        },
+        "2C_battery-3": {
+            "split": "valid",
+            "cycles": 358,
+            "true_knee_cycle": 217,
+            "pred_knee_cycle": 216,
+            "knee_cycle_error": 1,
+            "kpd_RMSE": 0.07274787127971649,
+            "kpd_MAE": 0.05389115586876869,
+            "kpd_MSE": 0.005292253103107214,
+            "csv_path": "predictions/TCN_KPD\\XJTU\\2C\\2C_battery-3_kpd.csv",
+            "npy_path": "predictions/TCN_KPD\\XJTU\\2C\\2C_battery-3_pred_kpd.npy"
+        },
+        "2C_battery-2": {
+            "split": "test",
+            "cycles": 371,
+            "true_knee_cycle": 205,
+            "pred_knee_cycle": 217,
+            "knee_cycle_error": 12,
+            "kpd_RMSE": 0.49537044763565063,
+            "kpd_MAE": 0.12719887495040894,
+            "kpd_MSE": 0.24539189040660858,
+            "csv_path": "predictions/TCN_KPD\\XJTU\\2C\\2C_battery-2_kpd.csv",
+            "npy_path": "predictions/TCN_KPD\\XJTU\\2C\\2C_battery-2_pred_kpd.npy"
+        },
+        "2C_battery-6": {
+            "split": "test",
+            "cycles": 359,
+            "true_knee_cycle": 216,
+            "pred_knee_cycle": 221,
+            "knee_cycle_error": 5,
+            "kpd_RMSE": 0.2464090883731842,
+            "kpd_MAE": 0.09750962257385254,
+            "kpd_MSE": 0.06071743741631508,
+            "csv_path": "predictions/TCN_KPD\\XJTU\\2C\\2C_battery-6_kpd.csv",
+            "npy_path": "predictions/TCN_KPD\\XJTU\\2C\\2C_battery-6_pred_kpd.npy"
+        }
+    }
+}

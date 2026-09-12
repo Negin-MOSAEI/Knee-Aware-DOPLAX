@@ -1,0 +1,6 @@
+2026-09-12 16:01:04,326 - INFO - Loaded trained TCN from: checkpoints/TCN\MIT\2018-04-12\best_tcn.pth (Trained Epoch: 33, Val Loss: 0.119024)
+2026-09-12 16:01:05,020 - INFO - Completed KPD Predictions for [MIT] - [2018-04-12]:
+2026-09-12 16:01:05,020 - INFO -   Total Batteries: 36 (Train, Val, Test saved)
+2026-09-12 16:01:05,020 - INFO -   Test KPD RMSE:   0.416183 | Test KPD MAE: 0.180650
+2026-09-12 16:01:05,020 - INFO -   Mean Knee Error: 13.42 cycles
+2026-09-12 16:01:05,020 - INFO -   Saved to:        predictions/TCN_KPD\MIT\2018-04-12

@@ -1,0 +1,12 @@
+2026-09-12 15:17:41,609 - INFO - Loaded trained TCN from: checkpoints/TCN\XJTU\2C\best_tcn.pth (Trained Epoch: 6, Val Loss: 2.304700)
+2026-09-12 15:17:41,937 - INFO - Completed KPD Predictions for [XJTU] - [2C]:
+2026-09-12 15:17:41,938 - INFO -   Total Batteries: 8 (Train, Val, Test saved)
+2026-09-12 15:17:41,938 - INFO -   Test KPD RMSE:   1.527961 | Test KPD MAE: 1.517396
+2026-09-12 15:17:41,938 - INFO -   Mean Knee Error: 215.00 cycles
+2026-09-12 15:17:41,938 - INFO -   Saved to:        predictions/TCN_KPD\XJTU\2C
+2026-09-12 16:01:07,292 - INFO - Loaded trained TCN from: checkpoints/TCN\XJTU\2C\best_tcn.pth (Trained Epoch: 113, Val Loss: 0.005292)
+2026-09-12 16:01:07,427 - INFO - Completed KPD Predictions for [XJTU] - [2C]:
+2026-09-12 16:01:07,430 - INFO -   Total Batteries: 8 (Train, Val, Test saved)
+2026-09-12 16:01:07,430 - INFO -   Test KPD RMSE:   0.393157 | Test KPD MAE: 0.112598
+2026-09-12 16:01:07,430 - INFO -   Mean Knee Error: 2.25 cycles
+2026-09-12 16:01:07,431 - INFO -   Saved to:        predictions/TCN_KPD\XJTU\2C

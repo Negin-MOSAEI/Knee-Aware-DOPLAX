@@ -1,0 +1,26 @@
+{
+    "dataset": "XJTU",
+    "batch": "Sim_satellite",
+    "best_epoch": 204,
+    "best_val_loss": 5.534469528356567e-05,
+    "test_RMSE": 0.01664644666016102,
+    "test_MAE": 0.013154378160834312,
+    "test_MAPE": 1.3965646736323833,
+    "test_MSE": 0.00027710420545190573,
+    "battery_metrics": {
+        "Sim_satellite_battery-4": {
+            "RMSE": 0.0120579544454813,
+            "MAE": 0.007033525034785271,
+            "MAPE": 0.7825121283531189,
+            "MSE": 0.00014539426774717867
+        },
+        "Sim_satellite_battery-6": {
+            "RMSE": 0.01986403949558735,
+            "MAE": 0.018613742664456367,
+            "MAPE": 1.944255642592907,
+            "MSE": 0.0003945800708606839
+        }
+    },
+    "checkpoint_path": "checkpoints/DeepOPINN\\XJTU\\Sim_satellite\\best_deepopinn.pth",
+    "elapsed_seconds": 15.527375221252441
+}

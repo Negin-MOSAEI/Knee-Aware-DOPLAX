@@ -1,0 +1,26 @@
+{
+    "dataset": "XJTU",
+    "batch": "R2.5",
+    "best_epoch": 33,
+    "best_val_loss": 0.0004615139332599938,
+    "test_RMSE": 0.02933400869369507,
+    "test_MAE": 0.02333623729646206,
+    "test_MAPE": 2.533734031021595,
+    "test_MSE": 0.0008604840259067714,
+    "battery_metrics": {
+        "R2.5_battery-2": {
+            "RMSE": 0.03198719397187233,
+            "MAE": 0.024842513725161552,
+            "MAPE": 2.7077171951532364,
+            "MSE": 0.0010231806663796306
+        },
+        "R2.5_battery-8": {
+            "RMSE": 0.026828020811080933,
+            "MAE": 0.02203322760760784,
+            "MAPE": 2.38322950899601,
+            "MSE": 0.000719742733053863
+        }
+    },
+    "checkpoint_path": "checkpoints/FusionMLP\\XJTU\\R2.5\\best_fusion.pth",
+    "elapsed_seconds": 4.3270463943481445
+}

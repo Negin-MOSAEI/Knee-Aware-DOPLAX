@@ -1,0 +1,35 @@
+2026-09-12 16:14:29,100 - INFO - ==================================================
+2026-09-12 16:14:29,100 - INFO - Starting LAX Solver Training for [MIT] - [2017-05-12]
+2026-09-12 16:14:29,100 - INFO - Device: cuda | Epochs: 2000 | LR: 0.011936 | Mono Weight: 0.59278 | Center: PhI
+2026-09-12 16:14:29,100 - INFO - ==================================================
+2026-09-12 16:14:29,720 - INFO - Data Splits: Train=32, Val=7, Test=7
+2026-09-12 16:14:30,281 - INFO - Epoch [   1/2000] LR: 0.001301 | Train Loss: 2.049981 (MSE: 1.44652, Mono: 0.00000) | Val MSE: 1.088816 (RMSE: 1.0435) [BEST]
+2026-09-12 16:14:30,730 - INFO - Epoch [   2/2000] LR: 0.001408 | Train Loss: 0.728404 (MSE: 0.44071, Mono: 0.00000) | Val MSE: 0.108982 (RMSE: 0.3301) [BEST]
+2026-09-12 16:14:31,259 - INFO - Epoch [   3/2000] LR: 0.001516 | Train Loss: 0.107803 (MSE: 0.03666, Mono: 0.00000) | Val MSE: 0.013829 (RMSE: 0.1176) [BEST]
+2026-09-12 16:14:31,730 - INFO - Epoch [   4/2000] LR: 0.001623 | Train Loss: 0.024863 (MSE: 0.00395, Mono: 0.00000) | Val MSE: 0.000938 (RMSE: 0.0306) [BEST]
+2026-09-12 16:14:32,194 - INFO - Epoch [   5/2000] LR: 0.001731 | Train Loss: 0.009278 (MSE: 0.00053, Mono: 0.00000) | Val MSE: 0.000580 (RMSE: 0.0241) [BEST]
+2026-09-12 16:14:33,133 - INFO - Epoch [   7/2000] LR: 0.001946 | Train Loss: 0.007144 (MSE: 0.00031, Mono: 0.00000) | Val MSE: 0.000132 (RMSE: 0.0115) [BEST]
+2026-09-12 16:14:33,620 - INFO - Epoch [   8/2000] LR: 0.002053 | Train Loss: 0.007479 (MSE: 0.00032, Mono: 0.00000) | Val MSE: 0.000111 (RMSE: 0.0105) [BEST]
+2026-09-12 16:14:34,541 - INFO - Epoch [  10/2000] LR: 0.002268 | Train Loss: 0.013399 (MSE: 0.00085, Mono: 0.00000) | Val MSE: 0.000210 (RMSE: 0.0145) 
+2026-09-12 16:14:35,456 - INFO - Epoch [  12/2000] LR: 0.002483 | Train Loss: 0.006915 (MSE: 0.00028, Mono: 0.00000) | Val MSE: 0.000108 (RMSE: 0.0104) [BEST]
+2026-09-12 16:14:37,746 - INFO - Epoch [  17/2000] LR: 0.003020 | Train Loss: 0.010082 (MSE: 0.00051, Mono: 0.00000) | Val MSE: 0.000078 (RMSE: 0.0088) [BEST]
+2026-09-12 16:14:39,141 - INFO - Epoch [  20/2000] LR: 0.003342 | Train Loss: 0.012368 (MSE: 0.00077, Mono: 0.00000) | Val MSE: 0.000232 (RMSE: 0.0152) 
+2026-09-12 16:14:41,419 - INFO - Epoch [  25/2000] LR: 0.003879 | Train Loss: 0.008221 (MSE: 0.00038, Mono: 0.00000) | Val MSE: 0.000071 (RMSE: 0.0084) [BEST]
+2026-09-12 16:14:43,646 - INFO - Epoch [  30/2000] LR: 0.004416 | Train Loss: 0.018384 (MSE: 0.00146, Mono: 0.00000) | Val MSE: 0.001736 (RMSE: 0.0417) 
+2026-09-12 16:14:48,029 - INFO - Epoch [  40/2000] LR: 0.005491 | Train Loss: 0.016531 (MSE: 0.00130, Mono: 0.00000) | Val MSE: 0.000871 (RMSE: 0.0295) 
+2026-09-12 16:14:52,509 - INFO - Epoch [  50/2000] LR: 0.006565 | Train Loss: 0.015709 (MSE: 0.00116, Mono: 0.00000) | Val MSE: 0.000107 (RMSE: 0.0104) 
+2026-09-12 16:14:54,316 - INFO - Epoch [  54/2000] LR: 0.006994 | Train Loss: 0.008351 (MSE: 0.00041, Mono: 0.00000) | Val MSE: 0.000066 (RMSE: 0.0081) [BEST]
+2026-09-12 16:14:57,046 - INFO - Epoch [  60/2000] LR: 0.007639 | Train Loss: 0.012422 (MSE: 0.00070, Mono: 0.00000) | Val MSE: 0.001743 (RMSE: 0.0417) 
+2026-09-12 16:15:01,536 - INFO - Epoch [  70/2000] LR: 0.008713 | Train Loss: 0.014188 (MSE: 0.00096, Mono: 0.00000) | Val MSE: 0.000152 (RMSE: 0.0123) 
+2026-09-12 16:15:06,152 - INFO - Epoch [  80/2000] LR: 0.009787 | Train Loss: 0.010873 (MSE: 0.00059, Mono: 0.00000) | Val MSE: 0.000208 (RMSE: 0.0144) 
+2026-09-12 16:15:10,882 - INFO - Epoch [  90/2000] LR: 0.010862 | Train Loss: 0.006508 (MSE: 0.00023, Mono: 0.00000) | Val MSE: 0.000344 (RMSE: 0.0186) 
+2026-09-12 16:15:15,907 - INFO - Epoch [ 100/2000] LR: 0.011936 | Train Loss: 0.008899 (MSE: 0.00046, Mono: 0.00000) | Val MSE: 0.000076 (RMSE: 0.0087) 
+2026-09-12 16:15:18,002 - INFO - [*] Early stopping triggered at epoch 104. Best epoch was 54 with Val MSE: 0.000066
+2026-09-12 16:15:18,002 - INFO - Training completed in 48.27s. Loading best checkpoint from epoch 54 for final test evaluation...
+2026-09-12 16:15:18,039 - INFO - ==================================================
+2026-09-12 16:15:18,040 - INFO - Test Results for [MIT] - [2017-05-12] (Best Epoch 54):
+2026-09-12 16:15:18,040 - INFO -   Test RMSE: 0.013900
+2026-09-12 16:15:18,040 - INFO -   Test MAE:  0.009519
+2026-09-12 16:15:18,040 - INFO -   Test MAPE: 1.018932
+2026-09-12 16:15:18,040 - INFO -   Test MSE:  0.000193
+2026-09-12 16:15:18,040 - INFO - ==================================================

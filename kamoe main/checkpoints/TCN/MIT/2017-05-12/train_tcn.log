@@ -1,0 +1,21 @@
+2026-09-12 15:55:23,213 - INFO - ==================================================
+2026-09-12 15:55:23,213 - INFO - Starting TCN Training for [MIT] - [2017-05-12]
+2026-09-12 15:55:23,213 - INFO - Device: cuda | Epochs: 300 | LR: 0.001 | EarlyStop: 40
+2026-09-12 15:55:23,214 - INFO - ==================================================
+2026-09-12 15:55:23,793 - INFO - Data Splits: Train=32, Val=7, Test=7
+2026-09-12 15:55:24,486 - INFO - Epoch [   1/300] - LR: 0.000145 | New best validation loss: 0.388561 (improved from inf) -> Saved model
+2026-09-12 15:55:29,788 - INFO - Epoch [  20/300] - LR: 0.001000 | Train Loss: 0.198737 | Val Loss: 0.189154 (Best Val Loss: 0.167846 @ Ep 13)
+2026-09-12 15:55:32,515 - INFO - Epoch [  30/300] - LR: 0.000997 | New best validation loss: 0.160786 (improved from 0.167846) -> Saved model
+2026-09-12 15:55:35,202 - INFO - Epoch [  40/300] - LR: 0.000987 | New best validation loss: 0.157470 (improved from 0.159181) -> Saved model
+2026-09-12 15:55:35,203 - INFO - Epoch [  40/300] - LR: 0.000987 | Train Loss: 0.141237 | Val Loss: 0.157470 (Best Val Loss: 0.157470 @ Ep 40)
+2026-09-12 15:55:40,562 - INFO - Epoch [  60/300] - LR: 0.000951 | Train Loss: 0.113283 | Val Loss: 0.154371 (Best Val Loss: 0.144768 @ Ep 48)
+2026-09-12 15:55:45,694 - INFO - Epoch [  80/300] - LR: 0.000891 | Train Loss: 0.067518 | Val Loss: 0.155093 (Best Val Loss: 0.144768 @ Ep 48)
+2026-09-12 15:55:47,907 - INFO - Early stopping triggered at epoch 88 (Validation loss did not improve for 40 epochs).
+2026-09-12 15:55:47,907 - INFO - Training completed in 24.11s. Best Model selected from Epoch 48 with lowest Validation Loss: 0.144768
+2026-09-12 15:55:47,973 - INFO - --------------------------------------------------
+2026-09-12 15:55:47,973 - INFO - Test Evaluation Results for [MIT] - [2017-05-12]:
+2026-09-12 15:55:47,973 - INFO -   MSE:  0.156643
+2026-09-12 15:55:47,974 - INFO -   RMSE: 0.395782
+2026-09-12 15:55:47,974 - INFO -   MAE:  0.145012
+2026-09-12 15:55:47,974 - INFO -   MAPE: 11355897.656250%
+2026-09-12 15:55:47,974 - INFO - --------------------------------------------------

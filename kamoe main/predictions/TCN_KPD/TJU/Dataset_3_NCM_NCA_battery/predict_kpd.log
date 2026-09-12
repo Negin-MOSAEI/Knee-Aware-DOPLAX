@@ -1,0 +1,6 @@
+2026-09-12 16:01:07,077 - INFO - Loaded trained TCN from: checkpoints/TCN\TJU\Dataset_3_NCM_NCA_battery\best_tcn.pth (Trained Epoch: 50, Val Loss: 0.377454)
+2026-09-12 16:01:07,261 - INFO - Completed KPD Predictions for [TJU] - [Dataset_3_NCM_NCA_battery]:
+2026-09-12 16:01:07,262 - INFO -   Total Batteries: 9 (Train, Val, Test saved)
+2026-09-12 16:01:07,262 - INFO -   Test KPD RMSE:   0.601622 | Test KPD MAE: 0.353037
+2026-09-12 16:01:07,262 - INFO -   Mean Knee Error: 61.00 cycles
+2026-09-12 16:01:07,262 - INFO -   Saved to:        predictions/TCN_KPD\TJU\Dataset_3_NCM_NCA_battery

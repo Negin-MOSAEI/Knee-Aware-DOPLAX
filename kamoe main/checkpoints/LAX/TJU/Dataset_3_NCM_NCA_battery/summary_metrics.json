@@ -1,0 +1,26 @@
+{
+    "dataset": "TJU",
+    "batch": "Dataset_3_NCM_NCA_battery",
+    "best_epoch": 37,
+    "best_val_loss": 2.0318930182838812e-05,
+    "test_RMSE": 0.010653078556060791,
+    "test_MAE": 0.00834082905203104,
+    "test_MAPE": 0.9789885021746159,
+    "test_MSE": 0.000113488087663427,
+    "battery_metrics": {
+        "CY25-05_1-#2": {
+            "RMSE": 0.009894507937133312,
+            "MAE": 0.00791921652853489,
+            "MAPE": 0.9376406669616699,
+            "MSE": 9.790129115572199e-05
+        },
+        "CY25-05_4-#1": {
+            "RMSE": 0.011342639103531837,
+            "MAE": 0.0087510971352458,
+            "MAPE": 1.0192236863076687,
+            "MSE": 0.0001286554615944624
+        }
+    },
+    "checkpoint_path": "checkpoints/LAX\\TJU\\Dataset_3_NCM_NCA_battery\\best_lax.pth",
+    "elapsed_seconds": 9.218122482299805
+}

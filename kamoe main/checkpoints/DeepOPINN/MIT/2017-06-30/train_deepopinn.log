@@ -1,0 +1,38 @@
+2026-09-12 16:04:14,342 - INFO - ==================================================
+2026-09-12 16:04:14,342 - INFO - Starting DeepOPINN Training for [MIT] - [2017-06-30]
+2026-09-12 16:04:14,342 - INFO - Device: cuda | Epochs: 2000 | LR: 0.000117 | Alpha (PDE): 0.88432 | Beta (Mono): 0.02840
+2026-09-12 16:04:14,342 - INFO - ==================================================
+2026-09-12 16:04:14,775 - INFO - Data Splits: Train=30, Val=6, Test=7
+2026-09-12 16:04:15,470 - INFO - Epoch [   1/2000] LR: 0.006038 | Train Loss: 0.090901 (Data: 0.08532, PDE*kpd: 0.00631, Mono: 0.00003) | Val MSE: 0.001772 (RMSE: 0.0421) [BEST]
+2026-09-12 16:04:15,827 - INFO - Epoch [   2/2000] LR: 0.005917 | Train Loss: 0.007001 (Data: 0.00348, PDE*kpd: 0.00399, Mono: 0.00002) | Val MSE: 0.000619 (RMSE: 0.0249) [BEST]
+2026-09-12 16:04:16,695 - INFO - Epoch [   4/2000] LR: 0.005676 | Train Loss: 0.004620 (Data: 0.00206, PDE*kpd: 0.00290, Mono: 0.00001) | Val MSE: 0.000270 (RMSE: 0.0164) [BEST]
+2026-09-12 16:04:17,408 - INFO - Epoch [   6/2000] LR: 0.005434 | Train Loss: 0.003350 (Data: 0.00139, PDE*kpd: 0.00222, Mono: 0.00001) | Val MSE: 0.000171 (RMSE: 0.0131) [BEST]
+2026-09-12 16:04:19,094 - INFO - Epoch [  10/2000] LR: 0.004951 | Train Loss: 0.002172 (Data: 0.00099, PDE*kpd: 0.00133, Mono: 0.00001) | Val MSE: 0.000344 (RMSE: 0.0186) 
+2026-09-12 16:04:19,902 - INFO - Epoch [  12/2000] LR: 0.004709 | Train Loss: 0.001609 (Data: 0.00057, PDE*kpd: 0.00117, Mono: 0.00001) | Val MSE: 0.000125 (RMSE: 0.0112) [BEST]
+2026-09-12 16:04:20,606 - INFO - Epoch [  14/2000] LR: 0.004467 | Train Loss: 0.001525 (Data: 0.00068, PDE*kpd: 0.00096, Mono: 0.00001) | Val MSE: 0.000120 (RMSE: 0.0109) [BEST]
+2026-09-12 16:04:21,017 - INFO - Epoch [  15/2000] LR: 0.004346 | Train Loss: 0.001230 (Data: 0.00043, PDE*kpd: 0.00091, Mono: 0.00000) | Val MSE: 0.000093 (RMSE: 0.0097) [BEST]
+2026-09-12 16:04:22,884 - INFO - Epoch [  20/2000] LR: 0.003742 | Train Loss: 0.000847 (Data: 0.00027, PDE*kpd: 0.00065, Mono: 0.00000) | Val MSE: 0.000209 (RMSE: 0.0145) 
+2026-09-12 16:04:23,645 - INFO - Epoch [  22/2000] LR: 0.003501 | Train Loss: 0.000785 (Data: 0.00029, PDE*kpd: 0.00056, Mono: 0.00000) | Val MSE: 0.000092 (RMSE: 0.0096) [BEST]
+2026-09-12 16:04:24,512 - INFO - Epoch [  24/2000] LR: 0.003259 | Train Loss: 0.000702 (Data: 0.00025, PDE*kpd: 0.00051, Mono: 0.00000) | Val MSE: 0.000066 (RMSE: 0.0081) [BEST]
+2026-09-12 16:04:26,757 - INFO - Epoch [  30/2000] LR: 0.002534 | Train Loss: 0.000527 (Data: 0.00019, PDE*kpd: 0.00038, Mono: 0.00000) | Val MSE: 0.000062 (RMSE: 0.0079) [BEST]
+2026-09-12 16:04:27,793 - INFO - Epoch [  33/2000] LR: 0.002171 | Train Loss: 0.000466 (Data: 0.00018, PDE*kpd: 0.00032, Mono: 0.00000) | Val MSE: 0.000051 (RMSE: 0.0071) [BEST]
+2026-09-12 16:04:28,133 - INFO - Epoch [  34/2000] LR: 0.002051 | Train Loss: 0.000441 (Data: 0.00017, PDE*kpd: 0.00031, Mono: 0.00000) | Val MSE: 0.000049 (RMSE: 0.0070) [BEST]
+2026-09-12 16:04:30,174 - INFO - Epoch [  40/2000] LR: 0.001326 | Train Loss: 0.000361 (Data: 0.00015, PDE*kpd: 0.00024, Mono: 0.00000) | Val MSE: 0.000068 (RMSE: 0.0083) 
+2026-09-12 16:04:32,176 - INFO - Epoch [  46/2000] LR: 0.000601 | Train Loss: 0.000290 (Data: 0.00012, PDE*kpd: 0.00019, Mono: 0.00000) | Val MSE: 0.000049 (RMSE: 0.0070) [BEST]
+2026-09-12 16:04:33,571 - INFO - Epoch [  50/2000] LR: 0.000117 | Train Loss: 0.000271 (Data: 0.00012, PDE*kpd: 0.00017, Mono: 0.00000) | Val MSE: 0.000063 (RMSE: 0.0079) 
+2026-09-12 16:04:37,077 - INFO - Epoch [  60/2000] LR: 0.000117 | Train Loss: 0.000220 (Data: 0.00012, PDE*kpd: 0.00012, Mono: 0.00000) | Val MSE: 0.000056 (RMSE: 0.0075) 
+2026-09-12 16:04:40,380 - INFO - Epoch [  70/2000] LR: 0.000117 | Train Loss: 0.000197 (Data: 0.00012, PDE*kpd: 0.00009, Mono: 0.00000) | Val MSE: 0.000055 (RMSE: 0.0074) 
+2026-09-12 16:04:43,833 - INFO - Epoch [  80/2000] LR: 0.000117 | Train Loss: 0.000170 (Data: 0.00011, PDE*kpd: 0.00006, Mono: 0.00000) | Val MSE: 0.000054 (RMSE: 0.0074) 
+2026-09-12 16:04:47,225 - INFO - Epoch [  90/2000] LR: 0.000117 | Train Loss: 0.000160 (Data: 0.00012, PDE*kpd: 0.00005, Mono: 0.00000) | Val MSE: 0.000054 (RMSE: 0.0073) 
+2026-09-12 16:04:50,611 - INFO - Epoch [ 100/2000] LR: 0.000117 | Train Loss: 0.000147 (Data: 0.00011, PDE*kpd: 0.00004, Mono: 0.00000) | Val MSE: 0.000067 (RMSE: 0.0082) 
+2026-09-12 16:04:54,037 - INFO - Epoch [ 110/2000] LR: 0.000117 | Train Loss: 0.000137 (Data: 0.00011, PDE*kpd: 0.00003, Mono: 0.00000) | Val MSE: 0.000093 (RMSE: 0.0097) 
+2026-09-12 16:04:57,245 - INFO - Epoch [ 120/2000] LR: 0.000117 | Train Loss: 0.000128 (Data: 0.00011, PDE*kpd: 0.00002, Mono: 0.00000) | Val MSE: 0.000054 (RMSE: 0.0073) 
+2026-09-12 16:04:59,333 - INFO - [*] Early stopping triggered at epoch 126. Best epoch was 46 with Val MSE: 0.000049
+2026-09-12 16:04:59,333 - INFO - Training completed in 44.55s. Loading best checkpoint from epoch 46 for final test evaluation...
+2026-09-12 16:04:59,371 - INFO - ==================================================
+2026-09-12 16:04:59,371 - INFO - Test Results for [MIT] - [2017-06-30] (Best Epoch 46):
+2026-09-12 16:04:59,371 - INFO -   Test RMSE: 0.017358
+2026-09-12 16:04:59,372 - INFO -   Test MAE:  0.012608
+2026-09-12 16:04:59,372 - INFO -   Test MAPE: 1.370354
+2026-09-12 16:04:59,372 - INFO -   Test MSE:  0.000301
+2026-09-12 16:04:59,372 - INFO - ==================================================

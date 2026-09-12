@@ -1,0 +1,22 @@
+2026-09-12 15:58:34,960 - INFO - ==================================================
+2026-09-12 15:58:34,960 - INFO - Starting TCN Training for [TJU] - [Dataset_3_NCM_NCA_battery]
+2026-09-12 15:58:34,960 - INFO - Device: cuda | Epochs: 300 | LR: 0.001 | EarlyStop: 40
+2026-09-12 15:58:34,960 - INFO - ==================================================
+2026-09-12 15:58:35,060 - INFO - Data Splits: Train=6, Val=1, Test=2
+2026-09-12 15:58:35,219 - INFO - Epoch [   1/300] - LR: 0.000145 | New best validation loss: 1.832353 (improved from inf) -> Saved model
+2026-09-12 15:58:35,687 - INFO - Epoch [  10/300] - LR: 0.000550 | New best validation loss: 0.781099 (improved from 0.804630) -> Saved model
+2026-09-12 15:58:36,204 - INFO - Epoch [  20/300] - LR: 0.001000 | Train Loss: 0.592571 | Val Loss: 0.642625 (Best Val Loss: 0.524132 @ Ep 16)
+2026-09-12 15:58:37,184 - INFO - Epoch [  40/300] - LR: 0.000987 | New best validation loss: 0.453630 (improved from 0.468393) -> Saved model
+2026-09-12 15:58:37,185 - INFO - Epoch [  40/300] - LR: 0.000987 | Train Loss: 0.483651 | Val Loss: 0.453630 (Best Val Loss: 0.453630 @ Ep 40)
+2026-09-12 15:58:37,730 - INFO - Epoch [  50/300] - LR: 0.000972 | New best validation loss: 0.377454 (improved from 0.453630) -> Saved model
+2026-09-12 15:58:38,188 - INFO - Epoch [  60/300] - LR: 0.000951 | Train Loss: 0.443725 | Val Loss: 0.505954 (Best Val Loss: 0.377454 @ Ep 50)
+2026-09-12 15:58:39,176 - INFO - Epoch [  80/300] - LR: 0.000891 | Train Loss: 0.318232 | Val Loss: 0.860076 (Best Val Loss: 0.377454 @ Ep 50)
+2026-09-12 15:58:39,649 - INFO - Early stopping triggered at epoch 90 (Validation loss did not improve for 40 epochs).
+2026-09-12 15:58:39,649 - INFO - Training completed in 4.58s. Best Model selected from Epoch 50 with lowest Validation Loss: 0.377454
+2026-09-12 15:58:39,667 - INFO - --------------------------------------------------
+2026-09-12 15:58:39,667 - INFO - Test Evaluation Results for [TJU] - [Dataset_3_NCM_NCA_battery]:
+2026-09-12 15:58:39,668 - INFO -   MSE:  0.361949
+2026-09-12 15:58:39,668 - INFO -   RMSE: 0.601622
+2026-09-12 15:58:39,668 - INFO -   MAE:  0.353037
+2026-09-12 15:58:39,668 - INFO -   MAPE: 6973623.437500%
+2026-09-12 15:58:39,668 - INFO - --------------------------------------------------

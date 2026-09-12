@@ -1,0 +1,25 @@
+2026-09-12 15:58:53,414 - INFO - ==================================================
+2026-09-12 15:58:53,414 - INFO - Starting TCN Training for [XJTU] - [R2.5]
+2026-09-12 15:58:53,414 - INFO - Device: cuda | Epochs: 300 | LR: 0.001 | EarlyStop: 40
+2026-09-12 15:58:53,414 - INFO - ==================================================
+2026-09-12 15:58:53,484 - INFO - Data Splits: Train=5, Val=1, Test=2
+2026-09-12 15:58:53,609 - INFO - Epoch [   1/300] - LR: 0.000145 | New best validation loss: 1.511471 (improved from inf) -> Saved model
+2026-09-12 15:58:54,407 - INFO - Epoch [  20/300] - LR: 0.001000 | Train Loss: 0.252995 | Val Loss: 0.797530 (Best Val Loss: 0.602620 @ Ep 9)
+2026-09-12 15:58:55,242 - INFO - Epoch [  40/300] - LR: 0.000987 | Train Loss: 0.100171 | Val Loss: 0.735614 (Best Val Loss: 0.602620 @ Ep 9)
+2026-09-12 15:58:56,071 - INFO - Epoch [  60/300] - LR: 0.000951 | New best validation loss: 0.426376 (improved from 0.495161) -> Saved model
+2026-09-12 15:58:56,071 - INFO - Epoch [  60/300] - LR: 0.000951 | Train Loss: 0.035291 | Val Loss: 0.426376 (Best Val Loss: 0.426376 @ Ep 60)
+2026-09-12 15:58:56,981 - INFO - Epoch [  80/300] - LR: 0.000891 | Train Loss: 0.025670 | Val Loss: 0.504055 (Best Val Loss: 0.413746 @ Ep 62)
+2026-09-12 15:58:57,407 - INFO - Epoch [  90/300] - LR: 0.000854 | New best validation loss: 0.402472 (improved from 0.408038) -> Saved model
+2026-09-12 15:58:57,828 - INFO - Epoch [ 100/300] - LR: 0.000812 | New best validation loss: 0.302322 (improved from 0.395947) -> Saved model
+2026-09-12 15:58:57,828 - INFO - Epoch [ 100/300] - LR: 0.000812 | Train Loss: 0.027367 | Val Loss: 0.302322 (Best Val Loss: 0.302322 @ Ep 100)
+2026-09-12 15:58:58,625 - INFO - Epoch [ 120/300] - LR: 0.000717 | Train Loss: 0.016877 | Val Loss: 0.380602 (Best Val Loss: 0.302322 @ Ep 100)
+2026-09-12 15:58:59,418 - INFO - Epoch [ 140/300] - LR: 0.000612 | Train Loss: 0.014510 | Val Loss: 0.486775 (Best Val Loss: 0.302322 @ Ep 100)
+2026-09-12 15:58:59,418 - INFO - Early stopping triggered at epoch 140 (Validation loss did not improve for 40 epochs).
+2026-09-12 15:58:59,418 - INFO - Training completed in 5.93s. Best Model selected from Epoch 100 with lowest Validation Loss: 0.302322
+2026-09-12 15:58:59,440 - INFO - --------------------------------------------------
+2026-09-12 15:58:59,440 - INFO - Test Evaluation Results for [XJTU] - [R2.5]:
+2026-09-12 15:58:59,440 - INFO -   MSE:  0.885136
+2026-09-12 15:58:59,440 - INFO -   RMSE: 0.940817
+2026-09-12 15:58:59,440 - INFO -   MAE:  0.430842
+2026-09-12 15:58:59,440 - INFO -   MAPE: 27341065.625000%
+2026-09-12 15:58:59,440 - INFO - --------------------------------------------------

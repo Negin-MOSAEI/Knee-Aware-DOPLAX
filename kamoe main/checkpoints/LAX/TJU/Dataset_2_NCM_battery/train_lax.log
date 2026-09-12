@@ -1,0 +1,33 @@
+2026-09-12 16:17:44,359 - INFO - ==================================================
+2026-09-12 16:17:44,359 - INFO - Starting LAX Solver Training for [TJU] - [Dataset_2_NCM_battery]
+2026-09-12 16:17:44,359 - INFO - Device: cuda | Epochs: 2000 | LR: 0.024314 | Mono Weight: 0.74473 | Center: PhI
+2026-09-12 16:17:44,359 - INFO - ==================================================
+2026-09-12 16:17:44,950 - INFO - Data Splits: Train=38, Val=8, Test=9
+2026-09-12 16:17:45,472 - INFO - Epoch [   1/2000] LR: 0.002650 | Train Loss: 1.323834 (MSE: 0.55983, Mono: 0.00000) | Val MSE: 0.055088 (RMSE: 0.2347) [BEST]
+2026-09-12 16:17:45,975 - INFO - Epoch [   2/2000] LR: 0.002869 | Train Loss: 0.105903 (MSE: 0.01277, Mono: 0.00000) | Val MSE: 0.002815 (RMSE: 0.0531) [BEST]
+2026-09-12 16:17:46,400 - INFO - Epoch [   3/2000] LR: 0.003088 | Train Loss: 0.060371 (MSE: 0.00371, Mono: 0.00000) | Val MSE: 0.002674 (RMSE: 0.0517) [BEST]
+2026-09-12 16:17:46,846 - INFO - Epoch [   4/2000] LR: 0.003307 | Train Loss: 0.043701 (MSE: 0.00193, Mono: 0.00000) | Val MSE: 0.002376 (RMSE: 0.0487) [BEST]
+2026-09-12 16:17:47,758 - INFO - Epoch [   6/2000] LR: 0.003744 | Train Loss: 0.038628 (MSE: 0.00185, Mono: 0.00000) | Val MSE: 0.001399 (RMSE: 0.0374) [BEST]
+2026-09-12 16:17:48,217 - INFO - Epoch [   7/2000] LR: 0.003963 | Train Loss: 0.037357 (MSE: 0.00140, Mono: 0.00000) | Val MSE: 0.000663 (RMSE: 0.0257) [BEST]
+2026-09-12 16:17:48,701 - INFO - Epoch [   8/2000] LR: 0.004182 | Train Loss: 0.040781 (MSE: 0.00167, Mono: 0.00000) | Val MSE: 0.000646 (RMSE: 0.0254) [BEST]
+2026-09-12 16:17:49,665 - INFO - Epoch [  10/2000] LR: 0.004620 | Train Loss: 0.029102 (MSE: 0.00088, Mono: 0.00000) | Val MSE: 0.000550 (RMSE: 0.0235) [BEST]
+2026-09-12 16:17:54,292 - INFO - Epoch [  20/2000] LR: 0.006808 | Train Loss: 0.036304 (MSE: 0.00159, Mono: 0.00000) | Val MSE: 0.005267 (RMSE: 0.0726) 
+2026-09-12 16:17:55,807 - INFO - Epoch [  23/2000] LR: 0.007464 | Train Loss: 0.041647 (MSE: 0.00185, Mono: 0.00000) | Val MSE: 0.000534 (RMSE: 0.0231) [BEST]
+2026-09-12 16:17:58,334 - INFO - Epoch [  28/2000] LR: 0.008559 | Train Loss: 0.033919 (MSE: 0.00120, Mono: 0.00000) | Val MSE: 0.000470 (RMSE: 0.0217) [BEST]
+2026-09-12 16:17:59,285 - INFO - Epoch [  30/2000] LR: 0.008996 | Train Loss: 0.028815 (MSE: 0.00091, Mono: 0.00000) | Val MSE: 0.000679 (RMSE: 0.0261) 
+2026-09-12 16:18:01,758 - INFO - Epoch [  35/2000] LR: 0.010090 | Train Loss: 0.026110 (MSE: 0.00084, Mono: 0.00000) | Val MSE: 0.000412 (RMSE: 0.0203) [BEST]
+2026-09-12 16:18:03,717 - INFO - Epoch [  39/2000] LR: 0.010966 | Train Loss: 0.027175 (MSE: 0.00083, Mono: 0.00000) | Val MSE: 0.000407 (RMSE: 0.0202) [BEST]
+2026-09-12 16:18:04,238 - INFO - Epoch [  40/2000] LR: 0.011184 | Train Loss: 0.032223 (MSE: 0.00114, Mono: 0.00000) | Val MSE: 0.000735 (RMSE: 0.0271) 
+2026-09-12 16:18:09,151 - INFO - Epoch [  50/2000] LR: 0.013373 | Train Loss: 0.049127 (MSE: 0.00243, Mono: 0.00000) | Val MSE: 0.005149 (RMSE: 0.0718) 
+2026-09-12 16:18:13,925 - INFO - Epoch [  60/2000] LR: 0.015561 | Train Loss: 0.029782 (MSE: 0.00105, Mono: 0.00000) | Val MSE: 0.000591 (RMSE: 0.0243) 
+2026-09-12 16:18:18,687 - INFO - Epoch [  70/2000] LR: 0.017749 | Train Loss: 0.039696 (MSE: 0.00169, Mono: 0.00000) | Val MSE: 0.001231 (RMSE: 0.0351) 
+2026-09-12 16:18:23,677 - INFO - Epoch [  80/2000] LR: 0.019938 | Train Loss: 0.044963 (MSE: 0.00194, Mono: 0.00000) | Val MSE: 0.002878 (RMSE: 0.0537) 
+2026-09-12 16:18:28,060 - INFO - [*] Early stopping triggered at epoch 89. Best epoch was 39 with Val MSE: 0.000407
+2026-09-12 16:18:28,060 - INFO - Training completed in 43.10s. Loading best checkpoint from epoch 39 for final test evaluation...
+2026-09-12 16:18:28,116 - INFO - ==================================================
+2026-09-12 16:18:28,117 - INFO - Test Results for [TJU] - [Dataset_2_NCM_battery] (Best Epoch 39):
+2026-09-12 16:18:28,117 - INFO -   Test RMSE: 0.021052
+2026-09-12 16:18:28,117 - INFO -   Test MAE:  0.014760
+2026-09-12 16:18:28,117 - INFO -   Test MAPE: 1.793321
+2026-09-12 16:18:28,117 - INFO -   Test MSE:  0.000443
+2026-09-12 16:18:28,117 - INFO - ==================================================

@@ -1,0 +1,9 @@
+2026-09-12 16:44:58,941 - INFO - ==================================================
+2026-09-12 16:44:58,941 - INFO - Running Full Inference for [HUST] - [default]
+2026-09-12 16:44:58,941 - INFO - ==================================================
+2026-09-12 16:45:05,629 - INFO - Completed Batch [HUST] - [default]:
+2026-09-12 16:45:05,630 - INFO -   Test SOH DeepOPINN   RMSE: 0.012910 | MAE: 0.009500
+2026-09-12 16:45:05,630 - INFO -   Test SOH LAX         RMSE: 0.013381 | MAE: 0.010428
+2026-09-12 16:45:05,631 - INFO -   Test SOH Fusion Raw  RMSE: 0.012897 | MAE: 0.009529
+2026-09-12 16:45:05,631 - INFO -   Test SOH Fusion Post RMSE: 0.012837 | MAE: 0.009477
+2026-09-12 16:45:05,631 - INFO -   Mean Knee Delta: 105.25 cycles

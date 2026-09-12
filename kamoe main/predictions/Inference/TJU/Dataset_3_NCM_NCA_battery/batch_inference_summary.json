@@ -1,0 +1,173 @@
+{
+    "dataset": "TJU",
+    "batch": "Dataset_3_NCM_NCA_battery",
+    "total_batteries": 9,
+    "test_batteries": 2,
+    "test_DeepOPINN": {
+        "MAE": 0.00940771959722042,
+        "MAPE": 1.1207305826246738,
+        "MSE": 0.00014813758025411516,
+        "RMSE": 0.012171178124845028
+    },
+    "test_LAX": {
+        "MAE": 0.00834082905203104,
+        "MAPE": 0.9789885021746159,
+        "MSE": 0.000113488087663427,
+        "RMSE": 0.010653078556060791
+    },
+    "test_Fusion_Raw": {
+        "MAE": 0.008322272449731827,
+        "MAPE": 0.9770865552127361,
+        "MSE": 0.00011801973596448079,
+        "RMSE": 0.01086368877440691
+    },
+    "test_Fusion_Post": {
+        "MAE": 0.008314467042063045,
+        "MAPE": 0.9756852419173866,
+        "MSE": 0.00011796825563101614,
+        "RMSE": 0.010861319239899735
+    },
+    "test_KPD": {
+        "MAE": 0.35303688049316406,
+        "MSE": 0.3619488775730133,
+        "RMSE": 0.6016218662261963,
+        "mean_knee_delta_cycles": 54.5
+    },
+    "battery_summaries": {
+        "CY25-05_1-#1": {
+            "split": "train",
+            "cycles": 886,
+            "true_knee_cycle": 817,
+            "pred_knee_cycle": 815,
+            "knee_cycle_error": 2,
+            "KPD_RMSE": 0.47249263525009155,
+            "DeepOPINN_RMSE": 0.016729218885302544,
+            "LAX_RMSE": 0.01629824936389923,
+            "Fusion_Raw_RMSE": 0.016946930438280106,
+            "Fusion_Post_RMSE": 0.01694892827907468,
+            "Fusion_Post_MAE": 0.016450967530617793,
+            "Fusion_Post_MAPE": 2.0278280167205183,
+            "csv_path": "predictions/Inference\\TJU\\Dataset_3_NCM_NCA_battery\\CY25-05_1-#1_full_pred.csv"
+        },
+        "CY25-05_1-#3": {
+            "split": "train",
+            "cycles": 937,
+            "true_knee_cycle": 817,
+            "pred_knee_cycle": 816,
+            "knee_cycle_error": 1,
+            "KPD_RMSE": 0.46137017011642456,
+            "DeepOPINN_RMSE": 0.009320597164332867,
+            "LAX_RMSE": 0.008241396397352219,
+            "Fusion_Raw_RMSE": 0.008608699776232243,
+            "Fusion_Post_RMSE": 0.008601160279729701,
+            "Fusion_Post_MAE": 0.006779256868177695,
+            "Fusion_Post_MAPE": 0.8100297947373618,
+            "csv_path": "predictions/Inference\\TJU\\Dataset_3_NCM_NCA_battery\\CY25-05_1-#3_full_pred.csv"
+        },
+        "CY25-05_2-#1": {
+            "split": "train",
+            "cycles": 925,
+            "true_knee_cycle": 942,
+            "pred_knee_cycle": 816,
+            "knee_cycle_error": 126,
+            "KPD_RMSE": 0.8336609601974487,
+            "DeepOPINN_RMSE": 0.007675866596400738,
+            "LAX_RMSE": 0.0049632093869149685,
+            "Fusion_Raw_RMSE": 0.0053007774986326694,
+            "Fusion_Post_RMSE": 0.005285999612033071,
+            "Fusion_Post_MAE": 0.004043122519500376,
+            "Fusion_Post_MAPE": 0.4984760599217721,
+            "csv_path": "predictions/Inference\\TJU\\Dataset_3_NCM_NCA_battery\\CY25-05_2-#1_full_pred.csv"
+        },
+        "CY25-05_2-#2": {
+            "split": "train",
+            "cycles": 902,
+            "true_knee_cycle": 876,
+            "pred_knee_cycle": 815,
+            "knee_cycle_error": 61,
+            "KPD_RMSE": 0.6464293003082275,
+            "DeepOPINN_RMSE": 0.00807382445782423,
+            "LAX_RMSE": 0.00559143116697669,
+            "Fusion_Raw_RMSE": 0.005712384823709726,
+            "Fusion_Post_RMSE": 0.0056977506109437605,
+            "Fusion_Post_MAE": 0.004535944591093127,
+            "Fusion_Post_MAPE": 0.565244912557516,
+            "csv_path": "predictions/Inference\\TJU\\Dataset_3_NCM_NCA_battery\\CY25-05_2-#2_full_pred.csv"
+        },
+        "CY25-05_4-#2": {
+            "split": "train",
+            "cycles": 921,
+            "true_knee_cycle": 867,
+            "pred_knee_cycle": 815,
+            "knee_cycle_error": 52,
+            "KPD_RMSE": 0.6534401774406433,
+            "DeepOPINN_RMSE": 0.009882144629955292,
+            "LAX_RMSE": 0.007558291312307119,
+            "Fusion_Raw_RMSE": 0.008314060978591442,
+            "Fusion_Post_RMSE": 0.008305929387689407,
+            "Fusion_Post_MAE": 0.006758722969966559,
+            "Fusion_Post_MAPE": 0.8068421397253617,
+            "csv_path": "predictions/Inference\\TJU\\Dataset_3_NCM_NCA_battery\\CY25-05_4-#2_full_pred.csv"
+        },
+        "CY25-05_4-#3": {
+            "split": "train",
+            "cycles": 857,
+            "true_knee_cycle": 665,
+            "pred_knee_cycle": 815,
+            "knee_cycle_error": 150,
+            "KPD_RMSE": 0.9462141990661621,
+            "DeepOPINN_RMSE": 0.013446670025587082,
+            "LAX_RMSE": 0.011370634660124779,
+            "Fusion_Raw_RMSE": 0.011948475614190102,
+            "Fusion_Post_RMSE": 0.011951589787779774,
+            "Fusion_Post_MAE": 0.010245785111286876,
+            "Fusion_Post_MAPE": 1.2164979735387211,
+            "csv_path": "predictions/Inference\\TJU\\Dataset_3_NCM_NCA_battery\\CY25-05_4-#3_full_pred.csv"
+        },
+        "CY25-05_2-#3": {
+            "split": "valid",
+            "cycles": 964,
+            "true_knee_cycle": 768,
+            "pred_knee_cycle": 816,
+            "knee_cycle_error": 48,
+            "KPD_RMSE": 0.6143732070922852,
+            "DeepOPINN_RMSE": 0.006878240499645472,
+            "LAX_RMSE": 0.00450765248388052,
+            "Fusion_Raw_RMSE": 0.0049292356707155704,
+            "Fusion_Post_RMSE": 0.004894979394128549,
+            "Fusion_Post_MAE": 0.004052307513056643,
+            "Fusion_Post_MAPE": 0.5105412748913382,
+            "csv_path": "predictions/Inference\\TJU\\Dataset_3_NCM_NCA_battery\\CY25-05_2-#3_full_pred.csv"
+        },
+        "CY25-05_1-#2": {
+            "split": "test",
+            "cycles": 904,
+            "true_knee_cycle": 869,
+            "pred_knee_cycle": 816,
+            "knee_cycle_error": 53,
+            "KPD_RMSE": 0.6042546033859253,
+            "DeepOPINN_RMSE": 0.011106402613222599,
+            "LAX_RMSE": 0.009894507937133312,
+            "Fusion_Raw_RMSE": 0.010138003155589104,
+            "Fusion_Post_RMSE": 0.010135824086839688,
+            "Fusion_Post_MAE": 0.008005058102390316,
+            "Fusion_Post_MAPE": 0.949293120949374,
+            "csv_path": "predictions/Inference\\TJU\\Dataset_3_NCM_NCA_battery\\CY25-05_1-#2_full_pred.csv"
+        },
+        "CY25-05_4-#1": {
+            "split": "test",
+            "cycles": 929,
+            "true_knee_cycle": 872,
+            "pred_knee_cycle": 816,
+            "knee_cycle_error": 56,
+            "KPD_RMSE": 0.5990488529205322,
+            "DeepOPINN_RMSE": 0.013124633580446243,
+            "LAX_RMSE": 0.011342639103531837,
+            "Fusion_Raw_RMSE": 0.01152606587857008,
+            "Fusion_Post_RMSE": 0.011523525612644135,
+            "Fusion_Post_MAE": 0.008615549584005074,
+            "Fusion_Post_MAPE": 1.0013671335805547,
+            "csv_path": "predictions/Inference\\TJU\\Dataset_3_NCM_NCA_battery\\CY25-05_4-#1_full_pred.csv"
+        }
+    }
+}

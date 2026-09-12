@@ -1,0 +1,19 @@
+2026-09-12 15:56:49,673 - INFO - ==================================================
+2026-09-12 15:56:49,673 - INFO - Starting TCN Training for [TJU] - [Dataset_1_NCA_battery]
+2026-09-12 15:56:49,673 - INFO - Device: cuda | Epochs: 300 | LR: 0.001 | EarlyStop: 40
+2026-09-12 15:56:49,673 - INFO - ==================================================
+2026-09-12 15:56:50,313 - INFO - Data Splits: Train=46, Val=10, Test=10
+2026-09-12 15:56:51,780 - INFO - Epoch [   1/300] - LR: 0.000145 | New best validation loss: 1.143281 (improved from inf) -> Saved model
+2026-09-12 15:56:56,869 - INFO - Epoch [  10/300] - LR: 0.000550 | New best validation loss: 1.008957 (improved from 1.012104) -> Saved model
+2026-09-12 15:57:02,241 - INFO - Epoch [  20/300] - LR: 0.001000 | Train Loss: 0.631118 | Val Loss: 1.008712 (Best Val Loss: 0.897837 @ Ep 18)
+2026-09-12 15:57:12,922 - INFO - Epoch [  40/300] - LR: 0.000987 | Train Loss: 0.349692 | Val Loss: 1.012137 (Best Val Loss: 0.856445 @ Ep 32)
+2026-09-12 15:57:23,790 - INFO - Epoch [  60/300] - LR: 0.000951 | Train Loss: 0.406844 | Val Loss: 0.948580 (Best Val Loss: 0.856445 @ Ep 32)
+2026-09-12 15:57:31,422 - INFO - Early stopping triggered at epoch 72 (Validation loss did not improve for 40 epochs).
+2026-09-12 15:57:31,422 - INFO - Training completed in 41.09s. Best Model selected from Epoch 32 with lowest Validation Loss: 0.856445
+2026-09-12 15:57:31,567 - INFO - --------------------------------------------------
+2026-09-12 15:57:31,567 - INFO - Test Evaluation Results for [TJU] - [Dataset_1_NCA_battery]:
+2026-09-12 15:57:31,568 - INFO -   MSE:  1.683917
+2026-09-12 15:57:31,568 - INFO -   RMSE: 1.297658
+2026-09-12 15:57:31,568 - INFO -   MAE:  0.841768
+2026-09-12 15:57:31,568 - INFO -   MAPE: 31961246.875000%
+2026-09-12 15:57:31,568 - INFO - --------------------------------------------------

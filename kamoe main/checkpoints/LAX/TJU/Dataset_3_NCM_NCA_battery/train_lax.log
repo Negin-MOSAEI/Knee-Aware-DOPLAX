@@ -1,0 +1,31 @@
+2026-09-12 16:18:28,119 - INFO - ==================================================
+2026-09-12 16:18:28,119 - INFO - Starting LAX Solver Training for [TJU] - [Dataset_3_NCM_NCA_battery]
+2026-09-12 16:18:28,119 - INFO - Device: cuda | Epochs: 2000 | LR: 0.024314 | Mono Weight: 0.74473 | Center: PhI
+2026-09-12 16:18:28,119 - INFO - ==================================================
+2026-09-12 16:18:28,236 - INFO - Data Splits: Train=6, Val=1, Test=2
+2026-09-12 16:18:28,373 - INFO - Epoch [   1/2000] LR: 0.002650 | Train Loss: 1.551143 (MSE: 0.63045, Mono: 0.00000) | Val MSE: 0.555961 (RMSE: 0.7456) [BEST]
+2026-09-12 16:18:28,477 - INFO - Epoch [   2/2000] LR: 0.002869 | Train Loss: 1.328204 (MSE: 0.50653, Mono: 0.00000) | Val MSE: 0.404236 (RMSE: 0.6358) [BEST]
+2026-09-12 16:18:28,610 - INFO - Epoch [   3/2000] LR: 0.003088 | Train Loss: 0.943485 (MSE: 0.31323, Mono: 0.00000) | Val MSE: 0.155228 (RMSE: 0.3940) [BEST]
+2026-09-12 16:18:28,713 - INFO - Epoch [   4/2000] LR: 0.003307 | Train Loss: 0.399541 (MSE: 0.09077, Mono: 0.00000) | Val MSE: 0.049153 (RMSE: 0.2217) [BEST]
+2026-09-12 16:18:28,822 - INFO - Epoch [   5/2000] LR: 0.003526 | Train Loss: 0.146983 (MSE: 0.02045, Mono: 0.00000) | Val MSE: 0.001203 (RMSE: 0.0347) [BEST]
+2026-09-12 16:18:29,133 - INFO - Epoch [   8/2000] LR: 0.004182 | Train Loss: 0.029247 (MSE: 0.00090, Mono: 0.00000) | Val MSE: 0.000945 (RMSE: 0.0307) [BEST]
+2026-09-12 16:18:29,241 - INFO - Epoch [   9/2000] LR: 0.004401 | Train Loss: 0.020529 (MSE: 0.00045, Mono: 0.00000) | Val MSE: 0.000062 (RMSE: 0.0079) [BEST]
+2026-09-12 16:18:29,345 - INFO - Epoch [  10/2000] LR: 0.004620 | Train Loss: 0.015853 (MSE: 0.00026, Mono: 0.00000) | Val MSE: 0.000071 (RMSE: 0.0084) 
+2026-09-12 16:18:29,981 - INFO - Epoch [  16/2000] LR: 0.005933 | Train Loss: 0.014634 (MSE: 0.00024, Mono: 0.00000) | Val MSE: 0.000021 (RMSE: 0.0046) [BEST]
+2026-09-12 16:18:30,395 - INFO - Epoch [  20/2000] LR: 0.006808 | Train Loss: 0.022352 (MSE: 0.00043, Mono: 0.00000) | Val MSE: 0.000445 (RMSE: 0.0211) 
+2026-09-12 16:18:31,408 - INFO - Epoch [  30/2000] LR: 0.008996 | Train Loss: 0.023624 (MSE: 0.00054, Mono: 0.00000) | Val MSE: 0.000027 (RMSE: 0.0052) 
+2026-09-12 16:18:32,131 - INFO - Epoch [  37/2000] LR: 0.010528 | Train Loss: 0.025120 (MSE: 0.00054, Mono: 0.00000) | Val MSE: 0.000020 (RMSE: 0.0045) [BEST]
+2026-09-12 16:18:32,447 - INFO - Epoch [  40/2000] LR: 0.011184 | Train Loss: 0.016885 (MSE: 0.00036, Mono: 0.00000) | Val MSE: 0.000142 (RMSE: 0.0119) 
+2026-09-12 16:18:33,631 - INFO - Epoch [  50/2000] LR: 0.013373 | Train Loss: 0.029311 (MSE: 0.00073, Mono: 0.00000) | Val MSE: 0.000179 (RMSE: 0.0134) 
+2026-09-12 16:18:34,664 - INFO - Epoch [  60/2000] LR: 0.015561 | Train Loss: 0.033773 (MSE: 0.00120, Mono: 0.00000) | Val MSE: 0.000344 (RMSE: 0.0185) 
+2026-09-12 16:18:35,682 - INFO - Epoch [  70/2000] LR: 0.017749 | Train Loss: 0.017140 (MSE: 0.00033, Mono: 0.00000) | Val MSE: 0.000126 (RMSE: 0.0112) 
+2026-09-12 16:18:36,764 - INFO - Epoch [  80/2000] LR: 0.019938 | Train Loss: 0.023685 (MSE: 0.00059, Mono: 0.00000) | Val MSE: 0.001861 (RMSE: 0.0431) 
+2026-09-12 16:18:37,458 - INFO - [*] Early stopping triggered at epoch 87. Best epoch was 37 with Val MSE: 0.000020
+2026-09-12 16:18:37,458 - INFO - Training completed in 9.22s. Loading best checkpoint from epoch 37 for final test evaluation...
+2026-09-12 16:18:37,488 - INFO - ==================================================
+2026-09-12 16:18:37,489 - INFO - Test Results for [TJU] - [Dataset_3_NCM_NCA_battery] (Best Epoch 37):
+2026-09-12 16:18:37,489 - INFO -   Test RMSE: 0.010653
+2026-09-12 16:18:37,489 - INFO -   Test MAE:  0.008341
+2026-09-12 16:18:37,489 - INFO -   Test MAPE: 0.978989
+2026-09-12 16:18:37,489 - INFO -   Test MSE:  0.000113
+2026-09-12 16:18:37,489 - INFO - ==================================================

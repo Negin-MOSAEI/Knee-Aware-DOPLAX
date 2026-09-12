@@ -1,0 +1,26 @@
+{
+    "dataset": "TJU",
+    "batch": "Dataset_3_NCM_NCA_battery",
+    "best_epoch": 49,
+    "best_val_loss": 4.731020089820959e-05,
+    "test_RMSE": 0.012171178124845028,
+    "test_MAE": 0.00940771959722042,
+    "test_MAPE": 1.1207305826246738,
+    "test_MSE": 0.00014813758025411516,
+    "battery_metrics": {
+        "CY25-05_1-#2": {
+            "RMSE": 0.011106402613222599,
+            "MAE": 0.008558725006878376,
+            "MAPE": 1.0216101072728634,
+            "MSE": 0.0001233521761605516
+        },
+        "CY25-05_4-#1": {
+            "RMSE": 0.013124633580446243,
+            "MAE": 0.010233868844807148,
+            "MAPE": 1.217183656990528,
+            "MSE": 0.00017225601186510175
+        }
+    },
+    "checkpoint_path": "checkpoints/DeepOPINN\\TJU\\Dataset_3_NCM_NCA_battery\\best_deepopinn.pth",
+    "elapsed_seconds": 10.985302925109863
+}

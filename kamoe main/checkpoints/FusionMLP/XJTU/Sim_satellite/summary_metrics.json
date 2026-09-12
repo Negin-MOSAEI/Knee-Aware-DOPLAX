@@ -1,0 +1,26 @@
+{
+    "dataset": "XJTU",
+    "batch": "Sim_satellite",
+    "best_epoch": 17,
+    "best_val_loss": 0.0005374726024456322,
+    "test_RMSE": 0.028112374246120453,
+    "test_MAE": 0.023906374350190163,
+    "test_MAPE": 2.4999117478728294,
+    "test_MSE": 0.000790305552072823,
+    "battery_metrics": {
+        "Sim_satellite_battery-4": {
+            "RMSE": 0.02738443948328495,
+            "MAE": 0.02255427837371826,
+            "MAPE": 2.390420623123646,
+            "MSE": 0.0007499075145460665
+        },
+        "Sim_satellite_battery-6": {
+            "RMSE": 0.028746088966727257,
+            "MAE": 0.025112345814704895,
+            "MAPE": 2.5975700467824936,
+            "MSE": 0.0008263376075774431
+        }
+    },
+    "checkpoint_path": "checkpoints/FusionMLP\\XJTU\\Sim_satellite\\best_fusion.pth",
+    "elapsed_seconds": 4.018841981887817
+}

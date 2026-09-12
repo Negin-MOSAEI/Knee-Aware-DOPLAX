@@ -1,0 +1,31 @@
+2026-09-12 16:38:57,953 - INFO - ==================================================
+2026-09-12 16:38:57,953 - INFO - Starting FusionMLP Training for [XJTU] - [3C]
+2026-09-12 16:38:57,953 - INFO - Device: cuda | Epochs: 2000 | LR: 0.020000 | Mono Weight: 0.4000 | Knee Feature: True
+2026-09-12 16:38:57,953 - INFO - ==================================================
+2026-09-12 16:38:58,097 - INFO - Data Splits: Train=10, Val=2, Test=3
+2026-09-12 16:38:58,256 - INFO - Epoch [   1/2000] LR: 0.006726 | Train Loss: 0.308228 (Data: 0.30820, Mono: 0.00007) | Val MSE: 0.015067 (RMSE: 0.1227) [BEST]
+2026-09-12 16:38:58,433 - INFO - Epoch [   3/2000] LR: 0.007641 | Train Loss: 0.054938 (Data: 0.05490, Mono: 0.00010) | Val MSE: 0.014285 (RMSE: 0.1195) [BEST]
+2026-09-12 16:38:58,520 - INFO - Epoch [   4/2000] LR: 0.008099 | Train Loss: 0.047973 (Data: 0.04794, Mono: 0.00009) | Val MSE: 0.000493 (RMSE: 0.0222) [BEST]
+2026-09-12 16:38:58,786 - INFO - Epoch [   7/2000] LR: 0.009472 | Train Loss: 0.031582 (Data: 0.03155, Mono: 0.00007) | Val MSE: 0.000353 (RMSE: 0.0188) [BEST]
+2026-09-12 16:38:58,877 - INFO - Epoch [   8/2000] LR: 0.009930 | Train Loss: 0.030413 (Data: 0.03038, Mono: 0.00008) | Val MSE: 0.000303 (RMSE: 0.0174) [BEST]
+2026-09-12 16:38:59,062 - INFO - Epoch [  10/2000] LR: 0.010845 | Train Loss: 0.023544 (Data: 0.02352, Mono: 0.00007) | Val MSE: 0.000242 (RMSE: 0.0156) [BEST]
+2026-09-12 16:38:59,347 - INFO - Epoch [  13/2000] LR: 0.012219 | Train Loss: 0.017865 (Data: 0.01784, Mono: 0.00006) | Val MSE: 0.000196 (RMSE: 0.0140) [BEST]
+2026-09-12 16:38:59,527 - INFO - Epoch [  15/2000] LR: 0.013134 | Train Loss: 0.013601 (Data: 0.01358, Mono: 0.00005) | Val MSE: 0.000184 (RMSE: 0.0136) [BEST]
+2026-09-12 16:38:59,620 - INFO - Epoch [  16/2000] LR: 0.013592 | Train Loss: 0.012769 (Data: 0.01275, Mono: 0.00005) | Val MSE: 0.000177 (RMSE: 0.0133) [BEST]
+2026-09-12 16:38:59,990 - INFO - Epoch [  20/2000] LR: 0.015423 | Train Loss: 0.008518 (Data: 0.00850, Mono: 0.00004) | Val MSE: 0.000408 (RMSE: 0.0202) 
+2026-09-12 16:39:00,813 - INFO - Epoch [  30/2000] LR: 0.020000 | Train Loss: 0.003573 (Data: 0.00356, Mono: 0.00003) | Val MSE: 0.000214 (RMSE: 0.0146) 
+2026-09-12 16:39:01,514 - INFO - Epoch [  40/2000] LR: 0.019999 | Train Loss: 0.001986 (Data: 0.00198, Mono: 0.00001) | Val MSE: 0.001103 (RMSE: 0.0332) 
+2026-09-12 16:39:02,247 - INFO - Epoch [  50/2000] LR: 0.019995 | Train Loss: 0.000860 (Data: 0.00086, Mono: 0.00001) | Val MSE: 0.000291 (RMSE: 0.0171) 
+2026-09-12 16:39:03,009 - INFO - Epoch [  60/2000] LR: 0.019989 | Train Loss: 0.000679 (Data: 0.00068, Mono: 0.00001) | Val MSE: 0.000234 (RMSE: 0.0153) 
+2026-09-12 16:39:03,670 - INFO - Epoch [  70/2000] LR: 0.019980 | Train Loss: 0.000494 (Data: 0.00049, Mono: 0.00001) | Val MSE: 0.000223 (RMSE: 0.0149) 
+2026-09-12 16:39:04,334 - INFO - Epoch [  80/2000] LR: 0.019968 | Train Loss: 0.000525 (Data: 0.00052, Mono: 0.00000) | Val MSE: 0.000617 (RMSE: 0.0248) 
+2026-09-12 16:39:05,019 - INFO - Epoch [  90/2000] LR: 0.019954 | Train Loss: 0.000445 (Data: 0.00044, Mono: 0.00000) | Val MSE: 0.000418 (RMSE: 0.0205) 
+2026-09-12 16:39:05,440 - INFO - [*] Early stopping triggered at epoch 96. Best epoch was 16 with Val MSE: 0.000177
+2026-09-12 16:39:05,440 - INFO - Training completed in 7.32s. Loading best checkpoint from epoch 16 for final test evaluation...
+2026-09-12 16:39:05,504 - INFO - ==================================================
+2026-09-12 16:39:05,504 - INFO - Test Results for [XJTU] - [3C] (Best Epoch 16):
+2026-09-12 16:39:05,504 - INFO -   Test RMSE: 0.019449
+2026-09-12 16:39:05,504 - INFO -   Test MAE:  0.016689
+2026-09-12 16:39:05,504 - INFO -   Test MAPE: 1.755332
+2026-09-12 16:39:05,504 - INFO -   Test MSE:  0.000378
+2026-09-12 16:39:05,504 - INFO - ==================================================

@@ -1,0 +1,24 @@
+2026-09-12 15:57:31,574 - INFO - ==================================================
+2026-09-12 15:57:31,574 - INFO - Starting TCN Training for [TJU] - [Dataset_2_NCM_battery]
+2026-09-12 15:57:31,574 - INFO - Device: cuda | Epochs: 300 | LR: 0.001 | EarlyStop: 40
+2026-09-12 15:57:31,574 - INFO - ==================================================
+2026-09-12 15:57:32,299 - INFO - Data Splits: Train=38, Val=8, Test=9
+2026-09-12 15:57:33,737 - INFO - Epoch [   1/300] - LR: 0.000145 | New best validation loss: 0.897747 (improved from inf) -> Saved model
+2026-09-12 15:57:37,177 - INFO - Epoch [  10/300] - LR: 0.000550 | New best validation loss: 0.321361 (improved from 0.348330) -> Saved model
+2026-09-12 15:57:41,656 - INFO - Epoch [  20/300] - LR: 0.001000 | Train Loss: 0.470000 | Val Loss: 0.344368 (Best Val Loss: 0.311094 @ Ep 18)
+2026-09-12 15:57:49,254 - INFO - Epoch [  40/300] - LR: 0.000987 | Train Loss: 0.344291 | Val Loss: 0.322039 (Best Val Loss: 0.238929 @ Ep 25)
+2026-09-12 15:57:56,415 - INFO - Epoch [  60/300] - LR: 0.000951 | Train Loss: 0.316931 | Val Loss: 0.340900 (Best Val Loss: 0.231376 @ Ep 54)
+2026-09-12 15:58:04,065 - INFO - Epoch [  80/300] - LR: 0.000891 | Train Loss: 0.180118 | Val Loss: 0.255014 (Best Val Loss: 0.221052 @ Ep 75)
+2026-09-12 15:58:11,457 - INFO - Epoch [ 100/300] - LR: 0.000812 | Train Loss: 0.158115 | Val Loss: 0.257042 (Best Val Loss: 0.221052 @ Ep 75)
+2026-09-12 15:58:18,678 - INFO - Epoch [ 120/300] - LR: 0.000717 | Train Loss: 0.131180 | Val Loss: 0.236296 (Best Val Loss: 0.214961 @ Ep 101)
+2026-09-12 15:58:24,634 - INFO - Epoch [ 140/300] - LR: 0.000612 | Train Loss: 0.098037 | Val Loss: 0.256151 (Best Val Loss: 0.214278 @ Ep 135)
+2026-09-12 15:58:30,498 - INFO - Epoch [ 160/300] - LR: 0.000501 | Train Loss: 0.050895 | Val Loss: 0.278106 (Best Val Loss: 0.214278 @ Ep 135)
+2026-09-12 15:58:34,910 - INFO - Early stopping triggered at epoch 175 (Validation loss did not improve for 40 epochs).
+2026-09-12 15:58:34,910 - INFO - Training completed in 62.61s. Best Model selected from Epoch 135 with lowest Validation Loss: 0.214278
+2026-09-12 15:58:34,956 - INFO - --------------------------------------------------
+2026-09-12 15:58:34,956 - INFO - Test Evaluation Results for [TJU] - [Dataset_2_NCM_battery]:
+2026-09-12 15:58:34,957 - INFO -   MSE:  1.489695
+2026-09-12 15:58:34,957 - INFO -   RMSE: 1.220531
+2026-09-12 15:58:34,957 - INFO -   MAE:  0.573967
+2026-09-12 15:58:34,957 - INFO -   MAPE: 26255759.375000%
+2026-09-12 15:58:34,957 - INFO - --------------------------------------------------

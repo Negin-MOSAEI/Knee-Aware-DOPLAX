@@ -1,0 +1,6 @@
+2026-09-12 16:01:08,091 - INFO - Loaded trained TCN from: checkpoints/TCN\XJTU\RW\best_tcn.pth (Trained Epoch: 22, Val Loss: 0.181271)
+2026-09-12 16:01:08,209 - INFO - Completed KPD Predictions for [XJTU] - [RW]:
+2026-09-12 16:01:08,210 - INFO -   Total Batteries: 8 (Train, Val, Test saved)
+2026-09-12 16:01:08,210 - INFO -   Test KPD RMSE:   0.619064 | Test KPD MAE: 0.392418
+2026-09-12 16:01:08,210 - INFO -   Mean Knee Error: 7.50 cycles
+2026-09-12 16:01:08,210 - INFO -   Saved to:        predictions/TCN_KPD\XJTU\RW

@@ -1,0 +1,42 @@
+2026-09-12 16:08:01,147 - INFO - ==================================================
+2026-09-12 16:08:01,147 - INFO - Starting DeepOPINN Training for [TJU] - [Dataset_3_NCM_NCA_battery]
+2026-09-12 16:08:01,147 - INFO - Device: cuda | Epochs: 2000 | LR: 0.001221 | Alpha (PDE): 0.60000 | Beta (Mono): 0.01805
+2026-09-12 16:08:01,147 - INFO - ==================================================
+2026-09-12 16:08:01,257 - INFO - Data Splits: Train=6, Val=1, Test=2
+2026-09-12 16:08:01,424 - INFO - Epoch [   1/2000] LR: 0.006352 | Train Loss: 0.233724 (Data: 0.22898, PDE*kpd: 0.00790, Mono: 0.00003) | Val MSE: 0.092296 (RMSE: 0.3038) [BEST]
+2026-09-12 16:08:01,536 - INFO - Epoch [   2/2000] LR: 0.006247 | Train Loss: 0.052161 (Data: 0.05079, PDE*kpd: 0.00229, Mono: 0.00002) | Val MSE: 0.016950 (RMSE: 0.1302) [BEST]
+2026-09-12 16:08:01,609 - INFO - Epoch [   3/2000] LR: 0.006142 | Train Loss: 0.015526 (Data: 0.01469, PDE*kpd: 0.00138, Mono: 0.00002) | Val MSE: 0.005320 (RMSE: 0.0729) [BEST]
+2026-09-12 16:08:01,692 - INFO - Epoch [   4/2000] LR: 0.006038 | Train Loss: 0.007799 (Data: 0.00729, PDE*kpd: 0.00084, Mono: 0.00002) | Val MSE: 0.001030 (RMSE: 0.0321) [BEST]
+2026-09-12 16:08:01,762 - INFO - Epoch [   5/2000] LR: 0.005933 | Train Loss: 0.005982 (Data: 0.00564, PDE*kpd: 0.00057, Mono: 0.00002) | Val MSE: 0.000594 (RMSE: 0.0244) [BEST]
+2026-09-12 16:08:01,898 - INFO - Epoch [   7/2000] LR: 0.005724 | Train Loss: 0.003437 (Data: 0.00324, PDE*kpd: 0.00032, Mono: 0.00001) | Val MSE: 0.000318 (RMSE: 0.0178) [BEST]
+2026-09-12 16:08:02,022 - INFO - Epoch [   9/2000] LR: 0.005514 | Train Loss: 0.002908 (Data: 0.00277, PDE*kpd: 0.00023, Mono: 0.00001) | Val MSE: 0.000148 (RMSE: 0.0122) [BEST]
+2026-09-12 16:08:02,070 - INFO - Epoch [  10/2000] LR: 0.005409 | Train Loss: 0.002748 (Data: 0.00262, PDE*kpd: 0.00021, Mono: 0.00001) | Val MSE: 0.000177 (RMSE: 0.0133) 
+2026-09-12 16:08:02,127 - INFO - Epoch [  11/2000] LR: 0.005305 | Train Loss: 0.002440 (Data: 0.00233, PDE*kpd: 0.00019, Mono: 0.00001) | Val MSE: 0.000140 (RMSE: 0.0118) [BEST]
+2026-09-12 16:08:02,183 - INFO - Epoch [  12/2000] LR: 0.005200 | Train Loss: 0.002300 (Data: 0.00220, PDE*kpd: 0.00017, Mono: 0.00001) | Val MSE: 0.000119 (RMSE: 0.0109) [BEST]
+2026-09-12 16:08:02,292 - INFO - Epoch [  14/2000] LR: 0.004991 | Train Loss: 0.002104 (Data: 0.00202, PDE*kpd: 0.00014, Mono: 0.00001) | Val MSE: 0.000107 (RMSE: 0.0103) [BEST]
+2026-09-12 16:08:02,349 - INFO - Epoch [  15/2000] LR: 0.004886 | Train Loss: 0.001936 (Data: 0.00186, PDE*kpd: 0.00013, Mono: 0.00001) | Val MSE: 0.000095 (RMSE: 0.0097) [BEST]
+2026-09-12 16:08:02,459 - INFO - Epoch [  17/2000] LR: 0.004677 | Train Loss: 0.001753 (Data: 0.00169, PDE*kpd: 0.00011, Mono: 0.00001) | Val MSE: 0.000054 (RMSE: 0.0074) [BEST]
+2026-09-12 16:08:02,622 - INFO - Epoch [  20/2000] LR: 0.004362 | Train Loss: 0.001581 (Data: 0.00153, PDE*kpd: 0.00009, Mono: 0.00001) | Val MSE: 0.000077 (RMSE: 0.0088) 
+2026-09-12 16:08:03,157 - INFO - Epoch [  30/2000] LR: 0.003315 | Train Loss: 0.001183 (Data: 0.00116, PDE*kpd: 0.00004, Mono: 0.00001) | Val MSE: 0.000063 (RMSE: 0.0080) 
+2026-09-12 16:08:03,558 - INFO - Epoch [  36/2000] LR: 0.002687 | Train Loss: 0.001036 (Data: 0.00102, PDE*kpd: 0.00002, Mono: 0.00001) | Val MSE: 0.000052 (RMSE: 0.0072) [BEST]
+2026-09-12 16:08:03,861 - INFO - Epoch [  40/2000] LR: 0.002268 | Train Loss: 0.000981 (Data: 0.00097, PDE*kpd: 0.00001, Mono: 0.00001) | Val MSE: 0.000058 (RMSE: 0.0076) 
+2026-09-12 16:08:04,143 - INFO - Epoch [  44/2000] LR: 0.001850 | Train Loss: 0.000926 (Data: 0.00092, PDE*kpd: 0.00001, Mono: 0.00001) | Val MSE: 0.000052 (RMSE: 0.0072) [BEST]
+2026-09-12 16:08:04,315 - INFO - Epoch [  46/2000] LR: 0.001640 | Train Loss: 0.000883 (Data: 0.00088, PDE*kpd: 0.00001, Mono: 0.00001) | Val MSE: 0.000052 (RMSE: 0.0072) [BEST]
+2026-09-12 16:08:04,541 - INFO - Epoch [  49/2000] LR: 0.001326 | Train Loss: 0.000893 (Data: 0.00089, PDE*kpd: 0.00001, Mono: 0.00001) | Val MSE: 0.000047 (RMSE: 0.0069) [BEST]
+2026-09-12 16:08:04,613 - INFO - Epoch [  50/2000] LR: 0.001221 | Train Loss: 0.000857 (Data: 0.00085, PDE*kpd: 0.00001, Mono: 0.00001) | Val MSE: 0.000058 (RMSE: 0.0076) 
+2026-09-12 16:08:05,603 - INFO - Epoch [  60/2000] LR: 0.001221 | Train Loss: 0.000780 (Data: 0.00078, PDE*kpd: 0.00000, Mono: 0.00001) | Val MSE: 0.000077 (RMSE: 0.0088) 
+2026-09-12 16:08:06,516 - INFO - Epoch [  70/2000] LR: 0.001221 | Train Loss: 0.000748 (Data: 0.00075, PDE*kpd: 0.00000, Mono: 0.00001) | Val MSE: 0.000084 (RMSE: 0.0092) 
+2026-09-12 16:08:07,404 - INFO - Epoch [  80/2000] LR: 0.001221 | Train Loss: 0.000722 (Data: 0.00072, PDE*kpd: 0.00000, Mono: 0.00001) | Val MSE: 0.000079 (RMSE: 0.0089) 
+2026-09-12 16:08:08,310 - INFO - Epoch [  90/2000] LR: 0.001220 | Train Loss: 0.000639 (Data: 0.00064, PDE*kpd: 0.00000, Mono: 0.00001) | Val MSE: 0.000112 (RMSE: 0.0106) 
+2026-09-12 16:08:09,418 - INFO - Epoch [ 100/2000] LR: 0.001219 | Train Loss: 0.000582 (Data: 0.00058, PDE*kpd: 0.00000, Mono: 0.00001) | Val MSE: 0.000125 (RMSE: 0.0112) 
+2026-09-12 16:08:10,385 - INFO - Epoch [ 110/2000] LR: 0.001218 | Train Loss: 0.000580 (Data: 0.00058, PDE*kpd: 0.00000, Mono: 0.00001) | Val MSE: 0.000120 (RMSE: 0.0110) 
+2026-09-12 16:08:11,354 - INFO - Epoch [ 120/2000] LR: 0.001217 | Train Loss: 0.000543 (Data: 0.00054, PDE*kpd: 0.00000, Mono: 0.00001) | Val MSE: 0.000130 (RMSE: 0.0114) 
+2026-09-12 16:08:12,246 - INFO - [*] Early stopping triggered at epoch 129. Best epoch was 49 with Val MSE: 0.000047
+2026-09-12 16:08:12,246 - INFO - Training completed in 10.99s. Loading best checkpoint from epoch 49 for final test evaluation...
+2026-09-12 16:08:12,278 - INFO - ==================================================
+2026-09-12 16:08:12,278 - INFO - Test Results for [TJU] - [Dataset_3_NCM_NCA_battery] (Best Epoch 49):
+2026-09-12 16:08:12,278 - INFO -   Test RMSE: 0.012171
+2026-09-12 16:08:12,279 - INFO -   Test MAE:  0.009408
+2026-09-12 16:08:12,279 - INFO -   Test MAPE: 1.120731
+2026-09-12 16:08:12,279 - INFO -   Test MSE:  0.000148
+2026-09-12 16:08:12,279 - INFO - ==================================================

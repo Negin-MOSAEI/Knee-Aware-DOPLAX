@@ -1,0 +1,6 @@
+2026-09-12 16:01:00,378 - INFO - Loaded trained TCN from: checkpoints/TCN\HUST\default\best_tcn.pth (Trained Epoch: 64, Val Loss: 0.092296)
+2026-09-12 16:01:02,534 - INFO - Completed KPD Predictions for [HUST] - [default]:
+2026-09-12 16:01:02,535 - INFO -   Total Batteries: 77 (Train, Val, Test saved)
+2026-09-12 16:01:02,535 - INFO -   Test KPD RMSE:   0.625982 | Test KPD MAE: 0.256324
+2026-09-12 16:01:02,535 - INFO -   Mean Knee Error: 47.65 cycles
+2026-09-12 16:01:02,535 - INFO -   Saved to:        predictions/TCN_KPD\HUST\default

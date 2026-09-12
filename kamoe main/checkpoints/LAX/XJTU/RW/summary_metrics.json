@@ -1,0 +1,26 @@
+{
+    "dataset": "XJTU",
+    "batch": "RW",
+    "best_epoch": 24,
+    "best_val_loss": 1.7779526388039812e-05,
+    "test_RMSE": 0.00914338044822216,
+    "test_MAE": 0.007058731745928526,
+    "test_MAPE": 0.7726431358605623,
+    "test_MSE": 8.360140054719523e-05,
+    "battery_metrics": {
+        "RW_battery-1": {
+            "RMSE": 0.010253824293613434,
+            "MAE": 0.008035363629460335,
+            "MAPE": 0.8833372965455055,
+            "MSE": 0.00010514090536162257
+        },
+        "RW_battery-2": {
+            "RMSE": 0.008402585051953793,
+            "MAE": 0.006469384301453829,
+            "MAPE": 0.7058450952172279,
+            "MSE": 7.060343341436237e-05
+        }
+    },
+    "checkpoint_path": "checkpoints/LAX\\XJTU\\RW\\best_lax.pth",
+    "elapsed_seconds": 3.8208272457122803
+}

@@ -1,0 +1,9 @@
+2026-09-12 16:45:15,011 - INFO - ==================================================
+2026-09-12 16:45:15,011 - INFO - Running Full Inference for [TJU] - [Dataset_3_NCM_NCA_battery]
+2026-09-12 16:45:15,011 - INFO - ==================================================
+2026-09-12 16:45:15,629 - INFO - Completed Batch [TJU] - [Dataset_3_NCM_NCA_battery]:
+2026-09-12 16:45:15,630 - INFO -   Test SOH DeepOPINN   RMSE: 0.012171 | MAE: 0.009408
+2026-09-12 16:45:15,630 - INFO -   Test SOH LAX         RMSE: 0.010653 | MAE: 0.008341
+2026-09-12 16:45:15,630 - INFO -   Test SOH Fusion Raw  RMSE: 0.010864 | MAE: 0.008322
+2026-09-12 16:45:15,630 - INFO -   Test SOH Fusion Post RMSE: 0.010861 | MAE: 0.008314
+2026-09-12 16:45:15,630 - INFO -   Mean Knee Delta: 54.50 cycles

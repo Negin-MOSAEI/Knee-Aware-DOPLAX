@@ -1,0 +1,26 @@
+{
+    "dataset": "XJTU",
+    "batch": "R3",
+    "best_epoch": 73,
+    "best_val_loss": 6.160238262964413e-05,
+    "test_RMSE": 0.010862858965992928,
+    "test_MAE": 0.009316991083323956,
+    "test_MAPE": 0.999557226896286,
+    "test_MSE": 0.00011800169886555523,
+    "battery_metrics": {
+        "R3_battery-1": {
+            "RMSE": 0.009476160630583763,
+            "MAE": 0.007821254432201385,
+            "MAPE": 0.8432283066213131,
+            "MSE": 8.979762060334906e-05
+        },
+        "R3_battery-6": {
+            "RMSE": 0.012240325100719929,
+            "MAE": 0.011004692874848843,
+            "MAPE": 1.1759499087929726,
+            "MSE": 0.00014982555876486003
+        }
+    },
+    "checkpoint_path": "checkpoints/DeepOPINN\\XJTU\\R3\\best_deepopinn.pth",
+    "elapsed_seconds": 9.159635543823242
+}

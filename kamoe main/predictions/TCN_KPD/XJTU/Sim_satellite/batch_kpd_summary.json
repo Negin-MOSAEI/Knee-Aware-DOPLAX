@@ -1,0 +1,107 @@
+{
+    "dataset": "XJTU",
+    "batch": "Sim_satellite",
+    "total_batteries": 8,
+    "test_kpd_RMSE": 0.582500696182251,
+    "test_kpd_MAE": 0.30828166007995605,
+    "test_kpd_MSE": 0.3393070697784424,
+    "mean_knee_cycle_error": 20.25,
+    "battery_results": {
+        "Sim_satellite_battery-1": {
+            "split": "train",
+            "cycles": 643,
+            "true_knee_cycle": 557,
+            "pred_knee_cycle": 570,
+            "knee_cycle_error": 13,
+            "kpd_RMSE": 0.5057296752929688,
+            "kpd_MAE": 0.30315548181533813,
+            "kpd_MSE": 0.25576251745224,
+            "csv_path": "predictions/TCN_KPD\\XJTU\\Sim_satellite\\Sim_satellite_battery-1_kpd.csv",
+            "npy_path": "predictions/TCN_KPD\\XJTU\\Sim_satellite\\Sim_satellite_battery-1_pred_kpd.npy"
+        },
+        "Sim_satellite_battery-2": {
+            "split": "train",
+            "cycles": 858,
+            "true_knee_cycle": 770,
+            "pred_knee_cycle": 768,
+            "knee_cycle_error": 2,
+            "kpd_RMSE": 0.4100888669490814,
+            "kpd_MAE": 0.2922048568725586,
+            "kpd_MSE": 0.16817288100719452,
+            "csv_path": "predictions/TCN_KPD\\XJTU\\Sim_satellite\\Sim_satellite_battery-2_kpd.csv",
+            "npy_path": "predictions/TCN_KPD\\XJTU\\Sim_satellite\\Sim_satellite_battery-2_pred_kpd.npy"
+        },
+        "Sim_satellite_battery-5": {
+            "split": "train",
+            "cycles": 869,
+            "true_knee_cycle": 870,
+            "pred_knee_cycle": 846,
+            "knee_cycle_error": 24,
+            "kpd_RMSE": 0.3926396667957306,
+            "kpd_MAE": 0.22348208725452423,
+            "kpd_MSE": 0.15416590869426727,
+            "csv_path": "predictions/TCN_KPD\\XJTU\\Sim_satellite\\Sim_satellite_battery-5_kpd.csv",
+            "npy_path": "predictions/TCN_KPD\\XJTU\\Sim_satellite\\Sim_satellite_battery-5_pred_kpd.npy"
+        },
+        "Sim_satellite_battery-7": {
+            "split": "train",
+            "cycles": 610,
+            "true_knee_cycle": 626,
+            "pred_knee_cycle": 598,
+            "knee_cycle_error": 28,
+            "kpd_RMSE": 0.35445436835289,
+            "kpd_MAE": 0.1803615838289261,
+            "kpd_MSE": 0.12563788890838623,
+            "csv_path": "predictions/TCN_KPD\\XJTU\\Sim_satellite\\Sim_satellite_battery-7_kpd.csv",
+            "npy_path": "predictions/TCN_KPD\\XJTU\\Sim_satellite\\Sim_satellite_battery-7_pred_kpd.npy"
+        },
+        "Sim_satellite_battery-8": {
+            "split": "train",
+            "cycles": 700,
+            "true_knee_cycle": 692,
+            "pred_knee_cycle": 690,
+            "knee_cycle_error": 2,
+            "kpd_RMSE": 0.3154280483722687,
+            "kpd_MAE": 0.17984287440776825,
+            "kpd_MSE": 0.09949484467506409,
+            "csv_path": "predictions/TCN_KPD\\XJTU\\Sim_satellite\\Sim_satellite_battery-8_kpd.csv",
+            "npy_path": "predictions/TCN_KPD\\XJTU\\Sim_satellite\\Sim_satellite_battery-8_pred_kpd.npy"
+        },
+        "Sim_satellite_battery-3": {
+            "split": "valid",
+            "cycles": 602,
+            "true_knee_cycle": 583,
+            "pred_knee_cycle": 600,
+            "knee_cycle_error": 17,
+            "kpd_RMSE": 0.3181122839450836,
+            "kpd_MAE": 0.1348092406988144,
+            "kpd_MSE": 0.10119542479515076,
+            "csv_path": "predictions/TCN_KPD\\XJTU\\Sim_satellite\\Sim_satellite_battery-3_kpd.csv",
+            "npy_path": "predictions/TCN_KPD\\XJTU\\Sim_satellite\\Sim_satellite_battery-3_pred_kpd.npy"
+        },
+        "Sim_satellite_battery-4": {
+            "split": "test",
+            "cycles": 652,
+            "true_knee_cycle": 565,
+            "pred_knee_cycle": 604,
+            "knee_cycle_error": 39,
+            "kpd_RMSE": 0.6313839554786682,
+            "kpd_MAE": 0.36756011843681335,
+            "kpd_MSE": 0.3986457288265228,
+            "csv_path": "predictions/TCN_KPD\\XJTU\\Sim_satellite\\Sim_satellite_battery-4_kpd.csv",
+            "npy_path": "predictions/TCN_KPD\\XJTU\\Sim_satellite\\Sim_satellite_battery-4_pred_kpd.npy"
+        },
+        "Sim_satellite_battery-6": {
+            "split": "test",
+            "cycles": 731,
+            "true_knee_cycle": 655,
+            "pred_knee_cycle": 692,
+            "knee_cycle_error": 37,
+            "kpd_RMSE": 0.5351458787918091,
+            "kpd_MAE": 0.25540947914123535,
+            "kpd_MSE": 0.2863810956478119,
+            "csv_path": "predictions/TCN_KPD\\XJTU\\Sim_satellite\\Sim_satellite_battery-6_kpd.csv",
+            "npy_path": "predictions/TCN_KPD\\XJTU\\Sim_satellite\\Sim_satellite_battery-6_pred_kpd.npy"
+        }
+    }
+}

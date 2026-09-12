@@ -1,0 +1,21 @@
+2026-09-12 15:59:05,268 - INFO - ==================================================
+2026-09-12 15:59:05,269 - INFO - Starting TCN Training for [XJTU] - [Sim_satellite]
+2026-09-12 15:59:05,269 - INFO - Device: cuda | Epochs: 300 | LR: 0.001 | EarlyStop: 40
+2026-09-12 15:59:05,269 - INFO - ==================================================
+2026-09-12 15:59:05,354 - INFO - Data Splits: Train=5, Val=1, Test=2
+2026-09-12 15:59:05,460 - INFO - Epoch [   1/300] - LR: 0.000145 | New best validation loss: 2.012350 (improved from inf) -> Saved model
+2026-09-12 15:59:06,324 - INFO - Epoch [  20/300] - LR: 0.001000 | New best validation loss: 0.193532 (improved from 0.202196) -> Saved model
+2026-09-12 15:59:06,324 - INFO - Epoch [  20/300] - LR: 0.001000 | Train Loss: 0.315279 | Val Loss: 0.193532 (Best Val Loss: 0.193532 @ Ep 20)
+2026-09-12 15:59:07,198 - INFO - Epoch [  40/300] - LR: 0.000987 | New best validation loss: 0.101195 (improved from 0.112116) -> Saved model
+2026-09-12 15:59:07,198 - INFO - Epoch [  40/300] - LR: 0.000987 | Train Loss: 0.179187 | Val Loss: 0.101195 (Best Val Loss: 0.101195 @ Ep 40)
+2026-09-12 15:59:08,052 - INFO - Epoch [  60/300] - LR: 0.000951 | Train Loss: 0.074401 | Val Loss: 0.214776 (Best Val Loss: 0.101195 @ Ep 40)
+2026-09-12 15:59:08,932 - INFO - Epoch [  80/300] - LR: 0.000891 | Train Loss: 0.032380 | Val Loss: 0.224299 (Best Val Loss: 0.101195 @ Ep 40)
+2026-09-12 15:59:08,932 - INFO - Early stopping triggered at epoch 80 (Validation loss did not improve for 40 epochs).
+2026-09-12 15:59:08,932 - INFO - Training completed in 3.57s. Best Model selected from Epoch 40 with lowest Validation Loss: 0.101195
+2026-09-12 15:59:08,953 - INFO - --------------------------------------------------
+2026-09-12 15:59:08,953 - INFO - Test Evaluation Results for [XJTU] - [Sim_satellite]:
+2026-09-12 15:59:08,954 - INFO -   MSE:  0.339307
+2026-09-12 15:59:08,954 - INFO -   RMSE: 0.582501
+2026-09-12 15:59:08,954 - INFO -   MAE:  0.308282
+2026-09-12 15:59:08,955 - INFO -   MAPE: 14555293.750000%
+2026-09-12 15:59:08,955 - INFO - --------------------------------------------------

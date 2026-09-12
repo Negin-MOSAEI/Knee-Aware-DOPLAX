@@ -1,0 +1,32 @@
+2026-09-12 16:03:32,923 - INFO - ==================================================
+2026-09-12 16:03:32,923 - INFO - Starting DeepOPINN Training for [MIT] - [2017-05-12]
+2026-09-12 16:03:32,923 - INFO - Device: cuda | Epochs: 2000 | LR: 0.000117 | Alpha (PDE): 0.88432 | Beta (Mono): 0.02840
+2026-09-12 16:03:32,923 - INFO - ==================================================
+2026-09-12 16:03:33,653 - INFO - Data Splits: Train=32, Val=7, Test=7
+2026-09-12 16:03:34,912 - INFO - Epoch [   1/2000] LR: 0.006038 | Train Loss: 0.141211 (Data: 0.13808, PDE*kpd: 0.00354, Mono: 0.00002) | Val MSE: 0.001886 (RMSE: 0.0434) [BEST]
+2026-09-12 16:03:35,382 - INFO - Epoch [   2/2000] LR: 0.005917 | Train Loss: 0.006573 (Data: 0.00444, PDE*kpd: 0.00241, Mono: 0.00001) | Val MSE: 0.000700 (RMSE: 0.0265) [BEST]
+2026-09-12 16:03:35,860 - INFO - Epoch [   3/2000] LR: 0.005796 | Train Loss: 0.004237 (Data: 0.00269, PDE*kpd: 0.00175, Mono: 0.00001) | Val MSE: 0.000229 (RMSE: 0.0151) [BEST]
+2026-09-12 16:03:36,198 - INFO - Epoch [   4/2000] LR: 0.005676 | Train Loss: 0.003393 (Data: 0.00219, PDE*kpd: 0.00136, Mono: 0.00001) | Val MSE: 0.000160 (RMSE: 0.0127) [BEST]
+2026-09-12 16:03:36,515 - INFO - Epoch [   5/2000] LR: 0.005555 | Train Loss: 0.002590 (Data: 0.00163, PDE*kpd: 0.00108, Mono: 0.00001) | Val MSE: 0.000091 (RMSE: 0.0096) [BEST]
+2026-09-12 16:03:38,149 - INFO - Epoch [   9/2000] LR: 0.005071 | Train Loss: 0.001333 (Data: 0.00084, PDE*kpd: 0.00056, Mono: 0.00001) | Val MSE: 0.000080 (RMSE: 0.0089) [BEST]
+2026-09-12 16:03:38,567 - INFO - Epoch [  10/2000] LR: 0.004951 | Train Loss: 0.001170 (Data: 0.00073, PDE*kpd: 0.00050, Mono: 0.00000) | Val MSE: 0.000129 (RMSE: 0.0113) 
+2026-09-12 16:03:40,526 - INFO - Epoch [  15/2000] LR: 0.004346 | Train Loss: 0.000705 (Data: 0.00044, PDE*kpd: 0.00030, Mono: 0.00000) | Val MSE: 0.000058 (RMSE: 0.0076) [BEST]
+2026-09-12 16:03:42,587 - INFO - Epoch [  20/2000] LR: 0.003742 | Train Loss: 0.000509 (Data: 0.00033, PDE*kpd: 0.00021, Mono: 0.00000) | Val MSE: 0.000105 (RMSE: 0.0102) 
+2026-09-12 16:03:45,731 - INFO - Epoch [  28/2000] LR: 0.002776 | Train Loss: 0.000367 (Data: 0.00025, PDE*kpd: 0.00013, Mono: 0.00000) | Val MSE: 0.000056 (RMSE: 0.0075) [BEST]
+2026-09-12 16:03:46,586 - INFO - Epoch [  30/2000] LR: 0.002534 | Train Loss: 0.000340 (Data: 0.00024, PDE*kpd: 0.00011, Mono: 0.00000) | Val MSE: 0.000072 (RMSE: 0.0085) 
+2026-09-12 16:03:50,525 - INFO - Epoch [  40/2000] LR: 0.001326 | Train Loss: 0.000210 (Data: 0.00015, PDE*kpd: 0.00007, Mono: 0.00000) | Val MSE: 0.000089 (RMSE: 0.0094) 
+2026-09-12 16:03:54,373 - INFO - Epoch [  50/2000] LR: 0.000117 | Train Loss: 0.000167 (Data: 0.00013, PDE*kpd: 0.00005, Mono: 0.00000) | Val MSE: 0.000082 (RMSE: 0.0090) 
+2026-09-12 16:03:57,903 - INFO - Epoch [  60/2000] LR: 0.000117 | Train Loss: 0.000152 (Data: 0.00013, PDE*kpd: 0.00003, Mono: 0.00000) | Val MSE: 0.000083 (RMSE: 0.0091) 
+2026-09-12 16:04:01,489 - INFO - Epoch [  70/2000] LR: 0.000117 | Train Loss: 0.000144 (Data: 0.00013, PDE*kpd: 0.00002, Mono: 0.00000) | Val MSE: 0.000088 (RMSE: 0.0094) 
+2026-09-12 16:04:04,914 - INFO - Epoch [  80/2000] LR: 0.000117 | Train Loss: 0.000133 (Data: 0.00012, PDE*kpd: 0.00001, Mono: 0.00000) | Val MSE: 0.000084 (RMSE: 0.0092) 
+2026-09-12 16:04:08,353 - INFO - Epoch [  90/2000] LR: 0.000117 | Train Loss: 0.000130 (Data: 0.00012, PDE*kpd: 0.00001, Mono: 0.00000) | Val MSE: 0.000089 (RMSE: 0.0094) 
+2026-09-12 16:04:11,537 - INFO - Epoch [ 100/2000] LR: 0.000117 | Train Loss: 0.000129 (Data: 0.00012, PDE*kpd: 0.00001, Mono: 0.00000) | Val MSE: 0.000090 (RMSE: 0.0095) 
+2026-09-12 16:04:14,296 - INFO - [*] Early stopping triggered at epoch 108. Best epoch was 28 with Val MSE: 0.000056
+2026-09-12 16:04:14,296 - INFO - Training completed in 40.63s. Loading best checkpoint from epoch 28 for final test evaluation...
+2026-09-12 16:04:14,335 - INFO - ==================================================
+2026-09-12 16:04:14,335 - INFO - Test Results for [MIT] - [2017-05-12] (Best Epoch 28):
+2026-09-12 16:04:14,335 - INFO -   Test RMSE: 0.014046
+2026-09-12 16:04:14,336 - INFO -   Test MAE:  0.010176
+2026-09-12 16:04:14,336 - INFO -   Test MAPE: 1.085190
+2026-09-12 16:04:14,336 - INFO -   Test MSE:  0.000197
+2026-09-12 16:04:14,336 - INFO - ==================================================

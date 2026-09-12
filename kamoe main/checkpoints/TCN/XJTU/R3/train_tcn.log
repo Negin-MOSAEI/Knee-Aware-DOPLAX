@@ -1,0 +1,19 @@
+2026-09-12 15:58:59,446 - INFO - ==================================================
+2026-09-12 15:58:59,446 - INFO - Starting TCN Training for [XJTU] - [R3]
+2026-09-12 15:58:59,446 - INFO - Device: cuda | Epochs: 300 | LR: 0.001 | EarlyStop: 40
+2026-09-12 15:58:59,446 - INFO - ==================================================
+2026-09-12 15:58:59,521 - INFO - Data Splits: Train=5, Val=1, Test=2
+2026-09-12 15:58:59,636 - INFO - Epoch [   1/300] - LR: 0.000145 | New best validation loss: 2.116630 (improved from inf) -> Saved model
+2026-09-12 15:59:00,101 - INFO - Epoch [  10/300] - LR: 0.000550 | New best validation loss: 0.539487 (improved from 0.687496) -> Saved model
+2026-09-12 15:59:00,588 - INFO - Epoch [  20/300] - LR: 0.001000 | Train Loss: 0.189466 | Val Loss: 0.310132 (Best Val Loss: 0.224146 @ Ep 19)
+2026-09-12 15:59:01,450 - INFO - Epoch [  40/300] - LR: 0.000987 | Train Loss: 0.051244 | Val Loss: 0.362602 (Best Val Loss: 0.144156 @ Ep 24)
+2026-09-12 15:59:02,333 - INFO - Epoch [  60/300] - LR: 0.000951 | Train Loss: 0.030536 | Val Loss: 0.470487 (Best Val Loss: 0.144156 @ Ep 24)
+2026-09-12 15:59:02,493 - INFO - Early stopping triggered at epoch 64 (Validation loss did not improve for 40 epochs).
+2026-09-12 15:59:02,493 - INFO - Training completed in 2.97s. Best Model selected from Epoch 24 with lowest Validation Loss: 0.144156
+2026-09-12 15:59:02,510 - INFO - --------------------------------------------------
+2026-09-12 15:59:02,510 - INFO - Test Evaluation Results for [XJTU] - [R3]:
+2026-09-12 15:59:02,510 - INFO -   MSE:  0.184179
+2026-09-12 15:59:02,511 - INFO -   RMSE: 0.429161
+2026-09-12 15:59:02,511 - INFO -   MAE:  0.236094
+2026-09-12 15:59:02,511 - INFO -   MAPE: 11690098.437500%
+2026-09-12 15:59:02,511 - INFO - --------------------------------------------------

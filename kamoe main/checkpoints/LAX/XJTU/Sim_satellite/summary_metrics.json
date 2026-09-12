@@ -1,0 +1,26 @@
+{
+    "dataset": "XJTU",
+    "batch": "Sim_satellite",
+    "best_epoch": 45,
+    "best_val_loss": 6.30406939308159e-05,
+    "test_RMSE": 0.017259862273931503,
+    "test_MAE": 0.013076549395918846,
+    "test_MAPE": 1.403752714395523,
+    "test_MSE": 0.0002979028213303536,
+    "battery_metrics": {
+        "Sim_satellite_battery-4": {
+            "RMSE": 0.014306881465017796,
+            "MAE": 0.007443729322403669,
+            "MAPE": 0.8368253707885742,
+            "MSE": 0.00020468684670049697
+        },
+        "Sim_satellite_battery-6": {
+            "RMSE": 0.019520370289683342,
+            "MAE": 0.018100623041391373,
+            "MAPE": 1.9094116985797882,
+            "MSE": 0.00038104483974166214
+        }
+    },
+    "checkpoint_path": "checkpoints/LAX\\XJTU\\Sim_satellite\\best_lax.pth",
+    "elapsed_seconds": 6.695293426513672
+}

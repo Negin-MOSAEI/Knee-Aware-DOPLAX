@@ -1,0 +1,20 @@
+2026-09-12 15:55:47,975 - INFO - ==================================================
+2026-09-12 15:55:47,976 - INFO - Starting TCN Training for [MIT] - [2017-06-30]
+2026-09-12 15:55:47,976 - INFO - Device: cuda | Epochs: 300 | LR: 0.001 | EarlyStop: 40
+2026-09-12 15:55:47,976 - INFO - ==================================================
+2026-09-12 15:55:48,417 - INFO - Data Splits: Train=30, Val=6, Test=7
+2026-09-12 15:55:49,216 - INFO - Epoch [   1/300] - LR: 0.000145 | New best validation loss: 0.498504 (improved from inf) -> Saved model
+2026-09-12 15:55:54,169 - INFO - Epoch [  20/300] - LR: 0.001000 | Train Loss: 0.209243 | Val Loss: 0.102641 (Best Val Loss: 0.085764 @ Ep 18)
+2026-09-12 15:55:59,323 - INFO - Epoch [  40/300] - LR: 0.000987 | Train Loss: 0.156699 | Val Loss: 0.122650 (Best Val Loss: 0.080167 @ Ep 25)
+2026-09-12 15:56:05,450 - INFO - Epoch [  60/300] - LR: 0.000951 | Train Loss: 0.113210 | Val Loss: 0.134987 (Best Val Loss: 0.080167 @ Ep 25)
+2026-09-12 15:56:13,277 - INFO - Epoch [  80/300] - LR: 0.000891 | Train Loss: 0.076557 | Val Loss: 0.096437 (Best Val Loss: 0.078244 @ Ep 63)
+2026-09-12 15:56:22,585 - INFO - Epoch [ 100/300] - LR: 0.000812 | Train Loss: 0.055269 | Val Loss: 0.128582 (Best Val Loss: 0.078244 @ Ep 63)
+2026-09-12 15:56:23,700 - INFO - Early stopping triggered at epoch 103 (Validation loss did not improve for 40 epochs).
+2026-09-12 15:56:23,700 - INFO - Training completed in 35.27s. Best Model selected from Epoch 63 with lowest Validation Loss: 0.078244
+2026-09-12 15:56:23,760 - INFO - --------------------------------------------------
+2026-09-12 15:56:23,760 - INFO - Test Evaluation Results for [MIT] - [2017-06-30]:
+2026-09-12 15:56:23,760 - INFO -   MSE:  0.502886
+2026-09-12 15:56:23,760 - INFO -   RMSE: 0.709145
+2026-09-12 15:56:23,760 - INFO -   MAE:  0.254657
+2026-09-12 15:56:23,760 - INFO -   MAPE: 36455425.000000%
+2026-09-12 15:56:23,760 - INFO - --------------------------------------------------

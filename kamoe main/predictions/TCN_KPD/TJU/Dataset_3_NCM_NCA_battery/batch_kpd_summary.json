@@ -1,0 +1,119 @@
+{
+    "dataset": "TJU",
+    "batch": "Dataset_3_NCM_NCA_battery",
+    "total_batteries": 9,
+    "test_kpd_RMSE": 0.6016218662261963,
+    "test_kpd_MAE": 0.35303688049316406,
+    "test_kpd_MSE": 0.3619488775730133,
+    "mean_knee_cycle_error": 61.0,
+    "battery_results": {
+        "CY25-05_1-#1": {
+            "split": "train",
+            "cycles": 886,
+            "true_knee_cycle": 817,
+            "pred_knee_cycle": 815,
+            "knee_cycle_error": 2,
+            "kpd_RMSE": 0.47249263525009155,
+            "kpd_MAE": 0.32702499628067017,
+            "kpd_MSE": 0.22324928641319275,
+            "csv_path": "predictions/TCN_KPD\\TJU\\Dataset_3_NCM_NCA_battery\\CY25-05_1-#1_kpd.csv",
+            "npy_path": "predictions/TCN_KPD\\TJU\\Dataset_3_NCM_NCA_battery\\CY25-05_1-#1_pred_kpd.npy"
+        },
+        "CY25-05_1-#3": {
+            "split": "train",
+            "cycles": 937,
+            "true_knee_cycle": 817,
+            "pred_knee_cycle": 816,
+            "knee_cycle_error": 1,
+            "kpd_RMSE": 0.46137017011642456,
+            "kpd_MAE": 0.31513071060180664,
+            "kpd_MSE": 0.21286244690418243,
+            "csv_path": "predictions/TCN_KPD\\TJU\\Dataset_3_NCM_NCA_battery\\CY25-05_1-#3_kpd.csv",
+            "npy_path": "predictions/TCN_KPD\\TJU\\Dataset_3_NCM_NCA_battery\\CY25-05_1-#3_pred_kpd.npy"
+        },
+        "CY25-05_2-#1": {
+            "split": "train",
+            "cycles": 925,
+            "true_knee_cycle": 942,
+            "pred_knee_cycle": 816,
+            "knee_cycle_error": 126,
+            "kpd_RMSE": 0.8336609601974487,
+            "kpd_MAE": 0.4801912009716034,
+            "kpd_MSE": 0.6949906349182129,
+            "csv_path": "predictions/TCN_KPD\\TJU\\Dataset_3_NCM_NCA_battery\\CY25-05_2-#1_kpd.csv",
+            "npy_path": "predictions/TCN_KPD\\TJU\\Dataset_3_NCM_NCA_battery\\CY25-05_2-#1_pred_kpd.npy"
+        },
+        "CY25-05_2-#2": {
+            "split": "train",
+            "cycles": 902,
+            "true_knee_cycle": 876,
+            "pred_knee_cycle": 815,
+            "knee_cycle_error": 61,
+            "kpd_RMSE": 0.6464293003082275,
+            "kpd_MAE": 0.3844124972820282,
+            "kpd_MSE": 0.4178708493709564,
+            "csv_path": "predictions/TCN_KPD\\TJU\\Dataset_3_NCM_NCA_battery\\CY25-05_2-#2_kpd.csv",
+            "npy_path": "predictions/TCN_KPD\\TJU\\Dataset_3_NCM_NCA_battery\\CY25-05_2-#2_pred_kpd.npy"
+        },
+        "CY25-05_4-#2": {
+            "split": "train",
+            "cycles": 921,
+            "true_knee_cycle": 867,
+            "pred_knee_cycle": 815,
+            "knee_cycle_error": 52,
+            "kpd_RMSE": 0.6534401774406433,
+            "kpd_MAE": 0.43360599875450134,
+            "kpd_MSE": 0.42698410153388977,
+            "csv_path": "predictions/TCN_KPD\\TJU\\Dataset_3_NCM_NCA_battery\\CY25-05_4-#2_kpd.csv",
+            "npy_path": "predictions/TCN_KPD\\TJU\\Dataset_3_NCM_NCA_battery\\CY25-05_4-#2_pred_kpd.npy"
+        },
+        "CY25-05_4-#3": {
+            "split": "train",
+            "cycles": 857,
+            "true_knee_cycle": 665,
+            "pred_knee_cycle": 815,
+            "knee_cycle_error": 150,
+            "kpd_RMSE": 0.9462141990661621,
+            "kpd_MAE": 0.5769546627998352,
+            "kpd_MSE": 0.8953213095664978,
+            "csv_path": "predictions/TCN_KPD\\TJU\\Dataset_3_NCM_NCA_battery\\CY25-05_4-#3_kpd.csv",
+            "npy_path": "predictions/TCN_KPD\\TJU\\Dataset_3_NCM_NCA_battery\\CY25-05_4-#3_pred_kpd.npy"
+        },
+        "CY25-05_2-#3": {
+            "split": "valid",
+            "cycles": 964,
+            "true_knee_cycle": 768,
+            "pred_knee_cycle": 816,
+            "knee_cycle_error": 48,
+            "kpd_RMSE": 0.6143732070922852,
+            "kpd_MAE": 0.37844371795654297,
+            "kpd_MSE": 0.3774544596672058,
+            "csv_path": "predictions/TCN_KPD\\TJU\\Dataset_3_NCM_NCA_battery\\CY25-05_2-#3_kpd.csv",
+            "npy_path": "predictions/TCN_KPD\\TJU\\Dataset_3_NCM_NCA_battery\\CY25-05_2-#3_pred_kpd.npy"
+        },
+        "CY25-05_1-#2": {
+            "split": "test",
+            "cycles": 904,
+            "true_knee_cycle": 869,
+            "pred_knee_cycle": 816,
+            "knee_cycle_error": 53,
+            "kpd_RMSE": 0.6042546033859253,
+            "kpd_MAE": 0.35776039958000183,
+            "kpd_MSE": 0.3651236593723297,
+            "csv_path": "predictions/TCN_KPD\\TJU\\Dataset_3_NCM_NCA_battery\\CY25-05_1-#2_kpd.csv",
+            "npy_path": "predictions/TCN_KPD\\TJU\\Dataset_3_NCM_NCA_battery\\CY25-05_1-#2_pred_kpd.npy"
+        },
+        "CY25-05_4-#1": {
+            "split": "test",
+            "cycles": 929,
+            "true_knee_cycle": 872,
+            "pred_knee_cycle": 816,
+            "knee_cycle_error": 56,
+            "kpd_RMSE": 0.5990488529205322,
+            "kpd_MAE": 0.34844040870666504,
+            "kpd_MSE": 0.35885950922966003,
+            "csv_path": "predictions/TCN_KPD\\TJU\\Dataset_3_NCM_NCA_battery\\CY25-05_4-#1_kpd.csv",
+            "npy_path": "predictions/TCN_KPD\\TJU\\Dataset_3_NCM_NCA_battery\\CY25-05_4-#1_pred_kpd.npy"
+        }
+    }
+}
