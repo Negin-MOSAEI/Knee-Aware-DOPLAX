@@ -16,16 +16,16 @@
         "RMSE": 0.013380548916757107
     },
     "test_Fusion_Raw": {
-        "MAE": 0.009528698399662971,
-        "MAPE": 0.9694374166429043,
-        "MSE": 0.00016633004997856915,
-        "RMSE": 0.012896900996565819
+        "MAE": 0.009294172748923302,
+        "MAPE": 0.9444844909012318,
+        "MSE": 0.00016127017443068326,
+        "RMSE": 0.012699219398200512
     },
     "test_Fusion_Post": {
-        "MAE": 0.009476804855655958,
-        "MAPE": 0.9642307660619261,
-        "MSE": 0.00016478738226685872,
-        "RMSE": 0.01283695377676724
+        "MAE": 0.009220085007868277,
+        "MAPE": 0.9370231948428139,
+        "MSE": 0.0001591705962803682,
+        "RMSE": 0.01261628298193918
     },
     "test_KPD": {
         "MAE": 0.2563244104385376,
@@ -43,10 +43,10 @@
             "KPD_RMSE": 0.24495333433151245,
             "DeepOPINN_RMSE": 0.008841515518724918,
             "LAX_RMSE": 0.008565451018512249,
-            "Fusion_Raw_RMSE": 0.008765908889472485,
-            "Fusion_Post_RMSE": 0.008650570295570773,
-            "Fusion_Post_MAE": 0.0076046309118697865,
-            "Fusion_Post_MAPE": 0.7590300384272699,
+            "Fusion_Raw_RMSE": 0.0072189811617136,
+            "Fusion_Post_RMSE": 0.007021489275654614,
+            "Fusion_Post_MAE": 0.005913924297706562,
+            "Fusion_Post_MAPE": 0.5860981909363644,
             "csv_path": "predictions/Inference\\HUST\\default\\1-1_full_pred.csv"
         },
         "1-3": {
@@ -58,10 +58,10 @@
             "KPD_RMSE": 0.19254067540168762,
             "DeepOPINN_RMSE": 0.008137366734445095,
             "LAX_RMSE": 0.011724701151251793,
-            "Fusion_Raw_RMSE": 0.009342645294964314,
-            "Fusion_Post_RMSE": 0.00931120327340307,
-            "Fusion_Post_MAE": 0.008510334435988044,
-            "Fusion_Post_MAPE": 0.8541358474886348,
+            "Fusion_Raw_RMSE": 0.0074382200837135315,
+            "Fusion_Post_RMSE": 0.0073407158314369135,
+            "Fusion_Post_MAE": 0.006513114936279035,
+            "Fusion_Post_MAPE": 0.6489111418634916,
             "csv_path": "predictions/Inference\\HUST\\default\\1-3_full_pred.csv"
         },
         "1-6": {
@@ -73,10 +73,10 @@
             "KPD_RMSE": 0.2720559537410736,
             "DeepOPINN_RMSE": 0.01148063875734806,
             "LAX_RMSE": 0.01791592501103878,
-            "Fusion_Raw_RMSE": 0.013543738052248955,
-            "Fusion_Post_RMSE": 0.013380564557689252,
-            "Fusion_Post_MAE": 0.012042793338453624,
-            "Fusion_Post_MAPE": 1.2231602076782526,
+            "Fusion_Raw_RMSE": 0.011140335351228714,
+            "Fusion_Post_RMSE": 0.010768864138973974,
+            "Fusion_Post_MAE": 0.009183138982490659,
+            "Fusion_Post_MAPE": 0.9229950165703016,
             "csv_path": "predictions/Inference\\HUST\\default\\1-6_full_pred.csv"
         },
         "1-7": {
@@ -88,10 +88,10 @@
             "KPD_RMSE": 0.6702070236206055,
             "DeepOPINN_RMSE": 0.005287044681608677,
             "LAX_RMSE": 0.004539682064205408,
-            "Fusion_Raw_RMSE": 0.005396418739110231,
-            "Fusion_Post_RMSE": 0.005274646011895207,
-            "Fusion_Post_MAE": 0.004943569791595443,
-            "Fusion_Post_MAPE": 0.5115805891327201,
+            "Fusion_Raw_RMSE": 0.004347541835159063,
+            "Fusion_Post_RMSE": 0.0041399637787009405,
+            "Fusion_Post_MAE": 0.0035392971228367337,
+            "Fusion_Post_MAPE": 0.36878219062191453,
             "csv_path": "predictions/Inference\\HUST\\default\\1-7_full_pred.csv"
         },
         "1-8": {
@@ -103,10 +103,10 @@
             "KPD_RMSE": 0.2607642114162445,
             "DeepOPINN_RMSE": 0.007370456121861935,
             "LAX_RMSE": 0.0077219754457473755,
-            "Fusion_Raw_RMSE": 0.010102992877364159,
-            "Fusion_Post_RMSE": 0.01004777090293057,
-            "Fusion_Post_MAE": 0.008767094892049784,
-            "Fusion_Post_MAPE": 0.9274505107797151,
+            "Fusion_Raw_RMSE": 0.0073249186389148235,
+            "Fusion_Post_RMSE": 0.007227235116810586,
+            "Fusion_Post_MAE": 0.006499348640145354,
+            "Fusion_Post_MAPE": 0.6801955981406004,
             "csv_path": "predictions/Inference\\HUST\\default\\1-8_full_pred.csv"
         },
         "10-1": {
@@ -118,10 +118,10 @@
             "KPD_RMSE": 0.3468398451805115,
             "DeepOPINN_RMSE": 0.005821161903440952,
             "LAX_RMSE": 0.0078009204007685184,
-            "Fusion_Raw_RMSE": 0.00760909216478467,
-            "Fusion_Post_RMSE": 0.007513191378312778,
-            "Fusion_Post_MAE": 0.007168863973906979,
-            "Fusion_Post_MAPE": 0.7324957310730029,
+            "Fusion_Raw_RMSE": 0.0058136675506830215,
+            "Fusion_Post_RMSE": 0.005640702594331119,
+            "Fusion_Post_MAE": 0.0052053617780251065,
+            "Fusion_Post_MAPE": 0.5379955344972333,
             "csv_path": "predictions/Inference\\HUST\\default\\10-1_full_pred.csv"
         },
         "10-2": {
@@ -133,10 +133,10 @@
             "KPD_RMSE": 0.19964659214019775,
             "DeepOPINN_RMSE": 0.007759540341794491,
             "LAX_RMSE": 0.006545341573655605,
-            "Fusion_Raw_RMSE": 0.007475243881344795,
-            "Fusion_Post_RMSE": 0.00740462081235166,
-            "Fusion_Post_MAE": 0.005307519216025874,
-            "Fusion_Post_MAPE": 0.5568968358510554,
+            "Fusion_Raw_RMSE": 0.007792431395500898,
+            "Fusion_Post_RMSE": 0.0076602722062493024,
+            "Fusion_Post_MAE": 0.005044868990754307,
+            "Fusion_Post_MAPE": 0.5340188997718474,
             "csv_path": "predictions/Inference\\HUST\\default\\10-2_full_pred.csv"
         },
         "10-3": {
@@ -148,10 +148,10 @@
             "KPD_RMSE": 0.24017205834388733,
             "DeepOPINN_RMSE": 0.006357183214277029,
             "LAX_RMSE": 0.007925641722977161,
-            "Fusion_Raw_RMSE": 0.008390062488615513,
-            "Fusion_Post_RMSE": 0.008241328037582566,
-            "Fusion_Post_MAE": 0.006380183555874421,
-            "Fusion_Post_MAPE": 0.670373768228706,
+            "Fusion_Raw_RMSE": 0.007953653112053871,
+            "Fusion_Post_RMSE": 0.007795792185500945,
+            "Fusion_Post_MAE": 0.005052543927480774,
+            "Fusion_Post_MAPE": 0.5400382940067373,
             "csv_path": "predictions/Inference\\HUST\\default\\10-3_full_pred.csv"
         },
         "10-8": {
@@ -163,10 +163,10 @@
             "KPD_RMSE": 0.37650051712989807,
             "DeepOPINN_RMSE": 0.004261389374732971,
             "LAX_RMSE": 0.005095432046800852,
-            "Fusion_Raw_RMSE": 0.004648489411920309,
-            "Fusion_Post_RMSE": 0.004425582132441171,
-            "Fusion_Post_MAE": 0.004034299602941308,
-            "Fusion_Post_MAPE": 0.40876403985221754,
+            "Fusion_Raw_RMSE": 0.0034515922889113426,
+            "Fusion_Post_RMSE": 0.00304605846032923,
+            "Fusion_Post_MAE": 0.002716243115216848,
+            "Fusion_Post_MAPE": 0.27582193567009294,
             "csv_path": "predictions/Inference\\HUST\\default\\10-8_full_pred.csv"
         },
         "2-2": {
@@ -178,10 +178,10 @@
             "KPD_RMSE": 0.653523862361908,
             "DeepOPINN_RMSE": 0.012248987331986427,
             "LAX_RMSE": 0.013598841615021229,
-            "Fusion_Raw_RMSE": 0.012982035987079144,
-            "Fusion_Post_RMSE": 0.01294377070277943,
-            "Fusion_Post_MAE": 0.010595239181089995,
-            "Fusion_Post_MAPE": 1.081125243594687,
+            "Fusion_Raw_RMSE": 0.01389924343675375,
+            "Fusion_Post_RMSE": 0.013839875159476399,
+            "Fusion_Post_MAE": 0.011995229934015823,
+            "Fusion_Post_MAPE": 1.220805676175017,
             "csv_path": "predictions/Inference\\HUST\\default\\2-2_full_pred.csv"
         },
         "2-4": {
@@ -193,10 +193,10 @@
             "KPD_RMSE": 0.2921673059463501,
             "DeepOPINN_RMSE": 0.007738932501524687,
             "LAX_RMSE": 0.006765282712876797,
-            "Fusion_Raw_RMSE": 0.007587702013552189,
-            "Fusion_Post_RMSE": 0.007476575191647275,
-            "Fusion_Post_MAE": 0.0063694002558323535,
-            "Fusion_Post_MAPE": 0.6493537619647385,
+            "Fusion_Raw_RMSE": 0.006002315320074558,
+            "Fusion_Post_RMSE": 0.005845588183523474,
+            "Fusion_Post_MAE": 0.005038287823257773,
+            "Fusion_Post_MAPE": 0.5136353424943811,
             "csv_path": "predictions/Inference\\HUST\\default\\2-4_full_pred.csv"
         },
         "2-5": {
@@ -208,10 +208,10 @@
             "KPD_RMSE": 0.33993154764175415,
             "DeepOPINN_RMSE": 0.014978875406086445,
             "LAX_RMSE": 0.02112995646893978,
-            "Fusion_Raw_RMSE": 0.017076237127184868,
-            "Fusion_Post_RMSE": 0.017044601065849936,
-            "Fusion_Post_MAE": 0.016518843582642787,
-            "Fusion_Post_MAPE": 1.69503735599629,
+            "Fusion_Raw_RMSE": 0.014596570283174515,
+            "Fusion_Post_RMSE": 0.014512059049831227,
+            "Fusion_Post_MAE": 0.01381500504610121,
+            "Fusion_Post_MAPE": 1.4145777158935633,
             "csv_path": "predictions/Inference\\HUST\\default\\2-5_full_pred.csv"
         },
         "2-6": {
@@ -223,10 +223,10 @@
             "KPD_RMSE": 0.2933725416660309,
             "DeepOPINN_RMSE": 0.006038124207407236,
             "LAX_RMSE": 0.009580499492585659,
-            "Fusion_Raw_RMSE": 0.007098001427948475,
-            "Fusion_Post_RMSE": 0.007058028234574998,
-            "Fusion_Post_MAE": 0.00493862237900236,
-            "Fusion_Post_MAPE": 0.512120484231515,
+            "Fusion_Raw_RMSE": 0.007142915856093168,
+            "Fusion_Post_RMSE": 0.007052752438283073,
+            "Fusion_Post_MAE": 0.004678260463078943,
+            "Fusion_Post_MAPE": 0.4920144410768155,
             "csv_path": "predictions/Inference\\HUST\\default\\2-6_full_pred.csv"
         },
         "2-7": {
@@ -238,10 +238,10 @@
             "KPD_RMSE": 0.2988021671772003,
             "DeepOPINN_RMSE": 0.006794019136577845,
             "LAX_RMSE": 0.007527476642280817,
-            "Fusion_Raw_RMSE": 0.005285033490508795,
-            "Fusion_Post_RMSE": 0.005172006317808593,
-            "Fusion_Post_MAE": 0.00429218604170367,
-            "Fusion_Post_MAPE": 0.4392880167632863,
+            "Fusion_Raw_RMSE": 0.00622211629524827,
+            "Fusion_Post_RMSE": 0.006063265392545179,
+            "Fusion_Post_MAE": 0.005110637943803086,
+            "Fusion_Post_MAPE": 0.5328955561317994,
             "csv_path": "predictions/Inference\\HUST\\default\\2-7_full_pred.csv"
         },
         "2-8": {
@@ -253,10 +253,10 @@
             "KPD_RMSE": 0.18253973126411438,
             "DeepOPINN_RMSE": 0.00422950554639101,
             "LAX_RMSE": 0.005956005770713091,
-            "Fusion_Raw_RMSE": 0.006033080630004406,
-            "Fusion_Post_RMSE": 0.0058506782569090875,
-            "Fusion_Post_MAE": 0.005379477203895226,
-            "Fusion_Post_MAPE": 0.5526863183954286,
+            "Fusion_Raw_RMSE": 0.0040888236835598946,
+            "Fusion_Post_RMSE": 0.0037355557141314387,
+            "Fusion_Post_MAE": 0.0029678503763402022,
+            "Fusion_Post_MAPE": 0.31228559958325686,
             "csv_path": "predictions/Inference\\HUST\\default\\2-8_full_pred.csv"
         },
         "3-1": {
@@ -268,10 +268,10 @@
             "KPD_RMSE": 0.5271888971328735,
             "DeepOPINN_RMSE": 0.004816470667719841,
             "LAX_RMSE": 0.0062227449379861355,
-            "Fusion_Raw_RMSE": 0.004729720763862133,
-            "Fusion_Post_RMSE": 0.004694223852559822,
-            "Fusion_Post_MAE": 0.004016785983547608,
-            "Fusion_Post_MAPE": 0.416234238985211,
+            "Fusion_Raw_RMSE": 0.004117287695407867,
+            "Fusion_Post_RMSE": 0.004031402449122313,
+            "Fusion_Post_MAE": 0.0031585503458946692,
+            "Fusion_Post_MAPE": 0.3293644501097681,
             "csv_path": "predictions/Inference\\HUST\\default\\3-1_full_pred.csv"
         },
         "3-2": {
@@ -283,10 +283,10 @@
             "KPD_RMSE": 0.1135486513376236,
             "DeepOPINN_RMSE": 0.006461766082793474,
             "LAX_RMSE": 0.005194852128624916,
-            "Fusion_Raw_RMSE": 0.007348259910941124,
-            "Fusion_Post_RMSE": 0.007301183342571712,
-            "Fusion_Post_MAE": 0.005910962841204237,
-            "Fusion_Post_MAPE": 0.5978407811579568,
+            "Fusion_Raw_RMSE": 0.0053225550800561905,
+            "Fusion_Post_RMSE": 0.005223659460025575,
+            "Fusion_Post_MAE": 0.004143584498792793,
+            "Fusion_Post_MAPE": 0.41834202048448627,
             "csv_path": "predictions/Inference\\HUST\\default\\3-2_full_pred.csv"
         },
         "3-3": {
@@ -298,10 +298,10 @@
             "KPD_RMSE": 0.31240227818489075,
             "DeepOPINN_RMSE": 0.008330575190484524,
             "LAX_RMSE": 0.009002142585814,
-            "Fusion_Raw_RMSE": 0.008662527427077293,
-            "Fusion_Post_RMSE": 0.008598065583356159,
-            "Fusion_Post_MAE": 0.00800535563806884,
-            "Fusion_Post_MAPE": 0.8108790690894631,
+            "Fusion_Raw_RMSE": 0.00751282274723053,
+            "Fusion_Post_RMSE": 0.007374685882551216,
+            "Fusion_Post_MAE": 0.0067914055804042415,
+            "Fusion_Post_MAPE": 0.6896141240892167,
             "csv_path": "predictions/Inference\\HUST\\default\\3-3_full_pred.csv"
         },
         "3-4": {
@@ -313,10 +313,10 @@
             "KPD_RMSE": 0.3139171898365021,
             "DeepOPINN_RMSE": 0.010480501689016819,
             "LAX_RMSE": 0.012619437649846077,
-            "Fusion_Raw_RMSE": 0.012355155311524868,
-            "Fusion_Post_RMSE": 0.012281344387705548,
-            "Fusion_Post_MAE": 0.010981312419826913,
-            "Fusion_Post_MAPE": 1.1575115444251038,
+            "Fusion_Raw_RMSE": 0.011799285188317299,
+            "Fusion_Post_RMSE": 0.011670066258143761,
+            "Fusion_Post_MAE": 0.009401351212260184,
+            "Fusion_Post_MAPE": 1.0057238942847129,
             "csv_path": "predictions/Inference\\HUST\\default\\3-4_full_pred.csv"
         },
         "3-7": {
@@ -328,10 +328,10 @@
             "KPD_RMSE": 0.09848328679800034,
             "DeepOPINN_RMSE": 0.017675822600722313,
             "LAX_RMSE": 0.020897727459669113,
-            "Fusion_Raw_RMSE": 0.02024928107857704,
-            "Fusion_Post_RMSE": 0.020186244895890437,
-            "Fusion_Post_MAE": 0.019375372584620337,
-            "Fusion_Post_MAPE": 2.0365801101093757,
+            "Fusion_Raw_RMSE": 0.01723412238061428,
+            "Fusion_Post_RMSE": 0.017142669445835416,
+            "Fusion_Post_MAE": 0.01623395197626291,
+            "Fusion_Post_MAPE": 1.7105324833751132,
             "csv_path": "predictions/Inference\\HUST\\default\\3-7_full_pred.csv"
         },
         "3-8": {
@@ -343,10 +343,10 @@
             "KPD_RMSE": 0.08906765282154083,
             "DeepOPINN_RMSE": 0.007862688042223454,
             "LAX_RMSE": 0.007923307828605175,
-            "Fusion_Raw_RMSE": 0.007782831788063049,
-            "Fusion_Post_RMSE": 0.007685799314323716,
-            "Fusion_Post_MAE": 0.005743275686519092,
-            "Fusion_Post_MAPE": 0.5804053241140479,
+            "Fusion_Raw_RMSE": 0.008746488019824028,
+            "Fusion_Post_RMSE": 0.00859796382653387,
+            "Fusion_Post_MAE": 0.007289932590011363,
+            "Fusion_Post_MAPE": 0.7344782529478655,
             "csv_path": "predictions/Inference\\HUST\\default\\3-8_full_pred.csv"
         },
         "4-3": {
@@ -358,10 +358,10 @@
             "KPD_RMSE": 0.3526734411716461,
             "DeepOPINN_RMSE": 0.006444067694246769,
             "LAX_RMSE": 0.008131454698741436,
-            "Fusion_Raw_RMSE": 0.006565424147993326,
-            "Fusion_Post_RMSE": 0.006433762795335512,
-            "Fusion_Post_MAE": 0.005686453053488551,
-            "Fusion_Post_MAPE": 0.5802848899655427,
+            "Fusion_Raw_RMSE": 0.006081314291805029,
+            "Fusion_Post_RMSE": 0.005878602427973613,
+            "Fusion_Post_MAE": 0.005077516903830833,
+            "Fusion_Post_MAPE": 0.5234549584139744,
             "csv_path": "predictions/Inference\\HUST\\default\\4-3_full_pred.csv"
         },
         "4-6": {
@@ -373,10 +373,10 @@
             "KPD_RMSE": 0.2633135914802551,
             "DeepOPINN_RMSE": 0.014435353688895702,
             "LAX_RMSE": 0.016413621604442596,
-            "Fusion_Raw_RMSE": 0.01577046699821949,
-            "Fusion_Post_RMSE": 0.015534654591761175,
-            "Fusion_Post_MAE": 0.01412586219633926,
-            "Fusion_Post_MAPE": 1.433445498803153,
+            "Fusion_Raw_RMSE": 0.01355504896491766,
+            "Fusion_Post_RMSE": 0.013162477298710007,
+            "Fusion_Post_MAE": 0.01146892795161461,
+            "Fusion_Post_MAPE": 1.1559993810451779,
             "csv_path": "predictions/Inference\\HUST\\default\\4-6_full_pred.csv"
         },
         "4-7": {
@@ -388,10 +388,10 @@
             "KPD_RMSE": 0.42628562450408936,
             "DeepOPINN_RMSE": 0.01619965210556984,
             "LAX_RMSE": 0.017207855358719826,
-            "Fusion_Raw_RMSE": 0.016804322600364685,
-            "Fusion_Post_RMSE": 0.016768952756496085,
-            "Fusion_Post_MAE": 0.014435644291457663,
-            "Fusion_Post_MAPE": 1.3905770905615824,
+            "Fusion_Raw_RMSE": 0.01758730784058571,
+            "Fusion_Post_RMSE": 0.01752385751756109,
+            "Fusion_Post_MAE": 0.014621964422668025,
+            "Fusion_Post_MAPE": 1.3939763857576597,
             "csv_path": "predictions/Inference\\HUST\\default\\4-7_full_pred.csv"
         },
         "5-1": {
@@ -403,10 +403,10 @@
             "KPD_RMSE": 0.14080606400966644,
             "DeepOPINN_RMSE": 0.008835830725729465,
             "LAX_RMSE": 0.0077008516527712345,
-            "Fusion_Raw_RMSE": 0.009440045803785324,
-            "Fusion_Post_RMSE": 0.009413848748210458,
-            "Fusion_Post_MAE": 0.007875347624355327,
-            "Fusion_Post_MAPE": 0.8318466304090708,
+            "Fusion_Raw_RMSE": 0.007557947654277086,
+            "Fusion_Post_RMSE": 0.007510768424065946,
+            "Fusion_Post_MAE": 0.006453379738257853,
+            "Fusion_Post_MAPE": 0.6772230485441667,
             "csv_path": "predictions/Inference\\HUST\\default\\5-1_full_pred.csv"
         },
         "5-2": {
@@ -418,10 +418,10 @@
             "KPD_RMSE": 0.23915664851665497,
             "DeepOPINN_RMSE": 0.0056474111042916775,
             "LAX_RMSE": 0.010424965992569923,
-            "Fusion_Raw_RMSE": 0.006636376958340406,
-            "Fusion_Post_RMSE": 0.006605361438237397,
-            "Fusion_Post_MAE": 0.005203022180830473,
-            "Fusion_Post_MAPE": 0.5443227348514179,
+            "Fusion_Raw_RMSE": 0.006943313404917717,
+            "Fusion_Post_RMSE": 0.0068693448995194185,
+            "Fusion_Post_MAE": 0.005248862228867051,
+            "Fusion_Post_MAPE": 0.561839536406307,
             "csv_path": "predictions/Inference\\HUST\\default\\5-2_full_pred.csv"
         },
         "5-4": {
@@ -433,10 +433,10 @@
             "KPD_RMSE": 0.7106112241744995,
             "DeepOPINN_RMSE": 0.005923282355070114,
             "LAX_RMSE": 0.006424298044294119,
-            "Fusion_Raw_RMSE": 0.005505379755049944,
-            "Fusion_Post_RMSE": 0.005363677717371436,
-            "Fusion_Post_MAE": 0.004967737783714796,
-            "Fusion_Post_MAPE": 0.5145739973096211,
+            "Fusion_Raw_RMSE": 0.003960198722779751,
+            "Fusion_Post_RMSE": 0.003673036897441582,
+            "Fusion_Post_MAE": 0.0033357819544271145,
+            "Fusion_Post_MAPE": 0.3451720521274726,
             "csv_path": "predictions/Inference\\HUST\\default\\5-4_full_pred.csv"
         },
         "5-5": {
@@ -448,10 +448,10 @@
             "KPD_RMSE": 0.1809268742799759,
             "DeepOPINN_RMSE": 0.006691965740174055,
             "LAX_RMSE": 0.012572764419019222,
-            "Fusion_Raw_RMSE": 0.00805676355957985,
-            "Fusion_Post_RMSE": 0.008013842853752262,
-            "Fusion_Post_MAE": 0.007318813081291134,
-            "Fusion_Post_MAPE": 0.7457269659575319,
+            "Fusion_Raw_RMSE": 0.005852752365171909,
+            "Fusion_Post_RMSE": 0.005718445855297744,
+            "Fusion_Post_MAE": 0.004882472376823735,
+            "Fusion_Post_MAPE": 0.49385571978470394,
             "csv_path": "predictions/Inference\\HUST\\default\\5-5_full_pred.csv"
         },
         "6-1": {
@@ -463,10 +463,10 @@
             "KPD_RMSE": 0.20164541900157928,
             "DeepOPINN_RMSE": 0.013398081995546818,
             "LAX_RMSE": 0.013326069340109825,
-            "Fusion_Raw_RMSE": 0.01314788218587637,
-            "Fusion_Post_RMSE": 0.013081479334412524,
-            "Fusion_Post_MAE": 0.012190958884520039,
-            "Fusion_Post_MAPE": 1.2425173280050994,
+            "Fusion_Raw_RMSE": 0.011569859459996223,
+            "Fusion_Post_RMSE": 0.01145666724972164,
+            "Fusion_Post_MAE": 0.01074323941164139,
+            "Fusion_Post_MAPE": 1.092774756397137,
             "csv_path": "predictions/Inference\\HUST\\default\\6-1_full_pred.csv"
         },
         "6-2": {
@@ -478,10 +478,10 @@
             "KPD_RMSE": 0.3140300214290619,
             "DeepOPINN_RMSE": 0.005581811536103487,
             "LAX_RMSE": 0.006419072393327951,
-            "Fusion_Raw_RMSE": 0.00433208467438817,
-            "Fusion_Post_RMSE": 0.004282577614216015,
-            "Fusion_Post_MAE": 0.003405049238601268,
-            "Fusion_Post_MAPE": 0.34977260034343527,
+            "Fusion_Raw_RMSE": 0.005056070163846016,
+            "Fusion_Post_RMSE": 0.004959350191822503,
+            "Fusion_Post_MAE": 0.004327217089299459,
+            "Fusion_Post_MAPE": 0.42610737616119077,
             "csv_path": "predictions/Inference\\HUST\\default\\6-2_full_pred.csv"
         },
         "6-3": {
@@ -493,10 +493,10 @@
             "KPD_RMSE": 0.693230926990509,
             "DeepOPINN_RMSE": 0.004404825624078512,
             "LAX_RMSE": 0.009067738428711891,
-            "Fusion_Raw_RMSE": 0.005030713509768248,
-            "Fusion_Post_RMSE": 0.005008534315693553,
-            "Fusion_Post_MAE": 0.0037831744126659377,
-            "Fusion_Post_MAPE": 0.3952693550637205,
+            "Fusion_Raw_RMSE": 0.0057175117544829845,
+            "Fusion_Post_RMSE": 0.005671122146170438,
+            "Fusion_Post_MAE": 0.00422469508939566,
+            "Fusion_Post_MAPE": 0.449002373570416,
             "csv_path": "predictions/Inference\\HUST\\default\\6-3_full_pred.csv"
         },
         "6-4": {
@@ -508,10 +508,10 @@
             "KPD_RMSE": 0.45059701800346375,
             "DeepOPINN_RMSE": 0.011185177601873875,
             "LAX_RMSE": 0.010915059596300125,
-            "Fusion_Raw_RMSE": 0.011198935098946095,
-            "Fusion_Post_RMSE": 0.011152992698284308,
-            "Fusion_Post_MAE": 0.010414646092249987,
-            "Fusion_Post_MAPE": 1.0614716427436226,
+            "Fusion_Raw_RMSE": 0.0095469169318676,
+            "Fusion_Post_RMSE": 0.00948118308025816,
+            "Fusion_Post_MAE": 0.00874445274038226,
+            "Fusion_Post_MAPE": 0.8863075924660666,
             "csv_path": "predictions/Inference\\HUST\\default\\6-4_full_pred.csv"
         },
         "6-5": {
@@ -523,10 +523,10 @@
             "KPD_RMSE": 0.31798192858695984,
             "DeepOPINN_RMSE": 0.0047667501494288445,
             "LAX_RMSE": 0.008894762955605984,
-            "Fusion_Raw_RMSE": 0.008518676273524761,
-            "Fusion_Post_RMSE": 0.008455263550643664,
-            "Fusion_Post_MAE": 0.007361189211142443,
-            "Fusion_Post_MAPE": 0.7669323969004824,
+            "Fusion_Raw_RMSE": 0.0050784214399755,
+            "Fusion_Post_RMSE": 0.004972894728543783,
+            "Fusion_Post_MAE": 0.00440030321166617,
+            "Fusion_Post_MAPE": 0.4539459674574255,
             "csv_path": "predictions/Inference\\HUST\\default\\6-5_full_pred.csv"
         },
         "6-6": {
@@ -538,10 +538,10 @@
             "KPD_RMSE": 0.30854472517967224,
             "DeepOPINN_RMSE": 0.01236638706177473,
             "LAX_RMSE": 0.018669242039322853,
-            "Fusion_Raw_RMSE": 0.015875250101089478,
-            "Fusion_Post_RMSE": 0.01582800004297712,
-            "Fusion_Post_MAE": 0.014674485640641187,
-            "Fusion_Post_MAPE": 1.5074124773804611,
+            "Fusion_Raw_RMSE": 0.01263843197375536,
+            "Fusion_Post_RMSE": 0.012534695166314402,
+            "Fusion_Post_MAE": 0.011129290784205204,
+            "Fusion_Post_MAPE": 1.1316853894907124,
             "csv_path": "predictions/Inference\\HUST\\default\\6-6_full_pred.csv"
         },
         "6-8": {
@@ -553,10 +553,10 @@
             "KPD_RMSE": 0.15414342284202576,
             "DeepOPINN_RMSE": 0.014734330587089062,
             "LAX_RMSE": 0.01719577983021736,
-            "Fusion_Raw_RMSE": 0.01647871546447277,
-            "Fusion_Post_RMSE": 0.016461246303458497,
-            "Fusion_Post_MAE": 0.015528275189649937,
-            "Fusion_Post_MAPE": 1.6270386924319777,
+            "Fusion_Raw_RMSE": 0.013998101465404034,
+            "Fusion_Post_RMSE": 0.013966465059490781,
+            "Fusion_Post_MAE": 0.012978803246615907,
+            "Fusion_Post_MAPE": 1.3597414138470634,
             "csv_path": "predictions/Inference\\HUST\\default\\6-8_full_pred.csv"
         },
         "7-1": {
@@ -568,10 +568,10 @@
             "KPD_RMSE": 0.8281115293502808,
             "DeepOPINN_RMSE": 0.0057926299050450325,
             "LAX_RMSE": 0.005654037930071354,
-            "Fusion_Raw_RMSE": 0.006977702025324106,
-            "Fusion_Post_RMSE": 0.006792863702008682,
-            "Fusion_Post_MAE": 0.004826489704287695,
-            "Fusion_Post_MAPE": 0.49075938458402124,
+            "Fusion_Raw_RMSE": 0.005261107347905636,
+            "Fusion_Post_RMSE": 0.004931969931549304,
+            "Fusion_Post_MAE": 0.0033475797346295302,
+            "Fusion_Post_MAPE": 0.3408828676754082,
             "csv_path": "predictions/Inference\\HUST\\default\\7-1_full_pred.csv"
         },
         "7-3": {
@@ -583,10 +583,10 @@
             "KPD_RMSE": 0.28169265389442444,
             "DeepOPINN_RMSE": 0.004844335839152336,
             "LAX_RMSE": 0.007798756938427687,
-            "Fusion_Raw_RMSE": 0.0057165431790053844,
-            "Fusion_Post_RMSE": 0.005576397471935314,
-            "Fusion_Post_MAE": 0.004844478238202191,
-            "Fusion_Post_MAPE": 0.49299703557095165,
+            "Fusion_Raw_RMSE": 0.004468876402825117,
+            "Fusion_Post_RMSE": 0.004242148742657415,
+            "Fusion_Post_MAE": 0.0033933876263257594,
+            "Fusion_Post_MAPE": 0.35110975477876005,
             "csv_path": "predictions/Inference\\HUST\\default\\7-3_full_pred.csv"
         },
         "7-4": {
@@ -598,10 +598,10 @@
             "KPD_RMSE": 0.44845694303512573,
             "DeepOPINN_RMSE": 0.004800000693649054,
             "LAX_RMSE": 0.008304920047521591,
-            "Fusion_Raw_RMSE": 0.006450383923947811,
-            "Fusion_Post_RMSE": 0.006337381429012112,
-            "Fusion_Post_MAE": 0.004793746921532181,
-            "Fusion_Post_MAPE": 0.49539329420314054,
+            "Fusion_Raw_RMSE": 0.006029435433447361,
+            "Fusion_Post_RMSE": 0.005877934395162716,
+            "Fusion_Post_MAE": 0.004439920320958251,
+            "Fusion_Post_MAPE": 0.4649004239157862,
             "csv_path": "predictions/Inference\\HUST\\default\\7-4_full_pred.csv"
         },
         "7-5": {
@@ -613,10 +613,10 @@
             "KPD_RMSE": 0.35778942704200745,
             "DeepOPINN_RMSE": 0.0063210767693817616,
             "LAX_RMSE": 0.010201752185821533,
-            "Fusion_Raw_RMSE": 0.006934689357876778,
-            "Fusion_Post_RMSE": 0.00687201632870976,
-            "Fusion_Post_MAE": 0.00517004206147373,
-            "Fusion_Post_MAPE": 0.5413994718442159,
+            "Fusion_Raw_RMSE": 0.007518754340708256,
+            "Fusion_Post_RMSE": 0.00739366186417505,
+            "Fusion_Post_MAE": 0.00540426658382387,
+            "Fusion_Post_MAPE": 0.5748833679897423,
             "csv_path": "predictions/Inference\\HUST\\default\\7-5_full_pred.csv"
         },
         "7-6": {
@@ -628,10 +628,10 @@
             "KPD_RMSE": 0.30717629194259644,
             "DeepOPINN_RMSE": 0.005729344207793474,
             "LAX_RMSE": 0.007808701600879431,
-            "Fusion_Raw_RMSE": 0.006588778458535671,
-            "Fusion_Post_RMSE": 0.006434230176115044,
-            "Fusion_Post_MAE": 0.005191520248023959,
-            "Fusion_Post_MAPE": 0.5335554276352641,
+            "Fusion_Raw_RMSE": 0.0063679213635623455,
+            "Fusion_Post_RMSE": 0.006152091064415835,
+            "Fusion_Post_MAE": 0.004977353429983555,
+            "Fusion_Post_MAPE": 0.5189134799834616,
             "csv_path": "predictions/Inference\\HUST\\default\\7-6_full_pred.csv"
         },
         "7-7": {
@@ -643,10 +643,10 @@
             "KPD_RMSE": 0.33431684970855713,
             "DeepOPINN_RMSE": 0.0046957810409367085,
             "LAX_RMSE": 0.007568862289190292,
-            "Fusion_Raw_RMSE": 0.006843684706836939,
-            "Fusion_Post_RMSE": 0.0067177685231748,
-            "Fusion_Post_MAE": 0.006365235371784015,
-            "Fusion_Post_MAPE": 0.6478703110445007,
+            "Fusion_Raw_RMSE": 0.005115306004881859,
+            "Fusion_Post_RMSE": 0.004873621584855209,
+            "Fusion_Post_MAE": 0.004232394161424125,
+            "Fusion_Post_MAPE": 0.4363800353337328,
             "csv_path": "predictions/Inference\\HUST\\default\\7-7_full_pred.csv"
         },
         "7-8": {
@@ -658,10 +658,10 @@
             "KPD_RMSE": 0.2558640241622925,
             "DeepOPINN_RMSE": 0.005741998553276062,
             "LAX_RMSE": 0.007342336233705282,
-            "Fusion_Raw_RMSE": 0.005155922845005989,
-            "Fusion_Post_RMSE": 0.005108819755880218,
-            "Fusion_Post_MAE": 0.004065494683974328,
-            "Fusion_Post_MAPE": 0.4230615286038562,
+            "Fusion_Raw_RMSE": 0.006593845784664154,
+            "Fusion_Post_RMSE": 0.0065107127809905865,
+            "Fusion_Post_MAE": 0.005668061935174309,
+            "Fusion_Post_MAPE": 0.5856822368514663,
             "csv_path": "predictions/Inference\\HUST\\default\\7-8_full_pred.csv"
         },
         "8-1": {
@@ -673,10 +673,10 @@
             "KPD_RMSE": 0.3105471432209015,
             "DeepOPINN_RMSE": 0.004597426857799292,
             "LAX_RMSE": 0.006241596303880215,
-            "Fusion_Raw_RMSE": 0.004889931529760361,
-            "Fusion_Post_RMSE": 0.0047208531093804055,
-            "Fusion_Post_MAE": 0.0036647955432666654,
-            "Fusion_Post_MAPE": 0.37913823015968084,
+            "Fusion_Raw_RMSE": 0.004754907451570034,
+            "Fusion_Post_RMSE": 0.004501710629769551,
+            "Fusion_Post_MAE": 0.003406709053983855,
+            "Fusion_Post_MAPE": 0.35589418598730443,
             "csv_path": "predictions/Inference\\HUST\\default\\8-1_full_pred.csv"
         },
         "8-2": {
@@ -688,10 +688,10 @@
             "KPD_RMSE": 0.5610636472702026,
             "DeepOPINN_RMSE": 0.006177590228617191,
             "LAX_RMSE": 0.00472805043682456,
-            "Fusion_Raw_RMSE": 0.006303538102656603,
-            "Fusion_Post_RMSE": 0.0062071519604244355,
-            "Fusion_Post_MAE": 0.005141186348458916,
-            "Fusion_Post_MAPE": 0.532833297997296,
+            "Fusion_Raw_RMSE": 0.006182990036904812,
+            "Fusion_Post_RMSE": 0.006028482939239076,
+            "Fusion_Post_MAE": 0.005004868284778382,
+            "Fusion_Post_MAPE": 0.5119646951217485,
             "csv_path": "predictions/Inference\\HUST\\default\\8-2_full_pred.csv"
         },
         "8-3": {
@@ -703,10 +703,10 @@
             "KPD_RMSE": 0.1630725860595703,
             "DeepOPINN_RMSE": 0.005125044845044613,
             "LAX_RMSE": 0.009348385035991669,
-            "Fusion_Raw_RMSE": 0.005392639897763729,
-            "Fusion_Post_RMSE": 0.005348613307987137,
-            "Fusion_Post_MAE": 0.0038499791068800997,
-            "Fusion_Post_MAPE": 0.39895707216726983,
+            "Fusion_Raw_RMSE": 0.005881697870790958,
+            "Fusion_Post_RMSE": 0.0058093789096673315,
+            "Fusion_Post_MAE": 0.004264856482177012,
+            "Fusion_Post_MAPE": 0.45462162264244294,
             "csv_path": "predictions/Inference\\HUST\\default\\8-3_full_pred.csv"
         },
         "8-4": {
@@ -718,10 +718,10 @@
             "KPD_RMSE": 0.7350894212722778,
             "DeepOPINN_RMSE": 0.004465694073587656,
             "LAX_RMSE": 0.004507381934672594,
-            "Fusion_Raw_RMSE": 0.005178266204893589,
-            "Fusion_Post_RMSE": 0.005010065557732599,
-            "Fusion_Post_MAE": 0.004225518284241569,
-            "Fusion_Post_MAPE": 0.4429379075128782,
+            "Fusion_Raw_RMSE": 0.004598603118211031,
+            "Fusion_Post_RMSE": 0.004380973058273727,
+            "Fusion_Post_MAE": 0.003187995885802856,
+            "Fusion_Post_MAPE": 0.33779997778442294,
             "csv_path": "predictions/Inference\\HUST\\default\\8-4_full_pred.csv"
         },
         "8-5": {
@@ -733,10 +733,10 @@
             "KPD_RMSE": 0.6538311243057251,
             "DeepOPINN_RMSE": 0.0049162027426064014,
             "LAX_RMSE": 0.007112152874469757,
-            "Fusion_Raw_RMSE": 0.0052730427123606205,
-            "Fusion_Post_RMSE": 0.005151084623572698,
-            "Fusion_Post_MAE": 0.00474595492628759,
-            "Fusion_Post_MAPE": 0.47779792705700275,
+            "Fusion_Raw_RMSE": 0.00359594589099288,
+            "Fusion_Post_RMSE": 0.003285207163073229,
+            "Fusion_Post_MAE": 0.0028462135336256556,
+            "Fusion_Post_MAPE": 0.2894652810372105,
             "csv_path": "predictions/Inference\\HUST\\default\\8-5_full_pred.csv"
         },
         "8-6": {
@@ -748,10 +748,10 @@
             "KPD_RMSE": 0.8683269023895264,
             "DeepOPINN_RMSE": 0.012406796216964722,
             "LAX_RMSE": 0.01330422330647707,
-            "Fusion_Raw_RMSE": 0.013059542514383793,
-            "Fusion_Post_RMSE": 0.013038494095925744,
-            "Fusion_Post_MAE": 0.01138395201615308,
-            "Fusion_Post_MAPE": 1.1232854381219441,
+            "Fusion_Raw_RMSE": 0.01365091186016798,
+            "Fusion_Post_RMSE": 0.013603806660406979,
+            "Fusion_Post_MAE": 0.0118656516813767,
+            "Fusion_Post_MAPE": 1.1620989831786597,
             "csv_path": "predictions/Inference\\HUST\\default\\8-6_full_pred.csv"
         },
         "8-7": {
@@ -763,10 +763,10 @@
             "KPD_RMSE": 0.3235699534416199,
             "DeepOPINN_RMSE": 0.0045264665968716145,
             "LAX_RMSE": 0.005589252337813377,
-            "Fusion_Raw_RMSE": 0.004539132583886385,
-            "Fusion_Post_RMSE": 0.004443016052644772,
-            "Fusion_Post_MAE": 0.0037794102932240388,
-            "Fusion_Post_MAPE": 0.403936950046596,
+            "Fusion_Raw_RMSE": 0.0031436472199857235,
+            "Fusion_Post_RMSE": 0.0029281588035868942,
+            "Fusion_Post_MAE": 0.0025052373504643984,
+            "Fusion_Post_MAPE": 0.26227423740691624,
             "csv_path": "predictions/Inference\\HUST\\default\\8-7_full_pred.csv"
         },
         "9-2": {
@@ -778,10 +778,10 @@
             "KPD_RMSE": 0.2587710916996002,
             "DeepOPINN_RMSE": 0.003357598092406988,
             "LAX_RMSE": 0.005948435515165329,
-            "Fusion_Raw_RMSE": 0.0036093187518417835,
-            "Fusion_Post_RMSE": 0.003565143473902006,
-            "Fusion_Post_MAE": 0.0023178993390230926,
-            "Fusion_Post_MAPE": 0.24334015792115493,
+            "Fusion_Raw_RMSE": 0.0034577413462102413,
+            "Fusion_Post_RMSE": 0.0033484718248280995,
+            "Fusion_Post_MAE": 0.0027671641238283225,
+            "Fusion_Post_MAPE": 0.2810267454529031,
             "csv_path": "predictions/Inference\\HUST\\default\\9-2_full_pred.csv"
         },
         "9-3": {
@@ -793,10 +793,10 @@
             "KPD_RMSE": 0.18181942403316498,
             "DeepOPINN_RMSE": 0.00649277912452817,
             "LAX_RMSE": 0.010793117806315422,
-            "Fusion_Raw_RMSE": 0.00720634963363409,
-            "Fusion_Post_RMSE": 0.007173504667202614,
-            "Fusion_Post_MAE": 0.006379611736709476,
-            "Fusion_Post_MAPE": 0.6507509579836063,
+            "Fusion_Raw_RMSE": 0.008260566741228104,
+            "Fusion_Post_RMSE": 0.008180857041661384,
+            "Fusion_Post_MAE": 0.007878081144992844,
+            "Fusion_Post_MAPE": 0.7997282920036671,
             "csv_path": "predictions/Inference\\HUST\\default\\9-3_full_pred.csv"
         },
         "9-4": {
@@ -808,10 +808,10 @@
             "KPD_RMSE": 0.28567275404930115,
             "DeepOPINN_RMSE": 0.010507662780582905,
             "LAX_RMSE": 0.014043007977306843,
-            "Fusion_Raw_RMSE": 0.012074870057404041,
-            "Fusion_Post_RMSE": 0.012050028699701499,
-            "Fusion_Post_MAE": 0.010378569208878705,
-            "Fusion_Post_MAPE": 1.0681243939664264,
+            "Fusion_Raw_RMSE": 0.012880019843578339,
+            "Fusion_Post_RMSE": 0.012827622498555073,
+            "Fusion_Post_MAE": 0.011729747355248376,
+            "Fusion_Post_MAPE": 1.2033804243484998,
             "csv_path": "predictions/Inference\\HUST\\default\\9-4_full_pred.csv"
         },
         "9-5": {
@@ -823,10 +823,10 @@
             "KPD_RMSE": 0.42764812707901,
             "DeepOPINN_RMSE": 0.003843699349090457,
             "LAX_RMSE": 0.008735643699765205,
-            "Fusion_Raw_RMSE": 0.004501871298998594,
-            "Fusion_Post_RMSE": 0.0044514962866781015,
-            "Fusion_Post_MAE": 0.0038271003434761255,
-            "Fusion_Post_MAPE": 0.39084363842762737,
+            "Fusion_Raw_RMSE": 0.004449770785868168,
+            "Fusion_Post_RMSE": 0.004356472791810668,
+            "Fusion_Post_MAE": 0.0034981716261828933,
+            "Fusion_Post_MAPE": 0.37001965720725283,
             "csv_path": "predictions/Inference\\HUST\\default\\9-5_full_pred.csv"
         },
         "1-2": {
@@ -838,10 +838,10 @@
             "KPD_RMSE": 0.21300730109214783,
             "DeepOPINN_RMSE": 0.009928904473781586,
             "LAX_RMSE": 0.007850014604628086,
-            "Fusion_Raw_RMSE": 0.009208519011735916,
-            "Fusion_Post_RMSE": 0.00916575347130101,
-            "Fusion_Post_MAE": 0.007954758507198022,
-            "Fusion_Post_MAPE": 0.8354225165170789,
+            "Fusion_Raw_RMSE": 0.007982492446899414,
+            "Fusion_Post_RMSE": 0.007923607799593339,
+            "Fusion_Post_MAE": 0.006898659066098299,
+            "Fusion_Post_MAPE": 0.7255648800070439,
             "csv_path": "predictions/Inference\\HUST\\default\\1-2_full_pred.csv"
         },
         "10-5": {
@@ -853,10 +853,10 @@
             "KPD_RMSE": 0.21227926015853882,
             "DeepOPINN_RMSE": 0.004456652794033289,
             "LAX_RMSE": 0.008417364209890366,
-            "Fusion_Raw_RMSE": 0.004882652312517166,
-            "Fusion_Post_RMSE": 0.004850369096931098,
-            "Fusion_Post_MAE": 0.0033694296553214947,
-            "Fusion_Post_MAPE": 0.3533211057053312,
+            "Fusion_Raw_RMSE": 0.005294843576848507,
+            "Fusion_Post_RMSE": 0.00521247727943108,
+            "Fusion_Post_MAE": 0.0036587224237592995,
+            "Fusion_Post_MAPE": 0.387603053788385,
             "csv_path": "predictions/Inference\\HUST\\default\\10-5_full_pred.csv"
         },
         "3-5": {
@@ -868,10 +868,10 @@
             "KPD_RMSE": 0.2275943160057068,
             "DeepOPINN_RMSE": 0.014992795884609222,
             "LAX_RMSE": 0.015906982123851776,
-            "Fusion_Raw_RMSE": 0.015365807339549065,
-            "Fusion_Post_RMSE": 0.015337816451291186,
-            "Fusion_Post_MAE": 0.012258307009013189,
-            "Fusion_Post_MAPE": 1.227582761287811,
+            "Fusion_Raw_RMSE": 0.01549124252051115,
+            "Fusion_Post_RMSE": 0.015454970038566926,
+            "Fusion_Post_MAE": 0.012861452589686649,
+            "Fusion_Post_MAPE": 1.2812683743093118,
             "csv_path": "predictions/Inference\\HUST\\default\\3-5_full_pred.csv"
         },
         "4-2": {
@@ -883,10 +883,10 @@
             "KPD_RMSE": 0.6852047443389893,
             "DeepOPINN_RMSE": 0.005181543529033661,
             "LAX_RMSE": 0.007697182707488537,
-            "Fusion_Raw_RMSE": 0.005936166737228632,
-            "Fusion_Post_RMSE": 0.005854833297478541,
-            "Fusion_Post_MAE": 0.004178738892925492,
-            "Fusion_Post_MAPE": 0.43156459367494443,
+            "Fusion_Raw_RMSE": 0.005645898170769215,
+            "Fusion_Post_RMSE": 0.00547927406032387,
+            "Fusion_Post_MAE": 0.003921096470583244,
+            "Fusion_Post_MAPE": 0.4071328487174402,
             "csv_path": "predictions/Inference\\HUST\\default\\4-2_full_pred.csv"
         },
         "4-4": {
@@ -898,10 +898,10 @@
             "KPD_RMSE": 0.2406378537416458,
             "DeepOPINN_RMSE": 0.009361537173390388,
             "LAX_RMSE": 0.010712291114032269,
-            "Fusion_Raw_RMSE": 0.01040041632950306,
-            "Fusion_Post_RMSE": 0.010296999587751755,
-            "Fusion_Post_MAE": 0.009200338449397374,
-            "Fusion_Post_MAPE": 0.9172375263259471,
+            "Fusion_Raw_RMSE": 0.008622231893241405,
+            "Fusion_Post_RMSE": 0.008468064150741101,
+            "Fusion_Post_MAE": 0.007418678396890786,
+            "Fusion_Post_MAPE": 0.7375396153857554,
             "csv_path": "predictions/Inference\\HUST\\default\\4-4_full_pred.csv"
         },
         "4-8": {
@@ -913,10 +913,10 @@
             "KPD_RMSE": 0.42538508772850037,
             "DeepOPINN_RMSE": 0.0065139601938426495,
             "LAX_RMSE": 0.009113583713769913,
-            "Fusion_Raw_RMSE": 0.007526641245931387,
-            "Fusion_Post_RMSE": 0.007500423664208138,
-            "Fusion_Post_MAE": 0.0058461906315362315,
-            "Fusion_Post_MAPE": 0.6048617321275436,
+            "Fusion_Raw_RMSE": 0.007935353554785252,
+            "Fusion_Post_RMSE": 0.007876793473089443,
+            "Fusion_Post_MAE": 0.0066814937899431865,
+            "Fusion_Post_MAPE": 0.6811251721532524,
             "csv_path": "predictions/Inference\\HUST\\default\\4-8_full_pred.csv"
         },
         "5-3": {
@@ -928,10 +928,10 @@
             "KPD_RMSE": 0.3193075358867645,
             "DeepOPINN_RMSE": 0.006267193704843521,
             "LAX_RMSE": 0.005187383387237787,
-            "Fusion_Raw_RMSE": 0.007095252629369497,
-            "Fusion_Post_RMSE": 0.007044505291758438,
-            "Fusion_Post_MAE": 0.00618740051981226,
-            "Fusion_Post_MAPE": 0.6270625130912436,
+            "Fusion_Raw_RMSE": 0.005640997551381588,
+            "Fusion_Post_RMSE": 0.005548316031997319,
+            "Fusion_Post_MAE": 0.004638215475311011,
+            "Fusion_Post_MAPE": 0.47046068924523976,
             "csv_path": "predictions/Inference\\HUST\\default\\5-3_full_pred.csv"
         },
         "5-6": {
@@ -943,10 +943,10 @@
             "KPD_RMSE": 0.14868441224098206,
             "DeepOPINN_RMSE": 0.007813867181539536,
             "LAX_RMSE": 0.007389254868030548,
-            "Fusion_Raw_RMSE": 0.008810135535895824,
-            "Fusion_Post_RMSE": 0.008770375767604229,
-            "Fusion_Post_MAE": 0.0075167941840404645,
-            "Fusion_Post_MAPE": 0.7953570215829197,
+            "Fusion_Raw_RMSE": 0.006734455935657024,
+            "Fusion_Post_RMSE": 0.0066599691124968685,
+            "Fusion_Post_MAE": 0.005796493388702601,
+            "Fusion_Post_MAPE": 0.6102654815590619,
             "csv_path": "predictions/Inference\\HUST\\default\\5-6_full_pred.csv"
         },
         "5-7": {
@@ -958,10 +958,10 @@
             "KPD_RMSE": 0.31068938970565796,
             "DeepOPINN_RMSE": 0.005256522446870804,
             "LAX_RMSE": 0.0061650825664401054,
-            "Fusion_Raw_RMSE": 0.006142809055745602,
-            "Fusion_Post_RMSE": 0.005986033068832632,
-            "Fusion_Post_MAE": 0.005542363291600948,
-            "Fusion_Post_MAPE": 0.564402873885964,
+            "Fusion_Raw_RMSE": 0.00519104627892375,
+            "Fusion_Post_RMSE": 0.0049476790944042595,
+            "Fusion_Post_MAE": 0.004246351223513938,
+            "Fusion_Post_MAPE": 0.4392659548452361,
             "csv_path": "predictions/Inference\\HUST\\default\\5-7_full_pred.csv"
         },
         "8-8": {
@@ -973,10 +973,10 @@
             "KPD_RMSE": 0.22070123255252838,
             "DeepOPINN_RMSE": 0.006462244316935539,
             "LAX_RMSE": 0.008110388182103634,
-            "Fusion_Raw_RMSE": 0.006294474937021732,
-            "Fusion_Post_RMSE": 0.006257760244865689,
-            "Fusion_Post_MAE": 0.005597783907912081,
-            "Fusion_Post_MAPE": 0.567771781179303,
+            "Fusion_Raw_RMSE": 0.0075578223913908005,
+            "Fusion_Post_RMSE": 0.007489144336111851,
+            "Fusion_Post_MAE": 0.007197820301093537,
+            "Fusion_Post_MAPE": 0.7214815437383585,
             "csv_path": "predictions/Inference\\HUST\\default\\8-8_full_pred.csv"
         },
         "9-6": {
@@ -988,10 +988,10 @@
             "KPD_RMSE": 0.23770515620708466,
             "DeepOPINN_RMSE": 0.006679108832031488,
             "LAX_RMSE": 0.0037358806002885103,
-            "Fusion_Raw_RMSE": 0.006687701679766178,
-            "Fusion_Post_RMSE": 0.006541426874562986,
-            "Fusion_Post_MAE": 0.005161356676468537,
-            "Fusion_Post_MAPE": 0.5376839380024323,
+            "Fusion_Raw_RMSE": 0.0064259786158800125,
+            "Fusion_Post_RMSE": 0.006200740349423107,
+            "Fusion_Post_MAE": 0.0047924314461489405,
+            "Fusion_Post_MAPE": 0.5005461935687026,
             "csv_path": "predictions/Inference\\HUST\\default\\9-6_full_pred.csv"
         },
         "9-8": {
@@ -1003,10 +1003,10 @@
             "KPD_RMSE": 0.15307071805000305,
             "DeepOPINN_RMSE": 0.004949489608407021,
             "LAX_RMSE": 0.00929424911737442,
-            "Fusion_Raw_RMSE": 0.006929041352123022,
-            "Fusion_Post_RMSE": 0.006898408602267517,
-            "Fusion_Post_MAE": 0.0060036302637234695,
-            "Fusion_Post_MAPE": 0.5961393648465636,
+            "Fusion_Raw_RMSE": 0.00447695842012763,
+            "Fusion_Post_RMSE": 0.004371514112740447,
+            "Fusion_Post_MAE": 0.003894417919131382,
+            "Fusion_Post_MAPE": 0.38786759583483166,
             "csv_path": "predictions/Inference\\HUST\\default\\9-8_full_pred.csv"
         },
         "1-4": {
@@ -1018,10 +1018,10 @@
             "KPD_RMSE": 0.1769246906042099,
             "DeepOPINN_RMSE": 0.009684549644589424,
             "LAX_RMSE": 0.010777118615806103,
-            "Fusion_Raw_RMSE": 0.00922178290784359,
-            "Fusion_Post_RMSE": 0.009167591732895192,
-            "Fusion_Post_MAE": 0.0085690819050029,
-            "Fusion_Post_MAPE": 0.8807234583328947,
+            "Fusion_Raw_RMSE": 0.007783439476042986,
+            "Fusion_Post_RMSE": 0.007667602128609809,
+            "Fusion_Post_MAE": 0.007011820488394173,
+            "Fusion_Post_MAPE": 0.7208965514691832,
             "csv_path": "predictions/Inference\\HUST\\default\\1-4_full_pred.csv"
         },
         "1-5": {
@@ -1033,10 +1033,10 @@
             "KPD_RMSE": 0.7403237819671631,
             "DeepOPINN_RMSE": 0.025307033210992813,
             "LAX_RMSE": 0.024894194677472115,
-            "Fusion_Raw_RMSE": 0.025492489337921143,
-            "Fusion_Post_RMSE": 0.025439797490703155,
-            "Fusion_Post_MAE": 0.023627444836042198,
-            "Fusion_Post_MAPE": 2.463529606292112,
+            "Fusion_Raw_RMSE": 0.023686302825808525,
+            "Fusion_Post_RMSE": 0.023628803138824463,
+            "Fusion_Post_MAE": 0.021727312577081492,
+            "Fusion_Post_MAPE": 2.2495387019938766,
             "csv_path": "predictions/Inference\\HUST\\default\\1-5_full_pred.csv"
         },
         "10-4": {
@@ -1048,10 +1048,10 @@
             "KPD_RMSE": 0.9577924609184265,
             "DeepOPINN_RMSE": 0.007158905733376741,
             "LAX_RMSE": 0.009839944541454315,
-            "Fusion_Raw_RMSE": 0.008579584769904613,
-            "Fusion_Post_RMSE": 0.008527181929466226,
-            "Fusion_Post_MAE": 0.006087501222865193,
-            "Fusion_Post_MAPE": 0.6363201475689554,
+            "Fusion_Raw_RMSE": 0.008479851298034191,
+            "Fusion_Post_RMSE": 0.008349462946933827,
+            "Fusion_Post_MAE": 0.005583835482616262,
+            "Fusion_Post_MAPE": 0.5907037974402233,
             "csv_path": "predictions/Inference\\HUST\\default\\10-4_full_pred.csv"
         },
         "10-6": {
@@ -1063,10 +1063,10 @@
             "KPD_RMSE": 0.2920200228691101,
             "DeepOPINN_RMSE": 0.022376205772161484,
             "LAX_RMSE": 0.023448193445801735,
-            "Fusion_Raw_RMSE": 0.022715969011187553,
-            "Fusion_Post_RMSE": 0.022682316040556795,
-            "Fusion_Post_MAE": 0.019956947915487838,
-            "Fusion_Post_MAPE": 1.9158652959861238,
+            "Fusion_Raw_RMSE": 0.023770175874233246,
+            "Fusion_Post_RMSE": 0.023726336548997688,
+            "Fusion_Post_MAE": 0.020595866601258315,
+            "Fusion_Post_MAPE": 1.9660052102822094,
             "csv_path": "predictions/Inference\\HUST\\default\\10-6_full_pred.csv"
         },
         "10-7": {
@@ -1078,10 +1078,10 @@
             "KPD_RMSE": 0.7204818725585938,
             "DeepOPINN_RMSE": 0.0037161847576498985,
             "LAX_RMSE": 0.007822906598448753,
-            "Fusion_Raw_RMSE": 0.004443020094186068,
-            "Fusion_Post_RMSE": 0.0044170266941220195,
-            "Fusion_Post_MAE": 0.0031592724380641447,
-            "Fusion_Post_MAPE": 0.33092431713969345,
+            "Fusion_Raw_RMSE": 0.004935741424560547,
+            "Fusion_Post_RMSE": 0.004876835811529076,
+            "Fusion_Post_MAE": 0.003562120680814762,
+            "Fusion_Post_MAPE": 0.3819014771566004,
             "csv_path": "predictions/Inference\\HUST\\default\\10-7_full_pred.csv"
         },
         "2-3": {
@@ -1093,10 +1093,10 @@
             "KPD_RMSE": 0.3489454686641693,
             "DeepOPINN_RMSE": 0.007086237892508507,
             "LAX_RMSE": 0.0102232089266181,
-            "Fusion_Raw_RMSE": 0.007434817496687174,
-            "Fusion_Post_RMSE": 0.007416842581750236,
-            "Fusion_Post_MAE": 0.006691641785512547,
-            "Fusion_Post_MAPE": 0.6864367205541833,
+            "Fusion_Raw_RMSE": 0.005996378138661385,
+            "Fusion_Post_RMSE": 0.005948448611940235,
+            "Fusion_Post_MAE": 0.005468320282697046,
+            "Fusion_Post_MAPE": 0.5613384252766364,
             "csv_path": "predictions/Inference\\HUST\\default\\2-3_full_pred.csv"
         },
         "3-6": {
@@ -1108,10 +1108,10 @@
             "KPD_RMSE": 0.1473531723022461,
             "DeepOPINN_RMSE": 0.008805952034890652,
             "LAX_RMSE": 0.008876463398337364,
-            "Fusion_Raw_RMSE": 0.009300414472818375,
-            "Fusion_Post_RMSE": 0.009289941034566896,
-            "Fusion_Post_MAE": 0.008383753021323236,
-            "Fusion_Post_MAPE": 0.8450627369532837,
+            "Fusion_Raw_RMSE": 0.007338957395404577,
+            "Fusion_Post_RMSE": 0.007289722451122429,
+            "Fusion_Post_MAE": 0.00638678071954806,
+            "Fusion_Post_MAPE": 0.6375929448466644,
             "csv_path": "predictions/Inference\\HUST\\default\\3-6_full_pred.csv"
         },
         "4-1": {
@@ -1123,10 +1123,10 @@
             "KPD_RMSE": 0.7325414419174194,
             "DeepOPINN_RMSE": 0.014995275065302849,
             "LAX_RMSE": 0.014818447642028332,
-            "Fusion_Raw_RMSE": 0.015103594399988651,
-            "Fusion_Post_RMSE": 0.014949646812200523,
-            "Fusion_Post_MAE": 0.013863054371621565,
-            "Fusion_Post_MAPE": 1.4224071366177364,
+            "Fusion_Raw_RMSE": 0.01428298931568861,
+            "Fusion_Post_RMSE": 0.01409808336209759,
+            "Fusion_Post_MAE": 0.0128828708149753,
+            "Fusion_Post_MAPE": 1.336255100324302,
             "csv_path": "predictions/Inference\\HUST\\default\\4-1_full_pred.csv"
         },
         "4-5": {
@@ -1138,10 +1138,10 @@
             "KPD_RMSE": 1.0116767883300781,
             "DeepOPINN_RMSE": 0.006060656625777483,
             "LAX_RMSE": 0.00465803686529398,
-            "Fusion_Raw_RMSE": 0.0061448123306035995,
-            "Fusion_Post_RMSE": 0.005962158526216806,
-            "Fusion_Post_MAE": 0.004326850756667729,
-            "Fusion_Post_MAPE": 0.45070964352734383,
+            "Fusion_Raw_RMSE": 0.006985796149820089,
+            "Fusion_Post_RMSE": 0.006755152623838978,
+            "Fusion_Post_MAE": 0.005846721699665713,
+            "Fusion_Post_MAPE": 0.5964277759336934,
             "csv_path": "predictions/Inference\\HUST\\default\\4-5_full_pred.csv"
         },
         "7-2": {
@@ -1153,10 +1153,10 @@
             "KPD_RMSE": 0.7438486218452454,
             "DeepOPINN_RMSE": 0.009789098054170609,
             "LAX_RMSE": 0.005321681499481201,
-            "Fusion_Raw_RMSE": 0.006837813183665276,
-            "Fusion_Post_RMSE": 0.006569299322874018,
-            "Fusion_Post_MAE": 0.004717408890224561,
-            "Fusion_Post_MAPE": 0.5008589031935563,
+            "Fusion_Raw_RMSE": 0.008315342478454113,
+            "Fusion_Post_RMSE": 0.008097276846334924,
+            "Fusion_Post_MAE": 0.005657920598660099,
+            "Fusion_Post_MAPE": 0.6028481001687188,
             "csv_path": "predictions/Inference\\HUST\\default\\7-2_full_pred.csv"
         },
         "9-1": {
@@ -1168,10 +1168,10 @@
             "KPD_RMSE": 0.7182917594909668,
             "DeepOPINN_RMSE": 0.009744871407747269,
             "LAX_RMSE": 0.010725420899689198,
-            "Fusion_Raw_RMSE": 0.008797858841717243,
-            "Fusion_Post_RMSE": 0.008756177318142972,
-            "Fusion_Post_MAE": 0.007407495878136544,
-            "Fusion_Post_MAPE": 0.7532899714830773,
+            "Fusion_Raw_RMSE": 0.010564640164375305,
+            "Fusion_Post_RMSE": 0.010487507414420763,
+            "Fusion_Post_MAE": 0.009418619360353882,
+            "Fusion_Post_MAPE": 0.9557762892184912,
             "csv_path": "predictions/Inference\\HUST\\default\\9-1_full_pred.csv"
         },
         "9-7": {
@@ -1183,10 +1183,10 @@
             "KPD_RMSE": 0.19707992672920227,
             "DeepOPINN_RMSE": 0.004482111427932978,
             "LAX_RMSE": 0.006562304217368364,
-            "Fusion_Raw_RMSE": 0.0042966436594724655,
-            "Fusion_Post_RMSE": 0.004252977521670946,
-            "Fusion_Post_MAE": 0.0033495276997331,
-            "Fusion_Post_MAPE": 0.3497511856237378,
+            "Fusion_Raw_RMSE": 0.004414734896272421,
+            "Fusion_Post_RMSE": 0.004311996376064816,
+            "Fusion_Post_MAE": 0.003055263706324997,
+            "Fusion_Post_MAPE": 0.32532659978453543,
             "csv_path": "predictions/Inference\\HUST\\default\\9-7_full_pred.csv"
         }
     }

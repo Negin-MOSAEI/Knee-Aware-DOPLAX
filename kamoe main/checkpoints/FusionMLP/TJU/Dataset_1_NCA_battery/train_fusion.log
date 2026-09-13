@@ -41,3 +41,451 @@
 2026-09-12 16:35:51,879 - INFO -   Test MAPE: 1.774249
 2026-09-12 16:35:51,879 - INFO -   Test MSE:  0.000517
 2026-09-12 16:35:51,879 - INFO - ==================================================
+2026-09-12 19:08:03,371 - INFO - ==================================================
+2026-09-12 19:08:03,371 - INFO - Starting FusionMLP Training for [TJU] - [Dataset_1_NCA_battery]
+2026-09-12 19:08:03,371 - INFO - Device: cuda | Epochs: 2000 | LR: 0.006457 | Mono Weight: 0.0180 | Knee Feature: True
+2026-09-12 19:08:03,371 - INFO - ==================================================
+2026-09-12 19:08:04,114 - INFO - Data Splits: Train=46, Val=10, Test=10
+2026-09-12 19:08:04,658 - INFO - Epoch [   1/2000] LR: 0.006457 | Train Loss: 0.085922 (Data: 0.08592, Mono: 0.00009) | Val MSE: 0.003769 (RMSE: 0.0614) [BEST]
+2026-09-12 19:08:05,082 - INFO - Epoch [   2/2000] LR: 0.006457 | Train Loss: 0.022424 (Data: 0.02242, Mono: 0.00005) | Val MSE: 0.001679 (RMSE: 0.0410) [BEST]
+2026-09-12 19:08:06,116 - INFO - Epoch [   4/2000] LR: 0.006457 | Train Loss: 0.007391 (Data: 0.00739, Mono: 0.00003) | Val MSE: 0.001105 (RMSE: 0.0332) [BEST]
+2026-09-12 19:08:06,606 - INFO - Epoch [   5/2000] LR: 0.006457 | Train Loss: 0.006456 (Data: 0.00646, Mono: 0.00003) | Val MSE: 0.001045 (RMSE: 0.0323) [BEST]
+2026-09-12 19:08:08,796 - INFO - Epoch [  10/2000] LR: 0.006457 | Train Loss: 0.003990 (Data: 0.00399, Mono: 0.00002) | Val MSE: 0.003074 (RMSE: 0.0554) 
+2026-09-12 19:08:10,744 - INFO - Epoch [  14/2000] LR: 0.006457 | Train Loss: 0.002901 (Data: 0.00290, Mono: 0.00001) | Val MSE: 0.000918 (RMSE: 0.0303) [BEST]
+2026-09-12 19:08:13,026 - INFO - Epoch [  20/2000] LR: 0.006457 | Train Loss: 0.002309 (Data: 0.00231, Mono: 0.00001) | Val MSE: 0.000936 (RMSE: 0.0306) 
+2026-09-12 19:08:15,948 - INFO - Epoch [  27/2000] LR: 0.006457 | Train Loss: 0.001645 (Data: 0.00164, Mono: 0.00001) | Val MSE: 0.000738 (RMSE: 0.0272) [BEST]
+2026-09-12 19:08:17,139 - INFO - Epoch [  30/2000] LR: 0.006457 | Train Loss: 0.001091 (Data: 0.00109, Mono: 0.00001) | Val MSE: 0.000690 (RMSE: 0.0263) [BEST]
+2026-09-12 19:08:17,561 - INFO - Epoch [  31/2000] LR: 0.006457 | Train Loss: 0.000908 (Data: 0.00091, Mono: 0.00001) | Val MSE: 0.000659 (RMSE: 0.0257) [BEST]
+2026-09-12 19:08:17,969 - INFO - Epoch [  32/2000] LR: 0.006457 | Train Loss: 0.000923 (Data: 0.00092, Mono: 0.00001) | Val MSE: 0.000322 (RMSE: 0.0180) [BEST]
+2026-09-12 19:08:21,231 - INFO - Epoch [  40/2000] LR: 0.006457 | Train Loss: 0.000560 (Data: 0.00056, Mono: 0.00000) | Val MSE: 0.000260 (RMSE: 0.0161) [BEST]
+2026-09-12 19:08:25,268 - INFO - Epoch [  50/2000] LR: 0.006457 | Train Loss: 0.000362 (Data: 0.00036, Mono: 0.00000) | Val MSE: 0.000392 (RMSE: 0.0198) 
+2026-09-12 19:08:27,833 - INFO - Epoch [  56/2000] LR: 0.006456 | Train Loss: 0.000410 (Data: 0.00041, Mono: 0.00000) | Val MSE: 0.000221 (RMSE: 0.0149) [BEST]
+2026-09-12 19:08:29,706 - INFO - Epoch [  60/2000] LR: 0.006456 | Train Loss: 0.000456 (Data: 0.00046, Mono: 0.00000) | Val MSE: 0.000240 (RMSE: 0.0155) 
+2026-09-12 19:08:32,996 - INFO - Epoch [  69/2000] LR: 0.006455 | Train Loss: 0.000446 (Data: 0.00045, Mono: 0.00000) | Val MSE: 0.000194 (RMSE: 0.0139) [BEST]
+2026-09-12 19:08:33,362 - INFO - Epoch [  70/2000] LR: 0.006455 | Train Loss: 0.000353 (Data: 0.00035, Mono: 0.00000) | Val MSE: 0.000322 (RMSE: 0.0179) 
+2026-09-12 19:08:35,502 - INFO - Epoch [  76/2000] LR: 0.006454 | Train Loss: 0.000503 (Data: 0.00050, Mono: 0.00000) | Val MSE: 0.000182 (RMSE: 0.0135) [BEST]
+2026-09-12 19:08:36,919 - INFO - Epoch [  80/2000] LR: 0.006453 | Train Loss: 0.000346 (Data: 0.00035, Mono: 0.00000) | Val MSE: 0.000380 (RMSE: 0.0195) 
+2026-09-12 19:08:40,427 - INFO - Epoch [  90/2000] LR: 0.006450 | Train Loss: 0.000318 (Data: 0.00032, Mono: 0.00000) | Val MSE: 0.000217 (RMSE: 0.0147) 
+2026-09-12 19:08:44,169 - INFO - Epoch [ 100/2000] LR: 0.006446 | Train Loss: 0.000356 (Data: 0.00036, Mono: 0.00000) | Val MSE: 0.000488 (RMSE: 0.0221) 
+2026-09-12 19:08:48,073 - INFO - Epoch [ 110/2000] LR: 0.006441 | Train Loss: 0.000611 (Data: 0.00061, Mono: 0.00000) | Val MSE: 0.000299 (RMSE: 0.0173) 
+2026-09-12 19:08:48,464 - INFO - Epoch [ 111/2000] LR: 0.006441 | Train Loss: 0.000273 (Data: 0.00027, Mono: 0.00000) | Val MSE: 0.000178 (RMSE: 0.0133) [BEST]
+2026-09-12 19:08:51,855 - INFO - Epoch [ 120/2000] LR: 0.006436 | Train Loss: 0.000362 (Data: 0.00036, Mono: 0.00000) | Val MSE: 0.000200 (RMSE: 0.0142) 
+2026-09-12 19:08:55,620 - INFO - Epoch [ 130/2000] LR: 0.006430 | Train Loss: 0.000445 (Data: 0.00044, Mono: 0.00000) | Val MSE: 0.000230 (RMSE: 0.0152) 
+2026-09-12 19:08:59,075 - INFO - Epoch [ 140/2000] LR: 0.006423 | Train Loss: 0.000272 (Data: 0.00027, Mono: 0.00000) | Val MSE: 0.000262 (RMSE: 0.0162) 
+2026-09-12 19:09:02,443 - INFO - Epoch [ 150/2000] LR: 0.006415 | Train Loss: 0.000387 (Data: 0.00039, Mono: 0.00000) | Val MSE: 0.000277 (RMSE: 0.0166) 
+2026-09-12 19:09:05,952 - INFO - Epoch [ 160/2000] LR: 0.006406 | Train Loss: 0.000325 (Data: 0.00033, Mono: 0.00000) | Val MSE: 0.000844 (RMSE: 0.0291) 
+2026-09-12 19:09:10,009 - INFO - Epoch [ 170/2000] LR: 0.006397 | Train Loss: 0.000288 (Data: 0.00029, Mono: 0.00000) | Val MSE: 0.000558 (RMSE: 0.0236) 
+2026-09-12 19:09:14,500 - INFO - Epoch [ 180/2000] LR: 0.006386 | Train Loss: 0.000374 (Data: 0.00037, Mono: 0.00000) | Val MSE: 0.000502 (RMSE: 0.0224) 
+2026-09-12 19:09:18,952 - INFO - Epoch [ 190/2000] LR: 0.006375 | Train Loss: 0.000413 (Data: 0.00041, Mono: 0.00000) | Val MSE: 0.000309 (RMSE: 0.0176) 
+2026-09-12 19:09:19,431 - INFO - [*] Early stopping triggered at epoch 191. Best epoch was 111 with Val MSE: 0.000178
+2026-09-12 19:09:19,431 - INFO - Training completed in 75.26s. Loading best checkpoint from epoch 111 for final test evaluation...
+2026-09-12 19:09:19,489 - INFO - ==================================================
+2026-09-12 19:09:19,490 - INFO - Test Results for [TJU] - [Dataset_1_NCA_battery] (Best Epoch 111):
+2026-09-12 19:09:19,490 - INFO -   Test RMSE: 0.021553
+2026-09-12 19:09:19,490 - INFO -   Test MAE:  0.014500
+2026-09-12 19:09:19,490 - INFO -   Test MAPE: 1.747325
+2026-09-12 19:09:19,490 - INFO -   Test MSE:  0.000465
+2026-09-12 19:09:19,490 - INFO - ==================================================
+2026-09-12 19:38:06,169 - INFO - ==================================================
+2026-09-12 19:38:06,169 - INFO - Starting FusionMLP Training for [TJU] - [Dataset_1_NCA_battery]
+2026-09-12 19:38:06,169 - INFO - Device: cuda | Epochs: 2000 | LR: 0.006457 | Mono Weight: 0.0180 | Knee Feature: True
+2026-09-12 19:38:06,169 - INFO - ==================================================
+2026-09-12 19:38:06,741 - INFO - Data Splits: Train=46, Val=10, Test=10
+2026-09-12 19:38:07,131 - INFO - Epoch [   1/2000] LR: 0.006457 | Train Loss: 0.056236 (Data: 0.05623, Mono: 0.00007) | Val MSE: 0.000891 (RMSE: 0.0298) [BEST]
+2026-09-12 19:38:10,561 - INFO - Epoch [  10/2000] LR: 0.006457 | Train Loss: 0.003406 (Data: 0.00341, Mono: 0.00002) | Val MSE: 0.001351 (RMSE: 0.0368) 
+2026-09-12 19:38:13,875 - INFO - Epoch [  20/2000] LR: 0.006457 | Train Loss: 0.002287 (Data: 0.00229, Mono: 0.00001) | Val MSE: 0.000981 (RMSE: 0.0313) 
+2026-09-12 19:38:16,935 - INFO - Epoch [  30/2000] LR: 0.006457 | Train Loss: 0.001779 (Data: 0.00178, Mono: 0.00000) | Val MSE: 0.001688 (RMSE: 0.0411) 
+2026-09-12 19:38:17,574 - INFO - Epoch [  32/2000] LR: 0.006457 | Train Loss: 0.001449 (Data: 0.00145, Mono: 0.00000) | Val MSE: 0.000846 (RMSE: 0.0291) [BEST]
+2026-09-12 19:38:18,868 - INFO - Epoch [  36/2000] LR: 0.006457 | Train Loss: 0.001108 (Data: 0.00111, Mono: 0.00000) | Val MSE: 0.000808 (RMSE: 0.0284) [BEST]
+2026-09-12 19:38:19,174 - INFO - Epoch [  37/2000] LR: 0.006457 | Train Loss: 0.001250 (Data: 0.00125, Mono: 0.00000) | Val MSE: 0.000588 (RMSE: 0.0243) [BEST]
+2026-09-12 19:38:20,100 - INFO - Epoch [  40/2000] LR: 0.006457 | Train Loss: 0.001185 (Data: 0.00118, Mono: 0.00000) | Val MSE: 0.000696 (RMSE: 0.0264) 
+2026-09-12 19:38:21,393 - INFO - Epoch [  44/2000] LR: 0.006457 | Train Loss: 0.000675 (Data: 0.00068, Mono: 0.00000) | Val MSE: 0.000323 (RMSE: 0.0180) [BEST]
+2026-09-12 19:38:23,392 - INFO - Epoch [  50/2000] LR: 0.006457 | Train Loss: 0.000721 (Data: 0.00072, Mono: 0.00000) | Val MSE: 0.000469 (RMSE: 0.0217) 
+2026-09-12 19:38:25,378 - INFO - Epoch [  56/2000] LR: 0.006456 | Train Loss: 0.000573 (Data: 0.00057, Mono: 0.00000) | Val MSE: 0.000199 (RMSE: 0.0141) [BEST]
+2026-09-12 19:38:25,985 - INFO - Epoch [  58/2000] LR: 0.006456 | Train Loss: 0.000382 (Data: 0.00038, Mono: 0.00000) | Val MSE: 0.000180 (RMSE: 0.0134) [BEST]
+2026-09-12 19:38:26,613 - INFO - Epoch [  60/2000] LR: 0.006456 | Train Loss: 0.000311 (Data: 0.00031, Mono: 0.00000) | Val MSE: 0.000617 (RMSE: 0.0248) 
+2026-09-12 19:38:26,929 - INFO - Epoch [  61/2000] LR: 0.006456 | Train Loss: 0.000387 (Data: 0.00039, Mono: 0.00000) | Val MSE: 0.000169 (RMSE: 0.0130) [BEST]
+2026-09-12 19:38:29,959 - INFO - Epoch [  70/2000] LR: 0.006455 | Train Loss: 0.000426 (Data: 0.00043, Mono: 0.00000) | Val MSE: 0.000227 (RMSE: 0.0151) 
+2026-09-12 19:38:33,451 - INFO - Epoch [  80/2000] LR: 0.006453 | Train Loss: 0.000404 (Data: 0.00040, Mono: 0.00000) | Val MSE: 0.000172 (RMSE: 0.0131) 
+2026-09-12 19:38:35,236 - INFO - Epoch [  85/2000] LR: 0.006451 | Train Loss: 0.000410 (Data: 0.00041, Mono: 0.00000) | Val MSE: 0.000167 (RMSE: 0.0129) [BEST]
+2026-09-12 19:38:36,996 - INFO - Epoch [  90/2000] LR: 0.006450 | Train Loss: 0.000347 (Data: 0.00035, Mono: 0.00000) | Val MSE: 0.000557 (RMSE: 0.0236) 
+2026-09-12 19:38:40,552 - INFO - Epoch [ 100/2000] LR: 0.006446 | Train Loss: 0.000371 (Data: 0.00037, Mono: 0.00000) | Val MSE: 0.000197 (RMSE: 0.0140) 
+2026-09-12 19:38:43,972 - INFO - Epoch [ 110/2000] LR: 0.006441 | Train Loss: 0.000378 (Data: 0.00038, Mono: 0.00000) | Val MSE: 0.000232 (RMSE: 0.0152) 
+2026-09-12 19:38:45,336 - INFO - Epoch [ 114/2000] LR: 0.006439 | Train Loss: 0.000278 (Data: 0.00028, Mono: 0.00000) | Val MSE: 0.000165 (RMSE: 0.0129) [BEST]
+2026-09-12 19:38:47,347 - INFO - Epoch [ 120/2000] LR: 0.006436 | Train Loss: 0.000404 (Data: 0.00040, Mono: 0.00000) | Val MSE: 0.000445 (RMSE: 0.0211) 
+2026-09-12 19:38:51,019 - INFO - Epoch [ 130/2000] LR: 0.006430 | Train Loss: 0.000261 (Data: 0.00026, Mono: 0.00000) | Val MSE: 0.000168 (RMSE: 0.0130) 
+2026-09-12 19:38:54,646 - INFO - Epoch [ 140/2000] LR: 0.006423 | Train Loss: 0.000331 (Data: 0.00033, Mono: 0.00000) | Val MSE: 0.000685 (RMSE: 0.0262) 
+2026-09-12 19:38:58,384 - INFO - Epoch [ 150/2000] LR: 0.006415 | Train Loss: 0.000418 (Data: 0.00042, Mono: 0.00000) | Val MSE: 0.000306 (RMSE: 0.0175) 
+2026-09-12 19:39:02,635 - INFO - Epoch [ 160/2000] LR: 0.006406 | Train Loss: 0.001145 (Data: 0.00114, Mono: 0.00000) | Val MSE: 0.000508 (RMSE: 0.0225) 
+2026-09-12 19:39:07,159 - INFO - Epoch [ 170/2000] LR: 0.006397 | Train Loss: 0.000365 (Data: 0.00036, Mono: 0.00000) | Val MSE: 0.000487 (RMSE: 0.0221) 
+2026-09-12 19:39:10,564 - INFO - Epoch [ 180/2000] LR: 0.006386 | Train Loss: 0.000369 (Data: 0.00037, Mono: 0.00000) | Val MSE: 0.000306 (RMSE: 0.0175) 
+2026-09-12 19:39:12,620 - INFO - Epoch [ 186/2000] LR: 0.006380 | Train Loss: 0.000332 (Data: 0.00033, Mono: 0.00000) | Val MSE: 0.000163 (RMSE: 0.0128) [BEST]
+2026-09-12 19:39:13,862 - INFO - Epoch [ 190/2000] LR: 0.006375 | Train Loss: 0.000399 (Data: 0.00040, Mono: 0.00000) | Val MSE: 0.000533 (RMSE: 0.0231) 
+2026-09-12 19:39:17,015 - INFO - Epoch [ 200/2000] LR: 0.006363 | Train Loss: 0.000454 (Data: 0.00045, Mono: 0.00000) | Val MSE: 0.000278 (RMSE: 0.0167) 
+2026-09-12 19:39:20,352 - INFO - Epoch [ 210/2000] LR: 0.006350 | Train Loss: 0.000391 (Data: 0.00039, Mono: 0.00000) | Val MSE: 0.000421 (RMSE: 0.0205) 
+2026-09-12 19:39:24,008 - INFO - Epoch [ 220/2000] LR: 0.006337 | Train Loss: 0.000372 (Data: 0.00037, Mono: 0.00000) | Val MSE: 0.000181 (RMSE: 0.0134) 
+2026-09-12 19:39:27,484 - INFO - Epoch [ 230/2000] LR: 0.006322 | Train Loss: 0.000288 (Data: 0.00029, Mono: 0.00000) | Val MSE: 0.000328 (RMSE: 0.0181) 
+2026-09-12 19:39:30,618 - INFO - Epoch [ 240/2000] LR: 0.006307 | Train Loss: 0.000314 (Data: 0.00031, Mono: 0.00000) | Val MSE: 0.000176 (RMSE: 0.0133) 
+2026-09-12 19:39:33,818 - INFO - Epoch [ 250/2000] LR: 0.006291 | Train Loss: 0.000246 (Data: 0.00025, Mono: 0.00000) | Val MSE: 0.000254 (RMSE: 0.0159) 
+2026-09-12 19:39:37,062 - INFO - Epoch [ 260/2000] LR: 0.006274 | Train Loss: 0.000277 (Data: 0.00028, Mono: 0.00000) | Val MSE: 0.000377 (RMSE: 0.0194) 
+2026-09-12 19:39:40,245 - INFO - Epoch [ 270/2000] LR: 0.006257 | Train Loss: 0.000360 (Data: 0.00036, Mono: 0.00000) | Val MSE: 0.000506 (RMSE: 0.0225) 
+2026-09-12 19:39:44,052 - INFO - Epoch [ 280/2000] LR: 0.006238 | Train Loss: 0.000356 (Data: 0.00036, Mono: 0.00000) | Val MSE: 0.000272 (RMSE: 0.0165) 
+2026-09-12 19:39:48,091 - INFO - Epoch [ 290/2000] LR: 0.006219 | Train Loss: 0.000328 (Data: 0.00033, Mono: 0.00000) | Val MSE: 0.000297 (RMSE: 0.0172) 
+2026-09-12 19:39:52,172 - INFO - Epoch [ 300/2000] LR: 0.006199 | Train Loss: 0.000332 (Data: 0.00033, Mono: 0.00000) | Val MSE: 0.000667 (RMSE: 0.0258) 
+2026-09-12 19:39:56,284 - INFO - Epoch [ 310/2000] LR: 0.006178 | Train Loss: 0.000341 (Data: 0.00034, Mono: 0.00000) | Val MSE: 0.000227 (RMSE: 0.0151) 
+2026-09-12 19:39:59,593 - INFO - Epoch [ 320/2000] LR: 0.006157 | Train Loss: 0.000462 (Data: 0.00046, Mono: 0.00000) | Val MSE: 0.000249 (RMSE: 0.0158) 
+2026-09-12 19:40:02,649 - INFO - Epoch [ 330/2000] LR: 0.006135 | Train Loss: 0.000321 (Data: 0.00032, Mono: 0.00000) | Val MSE: 0.000240 (RMSE: 0.0155) 
+2026-09-12 19:40:05,752 - INFO - Epoch [ 340/2000] LR: 0.006112 | Train Loss: 0.000282 (Data: 0.00028, Mono: 0.00000) | Val MSE: 0.000557 (RMSE: 0.0236) 
+2026-09-12 19:40:09,003 - INFO - Epoch [ 350/2000] LR: 0.006088 | Train Loss: 0.000270 (Data: 0.00027, Mono: 0.00000) | Val MSE: 0.000417 (RMSE: 0.0204) 
+2026-09-12 19:40:12,147 - INFO - Epoch [ 360/2000] LR: 0.006063 | Train Loss: 0.000278 (Data: 0.00028, Mono: 0.00000) | Val MSE: 0.000305 (RMSE: 0.0175) 
+2026-09-12 19:40:15,312 - INFO - Epoch [ 370/2000] LR: 0.006038 | Train Loss: 0.000377 (Data: 0.00038, Mono: 0.00000) | Val MSE: 0.000385 (RMSE: 0.0196) 
+2026-09-12 19:40:18,506 - INFO - Epoch [ 380/2000] LR: 0.006012 | Train Loss: 0.000312 (Data: 0.00031, Mono: 0.00000) | Val MSE: 0.000330 (RMSE: 0.0182) 
+2026-09-12 19:40:20,394 - INFO - [*] Early stopping triggered at epoch 386. Best epoch was 186 with Val MSE: 0.000163
+2026-09-12 19:40:20,394 - INFO - Training completed in 133.63s. Loading best checkpoint from epoch 186 for final test evaluation...
+2026-09-12 19:40:20,440 - INFO - ==================================================
+2026-09-12 19:40:20,440 - INFO - Test Results for [TJU] - [Dataset_1_NCA_battery] (Best Epoch 186):
+2026-09-12 19:40:20,440 - INFO -   Test RMSE: 0.022290
+2026-09-12 19:40:20,440 - INFO -   Test MAE:  0.014371
+2026-09-12 19:40:20,440 - INFO -   Test MAPE: 1.721382
+2026-09-12 19:40:20,440 - INFO -   Test MSE:  0.000497
+2026-09-12 19:40:20,440 - INFO - ==================================================
+2026-09-12 20:09:53,650 - INFO - ==================================================
+2026-09-12 20:09:53,650 - INFO - Starting FusionMLP Training for [TJU] - [Dataset_1_NCA_battery]
+2026-09-12 20:09:53,650 - INFO - Device: cuda | Epochs: 2000 | LR: 0.006457 | Mono Weight: 0.0180 | Knee Feature: True
+2026-09-12 20:09:53,650 - INFO - ==================================================
+2026-09-12 20:09:54,212 - INFO - Data Splits: Train=46, Val=10, Test=10
+2026-09-12 20:09:54,596 - INFO - Epoch [   1/2000] LR: 0.006457 | Train Loss: 0.071715 (Data: 0.07171, Mono: 0.00008) | Val MSE: 0.000976 (RMSE: 0.0312) [BEST]
+2026-09-12 20:09:57,451 - INFO - Epoch [  10/2000] LR: 0.006457 | Train Loss: 0.004265 (Data: 0.00426, Mono: 0.00002) | Val MSE: 0.001855 (RMSE: 0.0431) 
+2026-09-12 20:10:00,441 - INFO - Epoch [  20/2000] LR: 0.006457 | Train Loss: 0.002079 (Data: 0.00208, Mono: 0.00001) | Val MSE: 0.001531 (RMSE: 0.0391) 
+2026-09-12 20:10:00,764 - INFO - Epoch [  21/2000] LR: 0.006457 | Train Loss: 0.002234 (Data: 0.00223, Mono: 0.00001) | Val MSE: 0.000957 (RMSE: 0.0309) [BEST]
+2026-09-12 20:10:02,018 - INFO - Epoch [  25/2000] LR: 0.006457 | Train Loss: 0.001641 (Data: 0.00164, Mono: 0.00001) | Val MSE: 0.000897 (RMSE: 0.0300) [BEST]
+2026-09-12 20:10:03,590 - INFO - Epoch [  30/2000] LR: 0.006457 | Train Loss: 0.001623 (Data: 0.00162, Mono: 0.00001) | Val MSE: 0.000940 (RMSE: 0.0307) 
+2026-09-12 20:10:05,767 - INFO - Epoch [  37/2000] LR: 0.006457 | Train Loss: 0.001098 (Data: 0.00110, Mono: 0.00000) | Val MSE: 0.000615 (RMSE: 0.0248) [BEST]
+2026-09-12 20:10:06,101 - INFO - Epoch [  38/2000] LR: 0.006457 | Train Loss: 0.001278 (Data: 0.00128, Mono: 0.00000) | Val MSE: 0.000606 (RMSE: 0.0246) [BEST]
+2026-09-12 20:10:06,738 - INFO - Epoch [  40/2000] LR: 0.006457 | Train Loss: 0.000864 (Data: 0.00086, Mono: 0.00000) | Val MSE: 0.000421 (RMSE: 0.0205) [BEST]
+2026-09-12 20:10:07,385 - INFO - Epoch [  42/2000] LR: 0.006457 | Train Loss: 0.000628 (Data: 0.00063, Mono: 0.00000) | Val MSE: 0.000298 (RMSE: 0.0173) [BEST]
+2026-09-12 20:10:08,902 - INFO - Epoch [  47/2000] LR: 0.006457 | Train Loss: 0.000357 (Data: 0.00036, Mono: 0.00000) | Val MSE: 0.000196 (RMSE: 0.0140) [BEST]
+2026-09-12 20:10:09,813 - INFO - Epoch [  50/2000] LR: 0.006457 | Train Loss: 0.000358 (Data: 0.00036, Mono: 0.00000) | Val MSE: 0.000266 (RMSE: 0.0163) 
+2026-09-12 20:10:12,906 - INFO - Epoch [  60/2000] LR: 0.006456 | Train Loss: 0.000365 (Data: 0.00036, Mono: 0.00000) | Val MSE: 0.000186 (RMSE: 0.0136) [BEST]
+2026-09-12 20:10:13,218 - INFO - Epoch [  61/2000] LR: 0.006456 | Train Loss: 0.000373 (Data: 0.00037, Mono: 0.00000) | Val MSE: 0.000181 (RMSE: 0.0135) [BEST]
+2026-09-12 20:10:14,788 - INFO - Epoch [  66/2000] LR: 0.006455 | Train Loss: 0.000490 (Data: 0.00049, Mono: 0.00000) | Val MSE: 0.000179 (RMSE: 0.0134) [BEST]
+2026-09-12 20:10:15,715 - INFO - Epoch [  69/2000] LR: 0.006455 | Train Loss: 0.000387 (Data: 0.00039, Mono: 0.00000) | Val MSE: 0.000171 (RMSE: 0.0131) [BEST]
+2026-09-12 20:10:16,022 - INFO - Epoch [  70/2000] LR: 0.006455 | Train Loss: 0.000434 (Data: 0.00043, Mono: 0.00000) | Val MSE: 0.000676 (RMSE: 0.0260) 
+2026-09-12 20:10:19,157 - INFO - Epoch [  80/2000] LR: 0.006453 | Train Loss: 0.000456 (Data: 0.00046, Mono: 0.00000) | Val MSE: 0.000283 (RMSE: 0.0168) 
+2026-09-12 20:10:21,994 - INFO - Epoch [  89/2000] LR: 0.006450 | Train Loss: 0.000301 (Data: 0.00030, Mono: 0.00000) | Val MSE: 0.000168 (RMSE: 0.0130) [BEST]
+2026-09-12 20:10:22,304 - INFO - Epoch [  90/2000] LR: 0.006450 | Train Loss: 0.000308 (Data: 0.00031, Mono: 0.00000) | Val MSE: 0.000274 (RMSE: 0.0165) 
+2026-09-12 20:10:25,435 - INFO - Epoch [ 100/2000] LR: 0.006446 | Train Loss: 0.000377 (Data: 0.00038, Mono: 0.00000) | Val MSE: 0.000210 (RMSE: 0.0145) 
+2026-09-12 20:10:28,670 - INFO - Epoch [ 110/2000] LR: 0.006441 | Train Loss: 0.000289 (Data: 0.00029, Mono: 0.00000) | Val MSE: 0.000390 (RMSE: 0.0198) 
+2026-09-12 20:10:32,020 - INFO - Epoch [ 120/2000] LR: 0.006436 | Train Loss: 0.000447 (Data: 0.00045, Mono: 0.00000) | Val MSE: 0.000853 (RMSE: 0.0292) 
+2026-09-12 20:10:36,396 - INFO - Epoch [ 130/2000] LR: 0.006430 | Train Loss: 0.000332 (Data: 0.00033, Mono: 0.00000) | Val MSE: 0.000827 (RMSE: 0.0288) 
+2026-09-12 20:10:40,726 - INFO - Epoch [ 140/2000] LR: 0.006423 | Train Loss: 0.000421 (Data: 0.00042, Mono: 0.00000) | Val MSE: 0.000303 (RMSE: 0.0174) 
+2026-09-12 20:10:44,888 - INFO - Epoch [ 150/2000] LR: 0.006415 | Train Loss: 0.000299 (Data: 0.00030, Mono: 0.00000) | Val MSE: 0.000235 (RMSE: 0.0153) 
+2026-09-12 20:10:49,401 - INFO - Epoch [ 160/2000] LR: 0.006406 | Train Loss: 0.000323 (Data: 0.00032, Mono: 0.00000) | Val MSE: 0.000240 (RMSE: 0.0155) 
+2026-09-12 20:10:52,934 - INFO - Epoch [ 170/2000] LR: 0.006397 | Train Loss: 0.000394 (Data: 0.00039, Mono: 0.00000) | Val MSE: 0.000248 (RMSE: 0.0157) 
+2026-09-12 20:10:53,269 - INFO - Epoch [ 171/2000] LR: 0.006396 | Train Loss: 0.000301 (Data: 0.00030, Mono: 0.00000) | Val MSE: 0.000168 (RMSE: 0.0130) [BEST]
+2026-09-12 20:10:56,263 - INFO - Epoch [ 180/2000] LR: 0.006386 | Train Loss: 0.000633 (Data: 0.00063, Mono: 0.00000) | Val MSE: 0.000546 (RMSE: 0.0234) 
+2026-09-12 20:10:59,645 - INFO - Epoch [ 190/2000] LR: 0.006375 | Train Loss: 0.000345 (Data: 0.00034, Mono: 0.00000) | Val MSE: 0.000218 (RMSE: 0.0148) 
+2026-09-12 20:11:03,027 - INFO - Epoch [ 200/2000] LR: 0.006363 | Train Loss: 0.000550 (Data: 0.00055, Mono: 0.00000) | Val MSE: 0.000191 (RMSE: 0.0138) 
+2026-09-12 20:11:06,294 - INFO - Epoch [ 210/2000] LR: 0.006350 | Train Loss: 0.000276 (Data: 0.00028, Mono: 0.00000) | Val MSE: 0.000230 (RMSE: 0.0152) 
+2026-09-12 20:11:07,987 - INFO - Epoch [ 215/2000] LR: 0.006343 | Train Loss: 0.000414 (Data: 0.00041, Mono: 0.00000) | Val MSE: 0.000165 (RMSE: 0.0128) [BEST]
+2026-09-12 20:11:09,625 - INFO - Epoch [ 220/2000] LR: 0.006337 | Train Loss: 0.000321 (Data: 0.00032, Mono: 0.00000) | Val MSE: 0.000230 (RMSE: 0.0152) 
+2026-09-12 20:11:12,962 - INFO - Epoch [ 230/2000] LR: 0.006322 | Train Loss: 0.000354 (Data: 0.00035, Mono: 0.00000) | Val MSE: 0.000542 (RMSE: 0.0233) 
+2026-09-12 20:11:16,369 - INFO - Epoch [ 240/2000] LR: 0.006307 | Train Loss: 0.000457 (Data: 0.00046, Mono: 0.00000) | Val MSE: 0.000299 (RMSE: 0.0173) 
+2026-09-12 20:11:19,966 - INFO - Epoch [ 250/2000] LR: 0.006291 | Train Loss: 0.000338 (Data: 0.00034, Mono: 0.00000) | Val MSE: 0.000245 (RMSE: 0.0156) 
+2026-09-12 20:11:23,508 - INFO - Epoch [ 260/2000] LR: 0.006274 | Train Loss: 0.000608 (Data: 0.00061, Mono: 0.00000) | Val MSE: 0.000266 (RMSE: 0.0163) 
+2026-09-12 20:11:26,816 - INFO - Epoch [ 270/2000] LR: 0.006257 | Train Loss: 0.000417 (Data: 0.00042, Mono: 0.00000) | Val MSE: 0.001060 (RMSE: 0.0326) 
+2026-09-12 20:11:29,948 - INFO - Epoch [ 280/2000] LR: 0.006238 | Train Loss: 0.000281 (Data: 0.00028, Mono: 0.00000) | Val MSE: 0.000272 (RMSE: 0.0165) 
+2026-09-12 20:11:33,092 - INFO - Epoch [ 290/2000] LR: 0.006219 | Train Loss: 0.000319 (Data: 0.00032, Mono: 0.00000) | Val MSE: 0.000282 (RMSE: 0.0168) 
+2026-09-12 20:11:36,321 - INFO - Epoch [ 300/2000] LR: 0.006199 | Train Loss: 0.000314 (Data: 0.00031, Mono: 0.00000) | Val MSE: 0.000412 (RMSE: 0.0203) 
+2026-09-12 20:11:40,363 - INFO - Epoch [ 310/2000] LR: 0.006178 | Train Loss: 0.000293 (Data: 0.00029, Mono: 0.00000) | Val MSE: 0.000219 (RMSE: 0.0148) 
+2026-09-12 20:11:44,454 - INFO - Epoch [ 320/2000] LR: 0.006157 | Train Loss: 0.000441 (Data: 0.00044, Mono: 0.00000) | Val MSE: 0.000402 (RMSE: 0.0201) 
+2026-09-12 20:11:48,853 - INFO - Epoch [ 330/2000] LR: 0.006135 | Train Loss: 0.000357 (Data: 0.00036, Mono: 0.00000) | Val MSE: 0.000346 (RMSE: 0.0186) 
+2026-09-12 20:11:52,054 - INFO - Epoch [ 340/2000] LR: 0.006112 | Train Loss: 0.000250 (Data: 0.00025, Mono: 0.00000) | Val MSE: 0.000295 (RMSE: 0.0172) 
+2026-09-12 20:11:55,122 - INFO - Epoch [ 350/2000] LR: 0.006088 | Train Loss: 0.000346 (Data: 0.00035, Mono: 0.00000) | Val MSE: 0.000347 (RMSE: 0.0186) 
+2026-09-12 20:11:58,194 - INFO - Epoch [ 360/2000] LR: 0.006063 | Train Loss: 0.000352 (Data: 0.00035, Mono: 0.00000) | Val MSE: 0.000384 (RMSE: 0.0196) 
+2026-09-12 20:12:01,299 - INFO - Epoch [ 370/2000] LR: 0.006038 | Train Loss: 0.000402 (Data: 0.00040, Mono: 0.00000) | Val MSE: 0.000349 (RMSE: 0.0187) 
+2026-09-12 20:12:04,423 - INFO - Epoch [ 380/2000] LR: 0.006012 | Train Loss: 0.000289 (Data: 0.00029, Mono: 0.00000) | Val MSE: 0.000335 (RMSE: 0.0183) 
+2026-09-12 20:12:07,556 - INFO - Epoch [ 390/2000] LR: 0.005986 | Train Loss: 0.000304 (Data: 0.00030, Mono: 0.00000) | Val MSE: 0.000588 (RMSE: 0.0243) 
+2026-09-12 20:12:10,670 - INFO - Epoch [ 400/2000] LR: 0.005958 | Train Loss: 0.000355 (Data: 0.00036, Mono: 0.00000) | Val MSE: 0.000308 (RMSE: 0.0175) 
+2026-09-12 20:12:13,817 - INFO - Epoch [ 410/2000] LR: 0.005930 | Train Loss: 0.000290 (Data: 0.00029, Mono: 0.00000) | Val MSE: 0.000277 (RMSE: 0.0166) 
+2026-09-12 20:12:15,432 - INFO - [*] Early stopping triggered at epoch 415. Best epoch was 215 with Val MSE: 0.000165
+2026-09-12 20:12:15,432 - INFO - Training completed in 141.20s. Loading best checkpoint from epoch 215 for final test evaluation...
+2026-09-12 20:12:15,477 - INFO - ==================================================
+2026-09-12 20:12:15,477 - INFO - Test Results for [TJU] - [Dataset_1_NCA_battery] (Best Epoch 215):
+2026-09-12 20:12:15,477 - INFO -   Test RMSE: 0.021901
+2026-09-12 20:12:15,477 - INFO -   Test MAE:  0.014046
+2026-09-12 20:12:15,477 - INFO -   Test MAPE: 1.683008
+2026-09-12 20:12:15,477 - INFO -   Test MSE:  0.000480
+2026-09-12 20:12:15,477 - INFO - ==================================================
+2026-09-12 20:54:45,984 - INFO - ==================================================
+2026-09-12 20:54:45,984 - INFO - Starting FusionMLP Training for [TJU] - [Dataset_1_NCA_battery]
+2026-09-12 20:54:45,984 - INFO - Device: cuda | Epochs: 2000 | LR: 0.000646 | Mono Weight: 0.0180 | Knee Feature: True
+2026-09-12 20:54:45,984 - INFO - ==================================================
+2026-09-12 20:54:46,711 - INFO - Data Splits: Train=46, Val=10, Test=10
+2026-09-12 20:54:47,202 - INFO - Epoch [   1/2000] LR: 0.006340 | Train Loss: 0.119778 (Data: 0.11978, Mono: 0.00009) | Val MSE: 0.004435 (RMSE: 0.0666) [BEST]
+2026-09-12 20:54:47,652 - INFO - Epoch [   2/2000] LR: 0.006224 | Train Loss: 0.019998 (Data: 0.02000, Mono: 0.00005) | Val MSE: 0.001159 (RMSE: 0.0340) [BEST]
+2026-09-12 20:54:48,111 - INFO - Epoch [   3/2000] LR: 0.006108 | Train Loss: 0.011335 (Data: 0.01133, Mono: 0.00004) | Val MSE: 0.000851 (RMSE: 0.0292) [BEST]
+2026-09-12 20:54:50,552 - INFO - Epoch [  10/2000] LR: 0.005294 | Train Loss: 0.004251 (Data: 0.00425, Mono: 0.00002) | Val MSE: 0.001830 (RMSE: 0.0428) 
+2026-09-12 20:54:53,996 - INFO - Epoch [  20/2000] LR: 0.004132 | Train Loss: 0.002410 (Data: 0.00241, Mono: 0.00001) | Val MSE: 0.000889 (RMSE: 0.0298) 
+2026-09-12 20:54:57,227 - INFO - Epoch [  29/2000] LR: 0.003086 | Train Loss: 0.001565 (Data: 0.00157, Mono: 0.00001) | Val MSE: 0.000691 (RMSE: 0.0263) [BEST]
+2026-09-12 20:54:57,615 - INFO - Epoch [  30/2000] LR: 0.002970 | Train Loss: 0.001600 (Data: 0.00160, Mono: 0.00001) | Val MSE: 0.000877 (RMSE: 0.0296) 
+2026-09-12 20:54:59,585 - INFO - Epoch [  35/2000] LR: 0.002389 | Train Loss: 0.001316 (Data: 0.00132, Mono: 0.00001) | Val MSE: 0.000533 (RMSE: 0.0231) [BEST]
+2026-09-12 20:54:59,986 - INFO - Epoch [  36/2000] LR: 0.002273 | Train Loss: 0.001314 (Data: 0.00131, Mono: 0.00001) | Val MSE: 0.000526 (RMSE: 0.0229) [BEST]
+2026-09-12 20:55:00,419 - INFO - Epoch [  37/2000] LR: 0.002156 | Train Loss: 0.001190 (Data: 0.00119, Mono: 0.00001) | Val MSE: 0.000459 (RMSE: 0.0214) [BEST]
+2026-09-12 20:55:01,556 - INFO - Epoch [  40/2000] LR: 0.001808 | Train Loss: 0.000952 (Data: 0.00095, Mono: 0.00001) | Val MSE: 0.000607 (RMSE: 0.0246) 
+2026-09-12 20:55:02,715 - INFO - Epoch [  43/2000] LR: 0.001459 | Train Loss: 0.000759 (Data: 0.00076, Mono: 0.00001) | Val MSE: 0.000340 (RMSE: 0.0184) [BEST]
+2026-09-12 20:55:03,447 - INFO - Epoch [  45/2000] LR: 0.001227 | Train Loss: 0.000874 (Data: 0.00087, Mono: 0.00001) | Val MSE: 0.000246 (RMSE: 0.0157) [BEST]
+2026-09-12 20:55:04,882 - INFO - Epoch [  49/2000] LR: 0.000762 | Train Loss: 0.000634 (Data: 0.00063, Mono: 0.00001) | Val MSE: 0.000246 (RMSE: 0.0157) [BEST]
+2026-09-12 20:55:05,260 - INFO - Epoch [  50/2000] LR: 0.000646 | Train Loss: 0.000648 (Data: 0.00065, Mono: 0.00001) | Val MSE: 0.000386 (RMSE: 0.0197) 
+2026-09-12 20:55:05,670 - INFO - Epoch [  51/2000] LR: 0.000646 | Train Loss: 0.000606 (Data: 0.00061, Mono: 0.00001) | Val MSE: 0.000244 (RMSE: 0.0156) [BEST]
+2026-09-12 20:55:07,333 - INFO - Epoch [  55/2000] LR: 0.000646 | Train Loss: 0.000575 (Data: 0.00058, Mono: 0.00001) | Val MSE: 0.000237 (RMSE: 0.0154) [BEST]
+2026-09-12 20:55:07,698 - INFO - Epoch [  56/2000] LR: 0.000646 | Train Loss: 0.000582 (Data: 0.00058, Mono: 0.00001) | Val MSE: 0.000214 (RMSE: 0.0146) [BEST]
+2026-09-12 20:55:08,063 - INFO - Epoch [  57/2000] LR: 0.000646 | Train Loss: 0.000543 (Data: 0.00054, Mono: 0.00001) | Val MSE: 0.000192 (RMSE: 0.0139) [BEST]
+2026-09-12 20:55:09,194 - INFO - Epoch [  60/2000] LR: 0.000646 | Train Loss: 0.000524 (Data: 0.00052, Mono: 0.00001) | Val MSE: 0.000452 (RMSE: 0.0213) 
+2026-09-12 20:55:11,015 - INFO - Epoch [  65/2000] LR: 0.000646 | Train Loss: 0.000500 (Data: 0.00050, Mono: 0.00001) | Val MSE: 0.000178 (RMSE: 0.0133) [BEST]
+2026-09-12 20:55:12,912 - INFO - Epoch [  70/2000] LR: 0.000645 | Train Loss: 0.000449 (Data: 0.00045, Mono: 0.00001) | Val MSE: 0.000246 (RMSE: 0.0157) 
+2026-09-12 20:55:16,698 - INFO - Epoch [  80/2000] LR: 0.000645 | Train Loss: 0.000408 (Data: 0.00041, Mono: 0.00001) | Val MSE: 0.000174 (RMSE: 0.0132) [BEST]
+2026-09-12 20:55:20,422 - INFO - Epoch [  90/2000] LR: 0.000645 | Train Loss: 0.000356 (Data: 0.00036, Mono: 0.00001) | Val MSE: 0.000209 (RMSE: 0.0145) 
+2026-09-12 20:55:21,532 - INFO - Epoch [  93/2000] LR: 0.000645 | Train Loss: 0.000384 (Data: 0.00038, Mono: 0.00000) | Val MSE: 0.000162 (RMSE: 0.0127) [BEST]
+2026-09-12 20:55:24,131 - INFO - Epoch [ 100/2000] LR: 0.000645 | Train Loss: 0.000330 (Data: 0.00033, Mono: 0.00000) | Val MSE: 0.000279 (RMSE: 0.0167) 
+2026-09-12 20:55:27,943 - INFO - Epoch [ 110/2000] LR: 0.000644 | Train Loss: 0.000329 (Data: 0.00033, Mono: 0.00000) | Val MSE: 0.000280 (RMSE: 0.0167) 
+2026-09-12 20:55:31,838 - INFO - Epoch [ 120/2000] LR: 0.000644 | Train Loss: 0.000307 (Data: 0.00031, Mono: 0.00000) | Val MSE: 0.000349 (RMSE: 0.0187) 
+2026-09-12 20:55:35,716 - INFO - Epoch [ 130/2000] LR: 0.000643 | Train Loss: 0.000279 (Data: 0.00028, Mono: 0.00000) | Val MSE: 0.000325 (RMSE: 0.0180) 
+2026-09-12 20:55:39,694 - INFO - Epoch [ 140/2000] LR: 0.000642 | Train Loss: 0.000267 (Data: 0.00027, Mono: 0.00000) | Val MSE: 0.000174 (RMSE: 0.0132) 
+2026-09-12 20:55:44,315 - INFO - Epoch [ 150/2000] LR: 0.000642 | Train Loss: 0.000279 (Data: 0.00028, Mono: 0.00000) | Val MSE: 0.000220 (RMSE: 0.0148) 
+2026-09-12 20:55:49,767 - INFO - Epoch [ 160/2000] LR: 0.000641 | Train Loss: 0.000261 (Data: 0.00026, Mono: 0.00000) | Val MSE: 0.000274 (RMSE: 0.0166) 
+2026-09-12 20:55:54,501 - INFO - Epoch [ 170/2000] LR: 0.000640 | Train Loss: 0.000255 (Data: 0.00026, Mono: 0.00000) | Val MSE: 0.000168 (RMSE: 0.0130) 
+2026-09-12 20:55:58,325 - INFO - Epoch [ 180/2000] LR: 0.000639 | Train Loss: 0.000248 (Data: 0.00025, Mono: 0.00000) | Val MSE: 0.000173 (RMSE: 0.0131) 
+2026-09-12 20:56:02,052 - INFO - Epoch [ 190/2000] LR: 0.000638 | Train Loss: 0.000234 (Data: 0.00023, Mono: 0.00000) | Val MSE: 0.000164 (RMSE: 0.0128) 
+2026-09-12 20:56:05,800 - INFO - Epoch [ 200/2000] LR: 0.000637 | Train Loss: 0.000233 (Data: 0.00023, Mono: 0.00000) | Val MSE: 0.000306 (RMSE: 0.0175) 
+2026-09-12 20:56:09,587 - INFO - Epoch [ 210/2000] LR: 0.000635 | Train Loss: 0.000240 (Data: 0.00024, Mono: 0.00000) | Val MSE: 0.000274 (RMSE: 0.0165) 
+2026-09-12 20:56:13,517 - INFO - Epoch [ 220/2000] LR: 0.000634 | Train Loss: 0.000223 (Data: 0.00022, Mono: 0.00000) | Val MSE: 0.000277 (RMSE: 0.0166) 
+2026-09-12 20:56:17,364 - INFO - Epoch [ 230/2000] LR: 0.000633 | Train Loss: 0.000222 (Data: 0.00022, Mono: 0.00000) | Val MSE: 0.000210 (RMSE: 0.0145) 
+2026-09-12 20:56:21,214 - INFO - Epoch [ 240/2000] LR: 0.000631 | Train Loss: 0.000227 (Data: 0.00023, Mono: 0.00000) | Val MSE: 0.000182 (RMSE: 0.0135) 
+2026-09-12 20:56:24,896 - INFO - Epoch [ 250/2000] LR: 0.000630 | Train Loss: 0.000267 (Data: 0.00027, Mono: 0.00000) | Val MSE: 0.000390 (RMSE: 0.0198) 
+2026-09-12 20:56:28,939 - INFO - Epoch [ 260/2000] LR: 0.000628 | Train Loss: 0.000234 (Data: 0.00023, Mono: 0.00000) | Val MSE: 0.000302 (RMSE: 0.0174) 
+2026-09-12 20:56:33,080 - INFO - Epoch [ 270/2000] LR: 0.000626 | Train Loss: 0.000235 (Data: 0.00023, Mono: 0.00000) | Val MSE: 0.000195 (RMSE: 0.0140) 
+2026-09-12 20:56:37,060 - INFO - Epoch [ 280/2000] LR: 0.000624 | Train Loss: 0.000240 (Data: 0.00024, Mono: 0.00000) | Val MSE: 0.000196 (RMSE: 0.0140) 
+2026-09-12 20:56:41,876 - INFO - Epoch [ 290/2000] LR: 0.000623 | Train Loss: 0.000225 (Data: 0.00023, Mono: 0.00000) | Val MSE: 0.000241 (RMSE: 0.0155) 
+2026-09-12 20:56:43,516 - INFO - [*] Early stopping triggered at epoch 293. Best epoch was 93 with Val MSE: 0.000162
+2026-09-12 20:56:43,516 - INFO - Training completed in 116.78s. Loading best checkpoint from epoch 93 for final test evaluation...
+2026-09-12 20:56:43,576 - INFO - ==================================================
+2026-09-12 20:56:43,576 - INFO - Test Results for [TJU] - [Dataset_1_NCA_battery] (Best Epoch 93):
+2026-09-12 20:56:43,577 - INFO -   Test RMSE: 0.022215
+2026-09-12 20:56:43,577 - INFO -   Test MAE:  0.014110
+2026-09-12 20:56:43,577 - INFO -   Test MAPE: 1.687813
+2026-09-12 20:56:43,577 - INFO -   Test MSE:  0.000493
+2026-09-12 20:56:43,577 - INFO - ==================================================
+2026-09-13 11:43:42,230 - INFO - ==================================================
+2026-09-13 11:43:42,230 - INFO - Starting FusionMLP Training for [TJU] - [Dataset_1_NCA_battery]
+2026-09-13 11:43:42,230 - INFO - Device: cuda | Epochs: 2000 | LR: 0.000646 | Mono Weight: 0.0180 | Knee Feature: True
+2026-09-13 11:43:42,230 - INFO - ==================================================
+2026-09-13 11:43:43,994 - INFO - Data Splits: Train=46, Val=10, Test=10
+2026-09-13 11:43:45,430 - INFO - Epoch [   1/2000] LR: 0.006340 | Train Loss: 0.132388 (Data: 0.13239, Mono: 0.00011) | Val MSE: 0.001579 (RMSE: 0.0397) [BEST]
+2026-09-13 11:43:45,877 - INFO - Epoch [   2/2000] LR: 0.006224 | Train Loss: 0.019062 (Data: 0.01906, Mono: 0.00005) | Val MSE: 0.001446 (RMSE: 0.0380) [BEST]
+2026-09-13 11:43:46,279 - INFO - Epoch [   3/2000] LR: 0.006108 | Train Loss: 0.012020 (Data: 0.01202, Mono: 0.00003) | Val MSE: 0.001359 (RMSE: 0.0369) [BEST]
+2026-09-13 11:43:47,827 - INFO - Epoch [   7/2000] LR: 0.005643 | Train Loss: 0.006014 (Data: 0.00601, Mono: 0.00002) | Val MSE: 0.001279 (RMSE: 0.0358) [BEST]
+2026-09-13 11:43:48,893 - INFO - Epoch [  10/2000] LR: 0.005294 | Train Loss: 0.003822 (Data: 0.00382, Mono: 0.00002) | Val MSE: 0.001566 (RMSE: 0.0396) 
+2026-09-13 11:43:49,225 - INFO - Epoch [  11/2000] LR: 0.005178 | Train Loss: 0.003714 (Data: 0.00371, Mono: 0.00002) | Val MSE: 0.001229 (RMSE: 0.0351) [BEST]
+2026-09-13 11:43:49,565 - INFO - Epoch [  12/2000] LR: 0.005062 | Train Loss: 0.003490 (Data: 0.00349, Mono: 0.00001) | Val MSE: 0.001162 (RMSE: 0.0341) [BEST]
+2026-09-13 11:43:50,567 - INFO - Epoch [  15/2000] LR: 0.004713 | Train Loss: 0.002877 (Data: 0.00288, Mono: 0.00001) | Val MSE: 0.001139 (RMSE: 0.0338) [BEST]
+2026-09-13 11:43:52,279 - INFO - Epoch [  20/2000] LR: 0.004132 | Train Loss: 0.002329 (Data: 0.00233, Mono: 0.00001) | Val MSE: 0.001753 (RMSE: 0.0419) 
+2026-09-13 11:43:53,285 - INFO - Epoch [  23/2000] LR: 0.003784 | Train Loss: 0.002209 (Data: 0.00221, Mono: 0.00001) | Val MSE: 0.001115 (RMSE: 0.0334) [BEST]
+2026-09-13 11:43:55,613 - INFO - Epoch [  30/2000] LR: 0.002970 | Train Loss: 0.001931 (Data: 0.00193, Mono: 0.00001) | Val MSE: 0.004796 (RMSE: 0.0693) 
+2026-09-13 11:43:56,287 - INFO - Epoch [  32/2000] LR: 0.002738 | Train Loss: 0.001845 (Data: 0.00184, Mono: 0.00001) | Val MSE: 0.001061 (RMSE: 0.0326) [BEST]
+2026-09-13 11:43:57,990 - INFO - Epoch [  37/2000] LR: 0.002156 | Train Loss: 0.001699 (Data: 0.00170, Mono: 0.00001) | Val MSE: 0.001027 (RMSE: 0.0320) [BEST]
+2026-09-13 11:43:59,021 - INFO - Epoch [  40/2000] LR: 0.001808 | Train Loss: 0.001773 (Data: 0.00177, Mono: 0.00001) | Val MSE: 0.001239 (RMSE: 0.0352) 
+2026-09-13 11:44:01,695 - INFO - Epoch [  48/2000] LR: 0.000878 | Train Loss: 0.001657 (Data: 0.00166, Mono: 0.00001) | Val MSE: 0.000987 (RMSE: 0.0314) [BEST]
+2026-09-13 11:44:02,380 - INFO - Epoch [  50/2000] LR: 0.000646 | Train Loss: 0.001629 (Data: 0.00163, Mono: 0.00001) | Val MSE: 0.001273 (RMSE: 0.0357) 
+2026-09-13 11:44:05,779 - INFO - Epoch [  60/2000] LR: 0.000646 | Train Loss: 0.001645 (Data: 0.00164, Mono: 0.00001) | Val MSE: 0.001021 (RMSE: 0.0320) 
+2026-09-13 11:44:08,808 - INFO - Epoch [  69/2000] LR: 0.000646 | Train Loss: 0.001496 (Data: 0.00150, Mono: 0.00001) | Val MSE: 0.000946 (RMSE: 0.0308) [BEST]
+2026-09-13 11:44:09,153 - INFO - Epoch [  70/2000] LR: 0.000645 | Train Loss: 0.001542 (Data: 0.00154, Mono: 0.00001) | Val MSE: 0.001272 (RMSE: 0.0357) 
+2026-09-13 11:44:12,562 - INFO - Epoch [  80/2000] LR: 0.000645 | Train Loss: 0.001406 (Data: 0.00141, Mono: 0.00001) | Val MSE: 0.000897 (RMSE: 0.0299) [BEST]
+2026-09-13 11:44:14,264 - INFO - Epoch [  85/2000] LR: 0.000645 | Train Loss: 0.001264 (Data: 0.00126, Mono: 0.00001) | Val MSE: 0.000772 (RMSE: 0.0278) [BEST]
+2026-09-13 11:44:15,290 - INFO - Epoch [  88/2000] LR: 0.000645 | Train Loss: 0.001262 (Data: 0.00126, Mono: 0.00001) | Val MSE: 0.000733 (RMSE: 0.0271) [BEST]
+2026-09-13 11:44:15,966 - INFO - Epoch [  90/2000] LR: 0.000645 | Train Loss: 0.001129 (Data: 0.00113, Mono: 0.00001) | Val MSE: 0.001079 (RMSE: 0.0328) 
+2026-09-13 11:44:17,329 - INFO - Epoch [  94/2000] LR: 0.000645 | Train Loss: 0.000957 (Data: 0.00096, Mono: 0.00001) | Val MSE: 0.000545 (RMSE: 0.0234) [BEST]
+2026-09-13 11:44:17,670 - INFO - Epoch [  95/2000] LR: 0.000645 | Train Loss: 0.000830 (Data: 0.00083, Mono: 0.00001) | Val MSE: 0.000433 (RMSE: 0.0208) [BEST]
+2026-09-13 11:44:18,709 - INFO - Epoch [  98/2000] LR: 0.000645 | Train Loss: 0.000753 (Data: 0.00075, Mono: 0.00001) | Val MSE: 0.000393 (RMSE: 0.0198) [BEST]
+2026-09-13 11:44:19,063 - INFO - Epoch [  99/2000] LR: 0.000645 | Train Loss: 0.000690 (Data: 0.00069, Mono: 0.00001) | Val MSE: 0.000372 (RMSE: 0.0193) [BEST]
+2026-09-13 11:44:19,399 - INFO - Epoch [ 100/2000] LR: 0.000645 | Train Loss: 0.000647 (Data: 0.00065, Mono: 0.00001) | Val MSE: 0.000318 (RMSE: 0.0178) [BEST]
+2026-09-13 11:44:20,475 - INFO - Epoch [ 103/2000] LR: 0.000645 | Train Loss: 0.000597 (Data: 0.00060, Mono: 0.00001) | Val MSE: 0.000271 (RMSE: 0.0165) [BEST]
+2026-09-13 11:44:20,827 - INFO - Epoch [ 104/2000] LR: 0.000644 | Train Loss: 0.000560 (Data: 0.00056, Mono: 0.00001) | Val MSE: 0.000241 (RMSE: 0.0155) [BEST]
+2026-09-13 11:44:22,896 - INFO - Epoch [ 110/2000] LR: 0.000644 | Train Loss: 0.000542 (Data: 0.00054, Mono: 0.00001) | Val MSE: 0.000379 (RMSE: 0.0195) 
+2026-09-13 11:44:23,579 - INFO - Epoch [ 112/2000] LR: 0.000644 | Train Loss: 0.000544 (Data: 0.00054, Mono: 0.00001) | Val MSE: 0.000237 (RMSE: 0.0154) [BEST]
+2026-09-13 11:44:26,361 - INFO - Epoch [ 120/2000] LR: 0.000644 | Train Loss: 0.000470 (Data: 0.00047, Mono: 0.00001) | Val MSE: 0.000421 (RMSE: 0.0205) 
+2026-09-13 11:44:29,397 - INFO - Epoch [ 127/2000] LR: 0.000643 | Train Loss: 0.000455 (Data: 0.00046, Mono: 0.00001) | Val MSE: 0.000221 (RMSE: 0.0149) [BEST]
+2026-09-13 11:44:30,825 - INFO - Epoch [ 130/2000] LR: 0.000643 | Train Loss: 0.000440 (Data: 0.00044, Mono: 0.00001) | Val MSE: 0.000338 (RMSE: 0.0184) 
+2026-09-13 11:44:31,317 - INFO - Epoch [ 131/2000] LR: 0.000643 | Train Loss: 0.000454 (Data: 0.00045, Mono: 0.00001) | Val MSE: 0.000219 (RMSE: 0.0148) [BEST]
+2026-09-13 11:44:31,863 - INFO - Epoch [ 132/2000] LR: 0.000643 | Train Loss: 0.000452 (Data: 0.00045, Mono: 0.00001) | Val MSE: 0.000202 (RMSE: 0.0142) [BEST]
+2026-09-13 11:44:33,395 - INFO - Epoch [ 135/2000] LR: 0.000643 | Train Loss: 0.000445 (Data: 0.00044, Mono: 0.00001) | Val MSE: 0.000201 (RMSE: 0.0142) [BEST]
+2026-09-13 11:44:35,851 - INFO - Epoch [ 140/2000] LR: 0.000642 | Train Loss: 0.000448 (Data: 0.00045, Mono: 0.00001) | Val MSE: 0.000403 (RMSE: 0.0201) 
+2026-09-13 11:44:38,336 - INFO - Epoch [ 145/2000] LR: 0.000642 | Train Loss: 0.000430 (Data: 0.00043, Mono: 0.00001) | Val MSE: 0.000199 (RMSE: 0.0141) [BEST]
+2026-09-13 11:44:40,736 - INFO - Epoch [ 150/2000] LR: 0.000642 | Train Loss: 0.000438 (Data: 0.00044, Mono: 0.00001) | Val MSE: 0.000282 (RMSE: 0.0168) 
+2026-09-13 11:44:44,197 - INFO - Epoch [ 158/2000] LR: 0.000641 | Train Loss: 0.000407 (Data: 0.00041, Mono: 0.00000) | Val MSE: 0.000175 (RMSE: 0.0132) [BEST]
+2026-09-13 11:44:44,966 - INFO - Epoch [ 160/2000] LR: 0.000641 | Train Loss: 0.000384 (Data: 0.00038, Mono: 0.00001) | Val MSE: 0.000220 (RMSE: 0.0148) 
+2026-09-13 11:44:48,844 - INFO - Epoch [ 170/2000] LR: 0.000640 | Train Loss: 0.000413 (Data: 0.00041, Mono: 0.00001) | Val MSE: 0.000399 (RMSE: 0.0200) 
+2026-09-13 11:44:52,829 - INFO - Epoch [ 180/2000] LR: 0.000639 | Train Loss: 0.000387 (Data: 0.00039, Mono: 0.00001) | Val MSE: 0.000195 (RMSE: 0.0140) 
+2026-09-13 11:44:56,044 - INFO - Epoch [ 188/2000] LR: 0.000638 | Train Loss: 0.000390 (Data: 0.00039, Mono: 0.00000) | Val MSE: 0.000172 (RMSE: 0.0131) [BEST]
+2026-09-13 11:44:56,824 - INFO - Epoch [ 190/2000] LR: 0.000638 | Train Loss: 0.000368 (Data: 0.00037, Mono: 0.00000) | Val MSE: 0.000367 (RMSE: 0.0192) 
+2026-09-13 11:45:00,290 - INFO - Epoch [ 200/2000] LR: 0.000637 | Train Loss: 0.000395 (Data: 0.00040, Mono: 0.00000) | Val MSE: 0.000394 (RMSE: 0.0198) 
+2026-09-13 11:45:03,794 - INFO - Epoch [ 210/2000] LR: 0.000635 | Train Loss: 0.000372 (Data: 0.00037, Mono: 0.00000) | Val MSE: 0.000299 (RMSE: 0.0173) 
+2026-09-13 11:45:07,241 - INFO - Epoch [ 220/2000] LR: 0.000634 | Train Loss: 0.000390 (Data: 0.00039, Mono: 0.00000) | Val MSE: 0.000341 (RMSE: 0.0185) 
+2026-09-13 11:45:10,734 - INFO - Epoch [ 230/2000] LR: 0.000633 | Train Loss: 0.000413 (Data: 0.00041, Mono: 0.00000) | Val MSE: 0.000286 (RMSE: 0.0169) 
+2026-09-13 11:45:14,251 - INFO - Epoch [ 240/2000] LR: 0.000631 | Train Loss: 0.000353 (Data: 0.00035, Mono: 0.00000) | Val MSE: 0.000211 (RMSE: 0.0145) 
+2026-09-13 11:45:17,717 - INFO - Epoch [ 250/2000] LR: 0.000630 | Train Loss: 0.000373 (Data: 0.00037, Mono: 0.00000) | Val MSE: 0.000211 (RMSE: 0.0145) 
+2026-09-13 11:45:21,196 - INFO - Epoch [ 260/2000] LR: 0.000628 | Train Loss: 0.000370 (Data: 0.00037, Mono: 0.00000) | Val MSE: 0.000324 (RMSE: 0.0180) 
+2026-09-13 11:45:24,679 - INFO - Epoch [ 270/2000] LR: 0.000626 | Train Loss: 0.000393 (Data: 0.00039, Mono: 0.00000) | Val MSE: 0.000230 (RMSE: 0.0152) 
+2026-09-13 11:45:28,282 - INFO - Epoch [ 280/2000] LR: 0.000624 | Train Loss: 0.000340 (Data: 0.00034, Mono: 0.00000) | Val MSE: 0.000312 (RMSE: 0.0177) 
+2026-09-13 11:45:32,131 - INFO - Epoch [ 290/2000] LR: 0.000623 | Train Loss: 0.000360 (Data: 0.00036, Mono: 0.00000) | Val MSE: 0.000357 (RMSE: 0.0189) 
+2026-09-13 11:45:36,064 - INFO - Epoch [ 300/2000] LR: 0.000621 | Train Loss: 0.000365 (Data: 0.00036, Mono: 0.00000) | Val MSE: 0.000267 (RMSE: 0.0163) 
+2026-09-13 11:45:40,829 - INFO - Epoch [ 310/2000] LR: 0.000619 | Train Loss: 0.000335 (Data: 0.00034, Mono: 0.00000) | Val MSE: 0.000315 (RMSE: 0.0177) 
+2026-09-13 11:45:45,634 - INFO - Epoch [ 320/2000] LR: 0.000617 | Train Loss: 0.000470 (Data: 0.00047, Mono: 0.00000) | Val MSE: 0.000329 (RMSE: 0.0181) 
+2026-09-13 11:45:49,993 - INFO - Epoch [ 330/2000] LR: 0.000614 | Train Loss: 0.000355 (Data: 0.00035, Mono: 0.00000) | Val MSE: 0.000251 (RMSE: 0.0158) 
+2026-09-13 11:45:53,783 - INFO - Epoch [ 340/2000] LR: 0.000612 | Train Loss: 0.000341 (Data: 0.00034, Mono: 0.00000) | Val MSE: 0.000185 (RMSE: 0.0136) 
+2026-09-13 11:45:57,732 - INFO - Epoch [ 350/2000] LR: 0.000610 | Train Loss: 0.000318 (Data: 0.00032, Mono: 0.00000) | Val MSE: 0.000312 (RMSE: 0.0177) 
+2026-09-13 11:46:01,662 - INFO - Epoch [ 360/2000] LR: 0.000608 | Train Loss: 0.000349 (Data: 0.00035, Mono: 0.00000) | Val MSE: 0.000229 (RMSE: 0.0151) 
+2026-09-13 11:46:05,449 - INFO - Epoch [ 370/2000] LR: 0.000605 | Train Loss: 0.000332 (Data: 0.00033, Mono: 0.00000) | Val MSE: 0.000241 (RMSE: 0.0155) 
+2026-09-13 11:46:09,219 - INFO - Epoch [ 380/2000] LR: 0.000603 | Train Loss: 0.000359 (Data: 0.00036, Mono: 0.00000) | Val MSE: 0.000235 (RMSE: 0.0153) 
+2026-09-13 11:46:12,329 - INFO - [*] Early stopping triggered at epoch 388. Best epoch was 188 with Val MSE: 0.000172
+2026-09-13 11:46:12,329 - INFO - Training completed in 148.26s. Loading best checkpoint from epoch 188 for final test evaluation...
+2026-09-13 11:46:12,690 - INFO - ==================================================
+2026-09-13 11:46:12,690 - INFO - Test Results for [TJU] - [Dataset_1_NCA_battery] (Best Epoch 188):
+2026-09-13 11:46:12,690 - INFO -   Test RMSE: 0.021958
+2026-09-13 11:46:12,690 - INFO -   Test MAE:  0.014187
+2026-09-13 11:46:12,690 - INFO -   Test MAPE: 1.697818
+2026-09-13 11:46:12,690 - INFO -   Test MSE:  0.000482
+2026-09-13 11:46:12,690 - INFO - ==================================================
+2026-09-13 13:18:54,258 - INFO - ==================================================
+2026-09-13 13:18:54,258 - INFO - Starting FusionMLP Training for [TJU] - [Dataset_1_NCA_battery]
+2026-09-13 13:18:54,258 - INFO - Device: cuda | Epochs: 2000 | LR: 0.000646 | Mono Weight: 0.0180 | Knee Feature: True
+2026-09-13 13:18:54,258 - INFO - ==================================================
+2026-09-13 13:18:54,801 - INFO - Data Splits: Train=46, Val=10, Test=10
+2026-09-13 13:18:55,184 - INFO - Epoch [   1/2000] LR: 0.006340 | Train Loss: 0.073654 (Data: 0.07365, Mono: 0.00007) | Val MSE: 0.001365 (RMSE: 0.0369) [BEST]
+2026-09-13 13:18:55,572 - INFO - Epoch [   2/2000] LR: 0.006224 | Train Loss: 0.012482 (Data: 0.01248, Mono: 0.00004) | Val MSE: 0.000868 (RMSE: 0.0295) [BEST]
+2026-09-13 13:18:56,345 - INFO - Epoch [   4/2000] LR: 0.005992 | Train Loss: 0.006244 (Data: 0.00624, Mono: 0.00003) | Val MSE: 0.000592 (RMSE: 0.0243) [BEST]
+2026-09-13 13:18:58,724 - INFO - Epoch [  10/2000] LR: 0.005294 | Train Loss: 0.003698 (Data: 0.00370, Mono: 0.00002) | Val MSE: 0.000665 (RMSE: 0.0258) 
+2026-09-13 13:19:02,868 - INFO - Epoch [  20/2000] LR: 0.004132 | Train Loss: 0.001759 (Data: 0.00176, Mono: 0.00001) | Val MSE: 0.000376 (RMSE: 0.0194) [BEST]
+2026-09-13 13:19:03,692 - INFO - Epoch [  22/2000] LR: 0.003900 | Train Loss: 0.001502 (Data: 0.00150, Mono: 0.00001) | Val MSE: 0.000349 (RMSE: 0.0187) [BEST]
+2026-09-13 13:19:05,303 - INFO - Epoch [  26/2000] LR: 0.003435 | Train Loss: 0.001136 (Data: 0.00114, Mono: 0.00001) | Val MSE: 0.000318 (RMSE: 0.0178) [BEST]
+2026-09-13 13:19:06,500 - INFO - Epoch [  29/2000] LR: 0.003086 | Train Loss: 0.000893 (Data: 0.00089, Mono: 0.00001) | Val MSE: 0.000234 (RMSE: 0.0153) [BEST]
+2026-09-13 13:19:06,910 - INFO - Epoch [  30/2000] LR: 0.002970 | Train Loss: 0.000940 (Data: 0.00094, Mono: 0.00001) | Val MSE: 0.000411 (RMSE: 0.0203) 
+2026-09-13 13:19:08,904 - INFO - Epoch [  35/2000] LR: 0.002389 | Train Loss: 0.000653 (Data: 0.00065, Mono: 0.00001) | Val MSE: 0.000234 (RMSE: 0.0153) [BEST]
+2026-09-13 13:19:09,291 - INFO - Epoch [  36/2000] LR: 0.002273 | Train Loss: 0.000643 (Data: 0.00064, Mono: 0.00001) | Val MSE: 0.000213 (RMSE: 0.0146) [BEST]
+2026-09-13 13:19:09,673 - INFO - Epoch [  37/2000] LR: 0.002156 | Train Loss: 0.000625 (Data: 0.00063, Mono: 0.00001) | Val MSE: 0.000183 (RMSE: 0.0135) [BEST]
+2026-09-13 13:19:10,815 - INFO - Epoch [  40/2000] LR: 0.001808 | Train Loss: 0.000598 (Data: 0.00060, Mono: 0.00001) | Val MSE: 0.000266 (RMSE: 0.0163) 
+2026-09-13 13:19:13,917 - INFO - Epoch [  48/2000] LR: 0.000878 | Train Loss: 0.000485 (Data: 0.00048, Mono: 0.00001) | Val MSE: 0.000182 (RMSE: 0.0135) [BEST]
+2026-09-13 13:19:14,290 - INFO - Epoch [  49/2000] LR: 0.000762 | Train Loss: 0.000484 (Data: 0.00048, Mono: 0.00001) | Val MSE: 0.000177 (RMSE: 0.0133) [BEST]
+2026-09-13 13:19:14,661 - INFO - Epoch [  50/2000] LR: 0.000646 | Train Loss: 0.000455 (Data: 0.00045, Mono: 0.00001) | Val MSE: 0.000235 (RMSE: 0.0153) 
+2026-09-13 13:19:18,171 - INFO - Epoch [  60/2000] LR: 0.000646 | Train Loss: 0.000454 (Data: 0.00045, Mono: 0.00001) | Val MSE: 0.000256 (RMSE: 0.0160) 
+2026-09-13 13:19:20,225 - INFO - Epoch [  66/2000] LR: 0.000646 | Train Loss: 0.000384 (Data: 0.00038, Mono: 0.00001) | Val MSE: 0.000171 (RMSE: 0.0131) [BEST]
+2026-09-13 13:19:21,571 - INFO - Epoch [  70/2000] LR: 0.000645 | Train Loss: 0.000377 (Data: 0.00038, Mono: 0.00001) | Val MSE: 0.000242 (RMSE: 0.0156) 
+2026-09-13 13:19:24,575 - INFO - Epoch [  80/2000] LR: 0.000645 | Train Loss: 0.000344 (Data: 0.00034, Mono: 0.00000) | Val MSE: 0.000218 (RMSE: 0.0148) 
+2026-09-13 13:19:27,638 - INFO - Epoch [  90/2000] LR: 0.000645 | Train Loss: 0.000291 (Data: 0.00029, Mono: 0.00001) | Val MSE: 0.000272 (RMSE: 0.0165) 
+2026-09-13 13:19:30,981 - INFO - Epoch [ 100/2000] LR: 0.000645 | Train Loss: 0.000288 (Data: 0.00029, Mono: 0.00000) | Val MSE: 0.000275 (RMSE: 0.0166) 
+2026-09-13 13:19:34,058 - INFO - Epoch [ 110/2000] LR: 0.000644 | Train Loss: 0.000242 (Data: 0.00024, Mono: 0.00000) | Val MSE: 0.000283 (RMSE: 0.0168) 
+2026-09-13 13:19:35,260 - INFO - Epoch [ 114/2000] LR: 0.000644 | Train Loss: 0.000257 (Data: 0.00026, Mono: 0.00000) | Val MSE: 0.000166 (RMSE: 0.0129) [BEST]
+2026-09-13 13:19:37,062 - INFO - Epoch [ 120/2000] LR: 0.000644 | Train Loss: 0.000240 (Data: 0.00024, Mono: 0.00000) | Val MSE: 0.000254 (RMSE: 0.0159) 
+2026-09-13 13:19:40,110 - INFO - Epoch [ 130/2000] LR: 0.000643 | Train Loss: 0.000236 (Data: 0.00024, Mono: 0.00000) | Val MSE: 0.000175 (RMSE: 0.0132) 
+2026-09-13 13:19:43,173 - INFO - Epoch [ 140/2000] LR: 0.000642 | Train Loss: 0.000215 (Data: 0.00021, Mono: 0.00000) | Val MSE: 0.000197 (RMSE: 0.0140) 
+2026-09-13 13:19:46,361 - INFO - Epoch [ 150/2000] LR: 0.000642 | Train Loss: 0.000201 (Data: 0.00020, Mono: 0.00000) | Val MSE: 0.000265 (RMSE: 0.0163) 
+2026-09-13 13:19:49,458 - INFO - Epoch [ 160/2000] LR: 0.000641 | Train Loss: 0.000187 (Data: 0.00019, Mono: 0.00000) | Val MSE: 0.000221 (RMSE: 0.0149) 
+2026-09-13 13:19:52,537 - INFO - Epoch [ 170/2000] LR: 0.000640 | Train Loss: 0.000192 (Data: 0.00019, Mono: 0.00000) | Val MSE: 0.000205 (RMSE: 0.0143) 
+2026-09-13 13:19:56,205 - INFO - Epoch [ 180/2000] LR: 0.000639 | Train Loss: 0.000192 (Data: 0.00019, Mono: 0.00000) | Val MSE: 0.000179 (RMSE: 0.0134) 
+2026-09-13 13:19:59,780 - INFO - Epoch [ 190/2000] LR: 0.000638 | Train Loss: 0.000197 (Data: 0.00020, Mono: 0.00000) | Val MSE: 0.000193 (RMSE: 0.0139) 
+2026-09-13 13:20:03,423 - INFO - Epoch [ 200/2000] LR: 0.000637 | Train Loss: 0.000174 (Data: 0.00017, Mono: 0.00000) | Val MSE: 0.000280 (RMSE: 0.0167) 
+2026-09-13 13:20:06,930 - INFO - Epoch [ 210/2000] LR: 0.000635 | Train Loss: 0.000197 (Data: 0.00020, Mono: 0.00000) | Val MSE: 0.000203 (RMSE: 0.0143) 
+2026-09-13 13:20:10,524 - INFO - Epoch [ 220/2000] LR: 0.000634 | Train Loss: 0.000175 (Data: 0.00018, Mono: 0.00000) | Val MSE: 0.000219 (RMSE: 0.0148) 
+2026-09-13 13:20:14,043 - INFO - Epoch [ 230/2000] LR: 0.000633 | Train Loss: 0.000159 (Data: 0.00016, Mono: 0.00000) | Val MSE: 0.000186 (RMSE: 0.0136) 
+2026-09-13 13:20:17,614 - INFO - Epoch [ 240/2000] LR: 0.000631 | Train Loss: 0.000168 (Data: 0.00017, Mono: 0.00000) | Val MSE: 0.000261 (RMSE: 0.0161) 
+2026-09-13 13:20:21,197 - INFO - Epoch [ 250/2000] LR: 0.000630 | Train Loss: 0.000157 (Data: 0.00016, Mono: 0.00000) | Val MSE: 0.000357 (RMSE: 0.0189) 
+2026-09-13 13:20:24,889 - INFO - Epoch [ 260/2000] LR: 0.000628 | Train Loss: 0.000164 (Data: 0.00016, Mono: 0.00000) | Val MSE: 0.000174 (RMSE: 0.0132) 
+2026-09-13 13:20:28,393 - INFO - Epoch [ 270/2000] LR: 0.000626 | Train Loss: 0.000162 (Data: 0.00016, Mono: 0.00000) | Val MSE: 0.000239 (RMSE: 0.0154) 
+2026-09-13 13:20:31,653 - INFO - Epoch [ 280/2000] LR: 0.000624 | Train Loss: 0.000181 (Data: 0.00018, Mono: 0.00000) | Val MSE: 0.000339 (RMSE: 0.0184) 
+2026-09-13 13:20:34,928 - INFO - Epoch [ 290/2000] LR: 0.000623 | Train Loss: 0.000150 (Data: 0.00015, Mono: 0.00000) | Val MSE: 0.000310 (RMSE: 0.0176) 
+2026-09-13 13:20:38,284 - INFO - Epoch [ 300/2000] LR: 0.000621 | Train Loss: 0.000160 (Data: 0.00016, Mono: 0.00000) | Val MSE: 0.000366 (RMSE: 0.0191) 
+2026-09-13 13:20:41,741 - INFO - Epoch [ 310/2000] LR: 0.000619 | Train Loss: 0.000153 (Data: 0.00015, Mono: 0.00000) | Val MSE: 0.000259 (RMSE: 0.0161) 
+2026-09-13 13:20:43,142 - INFO - [*] Early stopping triggered at epoch 314. Best epoch was 114 with Val MSE: 0.000166
+2026-09-13 13:20:43,146 - INFO - Training completed in 108.32s. Loading best checkpoint from epoch 114 for final test evaluation...
+2026-09-13 13:20:43,230 - INFO - ==================================================
+2026-09-13 13:20:43,230 - INFO - Test Results for [TJU] - [Dataset_1_NCA_battery] (Best Epoch 114):
+2026-09-13 13:20:43,230 - INFO -   Test RMSE: 0.022213
+2026-09-13 13:20:43,231 - INFO -   Test MAE:  0.014160
+2026-09-13 13:20:43,231 - INFO -   Test MAPE: 1.693034
+2026-09-13 13:20:43,231 - INFO -   Test MSE:  0.000493
+2026-09-13 13:20:43,231 - INFO - ==================================================
+2026-09-13 13:39:44,190 - INFO - ==================================================
+2026-09-13 13:39:44,190 - INFO - Starting FusionMLP Training for [TJU] - [Dataset_1_NCA_battery]
+2026-09-13 13:39:44,190 - INFO - Device: cuda | Epochs: 2000 | LR: 0.000146 | Mono Weight: 0.0180 | Knee Feature: True
+2026-09-13 13:39:44,190 - INFO - ==================================================
+2026-09-13 13:39:44,757 - INFO - Data Splits: Train=46, Val=10, Test=10
+2026-09-13 13:39:45,192 - INFO - Epoch [   1/2000] LR: 0.006330 | Train Loss: 0.063284 (Data: 0.06328, Mono: 0.00006) | Val MSE: 0.003829 (RMSE: 0.0619) [BEST]
+2026-09-13 13:39:45,561 - INFO - Epoch [   2/2000] LR: 0.006204 | Train Loss: 0.013512 (Data: 0.01351, Mono: 0.00004) | Val MSE: 0.003368 (RMSE: 0.0580) [BEST]
+2026-09-13 13:39:45,913 - INFO - Epoch [   3/2000] LR: 0.006078 | Train Loss: 0.007901 (Data: 0.00790, Mono: 0.00003) | Val MSE: 0.000529 (RMSE: 0.0230) [BEST]
+2026-09-13 13:39:46,286 - INFO - Epoch [   4/2000] LR: 0.005952 | Train Loss: 0.005885 (Data: 0.00588, Mono: 0.00002) | Val MSE: 0.000305 (RMSE: 0.0175) [BEST]
+2026-09-13 13:39:48,546 - INFO - Epoch [  10/2000] LR: 0.005194 | Train Loss: 0.003494 (Data: 0.00349, Mono: 0.00002) | Val MSE: 0.001336 (RMSE: 0.0365) 
+2026-09-13 13:39:52,240 - INFO - Epoch [  20/2000] LR: 0.003932 | Train Loss: 0.002205 (Data: 0.00221, Mono: 0.00001) | Val MSE: 0.000359 (RMSE: 0.0190) 
+2026-09-13 13:39:55,926 - INFO - Epoch [  30/2000] LR: 0.002670 | Train Loss: 0.001397 (Data: 0.00140, Mono: 0.00001) | Val MSE: 0.000322 (RMSE: 0.0180) 
+2026-09-13 13:39:56,292 - INFO - Epoch [  31/2000] LR: 0.002544 | Train Loss: 0.001329 (Data: 0.00133, Mono: 0.00001) | Val MSE: 0.000251 (RMSE: 0.0158) [BEST]
+2026-09-13 13:39:58,384 - INFO - Epoch [  37/2000] LR: 0.001786 | Train Loss: 0.001062 (Data: 0.00106, Mono: 0.00001) | Val MSE: 0.000246 (RMSE: 0.0157) [BEST]
+2026-09-13 13:39:58,733 - INFO - Epoch [  38/2000] LR: 0.001660 | Train Loss: 0.001109 (Data: 0.00111, Mono: 0.00001) | Val MSE: 0.000241 (RMSE: 0.0155) [BEST]
+2026-09-13 13:39:59,428 - INFO - Epoch [  40/2000] LR: 0.001408 | Train Loss: 0.001021 (Data: 0.00102, Mono: 0.00001) | Val MSE: 0.000282 (RMSE: 0.0168) 
+2026-09-13 13:39:59,805 - INFO - Epoch [  41/2000] LR: 0.001282 | Train Loss: 0.000968 (Data: 0.00097, Mono: 0.00001) | Val MSE: 0.000238 (RMSE: 0.0154) [BEST]
+2026-09-13 13:40:00,878 - INFO - Epoch [  44/2000] LR: 0.000903 | Train Loss: 0.000910 (Data: 0.00091, Mono: 0.00001) | Val MSE: 0.000226 (RMSE: 0.0150) [BEST]
+2026-09-13 13:40:01,602 - INFO - Epoch [  46/2000] LR: 0.000651 | Train Loss: 0.000892 (Data: 0.00089, Mono: 0.00001) | Val MSE: 0.000203 (RMSE: 0.0142) [BEST]
+2026-09-13 13:40:03,013 - INFO - Epoch [  50/2000] LR: 0.000146 | Train Loss: 0.000860 (Data: 0.00086, Mono: 0.00001) | Val MSE: 0.000261 (RMSE: 0.0162) 
+2026-09-13 13:40:04,407 - INFO - Epoch [  55/2000] LR: 0.000146 | Train Loss: 0.000833 (Data: 0.00083, Mono: 0.00001) | Val MSE: 0.000201 (RMSE: 0.0142) [BEST]
+2026-09-13 13:40:05,789 - INFO - Epoch [  60/2000] LR: 0.000146 | Train Loss: 0.000838 (Data: 0.00084, Mono: 0.00001) | Val MSE: 0.000218 (RMSE: 0.0148) 
+2026-09-13 13:40:06,073 - INFO - Epoch [  61/2000] LR: 0.000146 | Train Loss: 0.000830 (Data: 0.00083, Mono: 0.00001) | Val MSE: 0.000190 (RMSE: 0.0138) [BEST]
+2026-09-13 13:40:08,042 - INFO - Epoch [  68/2000] LR: 0.000146 | Train Loss: 0.000801 (Data: 0.00080, Mono: 0.00001) | Val MSE: 0.000186 (RMSE: 0.0136) [BEST]
+2026-09-13 13:40:08,609 - INFO - Epoch [  70/2000] LR: 0.000146 | Train Loss: 0.000802 (Data: 0.00080, Mono: 0.00001) | Val MSE: 0.000196 (RMSE: 0.0140) 
+2026-09-13 13:40:09,456 - INFO - Epoch [  73/2000] LR: 0.000146 | Train Loss: 0.000797 (Data: 0.00080, Mono: 0.00001) | Val MSE: 0.000185 (RMSE: 0.0136) [BEST]
+2026-09-13 13:40:09,743 - INFO - Epoch [  74/2000] LR: 0.000146 | Train Loss: 0.000802 (Data: 0.00080, Mono: 0.00001) | Val MSE: 0.000183 (RMSE: 0.0135) [BEST]
+2026-09-13 13:40:11,432 - INFO - Epoch [  80/2000] LR: 0.000146 | Train Loss: 0.000778 (Data: 0.00078, Mono: 0.00001) | Val MSE: 0.000337 (RMSE: 0.0184) 
+2026-09-13 13:40:13,124 - INFO - Epoch [  86/2000] LR: 0.000146 | Train Loss: 0.000781 (Data: 0.00078, Mono: 0.00001) | Val MSE: 0.000183 (RMSE: 0.0135) [BEST]
+2026-09-13 13:40:14,283 - INFO - Epoch [  90/2000] LR: 0.000146 | Train Loss: 0.000761 (Data: 0.00076, Mono: 0.00001) | Val MSE: 0.000171 (RMSE: 0.0131) [BEST]
+2026-09-13 13:40:17,160 - INFO - Epoch [ 100/2000] LR: 0.000145 | Train Loss: 0.000736 (Data: 0.00074, Mono: 0.00001) | Val MSE: 0.000220 (RMSE: 0.0148) 
+2026-09-13 13:40:20,029 - INFO - Epoch [ 110/2000] LR: 0.000145 | Train Loss: 0.000695 (Data: 0.00069, Mono: 0.00001) | Val MSE: 0.000205 (RMSE: 0.0143) 
+2026-09-13 13:40:22,864 - INFO - Epoch [ 120/2000] LR: 0.000145 | Train Loss: 0.000678 (Data: 0.00068, Mono: 0.00001) | Val MSE: 0.000271 (RMSE: 0.0165) 
+2026-09-13 13:40:25,758 - INFO - Epoch [ 130/2000] LR: 0.000145 | Train Loss: 0.000672 (Data: 0.00067, Mono: 0.00001) | Val MSE: 0.000177 (RMSE: 0.0133) 
+2026-09-13 13:40:28,688 - INFO - Epoch [ 140/2000] LR: 0.000145 | Train Loss: 0.000632 (Data: 0.00063, Mono: 0.00001) | Val MSE: 0.000305 (RMSE: 0.0175) 
+2026-09-13 13:40:32,126 - INFO - Epoch [ 150/2000] LR: 0.000145 | Train Loss: 0.000617 (Data: 0.00062, Mono: 0.00001) | Val MSE: 0.000171 (RMSE: 0.0131) [BEST]
+2026-09-13 13:40:35,409 - INFO - Epoch [ 160/2000] LR: 0.000145 | Train Loss: 0.000578 (Data: 0.00058, Mono: 0.00001) | Val MSE: 0.000184 (RMSE: 0.0136) 
+2026-09-13 13:40:38,691 - INFO - Epoch [ 170/2000] LR: 0.000144 | Train Loss: 0.000555 (Data: 0.00056, Mono: 0.00001) | Val MSE: 0.000267 (RMSE: 0.0163) 
+2026-09-13 13:40:42,046 - INFO - Epoch [ 180/2000] LR: 0.000144 | Train Loss: 0.000536 (Data: 0.00054, Mono: 0.00001) | Val MSE: 0.000262 (RMSE: 0.0162) 
+2026-09-13 13:40:45,778 - INFO - Epoch [ 190/2000] LR: 0.000144 | Train Loss: 0.000524 (Data: 0.00052, Mono: 0.00001) | Val MSE: 0.000214 (RMSE: 0.0146) 
+2026-09-13 13:40:49,750 - INFO - Epoch [ 200/2000] LR: 0.000144 | Train Loss: 0.000501 (Data: 0.00050, Mono: 0.00001) | Val MSE: 0.000175 (RMSE: 0.0132) 
+2026-09-13 13:40:53,633 - INFO - Epoch [ 210/2000] LR: 0.000144 | Train Loss: 0.000475 (Data: 0.00047, Mono: 0.00001) | Val MSE: 0.000173 (RMSE: 0.0131) 
+2026-09-13 13:40:54,026 - INFO - Epoch [ 211/2000] LR: 0.000144 | Train Loss: 0.000495 (Data: 0.00049, Mono: 0.00001) | Val MSE: 0.000169 (RMSE: 0.0130) [BEST]
+2026-09-13 13:40:57,534 - INFO - Epoch [ 220/2000] LR: 0.000143 | Train Loss: 0.000469 (Data: 0.00047, Mono: 0.00001) | Val MSE: 0.000272 (RMSE: 0.0165) 
+2026-09-13 13:41:01,231 - INFO - Epoch [ 230/2000] LR: 0.000143 | Train Loss: 0.000440 (Data: 0.00044, Mono: 0.00001) | Val MSE: 0.000224 (RMSE: 0.0150) 
+2026-09-13 13:41:01,972 - INFO - Epoch [ 232/2000] LR: 0.000143 | Train Loss: 0.000451 (Data: 0.00045, Mono: 0.00001) | Val MSE: 0.000167 (RMSE: 0.0129) [BEST]
+2026-09-13 13:41:04,937 - INFO - Epoch [ 240/2000] LR: 0.000143 | Train Loss: 0.000432 (Data: 0.00043, Mono: 0.00001) | Val MSE: 0.000180 (RMSE: 0.0134) 
+2026-09-13 13:41:08,659 - INFO - Epoch [ 250/2000] LR: 0.000142 | Train Loss: 0.000419 (Data: 0.00042, Mono: 0.00001) | Val MSE: 0.000212 (RMSE: 0.0146) 
+2026-09-13 13:41:12,384 - INFO - Epoch [ 260/2000] LR: 0.000142 | Train Loss: 0.000408 (Data: 0.00041, Mono: 0.00001) | Val MSE: 0.000243 (RMSE: 0.0156) 
+2026-09-13 13:41:15,382 - INFO - Epoch [ 270/2000] LR: 0.000142 | Train Loss: 0.000393 (Data: 0.00039, Mono: 0.00001) | Val MSE: 0.000188 (RMSE: 0.0137) 
+2026-09-13 13:41:18,216 - INFO - Epoch [ 280/2000] LR: 0.000141 | Train Loss: 0.000385 (Data: 0.00039, Mono: 0.00001) | Val MSE: 0.000197 (RMSE: 0.0140) 
+2026-09-13 13:41:21,120 - INFO - Epoch [ 290/2000] LR: 0.000141 | Train Loss: 0.000385 (Data: 0.00039, Mono: 0.00001) | Val MSE: 0.000177 (RMSE: 0.0133) 
+2026-09-13 13:41:24,013 - INFO - Epoch [ 300/2000] LR: 0.000141 | Train Loss: 0.000350 (Data: 0.00035, Mono: 0.00001) | Val MSE: 0.000259 (RMSE: 0.0161) 
+2026-09-13 13:41:26,958 - INFO - Epoch [ 310/2000] LR: 0.000140 | Train Loss: 0.000350 (Data: 0.00035, Mono: 0.00001) | Val MSE: 0.000182 (RMSE: 0.0135) 
+2026-09-13 13:41:30,181 - INFO - Epoch [ 320/2000] LR: 0.000140 | Train Loss: 0.000358 (Data: 0.00036, Mono: 0.00001) | Val MSE: 0.000240 (RMSE: 0.0155) 
+2026-09-13 13:41:33,346 - INFO - Epoch [ 330/2000] LR: 0.000139 | Train Loss: 0.000327 (Data: 0.00033, Mono: 0.00001) | Val MSE: 0.000212 (RMSE: 0.0146) 
+2026-09-13 13:41:36,477 - INFO - Epoch [ 340/2000] LR: 0.000139 | Train Loss: 0.000336 (Data: 0.00034, Mono: 0.00001) | Val MSE: 0.000211 (RMSE: 0.0145) 
+2026-09-13 13:41:39,651 - INFO - Epoch [ 350/2000] LR: 0.000139 | Train Loss: 0.000314 (Data: 0.00031, Mono: 0.00000) | Val MSE: 0.000234 (RMSE: 0.0153) 
+2026-09-13 13:41:42,946 - INFO - Epoch [ 360/2000] LR: 0.000138 | Train Loss: 0.000308 (Data: 0.00031, Mono: 0.00000) | Val MSE: 0.000179 (RMSE: 0.0134) 
+2026-09-13 13:41:46,251 - INFO - Epoch [ 370/2000] LR: 0.000138 | Train Loss: 0.000307 (Data: 0.00031, Mono: 0.00000) | Val MSE: 0.000195 (RMSE: 0.0140) 
+2026-09-13 13:41:49,433 - INFO - Epoch [ 380/2000] LR: 0.000137 | Train Loss: 0.000307 (Data: 0.00031, Mono: 0.00000) | Val MSE: 0.000201 (RMSE: 0.0142) 
+2026-09-13 13:41:52,545 - INFO - Epoch [ 390/2000] LR: 0.000137 | Train Loss: 0.000299 (Data: 0.00030, Mono: 0.00000) | Val MSE: 0.000259 (RMSE: 0.0161) 
+2026-09-13 13:41:56,133 - INFO - Epoch [ 400/2000] LR: 0.000136 | Train Loss: 0.000290 (Data: 0.00029, Mono: 0.00000) | Val MSE: 0.000228 (RMSE: 0.0151) 
+2026-09-13 13:41:59,749 - INFO - Epoch [ 410/2000] LR: 0.000135 | Train Loss: 0.000269 (Data: 0.00027, Mono: 0.00000) | Val MSE: 0.000245 (RMSE: 0.0156) 
+2026-09-13 13:42:03,268 - INFO - Epoch [ 420/2000] LR: 0.000135 | Train Loss: 0.000265 (Data: 0.00027, Mono: 0.00000) | Val MSE: 0.000248 (RMSE: 0.0158) 
+2026-09-13 13:42:06,741 - INFO - Epoch [ 430/2000] LR: 0.000134 | Train Loss: 0.000269 (Data: 0.00027, Mono: 0.00000) | Val MSE: 0.000235 (RMSE: 0.0153) 
+2026-09-13 13:42:07,456 - INFO - [*] Early stopping triggered at epoch 432. Best epoch was 232 with Val MSE: 0.000167
+2026-09-13 13:42:07,456 - INFO - Training completed in 142.67s. Loading best checkpoint from epoch 232 for final test evaluation...
+2026-09-13 13:42:07,502 - INFO - ==================================================
+2026-09-13 13:42:07,502 - INFO - Test Results for [TJU] - [Dataset_1_NCA_battery] (Best Epoch 232):
+2026-09-13 13:42:07,502 - INFO -   Test RMSE: 0.022081
+2026-09-13 13:42:07,502 - INFO -   Test MAE:  0.014003
+2026-09-13 13:42:07,502 - INFO -   Test MAPE: 1.674701
+2026-09-13 13:42:07,502 - INFO -   Test MSE:  0.000488
+2026-09-13 13:42:07,502 - INFO - ==================================================

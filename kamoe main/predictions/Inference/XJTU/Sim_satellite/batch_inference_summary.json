@@ -16,16 +16,16 @@
         "RMSE": 0.017259862273931503
     },
     "test_Fusion_Raw": {
-        "MAE": 0.023906374350190163,
-        "MAPE": 2.4999117478728294,
-        "MSE": 0.000790305552072823,
-        "RMSE": 0.028112374246120453
+        "MAE": 0.013874059543013573,
+        "MAPE": 1.4503655955195427,
+        "MSE": 0.0002566843759268522,
+        "RMSE": 0.016021372750401497
     },
     "test_Fusion_Post": {
-        "MAE": 0.023814517042735177,
-        "MAPE": 2.489832792904331,
-        "MSE": 0.0007816928356345863,
-        "RMSE": 0.027958770281158403
+        "MAE": 0.013776992523774071,
+        "MAPE": 1.4395732883028765,
+        "MSE": 0.00024996104331322924,
+        "RMSE": 0.015810156334243798
     },
     "test_KPD": {
         "MAE": 0.30828166007995605,
@@ -43,10 +43,10 @@
             "KPD_RMSE": 0.5057296752929688,
             "DeepOPINN_RMSE": 0.008049541153013706,
             "LAX_RMSE": 0.01535408478230238,
-            "Fusion_Raw_RMSE": 0.02094431221485138,
-            "Fusion_Post_RMSE": 0.020852703574255536,
-            "Fusion_Post_MAE": 0.01649742182895296,
-            "Fusion_Post_MAPE": 1.7082169012679727,
+            "Fusion_Raw_RMSE": 0.010745923034846783,
+            "Fusion_Post_RMSE": 0.010615372608079206,
+            "Fusion_Post_MAE": 0.008563146452594865,
+            "Fusion_Post_MAPE": 0.8963788227330087,
             "csv_path": "predictions/Inference\\XJTU\\Sim_satellite\\Sim_satellite_battery-1_full_pred.csv"
         },
         "Sim_satellite_battery-2": {
@@ -58,10 +58,10 @@
             "KPD_RMSE": 0.4100888669490814,
             "DeepOPINN_RMSE": 0.007851148955523968,
             "LAX_RMSE": 0.009435219690203667,
-            "Fusion_Raw_RMSE": 0.022827178239822388,
-            "Fusion_Post_RMSE": 0.02261941683029791,
-            "Fusion_Post_MAE": 0.01841223350305928,
-            "Fusion_Post_MAPE": 1.9259157346062254,
+            "Fusion_Raw_RMSE": 0.01175262313336134,
+            "Fusion_Post_RMSE": 0.011515144828584047,
+            "Fusion_Post_MAE": 0.008313172683252889,
+            "Fusion_Post_MAPE": 0.8821054841241734,
             "csv_path": "predictions/Inference\\XJTU\\Sim_satellite\\Sim_satellite_battery-2_full_pred.csv"
         },
         "Sim_satellite_battery-5": {
@@ -73,10 +73,10 @@
             "KPD_RMSE": 0.3926396667957306,
             "DeepOPINN_RMSE": 0.008512006141245365,
             "LAX_RMSE": 0.017718205228447914,
-            "Fusion_Raw_RMSE": 0.02674529328942299,
-            "Fusion_Post_RMSE": 0.026606308162388882,
-            "Fusion_Post_MAE": 0.022541554956734863,
-            "Fusion_Post_MAPE": 2.447714304994431,
+            "Fusion_Raw_RMSE": 0.015166174620389938,
+            "Fusion_Post_RMSE": 0.014981957478812693,
+            "Fusion_Post_MAE": 0.013479370935715588,
+            "Fusion_Post_MAPE": 1.4726444334235085,
             "csv_path": "predictions/Inference\\XJTU\\Sim_satellite\\Sim_satellite_battery-5_full_pred.csv"
         },
         "Sim_satellite_battery-7": {
@@ -88,10 +88,10 @@
             "KPD_RMSE": 0.35445436835289,
             "DeepOPINN_RMSE": 0.004509149584919214,
             "LAX_RMSE": 0.005265016108751297,
-            "Fusion_Raw_RMSE": 0.021215621381998062,
-            "Fusion_Post_RMSE": 0.0210923833864205,
-            "Fusion_Post_MAE": 0.01730499645471498,
-            "Fusion_Post_MAPE": 1.8310078153334117,
+            "Fusion_Raw_RMSE": 0.007694626227021217,
+            "Fusion_Post_RMSE": 0.0074917874622940864,
+            "Fusion_Post_MAE": 0.006602963006746454,
+            "Fusion_Post_MAPE": 0.700567457895667,
             "csv_path": "predictions/Inference\\XJTU\\Sim_satellite\\Sim_satellite_battery-7_full_pred.csv"
         },
         "Sim_satellite_battery-8": {
@@ -103,10 +103,10 @@
             "KPD_RMSE": 0.3154280483722687,
             "DeepOPINN_RMSE": 0.0054594832472503185,
             "LAX_RMSE": 0.005840904079377651,
-            "Fusion_Raw_RMSE": 0.020859649404883385,
-            "Fusion_Post_RMSE": 0.02074610640074929,
-            "Fusion_Post_MAE": 0.016861926704354328,
-            "Fusion_Post_MAPE": 1.7884089657332582,
+            "Fusion_Raw_RMSE": 0.006714884657412767,
+            "Fusion_Post_RMSE": 0.006487185643536624,
+            "Fusion_Post_MAE": 0.005170561338169939,
+            "Fusion_Post_MAPE": 0.5481665051650414,
             "csv_path": "predictions/Inference\\XJTU\\Sim_satellite\\Sim_satellite_battery-8_full_pred.csv"
         },
         "Sim_satellite_battery-3": {
@@ -118,10 +118,10 @@
             "KPD_RMSE": 0.3181122839450836,
             "DeepOPINN_RMSE": 0.007439401466399431,
             "LAX_RMSE": 0.007939816452562809,
-            "Fusion_Raw_RMSE": 0.02318345569074154,
-            "Fusion_Post_RMSE": 0.023124903047928733,
-            "Fusion_Post_MAE": 0.018363999025795906,
-            "Fusion_Post_MAPE": 1.9457262374520063,
+            "Fusion_Raw_RMSE": 0.009548651985824108,
+            "Fusion_Post_RMSE": 0.009419071271093288,
+            "Fusion_Post_MAE": 0.007285742028994749,
+            "Fusion_Post_MAPE": 0.7761337167041396,
             "csv_path": "predictions/Inference\\XJTU\\Sim_satellite\\Sim_satellite_battery-3_full_pred.csv"
         },
         "Sim_satellite_battery-4": {
@@ -133,10 +133,10 @@
             "KPD_RMSE": 0.6313839554786682,
             "DeepOPINN_RMSE": 0.0120579544454813,
             "LAX_RMSE": 0.014306881465017796,
-            "Fusion_Raw_RMSE": 0.02738443948328495,
-            "Fusion_Post_RMSE": 0.027142280410413028,
-            "Fusion_Post_MAE": 0.02242187223892465,
-            "Fusion_Post_MAPE": 2.375764311088673,
+            "Fusion_Raw_RMSE": 0.01284127775579691,
+            "Fusion_Post_RMSE": 0.012467903404965312,
+            "Fusion_Post_MAE": 0.010119982364009229,
+            "Fusion_Post_MAPE": 1.0805441297877834,
             "csv_path": "predictions/Inference\\XJTU\\Sim_satellite\\Sim_satellite_battery-4_full_pred.csv"
         },
         "Sim_satellite_battery-6": {
@@ -148,10 +148,10 @@
             "KPD_RMSE": 0.5351458787918091,
             "DeepOPINN_RMSE": 0.01986403949558735,
             "LAX_RMSE": 0.019520370289683342,
-            "Fusion_Raw_RMSE": 0.028746088966727257,
-            "Fusion_Post_RMSE": 0.028667407006459793,
-            "Fusion_Post_MAE": 0.025056657141345934,
-            "Fusion_Post_MAPE": 2.5915737643732903,
+            "Fusion_Raw_RMSE": 0.01839975081384182,
+            "Fusion_Post_RMSE": 0.01828276253482691,
+            "Fusion_Post_MAE": 0.017038785443290728,
+            "Fusion_Post_MAPE": 1.7598017580044367,
             "csv_path": "predictions/Inference\\XJTU\\Sim_satellite\\Sim_satellite_battery-6_full_pred.csv"
         }
     }

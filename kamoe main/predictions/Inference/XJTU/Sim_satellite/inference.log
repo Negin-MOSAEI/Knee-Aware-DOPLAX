@@ -7,3 +7,12 @@
 2026-09-12 16:45:17,936 - INFO -   Test SOH Fusion Raw  RMSE: 0.028112 | MAE: 0.023906
 2026-09-12 16:45:17,936 - INFO -   Test SOH Fusion Post RMSE: 0.027959 | MAE: 0.023815
 2026-09-12 16:45:17,936 - INFO -   Mean Knee Delta: 38.00 cycles
+2026-09-13 17:02:44,400 - INFO - ==================================================
+2026-09-13 17:02:44,403 - INFO - Running Full Inference for [XJTU] - [Sim_satellite]
+2026-09-13 17:02:44,403 - INFO - ==================================================
+2026-09-13 17:02:44,885 - INFO - Completed Batch [XJTU] - [Sim_satellite]:
+2026-09-13 17:02:44,885 - INFO -   Test SOH DeepOPINN   RMSE: 0.016646 | MAE: 0.013154
+2026-09-13 17:02:44,885 - INFO -   Test SOH LAX         RMSE: 0.017260 | MAE: 0.013077
+2026-09-13 17:02:44,885 - INFO -   Test SOH Fusion Raw  RMSE: 0.016021 | MAE: 0.013874
+2026-09-13 17:02:44,886 - INFO -   Test SOH Fusion Post RMSE: 0.015810 | MAE: 0.013777
+2026-09-13 17:02:44,886 - INFO -   Mean Knee Delta: 38.00 cycles

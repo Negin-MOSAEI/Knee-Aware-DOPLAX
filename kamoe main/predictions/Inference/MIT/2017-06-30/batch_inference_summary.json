@@ -16,16 +16,16 @@
         "RMSE": 0.01939363218843937
     },
     "test_Fusion_Raw": {
-        "MAE": 0.013364948332309723,
-        "MAPE": 1.442712265998125,
-        "MSE": 0.00030369742307811975,
-        "RMSE": 0.01742691732943058
+        "MAE": 0.014776231721043587,
+        "MAPE": 1.5959477052092552,
+        "MSE": 0.00035587645834311843,
+        "RMSE": 0.018864687532186508
     },
     "test_Fusion_Post": {
-        "MAE": 0.013265372556784812,
-        "MAPE": 1.4318597544736718,
-        "MSE": 0.00029314514693456215,
-        "RMSE": 0.01712148203090381
+        "MAE": 0.014493885386456606,
+        "MAPE": 1.5643205478339202,
+        "MSE": 0.00033684531830188323,
+        "RMSE": 0.018353346242630613
     },
     "test_KPD": {
         "MAE": 0.25465744733810425,
@@ -43,10 +43,10 @@
             "KPD_RMSE": 0.2730364203453064,
             "DeepOPINN_RMSE": 0.011607494205236435,
             "LAX_RMSE": 0.022196736186742783,
-            "Fusion_Raw_RMSE": 0.016813870519399643,
-            "Fusion_Post_RMSE": 0.016356395605401926,
-            "Fusion_Post_MAE": 0.015084162816946932,
-            "Fusion_Post_MAPE": 1.6627468504526046,
+            "Fusion_Raw_RMSE": 0.022524625062942505,
+            "Fusion_Post_RMSE": 0.02217348604489688,
+            "Fusion_Post_MAE": 0.018185026581587615,
+            "Fusion_Post_MAPE": 2.031317150232328,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-1_full_pred.csv"
         },
         "2017-06-30_battery-11": {
@@ -58,10 +58,10 @@
             "KPD_RMSE": 0.12078570574522018,
             "DeepOPINN_RMSE": 0.009975867345929146,
             "LAX_RMSE": 0.00984923355281353,
-            "Fusion_Raw_RMSE": 0.007814062759280205,
-            "Fusion_Post_RMSE": 0.007314188010240237,
-            "Fusion_Post_MAE": 0.006443607382099507,
-            "Fusion_Post_MAPE": 0.6752626884916653,
+            "Fusion_Raw_RMSE": 0.021746888756752014,
+            "Fusion_Post_RMSE": 0.01918196715882576,
+            "Fusion_Post_MAE": 0.011101420753557927,
+            "Fusion_Post_MAPE": 1.1943278373762092,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-11_full_pred.csv"
         },
         "2017-06-30_battery-12": {
@@ -73,10 +73,10 @@
             "KPD_RMSE": 0.6882319450378418,
             "DeepOPINN_RMSE": 0.010038182139396667,
             "LAX_RMSE": 0.013485997915267944,
-            "Fusion_Raw_RMSE": 0.010979168117046356,
-            "Fusion_Post_RMSE": 0.010663533785951924,
-            "Fusion_Post_MAE": 0.007710355872193436,
-            "Fusion_Post_MAPE": 0.8290446381004873,
+            "Fusion_Raw_RMSE": 0.011876894161105156,
+            "Fusion_Post_RMSE": 0.011454076595234588,
+            "Fusion_Post_MAE": 0.008059205439454662,
+            "Fusion_Post_MAPE": 0.8730459017224624,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-12_full_pred.csv"
         },
         "2017-06-30_battery-18": {
@@ -88,10 +88,10 @@
             "KPD_RMSE": 0.22701497375965118,
             "DeepOPINN_RMSE": 0.0057197618298232555,
             "LAX_RMSE": 0.007849819026887417,
-            "Fusion_Raw_RMSE": 0.005874112248420715,
-            "Fusion_Post_RMSE": 0.005647052825975579,
-            "Fusion_Post_MAE": 0.005029693743851754,
-            "Fusion_Post_MAPE": 0.530747686289231,
+            "Fusion_Raw_RMSE": 0.007242180872708559,
+            "Fusion_Post_RMSE": 0.006539062896211485,
+            "Fusion_Post_MAE": 0.00444429983754581,
+            "Fusion_Post_MAPE": 0.4790148374630646,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-18_full_pred.csv"
         },
         "2017-06-30_battery-22": {
@@ -103,10 +103,10 @@
             "KPD_RMSE": 0.09563900530338287,
             "DeepOPINN_RMSE": 0.005720451008528471,
             "LAX_RMSE": 0.006949970498681068,
-            "Fusion_Raw_RMSE": 0.005765637382864952,
-            "Fusion_Post_RMSE": 0.0054389114674011875,
-            "Fusion_Post_MAE": 0.004606544404398427,
-            "Fusion_Post_MAPE": 0.4912301737957388,
+            "Fusion_Raw_RMSE": 0.00834152102470398,
+            "Fusion_Post_RMSE": 0.007594027013628878,
+            "Fusion_Post_MAE": 0.0063498744032211,
+            "Fusion_Post_MAPE": 0.6742567125422326,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-22_full_pred.csv"
         },
         "2017-06-30_battery-23": {
@@ -118,10 +118,10 @@
             "KPD_RMSE": 0.1837599128484726,
             "DeepOPINN_RMSE": 0.007142477203160524,
             "LAX_RMSE": 0.00613911310210824,
-            "Fusion_Raw_RMSE": 0.005767414346337318,
-            "Fusion_Post_RMSE": 0.005557460155426172,
-            "Fusion_Post_MAE": 0.0025486747015174976,
-            "Fusion_Post_MAPE": 0.2666100596147365,
+            "Fusion_Raw_RMSE": 0.010499727912247181,
+            "Fusion_Post_RMSE": 0.01023011043478948,
+            "Fusion_Post_MAE": 0.007875389294536225,
+            "Fusion_Post_MAPE": 0.8299118036689512,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-23_full_pred.csv"
         },
         "2017-06-30_battery-24": {
@@ -133,10 +133,10 @@
             "KPD_RMSE": 0.21455077826976776,
             "DeepOPINN_RMSE": 0.008198834024369717,
             "LAX_RMSE": 0.008743125945329666,
-            "Fusion_Raw_RMSE": 0.007177917752414942,
-            "Fusion_Post_RMSE": 0.006725973833631572,
-            "Fusion_Post_MAE": 0.005925149367728812,
-            "Fusion_Post_MAPE": 0.6316354631809583,
+            "Fusion_Raw_RMSE": 0.005980720743536949,
+            "Fusion_Post_RMSE": 0.005236562612650366,
+            "Fusion_Post_MAE": 0.004072019996824699,
+            "Fusion_Post_MAPE": 0.4385173061352014,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-24_full_pred.csv"
         },
         "2017-06-30_battery-25": {
@@ -148,10 +148,10 @@
             "KPD_RMSE": 0.17957206070423126,
             "DeepOPINN_RMSE": 0.010844974778592587,
             "LAX_RMSE": 0.020171357318758965,
-            "Fusion_Raw_RMSE": 0.015422243624925613,
-            "Fusion_Post_RMSE": 0.015035149183612862,
-            "Fusion_Post_MAE": 0.010086892867780892,
-            "Fusion_Post_MAPE": 1.0395186063701214,
+            "Fusion_Raw_RMSE": 0.032532814890146255,
+            "Fusion_Post_RMSE": 0.03197598825793454,
+            "Fusion_Post_MAE": 0.019961925973248005,
+            "Fusion_Post_MAPE": 2.060450173033811,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-25_full_pred.csv"
         },
         "2017-06-30_battery-26": {
@@ -163,10 +163,10 @@
             "KPD_RMSE": 0.11330969631671906,
             "DeepOPINN_RMSE": 0.004826446063816547,
             "LAX_RMSE": 0.012860363349318504,
-            "Fusion_Raw_RMSE": 0.008401512168347836,
-            "Fusion_Post_RMSE": 0.007517465174414529,
-            "Fusion_Post_MAE": 0.005668219225156546,
-            "Fusion_Post_MAPE": 0.5834972642735773,
+            "Fusion_Raw_RMSE": 0.03555212914943695,
+            "Fusion_Post_RMSE": 0.034354134631985785,
+            "Fusion_Post_MAE": 0.022497696972763805,
+            "Fusion_Post_MAPE": 2.3249474056601915,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-26_full_pred.csv"
         },
         "2017-06-30_battery-27": {
@@ -178,10 +178,10 @@
             "KPD_RMSE": 0.11824773997068405,
             "DeepOPINN_RMSE": 0.005357746034860611,
             "LAX_RMSE": 0.010982293635606766,
-            "Fusion_Raw_RMSE": 0.008627979084849358,
-            "Fusion_Post_RMSE": 0.007634562186623686,
-            "Fusion_Post_MAE": 0.0060373845781476285,
-            "Fusion_Post_MAPE": 0.6186809611609899,
+            "Fusion_Raw_RMSE": 0.03578228875994682,
+            "Fusion_Post_RMSE": 0.03511085053818458,
+            "Fusion_Post_MAE": 0.027489467201297624,
+            "Fusion_Post_MAPE": 2.820428811861042,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-27_full_pred.csv"
         },
         "2017-06-30_battery-28": {
@@ -193,10 +193,10 @@
             "KPD_RMSE": 0.13767850399017334,
             "DeepOPINN_RMSE": 0.010426840744912624,
             "LAX_RMSE": 0.009974641725420952,
-            "Fusion_Raw_RMSE": 0.009635661728680134,
-            "Fusion_Post_RMSE": 0.009536151666737675,
-            "Fusion_Post_MAE": 0.009424536725062077,
-            "Fusion_Post_MAPE": 0.9960264321920588,
+            "Fusion_Raw_RMSE": 0.008336061611771584,
+            "Fusion_Post_RMSE": 0.007459433427346892,
+            "Fusion_Post_MAE": 0.005859567354762991,
+            "Fusion_Post_MAPE": 0.6293176413036765,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-28_full_pred.csv"
         },
         "2017-06-30_battery-29": {
@@ -208,10 +208,10 @@
             "KPD_RMSE": 0.7223184108734131,
             "DeepOPINN_RMSE": 0.007422238122671843,
             "LAX_RMSE": 0.006816775072365999,
-            "Fusion_Raw_RMSE": 0.006548477802425623,
-            "Fusion_Post_RMSE": 0.006406932061790371,
-            "Fusion_Post_MAE": 0.003711741199320061,
-            "Fusion_Post_MAPE": 0.39494714326793023,
+            "Fusion_Raw_RMSE": 0.007734423968940973,
+            "Fusion_Post_RMSE": 0.007438731167282652,
+            "Fusion_Post_MAE": 0.004823019079843047,
+            "Fusion_Post_MAPE": 0.5112517850571385,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-29_full_pred.csv"
         },
         "2017-06-30_battery-30": {
@@ -223,10 +223,10 @@
             "KPD_RMSE": 0.6810292601585388,
             "DeepOPINN_RMSE": 0.0037272877525538206,
             "LAX_RMSE": 0.00883849523961544,
-            "Fusion_Raw_RMSE": 0.005470237694680691,
-            "Fusion_Post_RMSE": 0.005293802427104537,
-            "Fusion_Post_MAE": 0.003993431747164774,
-            "Fusion_Post_MAPE": 0.41975285164943715,
+            "Fusion_Raw_RMSE": 0.008495966903865337,
+            "Fusion_Post_RMSE": 0.007936879423289344,
+            "Fusion_Post_MAE": 0.00661269265558269,
+            "Fusion_Post_MAPE": 0.6929188741006886,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-30_full_pred.csv"
         },
         "2017-06-30_battery-31": {
@@ -238,10 +238,10 @@
             "KPD_RMSE": 0.07356882840394974,
             "DeepOPINN_RMSE": 0.008686910383403301,
             "LAX_RMSE": 0.00809162575751543,
-            "Fusion_Raw_RMSE": 0.00756866205483675,
-            "Fusion_Post_RMSE": 0.007606349379415104,
-            "Fusion_Post_MAE": 0.007354456415650853,
-            "Fusion_Post_MAPE": 0.7707814634163932,
+            "Fusion_Raw_RMSE": 0.007442876230925322,
+            "Fusion_Post_RMSE": 0.006747642275237135,
+            "Fusion_Post_MAE": 0.0045958351108679055,
+            "Fusion_Post_MAPE": 0.49152510642832115,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-31_full_pred.csv"
         },
         "2017-06-30_battery-32": {
@@ -253,10 +253,10 @@
             "KPD_RMSE": 0.483676016330719,
             "DeepOPINN_RMSE": 0.0041260309517383575,
             "LAX_RMSE": 0.0037900833413004875,
-            "Fusion_Raw_RMSE": 0.0025081781204789877,
-            "Fusion_Post_RMSE": 0.0020698566019841783,
-            "Fusion_Post_MAE": 0.0014629784139498561,
-            "Fusion_Post_MAPE": 0.15667674566700482,
+            "Fusion_Raw_RMSE": 0.007595359813421965,
+            "Fusion_Post_RMSE": 0.006908959907238036,
+            "Fusion_Post_MAE": 0.005768920815519403,
+            "Fusion_Post_MAPE": 0.6099865940216861,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-32_full_pred.csv"
         },
         "2017-06-30_battery-33": {
@@ -268,10 +268,10 @@
             "KPD_RMSE": 0.09950482100248337,
             "DeepOPINN_RMSE": 0.005710151512175798,
             "LAX_RMSE": 0.006248306017369032,
-            "Fusion_Raw_RMSE": 0.004138410557061434,
-            "Fusion_Post_RMSE": 0.0038380084204276753,
-            "Fusion_Post_MAE": 0.0029006842563435455,
-            "Fusion_Post_MAPE": 0.30674773184750187,
+            "Fusion_Raw_RMSE": 0.008656497113406658,
+            "Fusion_Post_RMSE": 0.008179979436286471,
+            "Fusion_Post_MAE": 0.006819055011624645,
+            "Fusion_Post_MAPE": 0.7183421972097805,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-33_full_pred.csv"
         },
         "2017-06-30_battery-35": {
@@ -283,10 +283,10 @@
             "KPD_RMSE": 0.26913803815841675,
             "DeepOPINN_RMSE": 0.004990172106772661,
             "LAX_RMSE": 0.005972570739686489,
-            "Fusion_Raw_RMSE": 0.003772595664486289,
-            "Fusion_Post_RMSE": 0.003565653986057275,
-            "Fusion_Post_MAE": 0.0030742292896279665,
-            "Fusion_Post_MAPE": 0.32006134168661415,
+            "Fusion_Raw_RMSE": 0.0048728883266448975,
+            "Fusion_Post_RMSE": 0.004398590215299534,
+            "Fusion_Post_MAE": 0.003326038318202745,
+            "Fusion_Post_MAPE": 0.3533415125762356,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-35_full_pred.csv"
         },
         "2017-06-30_battery-36": {
@@ -298,10 +298,10 @@
             "KPD_RMSE": 0.08330757170915604,
             "DeepOPINN_RMSE": 0.006538057699799538,
             "LAX_RMSE": 0.013559024780988693,
-            "Fusion_Raw_RMSE": 0.008389757014811039,
-            "Fusion_Post_RMSE": 0.0082368291891724,
-            "Fusion_Post_MAE": 0.00722080534519996,
-            "Fusion_Post_MAPE": 0.763176812382458,
+            "Fusion_Raw_RMSE": 0.006526999641209841,
+            "Fusion_Post_RMSE": 0.005442466705982367,
+            "Fusion_Post_MAE": 0.0034234625427899475,
+            "Fusion_Post_MAPE": 0.3656447494328217,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-36_full_pred.csv"
         },
         "2017-06-30_battery-38": {
@@ -313,10 +313,10 @@
             "KPD_RMSE": 0.12778207659721375,
             "DeepOPINN_RMSE": 0.004083688836544752,
             "LAX_RMSE": 0.009130090475082397,
-            "Fusion_Raw_RMSE": 0.006120536010712385,
-            "Fusion_Post_RMSE": 0.006017673774013444,
-            "Fusion_Post_MAE": 0.004991640731334445,
-            "Fusion_Post_MAPE": 0.5208742422920284,
+            "Fusion_Raw_RMSE": 0.013694864697754383,
+            "Fusion_Post_RMSE": 0.013340645553841582,
+            "Fusion_Post_MAE": 0.010817340623221896,
+            "Fusion_Post_MAPE": 1.1419352152636877,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-38_full_pred.csv"
         },
         "2017-06-30_battery-39": {
@@ -328,10 +328,10 @@
             "KPD_RMSE": 0.1479220986366272,
             "DeepOPINN_RMSE": 0.005722512025386095,
             "LAX_RMSE": 0.0054840208031237125,
-            "Fusion_Raw_RMSE": 0.0038104960694909096,
-            "Fusion_Post_RMSE": 0.0038719123637755075,
-            "Fusion_Post_MAE": 0.003273532144086623,
-            "Fusion_Post_MAPE": 0.3401009061596404,
+            "Fusion_Raw_RMSE": 0.006432157941162586,
+            "Fusion_Post_RMSE": 0.005658848025023336,
+            "Fusion_Post_MAE": 0.0033594738074689246,
+            "Fusion_Post_MAPE": 0.3578893825667333,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-39_full_pred.csv"
         },
         "2017-06-30_battery-4": {
@@ -343,10 +343,10 @@
             "KPD_RMSE": 0.17640924453735352,
             "DeepOPINN_RMSE": 0.011626748368144035,
             "LAX_RMSE": 0.022745884954929352,
-            "Fusion_Raw_RMSE": 0.016706539317965508,
-            "Fusion_Post_RMSE": 0.01622650986287003,
-            "Fusion_Post_MAE": 0.015170195265713258,
-            "Fusion_Post_MAPE": 1.661897926842806,
+            "Fusion_Raw_RMSE": 0.01943335309624672,
+            "Fusion_Post_RMSE": 0.018937187457709777,
+            "Fusion_Post_MAE": 0.015107914584757787,
+            "Fusion_Post_MAPE": 1.6753079196136365,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-4_full_pred.csv"
         },
         "2017-06-30_battery-42": {
@@ -358,10 +358,10 @@
             "KPD_RMSE": 0.48583629727363586,
             "DeepOPINN_RMSE": 0.005136212799698114,
             "LAX_RMSE": 0.005325758829712868,
-            "Fusion_Raw_RMSE": 0.004368115216493607,
-            "Fusion_Post_RMSE": 0.004198474335761993,
-            "Fusion_Post_MAE": 0.003361526188207323,
-            "Fusion_Post_MAPE": 0.3545676961244347,
+            "Fusion_Raw_RMSE": 0.007538049016147852,
+            "Fusion_Post_RMSE": 0.00644465249635136,
+            "Fusion_Post_MAE": 0.004744055147922717,
+            "Fusion_Post_MAPE": 0.5062426610232166,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-42_full_pred.csv"
         },
         "2017-06-30_battery-43": {
@@ -373,10 +373,10 @@
             "KPD_RMSE": 0.17574460804462433,
             "DeepOPINN_RMSE": 0.006569904740899801,
             "LAX_RMSE": 0.0065406737849116325,
-            "Fusion_Raw_RMSE": 0.005818952340632677,
-            "Fusion_Post_RMSE": 0.005711872597096253,
-            "Fusion_Post_MAE": 0.003940122163779613,
-            "Fusion_Post_MAPE": 0.4135273265092074,
+            "Fusion_Raw_RMSE": 0.0132215591147542,
+            "Fusion_Post_RMSE": 0.01277263305705285,
+            "Fusion_Post_MAE": 0.009948058182352846,
+            "Fusion_Post_MAPE": 1.0539844758022192,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-43_full_pred.csv"
         },
         "2017-06-30_battery-44": {
@@ -388,10 +388,10 @@
             "KPD_RMSE": 0.21102698147296906,
             "DeepOPINN_RMSE": 0.003602813696488738,
             "LAX_RMSE": 0.0060590459033846855,
-            "Fusion_Raw_RMSE": 0.003505466505885124,
-            "Fusion_Post_RMSE": 0.0032445556729598663,
-            "Fusion_Post_MAE": 0.002143030294282999,
-            "Fusion_Post_MAPE": 0.22662799006681972,
+            "Fusion_Raw_RMSE": 0.013160532340407372,
+            "Fusion_Post_RMSE": 0.012690602565455367,
+            "Fusion_Post_MAE": 0.007874073389106517,
+            "Fusion_Post_MAPE": 0.8469226279910216,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-44_full_pred.csv"
         },
         "2017-06-30_battery-45": {
@@ -403,10 +403,10 @@
             "KPD_RMSE": 0.11778079718351364,
             "DeepOPINN_RMSE": 0.003928665537387133,
             "LAX_RMSE": 0.00711290817707777,
-            "Fusion_Raw_RMSE": 0.004253106191754341,
-            "Fusion_Post_RMSE": 0.00400661053960807,
-            "Fusion_Post_MAE": 0.0029092323059411733,
-            "Fusion_Post_MAPE": 0.30579666402794903,
+            "Fusion_Raw_RMSE": 0.012688277289271355,
+            "Fusion_Post_RMSE": 0.012224632179072391,
+            "Fusion_Post_MAE": 0.00698831303894073,
+            "Fusion_Post_MAPE": 0.7556126080656093,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-45_full_pred.csv"
         },
         "2017-06-30_battery-46": {
@@ -418,10 +418,10 @@
             "KPD_RMSE": 0.23327642679214478,
             "DeepOPINN_RMSE": 0.0071794441901147366,
             "LAX_RMSE": 0.006872169673442841,
-            "Fusion_Raw_RMSE": 0.006194362882524729,
-            "Fusion_Post_RMSE": 0.006033518541570441,
-            "Fusion_Post_MAE": 0.00573421742557345,
-            "Fusion_Post_MAPE": 0.6035525994710204,
+            "Fusion_Raw_RMSE": 0.006921863183379173,
+            "Fusion_Post_RMSE": 0.005866654291785676,
+            "Fusion_Post_MAE": 0.004126114826421706,
+            "Fusion_Post_MAPE": 0.441534872393973,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-46_full_pred.csv"
         },
         "2017-06-30_battery-47": {
@@ -433,10 +433,10 @@
             "KPD_RMSE": 0.16226758062839508,
             "DeepOPINN_RMSE": 0.00581849692389369,
             "LAX_RMSE": 0.010429682210087776,
-            "Fusion_Raw_RMSE": 0.007632395718246698,
-            "Fusion_Post_RMSE": 0.007562762734793247,
-            "Fusion_Post_MAE": 0.005895985734009808,
-            "Fusion_Post_MAPE": 0.6198523128381892,
+            "Fusion_Raw_RMSE": 0.015829117968678474,
+            "Fusion_Post_RMSE": 0.01574860630801376,
+            "Fusion_Post_MAE": 0.011482216408155218,
+            "Fusion_Post_MAPE": 1.2169293516008004,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-47_full_pred.csv"
         },
         "2017-06-30_battery-48": {
@@ -448,10 +448,10 @@
             "KPD_RMSE": 0.17036013305187225,
             "DeepOPINN_RMSE": 0.01553746685385704,
             "LAX_RMSE": 0.029233869165182114,
-            "Fusion_Raw_RMSE": 0.022057104855775833,
-            "Fusion_Post_RMSE": 0.021663038347639545,
-            "Fusion_Post_MAE": 0.020080322015975052,
-            "Fusion_Post_MAPE": 2.1572453668657,
+            "Fusion_Raw_RMSE": 0.021714432165026665,
+            "Fusion_Post_RMSE": 0.021262629850245875,
+            "Fusion_Post_MAE": 0.020733110212434982,
+            "Fusion_Post_MAPE": 2.2562574065672343,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-48_full_pred.csv"
         },
         "2017-06-30_battery-5": {
@@ -463,10 +463,10 @@
             "KPD_RMSE": 0.5044455528259277,
             "DeepOPINN_RMSE": 0.010753551498055458,
             "LAX_RMSE": 0.015718083828687668,
-            "Fusion_Raw_RMSE": 0.012746249325573444,
-            "Fusion_Post_RMSE": 0.012466194256041908,
-            "Fusion_Post_MAE": 0.010362081446446991,
-            "Fusion_Post_MAPE": 1.1159734415597438,
+            "Fusion_Raw_RMSE": 0.013625011779367924,
+            "Fusion_Post_RMSE": 0.013312078786701237,
+            "Fusion_Post_MAE": 0.010228879975296095,
+            "Fusion_Post_MAPE": 1.1140388899178237,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-5_full_pred.csv"
         },
         "2017-06-30_battery-7": {
@@ -478,10 +478,10 @@
             "KPD_RMSE": 0.30175212025642395,
             "DeepOPINN_RMSE": 0.015155768021941185,
             "LAX_RMSE": 0.02688092365860939,
-            "Fusion_Raw_RMSE": 0.020552391186356544,
-            "Fusion_Post_RMSE": 0.02030930036237426,
-            "Fusion_Post_MAE": 0.018272063240410932,
-            "Fusion_Post_MAPE": 2.0121999154296932,
+            "Fusion_Raw_RMSE": 0.021757110953330994,
+            "Fusion_Post_RMSE": 0.021394133563508645,
+            "Fusion_Post_MAE": 0.01773410002979816,
+            "Fusion_Post_MAPE": 1.9630449581155014,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-7_full_pred.csv"
         },
         "2017-06-30_battery-14": {
@@ -493,10 +493,10 @@
             "KPD_RMSE": 0.3824223279953003,
             "DeepOPINN_RMSE": 0.00966995395720005,
             "LAX_RMSE": 0.010368217714130878,
-            "Fusion_Raw_RMSE": 0.009558679535984993,
-            "Fusion_Post_RMSE": 0.009257479896318933,
-            "Fusion_Post_MAE": 0.008315913976506604,
-            "Fusion_Post_MAPE": 0.8902641848445935,
+            "Fusion_Raw_RMSE": 0.011890319176018238,
+            "Fusion_Post_RMSE": 0.011364879662246613,
+            "Fusion_Post_MAE": 0.009263933081896339,
+            "Fusion_Post_MAPE": 0.9934346425508356,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-14_full_pred.csv"
         },
         "2017-06-30_battery-21": {
@@ -508,10 +508,10 @@
             "KPD_RMSE": 0.17542272806167603,
             "DeepOPINN_RMSE": 0.008280947804450989,
             "LAX_RMSE": 0.006423651240766048,
-            "Fusion_Raw_RMSE": 0.007060430012643337,
-            "Fusion_Post_RMSE": 0.006860233681963011,
-            "Fusion_Post_MAE": 0.004948517003715088,
-            "Fusion_Post_MAPE": 0.515827501581951,
+            "Fusion_Raw_RMSE": 0.011817756108939648,
+            "Fusion_Post_RMSE": 0.011454732072816652,
+            "Fusion_Post_MAE": 0.009534837360125826,
+            "Fusion_Post_MAPE": 0.992964047934154,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-21_full_pred.csv"
         },
         "2017-06-30_battery-3": {
@@ -523,10 +523,10 @@
             "KPD_RMSE": 0.47084569931030273,
             "DeepOPINN_RMSE": 0.005345150828361511,
             "LAX_RMSE": 0.005004520062357187,
-            "Fusion_Raw_RMSE": 0.003981271293014288,
-            "Fusion_Post_RMSE": 0.003985579905310484,
-            "Fusion_Post_MAE": 0.002870795929094861,
-            "Fusion_Post_MAPE": 0.305437512654957,
+            "Fusion_Raw_RMSE": 0.008509314619004726,
+            "Fusion_Post_RMSE": 0.0076229569494579204,
+            "Fusion_Post_MAE": 0.005513756940884052,
+            "Fusion_Post_MAPE": 0.5859690776408297,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-3_full_pred.csv"
         },
         "2017-06-30_battery-34": {
@@ -538,10 +538,10 @@
             "KPD_RMSE": 0.15297488868236542,
             "DeepOPINN_RMSE": 0.006182481534779072,
             "LAX_RMSE": 0.009695341810584068,
-            "Fusion_Raw_RMSE": 0.007576171774417162,
-            "Fusion_Post_RMSE": 0.007487689095949618,
-            "Fusion_Post_MAE": 0.006624572412932903,
-            "Fusion_Post_MAPE": 0.6859655787106002,
+            "Fusion_Raw_RMSE": 0.012565196491777897,
+            "Fusion_Post_RMSE": 0.012336988619443223,
+            "Fusion_Post_MAE": 0.011341923438034588,
+            "Fusion_Post_MAPE": 1.1826066511786315,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-34_full_pred.csv"
         },
         "2017-06-30_battery-37": {
@@ -553,10 +553,10 @@
             "KPD_RMSE": 0.23679140210151672,
             "DeepOPINN_RMSE": 0.005182479042559862,
             "LAX_RMSE": 0.008115867152810097,
-            "Fusion_Raw_RMSE": 0.006111016031354666,
-            "Fusion_Post_RMSE": 0.005995223580621089,
-            "Fusion_Post_MAE": 0.0056602756802117135,
-            "Fusion_Post_MAPE": 0.5864055758786116,
+            "Fusion_Raw_RMSE": 0.012788266874849796,
+            "Fusion_Post_RMSE": 0.01243556982908762,
+            "Fusion_Post_MAE": 0.011041531494985449,
+            "Fusion_Post_MAPE": 1.1555773642552658,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-37_full_pred.csv"
         },
         "2017-06-30_battery-6": {
@@ -568,10 +568,10 @@
             "KPD_RMSE": 0.21764947474002838,
             "DeepOPINN_RMSE": 0.007686150725930929,
             "LAX_RMSE": 0.008143545128405094,
-            "Fusion_Raw_RMSE": 0.0071364594623446465,
-            "Fusion_Post_RMSE": 0.006962158992343807,
-            "Fusion_Post_MAE": 0.006864253579065436,
-            "Fusion_Post_MAPE": 0.7227569837855736,
+            "Fusion_Raw_RMSE": 0.00750005105510354,
+            "Fusion_Post_RMSE": 0.0069830147598299785,
+            "Fusion_Post_MAE": 0.004841765459037065,
+            "Fusion_Post_MAPE": 0.5235222743275926,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-6_full_pred.csv"
         },
         "2017-06-30_battery-13": {
@@ -583,10 +583,10 @@
             "KPD_RMSE": 0.8477548360824585,
             "DeepOPINN_RMSE": 0.013865635730326176,
             "LAX_RMSE": 0.019937077537178993,
-            "Fusion_Raw_RMSE": 0.016166362911462784,
-            "Fusion_Post_RMSE": 0.01584661089955286,
-            "Fusion_Post_MAE": 0.01463411516241217,
-            "Fusion_Post_MAPE": 1.588056632950038,
+            "Fusion_Raw_RMSE": 0.017324771732091904,
+            "Fusion_Post_RMSE": 0.01687850545890473,
+            "Fusion_Post_MAE": 0.01408645812163187,
+            "Fusion_Post_MAPE": 1.5415963893005222,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-13_full_pred.csv"
         },
         "2017-06-30_battery-15": {
@@ -598,10 +598,10 @@
             "KPD_RMSE": 0.3037753403186798,
             "DeepOPINN_RMSE": 0.005102289840579033,
             "LAX_RMSE": 0.003764454508200288,
-            "Fusion_Raw_RMSE": 0.0029034893959760666,
-            "Fusion_Post_RMSE": 0.0026160100269396473,
-            "Fusion_Post_MAE": 0.002305871670325536,
-            "Fusion_Post_MAPE": 0.24104144684275272,
+            "Fusion_Raw_RMSE": 0.009311260655522346,
+            "Fusion_Post_RMSE": 0.00877559310349,
+            "Fusion_Post_MAE": 0.006819466923720571,
+            "Fusion_Post_MAPE": 0.7184005499516356,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-15_full_pred.csv"
         },
         "2017-06-30_battery-19": {
@@ -613,10 +613,10 @@
             "KPD_RMSE": 0.27221187949180603,
             "DeepOPINN_RMSE": 0.018152378499507904,
             "LAX_RMSE": 0.02011769451200962,
-            "Fusion_Raw_RMSE": 0.019084889441728592,
-            "Fusion_Post_RMSE": 0.019031275964220575,
-            "Fusion_Post_MAE": 0.018671965236033948,
-            "Fusion_Post_MAPE": 1.9985375536205077,
+            "Fusion_Raw_RMSE": 0.01623615063726902,
+            "Fusion_Post_RMSE": 0.015724977494428808,
+            "Fusion_Post_MAE": 0.014280335409943399,
+            "Fusion_Post_MAPE": 1.5348148018475247,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-19_full_pred.csv"
         },
         "2017-06-30_battery-2": {
@@ -628,10 +628,10 @@
             "KPD_RMSE": 1.168278455734253,
             "DeepOPINN_RMSE": 0.028423398733139038,
             "LAX_RMSE": 0.027629652991890907,
-            "Fusion_Raw_RMSE": 0.02298610284924507,
-            "Fusion_Post_RMSE": 0.022350272533621752,
-            "Fusion_Post_MAE": 0.017801008532040134,
-            "Fusion_Post_MAPE": 1.9858708429155159,
+            "Fusion_Raw_RMSE": 0.02373039536178112,
+            "Fusion_Post_RMSE": 0.023568589454759696,
+            "Fusion_Post_MAE": 0.017295705107678513,
+            "Fusion_Post_MAPE": 1.9105069026731547,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-2_full_pred.csv"
         },
         "2017-06-30_battery-20": {
@@ -643,10 +643,10 @@
             "KPD_RMSE": 1.1334863901138306,
             "DeepOPINN_RMSE": 0.031501177698373795,
             "LAX_RMSE": 0.03471953421831131,
-            "Fusion_Raw_RMSE": 0.031868826597929,
-            "Fusion_Post_RMSE": 0.03129580485880135,
-            "Fusion_Post_MAE": 0.030188188497757566,
-            "Fusion_Post_MAPE": 3.2985148101266266,
+            "Fusion_Raw_RMSE": 0.03361990675330162,
+            "Fusion_Post_RMSE": 0.03271888909715776,
+            "Fusion_Post_MAE": 0.030619486209286083,
+            "Fusion_Post_MAPE": 3.3633805387928386,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-20_full_pred.csv"
         },
         "2017-06-30_battery-40": {
@@ -658,10 +658,10 @@
             "KPD_RMSE": 0.42453569173812866,
             "DeepOPINN_RMSE": 0.008187449537217617,
             "LAX_RMSE": 0.010747703723609447,
-            "Fusion_Raw_RMSE": 0.009110478684306145,
-            "Fusion_Post_RMSE": 0.008959713339921257,
-            "Fusion_Post_MAE": 0.00833760494651249,
-            "Fusion_Post_MAPE": 0.8620748291795386,
+            "Fusion_Raw_RMSE": 0.015495672821998596,
+            "Fusion_Post_RMSE": 0.01535588750024617,
+            "Fusion_Post_MAE": 0.013756472831211583,
+            "Fusion_Post_MAPE": 1.4341408176250863,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-40_full_pred.csv"
         },
         "2017-06-30_battery-41": {
@@ -673,10 +673,10 @@
             "KPD_RMSE": 0.6693388819694519,
             "DeepOPINN_RMSE": 0.008798619732260704,
             "LAX_RMSE": 0.00685471436008811,
-            "Fusion_Raw_RMSE": 0.007348781917244196,
-            "Fusion_Post_RMSE": 0.0069282747732804266,
-            "Fusion_Post_MAE": 0.005218020051087059,
-            "Fusion_Post_MAPE": 0.5593240948553372,
+            "Fusion_Raw_RMSE": 0.009296453557908535,
+            "Fusion_Post_RMSE": 0.00856957375801268,
+            "Fusion_Post_MAE": 0.007482454834175057,
+            "Fusion_Post_MAPE": 0.7919068168942837,
             "csv_path": "predictions/Inference\\MIT\\2017-06-30\\2017-06-30_battery-41_full_pred.csv"
         }
     }

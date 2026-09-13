@@ -7,3 +7,6 @@
 2026-09-12 16:45:15,630 - INFO -   Test SOH Fusion Raw  RMSE: 0.010864 | MAE: 0.008322
 2026-09-12 16:45:15,630 - INFO -   Test SOH Fusion Post RMSE: 0.010861 | MAE: 0.008314
 2026-09-12 16:45:15,630 - INFO -   Mean Knee Delta: 54.50 cycles
+2026-09-13 17:02:42,135 - INFO - ==================================================
+2026-09-13 17:02:42,136 - INFO - Running Full Inference for [TJU] - [Dataset_3_NCM_NCA_battery]
+2026-09-13 17:02:42,136 - INFO - ==================================================

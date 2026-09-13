@@ -7,3 +7,12 @@
 2026-09-12 16:45:07,667 - INFO -   Test SOH Fusion Raw  RMSE: 0.011656 | MAE: 0.007444
 2026-09-12 16:45:07,669 - INFO -   Test SOH Fusion Post RMSE: 0.011483 | MAE: 0.007244
 2026-09-12 16:45:07,669 - INFO -   Mean Knee Delta: 22.71 cycles
+2026-09-13 17:02:34,756 - INFO - ==================================================
+2026-09-13 17:02:34,757 - INFO - Running Full Inference for [MIT] - [2017-05-12]
+2026-09-13 17:02:34,757 - INFO - ==================================================
+2026-09-13 17:02:36,940 - INFO - Completed Batch [MIT] - [2017-05-12]:
+2026-09-13 17:02:36,940 - INFO -   Test SOH DeepOPINN   RMSE: 0.014046 | MAE: 0.010176
+2026-09-13 17:02:36,940 - INFO -   Test SOH LAX         RMSE: 0.013900 | MAE: 0.009519
+2026-09-13 17:02:36,940 - INFO -   Test SOH Fusion Raw  RMSE: 0.014813 | MAE: 0.009051
+2026-09-13 17:02:36,940 - INFO -   Test SOH Fusion Post RMSE: 0.014662 | MAE: 0.008828
+2026-09-13 17:02:36,940 - INFO -   Mean Knee Delta: 22.71 cycles
