@@ -169,14 +169,16 @@ def run_inference_for_batch(
                 )
                 pred_fusion_raw = pred_fusion_tensor.cpu().numpy()
 
-            # Post-processing (NO monotonic-only decreasing constraint)
+            # Post-processing (Hampel de-spike + Savitzky-Golay + Monotonic constraint)
             pred_fusion_post = postprocess_capacity(
                 pred_fusion_raw,
                 jump_thresh=0.02,
                 hampel_window=21,
                 savgol_window=51,
-                polyorder=2
+                polyorder=2,
+                monotonic=True
             ).reshape(-1, 1)
+
 
             # Knee estimation
             pred_knee_cycle = estimate_knee_cycle_from_kpd(cycles, pred_kpd)

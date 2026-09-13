@@ -60,7 +60,8 @@ A comprehensive, modular framework for lithium-ion battery **State-of-Health (SO
    - Adaptively combines $u_{\text{deepopinn}}$, $u_{\text{lax}}$, and predicted $\widehat{\text{KPD}}$ to output final capacity estimates.
 
 5. **Advanced Post-Processing (`post_processing.py`)**:
-   - Applies segment-wise Hampel outlier filtering and Savitzky–Golay smoothing without monotonic-only constraints, allowing natural capacity regeneration and relaxation.
+   - Applies segment-wise Hampel outlier filtering, Savitzky–Golay smoothing, and Isotonic Regression monotonic decreasing constraints (with support for SOH values $> 1.0$).
+
 
 ---
 

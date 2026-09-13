@@ -170,10 +170,10 @@
         "Fusion_Raw_RMSE": 0.012156921438872814,
         "Fusion_Raw_MAE": 0.009891068562865257,
         "Fusion_Raw_MAPE": 1.0768157429993153,
-        "Fused_SOH_RMSE": 0.011607112769115684,
-        "Fused_SOH_MAE": 0.00938686659952278,
-        "Fused_SOH_MAPE": 1.0233543314803302,
-        "Improvement_vs_Best_Single_%": -43.95317230781416
+        "Fused_SOH_RMSE": 0.011642928426475428,
+        "Fused_SOH_MAE": 0.009452128796706686,
+        "Fused_SOH_MAPE": 1.0300569295864168,
+        "Improvement_vs_Best_Single_%": -44.39736352037337
     },
     {
         "Dataset": "XJTU",

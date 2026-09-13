@@ -57,15 +57,18 @@ def postprocess_capacity(
     hampel_window: int = 21,
     savgol_window: int = 51,
     polyorder: int = 2,
+    monotonic: bool = True,
     clip: Optional[Tuple[float, float]] = None
 ) -> np.ndarray:
     """
     Advanced capacity/SOH post-processing:
     1. Segment-wise Hampel de-spiking to eliminate stochastic measurement noise/spikes.
     2. Savitzky-Golay polynomial smoothing.
-    3. Preserves capacity regeneration / relaxation (NO monotonic-only decreasing constraint).
+    3. Monotonic decreasing constraint via IsotonicRegression within each degradation segment.
     4. Supports values > 1.0 without hard upper clipping.
     """
+    from sklearn.isotonic import IsotonicRegression
+
     y_pred = np.asarray(y_pred, dtype=float).flatten()
     seg_bounds = find_segments(y_pred, jump_thresh=jump_thresh)
     y_out = np.zeros_like(y_pred)
@@ -86,6 +89,11 @@ def postprocess_capacity(
             p_order = min(polyorder, w_sg - 1)
             seg = savgol_filter(seg, window_length=w_sg, polyorder=p_order)
 
+        # 3. Monotonic Decreasing Constraint (allow > 1.0 by y_max=None)
+        if monotonic and len(seg) > 1:
+            ir = IsotonicRegression(increasing=False, y_min=0.0, y_max=None)
+            seg = ir.fit_transform(np.arange(len(seg)), seg)
+
         y_out[s:e] = seg
 
     if clip is not None:
@@ -93,3 +101,4 @@ def postprocess_capacity(
         return np.clip(y_out, lo, hi)
 
     return y_out
+
