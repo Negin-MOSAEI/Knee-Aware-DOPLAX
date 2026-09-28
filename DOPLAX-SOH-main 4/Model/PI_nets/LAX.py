@@ -311,6 +311,9 @@ class OptimizationNetwork(nn.Module):
         self.current_lr_y = getattr(args, 'lr_y_LAX', 1e-2)
         self.y = nn.Parameter(torch.empty(args.batch_size, self.y_dim, device=device), requires_grad=False)
         
+        # Learnable degradation coefficients for Chemical Agnosticism
+        self.chem_degradation_rates = nn.Parameter(torch.ones(1, self.h_dim))
+        
         self.dynamical_F = MLP(input_dim=2 * x_dim + 3,output_dim=1,
                                layers_num=3,
                                hidden_dim=25,
@@ -548,6 +551,8 @@ class OptimizationNetwork(nn.Module):
             theta_t = self.theta(t_u.unsqueeze(1))
 
         h_in = d_xy * theta_t ## TODO
+        # Apply the chemistry-agnostic learnable parameters
+        h_in = h_in * self.chem_degradation_rates
         # h_in = torch.bmm(d_xy.unsqueeze(1), theta_t.unsqueeze(2)).squeeze(-1)
 
         if self.args.center_block_LAX == 'PhI':
