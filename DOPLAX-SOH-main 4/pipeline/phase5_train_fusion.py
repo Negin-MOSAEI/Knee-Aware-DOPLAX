@@ -354,6 +354,10 @@ def run_phase5(project_root: str, num_epochs: int = 10, batch_size: int = 64, re
             if best_model_state is not None:
                 model.load_state_dict(best_model_state)
 
+            from Model.utils.losses import evaluate_new_architecture
+            print("\n--- Running Final Evaluation ---")
+            evaluate_new_architecture(model, val_dataloader, device, dataset_name=f"{dataset}-{batch}")
+
             metrics = kpi_tracker.stop()
             if dataset not in kpi_report:
                 kpi_report[dataset] = {}
